@@ -5,11 +5,13 @@
   "section": "vocabulary",
   "transcriptionType": "diplomatic",
   "coverage": "excerpt",
+  "scope": "printed_text",
   "text": "Abofetear. Achonſu.\nAbofeteador. Iorechoname.\nAbogacia. Nocria.\nAbollar. Hepeſte.\nAborrecer. Caeria.\nAborrecimiento. Caeriari.\nAbortadura tal. Tomaherete.\nAbraſarſe de calor interior.\nTatare,\nAbrigado lugar. Cabecapo.\nAbrigar à otro con ropa.\nSenu bintua.\n\n[segunda columna]\nAbrojo. Huichacame.\nAbſtenerſe. Abiore.\n",
   "lineBreakPolicy": "Line breaks preserve the selected visual transcription excerpt; column transition is represented by an explicit editorial marker in square brackets.",
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false,
   "uncertainties": [],
+  "materialNotes": [],
   "provenance": {
     "derivedFrom": "ALC1737:digital-page-134",
     "agent": "GPT-5.6 Sol visual collation",

@@ -1,0 +1,37 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 3,
+  "sourcePagePrinted": null,
+  "section": "preliminaries",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ARTE\nDE LA LENGUA CAHITA\nconforme à las Reglas de muchos\nPeritos en ella.\n\nCompueſto por vn Padre de la Compañia\nde JESUS, Miſſionero de mas de treinta\naños en la Provincia de Cynaloa.\n\nEſta lo ſaca à luz, y humilde lo conſagra\nal grande Apoſtol de la India Oriental,\ny primer Apoſtol del Japon\nSAN FRANCISCO XAVIER.\n\nAño de [IHS] 1737.\n\nCON LICENCIA DE LOS SUPERIORES.\nEn Mexico en la Imprenta de D. Franciſco\nXavier Sanchez, en el puente de Palacio.\n",
+  "lineBreakPolicy": "Printed line breaks are preserved. The Jesuit IHS device is represented by the editorial token [IHS] and described separately in materialNotes.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [],
+  "materialNotes": [
+    {
+      "type": "manuscript",
+      "note": "Handwritten ownership/cataloguing marks are visible above the printed ornamental frame; they are excluded from the printed-text transcription and have not been fully deciphered.",
+      "transcription": null
+    },
+    {
+      "type": "other",
+      "note": "Jesuit IHS emblem with cross and nails appears between 'Año de' and '1737'.",
+      "transcription": "IHS"
+    },
+    {
+      "type": "repair",
+      "note": "Blue-edged repair or mounting strips and other conservation traces are visible around the leaf.",
+      "transcription": null
+    }
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-3",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from rendered facsimile at 220 dpi; manuscript additions excluded from scope; no independent human verification",
+    "processedAt": null
+  }
+}
