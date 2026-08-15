@@ -1,7 +1,7 @@
 source_id,digital_page,printed_page,section,material_role,coverage,review_status,transcription_file,uncertainty_count,notes
 ALC1737,1,,preliminaries,front_cover,not_applicable_material,material_identified,,,front_cover
 ALC1737,2,,preliminaries,bookplate,not_applicable_material,material_identified,,,bookplate
-ALC1737,3,,preliminaries,,pending,unreviewed,,,
+ALC1737,3,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p003.json,0,printed text complete; manuscript additions excluded from scope
 ALC1737,4,,preliminaries,title_page_verso_drawing,not_applicable_material,material_identified,,,title_page_verso_drawing
 ALC1737,5,,preliminaries,,pending,unreviewed,,,
 ALC1737,6,,preliminaries,,pending,unreviewed,,,
