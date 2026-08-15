@@ -13,10 +13,13 @@ Estado de cobertura de Cahíta Histórico Digital para la fuente `ALC1737`.
 | Hash OCR por página | **182 / 182** | derivado local `page_manifest_full.csv` |
 | Extracción OCR paginada reproducible | **182 / 182** | producida localmente; no validada filológicamente |
 | Payload OCR completo versionado en GitHub | **0 / 182** | empaquetado pendiente |
-| Transcripción diplomática | **0 / 182** | pendiente |
-| Transcripción corregida | **0 / 182** | pendiente |
+| Líneas OCR/layout del vocabulario extraídas localmente | **3,899** | páginas 133–177; 61 fusiones de columnas retenidas como `other` |
+| Extracto diplomático IA-asistido | **1 página piloto** | p. digital 134; no validación humana |
+| Entradas lexicográficas piloto estructuradas | **12** | JSON Schema válido; `machine_corrected_unverified` |
+| Entradas lexicográficas de producción | **0** | ninguna promovida todavía |
+| Transcripción diplomática completa | **0 / 182** | pendiente |
+| Transcripción corregida completa | **0 / 182** | pendiente |
 | Normalización | **0 / 182** | pendiente |
-| Entradas lexicográficas estructuradas | **0** | pendiente |
 | Ejemplos gramaticales estructurados | **0** | pendiente |
 | Revisión humana independiente | **0** | no iniciada |
 
@@ -35,12 +38,18 @@ Estado de cobertura de Cahíta Histórico Digital para la fuente `ALC1737`.
 
 La segmentación machine-readable se encuentra en [`data/source/alc1737/sections.json`](data/source/alc1737/sections.json), y el inventario completo página por página en [`data/source/alc1737/page_manifest.csv`](data/source/alc1737/page_manifest.csv).
 
+## Piloto lexicográfico
+
+La página digital 134 dispone ahora de un extracto diplomático IA-asistido y doce registros estructurados. Los doce pasaron validación local contra `schemas/lexical-entry.schema.json`, pero permanecen explícitamente en estado `machine_corrected_unverified`.
+
+→ [`docs/PILOT_LEXICON_P134.md`](docs/PILOT_LEXICON_P134.md)
+
 ## Evidencia visual ya cotejada
 
-Se inspeccionaron de forma dirigida las páginas digitales 3, 11, 13, 14, 15, 51, 69, 105, 132, 133, 178, 180, 181 y 182. Este muestreo incluye todos los límites estructurales principales y las páginas sin OCR significativo.
+Se inspeccionaron de forma dirigida las páginas digitales 3, 11, 13, 14, 15, 51, 69, 105, 132, 133, 134, 178, 180, 181 y 182. Este muestreo incluye todos los límites estructurales principales, las páginas sin OCR significativo y la página del primer piloto lexicográfico.
 
 ## Interpretación de métricas
 
 `OCR extraído` significa únicamente que se pudo recuperar la capa textual automática del PDF. No implica exactitud filológica. `Hash OCR por página` permite detectar cambios bit a bit en la extracción y volver a localizar una unidad en la cadena de procesamiento.
 
-No se declarará cobertura de transcripción, validación o entradas lexicográficas hasta que existan archivos versionados y evidencia de cotejo contra el facsímil.
+`Entrada piloto estructurada` tampoco equivale a entrada validada. Su función es probar contratos de datos, trazabilidad y flujo editorial antes de escalar la extracción.

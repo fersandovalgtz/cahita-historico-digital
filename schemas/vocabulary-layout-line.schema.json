@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/vocabulary-layout-line.schema.json",
+  "title": "CHD vocabulary raw layout line",
+  "description": "Raw OCR line with page and two-column layout evidence from ALC1737. A line is not a lexical entry.",
+  "type": "object",
+  "required": [
+    "id", "sourceId", "sourcePageDigital", "column", "orderInColumn",
+    "bbox", "textRaw", "extractionMethod", "evidenceLayer", "reviewStatus"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^ALC1737-vline-p[0-9]{3}-[LRO]-[0-9]{3}$"},
+    "sourceId": {"const": "ALC1737"},
+    "sourcePageDigital": {"type": "integer", "minimum": 133, "maximum": 180},
+    "sourcePagePrinted": {"type": ["string", "null"]},
+    "section": {"type": "string", "enum": ["vocabulary", "numerals"]},
+    "column": {"type": "string", "enum": ["left", "right", "other"]},
+    "orderInColumn": {"type": "integer", "minimum": 1},
+    "bbox": {
+      "type": "object",
+      "required": ["xmin", "ymin", "xmax", "ymax"],
+      "properties": {
+        "xmin": {"type": "number"},
+        "ymin": {"type": "number"},
+        "xmax": {"type": "number"},
+        "ymax": {"type": "number"}
+      },
+      "additionalProperties": false
+    },
+    "textRaw": {"type": "string", "minLength": 1},
+    "extractionMethod": {"const": "pdftotext -bbox-layout (Poppler)"},
+    "evidenceLayer": {"const": "ocr_raw"},
+    "reviewStatus": {"const": "raw_ocr"}
+  },
+  "additionalProperties": false
+}

@@ -2,6 +2,25 @@
 
 Todos los cambios relevantes de Cahíta Histórico Digital se documentarán en este archivo.
 
+## [0.1.2-dev] - 2026-08-15
+
+### Añadido
+
+- extractor reproducible de disposición a dos columnas para el vocabulario: `scripts/extract_vocab_layout.py`;
+- esquema `schemas/vocabulary-layout-line.schema.json` para conservar líneas OCR con página, columna, coordenadas y estado de evidencia;
+- `scripts/validate_jsonl.py` y `requirements-dev.txt` para validación reproducible de JSONL;
+- primer extracto diplomático IA-asistido del vocabulario, página digital 134;
+- **12 entradas lexicográficas piloto** estructuradas y validadas contra `schemas/lexical-entry.schema.json`;
+- documentación metodológica del piloto en `docs/PILOT_LEXICON_P134.md`.
+
+### Resultados de extracción
+
+Una corrida local de `extract_vocab_layout.py` sobre las páginas digitales 133–177 produjo **3,899 líneas OCR/layout**: 1,731 clasificadas en columna izquierda, 2,107 en derecha y 61 retenidas como `other` por fusiones o ambigüedad de layout. El JSONL completo derivado tiene SHA-256 `9b5eb47fc7d93a63e8345a33da844863d8228fe7149a303ee35a1c2c00cb1871`.
+
+### Salvaguardas
+
+Las 12 entradas del piloto están marcadas `machine_corrected_unverified`; ninguna se presenta como `human_verified`. La extracción de líneas no se interpreta como recuento de artículos lexicográficos.
+
 ## [0.1.1-dev] - 2026-08-15
 
 ### Añadido
@@ -24,7 +43,7 @@ Todos los cambios relevantes de Cahíta Histórico Digital se documentarán en e
 ### Estado científico
 
 - **0 / 182** páginas se declaran todavía como transcripción diplomática terminada;
-- **0** entradas lexicográficas se promueven todavía al corpus estructurado;
+- **0** entradas lexicográficas se promueven todavía al corpus estructurado de producción;
 - **0** unidades se etiquetan como `human_verified`.
 
 La fase 0.1.1-dev consolida la trazabilidad técnica necesaria antes de comenzar la extracción lexicográfica y la transcripción.
