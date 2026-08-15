@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/vocabulary-boundary-decision.schema.json",
+  "title": "CHD vocabulary boundary decision",
+  "description": "Review decision for an automatically generated vocabulary candidate. It evaluates article boundaries, not transcription accuracy.",
+  "type": "object",
+  "required": [
+    "candidateId", "sourceId", "sourcePageDigital", "column",
+    "startDecision", "groupDecision", "reviewStatus", "humanVerified",
+    "evidenceNote", "provenance"
+  ],
+  "properties": {
+    "candidateId": {"type": "string", "pattern": "^ALC1737-vcand-p[0-9]{3}-[LR]-[0-9]{3}$"},
+    "sourceId": {"const": "ALC1737"},
+    "sourcePageDigital": {"type": "integer", "minimum": 133, "maximum": 177},
+    "column": {"enum": ["left", "right"]},
+    "startDecision": {"enum": ["valid_start", "false_start", "uncertain_start"]},
+    "groupDecision": {
+      "enum": ["accept_group", "split_group", "trim_group", "extend_group", "reconstruct_group", "unresolved_group"]
+    },
+    "resultingArticleCount": {"type": ["integer", "null"], "minimum": 0},
+    "evidenceNote": {"type": "string", "minLength": 1},
+    "reviewStatus": {"enum": ["machine_corrected_unverified", "human_verified", "unresolved"]},
+    "humanVerified": {"type": "boolean"},
+    "provenance": {
+      "type": "object",
+      "required": ["agent", "method", "derivedFrom"],
+      "properties": {
+        "agent": {"type": "string"},
+        "method": {"type": "string"},
+        "derivedFrom": {"type": "string"},
+        "processedAt": {"type": ["string", "null"], "format": "date-time"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"reviewStatus": {"const": "human_verified"}}},
+      "then": {"properties": {"humanVerified": {"const": true}}}
+    },
+    {
+      "if": {"properties": {"humanVerified": {"const": true}}},
+      "then": {"properties": {"reviewStatus": {"const": "human_verified"}}}
+    }
+  ],
+  "additionalProperties": false
+}
