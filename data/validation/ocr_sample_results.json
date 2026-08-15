@@ -1,0 +1,92 @@
+{
+  "sourceId": "ALC1737",
+  "normalization": "NFKD; strip combining marks; lowercase; map long-s to s; non-alphanumeric to spaces; collapse whitespace",
+  "summary": {
+    "sampleCount": 6,
+    "macroWER": 0.5063978167426443,
+    "macroCER": 0.24369068936409435,
+    "microWER": 0.5196078431372549,
+    "microCER": 0.2565947242206235
+  },
+  "results": [
+    {
+      "id": "grammar-part-i",
+      "page": 15,
+      "ocrSource": "pdftotext_layout",
+      "referenceWords": 64,
+      "referenceChars": 365,
+      "wordEdits": 32,
+      "charEdits": 102,
+      "wer": 0.5,
+      "cer": 0.27945205479452057,
+      "referenceNormalized": "si de ordinario comienzan los artes por la syntaxis este particularmente conviene comenzarse por ella y assi de las quatro partes en que se ha de dividir esta obra sea la primera en la que se trata de la formacion de los preteritos futuros voz passiva del verbo formacion de nombres de verbos colocacion de palabras composicion de dicciones y syntaxis de la oracion",
+      "ocrWindowNormalized": "ordinario comienzan los a sitesdepor la syntaxis efte particularmente conviene cor menzarfe por ella yaffi de las quatro partes en que fea la primera en la que fe tra fe ha de dividir cita obra futuros voz pafiiv ia de la formacion de los preteritos colocacion del verbo formacion de nombres de verbos de palabras compoficion de dicciones y syntaxis de la oracion"
+    },
+    {
+      "id": "grammar-part-ii",
+      "page": 51,
+      "ocrSource": "pdftotext_layout",
+      "referenceWords": 42,
+      "referenceChars": 269,
+      "wordEdits": 26,
+      "charEdits": 77,
+      "wer": 0.6190476190476191,
+      "cer": 0.2862453531598513,
+      "referenceNormalized": "tiene esta lengua nombres substantivos y adjetivos sus declinaciones son tres dos de substantivos y una de ajetivos no tiene variedad alguna de casos obliquos el vocativo es semejante al nominativo los demas casos de genitivo dativo accusativo y ablativo son semejantes",
+      "ocrWindowNormalized": "jetivos fus declinadones fon tres dos de fubitantivos y vnadeajettvos no tiene va riedad alguna de cafos obliques el vocativo es femejante al nominativo ios demas cafos de genitivo da tivo aecufativo y ablativo"
+    },
+    {
+      "id": "grammar-part-iii",
+      "page": 69,
+      "ocrSource": "pdftotext_layout",
+      "referenceWords": 39,
+      "referenceChars": 211,
+      "wordEdits": 21,
+      "charEdits": 76,
+      "wer": 0.5384615384615384,
+      "cer": 0.36018957345971564,
+      "referenceNormalized": "el verbo tiene modos y tiempos no tiene numeros ni personas el numero o persona se expressa siempre o con los relativos a para singular y am para plural o con los semipronombres personales ut suo loco dictum est",
+      "ocrWindowNormalized": "verbo tiene modos y tiempos no ili meros ni perfonas el numero o perfona fe w cxprcffa liempre o con los relativos a para 3 j angular y 4w para plural 6 con los"
+    },
+    {
+      "id": "grammar-part-iv-heading",
+      "page": 105,
+      "ocrSource": "pdftotext_layout",
+      "referenceWords": 8,
+      "referenceChars": 74,
+      "wordEdits": 4,
+      "charEdits": 10,
+      "wer": 0.5,
+      "cer": 0.13513513513513514,
+      "referenceNormalized": "preposiciones adverbios interjecciones y conjunciones de las preposiciones",
+      "ocrWindowNormalized": "preposiciones adverbios inter jecciou y ccmjuoeiooes de lais preposiciones"
+    },
+    {
+      "id": "vocabulary",
+      "page": 134,
+      "ocrSource": "bbox_left_column",
+      "referenceWords": 29,
+      "referenceChars": 217,
+      "wordEdits": 15,
+      "charEdits": 21,
+      "wer": 0.5172413793103449,
+      "cer": 0.0967741935483871,
+      "referenceNormalized": "abofetear achonsu abofeteador iorechoname abogar por otro senuvechi uo noca abogacia nocria abogado yore nocriame l aranocame abollar hepeste abordar a la orilla maloau iumasuc aborrecer caeria aborrecimiento caeriari",
+      "ocrWindowNormalized": "abofetear achonfu abofeteador iorecboriame abogar por otro senuvecbi uo noca aboga cia nocria abogado yore nocr ame i l i axamcame abollar hepebe abordar ala orilla makav iumafuc aborrecer caeria aborrecimiento caeriari"
+    },
+    {
+      "id": "numerals",
+      "page": 178,
+      "ocrSource": "pdftotext_layout",
+      "referenceWords": 22,
+      "referenceChars": 115,
+      "wordEdits": 8,
+      "charEdits": 35,
+      "wer": 0.36363636363636365,
+      "cer": 0.30434782608695654,
+      "referenceNormalized": "todos se declinan por la declinacion de los adjetivos y la cuenta sacada de papeles del padre oton es como se sigue",
+      "ocrWindowNormalized": "por la declinacion de los adjetivos y la cuenta iacada cie papeles del padre oton es"
+    }
+  ],
+  "caveat": "Diagnostic sample only; reference transcription is AI-assisted visual collation and has no independent human verification."
+}

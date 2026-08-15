@@ -12,6 +12,7 @@ Estado de cobertura de Cahíta Histórico Digital para la fuente `ALC1737`.
 | Checksums de archivos fuente de trabajo | **2 / 2** | SHA-256 registrado |
 | Hash OCR por página | **182 / 182** | derivado local `page_manifest_full.csv` |
 | Extracción OCR paginada reproducible | **182 / 182** | producida localmente; no validada filológicamente |
+| Diagnóstico estratificado de OCR | **6 muestras** | micro-CER 25.66%; micro-WER 51.96% |
 | Payload OCR completo versionado en GitHub | **0 / 182** | empaquetado pendiente |
 | Líneas OCR/layout del vocabulario extraídas localmente | **3,899** | páginas 133–177; 61 fusiones de columnas retenidas como `other` |
 | Extracto diplomático IA-asistido | **1 página piloto** | p. digital 134; no validación humana |
@@ -38,6 +39,12 @@ Estado de cobertura de Cahíta Histórico Digital para la fuente `ALC1737`.
 
 La segmentación machine-readable se encuentra en [`data/source/alc1737/sections.json`](data/source/alc1737/sections.json), y el inventario completo página por página en [`data/source/alc1737/page_manifest.csv`](data/source/alc1737/page_manifest.csv).
 
+## Calidad OCR
+
+La muestra inicial de seis estratos confirma que el OCR de entrada debe tratarse como evidencia no validada. El micro-CER normalizado es **25.66%** y el micro-WER **51.96%**. La evaluación, referencias y método están versionados y son reproducibles.
+
+→ [`docs/OCR_QUALITY.md`](docs/OCR_QUALITY.md)
+
 ## Piloto lexicográfico
 
 La página digital 134 dispone ahora de un extracto diplomático IA-asistido y doce registros estructurados. Los doce pasaron validación local contra `schemas/lexical-entry.schema.json`, pero permanecen explícitamente en estado `machine_corrected_unverified`.
@@ -46,7 +53,7 @@ La página digital 134 dispone ahora de un extracto diplomático IA-asistido y d
 
 ## Evidencia visual ya cotejada
 
-Se inspeccionaron de forma dirigida las páginas digitales 3, 11, 13, 14, 15, 51, 69, 105, 132, 133, 134, 178, 180, 181 y 182. Este muestreo incluye todos los límites estructurales principales, las páginas sin OCR significativo y la página del primer piloto lexicográfico.
+Se inspeccionaron de forma dirigida las páginas digitales 3, 11, 13, 14, 15, 51, 69, 105, 132, 133, 134, 178, 180, 181 y 182. Este muestreo incluye todos los límites estructurales principales, las páginas sin OCR significativo, las zonas de evaluación OCR y la página del primer piloto lexicográfico.
 
 ## Interpretación de métricas
 

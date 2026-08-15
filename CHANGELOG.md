@@ -2,6 +2,26 @@
 
 Todos los cambios relevantes de Cahíta Histórico Digital se documentarán en este archivo.
 
+## [0.1.3-dev] - 2026-08-15
+
+### Añadido
+
+- diagnóstico estratificado y reproducible de calidad OCR en seis zonas del volumen;
+- `scripts/evaluate_ocr_sample.py`;
+- referencias de evaluación en `data/validation/ocr_sample_references.json`;
+- resultados versionados en `data/validation/ocr_sample_results.json`;
+- documentación metodológica en `docs/OCR_QUALITY.md`.
+
+### Resultado
+
+La muestra diagnóstica arroja **micro-CER 25.66%** y **micro-WER 51.96%** después de una normalización que mapea `ſ → s`, elimina marcas diacríticas combinantes, minúsculiza y neutraliza puntuación/espaciado. El resultado confirma que el OCR bruto no debe promoverse directamente a corpus científico.
+
+La muestra del vocabulario (p. 134) usa reconstrucción de columna mediante `-bbox-layout` y obtiene CER 9.68% en el fragmento seleccionado; este valor se interpreta como indicio de que la geometría de dos columnas constituye una parte importante del problema, no como tasa global del vocabulario.
+
+### Salvaguardas
+
+Las transcripciones de referencia de la evaluación son cotejos visuales IA-asistidos sin revisión humana independiente. Por tanto, el diagnóstico es una métrica de ingeniería editorial y no una evaluación filológica definitiva.
+
 ## [0.1.2-dev] - 2026-08-15
 
 ### Añadido

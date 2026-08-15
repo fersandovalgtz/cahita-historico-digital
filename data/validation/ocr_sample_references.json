@@ -1,0 +1,42 @@
+{
+  "sourceId": "ALC1737",
+  "normalization": "NFKD; strip combining marks; lowercase; map long-s to s; non-alphanumeric to spaces; collapse whitespace",
+  "samples": [
+    {
+      "id": "grammar-part-i",
+      "page": 15,
+      "ocrSource": "pdftotext_layout",
+      "reference": "Si de ordinario comienzan los Artes por la Syntaxis, este particularmente conviene comenzarse por ella. Y assi de las quatro partes, en que se ha de dividir esta obra, sea la primera, en la que se trata de la formacion de los preteritos, futuros, voz passiva del verbo, formacion de nombres, de verbos, colocacion de palabras, composicion de dicciones, y Syntaxis de la oracion."
+    },
+    {
+      "id": "grammar-part-ii",
+      "page": 51,
+      "ocrSource": "pdftotext_layout",
+      "reference": "Tiene esta lengua nombres substantivos, y adjetivos: sus declinaciones son tres, dos de substantivos, y una de ajetivos: no tiene variedad alguna de casos obliquos, el vocativo es semejante al nominativo: los demas casos de genitivo, dativo, accusativo, y ablativo son semejantes."
+    },
+    {
+      "id": "grammar-part-iii",
+      "page": 69,
+      "ocrSource": "pdftotext_layout",
+      "reference": "El verbo tiene modos, y tiempos, no tiene numeros, ni personas: el numero, o persona se expressa siempre, o con los relativos a, para singular, y am, para plural, o con los semipronombres personales, ut suo loco dictum est."
+    },
+    {
+      "id": "grammar-part-iv-heading",
+      "page": 105,
+      "ocrSource": "pdftotext_layout",
+      "reference": "PREPOSICIONES, ADVERBIOS, INTERJECCIONES, y conjunciones. DE LAS PREPOSICIONES."
+    },
+    {
+      "id": "vocabulary",
+      "page": 134,
+      "ocrSource": "bbox_left_column",
+      "reference": "Abofetear. Achonsu. Abofeteador. Iorechoname. Abogar por otro. Senuvechi-uo-noca. Abogacia. Nocria. Abogado. Yore-nocriame, l, aranocame. Abollar. Hepeste. Abordar a la orilla. Maloau-iumasuc. Aborrecer. Caeria. Aborrecimiento. Caeriari."
+    },
+    {
+      "id": "numerals",
+      "page": 178,
+      "ocrSource": "pdftotext_layout",
+      "reference": "Todos se declinan por la declinacion de los adjetivos, y la cuenta sacada de papeles del Padre Oton, es como se sigue."
+    }
+  ]
+}
