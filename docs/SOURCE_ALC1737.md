@@ -9,58 +9,74 @@
 **Impresor:** D. Francisco Xavier Sánchez  
 **Autoría declarada en portada:** “vn Padre de la Compañía de JESUS, Missionero de mas de treinta años en la Provincia de Cynaloa”  
 **Ejemplar digital de trabajo:** Internet Archive `artedelalenguaca00gonz`  
-**Biblioteca asociada al ejemplar:** John Carter Brown Library, Brown University
+**Biblioteca asociada al ejemplar:** John Carter Brown Library, Brown University  
+**Signatura indicada por el registro:** `B737 .A786d`
 
-## Portada
+## Portada y autoría
 
-La portada impresa no presenta un nombre de autor. Formula el título como un arte de la lengua cahíta “conforme à las reglas de muchos peritos en ella” y declara que fue compuesto por un padre jesuita con más de treinta años de actividad misional en la provincia de Sinaloa/Cynaloa. La impresión se fecha en 1737 y se atribuye a Francisco Xavier Sánchez en México.
+La portada impresa no presenta un nombre personal. Formula el título como un arte de la lengua cahíta “conforme à las reglas de muchos peritos en ella” y declara que fue compuesto por un padre jesuita con más de treinta años de actividad misional en la provincia de Sinaloa/Cynaloa. La impresión se fecha en 1737 y se atribuye a Francisco Xavier Sánchez en México.
 
-Esta formulación es central para CHD por dos motivos: la fuente se presenta como resultado de una tradición de conocimiento acumulado (“muchos peritos”) y, al mismo tiempo, mantiene anónimo al compilador o autor inmediato.
+El registro de Internet Archive cataloga al autor como `unknown` y advierte que la obra ha sido atribuida de distintas maneras a Diego Pablo González y a Tomás Basilio. CHD trata estas atribuciones como **historia catalográfica**, no como sustitución del dato de portada. El problema se desarrolla en [`AUTHORSHIP.md`](AUTHORSHIP.md).
+
+## Descripción bibliográfica del ejemplar digital
+
+El registro de Internet Archive ofrece la descripción física `[12], 118, [52] p., 15 cm (8vo.)`, identifica a la John Carter Brown Library como contribuyente y documenta la procedencia del ejemplar como donación de John Nicholas Brown. También registra que la hoja de erratas fue insertada en la signatura A entre A1 y A2.
+
+Existe una discrepancia técnica que CHD conserva en vez de ocultarla: el campo automatizado `Pages` del registro de Internet Archive indica 184, mientras que el PDF de trabajo contiene **182 páginas digitales** y la descripción física `[12] + 118 + [52]` suma igualmente 182. Esta diferencia se considera un problema de metadatos/digitalización que no afecta por sí sola a la paginación impresa del ejemplar procesado.
 
 ## Organización textual observada
 
-El testimonio digital contiene materiales preliminares, dedicatoria, “Al lector”, cuerpo gramatical, vocabulario y numerales.
+### Preliminares
 
-### “Al lector”
+Las páginas digitales 1–14 contienen cubiertas y preliminares. Entre los elementos identificados se encuentran:
 
-El prólogo caracteriza el trabajo como una obra destinada a explicar la forma de la lengua cahíta y menciona de manera expresa a **Hiaquis, Mayes y Thehuecos**. Señala semejanza de vocablos y diferencias de modo de hablar, y recomienda el uso y la interacción con hablantes como dimensión esencial del aprendizaje.
+- p. 2: ex libris de John Carter Brown Library;
+- p. 3: portada;
+- p. 4: verso de portada con dibujo manuscrito;
+- pp. 5–10: dedicatoria;
+- pp. 11–12: `AL LECTOR`;
+- p. 13: `ERRATA SIC CORRIGE` y abreviaturas para el vocabulario;
+- p. 14: verso de la hoja de erratas, sin texto impreso propio legible.
 
-El mismo prólogo denomina a la obra “tripartita”. Sin embargo, páginas posteriores anuncian “las quatro partes, en que se ha de dividir esta obra” y el ejemplar contiene una sección identificada como `PARTE IV`. CHD preserva esta inconsistencia como dato filológico que exige explicación histórica y editorial.
+### Cuerpo gramatical numerado
 
-### Gramática
+El cuerpo numerado ocupa páginas digitales **15–132** y páginas impresas **1–118**. La relación es `printed_page = digital_page - 14`.
 
-La gramática trata, entre otros asuntos observables en el testimonio:
+| Parte | Páginas digitales | Páginas impresas | Inicio observado |
+|---|---:|---:|---|
+| Parte I | 15–50 | 1–36 | `PROHEMIO` y formación de pretéritos, futuros y voz pasiva |
+| Parte II | 51–68 | 37–54 | nombre, pronombre y semipronombre |
+| Parte III | 69–104 | 55–90 | verbo, participios y materias tocantes al verbo |
+| Parte IV | 105–132 | 91–118 | preposiciones, adverbios, interjecciones y conjunciones |
 
-- formación de pretéritos y futuros;
-- voz pasiva;
-- formación de nombres y verbales;
-- nombres, pronombres y semipronombres;
-- conjugación verbal;
-- preposiciones, adverbios, interjecciones y conjunciones;
-- sintaxis y colocación.
+La página digital 132, impresa 118, termina explícitamente con `FIN DEL ARTE`.
 
-### Vocabulario
+### La tensión “tripartita” / cuatro partes
 
-Tras el cuerpo gramatical aparece un vocabulario castellano–cahíta. Los registros públicos de control describen más de dos mil términos castellanos con equivalentes cahítas. Esta sección constituye uno de los principales objetivos de estructuración de CHD.
+`AL LECTOR` caracteriza el trabajo como obra “tripartita”. Sin embargo, el `PROHEMIO` de la página impresa 1 anuncia “las quatro partes, en que se ha de dividir esta obra”, y el volumen desarrolla cuatro partes. CHD preserva esta inconsistencia como dato filológico potencialmente relevante para la historia de composición o edición.
 
-### Numerales
+### Vocabulario y numerales
 
-El volumen termina con una sección de numerales que incluye cardinales, observaciones de uso atribuidas a distintas “Naciones”, numerales de orden, distributivos y adverbios numerales, seguida de `FIN`.
+El vocabulario castellano–cahíta comienza en la página digital 133 y continúa hasta la 177. La página 178 cierra el orden alfabético y abre `NOMBRES NUMERALES`; las páginas 178–180 reúnen numerales y observaciones relacionadas. La página 180 termina con `FIN`.
 
-## Testimonio digital
+No se afirma todavía un número total de entradas lexicográficas. Ese recuento se publicará únicamente cuando exista segmentación reproducible y criterios explícitos de qué constituye una entrada.
 
-Registro canónico:
+### Finales materiales
 
-https://archive.org/details/artedelalenguaca00gonz
+Las páginas 181 y 182 muestran respectivamente el interior de la cubierta posterior —con marcas y números manuscritos— y la cubierta exterior. Se conservarán como parte material del testimonio, separadas del texto impreso.
 
-El PDF de trabajo utilizado para inicializar CHD contiene **182 páginas digitales**. En las páginas preliminares se observa el ex libris de la John Carter Brown Library.
+## Contenido lingüístico
 
-## Principio de edición
+En `AL LECTOR` se mencionan expresamente **Hiaquis, Mayes y Thehuecos**, con observaciones sobre uniformidad léxica y diferencias de uso. En el cuerpo gramatical aparecen contrastes atribuidos a esas denominaciones, por ejemplo en terminaciones verbales. Estas etiquetas se registran históricamente tal como las utiliza la fuente.
 
-CHD no considera al OCR de Internet Archive una transcripción crítica. El OCR es una capa de entrada que deberá cotejarse contra el facsímil. La tipografía histórica, la `ſ`, las ligaduras, la impresión irregular y los daños o manchas del ejemplar producen errores sistemáticos que deben conservarse como evidencia del procesamiento antes de corregirse.
+CHD no asume automáticamente que una forma histórica sea idéntica a una forma contemporánea ni que las categorías del siglo XVIII coincidan sin residuo con clasificaciones lingüísticas actuales. Las comparaciones diacrónicas futuras deberán vivir en capas derivadas y revisables.
 
-## Identidad lingüística y temporalidad
+## Testimonio digital y OCR
 
-La etiqueta histórica `cahíta` y las denominaciones `Hiaqui`, `Mayo` y `Thehueco` se registran según el impreso. CHD no asume de manera automática que una forma histórica sea idéntica a una forma contemporánea ni que las categorías del siglo XVIII coincidan sin residuo con clasificaciones lingüísticas actuales.
+El PDF de trabajo utilizado para esta fase contiene 182 páginas. La capa textual fue producida por la cadena de digitalización y presenta errores abundantes derivados de tipografía histórica, `ſ`, ligaduras, manchas, transparencia, distribución en columnas y otros rasgos materiales.
 
-Las futuras comparaciones diacrónicas se publicarán como capas derivadas con evidencia y grado de certeza explícitos.
+CHD no considera este OCR una transcripción crítica. La ingestión técnica, hashes y mapeo de páginas se documentan en [`INGESTION_ALC1737.md`](INGESTION_ALC1737.md) y [`../data/source/alc1737/`](../data/source/alc1737/).
+
+## Registro canónico externo
+
+Internet Archive: `https://archive.org/details/artedelalenguaca00gonz`

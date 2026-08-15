@@ -1,84 +1,99 @@
 {
   "sourceId": "ALC1737",
   "digitalPageCount": 182,
-  "status": "provisional_heading_based",
-  "generated": "2026-08-15",
+  "status": "macro_boundaries_visually_sampled_2026-08-15",
+  "printedPagination": {
+    "digitalStart": 15,
+    "digitalEnd": 132,
+    "printedStart": 1,
+    "printedEnd": 118,
+    "formula": "printed_page = digital_page - 14",
+    "verificationPages": [15, 51, 69, 105, 132]
+  },
   "sections": [
     {
       "id": "preliminaries",
       "label": "Preliminares, dedicatoria, Al lector y erratas",
       "digitalPages": {"start": 1, "end": 14},
+      "printedPages": null,
       "evidence": [
         "Title page on digital page 3",
         "Dedicatoria begins on digital page 5",
         "Al lector begins on digital page 11",
-        "Errata sic corrige begins on digital page 13"
+        "Errata sic corrige begins on digital page 13",
+        "Digital page 14 is the verso of the errata leaf and has no substantive printed text"
       ]
     },
     {
       "id": "part_i",
       "label": "Parte I",
       "digitalPages": {"start": 15, "end": 50},
+      "printedPages": {"start": 1, "end": 36},
       "evidence": [
-        "Digital page 15 announces four parts and begins Formación de pretéritos, futuros y voz passiva",
-        "Parte II begins on digital page 51"
+        "Digital page 15 is printed page 1 and begins PROHEMIO / Formación de pretéritos, futuros y voz passiva",
+        "Parte II begins on digital page 51 / printed page 37"
       ]
     },
     {
       "id": "part_ii",
       "label": "Parte II — nombre, pronombre y semipronombre",
       "digitalPages": {"start": 51, "end": 68},
+      "printedPages": {"start": 37, "end": 54},
       "evidence": [
-        "PARTE II heading appears on digital page 51",
-        "PARTE III begins on digital page 69"
+        "PARTE II heading appears on digital page 51 / printed page 37",
+        "PARTE III begins on digital page 69 / printed page 55"
       ]
     },
     {
       "id": "part_iii",
       "label": "Parte III — verbo, participios y materias tocantes al verbo",
       "digitalPages": {"start": 69, "end": 104},
+      "printedPages": {"start": 55, "end": 90},
       "evidence": [
-        "PARTE III heading appears on digital page 69",
-        "Preposiciones, adverbios, interjecciones y conjunciones begins on digital page 105"
+        "PARTE III heading appears on digital page 69 / printed page 55",
+        "Parte IV begins on digital page 105 / printed page 91"
       ]
     },
     {
       "id": "part_iv",
       "label": "Parte IV — preposiciones, adverbios, interjecciones y conjunciones",
       "digitalPages": {"start": 105, "end": 132},
+      "printedPages": {"start": 91, "end": 118},
       "evidence": [
-        "Part IV content begins on digital page 105",
-        "Running header PARTE IV is visible later in the section",
-        "FIN DEL ARTE appears on digital page 132"
+        "IV. ULT. PARTE appears on digital page 105 / printed page 91",
+        "FIN DEL ARTE appears on digital page 132 / printed page 118"
       ]
     },
     {
       "id": "vocabulary",
       "label": "Vocabulario castellano–cahíta",
       "digitalPages": {"start": 133, "end": 177},
+      "printedPages": null,
       "evidence": [
-        "Lexicographic sequence begins on digital page 133 with entries under A",
-        "Running VOCABVLARIO headers continue through the section",
-        "Numerals begin on digital page 178"
+        "Lexicographic sequence begins on digital page 133 under A",
+        "Alphabetical sequence reaches X/Z on digital page 178 before numerals"
       ]
     },
     {
       "id": "numerals",
       "label": "Nombres numerales, numerales de orden, distributivos y adverbios numerales",
       "digitalPages": {"start": 178, "end": 180},
+      "printedPages": null,
       "evidence": [
-        "Nombres numerales heading appears on digital page 178",
+        "NOMBRES NUMERALES begins on digital page 178",
         "FIN appears on digital page 180"
       ]
     },
     {
-      "id": "endmatter",
-      "label": "Páginas finales sin texto sustantivo recuperado",
+      "id": "end_matter",
+      "label": "Finales materiales / cubierta posterior",
       "digitalPages": {"start": 181, "end": 182},
+      "printedPages": null,
       "evidence": [
-        "Parsed text after FIN contains no substantive textual section"
+        "Digital page 181 is the inside back cover with material/manuscript marks",
+        "Digital page 182 is the outer back cover"
       ]
     }
   ],
-  "caveat": "Ranges are provisional and derived from headings and parsed text. They must be confirmed against page images before a closed scholarly release. Printed pagination is not yet mapped."
+  "caveat": "Macro boundaries are visually checked at all section starts/ends listed above. This does not constitute page-by-page philological verification of the text."
 }

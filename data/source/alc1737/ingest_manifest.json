@@ -1,0 +1,47 @@
+{
+  "source_id": "ALC1737",
+  "generated_at_utc": "2026-08-15T21:56:06.260945+00:00",
+  "input_files": [
+    {
+      "name": "Cahíta.pdf",
+      "bytes": 23955938,
+      "sha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+      "role": "working_facsimile_pdf",
+      "pages": 182
+    },
+    {
+      "name": "Cahíta.html",
+      "bytes": 497979,
+      "sha256": "e03f3b34730f737c64cd551a5c14a5095ce243e61c19ccff5358b5c79a45de62",
+      "role": "saved_internet_archive_full_text_page"
+    }
+  ],
+  "derived_files": [
+    {
+      "name": "archive_fulltext_raw.txt",
+      "bytes": 346869,
+      "sha256": "22e344ab8e26d3d161118ba54a718c7bcdbafc1bdb99de07a9d64abf2e93105c",
+      "method": "first <pre> text extracted from saved HTML"
+    },
+    {
+      "name": "ocr_raw_pages.jsonl",
+      "bytes": 541208,
+      "sha256": "7dfcf45f6b4b5f9e6a626105bfa6d83acf3acabc1d154be072a38b580c319912",
+      "records": 182,
+      "method": "pdftotext -layout, one JSON object per PDF page"
+    },
+    {
+      "name": "page_manifest_full.csv",
+      "bytes": 26735,
+      "sha256": "4cdf47db732b8cdd93a8c61336035eef6f67be822b9e0420a1e961bada1b782a",
+      "records": 182
+    }
+  ],
+  "printed_pagination_mapping": {
+    "digital_pages": "15-132",
+    "printed_pages": "1-118",
+    "formula": "printed_page = digital_page - 14",
+    "verification": "sampled visually at digital pages 15, 51, 69, 105 and 132"
+  },
+  "warning": "OCR outputs are evidence layers and are not diplomatic transcriptions."
+}
