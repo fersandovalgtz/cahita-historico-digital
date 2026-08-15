@@ -1,0 +1,55 @@
+{
+  "id": "ALC1737",
+  "project": "Cahíta Histórico Digital",
+  "recordType": "historical-source",
+  "title": "Arte de la lengua cahita conforme à las reglas de muchos peritos en ella",
+  "shortTitle": "Arte de la lengua cahita",
+  "datePublished": "1737",
+  "placePublished": "México",
+  "printer": "D. Francisco Xavier Sánchez",
+  "titlePageAuthorStatement": "vn Padre de la Compañía de JESUS, Missionero de mas de treinta años en la Provincia de Cynaloa",
+  "authorStatus": "anonymous_on_title_page",
+  "attributionStatus": "disputed",
+  "attributedTo": [
+    {
+      "name": "Tomás Basilio",
+      "status": "secondary_attribution"
+    },
+    {
+      "name": "Diego Pablo González",
+      "status": "secondary_attribution"
+    },
+    {
+      "name": "Juan Bautista de Velasco",
+      "status": "catalog_attribution_for_vocabulary"
+    }
+  ],
+  "historicalLanguageLabel": "Cahita",
+  "historicalVarietiesNamedInSource": [
+    "Hiaqui",
+    "Mayo",
+    "Thehueco"
+  ],
+  "contentTypes": [
+    "grammar",
+    "linguistic_examples",
+    "vocabulary",
+    "numerals"
+  ],
+  "digitalWitness": {
+    "provider": "Internet Archive",
+    "identifier": "artedelalenguaca00gonz",
+    "url": "https://archive.org/details/artedelalenguaca00gonz",
+    "workingPdfDigitalPages": 182,
+    "associatedHoldingInstitution": "John Carter Brown Library, Brown University",
+    "catalogCallNumberReportedByBVFE": "B737 .A786d"
+  },
+  "editorialNotes": [
+    "The prologue 'Al lector' describes the work as tripartite, while the body later announces four parts and the witness contains a PARTE IV.",
+    "Authorship is not resolved by CHD; title-page anonymity is preserved and later attributions are modeled separately.",
+    "Historical labels are retained as source data and are not automatically equated with contemporary linguistic identities."
+  ],
+  "projectStatus": "registered_source_pending_reproducible_ingestion",
+  "metadataVersion": "0.1.0",
+  "metadataDate": "2026-08-15"
+}

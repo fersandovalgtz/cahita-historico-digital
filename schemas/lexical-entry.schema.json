@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/lexical-entry.schema.json",
+  "title": "CHD lexical entry",
+  "description": "Contrato inicial para entradas lexicográficas derivadas del vocabulario histórico de ALC1737.",
+  "type": "object",
+  "required": [
+    "id",
+    "sourceId",
+    "sourcePageDigital",
+    "spanishLemmaRaw",
+    "cahitaFormRaw",
+    "reviewStatus"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^ALC1737-lex-[0-9]{6}$"
+    },
+    "sourceId": {
+      "const": "ALC1737"
+    },
+    "sourcePageDigital": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 182
+    },
+    "sourcePagePrinted": {
+      "type": ["string", "null"]
+    },
+    "spanishLemmaRaw": {
+      "type": "string",
+      "minLength": 1
+    },
+    "spanishLemmaNormalized": {
+      "type": ["string", "null"]
+    },
+    "cahitaFormRaw": {
+      "type": "string",
+      "minLength": 1
+    },
+    "cahitaFormNormalized": {
+      "type": ["string", "null"]
+    },
+    "historicalVariety": {
+      "type": "string",
+      "enum": [
+        "unspecified",
+        "Hiaqui",
+        "Mayo",
+        "Thehueco",
+        "other_explicit_source_label"
+      ],
+      "default": "unspecified"
+    },
+    "sourceContext": {
+      "type": ["string", "null"]
+    },
+    "editorialNote": {
+      "type": ["string", "null"]
+    },
+    "reviewStatus": {
+      "type": "string",
+      "enum": [
+        "raw_ocr",
+        "machine_corrected_unverified",
+        "editorial_proposal",
+        "human_verified",
+        "unresolved"
+      ]
+    },
+    "evidenceLayer": {
+      "type": "string",
+      "enum": [
+        "ocr_raw",
+        "diplomatic",
+        "corrected",
+        "normalized",
+        "structured"
+      ]
+    },
+    "confidence": {
+      "type": ["number", "null"],
+      "minimum": 0,
+      "maximum": 1
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "derivedFrom": {"type": ["string", "null"]},
+        "agent": {"type": ["string", "null"]},
+        "processedAt": {"type": ["string", "null"], "format": "date-time"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}
