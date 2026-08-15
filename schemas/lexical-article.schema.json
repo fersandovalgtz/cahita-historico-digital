@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/lexical-article.schema.json",
+  "title": "CHD historical lexical article",
+  "description": "Source-faithful structural representation of one historical vocabulary article before lexeme-level normalization or modern linguistic interpretation.",
+  "type": "object",
+  "required": [
+    "articleId", "sourceId", "sourcePageDigital", "column", "articleType",
+    "transcriptionRaw", "reviewStatus", "humanVerified", "provenance"
+  ],
+  "properties": {
+    "articleId": {
+      "type": "string",
+      "pattern": "^ALC1737-art-[0-9]{6}$"
+    },
+    "sourceId": {"const": "ALC1737"},
+    "sourcePageDigital": {"type": "integer", "minimum": 133, "maximum": 177},
+    "sourcePagePrinted": {"type": ["string", "null"]},
+    "column": {"enum": ["left", "right"]},
+    "continuesFromPreviousPage": {"type": "boolean", "default": false},
+    "continuesToNextPage": {"type": "boolean", "default": false},
+    "derivedFromCandidates": {
+      "type": "array",
+      "items": {"type": "string", "pattern": "^ALC1737-vcand-p[0-9]{3}-[LR]-[0-9]{3}$"},
+      "uniqueItems": true
+    },
+    "articleType": {
+      "type": "string",
+      "enum": ["equivalence", "cross_reference", "mixed", "descriptive", "unresolved"]
+    },
+    "spanishGuideRaw": {"type": ["string", "null"]},
+    "cahitaFormsRaw": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["formRaw"],
+        "properties": {
+          "formRaw": {"type": "string", "minLength": 1},
+          "sourceQualifierRaw": {"type": ["string", "null"]},
+          "historicalVariety": {
+            "type": "string",
+            "enum": ["unspecified", "Hiaqui", "Mayo", "Thehueco", "other_explicit_source_label"]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "crossReferences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["markerRaw", "targetRaw"],
+        "properties": {
+          "markerRaw": {"type": "string", "minLength": 1},
+          "targetRaw": {"type": "string", "minLength": 1},
+          "relation": {"type": "string", "enum": ["see", "same_as", "other_unresolved"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "abbreviationsRaw": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "notesRaw": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1}
+    },
+    "transcriptionRaw": {"type": "string", "minLength": 1},
+    "editorialNote": {"type": ["string", "null"]},
+    "reviewStatus": {
+      "type": "string",
+      "enum": ["machine_corrected_unverified", "editorial_proposal", "human_verified", "unresolved"]
+    },
+    "humanVerified": {"type": "boolean"},
+    "provenance": {
+      "type": "object",
+      "required": ["derivedFrom", "agent", "method"],
+      "properties": {
+        "derivedFrom": {"type": "string", "minLength": 1},
+        "agent": {"type": "string", "minLength": 1},
+        "method": {"type": "string", "minLength": 1},
+        "processedAt": {"type": ["string", "null"], "format": "date-time"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"reviewStatus": {"const": "human_verified"}}},
+      "then": {"properties": {"humanVerified": {"const": true}}}
+    },
+    {
+      "if": {"properties": {"humanVerified": {"const": true}}},
+      "then": {"properties": {"reviewStatus": {"const": "human_verified"}}}
+    },
+    {
+      "if": {"properties": {"articleType": {"const": "cross_reference"}}},
+      "then": {"required": ["crossReferences"]}
+    },
+    {
+      "if": {"properties": {"articleType": {"const": "equivalence"}}},
+      "then": {"required": ["spanishGuideRaw", "cahitaFormsRaw"]}
+    }
+  ],
+  "additionalProperties": false
+}

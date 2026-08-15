@@ -1,0 +1,91 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 134,
+  "candidateMethod": "hybrid_margin_mode_v0.2",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "candidateCount": 37,
+  "visibleArticleStarts": 43,
+  "defaultStartDecision": "valid_start",
+  "defaultGroupDecision": "accept_group",
+  "groupExceptions": [
+    {
+      "candidateId": "ALC1737-vcand-p134-L-010",
+      "groupDecision": "split_group",
+      "resultingArticleCount": 2,
+      "note": "Candidate begins at Aborrecimiento and also contains the visible new article Aborrecedor."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p134-L-012",
+      "groupDecision": "trim_group",
+      "resultingArticleCount": 1,
+      "note": "Candidate begins at Abortadura tal; trailing OCR fragment belongs to the omitted following article Abotonarſe la flor."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p134-L-019",
+      "groupDecision": "trim_group",
+      "resultingArticleCount": 1,
+      "note": "Candidate begins at Abrigar à otro con ropa; trailing OCR fragment belongs to the omitted following article Abrigarſe para defenderſe."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p134-R-001",
+      "groupDecision": "trim_group",
+      "resultingArticleCount": 1,
+      "note": "Candidate begins at Abrego viento; trailing OCR Aiepji-/ca* is cross-column contamination."
+    }
+  ],
+  "missedStarts": [
+    {
+      "column": "left",
+      "label": "Aborrecedor",
+      "recovery": "split_from_candidate",
+      "relatedCandidateId": "ALC1737-vcand-p134-L-010"
+    },
+    {
+      "column": "left",
+      "label": "Abotonarſe la flor",
+      "recovery": "manual_start_required",
+      "relatedCandidateId": "ALC1737-vcand-p134-L-012"
+    },
+    {
+      "column": "left",
+      "label": "Abrigarſe para defenderſe",
+      "recovery": "manual_start_required",
+      "relatedCandidateId": "ALC1737-vcand-p134-L-019"
+    },
+    {
+      "column": "right",
+      "label": "Abuela paterna",
+      "recovery": "manual_start_required",
+      "relatedCandidateId": "ALC1737-vcand-p134-R-011"
+    },
+    {
+      "column": "right",
+      "label": "Abuela tercera",
+      "recovery": "manual_start_required",
+      "relatedCandidateId": "ALC1737-vcand-p134-R-018"
+    },
+    {
+      "column": "right",
+      "label": "Abuba-",
+      "recovery": "manual_start_required_page_continuation",
+      "relatedCandidateId": "ALC1737-vcand-p134-R-018",
+      "note": "Article begins at the foot of p. 134 and continues on p. 135."
+    }
+  ],
+  "summary": {
+    "candidateStartsReviewed": 37,
+    "validCandidateStarts": 37,
+    "falseCandidateStarts": 0,
+    "cleanAcceptGroups": 33,
+    "splitGroups": 1,
+    "trimGroups": 3,
+    "missedStarts": 6,
+    "recoverableArticleStartsAfterReview": 43
+  },
+  "provenance": {
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "AI-assisted visual boundary review against rendered p. 134 facsimile at 300 dpi; no independent human verification",
+    "processedAt": null
+  }
+}
