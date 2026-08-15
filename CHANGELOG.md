@@ -2,6 +2,25 @@
 
 Todos los cambios relevantes de Cahíta Histórico Digital se documentarán en este archivo.
 
+## [0.1.5-dev] - 2026-08-15
+
+### Mejorado
+
+- `scripts/extract_vocab_candidates.py` pasa a `hybrid_margin_mode_v0.2`;
+- el método utiliza margen modal en pp. 134–177 y conserva el criterio v0.1 en la primera página del vocabulario, p. 133;
+- el esquema de candidatos conserva compatibilidad con `indentation_margin_v0.1` y añade metadatos de regla de página y margen estimado;
+- se documenta la comparación v0.1/v0.2 en `docs/VOCAB_BOUNDARY_V02.md` y `data/lexicon/review/boundary_algorithm_comparison.json`.
+
+### Resultado
+
+La corrida v0.2 sobre pp. 133–177 produjo **2,072 candidatos**: 1,055 en columna izquierda y 1,017 en derecha. Los **2,072 / 2,072** objetos pasaron validación estructural. El JSONL derivado completo tiene SHA-256 `f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3`.
+
+Sobre la misma muestra diagnóstica de pp. 133, 134, 150 y 177, v0.2 mejora la evaluación de comienzos de artículo de **95.32% / 86.70% / 90.81%** a **97.13% / 89.89% / 93.37%** en precisión / recall / F1.
+
+### Salvaguardas
+
+La cifra 2,072 sigue siendo un número de **candidatos computacionales**, no de entradas históricas. La muestra de evaluación es intencional y el cotejo visual es IA-asistido, sin revisión humana independiente. La versión v0.1 permanece preservada en el historial y mediante hashes documentados.
+
 ## [0.1.4-dev] - 2026-08-15
 
 ### Añadido

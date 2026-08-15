@@ -1,0 +1,57 @@
+{
+  "sourceId": "ALC1737",
+  "evaluationStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "samplePages": [133, 134, 150, 177],
+  "v0_1": {
+    "method": "indentation_margin_v0.1",
+    "fullVocabularyCandidateCount": 1680,
+    "sample": {
+      "truePositives": 163,
+      "falsePositives": 8,
+      "falseNegatives": 25,
+      "precision": 0.9532163742690059,
+      "recall": 0.8670212765957447,
+      "f1": 0.9080779944289693
+    }
+  },
+  "v0_2": {
+    "method": "hybrid_margin_mode_v0.2",
+    "fullVocabularyCandidateCount": 2072,
+    "fullVocabularyCandidateSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3",
+    "fullVocabularyCandidateBytes": 997356,
+    "fullVocabularyValidation": "2072/2072 JSON objects valid against vocabulary-candidate.schema.json",
+    "columns": {"left": 1055, "right": 1017},
+    "pageCount": 45,
+    "minCandidatesPerPage": 24,
+    "maxCandidatesPerPage": 61,
+    "meanCandidatesPerPage": 46.044444444444444,
+    "sample": {
+      "pageResults": [
+        {"page": 133, "truePositives": 20, "falsePositives": 4, "falseNegatives": 9},
+        {"page": 134, "truePositives": 37, "falsePositives": 0, "falseNegatives": 6},
+        {"page": 150, "truePositives": 55, "falsePositives": 1, "falseNegatives": 1},
+        {"page": 177, "truePositives": 57, "falsePositives": 0, "falseNegatives": 3}
+      ],
+      "truePositives": 169,
+      "falsePositives": 5,
+      "falseNegatives": 19,
+      "precision": 0.9712643678160919,
+      "recall": 0.898936170212766,
+      "f1": 0.9337016574585635
+    },
+    "p134Sample": {
+      "candidateCount": 37,
+      "sha256": "669276c5126288fbed088fc45a8bd666548cd3b655d33adadffaf25bcff39d49",
+      "bytes": 18277
+    }
+  },
+  "delta": {
+    "fullVocabularyCandidates": 392,
+    "samplePrecisionPoints": 1.804799354807398,
+    "sampleRecallPoints": 3.1913483617021285,
+    "sampleF1Points": 2.562366302959418
+  },
+  "decision": "Adopt hybrid_margin_mode_v0.2 as the current candidate-generation method while preserving v0.1 in Git history and documented hashes. Candidate counts remain computational estimates, not historical entry counts.",
+  "caveat": "The evaluation sample is purposive and AI-assisted. It is not a probability sample and has no independent human verification."
+}

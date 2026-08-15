@@ -6,7 +6,7 @@
   "type": "object",
   "required": [
     "candidateId", "sourceId", "sourcePageDigital", "column",
-    "candidateOrderInColumn", "lineCount", "rawLines", "rawText",
+    "candidateOrderInColumn", "startY", "lineCount", "rawLines", "rawText",
     "boundaryMethod", "boundaryStatus", "reviewStatus", "flags"
   ],
   "properties": {
@@ -20,10 +20,24 @@
     "lineCount": {"type": "integer", "minimum": 1},
     "rawLines": {"type": "array", "minItems": 1, "items": {"type": "string"}},
     "rawText": {"type": "string", "minLength": 1},
-    "boundaryMethod": {"const": "indentation_margin_v0.1"},
+    "boundaryMethod": {
+      "type": "string",
+      "enum": ["indentation_margin_v0.1", "hybrid_margin_mode_v0.2"]
+    },
+    "pageRule": {
+      "type": "string",
+      "enum": ["legacy_first_vocabulary_page", "modal_margin"]
+    },
+    "estimatedStartMarginX": {"type": "number"},
     "boundaryStatus": {"const": "machine_candidate"},
     "reviewStatus": {"const": "raw_ocr"},
     "flags": {"type": "array", "items": {"type": "string"}}
   },
+  "allOf": [
+    {
+      "if": {"properties": {"boundaryMethod": {"const": "hybrid_margin_mode_v0.2"}}},
+      "then": {"required": ["pageRule", "estimatedStartMarginX"]}
+    }
+  ],
   "additionalProperties": false
 }

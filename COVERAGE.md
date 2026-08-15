@@ -10,20 +10,17 @@ Estado de cobertura de Cahíta Histórico Digital para la fuente `ALC1737`.
 | Segmentación macro por secciones | **182 / 182** | fronteras cotejadas visualmente |
 | Páginas impresas numeradas mapeadas | **118 / 118** | digital 15–132 ↔ impresa 1–118 |
 | Checksums de archivos fuente de trabajo | **2 / 2** | SHA-256 registrado |
-| Hash OCR por página | **182 / 182** | derivado local `page_manifest_full.csv` |
-| Extracción OCR paginada reproducible | **182 / 182** | producida localmente; no validada filológicamente |
+| Extracción OCR paginada reproducible | **182 / 182** | derivado reproducible, no transcripción |
 | Diagnóstico estratificado de OCR | **6 muestras** | micro-CER 25.66%; micro-WER 51.96% |
-| Payload OCR completo versionado en GitHub | **0 / 182** | empaquetado pendiente |
-| Líneas OCR/layout del vocabulario extraídas localmente | **3,899** | páginas 133–177; 61 fusiones de columnas retenidas como `other` |
-| Candidatos de límites de artículo | **1,680** | 45 páginas; `machine_candidate`, no recuento de entradas |
-| Candidatos de artículo versionados como muestra | **38** | página digital 134 |
-| Extracto diplomático IA-asistido | **1 página piloto** | p. digital 134; no validación humana |
+| Líneas OCR/layout del vocabulario | **3,899** | pp. 133–177; 61 líneas `other` por fusiones/ambigüedad |
+| Candidatos v0.1 | **1,680** | método histórico preservado en Git/hashes |
+| Candidatos v0.2 vigentes | **2,072** | 45 páginas; 2,072/2,072 válidos por JSON Schema |
+| Muestra de evaluación v0.2 | **4 páginas / 188 comienzos visibles** | diagnóstica, IA-asistida |
+| Precisión / recall / F1 v0.2 | **97.13% / 89.89% / 93.37%** | inicios de artículo, muestra no probabilística |
+| Transcripciones diplomáticas completas | **1 página** | p. 3, `machine_corrected_unverified` |
+| Extractos diplomáticos | **1 página** | p. 134, piloto |
 | Entradas lexicográficas piloto estructuradas | **12** | JSON Schema válido; `machine_corrected_unverified` |
 | Entradas lexicográficas de producción | **0** | ninguna promovida todavía |
-| Transcripción diplomática completa | **0 / 182** | pendiente |
-| Transcripción corregida completa | **0 / 182** | pendiente |
-| Normalización | **0 / 182** | pendiente |
-| Ejemplos gramaticales estructurados | **0** | pendiente |
 | Revisión humana independiente | **0** | no iniciada |
 
 ## Segmentación confirmada a nivel macro
@@ -39,7 +36,7 @@ Estado de cobertura de Cahíta Histórico Digital para la fuente `ALC1737`.
 | Numerales | 178–180 | no paginados |
 | Cubierta posterior / finales materiales | 181–182 | no paginados |
 
-La segmentación machine-readable se encuentra en [`data/source/alc1737/sections.json`](data/source/alc1737/sections.json), y el inventario completo página por página en [`data/source/alc1737/page_manifest.csv`](data/source/alc1737/page_manifest.csv).
+La segmentación máquina-legible se encuentra en [`data/source/alc1737/sections.json`](data/source/alc1737/sections.json), y el inventario página por página en [`data/source/alc1737/page_manifest.csv`](data/source/alc1737/page_manifest.csv).
 
 ## Calidad OCR
 
@@ -47,26 +44,24 @@ La muestra inicial de seis estratos confirma que el OCR de entrada debe tratarse
 
 → [`docs/OCR_QUALITY.md`](docs/OCR_QUALITY.md)
 
-## Candidatos lexicográficos
+## Candidatos lexicográficos v0.2
 
-El vocabulario ya cuenta con una capa reproducible entre OCR/layout y entrada estructurada. `scripts/extract_vocab_candidates.py` produjo **1,680 candidatos de límites de artículo** sobre las páginas 133–177. Esos objetos no afirman todavía lema ni forma cahíta y no deben citarse como número de entradas de la obra.
+`hybrid_margin_mode_v0.2` es el método vigente de generación de candidatos. La corrida completa sobre pp. 133–177 produjo **2,072 candidatos**, frente a 1,680 en v0.1. El aumento se interpreta como mejora de recuperación de fronteras, no como incremento del número de entradas históricas.
 
-La página 134 aporta una muestra versionada de **38 candidatos** que permite auditar tanto agrupamientos plausibles como falsas fronteras. El esquema específico impide confundir formalmente esta capa con `lexical-entry`.
+Sobre las mismas páginas de evaluación 133, 134, 150 y 177, v0.2 registra TP=169, FP=5 y FN=19: precisión **97.13%**, recall **89.89%**, F1 **93.37%**. v0.1 había obtenido 95.32%, 86.70% y 90.81%, respectivamente.
 
-→ [`docs/VOCAB_CANDIDATES.md`](docs/VOCAB_CANDIDATES.md)
+La muestra es diagnóstica e intencional; sus referencias son cotejos visuales IA-asistidos sin revisión humana independiente.
 
-## Piloto lexicográfico
+→ [`docs/VOCAB_BOUNDARY_V02.md`](docs/VOCAB_BOUNDARY_V02.md) · [`data/lexicon/review/boundary_algorithm_comparison.json`](data/lexicon/review/boundary_algorithm_comparison.json)
 
-La página digital 134 dispone de un extracto diplomático IA-asistido y doce registros estructurados. Los doce pasaron validación local contra `schemas/lexical-entry.schema.json`, pero permanecen explícitamente en estado `machine_corrected_unverified`.
+## Transcripción
 
-→ [`docs/PILOT_LEXICON_P134.md`](docs/PILOT_LEXICON_P134.md)
+La Fase 2 usa una unidad JSON por página y un manifiesto de 182 filas en [`data/transcription/status.csv`](data/transcription/status.csv). La portada, p. digital 3, ya tiene cobertura `full_page` del texto impreso; p. 134 conserva un extracto piloto. Ninguna de estas unidades está declarada `human_verified`.
 
-## Evidencia visual ya cotejada
-
-Se inspeccionaron de forma dirigida las páginas digitales 3, 11, 13, 14, 15, 51, 69, 105, 132, 133, 134, 178, 180, 181 y 182. Este muestreo incluye todos los límites estructurales principales, las páginas sin OCR significativo, las zonas de evaluación OCR y la página del primer piloto lexicográfico.
+→ [`docs/TRANSCRIPTION_MODEL.md`](docs/TRANSCRIPTION_MODEL.md)
 
 ## Interpretación de métricas
 
-`OCR extraído` significa únicamente que se pudo recuperar la capa textual automática del PDF. No implica exactitud filológica. `Hash OCR por página` permite detectar cambios bit a bit en la extracción y volver a localizar una unidad en la cadena de procesamiento.
+`OCR extraído` significa recuperación automática de una capa textual, no exactitud filológica. `Candidato de límites de artículo` significa una propuesta geométrica que requiere revisión. `Entrada piloto estructurada` significa que el contrato de datos funciona; no equivale a entrada publicada o validada.
 
-`Candidato de límites de artículo` significa una agrupación geométrica que requiere revisión. `Entrada piloto estructurada` tampoco equivale a entrada validada. Ambas capas prueban contratos de datos, trazabilidad y flujo editorial antes de escalar la edición.
+Las cifras de cobertura deben leerse siempre junto con el **estado de autoridad** de la capa que describen.

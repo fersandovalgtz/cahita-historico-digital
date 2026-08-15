@@ -4,11 +4,12 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/estado-0.1.4--dev-6b7280?style=flat-square" alt="Estado 0.1.4-dev">
+  <img src="https://img.shields.io/badge/estado-0.1.5--dev-6b7280?style=flat-square" alt="Estado 0.1.5-dev">
   <img src="https://img.shields.io/badge/fuente-1737-7a263a?style=flat-square" alt="Fuente 1737">
   <img src="https://img.shields.io/badge/páginas-182%2F182-2d6a4f?style=flat-square" alt="182 de 182 páginas inventariadas">
   <img src="https://img.shields.io/badge/OCR%20micro--CER-25.66%25-b7791f?style=flat-square" alt="Micro CER OCR 25.66%">
-  <img src="https://img.shields.io/badge/candidatos-1%2C680-455B55?style=flat-square" alt="1680 candidatos de límites de artículo">
+  <img src="https://img.shields.io/badge/candidatos%20v0.2-2%2C072-455B55?style=flat-square" alt="2072 candidatos de límites de artículo v0.2">
+  <img src="https://img.shields.io/badge/F1%20fronteras-93.37%25-455B55?style=flat-square" alt="F1 diagnóstico de fronteras 93.37%">
   <a href="DATA_LICENSE.md"><img src="https://img.shields.io/badge/datos-CC%20BY%204.0-9a6b1f?style=flat-square" alt="Datos CC BY 4.0"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/código-MIT-172033?style=flat-square" alt="Código MIT"></a>
   <a href="https://orcid.org/0000-0002-3168-6725"><img src="https://img.shields.io/badge/ORCID-0000--0002--3168--6725-A6CE39?style=flat-square&logo=orcid&logoColor=white" alt="ORCID"></a>
@@ -18,7 +19,8 @@
   <a href="docs/SOURCE_ALC1737.md"><strong>Fuente histórica</strong></a> ·
   <a href="COVERAGE.md"><strong>Cobertura</strong></a> ·
   <a href="docs/OCR_QUALITY.md"><strong>Calidad OCR</strong></a> ·
-  <a href="docs/VOCAB_CANDIDATES.md"><strong>Vocabulario</strong></a> ·
+  <a href="docs/VOCAB_BOUNDARY_V02.md"><strong>Fronteras v0.2</strong></a> ·
+  <a href="docs/TRANSCRIPTION_MODEL.md"><strong>Transcripción</strong></a> ·
   <a href="EDITORIAL_POLICY.md"><strong>Política editorial</strong></a> ·
   <a href="PROVENANCE.md"><strong>Procedencia</strong></a> ·
   <a href="ROADMAP.md"><strong>Hoja de ruta</strong></a> ·
@@ -31,13 +33,11 @@
 
 **Cahíta Histórico Digital (CHD)** es una infraestructura de investigación destinada a transformar testimonios históricos sobre la lengua cahíta y las variedades documentadas por sus fuentes en objetos digitales **trazables, versionados, citables, interoperables y reproducibles**. El proyecto mantiene separadas la reproducción histórica, el OCR, la reconstrucción de layout, la segmentación, la transcripción, la normalización, los datos estructurados y las inferencias analíticas.
 
-La fuente inicial es el *Arte de la lengua cahita conforme à las reglas de muchos peritos en ella*, impreso en México en 1737 por Francisco Xavier Sánchez. La portada no declara un autor personal: atribuye la obra a “vn Padre de la Compañía de JESUS, Missionero de mas de treinta años en la Provincia de Cynaloa”. Por ello, CHD conserva la **anonimia de la fuente primaria** y registra por separado la historia de atribuciones posteriores, sin convertir una atribución discutida en autoría resuelta.
+La fuente inicial es el *Arte de la lengua cahita conforme à las reglas de muchos peritos en ella*, impreso en México en 1737 por Francisco Xavier Sánchez. La portada no declara un autor personal: atribuye la obra a “vn Padre de la Compañía de JESUS, Missionero de mas de treinta años en la Provincia de Cynaloa”. CHD conserva esa **anonimia de la fuente primaria** y registra por separado la historia de atribuciones posteriores, sin convertir una atribución discutida en autoría resuelta.
 
 El testimonio inicial se identifica internamente como **`ALC1737`**. La arquitectura permite incorporar futuras fuentes cahítas sin mezclar obras, ediciones, ejemplares, capas editoriales ni estados de autoridad.
 
 ## Fuente ALC1737
-
-**Referencia primaria de trabajo:**
 
 > *Arte de la lengua cahita conforme à las reglas de muchos peritos en ella. Compuesto por vn Padre de la Compañía de JESUS, Missionero de mas de treinta años en la Provincia de Cynaloa.* México: Imprenta de D. Francisco Xavier Sánchez, 1737.
 
@@ -51,26 +51,27 @@ Un problema filológico de interés aparece en la organización declarada del im
 
 ## Estado científico actual
 
-CHD se encuentra en desarrollo **`0.1.4-dev`**. La ingestión y el modelado inicial ya permiten auditar el proceso, pero el repositorio **no declara todavía una edición filológica cerrada**.
+CHD se encuentra en desarrollo **`0.1.5-dev`**. La Fase 1 de ingestión quedó cerrada y están activas la transcripción histórico-digital y el modelado lexicográfico. El repositorio **no declara todavía una edición filológica cerrada**.
 
 | Dimensión | Estado |
 |---|---:|
 | Páginas digitales inventariadas | **182 / 182** |
 | Páginas impresas numeradas mapeadas | **118 / 118** |
 | Segmentación macro | **182 / 182** |
-| Checksums de archivos fuente de trabajo | **2 / 2** |
 | Extracción OCR reproducible | **182 / 182** |
-| Muestra de calidad OCR | **6 estratos** |
 | Micro-CER OCR normalizado | **25.66%** |
 | Micro-WER OCR normalizado | **51.96%** |
-| Líneas OCR/layout del vocabulario extraídas localmente | **3,899** |
-| Candidatos de límites de artículo | **1,680** |
-| Candidatos versionados como muestra | **38** |
+| Líneas OCR/layout del vocabulario | **3,899** |
+| Candidatos de frontera v0.2 | **2,072** |
+| Validación estructural de candidatos v0.2 | **2,072 / 2,072** |
+| F1 diagnóstico de fronteras v0.2 | **93.37%** |
+| Páginas con transcripción diplomática completa | **1** |
+| Páginas con extracto diplomático piloto | **1** |
 | Entradas lexicográficas piloto | **12** |
-| Entradas de producción | **0** |
+| Entradas lexicográficas de producción | **0** |
 | Revisión humana independiente | **0** |
 
-Las cifras `3,899` y `1,680` describen **capas computacionales**, no el número de entradas del vocabulario histórico. Los 12 registros piloto están marcados `machine_corrected_unverified`; ninguno es `human_verified`.
+Las cifras `3,899` y `2,072` describen **capas computacionales**, no el número de entradas del vocabulario histórico. Las métricas de fronteras proceden de una muestra diagnóstica intencional y de cotejo visual IA-asistido; no son una estimación probabilística de todo el volumen. Los 12 registros lexicográficos piloto siguen marcados `machine_corrected_unverified`.
 
 → [Cobertura y significado de las métricas](COVERAGE.md)
 
@@ -88,7 +89,7 @@ Cinco reglas gobiernan el proyecto:
 4. **La autoridad está tipada.** OCR, candidato computacional, corrección IA-asistida, propuesta editorial y revisión humana no son estados intercambiables.
 5. **La comparación diacrónica es una inferencia.** Ninguna forma histórica se declara automáticamente equivalente a una forma contemporánea.
 
-Documentos normativos: [EDITORIAL_POLICY.md](EDITORIAL_POLICY.md) · [PROVENANCE.md](PROVENANCE.md) · [DATASHEET.md](DATASHEET.md) · [docs/TRANSCRIPTION_CONVENTIONS.md](docs/TRANSCRIPTION_CONVENTIONS.md).
+Documentos normativos: [EDITORIAL_POLICY.md](EDITORIAL_POLICY.md) · [PROVENANCE.md](PROVENANCE.md) · [DATASHEET.md](DATASHEET.md) · [docs/TRANSCRIPTION_CONVENTIONS.md](docs/TRANSCRIPTION_CONVENTIONS.md) · [docs/DERIVED_ARTIFACTS_POLICY.md](docs/DERIVED_ARTIFACTS_POLICY.md).
 
 ## Paginación y estructura del volumen
 
@@ -113,25 +114,29 @@ El inventario máquina-legible se conserva en [`data/source/alc1737/page_manifes
 
 ## OCR: por qué no se usa como transcripción
 
-Una evaluación estratificada en seis zonas del volumen produjo un **micro-CER de 25.66%** y un **micro-WER de 51.96%** después de neutralizar `ſ/s`, diacríticos, mayúsculas y puntuación. El resultado confirma que el OCR bruto es útil como capa de recuperación y alineación, pero no puede promoverse directamente a texto científico.
-
-En el vocabulario, la reconstrucción previa de las dos columnas mejora sustancialmente el fragmento probado, lo que indica que la geometría de la página es parte importante del problema. Esta observación guía el pipeline, pero no se extrapola como tasa global.
+Una evaluación estratificada en seis zonas del volumen produjo un **micro-CER de 25.66%** y un **micro-WER de 51.96%** después de neutralizar `ſ/s`, diacríticos, mayúsculas y puntuación. El OCR bruto es útil como capa de recuperación y alineación, pero no puede promoverse directamente a texto científico.
 
 → [Diagnóstico, muestra y método reproducible](docs/OCR_QUALITY.md)
 
-## Vocabulario: de la página al artículo
+## Vocabulario: del layout al artículo
 
-El vocabulario utiliza dos columnas y admite artículos multilínea. `scripts/extract_vocab_layout.py` conserva líneas OCR, coordenadas y columna; `scripts/extract_vocab_candidates.py` genera después agrupaciones **conservadoras** basadas en indentación.
+El vocabulario utiliza dos columnas y admite artículos multilínea. `scripts/extract_vocab_layout.py` conserva líneas OCR, coordenadas y columna. `scripts/extract_vocab_candidates.py`, actualmente en **`hybrid_margin_mode_v0.2`**, propone después fronteras conservadoras de artículo.
 
-La corrida completa de páginas 133–177 produjo **1,680 candidatos de límites de artículo**, todos validados estructuralmente contra un esquema específico. Esta capa no separa todavía lema castellano y forma cahíta y no se presenta como censo lexicográfico.
+La versión v0.2 produjo **2,072 candidatos** en las páginas 133–177. Sobre la misma muestra diagnóstica usada para v0.1, mejoró de **95.32% / 86.70% / 90.81%** a **97.13% / 89.89% / 93.37%** en precisión / recall / F1 de inicios de artículo. La mejora no autoriza a interpretar los 2,072 candidatos como entradas: la siguiente capa sigue siendo la **revisión de fronteras y agrupación interna**.
 
-Una muestra de 38 candidatos de la página 134 está versionada para mostrar tanto aciertos como falsas fronteras. La existencia visible de errores es deliberada: permite evaluar el algoritmo antes de escalar una corrección.
+→ [Extractor v0.2 y comparación](docs/VOCAB_BOUNDARY_V02.md) · [Protocolo de revisión](docs/VOCAB_REVIEW_PROTOCOL.md) · [Evaluación v0.1](docs/VOCAB_BOUNDARY_EVALUATION.md)
 
-→ [Candidatos y limitaciones](docs/VOCAB_CANDIDATES.md) · [Piloto de 12 entradas](docs/PILOT_LEXICON_P134.md)
+## Transcripción por página
+
+La unidad maestra de la Fase 2 es la página digital. `schemas/page-transcription.schema.json` tipa cobertura, alcance, texto diplomático, incertidumbres, notas materiales, procedencia y estado de revisión. `data/transcription/status.csv` mantiene una fila por cada una de las 182 páginas.
+
+La portada (página digital 3) dispone ya de una transcripción diplomática completa del texto impreso; la página 134 conserva un extracto piloto. Ambas son IA-asistidas y **no** se presentan como `human_verified`.
+
+→ [Modelo de transcripción](docs/TRANSCRIPTION_MODEL.md)
 
 ## Reproducibilidad
 
-La ingestión puede reconstruirse localmente a partir de los dos archivos de trabajo identificados por SHA-256. El repositorio incluye scripts para:
+El repositorio incluye scripts versionados para:
 
 - calcular hashes e inventariar las 182 páginas;
 - extraer OCR por página;
@@ -140,40 +145,9 @@ La ingestión puede reconstruirse localmente a partir de los dos archivos de tra
 - validar JSONL contra JSON Schema;
 - medir CER/WER sobre una muestra versionada.
 
-→ [Ingestión reproducible](docs/INGESTION_ALC1737.md) · [`scripts/`](scripts/) · [`schemas/`](schemas/)
+Los artefactos masivos regenerables pueden conservarse fuera de Git cuando sus fuentes, receta y SHA-256 están fijados. Esta política evita confundir datos curatoriales con salidas intermedias sin perder reproducibilidad.
 
-## Estructura principal
-
-```text
-cahita-historico-digital/
-├── README.md
-├── CITATION.cff
-├── codemeta.json
-├── DATASHEET.md
-├── EDITORIAL_POLICY.md
-├── PROVENANCE.md
-├── COVERAGE.md
-├── SOURCES.md
-├── ROADMAP.md
-├── CHANGELOG.md
-├── docs/
-│   ├── SOURCE_ALC1737.md
-│   ├── AUTHORSHIP.md
-│   ├── INGESTION_ALC1737.md
-│   ├── TRANSCRIPTION_CONVENTIONS.md
-│   ├── OCR_QUALITY.md
-│   ├── VOCAB_CANDIDATES.md
-│   ├── PILOT_LEXICON_P134.md
-│   └── ECOSYSTEM.md
-├── data/
-│   ├── source/alc1737/
-│   ├── diplomatic/pilot/
-│   ├── lexicon/pilot/
-│   ├── lexicon/candidates/
-│   └── validation/
-├── schemas/
-└── scripts/
-```
+→ [Ingestión reproducible](docs/INGESTION_ALC1737.md) · [Política de derivados](docs/DERIVED_ARTIFACTS_POLICY.md) · [`scripts/`](scripts/) · [`schemas/`](schemas/)
 
 ## Citación
 
