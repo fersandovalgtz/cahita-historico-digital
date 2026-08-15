@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/vocabulary-candidate.schema.json",
+  "title": "CHD vocabulary article-boundary candidate",
+  "description": "Conservative OCR/layout grouping candidate. It is not a lexical entry and carries no lemma/form assertion.",
+  "type": "object",
+  "required": [
+    "candidateId", "sourceId", "sourcePageDigital", "column",
+    "candidateOrderInColumn", "lineCount", "rawLines", "rawText",
+    "boundaryMethod", "boundaryStatus", "reviewStatus", "flags"
+  ],
+  "properties": {
+    "candidateId": {"type": "string", "pattern": "^ALC1737-vcand-p[0-9]{3}-[LR]-[0-9]{3}$"},
+    "sourceId": {"const": "ALC1737"},
+    "sourcePageDigital": {"type": "integer", "minimum": 133, "maximum": 177},
+    "sourcePagePrinted": {"type": ["string", "null"]},
+    "column": {"enum": ["left", "right"]},
+    "candidateOrderInColumn": {"type": "integer", "minimum": 1},
+    "startY": {"type": "number"},
+    "lineCount": {"type": "integer", "minimum": 1},
+    "rawLines": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "rawText": {"type": "string", "minLength": 1},
+    "boundaryMethod": {"const": "indentation_margin_v0.1"},
+    "boundaryStatus": {"const": "machine_candidate"},
+    "reviewStatus": {"const": "raw_ocr"},
+    "flags": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}

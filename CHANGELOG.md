@@ -2,6 +2,23 @@
 
 Todos los cambios relevantes de Cahíta Histórico Digital se documentarán en este archivo.
 
+## [0.1.4-dev] - 2026-08-15
+
+### Añadido
+
+- `scripts/extract_vocab_candidates.py`, extractor conservador de candidatos de límites de artículo basado en indentación y layout;
+- `schemas/vocabulary-candidate.schema.json`, contrato que separa formalmente un candidato OCR de una entrada lexicográfica;
+- muestra auditable de 38 candidatos de la página digital 134 en `data/lexicon/candidates/p134_candidates.jsonl`;
+- documentación metodológica y limitaciones en `docs/VOCAB_CANDIDATES.md`.
+
+### Resultado
+
+La corrida completa sobre páginas digitales 133–177 produjo **1,680 candidatos**: 903 en columna izquierda y 777 en derecha, con una media de 37.33 candidatos por página. Los **1,680 / 1,680** objetos pasaron validación estructural contra su JSON Schema. El JSONL completo derivado tiene SHA-256 `f00318329c1116254388aac0ffe978fea330c8466f3863e318df1f01fd010b59`.
+
+### Salvaguardas
+
+La cifra 1,680 **no se presenta como número de entradas históricas**. El algoritmo conserva falsos comienzos y posibles continuaciones como candidatos revisables; no divide automáticamente lema castellano y forma cahíta, y no promueve ningún objeto a `lexical_entry`.
+
 ## [0.1.3-dev] - 2026-08-15
 
 ### Añadido

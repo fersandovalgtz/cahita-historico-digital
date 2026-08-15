@@ -15,6 +15,8 @@ Estado de cobertura de Cahíta Histórico Digital para la fuente `ALC1737`.
 | Diagnóstico estratificado de OCR | **6 muestras** | micro-CER 25.66%; micro-WER 51.96% |
 | Payload OCR completo versionado en GitHub | **0 / 182** | empaquetado pendiente |
 | Líneas OCR/layout del vocabulario extraídas localmente | **3,899** | páginas 133–177; 61 fusiones de columnas retenidas como `other` |
+| Candidatos de límites de artículo | **1,680** | 45 páginas; `machine_candidate`, no recuento de entradas |
+| Candidatos de artículo versionados como muestra | **38** | página digital 134 |
 | Extracto diplomático IA-asistido | **1 página piloto** | p. digital 134; no validación humana |
 | Entradas lexicográficas piloto estructuradas | **12** | JSON Schema válido; `machine_corrected_unverified` |
 | Entradas lexicográficas de producción | **0** | ninguna promovida todavía |
@@ -45,9 +47,17 @@ La muestra inicial de seis estratos confirma que el OCR de entrada debe tratarse
 
 → [`docs/OCR_QUALITY.md`](docs/OCR_QUALITY.md)
 
+## Candidatos lexicográficos
+
+El vocabulario ya cuenta con una capa reproducible entre OCR/layout y entrada estructurada. `scripts/extract_vocab_candidates.py` produjo **1,680 candidatos de límites de artículo** sobre las páginas 133–177. Esos objetos no afirman todavía lema ni forma cahíta y no deben citarse como número de entradas de la obra.
+
+La página 134 aporta una muestra versionada de **38 candidatos** que permite auditar tanto agrupamientos plausibles como falsas fronteras. El esquema específico impide confundir formalmente esta capa con `lexical-entry`.
+
+→ [`docs/VOCAB_CANDIDATES.md`](docs/VOCAB_CANDIDATES.md)
+
 ## Piloto lexicográfico
 
-La página digital 134 dispone ahora de un extracto diplomático IA-asistido y doce registros estructurados. Los doce pasaron validación local contra `schemas/lexical-entry.schema.json`, pero permanecen explícitamente en estado `machine_corrected_unverified`.
+La página digital 134 dispone de un extracto diplomático IA-asistido y doce registros estructurados. Los doce pasaron validación local contra `schemas/lexical-entry.schema.json`, pero permanecen explícitamente en estado `machine_corrected_unverified`.
 
 → [`docs/PILOT_LEXICON_P134.md`](docs/PILOT_LEXICON_P134.md)
 
@@ -59,4 +69,4 @@ Se inspeccionaron de forma dirigida las páginas digitales 3, 11, 13, 14, 15, 51
 
 `OCR extraído` significa únicamente que se pudo recuperar la capa textual automática del PDF. No implica exactitud filológica. `Hash OCR por página` permite detectar cambios bit a bit en la extracción y volver a localizar una unidad en la cadena de procesamiento.
 
-`Entrada piloto estructurada` tampoco equivale a entrada validada. Su función es probar contratos de datos, trazabilidad y flujo editorial antes de escalar la extracción.
+`Candidato de límites de artículo` significa una agrupación geométrica que requiere revisión. `Entrada piloto estructurada` tampoco equivale a entrada validada. Ambas capas prueban contratos de datos, trazabilidad y flujo editorial antes de escalar la edición.
