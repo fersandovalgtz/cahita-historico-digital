@@ -1,0 +1,26 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 22,
+  "sourcePagePrinted": 8,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ARTE DE LA LENGVA\n\nIauchiua Dios Ieſu Chriſtota ioremtuuapo ueiei, iauthamut Santa Maria Santo Ioſephtina emo cunac, &c.\n\n33. Sobre la particula de preſente de la voz paſſiva ua ſe van formando todas las terminaciones de los tiempos conforme eſtà exemplificado en la conjugacion: excepto el futuro paſſivo naua, el qual no ſe forma ſobre el ua de la voz paſſiva, ſino en lugar del naque de la voz activa, como queda yá dicho, y aſſi ſaue haze el futuro paſſivo ſaunaua: veha, vehnaua: aua, aunaua: oove, oobnaua.\n\n§. II.\n\nFORMACION DE NOMBRES\nABSTRACTOS.\n\n34. Formanſe nombres abſtractos, de nombres ſubſtantivos, y adjetivos, y verbos con eſtas particulas ua, vel raua, en la forma ſiguiente. A los nombres ſubſtantivos ſe añade el ua, vel raua, en lugar de la particula del caſo obliquo, v. g. Iaut el Señor, haze el obliquo en ze, Iautze; pueſto el raua, en lugar del ze, forma el abſtracto ſic: Iautraua el Señorio: ioreme hombre, haze el obliquo ioremta, pueſto en lugar del ta, el raua, forma ioremraua la humanidad. Dios haze el obliquo en e, vel ta, Dioſe, vel Dioſta, pueſto el raua, en lugar del e, vel ta, forma Diosraua Divinidad. Nueſtro Señor Ieſu Chriſto muriò por parte de la humanidad, no por parte de la Divinidad, id eſt, en quanto hombre, no en quanto Dios: Itom Iauchiua Ieſu Chriſto aioremrauaie vetana mucuc: à Diosrauaie vetana, camucuc.\n\n35. Los adjetivos reciben el ua, vel raua, en el recto, v. g. Vte, vteua la fortaleza: hune feo, huneua fealdad: huuena malo, huuenaua la maldad. Sacanſe los adjetivos en ri, que aunque para tomar el ua, no pierden nada, pero para tomar el raua, pierden la ri, v. g. Tuuri coſa buena, tuu-\nriua,\n",
+  "lineBreakPolicy": "Headings, numbered rules and the page-end split/catchword are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and long s are retained.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "Iauchiua Dios Ieſu Chriſtota ioremtuuapo ueiei, iauthamut Santa Maria Santo Ioſephtina emo cunac", "note": "Cahíta sentence continuing the example from p.21; segmentation is provisional although the visible characters are largely legible.", "line": null},
+    {"token": "ze", "note": "Oblique-case particle/ending represented visually with a historical z-like character; encoded as z in this transcription pending typographic review.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Show-through from the verso is visible behind the abstract-noun section.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-22;printed-page-8",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
