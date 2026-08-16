@@ -1,0 +1,57 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 140,
+  "candidateInventory": {
+    "total": 47,
+    "left": 24,
+    "right": 23,
+    "classification": {
+      "article": 44,
+      "continuation": 3,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 40,
+      "merged_articles": 4,
+      "oversegmented": 3,
+      "undersegmented": 0,
+      "ambiguous": 0,
+      "not_applicable": 0
+    }
+  },
+  "visibleStartCensus": {
+    "visibleHistoricalArticleStarts": 48,
+    "truePositiveStarts": 44,
+    "falsePositiveCandidateStarts": 3,
+    "falseNegativeVisibleStarts": 4,
+    "precision": 0.93617,
+    "recall": 0.916667,
+    "f1": 0.926316,
+    "missedStartFile": "data/lexicon/reconciliation/p140_missed_visible_starts.jsonl"
+  },
+  "linkage": {
+    "articleCandidatesLinked": 44,
+    "missedStartsLinked": 4,
+    "pendingPromotion": 0
+  },
+  "curation": {
+    "preExistingStructuredArticlesOnPage": 36,
+    "newPromotions": 12,
+    "newArticleIdRange": "ALC1737-art-000899--ALC1737-art-000910",
+    "corpusTotalAfterPromotion": 910,
+    "unresolvedPromotions": []
+  },
+  "physicalAndEditorialNotes": [
+    "ALC1737-vcand-p140-L-003 merges `Andar apriſa` and the visible start `Andar ſobre vno de los pies`.",
+    "ALC1737-vcand-p140-L-005 merges `Andas` and the visible start `Andas de muertos`.",
+    "ALC1737-vcand-p140-L-019 merges `Ante alguna perſona` and the visible start `Anteceder, ò guiar`.",
+    "ALC1737-vcand-p140-R-002 merges `Añadir algo à lo que eſtá falto` and the visible start `Añublado eſtár en partes el Cielo`.",
+    "ALC1737-vcand-p140-R-019 and R-021 are line continuations of the immediately preceding historical article rather than new article starts.",
+    "ALC1737-vcand-p140-R-023 continues `Apartarſe dos caminos` and also contains the bottom catchword `Apar-`; the catchword is excluded from article counts."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "authorityNote": "Candidate reconciliation, visible-start census and promotions are AI-assisted direct facsimile collation. No object is human_verified; source-visible uncertainty is retained rather than silently reconstructed from OCR."
+}
