@@ -1,0 +1,26 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 19,
+  "sourcePagePrinted": 5,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE I.\n\nheie beber, hinaque: neie volar, ninaque: ſacaſe ueie por ir, y venir, que haze ueinaque.\n\n16. Novena: los en ie, pierden la ie, para recebir el naque, v. g. Buaie comer, buanaque: Tzaie dar vozes, ò gritar, tzanaque: toſe acoſtarſe muchos, tonaque: ſacaſe vuie reñir, que haze vuinaque.\n\n17. Dezima: los en he, mudan el he, en hi, para recebir el naque, v. g. Muhe flechar, muhinaque: nuhe caerſe el pelo, nuhinaque: huhe cabar, huehinaque: huahhe tener paños menores la muger, huahinaque: ohe peſcar con yerva, ò barbaſco, ohinaque: nauahe embriagarſe, nauahinaque. Si eſta regla tuviere excepcion lo dirá el vſo.\n\n18. Vndecima: los en que, mudan el que, en c, para recebir el naque, v. g. Muque morirſe, mucnaque: Tuque apagarſe, tucnaque: naque aver meneſter algo, nacnaque: toque roncar, toacnaque: uoque raſcarſe, uocnaque: ſacaſe nauque encontrarſe, que haze nauquinaque.\n\n19. Duodecima: los en re, la pierden para recebir el naque, v. g. Hiuore abſtenerſe, hiuonaque: hiuare dominar, hiuanaque: vehere vengarſe, vehenaque: ſacaſe core andar al rededor, que haze corenaque. Y juntamente los acabados en re, que ſe componen de nombres, ò adverbios, que mudan la re, en ri, para recebir el naque, v. g. Hiocore hazer miſericordia, hiocorinaque: ſuaquiuare agradecerſe de otro, ſuaquiuarinaque: alamachire tener por hermoſo, alamachirinaque.\n\n20. Decimatercia: los en ſe, mudan la ſe, en h, para recebir el naque, v. g. Buaſe tener ſazon la comida, fruta, &c. buahnaque: taſe toſer, tahnaque: avoſe hoſpedar, avohnaque: huiſe agarrar, huihnaque: ſiſe orinar, ſihnaque. En algunas partes no vſan de la h, en lugar de la ſe, como los Mayos, y entonces eſtos verbos acabados en ſe, pierden la e, para recebir el naque, v. g. Buaſe, buaſnaque: tuſe, tuſnaque.\n\n21. Decimaquarta: los que ſe componen de nombres, y eſta particula te, ni pierden, ni mudan letra para recebir\n\nel\n",
+  "lineBreakPolicy": "Paragraphs, numbered rules, running headers and catchwords are preserved. Ordinary line wrapping is normalized within paragraphs; historical spelling and visible long s are retained. Explicit [?] markers flag unresolved readings.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "huahhe", "note": "Forma glosada 'tener paños menores la muger' es provisional.", "line": null},
+    {"token": "tuſnaque", "note": "Segundo ejemplo de la variante atribuida a los Mayos; forma leída con cautela.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Show-through and uneven inking are visible on the leaf; they affect some linguistic forms.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-19;printed-page-5",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
