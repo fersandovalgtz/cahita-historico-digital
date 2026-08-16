@@ -1,0 +1,71 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 145,
+  "candidateMethod": "hybrid_margin_mode_v0.2",
+  "candidateInventoryVerification": {
+    "candidateCountGlobal": 2072,
+    "candidateCountPage": 39,
+    "left": 22,
+    "right": 17,
+    "jsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3",
+    "method": "Repository-native reconstruction and page export executed in GitHub Actions; canonical inventory verification succeeded before page export.",
+    "workflowRun": "P145 Candidate Inspect #1"
+  },
+  "triagePolicy": "This is a non-authoritative engineering triage based on canonical candidate raw OCR, geometry flags, existing selected articles, and page-level OCR context. Bucket membership MUST NOT be copied into final reconciliation without direct facsimile collation.",
+  "buckets": {
+    "likely_article_start": [
+      "ALC1737-vcand-p145-L-001",
+      "ALC1737-vcand-p145-L-003",
+      "ALC1737-vcand-p145-L-006",
+      "ALC1737-vcand-p145-L-008",
+      "ALC1737-vcand-p145-L-009",
+      "ALC1737-vcand-p145-L-010",
+      "ALC1737-vcand-p145-L-011",
+      "ALC1737-vcand-p145-L-012",
+      "ALC1737-vcand-p145-L-013",
+      "ALC1737-vcand-p145-L-014",
+      "ALC1737-vcand-p145-L-015",
+      "ALC1737-vcand-p145-L-016",
+      "ALC1737-vcand-p145-L-019",
+      "ALC1737-vcand-p145-L-020",
+      "ALC1737-vcand-p145-L-021",
+      "ALC1737-vcand-p145-R-002",
+      "ALC1737-vcand-p145-R-004",
+      "ALC1737-vcand-p145-R-005",
+      "ALC1737-vcand-p145-R-006",
+      "ALC1737-vcand-p145-R-007",
+      "ALC1737-vcand-p145-R-009",
+      "ALC1737-vcand-p145-R-013",
+      "ALC1737-vcand-p145-R-016"
+    ],
+    "likely_continuation_or_nonstart": [
+      "ALC1737-vcand-p145-L-004",
+      "ALC1737-vcand-p145-L-007",
+      "ALC1737-vcand-p145-R-003",
+      "ALC1737-vcand-p145-R-011"
+    ],
+    "complex_or_direct_visual_required": [
+      "ALC1737-vcand-p145-L-002",
+      "ALC1737-vcand-p145-L-005",
+      "ALC1737-vcand-p145-L-017",
+      "ALC1737-vcand-p145-L-018",
+      "ALC1737-vcand-p145-L-022",
+      "ALC1737-vcand-p145-R-001",
+      "ALC1737-vcand-p145-R-008",
+      "ALC1737-vcand-p145-R-010",
+      "ALC1737-vcand-p145-R-012",
+      "ALC1737-vcand-p145-R-014",
+      "ALC1737-vcand-p145-R-015",
+      "ALC1737-vcand-p145-R-017"
+    ]
+  },
+  "observedEngineeringRisks": [
+    "The opening of p.145 includes the material continuation of ALC1737-art-001045 and must not be counted as a new article start.",
+    "Several canonical candidate records begin on continuation lines or absorb more than one apparent lexical unit in raw OCR.",
+    "The Internet Archive linear OCR interleaves the two printed columns and is not an authority for final column-local ordering.",
+    "Historical typography and OCR damage are severe enough that guide words or Cahita forms in complex candidates must be collated visually before promotion."
+  ],
+  "reviewStatus": "provisional_ocr_geometry_triage",
+  "humanVerified": false,
+  "recordedAt": "2026-08-16"
+}
