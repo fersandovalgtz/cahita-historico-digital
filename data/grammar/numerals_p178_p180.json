@@ -1,0 +1,63 @@
+{
+  "sourceId": "ALC1737",
+  "pageRangeDigital": [178, 180],
+  "cardinals": [
+    {"value": 1, "formRaw": "ſenu", "alternativesRaw": [], "historicalVariety": "unspecified"},
+    {"value": 2, "formRaw": "uoi", "alternativesRaw": [], "historicalVariety": "unspecified"},
+    {"value": 3, "formRaw": "vabi", "alternativesRaw": [], "historicalVariety": "unspecified"},
+    {"value": 4, "formRaw": "naequi", "alternativesRaw": [], "historicalVariety": "unspecified"},
+    {"value": 5, "formRaw": "mammi", "alternativesRaw": [], "historicalVariety": "unspecified"},
+    {"value": 6, "formRaw": "buſani", "alternativesRaw": [], "historicalVariety": "unspecified"},
+    {"value": 7, "formRaw": "uobuſani", "alternativesRaw": [], "historicalVariety": "unspecified"},
+    {"value": 8, "formRaw": "uonaequi", "alternativesRaw": ["uonaiequi"], "historicalVariety": "unspecified"},
+    {"value": 9, "formRaw": "batani", "alternativesRaw": [], "historicalVariety": "unspecified"},
+    {"value": 10, "formRaw": "uomamni", "alternativesRaw": [], "historicalVariety": "unspecified"}
+  ],
+  "systems": {
+    "ordinal": {
+      "sourceClaim": "No los tienen, vſan de otros modos para ſignificarlos.",
+      "description": "La fuente no presenta una serie morfológica autónoma de ordinales; describe construcciones relacionales para expresar primero, segundo y posiciones sucesivas.",
+      "hiaquiNoteRaw": "aunque el Hiaqui vſa del ſahuc, mas propiamente ſe acomoda al vechucul",
+      "status": "source_description_structured"
+    },
+    "distributive": {
+      "sourceRuleRaw": "Los numerales diſtributivos ſe hazen reduplicando la primera ſillaba de los cardinales",
+      "examples": [
+        {"value": 1, "formRaw": "ſeſenu"},
+        {"value": 2, "formRaw": "uouoi"},
+        {"value": 3, "formRaw": "vavabi"},
+        {"value": 4, "formRaw": "nanaequi"}
+      ],
+      "sourceMorphologyNote": "La fuente los trata como adjetivos de la tercera declinación con singular y plural.",
+      "hiaquiExamplesRaw": ["uepulai", "uihalai"]
+    },
+    "adverbial": {
+      "examples": [
+        {"value": 1, "formRaw": "ſeſa"},
+        {"value": 2, "formRaw": "uoſa"},
+        {"value": 3, "formRaw": "vabiſi"},
+        {"value": 4, "formRaw": "naequiſi"},
+        {"value": 5, "formRaw": "mammiſi"},
+        {"value": 6, "formRaw": "vuſaniſi"},
+        {"value": 7, "formRaw": "uobuſaniſi"},
+        {"value": 8, "formRaw": "uonaequiſi"},
+        {"value": 9, "formRaw": "vatomamniſi"},
+        {"value": 10, "formRaw": "uomamniſi"}
+      ],
+      "sourceRule": "La fuente indica que estas formas no se declinan cuando terminan adverbialmente, pero pueden declinarse con una partícula declinable añadida."
+    }
+  },
+  "sourceNotesRaw": [
+    "Todos ſe declinan por la declinacion de los adjetivos.",
+    "La cuenta se atribuye en la propia fuente a papeles del Padre Otón.",
+    "La p.179 registra diferencias explícitas entre algunas Naciones y los Hiaquis en procedimientos de conteo.",
+    "Las páginas 179–180 distinguen numerales de orden, distributivos y adverbios numerales."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-pages-178-180",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "AI-assisted visual collation against facsimile; only high-confidence forms and source claims promoted; no independent human verification"
+  }
+}
