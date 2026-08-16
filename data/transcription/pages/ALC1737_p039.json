@@ -1,0 +1,28 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 39,
+  "sourcePagePrinted": 25,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE I.\n\ntre el ca, y el ſemi-pronombre eſta letra t, v. g. cateſime no te vayas: catemoca no hablas: catemhicaha no entendeis: catimhoca no eſtán aí.\n\n86. Quando al relativo de ſingular a, que es la nota de tranſicion ſe ſigue qualquiera de los tres dichos ſemi-pronombres ſe interpone entre el relativo, y el ſemi-pronombre eſta letra qu, v. g. aqueria tu lo amas: aquemeria voſotros lo amais: aquimeria aquellos lo aman.\n\n87. Quando deſpues del preterito acabado en c, ſe ſigue qualquiera otra diccion, ò ſemi-pronombre, que empieza con conſonante ſe añade à la c, del preterito eſta letra a, v. g. yá deſpertó buſacabeſa: yá comi hibuacane: nos dormimos cotzocate, en los quales exemplos eſtá la a, deſpues de la c, de los preteritos buſac, hibuac, cotzoc.\n\n88. Vſan mucho interponer vna i, entre las dos vocales vltimas, quando el verbo acaba en a, y tiene antes otra vocal; y tambien quando tiene a, y antes de ella otra vocal, aunque ſea en principio, ò medio de diccion, v. g. ea penſar, vel eia, hunaqueria ſaber, hunaqueriia: hiaua hablar [hiaua/hia?]. Eſto es mas vſado en Teueco.\n\n89. Suelen añadir à algunos verbos eſta particula te, mas por elegancia, que por otra coſa, v. g. hiaua, vel hiauale, vel hiauale, vel hiauiiale. Aunque no hablaras te diera: emchim aniceiai, maut emchica hiaualeyo.\n\n90. Tambien ſuelen añadir entre vocal, y vocal à los verbos vna l, y aſſi dicen hiaua, vel hilaua. Y con eſtas advertencias no parecerán diſtinctos vocablos los dichos, y otros ſemejantes, ſino que ſon vnos meſmos, con diſtinctas pronunciaciones, v. g. tia decir, vnos dicen tii, otros tijia, otros tila, v. g. el que ſe dice Hijo de Dios: Dioſta uuſi auiotila came.\n\n91. Quitan mui de ordinario la i, quando media entre dos conſonantes, y aſſi dicen aieburi, aeburi: machiyeco en amaneciendo, machieco: cupteco en anocheciendo, cupteco. Con el ablativo, y genitivo del pronombre ahari, que correſpon-\n\nde\n",
+  "lineBreakPolicy": "Continuation of rule 85, numbered rules and page-turn split are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained. A bracketed unresolved segment is used where the facsimile does not support a secure full form.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "hiaua hablar [hiaua/hia?]", "note": "Third example in rule 88 is partially obscured/typographically unclear; no completion is asserted.", "line": null},
+    {"token": "hiaua, vel hiauale, vel hiauale, vel hiauiiale", "note": "Series in rule 89 requires a second high-resolution collation; apparent repetition may reflect distinct spellings not safely recoverable here.", "line": null},
+    {"token": "emchim aniceiai, maut emchica hiaualeyo", "note": "Cahíta example following 'Aunque no hablaras te diera' is provisional.", "line": null},
+    {"token": "Dioſta uuſi auiotila came", "note": "Example glossed as 'el que ſe dice Hijo de Dios' requires specialist linguistic collation.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Moderate show-through and scattered ink loss affect several examples.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-39;printed-page-25",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
