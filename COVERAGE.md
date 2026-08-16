@@ -7,80 +7,85 @@ Estado de cobertura de Cahíta Histórico Digital para la fuente `ALC1737`.
 | Dimensión | Cobertura | Estado |
 |---|---:|---|
 | Páginas digitales identificadas | **182 / 182** | verificado |
-| Segmentación macro por secciones | **182 / 182** | fronteras cotejadas visualmente |
 | Páginas impresas numeradas mapeadas | **118 / 118** | digital 15–132 ↔ impresa 1–118 |
 | Checksums de archivos fuente de trabajo | **2 / 2** | SHA-256 registrado |
-| Extracción OCR paginada reproducible | **182 / 182** | derivado reproducible, no transcripción |
+| Extracción OCR paginada reproducible | **182 / 182** | derivado reproducible; no transcripción |
 | Diagnóstico estratificado de OCR | **6 muestras** | micro-CER 25.66%; micro-WER 51.96% |
-| Líneas OCR/layout del vocabulario | **3,899** | pp. 133–177; 61 líneas `other` por fusiones/ambigüedad |
-| Candidatos v0.2 vigentes | **2,072** | 45 páginas; 2,072/2,072 válidos por JSON Schema |
-| Precisión / recall / F1 v0.2 | **97.13% / 89.89% / 93.37%** | muestra diagnóstica de inicios de artículo |
-| Transcripciones diplomáticas `full_page` | **46 páginas** | p. 3, pp. 5–13 y Parte I completa pp. 15–50 |
-| **Parte I transcrita** | **36 / 36 páginas** | digitales 15–50 = impresas 1–36; **100%** |
-| Reglas gramaticales estructuradas | **15** | reglas históricas 46–60; corpus en expansión |
-| Extractos diplomáticos | **1 página** | p. 134, piloto |
-| Observaciones de variación histórica estructuradas | **9** | Hiaqui/Mayo/Tehueco/Cynaloas y otras etiquetas literales de la fuente |
-| Entradas lexicográficas piloto estructuradas | **12** | JSON Schema válido; `machine_corrected_unverified` |
-| Entradas lexicográficas de producción | **0** | ninguna promovida todavía |
+| Líneas OCR/layout del vocabulario | **3,899** | pp. 133–177 |
+| Candidatos lexicográficos v0.2 | **2,072** | 2,072/2,072 estructuralmente válidos |
+| Precisión / recall / F1 v0.2 | **97.13% / 89.89% / 93.37%** | muestra diagnóstica |
+| Transcripciones diplomáticas `full_page` | **67 páginas** | preliminares textuales + Parte I + Parte II + apertura de Parte III |
+| **Parte I** | **completa** | digitales 15–50 / impresas 1–36 |
+| **Parte II** | **completa hasta su cierre textual** | digitales 51–68 + segmento superior de digital 69 / impresa 55 |
+| Parte III | **iniciada** | segmento inferior de p. 69 + pp. 70–71 |
+| Reglas gramaticales estructuradas | **15** | lote inicial 46–60 |
+| Paradigmas gramaticales estructurados | **2** | presente de `Eria` + comparación Tehueco/Hiaqui/Mayo |
+| Observaciones de variación histórica | **11 entidades** | 10 en exportación JSONL + nueva observación modular p. 58 |
+| Extractos diplomáticos del vocabulario | **1 página** | p. 134, piloto |
+| Entradas lexicográficas piloto | **12** | esquema válido; no producción |
 | Revisión humana independiente | **0** | no iniciada |
 
-## Segmentación confirmada a nivel macro
+## Segmentación refinada
+
+La frontera entre Parte II y Parte III **no coincide exactamente con un salto de página**. La página digital 69 / impresa 55 contiene dos segmentos:
+
+- en la parte superior continúa `CAHITA. PARTE II.` y concluye la regla 188;
+- más abajo aparece el encabezado `PARTE III` y comienzan las reglas 189–190.
+
+Por ello [`data/source/alc1737/sections.json`](data/source/alc1737/sections.json) representa ahora la frontera como **intra-page section boundary**, y [`schemas/page-transcription.schema.json`](schemas/page-transcription.schema.json) admite páginas `mixed` mediante `sectionSegments`.
+
+La segmentación vigente es:
 
 | Sección | Páginas digitales | Páginas impresas |
 |---|---:|---:|
 | Preliminares | 1–14 | no paginadas |
 | Parte I | 15–50 | 1–36 |
-| Parte II | 51–68 | 37–54 |
-| Parte III | 69–104 | 55–90 |
+| Parte II | 51–69 parcial | 37–55 parcial |
+| Parte III | 69 parcial–104 | 55 parcial–90 |
 | Parte IV | 105–132 | 91–118 |
 | Vocabulario | 133–177 | no paginado |
 | Numerales | 178–180 | no paginados |
-| Cubierta posterior / finales materiales | 181–182 | no paginados |
-
-La segmentación máquina-legible se encuentra en [`data/source/alc1737/sections.json`](data/source/alc1737/sections.json), y el inventario página por página en [`data/source/alc1737/page_manifest.csv`](data/source/alc1737/page_manifest.csv).
-
-## Calidad OCR
-
-La muestra inicial de seis estratos confirma que el OCR de entrada debe tratarse como evidencia no validada. El micro-CER normalizado es **25.66%** y el micro-WER **51.96%**. La evaluación, referencias y método están versionados y son reproducibles.
-
-→ [`docs/OCR_QUALITY.md`](docs/OCR_QUALITY.md)
-
-## Candidatos lexicográficos v0.2
-
-`hybrid_margin_mode_v0.2` es el método vigente de generación de candidatos. La corrida completa sobre pp. 133–177 produjo **2,072 candidatos**. Este valor describe propuestas geométricas de frontera, no el número histórico de artículos.
-
-Sobre las páginas diagnósticas 133, 134, 150 y 177, v0.2 registra precisión **97.13%**, recall **89.89%** y F1 **93.37%**. La muestra es intencional y el cotejo permanece IA-asistido, sin revisión humana independiente.
-
-→ [`docs/VOCAB_BOUNDARY_V02.md`](docs/VOCAB_BOUNDARY_V02.md)
+| Finales materiales | 181–182 | no paginados |
 
 ## Transcripción
 
-La Fase 2 usa una unidad JSON por página y un manifiesto de 182 filas en [`data/transcription/status.csv`](data/transcription/status.csv). Existen ahora **46 unidades `full_page`**: portada (p. 3), bloque textual de preliminares (pp. 5–13) y **las 36 páginas de la Parte I** (digitales 15–50 / impresas 1–36).
+La Fase 2 utiliza una unidad JSON por página y un manifiesto de 182 filas en [`data/transcription/status.csv`](data/transcription/status.csv).
 
-La **Parte I ha alcanzado 100% de cobertura por página** en la capa `machine_corrected_unverified`. Esto no significa edición crítica cerrada ni revisión humana: cada JSON conserva su cola de incertidumbres y las lecturas dudosas permanecen explícitas.
+La **Parte I está completamente representada** en digitales 15–50. La **Parte II también está completa en su continuidad textual**: digitales 51–68 y el segmento superior de la página 69, donde concluye la regla 188. La misma página 69 inaugura Parte III; las páginas 70–71 continúan con la descripción verbal y los primeros paradigmas.
 
-Los lotes se encuentran en `data/transcription/batches/`, desde `part_i_p015_p020.csv` hasta `part_i_p046_p050.csv`.
+Los nuevos lotes son:
 
-La última página de Parte I, digital 50 / impresa 36, concluye las reglas 121–123 y conserva el catchword `PAR-`, que enlaza materialmente con el inicio de `PARTE II` en la página siguiente.
+- [`data/transcription/batches/part_ii_p056_p069.csv`](data/transcription/batches/part_ii_p056_p069.csv)
+- [`data/transcription/batches/part_iii_p069_p071.csv`](data/transcription/batches/part_iii_p069_p071.csv)
 
-→ [`docs/TRANSCRIPTION_MODEL.md`](docs/TRANSCRIPTION_MODEL.md)
+`full_page` significa que la superficie textual impresa de la página está representada, incluso cuando existen secuencias `[ileg.]` o incertidumbres tipadas. No equivale a `human_verified`.
 
-## Corpus gramatical
+## Hallazgos de Parte II
 
-[`schemas/grammatical-rule.schema.json`](schemas/grammatical-rule.schema.json) representa las reglas históricas sin convertirlas en generalizaciones lingüísticas modernas. El primer lote [`data/grammar/rules_part_i_046_060.jsonl`](data/grammar/rules_part_i_046_060.jsonl) contiene 15 reglas estructuradas; la transcripción completa de Parte I permite ahora extender sistemáticamente este corpus hasta la regla 123.
+La transcripción de Parte II añadió varios objetos útiles para investigación:
 
-La Parte I documenta, entre otros fenómenos, formación de pretéritos y futuros, voz pasiva, derivación nominal y verbal, verbales, partículas, composición, pronunciación, synalepha, orden de palabras y sintaxis.
+- regla 128: contraste `Tehuecos` frente a `Hiaqui, y Mayo` en la formación del oblicuo (`tuſta/maſta` frente a `tuhta/mahta`);
+- p. 53 / impresa 39: `paros la liebre`, atribuida a `los Mayos, y el Hiaqui ſuaue`;
+- p. 58 / impresa 44: `Los Hiaquis dicen nepo en lugar del inopo`, registrado como observación pronominal independiente;
+- duplicación histórica visible del número de regla `129` en p. 52, preservada sin corrección silenciosa.
 
-## Variación histórica explícita
+La observación de p. 58 se conserva modularmente en [`data/linguistic/variety_observations/ALC1737_var_0011.json`](data/linguistic/variety_observations/ALC1737_var_0011.json). La exportación combinada `variety_observations.jsonl` contiene todavía las diez entidades anteriores y deberá regenerarse al siguiente ciclo de exportación.
 
-[`data/linguistic/variety_observations.jsonl`](data/linguistic/variety_observations.jsonl) contiene **9 observaciones** estructuradas. Además de Hiaqui, Mayo y Tehueco/Thehueco, la página digital 49 / impresa 35 incorpora una observación atribuida expresamente a **`los Cynaloas`** sobre el uso del acusativo `netzi` dentro de la construcción discutida en la regla 119.
+## Parte III y paradigmas
 
-Las observaciones siguen siendo declaraciones históricas de la fuente. CHD conserva sus denominaciones y análisis sin proyectarlos automáticamente sobre variedades modernas.
+Las pp. 70–71 contienen uno de los núcleos comparativos más densos del *Arte*. La fuente declara:
 
-→ [`docs/HISTORICAL_VARIATION_EVIDENCE.md`](docs/HISTORICAL_VARIATION_EVIDENCE.md)
+- pretérito imperfecto: `Tehuecos = e`, `Hiaquis = n`, `Mayos = i`;
+- perfecto: `c` para todos;
+- pluscuamperfecto: `Tehuecos = cat`, `Hiaquis = can`, `Mayos = cai`;
+- futuro imperfecto: `naque` para todos.
 
-## Interpretación de métricas
+Se creó [`schemas/grammatical-paradigm.schema.json`](schemas/grammatical-paradigm.schema.json) y los dos primeros paradigmas en [`data/grammar/paradigms_part_iii_p070_p071.jsonl`](data/grammar/paradigms_part_iii_p070_p071.jsonl). El modelo se documenta en [`docs/PARADIGM_MODEL.md`](docs/PARADIGM_MODEL.md).
 
-`OCR extraído` significa recuperación automática de una capa textual, no exactitud filológica. `Transcripción full_page` significa que el texto impreso visible de una página está representado editorialmente; **no implica revisión humana independiente**. `Regla gramatical estructurada` significa que el análisis del gramático de 1737 ha sido convertido en una entidad trazable, no que CHD lo adopte sin crítica como descripción lingüística contemporánea.
+## Corpus lexicográfico
 
-Las cifras de cobertura deben leerse siempre junto con el **estado de autoridad** de la capa que describen.
+El vocabulario mantiene **2,072 candidatos v0.2** sobre 45 páginas. Ese número representa propuestas de frontera y no entradas históricas publicadas. La promoción a entrada de producción continúa requiriendo revisión de frontera, microestructura, procedencia y estado explícito.
+
+## Interpretación de autoridad
+
+`raw_ocr`, `machine_corrected_unverified`, `unresolved`, `editorial_proposal` y `human_verified` son estados distintos. CHD no convierte una lectura IA-asistida en validación humana, ni una categoría del gramático de 1737 en una descripción moderna sin una capa analítica separada.
