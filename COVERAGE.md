@@ -15,9 +15,9 @@ Estado canónico de cobertura de Cahíta Histórico Digital para `ALC1737` — 2
 | Sistema numeral histórico | **1 bloque estructurado** | digitales 178–180 |
 | Observaciones de variación histórica | **17+** | exportación combinada pendiente de consolidación |
 | Candidatos lexicográficos v0.2 | **2,072 / 2,072 persistidos canónicamente** | inventario reconstruible |
-| Artículos históricos estructurados | **898** | capa curatorial actual; no conteo final del vocabulario |
+| Artículos históricos estructurados | **910** | capa curatorial actual; no conteo final del vocabulario |
 | Páginas de vocabulario con representación estructurada | **45 / 45** | al menos una representación por página |
-| Páginas con reconciliación + censo + promoción cerrados | **133–139** | IA-asistido; no `human_verified` |
+| Páginas con reconciliación + censo + promoción cerrados | **133–140** | IA-asistido; no `human_verified` |
 | Reconciliación pp.133–134 | **61 / 61 candidatos** | 57 article; 4 continuation |
 | Censo visible pp.133–134 | **72 inicios** | TP57 / FP4 / FN15; F1 0.857143 |
 | Reconciliación p.135 | **43 / 43 candidatos** | 35 article; 8 continuation |
@@ -30,7 +30,9 @@ Estado canónico de cobertura de Cahíta Histórico Digital para `ALC1737` — 2
 | Censo visible p.138 | **48 inicios** | TP47 / FP0 / FN1; F1 0.989474 |
 | Reconciliación p.139 | **50 / 50 candidatos** | 49 article; 1 continuation |
 | Censo visible p.139 | **51 inicios** | TP49 / FP1 / FN2; F1 0.970297 |
-| `pending_promotion` pp.133–139 | **0** | candidatos article y falsos negativos visibles enlazados |
+| Reconciliación p.140 | **47 / 47 candidatos** | 44 article; 3 continuation |
+| Censo visible p.140 | **48 inicios** | TP44 / FP3 / FN4; F1 0.926316 |
+| `pending_promotion` pp.133–140 | **0** | candidatos article y falsos negativos visibles enlazados |
 | Lagunas/discontinuidades del testimonio | **1** | `ALC1737-gap-0001`, digital 157→158 |
 | Anomalías de frontera adicionales | **1 abierta** | p.161 `Lucer-` → p.162 sin lema visible |
 | QA automatizado | **activo** | GitHub Actions valida inventario, IDs, schemas y reconciliaciones |
@@ -42,7 +44,7 @@ Las páginas impresas 1–118, digitales 15–132, están representadas de forma
 
 ## Vocabulario
 
-El vocabulario ocupa las digitales 133–177. `hybrid_margin_mode_v0.2` produce **2,072 candidatos de frontera**, mientras que la capa curatorial contiene **898 artículos históricos estructurados**. Son objetos distintos y ninguna cifra debe interpretarse como el número final de entradas de la obra.
+El vocabulario ocupa las digitales 133–177. `hybrid_margin_mode_v0.2` produce **2,072 candidatos de frontera**, mientras que la capa curatorial contiene **910 artículos históricos estructurados**. Son objetos distintos y ninguna cifra debe interpretarse como el número final de entradas de la obra.
 
 El inventario completo está fijado a la revisión generadora `f175b4bc455ff40a066d092a94e0a89a0ca2ae10` y al PDF fuente SHA-256 `69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37`. El JSONL reconstruido tiene SHA-256 `f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3`.
 
@@ -71,11 +73,30 @@ La continuidad material de `ALC1737-art-000068` (`A man derecha`) entre el final
 
 Los reclamos se mantienen como paratexto: `Algun` al pie de p.138 conduce a `Algun tanto de tiempo. Me quiſu.` en p.139, y `Ancia-` al pie de p.139 conduce a `Anciano. Oola.` en p.140. Se documentan en `data/lexicon/boundary_markers/catchwords_p138_p140.jsonl` y no inflan el conteo lexicográfico.
 
+## Página 140 — ciclo cerrado
+
+`data/lexicon/reconciliation/p140_reconciliation_status.json` registra:
+
+- **47/47 candidatos** reconciliados: 24 izquierda + 23 derecha;
+- **44 `article`** y **3 `continuation`**;
+- calidad geométrica: **40 `exact`**, 4 `merged_articles` y 3 `oversegmented`;
+- **48 inicios históricos visibles**;
+- TP44 / FP3 / FN4;
+- precisión **0.936170**, recall **0.916667**, F1 **0.926316**;
+- 44/44 candidatos `article` enlazados;
+- 4/4 falsos negativos enlazados;
+- **12 artículos nuevos**, `ALC1737-art-000899`–`000910`;
+- `pending_promotion = 0`.
+
+Los cuatro falsos negativos visibles son `Andar ſobre vno de los pies`, `Andas de muertos`, `Anteceder, ò guiar` y `Añublado eſtár en partes el Cielo`, todos absorbidos dentro de grupos candidatos mayores. Sólo `Andas de muertos` requería promoción nueva; los otros tres ya tenían objeto histórico estructurado.
+
+Las tres falsas fronteras R-019, R-021 y R-023 son continuaciones físicas de artículos iniciados en el candidato precedente. R-023 contiene además el reclamo inferior `Apar-`, que se conserva como paratexto y se excluye del censo de artículos. Las remisiones `Buſca` de `Anguſtiarſe`, `Anguſtia` y `Anguſtiar á otro` se modelaron explícitamente como `cross_reference`, no como equivalencias cahítas.
+
 ## QA diagnóstico y automático
 
 La muestra diagnóstica del extractor conserva para `hybrid_margin_mode_v0.2` precisión 97.13%, recall 89.89% y F1 93.37% sobre pp.133, 134, 150 y 177. Es una muestra intencional, no probabilística.
 
-**CHD QA run #92** concluyó en `success`. Reconstruyó las **2,072 filas** con el hash esperado y verificó **898 objetos en 62 JSONL / 898 `articleId` únicos**. También validó los 25+25 registros de reconciliación de p.139, sus dos falsos negativos, todos los artículos contra schema y el JSON de estado. Una corrida verde es QA computacional, no revisión filológica humana.
+**CHD QA run #99** concluyó en `success` después del cierre de p.140. Verificó el inventario canónico, unicidad/estados de IDs, los artículos históricos contra schema, los lotes de reconciliación, la capa de falsos negativos y la sintaxis JSON del corpus. Una corrida verde es QA computacional, no revisión filológica humana.
 
 ## Fuentes de control textual
 
@@ -87,7 +108,7 @@ Permanecen, entre otras, `obra tripartita` frente a `quatro partes`, la duplicac
 
 ## Próximos criterios de cobertura
 
-1. procesar la página digital **140**, con 47 candidatos canónicos (24 izquierda + 23 derecha), mediante candidato → censo visible → promoción → QA;
+1. procesar la página digital **141** mediante candidato → censo visible → promoción → QA;
 2. escalar página por página hasta 177;
 3. resolver las tareas puntuales de metadatos/corrección detectadas en p.139;
 4. consolidar concordancias y exportaciones gramaticales/variacionales;
