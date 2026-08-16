@@ -4,75 +4,99 @@
 
 El Vocabulario de `ALC1737` ocupa las páginas digitales 133–177. El extractor `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera sobre 45 páginas, pero los candidatos no se cuentan como artículos históricos publicados.
 
-La promoción curatorial ha comenzado con artículos visualmente cotejados y estructurados conforme a `schemas/lexical-article.schema.json`.
+La secuencia curatorial principal contiene ahora **343 artículos históricos estructurados**: piloto p.134 + avance continuo pp.138–155. Todos permanecen `machine_corrected_unverified` o `unresolved`; **ninguno** ha sido declarado `human_verified`.
 
-| Lote | Página | Artículos estructurados | Nota |
-|---|---:|---:|---|
-| `p134_pilot_articles.jsonl` | 134 | 12 | piloto inicial |
-| `p138_selected_articles.jsonl` | 138 | 33 | selección de alta legibilidad |
-| `p139_selected_articles.jsonl` | 139 | 39 | selección de alta legibilidad |
-| `p140_selected_articles.jsonl` | 140 | 36 | selección de alta legibilidad |
-| `p141_selected_articles.jsonl` | 141 | 10 | incluye remisión explícita `Buſca` |
-| `p142_botanical_pilot.jsonl` | 142 | 10 | artículos descriptivos y agrupaciones botánicas |
-| `p141_p142_cross_page_article.jsonl` | 141–142 | 1 | primer artículo reconstruido a través de salto de página |
-| `p143_selected_articles.jsonl` | 143 | 14 | continuidad de agrupación + nueva agrupación de árboles + voces `Arco`/`Arriba` |
-| `p144_selected_articles.jsonl` | 144 | 14 | equivalencias y una remisión `Buſca` |
-| `p145_selected_articles.jsonl` | 145 | 14 | incluye `Lo miſmo` conservado como anáfora no resuelta |
-| `p146_selected_articles.jsonl` | 146 | 25 | equivalencias y tres remisiones `Buſca` |
-| `p147_selected_articles.jsonl` | 147 | 15 | equivalencias y remisión `Borracho → Buſca beodo` |
-| `p148_selected_articles.jsonl` | 148 | 15 | incluye `Bronce. Lo miſmo.` como anáfora no resuelta |
-| `p149_selected_articles.jsonl` | 149 | 15 | primer artículo que cruza de columna izquierda a derecha |
-| `p150_selected_articles.jsonl` | 150 | 15 | dos remisiones `Buſca` y dos anáforas `Lo miſmo` |
-| `p151_selected_articles.jsonl` | 151 | 15 | remisiones `Compaſſion → compadecerſe` y `Comulgar → comunion` |
-| `p152_selected_articles.jsonl` | 152 | 15 | equivalencias + remisiones `Cueva → caverna` y `Culpar à otro → acuſar` |
-| **Total** | — | **298** | todos sin revisión humana independiente |
+## Lotes estructurados
+
+| Lote | Página | Artículos |
+|---|---:|---:|
+| `p134_pilot_articles.jsonl` | 134 | 12 |
+| `p138_selected_articles.jsonl` | 138 | 33 |
+| `p139_selected_articles.jsonl` | 139 | 39 |
+| `p140_selected_articles.jsonl` | 140 | 36 |
+| `p141_selected_articles.jsonl` | 141 | 10 |
+| `p142_botanical_pilot.jsonl` | 142 | 10 |
+| `p141_p142_cross_page_article.jsonl` | 141–142 | 1 |
+| `p143_selected_articles.jsonl` | 143 | 14 |
+| `p144_selected_articles.jsonl` | 144 | 14 |
+| `p145_selected_articles.jsonl` | 145 | 14 |
+| `p146_selected_articles.jsonl` | 146 | 25 |
+| `p147_selected_articles.jsonl` | 147 | 15 |
+| `p148_selected_articles.jsonl` | 148 | 15 |
+| `p149_selected_articles.jsonl` | 149 | 15 |
+| `p150_selected_articles.jsonl` | 150 | 15 |
+| `p151_selected_articles.jsonl` | 151 | 15 |
+| `p152_selected_articles.jsonl` | 152 | 15 |
+| `p153_selected_articles.jsonl` | 153 | 15 |
+| `p154_selected_articles.jsonl` | 154 | 15 |
+| `p155_selected_articles.jsonl` | 155 | 15 |
+| **Total principal** | — | **343** |
+
+Existen además **4 artículos de remisión piloto** en p.165, mantenidos fuera del conteo principal mientras no se consolide el tramo intermedio.
 
 ## Regla de autoridad
 
-Los 298 objetos están estructurados, pero permanecen en estados `machine_corrected_unverified` o `unresolved`. Una estructura válida no equivale a una lectura filológicamente cerrada ni a `human_verified`.
+Una estructura válida no equivale a una lectura filológicamente cerrada. `machine_corrected_unverified`, `unresolved` y `human_verified` son estados diferentes; CHD no promueve automáticamente una lectura IA-asistida a validación humana.
 
-## Remisiones internas
+## Remisiones internas `Buſca`
 
-La p.141 confirma dentro de la secuencia productiva una remisión explícita: `Apercibirſe para hazer algo. Buſca aparejarſe.` Se representa como `articleType: cross_reference`, conservando el marcador y su destino sin sustituir el testimonio.
+Las remisiones se modelan como relaciones documentales, no como sustitución del artículo remitente por el contenido de su destino. Entre los casos ya estructurados se encuentran:
 
-La p.146 muestra además una densidad mayor de remisiones internas en una sola página, entre ellas `Barbo. Buſca Bagre.`, `Barrenar. Buſca agurear con barrena.` y `Baſta, coſa ſin pulir. Buſca aſpero.`. En p.147 se añadió `Borracho. Buſca beodo.`. Las páginas 150–152 añaden `Caro venderſe → Buſca cara coſa`, `Carrizo → Buſca caña hueca`, `Compaſſion → Buſca compadecerſe`, `Comulgar → Buſca comunion`, `Cueva → Buſca caverna` y `Culpar à otro → Buſca acuſar`. Estas relaciones permanecen documentales: CHD no reemplaza el artículo remitente por el contenido de su destino.
+- `Apercibirſe para hazer algo → aparejarſe`;
+- `Barbo → Bagre`;
+- `Barrenar → agurear con barrena`;
+- `Baſta, coſa ſin pulir → aſpero`;
+- `Borracho → beodo`;
+- `Caro venderſe → cara coſa`;
+- `Carrizo → caña hueca`;
+- `Compaſſion → compadecerſe`;
+- `Comulgar → comunion`;
+- `Cueva → caverna`;
+- `Culpar à otro → acuſar`;
+- `Dilatar → diferir`;
+- `Embolver → doblar`;
+- `Empacharſe → hartarſe`.
 
-## Anáforas distintas de `Buſca`
+### Primer ciclo recíproco
 
-La p.145 aporta `Azero. Lo miſmo.` y la p.148 `Bronce. Lo miſmo.`. En p.150 se añaden dos casos contiguos: `Cobrar lo que ſe debe. Lo miſmo.` y `Cobre metal. Lo miſmo.`. CHD conserva estos objetos como `unresolved`: `Lo miſmo` es una fórmula anafórica que exige resolución contextual y no autoriza a copiar automáticamente la forma del artículo precedente. Este comportamiento confirma la necesidad de distinguir remisión explícita, anáfora y equivalencia.
+Las pp.153–154 revelan el primer ciclo explícito de remisión del corpus:
 
-## Artículos que cruzan página
+`Demonio. Buſca diablo.` ↔ `Diablo. Buſca demonio.`
 
-El último artículo de la columna derecha de p.141 termina con `...que pade-` y continúa en la parte superior de p.142 con `padecen de las caderas. Bapſam.`. La unidad completa se conserva como `ALC1737-art-000141` y utiliza `sourceSpans` para registrar p.141 derecha → p.142 izquierda.
+Se preserva como una propiedad documental en `data/lexicon/relations/reciprocal_cross_references.jsonl`. CHD no infiere cuál de las dos voces debe ser el destino canónico.
 
-## Artículo que cruza columnas dentro de una misma página
+## Anáforas `Lo miſmo`
 
-La p.149 introduce un segundo tipo de continuidad física. Al pie de la columna izquierda aparece `Camarón. Cecobi, grande del` y la columna derecha comienza `Rio. Bacauri.`. CHD lo representa como un único artículo histórico:
+`Lo miſmo` se mantiene separado de `Buſca`. Los casos `Azero`, `Bronce`, `Cobrar lo que ſe debe` y `Cobre metal` permanecen `unresolved` mientras no se resuelva documentalmente su antecedente. No se copia de forma automática la equivalencia anterior.
 
-`Camarón. Cecobi, grande del Rio. Bacauri.`
+## Agrupaciones históricas y artículos descriptivos
 
-El objeto `ALC1737-art-000247` utiliza `sourceSpans` con dos segmentos en la misma página: izquierda → derecha. Esta observación demuestra que las fronteras de artículo no pueden derivarse únicamente de página o columna: deben reconstruirse a partir de la continuidad tipográfica del impreso.
+`sourceGroupingRaw` conserva encabezados como `Arboles, cuyo fruto es comeſtible`, `Arboles que ſirven para madera`, `Arboles chaparros` y `Arboles de mariſmas`. Las afirmaciones históricas de usos medicinales o materiales se documentan como contenido de 1737 y no se convierten en recomendaciones modernas.
 
-## Microestructura botánica jerárquica
+## Continuidades físicas
 
-La p.142 contiene artículos descriptivos extensos y series bajo encabezados como `Arboles, cuyo fruto es comeſtible`, `Arboles que ſirven para madera` y `Arboles chaparros`. `sourceGroupingRaw` conserva la agrupación histórica sin incorporarla artificialmente a la voz española.
+`sourceSpans` representa artículos que ocupan más de un segmento material. Dos casos ya comprobados son:
 
-Las afirmaciones de usos medicinales o materiales se registran como evidencia histórica de 1737; no constituyen recomendaciones médicas ni identificaciones botánicas modernas.
+1. p.141 derecha → p.142 izquierda: `Arbol, cuya leche ſirve para vilma à las mugeres, que padecen de las caderas. Bapſam.`;
+2. p.149 izquierda → p.149 derecha: `Camarón. Cecobi, grande del Rio. Bacauri.`.
 
-## Comprobación en p. 143: la agrupación también cruza página
+## Catchwords y control de falsas entradas
 
-La p.143 comienza con nuevas voces `Arbol. ...` que continúan materialmente la serie `Arboles chaparros` iniciada en p.142. Más adelante aparece un nuevo encabezado explícito, `Arboles de mariſmas`. El lote `p143_selected_articles.jsonl` conserva ambos contextos mediante `sourceGroupingRaw` y demuestra que un encabezado de agrupación puede gobernar artículos situados en más de una página.
+Las pp.153–155 confirman que los reclamos tipográficos de pie de página deben excluirse del conteo de artículos. Se documentaron dos ejemplos en `data/lexicon/boundary_markers/catchwords_p153_p154.jsonl`:
 
-El mismo lote abandona después la secuencia botánica y registra voces independientes como `Arco para tirar flecha. Huicori.`, `Arco del Cielo. Curuat.`, `Arco. Arcum.` y `Arriba. Hicachi.`, comprobando que la agrupación no se propaga más allá de su alcance material.
+- p.153: `Desbaſ-` anticipa `Desbaſtar madera` en p.154;
+- p.154: `Dar` anticipa la breve serie `Dar de comer / Dar de beber / Dar de veſtir` que abre p.155.
+
+Estos marcadores son evidencia material para reconstruir continuidad, pero **no son artículos lexicográficos independientes**. Esta regla debe incorporarse al QA del extractor para evitar falsos positivos en los 2,072 candidatos.
 
 ## Consecuencia metodológica
 
-La unidad maestra sigue siendo el **artículo histórico**. El modelo representa ahora:
+La unidad maestra continúa siendo el **artículo histórico**. El modelo operativo ya representa:
 
-`spans físicos → agrupación histórica opcional → artículo histórico → formas/remisiones/anáforas/notas → autoridad editorial`.
+`página/columna → spans físicos → agrupación histórica opcional → artículo → formas/remisiones/anáforas/notas → autoridad editorial`.
 
-La normalización léxica, resolución de anáforas, identificación de especies, equivalencias con variedades modernas y futura proyección TEI Lex-0 pertenecen a capas posteriores.
+Los catchwords se mantienen en una capa paratextual de frontera. La normalización, resolución de anáforas, equivalencias modernas y proyección TEI Lex-0 pertenecen a capas posteriores.
 
 ## Siguiente lote
 
-Continuar desde **p.153**, conservando por separado equivalencias simples, remisiones, anáforas, artículos descriptivos, agrupaciones, continuaciones físicas y lecturas `unresolved`.
+Continuar desde **digital 156**, mantener el doble registro GitHub ↔ Notion y revisar especialmente nuevos reclamos, remisiones, anáforas y posibles continuidades entre columna/página.
