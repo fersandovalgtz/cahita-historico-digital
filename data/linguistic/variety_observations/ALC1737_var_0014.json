@@ -1,0 +1,17 @@
+{
+  "id":"ALC1737-var-0014",
+  "sourceId":"ALC1737",
+  "sourcePageDigital":113,
+  "sourcePagePrinted":99,
+  "section":"part_iv",
+  "varietiesRaw":["Hiaqui"],
+  "observationType":"other_explicit_source_attribution",
+  "phenomenon":"frecuencia atribuida de la preposición histórica vebuili",
+  "sourceText":"Eſte vebuili es mui vſado en Hiaqui.",
+  "structuredClaim":{"formRaw":"vebuili","sourceFrequencyRaw":"mui vſado","attributedToRaw":"Hiaqui"},
+  "editorialInterpretation":"La fuente atribuye explícitamente una alta frecuencia de uso de `vebuili` a Hiaqui dentro de su tratamiento de las preposiciones.",
+  "caution":"La afirmación es una observación del gramático de 1737; CHD no la convierte en frecuencia cuantitativa ni en descripción automática del yaqui moderno.",
+  "reviewStatus":"machine_corrected_unverified",
+  "humanVerified":false,
+  "provenance":{"derivedFrom":"ALC1737:digital-page-113;printed-page-99;rule-314","agent":"GPT-5.6 Sol visual collation","method":"Explicit historical variety attribution extracted from facsimile/transcription; no independent human verification","processedAt":null}
+}
