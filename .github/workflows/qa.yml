@@ -59,7 +59,9 @@ jobs:
             data/lexicon/reconciliation/p135_candidate_linkage_overlay.jsonl \
             data/lexicon/reconciliation/p136_reconciliation.jsonl \
             data/lexicon/reconciliation/p137_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p137_right_reconciliation.jsonl; do
+            data/lexicon/reconciliation/p137_right_reconciliation.jsonl \
+            data/lexicon/reconciliation/p138_left_reconciliation.jsonl \
+            data/lexicon/reconciliation/p138_right_reconciliation.jsonl; do
             python scripts/validate_jsonl.py \
               --schema schemas/lexicon-candidate-review.schema.json \
               --jsonl "$file"
@@ -74,7 +76,8 @@ jobs:
             data/lexicon/reconciliation/p133_opening_missed_start.jsonl \
             data/lexicon/reconciliation/p135_missed_visible_starts.jsonl \
             data/lexicon/reconciliation/p136_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p137_missed_visible_starts.jsonl; do
+            data/lexicon/reconciliation/p137_missed_visible_starts.jsonl \
+            data/lexicon/reconciliation/p138_missed_visible_starts.jsonl; do
             python scripts/validate_jsonl.py \
               --schema schemas/lexicon-missed-start.schema.json \
               --jsonl "$file"
@@ -92,9 +95,12 @@ jobs:
           python -m json.tool data/lexicon/reconciliation/p135_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p136_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p137_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p138_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/provenance/p135_art000704_correction.json >/dev/null
           python -m json.tool data/lexicon/provenance/p137_art000729_correction.json >/dev/null
           python -m json.tool data/lexicon/provenance/p137_art000731_correction.json >/dev/null
+          python -m json.tool data/lexicon/provenance/p137_p138_art000734_continuation.json >/dev/null
+          python -m json.tool data/lexicon/provenance/p138_selected_recollation_corrections.json >/dev/null
           python -m json.tool data/lexicon/review/boundary_algorithm_comparison.json >/dev/null
           python -m json.tool data/source/control/bue1890.json >/dev/null
           python -m json.tool data/source/control/bnf1737_reported_witness.json >/dev/null
