@@ -1,0 +1,26 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 34,
+  "sourcePagePrinted": 20,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ARTE DE LA LENGVA\n\nquando ſe manda ſe vſa del verbo de ir, y venir gerundivo ſe, para ſingular; y vo, para plural, v. g. tahiuſe ve por fuego: uaſouvo id por ſacate.\n\nEn TUC, y YEC.\n\n70. Aunque eſtas particulas ſe dixo yá, que correſponden à Sum, es, fui; con todo tienen otra ſignificacion, porque juntando à los nombres ſubſtantivos eſta particula tuc, en lugar de la particula del obliquo, y añadiendo à los adjetivos en el recto eſta particula yec, ſe hazen verbos, y ſignifican convertirſe en lo que ſignifica el nombre, v. g. ioremtuc ſe hizo hombre: tetatuc piedra: ontuc ſal, pueſto el tuc, en lugar del ta, del obliquo onta: tuuriyec ſe hizo bueno: chivuyec amargo: huuenayec malo. Mas los adjetivos, que ſignifican defectos del cuerpo, toman el tuc, y dejan el yec, v. g. liptituc: ſe hizo ciego: nacapituc ſordo, canoquituc mudo. Eſtos verbos converſos en tuc, ſon paſſivos en la ſignificacion, no tienen voz paſſiva, ſi no es en las tres perſonas, y gerundio en di. Veaſe lo que ſe dice en la formacion de la paſſiva.\n\nEn SUC.\n\n71. Añadiendo à los verbos en lugar del naque del futuro eſta particula ſuc, ſe forma vn verbo, que ſignifica hazer completivamente lo ſignificado por el verbo, v. g. veha azotar, futuro vehnaque, addito ſuc, en lugar del naque, ſe forma vehſuc azotar con eſcarmiento. Conjuganſe por la conjugacion principal, tienen paſſiva ſuua, v. g. vehſuua ſer azotado mui bien: llegaſte eſtando yo baptizando: netze vatoſuuai uaqui emiepſac. Veaſe en la conjugacion de preteritos lo que ſe dice de los verbos acabados en c.\n\nCompulſivos.\n\n72. Formanſe añadiendo eſta particula tua, en lugar del naque del futuro, ſignifican compeler à hazer la accion del\n\nverbo\n",
+  "lineBreakPolicy": "Continuation of rule 69, headings, numbered rules and page-turn split are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "vehſuc / vehſuua", "note": "Forms in rule 71 are read from the 300 dpi facsimile; retain as provisional until a second specialist collation.", "line": null},
+    {"token": "netze vatoſuuai uaqui emiepſac", "note": "Cahíta example glossed 'llegaſte eſtando yo baptizando' requires independent linguistic collation.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Light show-through and localized ink wear are present but the printed argument is substantially legible.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-34;printed-page-20",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
