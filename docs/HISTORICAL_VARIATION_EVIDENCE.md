@@ -2,75 +2,86 @@
 
 ## Propósito
 
-Este documento reúne pasajes en los que *Arte de la lengua cahita* (1737) atribuye de manera explícita una forma, terminación, contraste o modo de hablar a denominaciones históricas como `Hiaqui`, `Mayo` y `Thehueco`. Su objetivo no es modernizar la clasificación ni resolver por anticipado relaciones dialectales contemporáneas, sino construir una capa de evidencia trazable que pueda explotarse después en estudios diacrónicos y comparativos.
+Este documento reúne pasajes en los que *Arte de la lengua cahita* (1737) atribuye explícitamente una forma, terminación, contraste, preferencia o modo de hablar a denominaciones históricas. CHD conserva esas categorías como **datos del impreso**, no como clasificación lingüística moderna.
 
-Los registros máquina-legibles correspondientes se conservan en [`data/linguistic/variety_observations.jsonl`](../data/linguistic/variety_observations.jsonl) y se validarán contra [`schemas/historical-variety-observation.schema.json`](../schemas/historical-variety-observation.schema.json).
+Los registros máquina-legibles están en [`data/linguistic/variety_observations.jsonl`](../data/linguistic/variety_observations.jsonl) y su contrato en [`schemas/historical-variety-observation.schema.json`](../schemas/historical-variety-observation.schema.json).
 
 ## Principio de autoridad
 
 CHD diferencia cuatro niveles:
 
-1. **denominación literal de la fuente**;
-2. **fenómeno lingüístico tal como lo formula el gramático de 1737**;
-3. **estructuración editorial de CHD**;
-4. **comparación histórica o moderna posterior**.
+1. denominación literal de la fuente;
+2. fenómeno tal como lo formula el gramático de 1737;
+3. estructuración editorial de CHD;
+4. comparación histórica o moderna posterior.
 
-Los niveles 3 y 4 nunca sustituyen los dos primeros. Las etiquetas históricas no se convierten automáticamente en taxones modernos, y una semejanza entre una forma de 1737 y una forma contemporánea no se registra como continuidad genética o identidad sin evidencia adicional.
+Los niveles 3 y 4 nunca sustituyen los dos primeros. Una etiqueta histórica no se convierte automáticamente en taxón moderno, y una semejanza formal no se registra como cognación, continuidad o identidad sin evidencia adicional.
 
-## Evidencias iniciales
+## Diez observaciones estructuradas actualmente
 
-### Página digital 11 — `Al lector`
+### 1. Página 11 — Hiaquis, Mayes y Thehuecos
 
-La fuente agrupa a `Hiaquis`, `Mayes` y `Thehuecos` dentro de lo que llama un mismo idioma y, en la misma secuencia, afirma que se diferencian en el modo de hablar. A continuación proporciona ejemplos paralelos. CHD registra esta formulación como una afirmación metalingüística histórica doble: **unidad declarada + diferencia de uso**.
+`Al lector` agrupa a `Hiaquis`, `Mayes` y `Thehuecos` dentro de lo que denomina un mismo `Idioma`, pero afirma simultáneamente que se diferencian en el `modo de hablar`. CHD conserva ambas afirmaciones: **unidad declarada + diferencia de uso**.
 
-Esta evidencia es especialmente importante porque impide reducir la posición del impreso a una sola categoría moderna. El propio texto sostiene simultáneamente semejanza y diversidad.
+### 2. Página 19 / impresa 5 — futuro atribuido a los Mayos
 
-### Página digital 19 / impresa 5 — formación del futuro
+La regla 20 señala que, frente a la sustitución general de `ſe` por `h` antes de `naque`, `los Mayos` no usan esa `h` y pierden la `e`. El texto ejemplifica con `Buaſe → buaſnaque` y `tuſe → tuſnaque`.
 
-En la regla 20 de la Parte I, después de describir que los verbos acabados en `ſe` mudan `ſe` en `h` para recibir `naque`, el texto introduce una excepción atribuida expresamente a `los Mayos`: indica que en algunas partes no se usa `h` en lugar de `ſe` y ejemplifica con formas como `Buaſe → buaſnaque` y `tuſe → tuſnaque`.
+### 3. Página 37 / impresa 23 — `Teueco` y la alternancia ſ/h
 
-CHD tipa este pasaje como **variación morfofonológica atribuida por la fuente**. No se interpreta todavía como regla del mayo moderno.
+La regla 79 afirma que en muchos partidos se convierte `ſ` en `h` en determinado contexto medial. Dentro de esa explicación contrasta expresamente `tuſi → tuſta` en `Teueco` con otras realizaciones, y ofrece además `hioſte, vel hiohte`.
 
-### Página digital 53 / impresa 39 — `Hiaqui ſuaue`
+### 4. Página 39 / impresa 25 — inserción de `i` más usada en Teueco
 
-En la Segunda Declinación aparece el ejemplo `paros la liebre`, seguido de la nota parentética `aſſi la llaman los Mayos, y el Hiaqui ſuaue`.
+La regla 88 describe la interposición de una `i` entre vocales y añade de manera explícita: `Eſto es mas vſado en Teueco`. CHD registra la atribución de frecuencia, sin convertirla todavía en regla fonológica moderna.
 
-Este pasaje es doblemente relevante. Registra una atribución léxica explícita y, además, conserva una etiqueta interna —`Hiaqui ſuaue`— que deberá estudiarse como categoría histórica del propio testimonio. CHD no presupone qué entidad dialectal contemporánea, si alguna, corresponde exactamente a esa denominación.
+### 5. Página 40 / impresa 26 — Hiaquis, Teuecos y Mayos en el `accento`
 
-### Página digital 70 / impresa 56 — terminaciones temporales comparadas
+Al tratar las synalephas, la fuente declara que no puede darse una regla única porque los mismos vocablos son pronunciados por `los Hiaquis breves`, `los Teuecos largos` y por `los Mayos vnos breves, y otros largos`. `Breve`, `largo` y `accento` permanecen como categorías metalingüísticas del impreso.
 
-El *Arte* proporciona una regla comparativa particularmente explícita:
+### 6. Página 49 / impresa 35 — `los Cynaloas`
+
+La regla 119 afirma que `Los Cynaloas vſan mucho del accuſativo netzi` y advierte que quien escucha puede confundirlo con dativo. El ejemplo `netzavuriac` se conserva como forma documental. `Cynaloas` se incorpora así al inventario de denominaciones históricas relevantes para la variación descrita por el *Arte*.
+
+### 7. Página 52 / impresa 38 — Tehuecos frente a Hiaqui y Mayo
+
+La regla 128 contrasta la formación del oblicuo de nombres terminados en `ſi` y `ſo`. El impreso atribuye a `Tehuecos` formas como `tuſta` y `maſta`, mientras que para `Hiaqui, y Mayo` presenta `tuhta` y `mahta`, explicándolo como sustitución por `h` antes de `ta`.
+
+### 8. Página 53 / impresa 39 — `Hiaqui ſuaue`
+
+En la Segunda Declinación aparece `paros la liebre`, acompañado de la nota `aſſi la llaman los Mayos, y el Hiaqui ſuaue`. Además de la atribución léxica, la etiqueta histórica `Hiaqui ſuaue` se conserva literalmente como objeto de estudio; CHD no presupone qué entidad dialectal moderna le corresponde.
+
+### 9. Página 70 / impresa 56 — terminaciones temporales comparadas
+
+El *Arte* distribuye terminaciones entre tres denominaciones:
 
 - pretérito imperfecto: `Tehuecos = e`, `Hiaquis = n`, `Mayos = i`;
 - perfecto: todos en `c`;
 - pluscuamperfecto: `Tehuecos = cat`, `Hiaquis = can`, `Mayos = cai`;
 - futuro imperfecto: todos en `naque`.
 
-Estas relaciones se conservan como valores atribuidos por el gramático, no como normalización de CHD. Constituyen uno de los núcleos principales para un futuro dataset de variación morfológica histórica.
+Es uno de los pasajes comparativos más densos del volumen.
 
-### Página digital 71 / impresa 57 — paradigma por variedad
+### 10. Página 71 / impresa 57 — paradigma por variedad
 
-La página siguiente lleva la comparación a un paradigma concreto. Se distinguen formas para `El Hiaqui`, `El Mayo` y `el Tehueco`, y una nota reitera que los verbos acabados en `e` presentan `cat` para los Tehuecos, `can` para los Hiaquis y `cai` para los Mayos.
+La página siguiente lleva el contraste a un paradigma concreto, con formas identificadas como `El Hiaqui`, `El Mayo` y `el Tehueco`, y vuelve a declarar `cat / can / cai` para Tehuecos, Hiaquis y Mayos respectivamente.
 
-Antes de promover todas las formas paradigmáticas a datos de producción, CHD exige transcripción completa de la página y revisión de cada forma. El registro actual conserva la existencia y estructura del contraste sin fingir una validación lingüística independiente.
+## Consecuencia científica
 
-## Valor científico inmediato
+La capa ya no puede considerarse una colección incidental de notas. El impreso contiene un **sistema distribuido de observaciones comparativas históricas** que abarca al menos:
 
-Esta capa cambia la naturaleza del proyecto: CHD no será únicamente una edición digital y un vocabulario estructurado. La fuente contiene un **sistema interno de observaciones comparativas sobre variedades históricas**, susceptible de convertirse en un corpus independiente de evidencia dialectal de comienzos del siglo XVIII.
+- agrupación metalingüística;
+- variación léxica;
+- morfología y formación de caso;
+- morfofonología;
+- realización descrita en términos de `accento`, `breve` y `largo`;
+- preferencias de uso atribuidas a grupos o regiones;
+- paradigmas verbales comparados.
 
-Un futuro producto derivado podrá organizar las observaciones por:
+Esto justifica un producto científico independiente: un **corpus de evidencia de variación cahíta histórica**, siempre anclado en página, regla, forma fuente, denominación literal, estado de revisión y procedencia.
 
-- nivel lingüístico: léxico, fonología/morfofonología, morfología, paradigma, sintaxis;
-- denominación histórica;
-- página y regla;
-- forma fuente;
-- glosa castellana;
-- contraste explícito;
-- grado de revisión;
-- posible correspondencia moderna, siempre en una capa separada.
+## Próxima etapa
 
-## Siguiente etapa
+La búsqueda deberá extenderse a todas las variantes gráficas de `Hiaqui`, `Mayo/Mayes`, `Thehueco/Tehueco`, `Cynaloa/Cynaloas` y cualquier otra denominación que el volumen utilice comparativamente. Cada coincidencia se cotejará contra facsímil; la ausencia en OCR nunca se considerará evidencia suficiente de ausencia en el impreso.
 
-La búsqueda de menciones de `Hiaqui`, `Mayo`, `Mayes`, `Thehueco`, `Tehueco` y variantes gráficas deberá realizarse sobre la obra completa. Cada aparición relevante se cotejará contra facsímil antes de incorporarse al dataset. La ausencia de una coincidencia OCR no se considerará evidencia de ausencia en el impreso.
-
-**Estado:** dataset inicial, `machine_corrected_unverified`; sin revisión humana independiente.
+**Estado:** 10 observaciones estructuradas, `machine_corrected_unverified`; sin revisión humana independiente.
