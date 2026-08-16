@@ -2,11 +2,11 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "name": "Cahíta Histórico Digital",
-  "description": "Infraestructura reproducible para la edición histórico-digital y estructuración del Arte de la lengua cahita (México, 1737).",
+  "description": "Infraestructura reproducible para la edición histórico-digital, transcripción y estructuración lexicográfica y gramatical del Arte de la lengua cahita (México, 1737).",
   "codeRepository": "https://github.com/fersandovalgtz/cahita-historico-digital",
   "dateCreated": "2026-08-15",
-  "dateModified": "2026-08-15",
-  "version": "0.1.0",
+  "dateModified": "2026-08-16",
+  "version": "0.2.0-dev",
   "license": "https://spdx.org/licenses/MIT.html",
   "author": {
     "@type": "Person",
@@ -22,10 +22,12 @@
     "cahíta",
     "digital scholarly edition",
     "historical linguistics",
+    "historical lexicography",
     "missionary linguistics",
     "digital humanities",
-    "research software"
+    "research software",
+    "reproducible corpus"
   ],
-  "programmingLanguage": [],
-  "developmentStatus": "concept"
+  "programmingLanguage": ["Python"],
+  "developmentStatus": "active"
 }
