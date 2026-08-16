@@ -23,11 +23,12 @@ Estado de cobertura de Cahíta Histórico Digital para `ALC1737` — 2026-08-15.
 | Grupos de conjunciones/metacategorías | **6** | reglas 360–373 + interjecciones |
 | Observaciones de variación histórica | **17 entidades** | fuente histórica; no taxonomía moderna |
 | Candidatos lexicográficos v0.2 | **2,072** | 45 páginas; no equivalen a artículos publicados |
-| Artículos históricos estructurados | **478** | piloto p.134 + secuencia curatorial pp.138–164 |
-| Artículos de remisión piloto adicionales | **4** | p.165; fuera del conteo principal hasta reconciliación |
-| Ciclos recíprocos de remisión modelados | **1** | `Demonio ↔ Diablo` |
+| Artículos históricos estructurados | **538** | p.134 + secuencia curatorial pp.138–168 |
+| Pilotos lexicográficos fuera de secuencia | **0** | p.165 reconciliado e integrado |
+| Ciclos recíprocos de remisión modelados | **1+** | incluye `Demonio ↔ Diablo`; nuevas reciprocidades ofender/ofensa/pecar |
 | Lagunas/discontinuidades del testimonio registradas | **1** | `ALC1737-gap-0001`, digital 157→158 |
 | Anomalías de frontera adicionales | **1 abierta** | p.161 `Lucer-` → p.162 sin lema visible |
+| QA de identificadores | **validador incorporado** | `scripts/validate_lexicon_ids.py` |
 | Revisión humana independiente | **0** | no iniciada |
 
 ## Arte gramatical
@@ -51,28 +52,38 @@ CHD conserva datasets estructurados para paradigmas, tiempos modales, construcci
 
 ## Vocabulario: estado de producción
 
-El vocabulario ocupa digitales 133–177. El pipeline geométrico v0.2 produce **2,072 candidatos de frontera**, pero la secuencia curatorial principal contiene **478 artículos históricos efectivamente estructurados** en p.134 y pp.138–164.
+El vocabulario ocupa digitales 133–177. El pipeline geométrico v0.2 produce **2,072 candidatos de frontera**, mientras la secuencia curatorial principal contiene **538 artículos históricos efectivamente estructurados** en p.134 y pp.138–168.
 
-El modelo ya representa equivalencias, remisiones `Buſca`, anáforas `Lo miſmo`, agrupaciones históricas, artículos descriptivos, continuidad entre páginas/columnas, catchwords como paratexto, relaciones recíprocas de remisión y lagunas/anomalías documentales explícitas.
+El modelo representa equivalencias, remisiones `Buſca`, anáforas `Lo miſmo`, agrupaciones históricas, artículos descriptivos, continuidad entre páginas/columnas, catchwords como paratexto, relaciones recíprocas de remisión y lagunas/anomalías documentales explícitas.
 
-### Nuevos lotes pp.159–164
+### Lotes pp.165–168
 
-Se añadieron seis lotes de 15 artículos cada uno (`p159_selected_articles.jsonl` … `p164_selected_articles.jsonl`), total **90 artículos nuevos**. Entre los fenómenos documentados figuran:
+Se añadieron cuatro lotes de 15 artículos cada uno:
 
-- `Yerva buena. Lo miſmo.`;
-- `Libro. Lo miſmo.` y `Limon. Lo miſmo.`;
-- `Noez, y nogal. Lo miſmo.`;
-- remisiones `Yr por agua → agua traer`, `Jubilo → gozo`, `Loco bolverſe → enloquecer`, `Loma → ladera`, `Mentar à alguno → mencionar`, `Mozo de edad → mancebo`, `Montear → caçar`, `Ninguna coſa → nada` y `Nombrar, poner nombre → llamar`.
+- `p165_selected_articles.jsonl`;
+- `p166_selected_articles.jsonl`;
+- `p167_selected_articles.jsonl`;
+- `p168_selected_articles.jsonl`.
+
+Total nuevo: **60 artículos**. Entre las nuevas relaciones aparecen `Ofender → pecar`, `Ofenſa → pecado`, `Ofenſor → pecador`, `Orejear → menear las orejas`, `Orina → meados`, `Orinar → mear`, `Oſado ſer → atrevido`, `Palo para eſcarbar tierra → coa`, `Pecado → ofenſa`, `Pecador → ofenſor` y `Pecar → ofender`.
+
+### Reconciliación de identificadores en p.165
+
+El antiguo `p165_cross_reference_pilot.jsonl` utilizaba `ALC1737-art-000013`–`000016`, identificadores ya usados por la secuencia principal de p.138. Los cuatro objetos documentales se conservaron, se reasignaron a `000490`–`000493` y se integraron en `p165_selected_articles.jsonl`; el piloto duplicado fue eliminado.
+
+La migración queda documentada en `data/lexicon/provenance/p165_pilot_id_reconciliation.json`. Para evitar regresiones se añadió `scripts/validate_lexicon_ids.py`, que comprueba parseo JSONL, unicidad global de `articleId` y coherencia de estados de revisión.
 
 ### Catchwords y QA de frontera
 
-`data/lexicon/boundary_markers/catchwords_p159_p164.jsonl` registra:
+`data/lexicon/boundary_markers/` registra ahora:
 
-- p.159 `Yr` → p.160 normal;
-- p.160 `Que-` → continuación del artículo al inicio de p.161;
-- p.161 `Lucer-` → p.162 comienza con `Tohuopo, l, aioa.` sin lema visible: incidencia `unresolved`, no reconstruida;
-- p.163 `Naci-` → `Nacido...` p.164;
-- p.164 `Obr-` → pendiente de comprobación en p.165.
+- p.164 `Obr-` → `Obra aſſi, hechura. Chupari.` p.165;
+- p.165 `Paga-` → `Paga tal. Bebeti.` p.166;
+- p.166 `Paſſo` → `Paſſo de las beſtias. Arabuerama.` p.167;
+- p.167 `Pena-` → `Penacho` p.168;
+- p.168 `Pie-` → pendiente de cotejo en p.169.
+
+La anomalía anterior `Lucer-` p.161 → p.162 sigue abierta y no se reconstruye por conjetura.
 
 ### Discontinuidad digital 157→158
 
@@ -86,9 +97,10 @@ La p.157 termina con voces de F, incluida `Flecha. Huihua.`, y muestra un reclam
 - OCR 281 vs lectura visual 282;
 - posible ausencia visible de 294;
 - discontinuidad del vocabulario F→H entre digitales 157 y 158;
-- reclamo `Lucer-` en p.161 sin lema visible al comienzo de p.162.
+- reclamo `Lucer-` en p.161 sin lema visible al comienzo de p.162;
+- reclamo `Pie-` de p.168 pendiente de comprobación en p.169.
 
-Ninguna incidencia se corrige silenciosamente.
+La colisión de identificadores del piloto p.165 **ya está resuelta** y no se considera una incidencia abierta.
 
 ## Interpretación de autoridad
 
@@ -96,4 +108,4 @@ Ninguna incidencia se corrige silenciosamente.
 
 ## Siguiente frente
 
-Reconciliar **digital 165** con los cuatro artículos piloto ya existentes, evitar duplicados y continuar después la promoción curatorial hacia p.166, manteniendo sincronización GitHub ↔ Notion.
+Continuar desde **digital 169**, resolver el reclamo `Pie-` y mantener sincronización GitHub ↔ Notion por lote sustantivo.
