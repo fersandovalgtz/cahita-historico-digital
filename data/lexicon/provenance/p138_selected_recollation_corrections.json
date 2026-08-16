@@ -1,0 +1,31 @@
+{
+  "operation": "selected_article_recollation",
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 138,
+  "scope": "Existing selected historical articles ALC1737-art-000013 through ALC1737-art-000045 were re-collated as part of exhaustive page closure; candidate linkage was added where applicable.",
+  "corrections": [
+    {"articleId":"ALC1737-art-000013","field":"cahitaFormsRaw[0].formRaw","before":"Hiquia arbuhuame","after":"Hiquia aribuhuame"},
+    {"articleId":"ALC1737-art-000021","field":"spanishGuideRaw","before":"Ayſar à otro","after":"Ayrar à otro"},
+    {"articleId":"ALC1737-art-000031","field":"cahitaFormsRaw[0].formRaw","before":"Amocta","after":"Amoſa"},
+    {"articleId":"ALC1737-art-000032","field":"cahitaFormsRaw[0].formRaw","before":"Maſabuecori","after":"Maſahuecori"},
+    {"articleId":"ALC1737-art-000044","field":"cahitaFormsRaw[0].formRaw","before":"Hita buneri","after":"Hita huneri"},
+    {"articleId":"ALC1737-art-000045","field":"cahitaFormsRaw[0].formRaw","before":"Seſa buneri","after":"Seſa huneri"}
+  ],
+  "additionalEditorialChanges": [
+    "ALC1737-art-000016 preserves printed `o` rather than silently modernizing to `ó`.",
+    "ALC1737-art-000034 preserves the visible semicolon in transcriptionRaw.",
+    "ALC1737-art-000017 is now explicitly linked to the missed-visible-start layer because its start is absorbed inside candidate p138-L-006.",
+    "ALC1737-art-000032 records and excludes stray opposite-column OCR token `Hiquia` from candidate evidence."
+  ],
+  "authority": {
+    "reviewStatus": "machine_corrected_unverified",
+    "humanVerified": false,
+    "primaryEvidence": "ALC1737 digital p.138 facsimile",
+    "rule": "No completion from OCR, analogy, or later editions when the primary facsimile is insufficient."
+  },
+  "provenance": {
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "AI-assisted targeted high-resolution facsimile recollation during exhaustive page closure",
+    "processedAt": null
+  }
+}
