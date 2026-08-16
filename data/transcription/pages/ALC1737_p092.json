@@ -1,0 +1,16 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":92,
+  "sourcePagePrinted":78,
+  "section":"part_iii",
+  "transcriptionType":"diplomatic",
+  "coverage":"full_page",
+  "scope":"printed_text",
+  "text":"[continuación de 250] ... yo ido á peſcar, vauſe caine: le fueron á buſcar, aquim [ileg.] vo. yendo tu á peſcar, y yendo yo á veerte murió mi Padre, Natzai mucuc emchi vauſeyo, netz anchi vitziſeyo [ileg.].\n\n251. Con los verbos, que antes del naque tienen t, ſe añade á la t, eſta zi, para componerse con el verbo ſe, vel vo, v. g. vitza veer, futuro vitnaque; y aſſi el gerundio de ir, ó venir a veer ſerá vitziſe para ſingular, y vitzivo para plural, y aſſi de los demás que tienen t antes del naque, v. g. [ejemplos cahítas parcialmente ilegibles].\n\n252. Mas aunque eſta es regla cierta para los verbos que tienen t antes del naque, parece añadirſe vna i para recebir el ſe, ó el vo á otros verbos, principalmente á los que tienen conſonante o, v antes del naque, y aſſi dicen á vebziſe, anda á azotar: a hiuziſe, ve á veerlo: quales ſean dabit vſus.\n\n253. Eſte verbo ſe, y vo no tienen futuro, y aſſi lo dicen por el verbo ſimple, v. g. vámonos á bañar, [forma cahíta]; iremos á comer, hibuanaquete. Tampoco ſe tiene paſſiva, y aſſi lo miſmo es en la lengua ha ido á comer, que ſe ha ido á comer, ó es ido á comer, que todo ſe ſignifica por el verbo hibuafec: pero el vo tiene paſſiva, y aſſi ſe dice, etzivouac, ſon idos, ó ſe han ido á ſembrar: nunuvouac, ſe han ido a llamarle.\n\n254. Aunque los nombres ſubſtantivos añadiéndoles vna u ſe hazen verbos, que ſignifican ir, por lo que ſignifica el nombre, como ya ſe dixo; con todo, quando ſe manda ſe vſa del ſe, y del vo, v. g. ve por fuego, tahiſe e: id por zacate, vaſoiapo em. En eſte modo no parece tener paſſiva el verbo regido del gerundio en dum; ni en los artes ſe halla exemplo, y aſſi reducido á practica el dicho gerundio de ir, ó venir es como ſe ſigue. Voy á amar, a ne eriaſe: vamos á amar, a te eriavo: fui á amar, a ne eriaſec: fuimos á amar, a te eriavoc: iré á amar, a ne erianaque: iremos á amar, [forma cahíta parcialmente ilegible]. Paſſiva. Son idos á amar, [continúa].",
+  "lineBreakPolicy":"Headings/rule numbers preserved; running line breaks normalized; uncertain forms not reconstructed.",
+  "reviewStatus":"unresolved",
+  "humanVerified":false,
+  "uncertainties":[{"token":"aquim [ileg.] vo","note":"Form in opening continuation not securely legible."},{"token":"[ejemplos cahítas parcialmente ilegibles]","note":"Several example forms in rule 251 require second collation."},{"token":"[forma cahíta]","note":"Example in rule 253 not securely legible from current pass."}],
+  "materialNotes":[{"type":"bleed_through","note":"Moderate show-through; prose and rule structure remain readable.","transcription":null}],
+  "provenance":{"derivedFrom":"ALC1737:digital-page-92;printed-page-78","agent":"GPT-5.6 Sol visual collation","method":"Full-page transcription from facsimile with parsed text as secondary comparison; no independent human verification","processedAt":null}
+}
