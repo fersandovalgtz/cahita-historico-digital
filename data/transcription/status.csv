@@ -9,10 +9,10 @@ ALC1737,7,,preliminaries,,pending,unreviewed,,,
 ALC1737,8,,preliminaries,,pending,unreviewed,,,
 ALC1737,9,,preliminaries,,pending,unreviewed,,,
 ALC1737,10,,preliminaries,,pending,unreviewed,,,
-ALC1737,11,,preliminaries,,pending,unreviewed,,,
-ALC1737,12,,preliminaries,,pending,unreviewed,,,
-ALC1737,13,,preliminaries,,pending,unreviewed,,,
-ALC1737,14,,preliminaries,errata_verso,not_applicable_material,material_identified,,,errata_verso
+ALC1737,11,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p011.json,1,Al lector page 1; printed prose complete; one linguistic-spacing uncertainty
+ALC1737,12,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p012.json,0,Al lector page 2; catchword PRO retained
+ALC1737,13,,preliminaries,,full_page,unresolved,data/transcription/pages/ALC1737_p013.json,3,historical errata leaf; structured corrections also in data/corrections/ALC1737_p013_errata.json
+ALC1737,14,,preliminaries,errata_verso,not_applicable_material,material_identified,,,blank verso with bleed-through; no substantive printed text
 ALC1737,15,1,part_i,,pending,unreviewed,,,
 ALC1737,16,2,part_i,,pending,unreviewed,,,
 ALC1737,17,3,part_i,,pending,unreviewed,,,
