@@ -1,6 +1,54 @@
 # Changelog
 
-Todos los cambios relevantes de Cahíta Histórico Digital se documentarán en este archivo.
+Todos los cambios relevantes de Cahíta Histórico Digital se documentan en este archivo.
+
+## [0.2.0-dev] - 2026-08-16
+
+### Hito científico
+
+- el cuerpo gramatical del *Arte* quedó representado de forma continua en la capa de transcripción IA-asistida hasta `FIN DEL ARTE`;
+- la cobertura `full_page` alcanza **128 páginas**;
+- se estructuraron capas específicas para modalidad, formas no finitas, participios, predicación, verbos irregulares, preposiciones, adverbios, conjunciones/metacategorías y numerales;
+- se identificaron **17+ observaciones de variación histórica**, con consolidación combinada todavía pendiente;
+- las fronteras intra-página 69 (II→III) y 105 (III→IV) quedaron preservadas estructuralmente.
+
+### Corpus lexicográfico
+
+- el inventario `hybrid_margin_mode_v0.2` de **2,072 candidatos** quedó persistido canónicamente en una representación fila-a-fila lossless y reconstruible;
+- se fijaron revisión generadora, hashes del PDF y del JSONL canónico, manifiesto de integridad y script de reconstrucción;
+- las **45/45 páginas** del vocabulario tienen representación lexicográfica estructurada;
+- la capa curatorial alcanza **734 artículos históricos estructurados**;
+- se modelaron remisiones `Buſca`, anáforas `Lo miſmo`, agrupaciones históricas, catchwords y spans entre columnas/páginas;
+- se registraron la discontinuidad `ALC1737-gap-0001` (157→158) y la anomalía `Lucer-` (161→162);
+- se corrigió una colisión histórica de identificadores del antiguo piloto de p.165 y se incorporó un validador de unicidad.
+
+### Reconciliación y QA
+
+- se definió `schemas/lexicon-candidate-review.schema.json` y el protocolo formal de reconciliación;
+- se añadió `articleLinkStatus` para separar frontera confirmada de promoción curatorial;
+- se reconciliaron **61/61 candidatos** de pp.133–134: 57 `article`, 3 `continuation`, 1 `unresolved`;
+- la calidad geométrica del tramo quedó en 52 `exact`, 5 `merged_articles`, 2 `oversegmented`, 1 `undersegmented`, 1 `ambiguous`;
+- 36 candidatos `article` permanecen `pending_promotion`;
+- se creó una capa específica para falsos negativos/inicios visibles omitidos y se registraron **14** inicios observados en pp.133–134;
+- la comparación v0.2 sobre pp.133, 134, 150 y 177 conserva precisión 97.13%, recall 89.89% y F1 93.37%, con muestra intencional e IA-asistida.
+
+### Auditoría de consistencia
+
+- `README.md`, `ROADMAP.md` y `COVERAGE.md` fueron sincronizados con el estado real del repositorio;
+- se distinguieron explícitamente las métricas históricas v0.1 de las vigentes v0.2;
+- el estado de desarrollo pasa a **`0.2.0-dev`** sin declarar una release científica estable;
+- permanece **0 `human_verified`** y no existe aún DOI del proyecto.
+
+### Pendientes de la serie 0.2.x
+
+- consolidar documentación y metadatos restantes;
+- actualizar Issues históricos que aún describen estados superados;
+- promover los 36 artículos pendientes de pp.133–134 y cerrar su inventario visible;
+- escalar reconciliación a pp.135–177;
+- consolidar variación histórica y concordancias gramaticales;
+- incorporar CI/QA automático;
+- buscar testimonios independientes útiles para control textual;
+- preparar interoperabilidad y revisión humana antes de una release estable.
 
 ## [0.1.5-dev] - 2026-08-15
 
