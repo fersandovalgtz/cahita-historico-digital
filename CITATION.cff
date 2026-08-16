@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Si utiliza Cahíta Histórico Digital, cite esta versión del proyecto y la fuente histórica de 1737 correspondiente."
+message: "Si utiliza Cahíta Histórico Digital, cite esta versión de desarrollo y la fuente histórica de 1737 correspondiente. Para resultados reproducibles, cite además el commit utilizado."
 title: "Cahíta Histórico Digital — Arte de la lengua cahita (1737)"
 type: dataset
 authors:
@@ -7,8 +7,7 @@ authors:
     given-names: "Fernando"
     orcid: "https://orcid.org/0000-0002-3168-6725"
     affiliation: "Universidad Autónoma de Ciudad Juárez"
-version: "0.1.0"
-date-released: 2026-08-15
+version: "0.2.0-dev"
 repository-code: "https://github.com/fersandovalgtz/cahita-historico-digital"
 url: "https://github.com/fersandovalgtz/cahita-historico-digital"
 license: "CC-BY-4.0"
@@ -21,9 +20,12 @@ keywords:
   - humanidades digitales
   - edición digital
   - lexicografía histórica
+  - lingüística histórica
   - lenguas indígenas de México
 abstract: >-
   Infraestructura de investigación para la edición histórico-digital, transcripción,
-  normalización y estructuración reproducible del Arte de la lengua cahita impreso
-  en México en 1737, con separación explícita entre testimonio, OCR, capas editoriales
-  e inferencias analíticas.
+  estructuración lexicográfica y gramatical reproducible del Arte de la lengua cahita
+  impreso en México en 1737. El proyecto separa explícitamente testimonio, OCR,
+  candidatos computacionales, transcripción, capas editoriales, datos estructurados,
+  inferencias analíticas y revisión humana independiente. La versión 0.2.0-dev es una
+  instantánea de desarrollo y no constituye todavía una release científica archivada.
