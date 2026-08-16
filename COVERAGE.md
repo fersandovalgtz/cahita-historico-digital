@@ -23,8 +23,7 @@ Estado de cobertura de Cahíta Histórico Digital para `ALC1737` — 2026-08-16.
 | Grupos de conjunciones/metacategorías | **6** | reglas 360–373 + interjecciones |
 | Sistema numeral histórico | **1 bloque estructurado** | digitales 178–180 |
 | Observaciones de variación histórica | **17+** | nuevas observaciones numéricas pendientes de integración combinada |
-| Candidatos lexicográficos v0.2 | **2,072 reportados** | métrica documentada de ejecución; inventario fila-a-fila completo aún no persistido canónicamente |
-| Artefactos candidatos persistidos | **p.134** | `data/lexicon/candidates/p134_candidates.jsonl`; ver `inventory_status.json` |
+| Candidatos lexicográficos v0.2 | **2,072 / 2,072 persistidos canónicamente** | inventario fila-a-fila reconstruible y verificable |
 | Diagnóstico de fronteras | **4 páginas / 171 candidatos** | muestra intencional: precisión 0.9532, recobrado 0.8670, F1 0.9081; no probabilística |
 | Artículos históricos estructurados | **734** | representación selectiva de digitales 133–177 |
 | Páginas de vocabulario con al menos representación estructurada | **45 / 45** | cobertura selectiva inicial completa |
@@ -42,20 +41,17 @@ Este hito significa cobertura de superficie textual, no edición crítica cerrad
 
 ## Vocabulario
 
-El vocabulario ocupa digitales 133–177. El pipeline geométrico v0.2 ha producido una **métrica documentada de 2,072 candidatos de frontera**, mientras la capa curatorial contiene **734 artículos históricos estructurados** y todas las **45 páginas** poseen al menos una representación lexicográfica estructurada.
+El vocabulario ocupa digitales 133–177. El pipeline geométrico v0.2 produce **2,072 candidatos de frontera**. La capa curatorial contiene **734 artículos históricos estructurados** y todas las **45 páginas** poseen al menos una representación lexicográfica estructurada.
 
-La cobertura por página es **selectiva**. No significa que los 2,072 candidatos hayan sido ya clasificados ni que 734 sea el número final de entradas históricas.
+La cobertura por página es **selectiva**. No significa que 734 sea el número final de entradas históricas. La diferencia entre candidato geométrico y artículo histórico se conserva explícitamente.
 
-### Estado del inventario candidato
+### Inventario candidato canónico
 
-La auditoría del árbol versionado detectó una limitación de reproducibilidad que ahora está explícitamente registrada en `data/lexicon/candidates/inventory_status.json`: el repositorio contiene `p134_candidates.jsonl`, pero todavía no conserva un inventario canónico fila-a-fila para las 45 páginas.
+El inventario fila-a-fila de los **2,072 candidatos** quedó fijado a la revisión generadora `f175b4bc455ff40a066d092a94e0a89a0ca2ae10` y al PDF con SHA-256 `69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37`.
 
-Por ello CHD distingue:
+El JSONL canónico tiene SHA-256 `f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3`. Para conservarlo mediante artefactos UTF-8 se almacena de forma **lossless** como gzip determinista → base64 → 12 partes ordenadas. `data/lexicon/candidates/candidate_inventory_manifest.json` registra los hashes por parte y los hashes de las representaciones JSONL/gzip/base64. `scripts/reconstruct_candidate_inventory.py` reconstruye el JSONL y verifica integridad, parseo y conteo de 2,072 filas.
 
-- **2,072** = conteo reportado por una ejecución del extractor `hybrid_margin_mode_v0.2`;
-- **inventario candidato persistido** = incompleto hasta regenerar, comprobar y versionar todas las filas.
-
-No se declarará una reconciliación exhaustiva de 2,072 candidatos mientras esa precondición no esté satisfecha.
+El antiguo `data/lexicon/candidates/p134_candidates.jsonl` pertenece a `indentation_margin_v0.1`; se conserva únicamente como artefacto histórico/no canónico para comparación de algoritmos.
 
 ### QA diagnóstico de fronteras
 
@@ -65,7 +61,7 @@ El diseño se declara `purposive_stratified_diagnostic`, no probabilístico. Est
 
 ### Apertura retroprocesada
 
-Se añadieron lotes para p.133 y pp.135–137, además de un artículo trans-página 133→134. La frontera documenta:
+Se añadieron lotes para p.133 y pp.135–137, además de un artículo trans-página 133–134. La frontera documenta:
 
 `Ablandar lo que eſtá duro / como barro. Namacae-buaruna.`
 
@@ -100,4 +96,4 @@ La capa numeral incluye esquema, dataset y documentación para cardinales 1–10
 
 ## Siguiente frente
 
-La prioridad es **persistir primero el inventario canónico completo de candidatos** mediante el extractor reproducible. Después se realizará la reconciliación exhaustiva candidato→`article`/`paratext`/`continuation`/`false_positive`/`unresolved`, conforme a `schemas/lexicon-candidate-review.schema.json` y `docs/LEXICON_RECONCILIATION_PROTOCOL.md`.
+La precondición de inventario está satisfecha. La prioridad es ahora la **reconciliación exhaustiva de los 2,072 candidatos**: cada candidato deberá clasificarse como artículo histórico, paratexto, continuación física, falso positivo o `unresolved`, con calidad de frontera y trazabilidad separadas. El primer lote de reconciliación cubre pp.133–134.
