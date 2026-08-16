@@ -1,0 +1,27 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 29,
+  "sourcePagePrinted": 15,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE I.\n\nque toda la noche eſtá ladrando ſe dirá: cacotuaua hiaua, ladra de modo, que no ſe puede dormir; y aſſi ſe explica el Domine non ſum dignus: Iniauchiua Ieſu-Chriſto cane inuahuia emchi quivatza uaua anec. Señor mio Ieſu-Chriſto, no hé procedido de modo, que yo merezca entrarte dentro de mi, vel ca ne emchi avohuaua anec: no hé andado de ſuerte, que te merezca hoſpedar, vel ca ne emchimiuaua anec: no hé hecho obras para ſer merecedor de que tu me ſeas dado, &c.\n\n55. Tercera: hazen tambien eſtos verbales anteponiendo al verbo eſta particula ara, y deſpues del verbo en lugar del naque del futuro eſta particula tu, v. g. potable arahitu: comeſtible arabuiatu: no mandable ca araſautu. Eſtos ſe conjugan, porque el tu, es verbo Sum, es, fui, y parece ſuele admitir la particula iec. El P. Oton reſpondió à eſta dificultad diciendo: el ie, no ſe añade à los verbos, ſino quando à ellos ſe añade el tu, v. g. Caara ſautu, caara buihtu, dirán caara ſautu ietuca: caara buihtu ietuca, porque eſtá mal mandado. Haſta aqui el P. Oton: de modo, que ſe dice con ſolo el tu, ò con el tu, y el iec, v. g. Caara ſautuctuca, vel caara ſautuietuca.\n\n56. Quarta manera de formar el bilis es, añadiendo al preſente de paſſiva eſta particula tzi, v. g. coſa creible ſualuatzi: coſa peligroſa hiniluatzi: coſa viſible vituatzi. Es mui ordinario eſte genero de verbales en bilis, y ſe declinan por la tercera declinacion de los adjetivos, como los primeros en machi.\n\nOtras particulas, que ſe añaden à los nombres, pronombres,\nadverbios, y prepoſiciones.\n\n57. Eſta particula la, añadida al nombre adjetivo qualquiera que ſea verbal, lleva ſignificacion de habitualidad, ò continuacion de la coſa ſignificada, v. g. muquila muerto, id eſt, ſin vigor, ni fuerzas: tiene vn corazon muerto, ò floxo muquilata hiepſec; huaquila flaco; vtila fuerte: nono-\n\nquila\n",
+  "lineBreakPolicy": "Headings, numbered rules and page-turn split are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "Iniauchiua Ieſu-Chriſto cane inuahuia emchi quivatza uaua anec", "note": "Cahíta rendering of Domine non sum dignus is legible in outline but requires a specialist second collation before morphological use.", "line": null},
+    {"token": "emchimiuaua", "note": "Form in the third Spanish paraphrase is provisionally transcribed from the facsimile.", "line": null},
+    {"token": "P. Oton", "note": "Name is read visually as Oton; retain source form pending bibliographic identification outside the diplomatic layer.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "damage", "note": "Small stains and ink losses occur around the upper and lower margins; text remains substantially legible.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-29;printed-page-15",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
