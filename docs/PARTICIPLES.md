@@ -4,7 +4,7 @@ Este documento describe la capa estructurada de participios de *Arte de la lengu
 
 ## Alcance actual
 
-El primer lote cubre las páginas digitales 94–96 / impresas 80–82 y las reglas 257–264. Se representa en `data/grammar/participles_part_iii_p094_p096.jsonl` conforme a `schemas/participle-construction.schema.json`.
+El lote vigente cubre las páginas digitales 94–97 / impresas 80–83 y las reglas 257–265. Se representa en [`data/grammar/participles_part_iii_p094_p097.jsonl`](../data/grammar/participles_part_iii_p094_p097.jsonl) conforme a [`schemas/participle-construction.schema.json`](../schemas/participle-construction.schema.json).
 
 ## Principio editorial
 
@@ -22,7 +22,7 @@ Las reglas 259–262 distinguen dos series relacionadas por la fuente con preté
 
 ### Participios en `ye`
 
-La regla 263 denomina estas formas `nombres verbales en ye`, exige anteposición de nota o semipronombre posesivo según la descripción de la fuente y ofrece series de presente, pretérito y futuro. La regla 264 comienza una derivación instrumental mediante `aye` / `ayeye`; continúa en la página siguiente, por lo que el objeto `ALC1737-pt-0003` permanece abierto.
+La regla 263 denomina estas formas `nombres verbales en ye`, exige anteposición de nota o semipronombre posesivo según la descripción de la fuente y ofrece series de presente, pretérito y futuro. La regla 264 forma instrumentales anteponiendo `aye` o `ayeye`. La regla 265 añade `aet` para expresar, según la fuente, el lugar en donde se ejerce la acción del verbo y aplica esta extensión a participios en `ye` y `u`.
 
 ## Autoridad
 
