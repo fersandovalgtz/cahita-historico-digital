@@ -12,10 +12,16 @@ jobs:
       - uses: actions/checkout@v4
       - name: Install PDF tools
         run: sudo apt-get update -qq && sudo apt-get install -y poppler-utils
-      - name: Download canonical working facsimile
+      - name: Download facsimile derivative
         run: |
-          curl -L --fail --retry 3 -o /tmp/cahita.pdf https://archive.org/download/artedelalenguaca00gonz/artedelalenguaca00gonz.pdf
-          echo "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37  /tmp/cahita.pdf" | sha256sum -c -
+          if curl -L --fail --retry 2 -o /tmp/cahita.pdf https://archive.org/download/artedelalenguaca00gonz/artedelalenguaca00gonz.pdf; then
+            echo "ALC1737 canonical working PDF downloaded"
+            echo "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37  /tmp/cahita.pdf" | sha256sum -c -
+          else
+            echo "Canonical PDF temporarily unavailable; using IA B/W derivative of the same scan for visual boundary collation only"
+            curl -L --fail --retry 3 -o /tmp/cahita.pdf https://archive.org/download/artedelalenguaca00gonz/artedelalenguaca00gonz_bw.pdf
+          fi
+          pdfinfo /tmp/cahita.pdf | grep '^Pages:'
       - name: Extract digital pages 144-146 at 300 dpi
         run: |
           mkdir -p facsimile
