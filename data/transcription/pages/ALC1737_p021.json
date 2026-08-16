@@ -1,0 +1,27 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 21,
+  "sourcePagePrinted": 7,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE I.\n\nVOZ PASSIVA.\n\n27. Hà ſido neceſſario poner primero la formacion de los futuros, porque de ellos depende la formacion de la voz paſſiva. Eſta ſe forma poniendo eſta particula ua en lugar del naque del futuro, ora ni mude, ni pierda letra alguna el verbo, v. g. Teca tender, futuro tecnaque, la paſſiva tecua, poniendo el ua en lugar del naque: taha quemar, tahinaque, paſſiva tahiua, poniendo el ua en lugar del naque: ſacanſe veha azotar, aua pedir, ſaue mandar, oove floxear, ò fruſtrarſe la accion, que aunque los futuros vehnaque, aunaque, ſaunaque, oobnaque, con todo forman las paſſivas de eſte modo: vehiua, aiua, ſaiua, ooviua.\n\n28. Item ſe ſacan todos los verbos que acaban con dos vocales, que aunque para recebir el naque del futuro no pierden ninguna, con todo forman la paſſiva perdiendo la vltima vocal, v. g. Teboa aviſar, paſſiva teboua: hitoa curar, hitoua.\n\n29. Excipe de eſta excepcion al verbo ieua hazer, el qual forma la paſſiva ieuaua, y à los compulſivos, y aplicativos, que ſiguiendo la regla general ponen el ua paſſivo en lugar del naque del futuro, no obſtante, que acaban con dos vocales: hibuatu[a?] dar de comer, ò alimentar, hibuatuaua paſſiva: hipuria guardarle à otro alguna coſa, hipuriaua paſſiva.\n\n30. Todos los verbos activos tienen voz paſſiva en todas las perſonas, y tiempos.\n\n31. Los verbos neutros, y los que en ſu ſignificacion ſon paſſivos, tienen voz paſſiva en las terceras perſonas, y tambien para formar el gerundio en di, y aſſi ſe dice v. g. en el verbo cotze, que es neutro, y ſignifica dormir: cacotua machi vno puede dormirſe: cotuapo ueie yà es tiempo de dormir.\n\n32. Eſta particula iuc, es paſſiva en la ſignificacion, y con todo ſe le dà voz paſſiva en la tercera perſona, v. g. Siendo ya tiempo de hazerſe hombre nueſtro Señor Ieſu Chriſto, ſe caſó la Virgen Santiſſima con S. Joſeph: Iom\n\nIau-\n",
+  "lineBreakPolicy": "Numbered rules, headings and catchwords are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained; uncertain forms are marked explicitly.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "hibuatu[a?]", "note": "Forma verbal del ejemplo 'dar de comer, ò alimentar' requiere segunda colación de la vocal final.", "line": null},
+    {"token": "iuc", "note": "Lectura del nombre de la partícula en la regla 32 es provisional.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "damage", "note": "A handwritten or ink mark intrudes from the left margin near rule 27; excluded from printed-text scope.", "transcription": null},
+    {"type": "bleed_through", "note": "Moderate show-through is visible across the leaf.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-21;printed-page-7",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
