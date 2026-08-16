@@ -2,98 +2,68 @@
 
 ## Estado — 2026-08-16
 
-El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El extractor canónico `hybrid_margin_mode_v0.2` produce **2,072 candidatos** de frontera sobre 45 páginas. Un candidato geométrico no equivale automáticamente a un artículo histórico.
-
-La capa curatorial contiene ahora **844 artículos históricos estructurados**. Las **45/45 páginas** tienen representación lexicográfica estructurada y las páginas **133–136** están cerradas, en capa IA-asistida, en los cuatro niveles operativos del protocolo: reconciliación de candidatos, censo de inicios visibles, promoción/enlace de artículos y QA computacional. **Ningún objeto ha sido declarado `human_verified`.**
+El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El extractor canónico `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera sobre 45 páginas. La capa curatorial contiene ahora **871 artículos históricos estructurados**. Las páginas **133–137** están cerradas en reconciliación de candidatos, censo visible, promoción/enlace y QA computacional IA-asistidos. **Ningún objeto es `human_verified`.**
 
 ## Inventario candidato canónico
 
-Las **2,072 filas** de `hybrid_margin_mode_v0.2` están persistidas y reconstruibles. El inventario se fijó al PDF fuente SHA-256 `69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37` y a la revisión generadora `f175b4bc455ff40a066d092a94e0a89a0ca2ae10`.
+Las 2,072 filas están fijadas al PDF SHA-256 `69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37` y a la revisión generadora `f175b4bc455ff40a066d092a94e0a89a0ca2ae10`. El JSONL canónico tiene SHA-256 `f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3` y es reconstruible mediante `scripts/reconstruct_candidate_inventory.py`.
 
-El JSONL canónico tiene SHA-256 `f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3`. `data/lexicon/candidates/candidate_inventory_manifest.json` y `scripts/reconstruct_candidate_inventory.py` controlan su integridad y reproducibilidad.
+## Estado por páginas cerradas
 
-## Tramo cerrado pp.133–134
+| Tramo | Candidatos | `article` | `continuation` | Inicios visibles | TP | FP | FN | F1 | Pendientes |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| pp.133–134 | 61 | 57 | 4 | 72 | 57 | 4 | 15 | 0.857143 | 0 |
+| p.135 | 43 | 35 | 8 | 47 | 35 | 8 | 12 | 0.777778 | 0 |
+| p.136 | 48 | 48 | 0 | 49 | 48 | 0 | 1 | 0.989691 | 0 |
+| p.137 | 39 | 36 | 3 | 42 | 36 | 3 | 6 | 0.888889 | 0 |
 
-Las primeras dos páginas funcionan como tramo de control metodológico. El estado efectivo es:
+Las cifras de la tabla son diagnósticas de ingeniería editorial en la capa IA-asistida; no son sustituto de colación filológica humana.
 
-- 61/61 candidatos reconciliados;
-- 57 `article`, 4 `continuation`, 0 `unresolved`;
-- 72 inicios históricos visibles en el censo cerrado;
-- TP57 / FP4 / FN15;
-- precisión 0.934426, recall 0.791667, F1 0.857143;
-- 57/57 candidatos `article` enlazados;
-- 15/15 falsos negativos visibles enlazados;
-- `pending_promotion = 0`.
+## Página 137 — ciclo cerrado
 
-La apertura quedó resuelta como una sola unidad histórica: `A. denotando la persona que padece. A. Aa.` (`ALC1737-art-000778`). `BUE1890` se utiliza sólo como control histórico secundario concordante.
+`data/lexicon/reconciliation/p137_reconciliation_status.json` documenta el cierre completo de p.137. Los **39/39 candidatos** fueron reconciliados: 36 son inicios de artículo y 3 son continuaciones OCR sobregeneradas. La calidad geométrica resultante es 33 `exact`, 3 `merged_articles` y 3 `oversegmented`.
 
-## Página 135
+El censo visual registra **42 inicios históricos**. El extractor captura 36, produce 3 falsos positivos de frontera y omite 6 inicios, todos representados en `p137_missed_visible_starts.jsonl`. La precisión local es **0.923077**, recall **0.857143** y F1 **0.888889**.
 
-La p.135 cerró el primer ciclo completo posterior al tramo de control:
+Se promovieron **27 artículos nuevos**, `ALC1737-art-000845`–`000871`, elevando el corpus de 844 a **871 artículos históricos estructurados**. Los 36 candidatos `article` y los 6 falsos negativos enlazan ya objetos históricos; `pending_promotion = 0`.
 
-- 43/43 candidatos reconciliados;
-- 35 `article`, 8 `continuation`, 0 `unresolved`;
-- 47 inicios históricos visibles;
-- TP35 / FP8 / FN12;
-- precisión 0.813953, recall 0.744681, F1 0.777778;
-- 35/35 candidatos `article` enlazados;
-- 12/12 falsos negativos enlazados;
-- `pending_promotion = 0`.
+### Apertura y cierre materiales
 
-La colación dirigida corrigió `ALC1737-art-000704` de una lectura previa `Azotar. Ahlocotua.` a **`Azofar. Ahlocotua.`** y separó la entrada siguiente `Azotar con cuero, ò ſoga. Abeba.` (`ALC1737-art-000810`). `ALC1737-art-000809`, `Acoſtar à otro`, conserva `Senu[ileg.]` sin completar por inferencia.
+La primera línea de p.137, `ca, l, chunti iauetua.`, es la continuación física de `ALC1737-art-000844`, iniciado en p.136 como `Afligirſe, ò apurarſe. Chuntia-`. No se cuenta como nuevo artículo.
 
-## Página 136
+El reclamo `buo-` al pie de p.137 se mantiene como catchword y queda fuera del conteo lexicográfico.
 
-`data/lexicon/reconciliation/p136_reconciliation_status.json` documenta el cierre de la página:
+### Correcciones facsimilares versionadas
 
-- **48/48 candidatos** reconciliados: 24 izquierda + 24 derecha;
-- los 48 son `article` y los 48 límites son `exact` en la pasada visual IA-asistida;
-- **49 inicios históricos visibles**;
-- TP48 / FP0 / FN1;
-- precisión **1.000000**;
-- recall **0.979592**;
-- F1 **0.989691**;
-- el único inicio omitido es el primero de página, `Azotar con vara al caballo`, ya representado por `ALC1737-art-000705`;
-- 48/48 candidatos enlazados;
-- `pending_promotion = 0`.
+La recollación de alta resolución corrigió dos objetos existentes:
 
-Se promovieron **34 artículos nuevos**, `ALC1737-art-000811`–`ALC1737-art-000844`, elevando la capa estructurada a **844 artículos**.
+- `ALC1737-art-000729`: `Vaaſuſume` → **`Baaſuſume`**;
+- `ALC1737-art-000731`: `Aguacero` → **`Aguazero`**.
 
-### Continuidades materiales detectadas
+Las decisiones quedan trazadas en `data/lexicon/provenance/p137_art000729_correction.json` y `p137_art000731_correction.json`. Son correcciones IA-asistidas contra el facsímil primario, no revisión humana.
 
-La p.136 aporta dos casos especialmente útiles para el modelo físico del vocabulario.
+### Microestructura deliberadamente no resuelta
 
-`ALC1737-art-000821` cruza columnas dentro de la misma página: `Adobar cueros. Huacabeata-` al pie de la columna izquierda continúa como `buiaruna.` al inicio de la derecha. Se conserva una sola unidad mediante `sourceSpans`.
+`ALC1737-art-000856`, `000867`, `000868` y `000869` conservan estado `unresolved` cuando la puntuación histórica o la relación interna de sus secuencias cahítas no permite una segmentación responsable. No se sustituyó esa incertidumbre por OCR, analogía ni una edición posterior.
 
-`ALC1737-art-000844` cruza la frontera p.136→137: `Afligirſe, ò apurarſe. Chuntia-` continúa al inicio de p.137 como `ca, l, chunti iauetua.`. También se conserva como un único artículo histórico mediante `sourceSpans`.
+## Continuidades y relaciones
 
-`ALC1737-art-000831`, `A ello, manos à la obra`, permanece `unresolved` a nivel de la expresión cahíta en tipo pequeño; la frontera y la guía española son seguras, pero no se normalizan caracteres inciertos.
-
-## Remisiones, anáforas y agrupaciones
-
-Las remisiones `Buſca` se modelan como relaciones documentales; por ejemplo, p.136 contiene `Adornar. Buſca aderezar.` (`ALC1737-art-000719`). `Lo miſmo` permanece como una anáfora distinta y no se resuelve automáticamente. `sourceGroupingRaw` conserva agrupaciones impresas y `sourceSpans` conserva continuidad física sin convertirla en una categoría lingüística moderna.
+La arquitectura sigue separando continuidad material, remisión y anáfora. `sourceSpans` preserva artículos partidos entre columnas o páginas; `Buſca` se modela como remisión documental; `Lo miſmo` permanece como anáfora no resuelta automáticamente.
 
 ## QA automático
 
-`.github/workflows/qa.yml` verifica:
+El workflow **CHD QA run #68** concluyó en `success`. Reconstruyó las 2,072 filas con el hash esperado y verificó **871 objetos en 59 JSONL / 871 `articleId` únicos**. También pasaron los schemas de artículos, los 22 registros de reconciliación izquierda + 17 derecha de p.137, los 6 falsos negativos y los JSON de estado/procedencia.
 
-- reconstrucción íntegra de las 2,072 filas canónicas;
-- unicidad global de `articleId` y coherencia de autoridad;
-- todos los artículos históricos contra `schemas/lexical-article.schema.json`;
-- reconciliaciones contra `schemas/lexicon-candidate-review.schema.json`;
-- falsos negativos contra `schemas/lexicon-missed-start.schema.json`;
-- sintaxis de JSON de estado y control.
-
-Una corrida verde constituye **QA computacional**, no revisión filológica humana.
+Una corrida verde sigue siendo QA computacional, no validación filológica humana.
 
 ## Fuentes de control textual
 
-`ALC1737` sigue siendo la autoridad primaria. `BUE1890` es una reimpresión histórica de control y no sustituye el impreso de 1737. `BNF1737-REPORTED` registra la noticia bibliográfica de un ejemplar independiente de 1737 en la BnF, pendiente todavía de verificación directa e ingestión separada.
+`ALC1737` sigue siendo la autoridad primaria. `BUE1890` es una reimpresión histórica de control. `BNF1737-REPORTED` conserva la noticia bibliográfica de un ejemplar independiente de 1737 en la BnF, aún pendiente de verificación directa e ingestión separada.
 
 ## Incidencias abiertas
 
-Permanecen activas, entre otras, `ALC1737-gap-0001` entre pp.157–158, el reclamo `Lucer-` de p.161 sin lema visible al comienzo de p.162 y varias formas de baja legibilidad marcadas de manera conservadora. Ninguna se completa mediante conocimiento externo sin procedencia explícita.
+Permanecen activas `ALC1737-gap-0001` entre pp.157–158, el reclamo `Lucer-` de p.161 sin lema visible correspondiente en p.162 y otras lecturas de baja legibilidad que continúan explícitas como `[ileg.]` o `unresolved`.
 
 ## Próximo frente
 
-El siguiente ciclo es la **página digital 137**. Debe comenzar respetando que su primera línea pertenece al cierre de `ALC1737-art-000844`, no a un artículo nuevo; después se reconciliarán sus candidatos canónicos, se hará censo completo de inicios visibles, se promoverán faltantes y se cerrará QA antes de avanzar a p.138.
+El siguiente ciclo es la **página digital 138**: reconciliar sus candidatos canónicos, censar todos los inicios visibles, enlazar los artículos ya existentes, promover faltantes y cerrar QA antes de avanzar a p.139.
