@@ -1,0 +1,26 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 28,
+  "sourcePagePrinted": 14,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ARTE DE LA LENGVA\n\n51. Tambien parece regla ſin excepcion, que todos los verbales activos acabados en te, forman el adjetivo añadiendo ri, al te del preſente, v. g. Tuute aderezar, tuuteri coſa aderezada: hunaſte ſeñalar, ò medir, hunaſteri coſa medida, &c.\n\n52. Mas los paſſivos, y neutros en te, hazen el adjetivo en i, quitado el naque del futuro; porque todos en el futuro mudan el te, en ti, para recebir el naque, y aſſi aquella i, del ti, ſuple por la i, del verbal, v. g. Peute cortarſe hilo, ò ſoga, ſu adjetivo es peuti coſa cortada: ſiute raſgarſe, ſiuti coſa raſgada: chuſte cortarſe algo con inſtrumento, cuchillo, &c. chuſti coſa cortada aſſi. De eſtos adjetivos formados en i, vel ri, aſſi de verbos activos, como de neutros, ſe vſa con elegancia poniendoles los poſſeſſivos, v. g. in hinenqui lo que yo diſtribui: in buaueri lo que dejé ſobrado de mi comida: in viri lo que me reſtó, ò ſobró. Otras reglas dará el vſo.\n\nVerbales en BILIS.\n\n53. Eſtos verbales en bilis, que ſiempre ſon paſſivos, ſe forman de vna de quatro maneras: primera: añadiendo eſta particula machi al preſente de paſſiva, v. g. Buaua es preſente de paſſiva del verbo buaie comer, añadido el machi, al buaua, ſe forma el buauamachi comeſtible: hiua es preſente paſſivo de heie beber, pueſto el machi, ſe forma hiuamachi potable, houamachi factible, nocuamachi decible: no ſe puede texer: cahihouamachi: no ſe puede entender: cahicahiuamachi. Veaſe lo que ſe dice del verbo Poſſum, potes en la ſegunda parte.\n\n54. Segunda es: añadiendo en lugar del naque del futuro eſta particula uaua, y ſobre eſta particula el verbo que rije ſe haze vn verbal en bilis, del ſentido, que dirán los exemplos, v. g. No procede de modo, que ſea digno de que le amen: Ca eriauaua ane: eſte ſentido tiene propriamente eſte genero de verbales en bilis; no habla de ſuerte, que merezca ſer ſocorrido: cahiocoriuaua ane. De vn perro,\n\nque\n",
+  "lineBreakPolicy": "Headings, numbered rules and catchword are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "chuſte / chuſti", "note": "Forma glosada como corte con instrumento; la consonante central se transcribe según el facsímil, pero requiere segunda colación tipográfica.", "line": null},
+    {"token": "cahicahiuamachi", "note": "Forma del ejemplo 'no ſe puede entender' conservada documentalmente; revisar segmentación antes de análisis morfológico.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Traspaso moderado en el tercio medio y bajo de la página.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-28;printed-page-14",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
