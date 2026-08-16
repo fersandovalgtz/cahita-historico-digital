@@ -1,0 +1,33 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 10,
+  "sourcePagePrinted": null,
+  "section": "preliminaries",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "dimiento, ſi el fuego del amor Divino\nno abraſara el corazon, aſſiento de la vo-\nluntad: Verbis, eſſent proflui, & chari-\ntate fervidi.\n\nNo es pues, fuera de propoſito de-\ndicarſe eſte Arte de lengua al Apoſtol,\ny Maeſtro Sapientiſſimo, ſi fervoroſiſſi-\nmo de las lenguas. Recebid, pues, ſua-\nviſſimo Padre mio, debaxo de vueſtra\nproteccion eſte corto obſequio de mi\npequeñez por prenda de mi veneracion.\nDe que no deſſeara otro retorno, ſino\nque à la inteligencia de arduos Idiomas,\ny eſtudioſa charidad de aprenderlos coo-\nperará vueſtro poder para con Dios:\nhaziendo con vueſtra poderoſa inter-\nceſſion, que vueſtros Imitadores Je-\nſuitas, Candidatos de lengua, ſean iluſ-\ntrados en el entendimiento, y en la vo-\nluntad inflamados con vna centella de\nvueſtro Apoſtolico zelo, para aprender-\nla en provecho de los Indios, y honor\nde Dios.\n\nProvincia de Cynaloa.\n\nPRO-\n",
+  "lineBreakPolicy": "Printed line breaks, line-end hyphenation, closing place line and catchword PRO- are preserved. Long s is represented as ſ where visually legible.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {
+      "token": "ſi fervoroſiſſimo",
+      "note": "The connective immediately before 'fervoroſiſſimo' is visually close to 'ſi'; retained as read but should receive independent collation.",
+      "line": 8
+    }
+  ],
+  "materialNotes": [
+    {
+      "type": "bleed_through",
+      "note": "Show-through from the opposite side is visible beneath the closing lines and around 'Provincia de Cynaloa'.",
+      "transcription": null
+    }
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-10",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from high-resolution rendered facsimile with one explicitly retained lexical uncertainty; no independent human verification",
+    "processedAt": null
+  }
+}
