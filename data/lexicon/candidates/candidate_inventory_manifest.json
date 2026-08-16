@@ -1,5 +1,6 @@
 {
   "sourceId": "ALC1737",
+  "candidateMethod": "hybrid_margin_mode_v0.2",
   "generatorRevision": "f175b4bc455ff40a066d092a94e0a89a0ca2ae10",
   "generatorScriptBlobs": {
     "extract_vocab_candidates.py": "0ac729164895b0b4afd462350892426aca6e5f3d",
@@ -24,5 +25,18 @@
     {"part": 10, "filename": "candidates_full_v02.jsonl.gz.b64.part10", "chars": 10000, "sha256": "7fd4209c39df64a6e29d325eed5472ed32ee0dc92f3c6eb3754f35a551cc331d"},
     {"part": 11, "filename": "candidates_full_v02.jsonl.gz.b64.part11", "chars": 10000, "sha256": "3dc69207f6f765d65f3e77246936172ea16dedae6d02ac0e6f3d798803593f6c"},
     {"part": 12, "filename": "candidates_full_v02.jsonl.gz.b64.part12", "chars": 2352, "sha256": "b951db6b17ea2182170d7fd53fe6be20df688a7c89994c4919bc3645c2f51534"}
-  ]
+  ],
+  "verification": {
+    "status": "verified_local_reconstruction_from_persisted_shard_source_material",
+    "checks": [
+      "part sizes",
+      "part SHA-256",
+      "aggregate base64 SHA-256",
+      "gzip SHA-256",
+      "JSONL SHA-256",
+      "2072 row count",
+      "JSON parse of every row"
+    ],
+    "note": "Remote raw-URL reconstruction was not asserted because the execution container lacked external DNS access. Repository presence of the shard set is independently visible through the GitHub connector."
+  }
 }
