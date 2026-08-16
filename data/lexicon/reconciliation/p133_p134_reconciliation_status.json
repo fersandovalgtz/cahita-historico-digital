@@ -5,20 +5,28 @@
   "canonicalCandidatesOnPages": 61,
   "reconciledCandidates": 61,
   "candidateReconciliationComplete": true,
-  "candidateClassifications": {
+  "candidateClassificationsEffective": {
     "article": 57,
-    "continuation": 3,
-    "unresolved": 1,
+    "continuation": 4,
+    "unresolved": 0,
     "paratext": 0,
     "false_positive": 0
   },
-  "boundaryAssessments": {
+  "boundaryAssessmentsEffective": {
     "exact": 52,
     "merged_articles": 5,
-    "oversegmented": 2,
+    "oversegmented": 3,
     "undersegmented": 1,
-    "ambiguous": 1,
+    "ambiguous": 0,
     "not_applicable": 0
+  },
+  "supersedingResolution": {
+    "candidateId": "ALC1737-vcand-p133-L-002",
+    "path": "data/lexicon/reconciliation/p133_opening_resolution.jsonl",
+    "previousClassification": "unresolved",
+    "effectiveClassification": "continuation",
+    "effectiveBoundaryAssessment": "oversegmented",
+    "linkedArticleId": "ALC1737-art-000778"
   },
   "articleLinkState": {
     "articleCandidatesWithExistingLinks": 57,
@@ -27,33 +35,47 @@
     "historicalArticlesPromotedAcrossCandidateClosure": 36,
     "candidatePromotionIdRange": "ALC1737-art-000735--ALC1737-art-000770"
   },
-  "unresolvedCandidateIds": ["ALC1737-vcand-p133-L-002"],
   "reviewFiles": [
     "data/lexicon/reconciliation/p133_p134_batch01.jsonl",
     "data/lexicon/reconciliation/p133_batch02_pending_articles.jsonl",
     "data/lexicon/reconciliation/p134_batch02a_pending_articles.jsonl",
-    "data/lexicon/reconciliation/p134_batch02b_pending_articles.jsonl"
+    "data/lexicon/reconciliation/p134_batch02b_pending_articles.jsonl",
+    "data/lexicon/reconciliation/p133_opening_resolution.jsonl"
   ],
   "promotionFiles": [
     "data/lexicon/articles/p133_pending_promotions_batch01.jsonl",
     "data/lexicon/articles/p134_pending_promotions_batch01.jsonl",
-    "data/lexicon/articles/p133_p134_missed_start_promotions_batch01.jsonl"
+    "data/lexicon/articles/p133_p134_missed_start_promotions_batch01.jsonl",
+    "data/lexicon/articles/p133_opening_article.jsonl"
   ],
-  "observedMissedVisibleStarts": {
-    "count": 14,
-    "path": "data/lexicon/reconciliation/missed_visible_starts_p133_p134.jsonl",
-    "linkedToHistoricalArticles": 14,
-    "newHistoricalArticlesPromotedForPreviouslyUnlinkedMisses": 7,
-    "newPromotionIdRange": "ALC1737-art-000771--ALC1737-art-000777",
-    "status": "observed_set_fully_linked_not_yet_claimed_exhaustive"
+  "visibleStartCensus": {
+    "status": "closed_machine_corrected_unverified",
+    "path": "data/lexicon/reconciliation/p133_p134_visible_start_census.json",
+    "visibleHistoricalArticleStarts": 72,
+    "candidateTruePositiveStarts": 57,
+    "candidateFalsePositiveStarts": 4,
+    "missedVisibleStarts": 15,
+    "precision": 0.934426,
+    "recall": 0.791667,
+    "f1": 0.857143,
+    "missedStartFiles": [
+      "data/lexicon/reconciliation/missed_visible_starts_p133_p134.jsonl",
+      "data/lexicon/reconciliation/p133_opening_missed_start.jsonl"
+    ],
+    "missedStartsLinkedToHistoricalArticles": 15
   },
-  "interpretation": "All 61 canonical candidates on digital pages 133-134 have an editorial reconciliation record, every one of the 57 candidates classified as article links to at least one historical-article object, and all 14 currently observed missed visible starts also link to historical articles. Candidate-to-article promotion and linkage of the observed false-negative set are therefore closed. Page-level visible-start exhaustiveness is still open because the observed set has not yet been declared complete and ALC1737-vcand-p133-L-002 remains unresolved at the opening of p.133.",
+  "controlEvidence": {
+    "sourceId": "BUE1890",
+    "role": "later historical reprint used only as secondary control",
+    "registeredAt": "data/source/control/bue1890.json",
+    "openingAgreement": "A, denotando la persona que padece. A, Aa."
+  },
+  "interpretation": "The control pages are closed at candidate-reconciliation, candidate-to-article promotion, observed/machine-collated visible-start linkage, and page-level visible-start census. The effective resolution of p133-L-002 leaves no unresolved candidate boundaries on pp.133-134. The census is still machine-corrected/unverified: it is not human verification and its page-level performance metrics are diagnostic, not probabilistic estimates for the full vocabulary.",
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false,
   "nextActions": [
-    "Perform a dedicated page-opening collation around ALC1737-vcand-p133-L-002 and the initial A-section material.",
-    "Close or expand the page-level visible-start inventory for pp.133-134 before computing final per-page detection metrics.",
-    "Keep the two newly promoted unresolved historical articles (ALC1737-art-000771 and ALC1737-art-000774) explicit until their Cahíta forms can be read responsibly.",
-    "Proceed to candidate reconciliation for p.135 only after page-level QA for pp.133-134 is declared closed."
+    "Keep unresolved Cahíta forms in ALC1737-art-000771 and ALC1737-art-000774 explicit until stronger evidence or human collation is available.",
+    "Begin candidate reconciliation for digital page 135 using the closed pp.133-134 workflow as the control protocol.",
+    "Continue seeking an independent 1737 witness; BUE1890 remains a later control edition, not a substitute witness."
   ]
 }
