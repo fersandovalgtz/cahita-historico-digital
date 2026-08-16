@@ -1,0 +1,16 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":97,
+  "sourcePagePrinted":83,
+  "section":"part_iii",
+  "transcriptionType":"diplomatic",
+  "coverage":"full_page",
+  "scope":"printed_text",
+  "text":"[continuación de 264] ... eſcriben, ó ſoy eſcrito: ayeye hiohteu, con lo que eſcribia: ayeye hiohteuau, con lo que era eſcrito, ó ſe eſcribia, & ſic de YE liquid.\n\n265. Eſtos meſmos en ye, vel u, anteponiéndoles eſte ablativo aet, ſignifican el lugar en donde ſe exercita la accion del verbo, v. g. aet yore noſtehoaye, en donde enſeñan la gente: aet yore yoſtehouaye, en donde es enſeñada la gente: aet innoſtehoau, en donde yo enſeñaba: aet innoſtehouau, en donde yo era enſeñado: aet incotzeyeye, en donde yo duermo: aet incotnayeye, en donde ſe duerme; y aſſi por los demás tiempos de pretérito, y futuro. Adviertanſe, que con los ablativos dichos ayeye inſtrumental, y aet de lugar, ſe dicen los participios en ye, como los en u con los poſſeſſivos, ó ſin ellos, vt in exemplis. De los participios en i, vel ti ſe dixo en la primera parte, videatur.\n\nTiempos de avia de, ó avia de aver.\n266. Los tiempos que traen eſte romance avia de, ó avia de aver, ſe forman añadiendo al futuro en lugar de naque eſte verbo eia, vel ea, y aſſi añadido ſe va conjugando por todos ſus modos, y tiempos de activa, y paſſiva. La paſſiva de eia es eua, v. g. aunque no hablaras te avia de dar, [ejemplo cahíta]; avia de llegar, [forma cahíta]; ya avia de aver llegado, [forma cahíta]; avia de ſer azotado, vebeuai: ya avia de aver ſido azotado, beſa vebſueuai.\n\n267. Nota, que con el romance avia de aver ſe pone antes del eiai en lugar del naque del futuro la partícula ſu, conſtitutiva del futuro perfecto, v. g. ya te avian de aver ſocorrido, emchi hiocoriſu eiai beſa. Aunque ſe dice, que el verbo eia ſe varía por todos los tiempos, no parece ſer vſado tan frequentemente en eſta ocaſion, ſino el ya exemplificado, que es de pretérito imperfecto. Como tambien de los participios no parece tener en vſo con eſtos tiempos de avia de, ó avia de aver, ſino ſolamente los en u, v. g. lo que [continúa].",
+  "lineBreakPolicy":"Rule numbers and headings preserved; running line breaks normalized; doubtful examples left unresolved.",
+  "reviewStatus":"unresolved",
+  "humanVerified":false,
+  "uncertainties":[{"token":"[ejemplo cahíta]","note":"Long example under rule 266 requires second collation."},{"token":"[forma cahíta]","note":"Two forms in rule 266 are not secure in current pass."}],
+  "materialNotes":[{"type":"bleed_through","note":"Moderate show-through; main text readable.","transcription":null}],
+  "provenance":{"derivedFrom":"ALC1737:digital-page-97;printed-page-83","agent":"GPT-5.6 Sol visual collation","method":"Full-page transcription from facsimile with parsed text as secondary comparison; no independent human verification","processedAt":null}
+}
