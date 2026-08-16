@@ -2,9 +2,9 @@
 
 ## Alcance
 
-Las páginas digitales 87–91 / impresas 73–77 marcan el cierre de los tiempos modales y el inicio de un nuevo bloque de la Parte III dedicado a **INFINITIVO**, **SEGUNDO MODO DE INFINITIVO**, **Gerundios en DI**, **Gerundio en DO** y **Gerundio en DVM**.
+Las páginas digitales 87–93 / impresas 73–79 contienen el bloque de la Parte III dedicado a **INFINITIVO**, **SEGUNDO MODO DE INFINITIVO**, **Gerundios en DI**, **Gerundio en DO** y **Gerundio en DVM**.
 
-CHD representa este material en [`data/grammar/nonfinite_constructions_part_iii_p087_p091.jsonl`](../data/grammar/nonfinite_constructions_part_iii_p087_p091.jsonl), conforme a [`schemas/nonfinite-construction.schema.json`](../schemas/nonfinite-construction.schema.json).
+CHD representa este material en [`data/grammar/nonfinite_constructions_part_iii_p087_p093.jsonl`](../data/grammar/nonfinite_constructions_part_iii_p087_p093.jsonl), conforme a [`schemas/nonfinite-construction.schema.json`](../schemas/nonfinite-construction.schema.json).
 
 ## Principio editorial
 
@@ -30,10 +30,12 @@ El primer procedimiento usa `po` añadido al presente passivo; `ueye` puede acom
 
 Para `vn supuesto`, la fuente emplea `cari`. En `dos supuestos`, reutiliza el patrón `yo / co / caco` que había resumido para los tiempos modales y añade una regla de acusativo para el supuesto del gerundio. La regla 249 introduce `tacari` en construcciones con el romance `siendo` y restringe este uso a oraciones de `vn supuesto`.
 
-## Gerundio en DVM — regla 250
+## Gerundio en DVM — reglas 250–256
 
-La regla 250 comienza en la página digital 91 y continúa en la siguiente. El texto denomina “gerundivo” a un verbo de ir/venir con `ſe` para singular y `vo` para plural, unido al verbo regido en lugar de `naque`. El registro actual está deliberadamente marcado como incompleto hasta incorporar la continuación.
+La regla 250 denomina “gerundivo” a un verbo de ir/venir con `ſe` para singular y `vo` para plural, unido al verbo regido en lugar de `naque`. Las reglas 251–254 desarrollan ajustes de forma, entre ellos `zi` antes de `ſe / vo` para ciertos verbos, restricciones de futuro y diferencias de voz atribuidas por la fuente a `ſe` y `vo`.
+
+Las reglas 255–256 añaden otros procedimientos. Para `vn supuesto` reaparecen `varecari / rocacari`; para `dos supuestos`, `iyaacari / teeiacari`; y el Arte documenta además `cari / teca` añadidos al futuro en determinadas construcciones de un supuesto. Este bloque queda cerrado antes de `§ II. DE LOS PARTICIPIOS EN COMUN`.
 
 ## Estado
 
-Cobertura inicial: reglas 237–250 (la 250 sólo en su comienzo). Autoridad dominante: `machine_corrected_unverified` / `unresolved`; sin revisión humana independiente. Las lecturas no seguras permanecen explícitas y no se completan por analogía.
+Cobertura: reglas 237–256. Autoridad dominante: `machine_corrected_unverified` / `unresolved`; sin revisión humana independiente. Las lecturas no seguras permanecen explícitas y no se completan por analogía.
