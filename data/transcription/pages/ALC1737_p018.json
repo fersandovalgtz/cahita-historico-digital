@@ -1,0 +1,27 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 18,
+  "sourcePagePrinted": 4,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ARTE DE LA LENGVA\n\n9. Segunda regla: los en ca, pierden la a, para recebir el naque, v. g. Vuica cantar, vuicnaque: teca tender, tecnaque, &c. Sacanſe Saca ir muchos, que haze ſacanaque. Sica traſquilar, ſicanaque. Hinenca repartir, hinenquinaque.\n\n10. Tercera regla: los acabados en ha, mudan el ha, en hi, para recebir el naque, v. g. Taha llegar muchos, tahinaque: taha quemar, tahinaque: toha dejar, tohinaque.\n\n11. Quarta regla: los en ta, pierden la a, para recebir el naque, v. g. Vata acarrear agua, vatnaque: maveta recebir, mavetnaque: eta cerrar, etnaque: huita regir el cuerpo, huitnaque: ſacaſe Tata hazer calor, que haze tatanaque.\n\n12. Quinta regla: los en tza, reciben el naque, ſin perder nada, v. g. Ietza poner en hieſtro, ietzanaque: quetza poner parando, quetzanaque: quivatz[a?] meter algo adentro, quivatzanaque: tutza apagar, tutzanaque: ſacanſe los ſiguientes, que pierden el tza, para recebir el naque, vitza veer, vinaque: voovitza eſperar, voovitnaque: etza ſembrar, etnaque.\n\n13. Sexta: otros verbos en a, con otras conſonantes hazen el futuro añadiendo al recto el naque: ſuma atar, ſumanaque: tzaia colgar, tzaianaque: taia conocer, taianaque: ſacanſe iepſa llegar vno, que haze ievinaque: huanna llorar, huannaque: veha azotar, vehnaque: pona arrancar yerva, ò pelar, y ponna golpear, ponnaque.\n\n14. Septima: los acabados en c, ora ſean poſſeſſivos, ora formados con otras particulas, pierden la c, del recto para recebir el naque, v. g. Ioremtuc ſe hizo hombre, ioremtunaque: vach[e?]c tener maiz, vachenaque: puſecc tener ojos, puſenaque: hibuafuc acabar de comer, hibuafunaque: de la miſma manera los que ſe forman de adjetivos, y la particula ſec, pierden la ſec, para recebir el naque, v. g. Chivuiec hazerſe amargo, futuro chivunaque: huienai[e?]c hazerſe malo, huienanaque.\n\n15. Octava: los en eie mudan la eie, en i, para recebir el naque, v. g. Tzeie mamar, tzinaque: ieie baylar, iinaque:\n\nHeie\n",
+  "lineBreakPolicy": "Paragraphs, numbered rules, running headers and catchwords are preserved. Ordinary line wrapping is normalized within paragraphs; historical spelling and visible long s are retained. Explicit [?] markers flag unresolved readings.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "quivatz[a?]", "note": "Terminación de la forma antes de 'meter algo adentro' requiere segunda colación.", "line": null},
+    {"token": "vach[e?]c", "note": "Forma glosada 'tener maiz' provisional.", "line": null},
+    {"token": "huienai[e?]c", "note": "Forma glosada 'hazerſe malo' provisional.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Show-through and uneven inking are visible on the leaf; they affect some linguistic forms.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-18;printed-page-4",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
