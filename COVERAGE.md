@@ -13,15 +13,13 @@ Estado de cobertura de Cahíta Histórico Digital para la fuente `ALC1737`.
 | Extracción OCR paginada reproducible | **182 / 182** | derivado reproducible, no transcripción |
 | Diagnóstico estratificado de OCR | **6 muestras** | micro-CER 25.66%; micro-WER 51.96% |
 | Líneas OCR/layout del vocabulario | **3,899** | pp. 133–177; 61 líneas `other` por fusiones/ambigüedad |
-| Candidatos v0.1 | **1,680** | método histórico preservado en Git/hashes |
 | Candidatos v0.2 vigentes | **2,072** | 45 páginas; 2,072/2,072 válidos por JSON Schema |
-| Muestra de evaluación v0.2 | **4 páginas / 188 comienzos visibles** | diagnóstica, IA-asistida |
-| Precisión / recall / F1 v0.2 | **97.13% / 89.89% / 93.37%** | inicios de artículo, muestra no probabilística |
-| Transcripciones diplomáticas `full_page` | **26 páginas** | pp. 3, 5–13 y 15–30; algunas conservan incertidumbres explícitas |
-| Parte I transcrita | **16 / 36 páginas** | digitales 15–30 = impresas 1–16; **44.44%** de Parte I |
-| Reglas gramaticales estructuradas | **15** | reglas históricas 46–60; lote inicial |
+| Precisión / recall / F1 v0.2 | **97.13% / 89.89% / 93.37%** | muestra diagnóstica de inicios de artículo |
+| Transcripciones diplomáticas `full_page` | **46 páginas** | p. 3, pp. 5–13 y Parte I completa pp. 15–50 |
+| **Parte I transcrita** | **36 / 36 páginas** | digitales 15–50 = impresas 1–36; **100%** |
+| Reglas gramaticales estructuradas | **15** | reglas históricas 46–60; corpus en expansión |
 | Extractos diplomáticos | **1 página** | p. 134, piloto |
-| Observaciones de variación histórica estructuradas | **5** | Hiaqui/Mayo/Thehueco; dataset inicial |
+| Observaciones de variación histórica estructuradas | **9** | Hiaqui/Mayo/Tehueco/Cynaloas y otras etiquetas literales de la fuente |
 | Entradas lexicográficas piloto estructuradas | **12** | JSON Schema válido; `machine_corrected_unverified` |
 | Entradas lexicográficas de producción | **0** | ninguna promovida todavía |
 | Revisión humana independiente | **0** | no iniciada |
@@ -49,42 +47,40 @@ La muestra inicial de seis estratos confirma que el OCR de entrada debe tratarse
 
 ## Candidatos lexicográficos v0.2
 
-`hybrid_margin_mode_v0.2` es el método vigente de generación de candidatos. La corrida completa sobre pp. 133–177 produjo **2,072 candidatos**, frente a 1,680 en v0.1. El aumento se interpreta como mejora de recuperación de fronteras, no como incremento del número de entradas históricas.
+`hybrid_margin_mode_v0.2` es el método vigente de generación de candidatos. La corrida completa sobre pp. 133–177 produjo **2,072 candidatos**. Este valor describe propuestas geométricas de frontera, no el número histórico de artículos.
 
-Sobre las mismas páginas de evaluación 133, 134, 150 y 177, v0.2 registra TP=169, FP=5 y FN=19: precisión **97.13%**, recall **89.89%**, F1 **93.37%**. v0.1 había obtenido 95.32%, 86.70% y 90.81%, respectivamente.
+Sobre las páginas diagnósticas 133, 134, 150 y 177, v0.2 registra precisión **97.13%**, recall **89.89%** y F1 **93.37%**. La muestra es intencional y el cotejo permanece IA-asistido, sin revisión humana independiente.
 
-La muestra es diagnóstica e intencional; sus referencias son cotejos visuales IA-asistidos sin revisión humana independiente.
-
-→ [`docs/VOCAB_BOUNDARY_V02.md`](docs/VOCAB_BOUNDARY_V02.md) · [`data/lexicon/review/boundary_algorithm_comparison.json`](data/lexicon/review/boundary_algorithm_comparison.json)
+→ [`docs/VOCAB_BOUNDARY_V02.md`](docs/VOCAB_BOUNDARY_V02.md)
 
 ## Transcripción
 
-La Fase 2 usa una unidad JSON por página y un manifiesto de 182 filas en [`data/transcription/status.csv`](data/transcription/status.csv). Ya existen **26 unidades `full_page`** del texto impreso: portada (p. 3), dedicatoria y preliminares textuales (pp. 5–13) y las primeras dieciséis páginas impresas de la Parte I (digitales 15–30).
+La Fase 2 usa una unidad JSON por página y un manifiesto de 182 filas en [`data/transcription/status.csv`](data/transcription/status.csv). Existen ahora **46 unidades `full_page`**: portada (p. 3), bloque textual de preliminares (pp. 5–13) y **las 36 páginas de la Parte I** (digitales 15–50 / impresas 1–36).
 
-La Parte I ha alcanzado **44.44% de cobertura por página**: 16 de sus 36 páginas. Las páginas 16–30 fueron cotejadas contra renders de 300 dpi; las formas que no permiten lectura segura se conservan mediante marcadores de incertidumbre y no se elevan a `human_verified`.
+La **Parte I ha alcanzado 100% de cobertura por página** en la capa `machine_corrected_unverified`. Esto no significa edición crítica cerrada ni revisión humana: cada JSON conserva su cola de incertidumbres y las lecturas dudosas permanecen explícitas.
 
-Los lotes de trabajo están registrados en [`data/transcription/batches/part_i_p015_p020.csv`](data/transcription/batches/part_i_p015_p020.csv), [`data/transcription/batches/part_i_p021_p025.csv`](data/transcription/batches/part_i_p021_p025.csv) y [`data/transcription/batches/part_i_p026_p030.csv`](data/transcription/batches/part_i_p026_p030.csv).
+Los lotes se encuentran en `data/transcription/batches/`, desde `part_i_p015_p020.csv` hasta `part_i_p046_p050.csv`.
+
+La última página de Parte I, digital 50 / impresa 36, concluye las reglas 121–123 y conserva el catchword `PAR-`, que enlaza materialmente con el inicio de `PARTE II` en la página siguiente.
 
 → [`docs/TRANSCRIPTION_MODEL.md`](docs/TRANSCRIPTION_MODEL.md)
 
 ## Corpus gramatical
 
-Se definió [`schemas/grammatical-rule.schema.json`](schemas/grammatical-rule.schema.json) para representar las reglas históricas sin convertirlas en generalizaciones lingüísticas modernas. El primer lote, [`data/grammar/rules_part_i_046_060.jsonl`](data/grammar/rules_part_i_046_060.jsonl), contiene **15 reglas** de las páginas digitales 26–30 / impresas 12–16.
+[`schemas/grammatical-rule.schema.json`](schemas/grammatical-rule.schema.json) representa las reglas históricas sin convertirlas en generalizaciones lingüísticas modernas. El primer lote [`data/grammar/rules_part_i_046_060.jsonl`](data/grammar/rules_part_i_046_060.jsonl) contiene 15 reglas estructuradas; la transcripción completa de Parte I permite ahora extender sistemáticamente este corpus hasta la regla 123.
 
-Este bloque estructura verbales en `ME`, formación de adjetivos, las cuatro maneras de los `Verbales en BILIS` y las partículas `la`, `ra`, `i` y el comienzo de `ua`. Cada entidad conserva extracto de fuente, explicación estructurada separada, ejemplos, página, autoridad y procedencia. La regla 60 está marcada como continuada en p. digital 31.
+La Parte I documenta, entre otros fenómenos, formación de pretéritos y futuros, voz pasiva, derivación nominal y verbal, verbales, partículas, composición, pronunciación, synalepha, orden de palabras y sintaxis.
 
 ## Variación histórica explícita
 
-Se inauguró una capa independiente para pasajes en los que el impreso atribuye contrastes a `Hiaqui`, `Mayo` o `Thehueco`. El dataset inicial contiene cinco observaciones ancladas en las páginas digitales 11, 19, 53, 70 y 71, incluyendo una regla de futuro atribuida a los Mayos, una nota léxica con la etiqueta histórica `Hiaqui ſuaue` y las terminaciones comparadas `cat / can / cai` del pluscuamperfecto.
+[`data/linguistic/variety_observations.jsonl`](data/linguistic/variety_observations.jsonl) contiene **9 observaciones** estructuradas. Además de Hiaqui, Mayo y Tehueco/Thehueco, la página digital 49 / impresa 35 incorpora una observación atribuida expresamente a **`los Cynaloas`** sobre el uso del acusativo `netzi` dentro de la construcción discutida en la regla 119.
 
-→ [`docs/HISTORICAL_VARIATION_EVIDENCE.md`](docs/HISTORICAL_VARIATION_EVIDENCE.md) · [`data/linguistic/variety_observations.jsonl`](data/linguistic/variety_observations.jsonl)
+Las observaciones siguen siendo declaraciones históricas de la fuente. CHD conserva sus denominaciones y análisis sin proyectarlos automáticamente sobre variedades modernas.
+
+→ [`docs/HISTORICAL_VARIATION_EVIDENCE.md`](docs/HISTORICAL_VARIATION_EVIDENCE.md)
 
 ## Interpretación de métricas
 
-`OCR extraído` significa recuperación automática de una capa textual, no exactitud filológica. `Candidato de límites de artículo` significa una propuesta geométrica que requiere revisión. `Entrada piloto estructurada` significa que el contrato de datos funciona; no equivale a entrada publicada o validada.
-
-`Transcripción full_page` significa que el texto impreso visible de una página está representado en la unidad editorial, pero **no implica revisión humana independiente**. Una unidad puede ser completa y conservar lecturas `unresolved`.
-
-`Regla gramatical estructurada` significa que el análisis expuesto por el gramático de 1737 ha sido convertido en una entidad trazable; no implica que CHD adopte esa regla como descripción lingüística contemporánea.
+`OCR extraído` significa recuperación automática de una capa textual, no exactitud filológica. `Transcripción full_page` significa que el texto impreso visible de una página está representado editorialmente; **no implica revisión humana independiente**. `Regla gramatical estructurada` significa que el análisis del gramático de 1737 ha sido convertido en una entidad trazable, no que CHD lo adopte sin crítica como descripción lingüística contemporánea.
 
 Las cifras de cobertura deben leerse siempre junto con el **estado de autoridad** de la capa que describen.
