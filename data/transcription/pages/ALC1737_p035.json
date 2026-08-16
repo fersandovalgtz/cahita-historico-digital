@@ -1,0 +1,27 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 35,
+  "sourcePagePrinted": 21,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE I.\n\nverbo, v. g. buantua hazer llorar: cottua hazer dormir: noctua hazer hablar. Son activos, y tienen paſſiva.\n\nAplicativos.\n\n73. Formanſe añadiendo ria, vel ia, en lugar del naque del futuro, ſignifican hazer para otros lo ſignificado del verbo radical, v. g. vure guardar coſas vivas, vurria ſu aplicativo, guardarlas à otro, ò para otro: noca hablar, nocria aplicativo, hablar para otro: maveta recebir, mavetzia aplicativo, recebir para otro: etza ſembrar, etzia aplicativo, ſembrar para otro. Quales verbos reciban el ria, y quales el ia, no ay regla que lo enſeñe, ſino el vſo. Forman verbos aplicativos los activos, los neutros, y los compulſivos. Su conſtruccion es de verbos activos: tienen paſſiva, conjuganſe por la conjugacion principal.\n\nFrequentativos.\n\n74. Vna coſa es hazer la accion muchas vezes, y eſto ſe haze reduplicando el verbo la primera ſyllaba, la de en medio, ò la vltima, v. g. huana llorar, huahuana llorar muchas vezes: veetopaſe reverberar, muchas vezes veetopopate: buite huirſe vno, buitete muchas vezes: caneabuana no lo como à menudo. Otra coſa es lo que decimos ſoler hazer vna coſa, v. g. ſuelo ir allá, ſuelo comer, &c. Eſte verbo ſoler ſe explica añadiendo en lugar del naque de futuro eſta particula tutu: no ſuelo andar allá: cane amam veramtutu. Otra coſa es ir haziendo la accion, v. g. ir cantando, ir comiendo, &c. y eſto ſe explica con el verbo ſime ir vno, y ſaca ir muchos: juntandolos al verbo, cuya accion ſe vá exerciendo, en lugar del naque del futuro, v. g. vá cantando, buicſime, plural, buicſaca: vá llorando, huanſime, plural, huanſaca.\n\n75. Ninguno, pues, de los tres modos dichos ſe llama frequentativo en el ſentido, que ſe vſa en el idioma Latino. Verbo frequentativo es ir haziendo, ò con habitualidad, ò coſtumbre, ò de aſſiento alguna coſa. El que de\n\nordi-\n",
+  "lineBreakPolicy": "Continuation of rule 72, headings, numbered rules and catchword are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "veetopaſe → veetopopate", "note": "Frequentative example is typographically difficult; documentary reading requires second collation.", "line": null},
+    {"token": "caneabuana", "note": "Example glossed 'no lo como à menudo' is provisionally transcribed.", "line": null},
+    {"token": "cane amam veramtutu", "note": "Example glossed 'no ſuelo andar allá' retained as a provisional documentary reading.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Mild show-through and minor edge wear; text remains readable overall.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-35;printed-page-21",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
