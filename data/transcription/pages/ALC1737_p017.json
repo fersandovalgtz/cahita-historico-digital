@@ -1,0 +1,26 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 17,
+  "sourcePagePrinted": 3,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE I.\n\nſue, iec, hazen el preterito vnas vezes vſando del miſmo preſente por preterito, v. g. Supec tengo, ò tuve veſtido: chupſu ſe acabò: ioremtuc ſe hizo hombre: chivuiec ſe hizo amargo: otras vezes ſe hazen en cai, v. g. Supecai, chupſucai, ioremtucai, chivuiecai: otras vezes en ca, principalmente ſiguiendoles otra diccion, v. g. Aora tuve vn veſtido roto: Buaunec ne ſupeca beſa. Cualquier genero de verbos, ora de los que van por la regla general, ora de los que la tienen particular, añaden à la c, del preterito vtriuſque vocis vna a, quando deſpues del preterito ſe ſigue alguna diccion, que empieza con conſonante, v. g. comi hivuacane; dormi cotzocane; nos deſenojamos vuaſavocque; fuimos amados eriauacate: todo ſe comiò vuauaca chibui; yá fué llevada umuacabeſa: yá llegò tepſacabeſa. No ſe exceptua aqui verbo alguno de los irregulares por eſtár expreſſados en ſu lugar: veaſe alli.\n\n6. Todos los verbos forman el futuro con eſta particula naque por activa, y por paſſiva naua: pero no todos de vna miſma manera, como yá diremos. Mas ſe advierta, que el naua de la paſſiva le reciben los verbos de la miſma manera, que el naque de la activa, y aſſi lo que ſe dixere del naque ſe obſervará del naua, ſegun las reglas ſiguientes.\n\n7. Primera: Todos los verbos acabados en a, que antes de la a, tienen immediatamente vocal, hazen el futuro añadiendo al recto el naque, v. g. Eria amar, futuro erianaque. Maa aſſar en barbacoa, maanaque. Vria arrebatar, ò quitar por fuerza, vrianaque. Sitia regar, ſitianaque, &c.\n\n8. Eſta regla ſiguen ſin excepcion todos los compulſivos, y los aplicativos, v. g. Ieuatu[a?] catequizar, ò adieſtrar, ieuatuanaque; vuria guardarle à otro coſas vivas, vurianaque; etaporia abrirle à otro la puerta, etaporianaque: ſacanſe de eſta regla los ſiguientes, que pierden la vltima vocal para recebir el naque, v. g. Toa poner coſas liquidas, tonaque: cia, vel ea penſar, enaque: vena dejar que ſobre algo, venaque: vatoa baptizar, vatonaque: hiboa texer, hibonaque. Hitoa [?], hitonaque; ana pedir, aunaque.\n\nSe-\n",
+  "lineBreakPolicy": "Paragraphs, numbered rules, running headers and catchwords are preserved. Ordinary line wrapping is normalized within paragraphs; historical spelling and visible long s are retained. Explicit [?] markers flag unresolved readings.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "Ieuatu[a?]", "note": "Última vocal de la forma del ejemplo 'catequizar, ò adieſtrar' no es completamente segura.", "line": null},
+    {"token": "Hitoa [?]", "note": "Ejemplo inmediatamente anterior a 'ana pedir'; lectura incompleta en el facsímil.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Show-through and uneven inking are visible on the leaf; they affect some linguistic forms.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-17;printed-page-3",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
