@@ -1,0 +1,27 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 32,
+  "sourcePagePrinted": 18,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ARTE DE LA LENGVA\n\nel nombre, v. g. cova cabeza, covac tener cabeza: tuuriua bondad, tuuriuac tener bondad: mama la mano, mamac tener manos, &c. A los nombres de plural acabados en m, ſe les quita la m, para ponerles la c, v. g. nacam las orejas, nacac tener orejas: ſupem veſtido, ſupec tener veſtido.\n\n64. Los nombres acabados en i, vel im, para recebir la c, mudan la i, vel im, en e, v. g. hiepſi corazon, hiepſec tenerle: tzoni cabello, tzonec tenerle: puuſim ojos, puuſec tener ojos: conjuganſe por la conjugacion principal donde yá queda advertido lo particular de los verbos acabados en c. De la conſtruccion de eſtos verbos poſſeſſivos ſe dirá en la Syntaxis. Eſtos verbos, aunque en la conſtruccion, y en la terminacion ſon activos, en la ſignificacion ſon paſſivos, ſi no es quando ſe hazen imperſonales, que entonces admiten la voz paſſiva, v. g. vacheuac ſe tiene maiz, &c.\n\nEn RI.\n\n65. Los adjetivos en ri, verbales, ſe hazen verbos conjugandoſe por todas ſus diferencias de tiempos; y ſignifican con elegancia hazer la accion del verbo de donde ſalen de propoſito, y perfectamente, v. g. ietza poner, ietzari ſu adjetivo: aneietzaric lo puſe con intencion de que allá eſtuvieſſe de aſſiento, y por mucho tiempo: noca, adjetivo es nocri: aieunennocric ſe hablé de eſpacio, y mui de veras: amanne aſouari allá me parieron: potrillotane micri me prometieron potrillo, de modo, que infaliblemente me lo han de dar.\n\nEn TE.\n\n66. Los ſubſtantivos, y adjetivos ſe hazen verbos con la dicha particula te, y ſignifican hazer lo ſignificado por el nombre: eſta particula te, ſe junta con los ſubſtantivos en lugar de la particula del obliquo. A los adjetivos ſe añade en el recto, ſino es en los acabados en ri, que pierden el ri, para recebir el te, v. g. cari, genitivo cata, en lugar del ta, del obliquo ſe pone el te, con que ſe forma el verbo ca-\n\nte\n",
+  "lineBreakPolicy": "Continuation of rule 63, headings, numbered rules and page-turn split are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "aieunennocric", "note": "Cahíta example glossed 'ſe hablé de eſpacio, y mui de veras'; segmentation remains provisional.", "line": null},
+    {"token": "amanne aſouari", "note": "Example glossed 'allá me parieron' requires specialist second collation.", "line": null},
+    {"token": "potrillotane micri", "note": "Mixed example with Spanish 'potrillo'; documentary reading retained, analysis pending.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Show-through and small ink defects occur in the lower half of the page.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-32;printed-page-18",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
