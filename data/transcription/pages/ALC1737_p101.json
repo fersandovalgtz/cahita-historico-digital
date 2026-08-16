@@ -1,0 +1,16 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":101,
+  "sourcePagePrinted":87,
+  "section":"part_iii",
+  "transcriptionType":"diplomatic",
+  "coverage":"full_page",
+  "scope":"printed_text",
+  "text":"[continuación de 277] ... eſt, detenerſe mucho tiempo: no te detengas allá mucho, ca te aman vinuantinaque: me detuve, ó eſtuve mucho tiempo eſperando, [ejemplo cahíta]; preſto, id eſt, celeriter, araiaba, vel sabara: no ſe dan priſa, catim araiabatu. Eſte adverbio hiba es lo miſmo, que ſatis, non eſt ſatis, cahibatu: non eſt ſatis loquendi, canochibatu: erit ſatis loquendi, nochibatunaque.\n\nPoſſum, potes.\n278. En eſta lengua es el verbo araue: Dios es omnipotente, Dios chiſti itaaraue; mas porque en el ordinario modo de hablar ſe vſa muchas vezes de eſta palabra poder, v. g. no puedo ir, no puedo comer, &c. y eſte modo de hablar, aunque en caſtellano ſe explica con el verbo poder, en eſta lengua no ſiempre ſe explica con el verbo araue; y aſſi ſe advierta, que ay poder phyſicè, ay poder moralitèr, y ay poder voluntariè, hoc eſt, no tener gana, voluntad, aliento, ó diſpoſicion para hazer alguna coſa; y como no puedo ir, no lo puedo hazer; que aunque ſe dice con el verbo poder, es verdadero non velle, aunque no ſea verdadero nolle.\n\n279. El verbo poder phyſicè es araue, y ſe compone con qualquiera otro, cuya acción ſe puede, ó no puede hazer phyſicè: y el modo de componerſe es poniendo la mitad del verbo, que es eſta partícula ara, antes del verbo con quien ſe compone, v. g. no puedo comer por eſtar deſganado, ó ſatisfecho, no ſe dirá por el verbo araue; porque eſto no es no poder phyſicè, ſino no poder moralitèr. No poder comer por eſtar cerrada la garganta, ó hinchada la hoz, vel ſimile, es no poder phyſicè, y entonces ſe dirá por el verbo araue: ca ne arahibua [ejemplo parcial]. El que no puede andar por eſtar en el cepo, no puede andar moralitèr, y aſſi no dirá por el verbo araue, que no puede andar. Pero el que por eſtar enfermo de los pies, vel ſimile, no ſe puede menear, ó andar, eſte no puede andar pro tunc phyſicè, y aſſi dirá en eſta ocaſion: ca ne arauerama, no puedo andar.\n\n280. Ay ala, y ara, partículas, que ſe componen ante [continúa].",
+  "lineBreakPolicy":"Heading and rule numbers preserved; running line breaks normalized; difficult examples kept partial or unresolved.",
+  "reviewStatus":"unresolved",
+  "humanVerified":false,
+  "uncertainties":[{"token":"[ejemplo cahíta]","note":"One example in continuation of rule 277 is not secure."},{"token":"ca ne arahibua [ejemplo parcial]","note":"Ending of physical-ability example requires second collation."}],
+  "materialNotes":[{"type":"bleed_through","note":"Moderate show-through; main prose clear.","transcription":null}],
+  "provenance":{"derivedFrom":"ALC1737:digital-page-101;printed-page-87","agent":"GPT-5.6 Sol visual collation","method":"Full-page transcription from facsimile with parsed text as secondary comparison; no independent human verification","processedAt":null}
+}
