@@ -25,6 +25,7 @@
   <a href="EDITORIAL_POLICY.md"><strong>Política editorial</strong></a> ·
   <a href="PROVENANCE.md"><strong>Procedencia</strong></a> ·
   <a href="ROADMAP.md"><strong>Hoja de ruta</strong></a> ·
+  <a href="docs/REPOSITORY_CONSISTENCY_AUDIT_2026-08-16.md"><strong>Auditoría</strong></a> ·
   <a href="docs/ECOSYSTEM.md"><strong>Ecosistema</strong></a>
 </p>
 
