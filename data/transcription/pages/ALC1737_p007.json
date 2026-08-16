@@ -1,0 +1,27 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 7,
+  "sourcePagePrinted": null,
+  "section": "preliminaries",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "tenor de tantas, y tales preguntas.\nPero que diré de aquel genero de\nlenguaje nunca oido, con que predicaſ-\nteis en la Iſla de Socotora à ſus Natura-\nles, abraſado todo del fuego del Amor\nDivino, y ardiendo en ſed de la ſalva-\ncion de las almas, ſin el vſo de la len-\ngua, ſin vozes, ſin palabras, ſolamente\ncon las acciones de las manos; pero eſ-\ntas tan rethoricas, tan eloquentes, tan\neficaces, que ſe convirtieron, y bauti-\nzaron muchos catequizados por medio\nde las acciones en los myſterios, y dog-\nmas de la Fee? Y que diré de aquel ma-\nraviglioſo ſilencio con que ſin hablarle\npalabra, dando vozes al corazon de\naquel Cavallero de Meliapor, le ganaſ-\nteis para Dios? Diré lo que con inge-\nnioſa novedad (ninguno mejor) aſſump-\nto, y probó con felicidad el Orador de\nnueſtro ſiglo, que ſois, ò Divino Xavier!\nel Apoſtol todo lenguas en la miſma\nlengua, en la boca, en las manos, en las\nvozes, en las palabras, y lo que es mas,\nen el ſilencio, para hablar las nuevas\nprodigioſas lenguas del Evangelio: Lin-\nguis loquentur novis.\n\nTam-\n",
+  "lineBreakPolicy": "Printed line breaks, line-end hyphenation and the catchword Tam- are preserved. Long s is represented as ſ where visually legible. The printed marginal attribution is described separately.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [],
+  "materialNotes": [
+    {
+      "type": "other",
+      "note": "Printed marginal attribution accompanies the sentence about the contemporary orator.",
+      "transcription": "P. Dr. Juan\nAntonio de\nOviedo\nProvincial\nde Nueva\nEſpaña."
+    }
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-7",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full main-text transcription from high-resolution rendered facsimile with marginal attribution isolated; no independent human verification",
+    "processedAt": null
+  }
+}
