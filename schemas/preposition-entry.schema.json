@@ -1,0 +1,32 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://github.com/fersandovalgtz/cahita-historico-digital/schemas/preposition-entry.schema.json",
+  "title":"CHD historical preposition entry",
+  "description":"Structured representation of a preposition/postposition entry as described in Part IV of ALC1737. Source terminology, government and polysemy are preserved before modern reinterpretation.",
+  "type":"object",
+  "required":["id","sourceId","part","headwordRaw","sourcePagesDigital","sourceRuleRange","attachmentRaw","senses","reviewStatus","humanVerified","provenance"],
+  "properties":{
+    "id":{"type":"string","pattern":"^ALC1737-prep-[0-9]{4}$"},
+    "sourceId":{"const":"ALC1737"},
+    "part":{"const":"part_iv"},
+    "headwordRaw":{"type":"array","minItems":1,"items":{"type":"string"}},
+    "sourcePagesDigital":{"type":"array","minItems":1,"items":{"type":"integer","minimum":105,"maximum":132}},
+    "sourcePagesPrinted":{"type":"array","items":{"type":"integer","minimum":91,"maximum":118}},
+    "sourceRuleRange":{"type":"string"},
+    "attachmentRaw":{"type":["string","null"]},
+    "governmentRaw":{"type":["array","null"],"items":{"type":"string"}},
+    "morphophonologyRaw":{"type":["array","null"],"items":{"type":"string"}},
+    "senses":{"type":"array","minItems":1,"items":{"type":"object","required":["order","sourceGlossRaw"],"properties":{"order":{"type":"integer","minimum":1},"sourceGlossRaw":{"type":"string"},"latinComparisonRaw":{"type":["string","null"]},"caseOrConstructionRaw":{"type":["string","null"]},"examplesRaw":{"type":"array","items":{"type":"string"}},"note":{"type":["string","null"]}},"additionalProperties":false}},
+    "sourceUsageJudgmentRaw":{"type":["string","null"]},
+    "editorialCaution":{"type":["string","null"]},
+    "entryStatus":{"type":"string","enum":["complete_in_current_source_span","continues"]},
+    "reviewStatus":{"type":"string","enum":["machine_corrected_unverified","editorial_proposal","human_verified","unresolved"]},
+    "humanVerified":{"type":"boolean"},
+    "provenance":{"type":"object","required":["derivedFrom","agent","method"],"properties":{"derivedFrom":{"type":"string"},"agent":{"type":"string"},"method":{"type":"string"},"processedAt":{"type":["string","null"],"format":"date-time"}},"additionalProperties":false}
+  },
+  "allOf":[
+    {"if":{"properties":{"reviewStatus":{"const":"human_verified"}}},"then":{"properties":{"humanVerified":{"const":true}}}},
+    {"if":{"properties":{"humanVerified":{"const":true}}},"then":{"properties":{"reviewStatus":{"const":"human_verified"}}}}
+  ],
+  "additionalProperties":false
+}
