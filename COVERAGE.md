@@ -17,8 +17,10 @@ Estado de cobertura de Cahíta Histórico Digital para la fuente `ALC1737`.
 | Candidatos v0.2 vigentes | **2,072** | 45 páginas; 2,072/2,072 válidos por JSON Schema |
 | Muestra de evaluación v0.2 | **4 páginas / 188 comienzos visibles** | diagnóstica, IA-asistida |
 | Precisión / recall / F1 v0.2 | **97.13% / 89.89% / 93.37%** | inicios de artículo, muestra no probabilística |
-| Transcripciones diplomáticas completas | **1 página** | p. 3, `machine_corrected_unverified` |
+| Transcripciones diplomáticas `full_page` | **21 páginas** | pp. 3, 5–13 y 15–25; algunas conservan incertidumbres explícitas |
+| Parte I transcrita | **11 / 36 páginas** | digitales 15–25 = impresas 1–11; **30.56%** de Parte I |
 | Extractos diplomáticos | **1 página** | p. 134, piloto |
+| Observaciones de variación histórica estructuradas | **5** | Hiaqui/Mayo/Thehueco; dataset inicial |
 | Entradas lexicográficas piloto estructuradas | **12** | JSON Schema válido; `machine_corrected_unverified` |
 | Entradas lexicográficas de producción | **0** | ninguna promovida todavía |
 | Revisión humana independiente | **0** | no iniciada |
@@ -56,12 +58,24 @@ La muestra es diagnóstica e intencional; sus referencias son cotejos visuales I
 
 ## Transcripción
 
-La Fase 2 usa una unidad JSON por página y un manifiesto de 182 filas en [`data/transcription/status.csv`](data/transcription/status.csv). La portada, p. digital 3, ya tiene cobertura `full_page` del texto impreso; p. 134 conserva un extracto piloto. Ninguna de estas unidades está declarada `human_verified`.
+La Fase 2 usa una unidad JSON por página y un manifiesto de 182 filas en [`data/transcription/status.csv`](data/transcription/status.csv). Ya existen **21 unidades `full_page`** del texto impreso: portada (p. 3), dedicatoria y preliminares textuales (pp. 5–13) y las primeras once páginas impresas de la Parte I (digitales 15–25).
+
+La Parte I ha alcanzado **30.56% de cobertura por página**: 11 de sus 36 páginas. Las páginas 16–25 fueron cotejadas contra renders de 300 dpi; las formas que no permiten lectura segura se conservan mediante marcadores de incertidumbre y no se elevan a `human_verified`.
+
+Los lotes de trabajo están registrados en [`data/transcription/batches/part_i_p015_p020.csv`](data/transcription/batches/part_i_p015_p020.csv) y [`data/transcription/batches/part_i_p021_p025.csv`](data/transcription/batches/part_i_p021_p025.csv).
 
 → [`docs/TRANSCRIPTION_MODEL.md`](docs/TRANSCRIPTION_MODEL.md)
+
+## Variación histórica explícita
+
+Se inauguró una capa independiente para pasajes en los que el impreso atribuye contrastes a `Hiaqui`, `Mayo` o `Thehueco`. El dataset inicial contiene cinco observaciones ancladas en las páginas digitales 11, 19, 53, 70 y 71, incluyendo una regla de futuro atribuida a los Mayos, una nota léxica con la etiqueta histórica `Hiaqui ſuaue` y las terminaciones comparadas `cat / can / cai` del pluscuamperfecto.
+
+→ [`docs/HISTORICAL_VARIATION_EVIDENCE.md`](docs/HISTORICAL_VARIATION_EVIDENCE.md) · [`data/linguistic/variety_observations.jsonl`](data/linguistic/variety_observations.jsonl)
 
 ## Interpretación de métricas
 
 `OCR extraído` significa recuperación automática de una capa textual, no exactitud filológica. `Candidato de límites de artículo` significa una propuesta geométrica que requiere revisión. `Entrada piloto estructurada` significa que el contrato de datos funciona; no equivale a entrada publicada o validada.
+
+`Transcripción full_page` significa que el texto impreso visible de una página está representado en la unidad editorial, pero **no implica revisión humana independiente**. Una unidad puede ser completa y conservar lecturas `unresolved`.
 
 Las cifras de cobertura deben leerse siempre junto con el **estado de autoridad** de la capa que describen.
