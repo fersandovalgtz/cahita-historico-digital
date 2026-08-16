@@ -23,7 +23,9 @@ Estado de cobertura de Cahíta Histórico Digital para `ALC1737` — 2026-08-16.
 | Grupos de conjunciones/metacategorías | **6** | reglas 360–373 + interjecciones |
 | Sistema numeral histórico | **1 bloque estructurado** | digitales 178–180 |
 | Observaciones de variación histórica | **17+** | nuevas observaciones numéricas pendientes de integración combinada |
-| Candidatos lexicográficos v0.2 | **2,072** | 45 páginas; no equivalen a artículos publicados |
+| Candidatos lexicográficos v0.2 | **2,072 reportados** | métrica documentada de ejecución; inventario fila-a-fila completo aún no persistido canónicamente |
+| Artefactos candidatos persistidos | **p.134** | `data/lexicon/candidates/p134_candidates.jsonl`; ver `inventory_status.json` |
+| Diagnóstico de fronteras | **4 páginas / 171 candidatos** | muestra intencional: precisión 0.9532, recobrado 0.8670, F1 0.9081; no probabilística |
 | Artículos históricos estructurados | **734** | representación selectiva de digitales 133–177 |
 | Páginas de vocabulario con al menos representación estructurada | **45 / 45** | cobertura selectiva inicial completa |
 | Pilotos lexicográficos fuera de secuencia | **0** | p.165 reconciliado; p.134 es parte de la secuencia de cobertura |
@@ -40,9 +42,26 @@ Este hito significa cobertura de superficie textual, no edición crítica cerrad
 
 ## Vocabulario
 
-El vocabulario ocupa digitales 133–177. El pipeline geométrico v0.2 conserva **2,072 candidatos de frontera**. La capa curatorial contiene ahora **734 artículos históricos estructurados** y todas las **45 páginas** poseen al menos una representación lexicográfica estructurada.
+El vocabulario ocupa digitales 133–177. El pipeline geométrico v0.2 ha producido una **métrica documentada de 2,072 candidatos de frontera**, mientras la capa curatorial contiene **734 artículos históricos estructurados** y todas las **45 páginas** poseen al menos una representación lexicográfica estructurada.
 
 La cobertura por página es **selectiva**. No significa que los 2,072 candidatos hayan sido ya clasificados ni que 734 sea el número final de entradas históricas.
+
+### Estado del inventario candidato
+
+La auditoría del árbol versionado detectó una limitación de reproducibilidad que ahora está explícitamente registrada en `data/lexicon/candidates/inventory_status.json`: el repositorio contiene `p134_candidates.jsonl`, pero todavía no conserva un inventario canónico fila-a-fila para las 45 páginas.
+
+Por ello CHD distingue:
+
+- **2,072** = conteo reportado por una ejecución del extractor `hybrid_margin_mode_v0.2`;
+- **inventario candidato persistido** = incompleto hasta regenerar, comprobar y versionar todas las filas.
+
+No se declarará una reconciliación exhaustiva de 2,072 candidatos mientras esa precondición no esté satisfecha.
+
+### QA diagnóstico de fronteras
+
+`data/lexicon/review/stratified_boundary_evaluation.json` contiene una muestra intencional en pp.133, 134, 150 y 177: 171 candidatos, 188 inicios visibles, 163 verdaderos positivos, 8 falsos positivos y 25 falsos negativos. Las métricas agregadas son precisión **0.9532**, recobrado **0.8670** y F1 **0.9081**.
+
+El diseño se declara `purposive_stratified_diagnostic`, no probabilístico. Estas cifras sirven para diagnóstico del algoritmo y no deben presentarse como estimadores con validez inferencial para todo el vocabulario.
 
 ### Apertura retroprocesada
 
@@ -81,4 +100,4 @@ La capa numeral incluye esquema, dataset y documentación para cardinales 1–10
 
 ## Siguiente frente
 
-La prioridad deja de ser cubrir nuevas páginas del vocabulario. Pasa a ser la **reconciliación exhaustiva de los 2,072 candidatos**: cada candidato deberá clasificarse como artículo histórico, paratexto, continuación física o falso positivo, con métricas reproducibles y exportación canónica de producción.
+La prioridad es **persistir primero el inventario canónico completo de candidatos** mediante el extractor reproducible. Después se realizará la reconciliación exhaustiva candidato→`article`/`paratext`/`continuation`/`false_positive`/`unresolved`, conforme a `schemas/lexicon-candidate-review.schema.json` y `docs/LEXICON_RECONCILIATION_PROTOCOL.md`.
