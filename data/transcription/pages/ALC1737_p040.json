@@ -1,0 +1,27 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 40,
+  "sourcePagePrinted": 26,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ARTE DE LA LENGVA\n\nde a ipſe, vel ille, es eſto mas ordinario, porque ſiendo el genitivo, y el ablativo aieri, dicen acovetzibo, pro ayevetzibo, que quiere decir por eſſo, ò por lo qual: aemaque con el pro, aiemaque: aechi en el pro, aietzi, v. g. le eſtá bien aecquiua, pro aiequiua. Acerca del accento de las ſynalephas no ſe puede dar regla ninguna, porque vnos meſmos vocablos los pronuncian los Hiaquis breves, los Teuecos largos, y los Mayos vnos breves, y otros largos.\n\nModo de colocarſe las palabras.\n\n92. Cinco generos de palabras, ò dicciones tienen lugar forzoſo en que ſe colocan. El primero: el ſemi-pronombre, que ſe hà de colocar ſiempre inmediatamente deſpues de la primera diccion, ora ſea la diccion ſimple, ora compueſta, ora ſea conjunta neceſſariamente à otra diccion, conforme ſe dirá abajo, v. g. hibuacane comi; cotzene duermo.\n\n93. Segundo: eſta nota interrogationis quiua ſe coloca ſiempre al principio de la oracion, quando ſe haze preguntando, v. g. Por ventura ſe fué la gente? Qui ioreme ſaca beſa? ſolo con el vocativo de ſingular, y plural del pronombre tu, ſe poſpone al dicho pronombre, v. g. Tu has comido? Equihibuac, vel ehibuac? Os quereis ir voſotros? Eme qui ſaca vare? vel eme ſaca vare? Con mas elegancia ſe hazen eſtas oraciones dexando el quiua. Veaſe la primera parte donde ſe trata eſte punto.\n\n94. Tercero: las notas relativas, ò de tranſiciones a, para ſingular, y am, para plural, ſe colocan inmediatamente antecedentes al verbo; ſi no es quando en la oracion no ay mas, que nota tranſitionis, verbo, y ſemi-pronombre, que entonces el ſemi-pronombre guarda ſu lugar de colocarſe deſpues de la primera diccion, y ſe pone entre la nota relativa, y el verbo, v. g. le amo, a ne eria: los amo am ne eria. Veaſe la primera parte ubi de relativis.\n\n95. Quarto: las prepoſiciones ſe colocan luego inmediatamente deſpues del nombre, ò pronombre à quien ſe\n\njun-\n",
+  "lineBreakPolicy": "Continuation of rule 91, subsection heading, numbered rules and page-turn split are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "acovetzibo, pro ayevetzibo", "note": "Pronoun-related example continuing rule 91 is typographically difficult; retain as provisional diplomatic reading.", "line": null},
+    {"token": "aecquiua, pro aiequiua", "note": "Example glossed 'le eſtá bien' requires second collation.", "line": null},
+    {"token": "Equihibuac, vel ehibuac", "note": "Interrogative example following 'Tu has comido?' is provisionally transcribed from facsimile.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Light-to-moderate show-through; text remains substantially legible.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-40;printed-page-26",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
