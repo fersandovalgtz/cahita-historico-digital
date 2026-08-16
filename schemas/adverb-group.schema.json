@@ -1,0 +1,31 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://github.com/fersandovalgtz/cahita-historico-digital/schemas/adverb-group.schema.json",
+  "title":"CHD historical adverb group",
+  "description":"Rule-level representation of thematic adverb groups in Part IV of ALC1737. It preserves the source's Latin headings, glosses, examples, variant inventories and explicit variety attributions without forcing modern lexical normalization.",
+  "type":"object",
+  "required":["id","sourceId","part","sourcePagesDigital","sourceRuleRange","categoryRaw","sourceDescription","reviewStatus","humanVerified","provenance"],
+  "properties":{
+    "id":{"type":"string","pattern":"^ALC1737-adv-[0-9]{4}$"},
+    "sourceId":{"const":"ALC1737"},
+    "part":{"const":"part_iv"},
+    "sourcePagesDigital":{"type":"array","minItems":1,"items":{"type":"integer","minimum":122,"maximum":132}},
+    "sourcePagesPrinted":{"type":"array","items":{"type":"integer","minimum":108,"maximum":118}},
+    "sourceRuleRange":{"type":"string"},
+    "categoryRaw":{"type":"string"},
+    "subcategoriesRaw":{"type":"array","items":{"type":"string"}},
+    "sourceDescription":{"type":"string"},
+    "itemsRaw":{"type":"array","items":{"type":"object","required":["glossRaw"],"properties":{"glossRaw":{"type":"string"},"formsRaw":{"type":"array","items":{"type":"string"}},"latinRaw":{"type":["string","null"]},"note":{"type":["string","null"]}},"additionalProperties":false}},
+    "historicalVarietyObservationIds":{"type":"array","items":{"type":"string","pattern":"^ALC1737-var-[0-9]{4}$"}},
+    "editorialCaution":{"type":["string","null"]},
+    "entryStatus":{"type":"string","enum":["complete_in_current_source_span","continues"]},
+    "reviewStatus":{"type":"string","enum":["machine_corrected_unverified","editorial_proposal","human_verified","unresolved"]},
+    "humanVerified":{"type":"boolean"},
+    "provenance":{"type":"object","required":["derivedFrom","agent","method"],"properties":{"derivedFrom":{"type":"string"},"agent":{"type":"string"},"method":{"type":"string"},"processedAt":{"type":["string","null"],"format":"date-time"}},"additionalProperties":false}
+  },
+  "allOf":[
+    {"if":{"properties":{"reviewStatus":{"const":"human_verified"}}},"then":{"properties":{"humanVerified":{"const":true}}}},
+    {"if":{"properties":{"humanVerified":{"const":true}}},"then":{"properties":{"reviewStatus":{"const":"human_verified"}}}}
+  ],
+  "additionalProperties":false
+}
