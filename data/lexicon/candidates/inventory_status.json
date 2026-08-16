@@ -3,42 +3,44 @@
   "candidateMethod": "hybrid_margin_mode_v0.2",
   "script": "scripts/extract_vocab_candidates.py",
   "pageRangeDigital": [133, 177],
-  "reportedCandidateCount": 2072,
-  "reportedCountStatus": "documented_execution_metric_independently_reproduced",
-  "countRegenerationVerification": {
-    "status": "verified_local_regression",
-    "regeneratedCount": 2072,
-    "perPageCountsPath": "data/lexicon/candidates/candidate_counts_by_page.csv",
+  "candidateCount": 2072,
+  "canonicalInventoryStatus": "canonical_inventory_persisted_lossless_sharded",
+  "canonicalInventory": {
+    "generatorRevision": "f175b4bc455ff40a066d092a94e0a89a0ca2ae10",
+    "generatorScriptBlobs": {
+      "scripts/extract_vocab_candidates.py": "0ac729164895b0b4afd462350892426aca6e5f3d",
+      "scripts/extract_vocab_layout.py": "e0bee9ddaad0c114405f13d456cc2a00317d7107"
+    },
     "sourcePdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
-    "generatedJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3",
-    "generatedJsonlGzipSha256": "8136d3d2eb58608e33b90d8a7fc23262e24e48ebec5c2f0c611a531341129e5d",
+    "jsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3",
+    "gzipSha256": "2b284d1d94f4567c75d39f4675092a7a9e43f9a863e31469f7bdad1b31245859",
+    "base64Sha256": "0cd3b06133de4a35171e8e04137d5c89bf0df3b8842736ef244cddde13570fe4",
+    "shardCount": 12,
+    "manifestPath": "data/lexicon/candidates/candidate_inventory_manifest.json",
+    "shardPattern": "data/lexicon/candidates/candidates_full_v02.jsonl.gz.b64.part*",
+    "reconstructionScript": "scripts/reconstruct_candidate_inventory.py",
+    "perPageCountsPath": "data/lexicon/candidates/candidate_counts_by_page.csv",
     "environment": {
       "python": "3.13.5",
       "pdftotext": "25.06.0"
     },
-    "provenanceCaveat": "The regression was executed in the working environment from a semantic reconstruction of the current extraction logic. It verifies the count and page distribution but is not yet a byte-for-byte provenance substitute for running a checked-out repository revision and persisting its complete row-level output."
+    "verification": "The fixed-revision extraction produced exactly 2072 rows. The deterministic gzip/base64 representation was reconstructed locally from the persisted shard source material and verified against JSONL, gzip, base64 and per-part SHA-256 values before repository status was promoted."
   },
-  "canonicalInventoryStatus": "count_verified_rows_not_fully_persisted",
-  "persistedCandidateArtifacts": [
+  "legacyArtifacts": [
     {
       "path": "data/lexicon/candidates/p134_candidates.jsonl",
-      "scope": "digital_page_134",
-      "artifactType": "row_level_candidates"
-    },
-    {
-      "path": "data/lexicon/candidates/candidate_counts_by_page.csv",
-      "scope": "digital_pages_133_177",
-      "artifactType": "aggregate_counts"
+      "method": "indentation_margin_v0.1",
+      "status": "legacy_noncanonical",
+      "note": "Retained for provenance and algorithm comparison; it is not part of the canonical v0.2 inventory."
     }
   ],
-  "missingCanonicalScope": "row_level_candidate_records_for_digital_pages_133_and_135_through_177",
-  "exhaustiveReconciliationAllowed": false,
-  "blockingReason": "The total of 2072 and its per-page distribution are now independently reproduced, but the repository still lacks a canonical row-level candidate inventory for all 45 vocabulary pages.",
+  "exhaustiveReconciliationAllowed": true,
+  "reconciliationPrecondition": "satisfied",
   "requiredNextActions": [
-    "Run the repository scripts from a fixed checked-out revision against the PDF identified by the recorded SHA-256.",
-    "Persist the complete row-level candidate inventory with generator commit/revision and source checksum.",
-    "Verify the persisted row count and per-page distribution against candidate_counts_by_page.csv.",
-    "Only then create one reconciliation record per persisted candidate."
+    "Create one reconciliation record per canonical v0.2 candidate.",
+    "Classify candidates as article, paratext, continuation, false_positive or unresolved while separately recording boundary quality.",
+    "Begin with pp.133-134 and retain explicit uncertainty where facsimile evidence is insufficient.",
+    "Keep all AI-assisted decisions non-human-verified until an identifiable human collation is performed."
   ],
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false,
