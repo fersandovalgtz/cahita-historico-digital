@@ -1,0 +1,32 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 12,
+  "sourcePagePrinted": null,
+  "section": "preliminaries",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "va compueſto eſte pequeño libro con la prolixidad, que el\nArte Nebriſſenſe, porque aquellos rudimentos ſon para\nniños, que empiezan; y eſta obra para Sugetos, que pueden\nſer Maeſtros en todas facultades. En la traduccion de el Ca-\ntheciſmo, y Doctrinas Chriſtianas, proteſto, que aunque fiel,\nſe halla deſtituida de correſpondencia grammatical, à lo\nque motivó el no invertir el modo de colocacion con que\nſe habla, y reza. Si te pareciere de mui poca importancia,\ny afan la empreſſa, agradece vnicamente el ſincero afecto;\npues no lleva otra mira, que aligerarte el peſado eſtudio\nde lengua tan eſtraña, y obedecer à quien fuera\ndelito replicar. VALE.\n\nPRO.\n",
+  "lineBreakPolicy": "Printed line breaks and line-end hyphenation are preserved. The catchword PRO. is retained as printed text. Long s is represented as ſ where visually legible.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [],
+  "materialNotes": [
+    {
+      "type": "other",
+      "note": "A decorative rule and a large basket-of-fruit woodcut occupy the lower half of the page between the prose and the catchword PRO.",
+      "transcription": null
+    },
+    {
+      "type": "bleed_through",
+      "note": "Substantial show-through from the opposite side is visible beneath and around the woodcut.",
+      "transcription": null
+    }
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-12",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from rendered facsimile at high resolution, assisted by provider OCR only as a navigation aid; no independent human verification",
+    "processedAt": null
+  }
+}
