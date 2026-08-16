@@ -2,77 +2,45 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/page-transcription.schema.json",
   "title": "CHD page transcription",
-  "description": "Page-anchored transcription unit for ALC1737. Supports full-page or excerpt coverage, printed-text scope, material notes and explicitly typed review status.",
+  "description": "Page-anchored transcription unit for ALC1737. Supports full-page or excerpt coverage, printed-text scope, material notes, explicitly typed review status, and pages that contain an intra-page section boundary.",
   "type": "object",
-  "required": [
-    "sourceId", "sourcePageDigital", "section", "transcriptionType",
-    "coverage", "scope", "text", "reviewStatus", "humanVerified", "provenance"
-  ],
+  "required": ["sourceId", "sourcePageDigital", "section", "transcriptionType", "coverage", "scope", "text", "reviewStatus", "humanVerified", "provenance"],
   "properties": {
     "sourceId": {"const": "ALC1737"},
     "sourcePageDigital": {"type": "integer", "minimum": 1, "maximum": 182},
     "sourcePagePrinted": {"type": ["integer", "null"], "minimum": 1, "maximum": 118},
-    "section": {
-      "type": "string",
-      "enum": ["preliminaries", "part_i", "part_ii", "part_iii", "part_iv", "vocabulary", "numerals", "end_matter"]
+    "section": {"type": "string", "enum": ["preliminaries", "part_i", "part_ii", "part_iii", "part_iv", "vocabulary", "numerals", "end_matter", "mixed"]},
+    "sectionSegments": {
+      "type": "array",
+      "minItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["order", "section", "note"],
+        "properties": {
+          "order": {"type": "integer", "minimum": 1},
+          "section": {"type": "string", "enum": ["preliminaries", "part_i", "part_ii", "part_iii", "part_iv", "vocabulary", "numerals", "end_matter"]},
+          "note": {"type": "string"},
+          "startsWith": {"type": ["string", "null"]},
+          "endsWith": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
     },
     "transcriptionType": {"const": "diplomatic"},
     "coverage": {"type": "string", "enum": ["full_page", "excerpt"]},
     "scope": {"type": "string", "enum": ["printed_text", "all_visible_text"]},
     "text": {"type": "string", "minLength": 1},
     "lineBreakPolicy": {"type": "string"},
-    "reviewStatus": {
-      "type": "string",
-      "enum": ["machine_corrected_unverified", "editorial_proposal", "human_verified", "unresolved"]
-    },
+    "reviewStatus": {"type": "string", "enum": ["machine_corrected_unverified", "editorial_proposal", "human_verified", "unresolved"]},
     "humanVerified": {"type": "boolean"},
-    "uncertainties": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["token", "note"],
-        "properties": {
-          "token": {"type": "string"},
-          "note": {"type": "string"},
-          "line": {"type": ["integer", "null"], "minimum": 1}
-        },
-        "additionalProperties": false
-      }
-    },
-    "materialNotes": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "required": ["type", "note"],
-        "properties": {
-          "type": {"type": "string", "enum": ["manuscript", "stamp", "repair", "damage", "bleed_through", "other"]},
-          "note": {"type": "string"},
-          "transcription": {"type": ["string", "null"]}
-        },
-        "additionalProperties": false
-      }
-    },
-    "provenance": {
-      "type": "object",
-      "required": ["derivedFrom", "agent", "method"],
-      "properties": {
-        "derivedFrom": {"type": "string"},
-        "agent": {"type": "string"},
-        "method": {"type": "string"},
-        "processedAt": {"type": ["string", "null"], "format": "date-time"}
-      },
-      "additionalProperties": false
-    }
+    "uncertainties": {"type": "array", "items": {"type": "object", "required": ["token", "note"], "properties": {"token": {"type": "string"}, "note": {"type": "string"}, "line": {"type": ["integer", "null"], "minimum": 1}}, "additionalProperties": false}},
+    "materialNotes": {"type": "array", "items": {"type": "object", "required": ["type", "note"], "properties": {"type": {"type": "string", "enum": ["manuscript", "stamp", "repair", "damage", "bleed_through", "other"]}, "note": {"type": "string"}, "transcription": {"type": ["string", "null"]}}, "additionalProperties": false}},
+    "provenance": {"type": "object", "required": ["derivedFrom", "agent", "method"], "properties": {"derivedFrom": {"type": "string"}, "agent": {"type": "string"}, "method": {"type": "string"}, "processedAt": {"type": ["string", "null"], "format": "date-time"}}, "additionalProperties": false}
   },
   "allOf": [
-    {
-      "if": {"properties": {"reviewStatus": {"const": "human_verified"}}},
-      "then": {"properties": {"humanVerified": {"const": true}}}
-    },
-    {
-      "if": {"properties": {"humanVerified": {"const": true}}},
-      "then": {"properties": {"reviewStatus": {"const": "human_verified"}}}
-    }
+    {"if": {"properties": {"reviewStatus": {"const": "human_verified"}}}, "then": {"properties": {"humanVerified": {"const": true}}}},
+    {"if": {"properties": {"humanVerified": {"const": true}}}, "then": {"properties": {"reviewStatus": {"const": "human_verified"}}}},
+    {"if": {"properties": {"section": {"const": "mixed"}}}, "then": {"required": ["sectionSegments"]}}
   ],
   "additionalProperties": false
 }
