@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/lexicon-candidate-review.schema.json",
   "title": "CHD lexicon candidate reconciliation record",
-  "description": "Editorial review record that classifies one machine-generated vocabulary boundary candidate without promoting it automatically to a historical lexical article.",
+  "description": "Editorial review record that classifies one machine-generated vocabulary boundary candidate without promoting it automatically to a historical lexical article. Candidate classification and article-promotion status are intentionally decoupled.",
   "type": "object",
   "required": [
     "candidateId", "sourceId", "sourcePageDigital", "classification",
@@ -28,6 +28,11 @@
       "type": "array",
       "items": {"type": "string", "pattern": "^ALC1737-art-[0-9]{6}$"},
       "uniqueItems": true
+    },
+    "articleLinkStatus": {
+      "type": ["string", "null"],
+      "enum": ["linked", "pending_promotion", "not_applicable", null],
+      "description": "Separates recognition of a real article boundary from whether the corresponding historical-article object has already been promoted."
     },
     "paratextType": {
       "type": ["string", "null"],
@@ -59,6 +64,21 @@
   "allOf": [
     {
       "if": {"properties": {"classification": {"const": "article"}}},
+      "then": {
+        "anyOf": [
+          {"properties": {"linkedArticleIds": {"minItems": 1}}},
+          {
+            "required": ["articleLinkStatus"],
+            "properties": {
+              "articleLinkStatus": {"const": "pending_promotion"},
+              "linkedArticleIds": {"maxItems": 0}
+            }
+          }
+        ]
+      }
+    },
+    {
+      "if": {"properties": {"articleLinkStatus": {"const": "linked"}}},
       "then": {"properties": {"linkedArticleIds": {"minItems": 1}}}
     },
     {
