@@ -1,0 +1,95 @@
+name: P147 Generate Reconciliation
+
+on:
+  push:
+    branches:
+      - p147-machine-reconciliation
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p147-machine-reconciliation
+      - name: Generate reconciliation artifacts
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          out = Path('data/lexicon/reconciliation')
+          left_links = {1:['ALC1737-art-000209'],3:['ALC1737-art-000210'],4:['ALC1737-art-000211'],6:['ALC1737-art-000212'],7:['ALC1737-art-000213'],9:['ALC1737-art-000214'],11:['ALC1737-art-000215'],12:['ALC1737-art-000216'],13:['ALC1737-art-000217'],15:['ALC1737-art-000218'],16:['ALC1737-art-000219'],17:['ALC1737-art-000220'],18:['ALC1737-art-000221'],19:['ALC1737-art-000222']}
+          left_guides = {1:'Bebida de chía, y maíz toſtado',2:'Bebida otra de maíz',3:'Beſtia',4:'Bibora',5:'Bibora otra que llaman coralillo',6:'Bien eſta, adv.',7:'Biuda',8:'distinct B-entry (OCR-damaged)',9:'Blanco de color',10:'Blanco hazer blanquear',11:'Blanda coſa',12:'Bledo',13:'Bledos negros',14:'Bledos amarillos',15:'Bledos blancos',16:'Bodas de muger',17:'Bodas de hombre',18:'Boca',19:'Bocarriba',20:'Bocabajo',21:'Bofe',22:'Bofetadas',23:'Bola',24:'Bolar',25:'Bolver de donde fue',26:'Bolver lo de dentro á fuera'}
+          right_links = {2:['ALC1737-art-000223']}
+          right_guides = {1:'Bordón',2:'Borracho',3:'Borrachera',4:'Borrar',5:'distinct B-entry (OCR-damaged)',6:'Bofadura tal',7:'distinct B-entry (OCR-damaged)',8:'Botón de la flor',9:'Borraja',10:'Borrego',11:'distinct B-entry (OCR-damaged)',12:'Boſque',13:'Boz',14:'Braza vna midiendo',15:'Brazear menear los brazos',16:'Brazo',17:'Bramar los Toros',18:'Bramar los Ciervos',19:'Bravo',20:'Brincar de alto abajo',21:'Brincar por el suelo',22:'Brotar los Arboles',23:'Brotar las flores',24:'Bruja',25:'Bruñir'}
+
+          def record(col, i, links, guides, assessment='exact', note=None):
+              linked = links.get(i, [])
+              if note is None:
+                  if linked:
+                      note = f"Aligned to pre-existing selected article {linked[0]} (`{guides[i]}`)."
+                  else:
+                      note = f"Distinct lexical start (`{guides[i]}`); retained pending because no selected/facsimile transcription anchor supports promotion from raw OCR alone."
+              return {
+                  'candidateId': f'ALC1737-vcand-p147-{col}-{i:03d}',
+                  'sourceId': 'ALC1737',
+                  'sourcePageDigital': 147,
+                  'column': 'left' if col == 'L' else 'right',
+                  'classification': 'article',
+                  'boundaryAssessment': assessment,
+                  'linkedArticleIds': linked,
+                  'articleLinkStatus': 'linked' if linked else 'pending_promotion',
+                  'editorialNote': note,
+                  'reviewStatus': 'machine_corrected_unverified',
+                  'humanVerified': False,
+                  'provenance': {
+                      'derivedFrom': 'canonical-v0.2 candidate inventory; p147 selected article layer where linked; p148 opening for page-edge context',
+                      'agent': 'GPT-5.6 Sol machine reconciliation',
+                      'method': 'AI-assisted structural reconciliation from canonical geometry/OCR and pre-existing selected anchors; no independent human verification',
+                      'processedAt': None
+                  }
+              }
+
+          left = [record('L', i, left_links, left_guides) for i in range(1,27)]
+          right = []
+          for i in range(1,26):
+              assessment = 'undersegmented' if i in (2,20) else 'exact'
+              note = None
+              if i == 2:
+                  note = 'Starts selected cross-reference `Borracho. Buſca beodo.`; trailing OCR material (`Tuji`) is not strengthened or promoted and is retained as undersegmented machine evidence.'
+              elif i == 20:
+                  note = 'Starts `Brincar de alto abajo`; candidate grouping contains trailing material associated with the following `Brincar por el suelo` entry, which also has its own candidate R-021.'
+              elif i == 25:
+                  note = 'Starts `Bruñir`; trailing `Brum*` is treated as a damaged catchword anticipating p.148 L-001 `Bruñidor`, not as another p.147 lexical article.'
+              right.append(record('R', i, right_links, right_guides, assessment, note))
+
+          for name, rows in [('p147_left_reconciliation.jsonl', left), ('p147_right_reconciliation.jsonl', right)]:
+              (out/name).write_text(''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in rows), encoding='utf-8')
+
+          status = {
+              'sourceId':'ALC1737','sourcePageDigital':147,
+              'pageStatus':{'candidateReconciliation':'complete','visibleStartCensus':'not_exhaustive','promotionLinkage':'partial','technicalClosure':False,'humanVerificationPlanned':False},
+              'candidateInventory':{'total':51,'left':26,'right':25,'classification':{'article':51,'continuation':0,'paratext':0,'false_positive':0,'unresolved':0},'boundaryAssessment':{'exact':49,'undersegmented':2,'merged_articles':0,'oversegmented':0,'ambiguous':0,'not_applicable':0}},
+              'selectedLayer':{'preExistingArticles':15,'articleIdRange':['ALC1737-art-000209','ALC1737-art-000223'],'candidateRecordsLinked':15,'structuredArticlesLinkedFromCandidates':15,'selectedArticlesUnlinked':0},
+              'promotion':{'articleCandidatesPendingPromotion':36,'newPromotionsThisPass':0,'corpusTotalAfterPass':1045},
+              'visibleStartEvidence':{'exhaustive':False,'knownVisibleStartsMinimum':51,'knownMissedStartRecords':0,'precision':None,'recall':None,'f1':None,'reasonMetricsWithheld':'All 51 canonical candidates are structurally classified, but the sparse selected layer and absence of a direct full-page facsimile census do not prove that no additional visible starts were missed. Metrics are withheld rather than treating candidate count as the denominator.'},
+              'physicalContinuities':[{'from':'ALC1737-vcand-p146-R-026','to':'ALC1737-vcand-p147-L-001','type':'catchword_to_article','note':'The p.146 catchword `Bebida` anticipates p.147 L-001; L-001 is a fresh article start.'},{'from':'ALC1737-vcand-p147-R-025','to':'ALC1737-vcand-p148-L-001','type':'catchword_to_next_page','note':'Trailing `Brum*` is treated as damaged catchword material anticipating p.148 L-001 `Bruñidor`; it is not a second p.147 article.'}],
+              'evidence':{'canonicalCandidateInventoryVerified':True,'canonicalCandidateInventoryCount':2072,'selectedP147LayerUsedAsAnchor':True,'p148OpeningInspectedFromCanonicalInventory':True,'directFacsimileAvailableThisPass':False,'policy':'Structural decisions may be closed from convergent machine evidence; textual promotions remain pending where raw OCR is not a sufficient transcription anchor.'},
+              'reviewStatus':'machine_corrected_unverified','humanVerified':False
+          }
+          (out/'p147_machine_reconciliation_status.json').write_text(json.dumps(status, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+          PY
+      - name: Remove temporary inspection workflows
+        run: |
+          rm -f .github/workflows/p147-candidate-inspect.yml .github/workflows/p147-generate-reconciliation.yml
+      - name: Commit generated artifacts
+        run: |
+          git config user.name 'Fernando Sandoval'
+          git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
+          git add data/lexicon/reconciliation .github/workflows
+          git commit -m 'data: reconcile all p147 candidate boundaries'
+          git push origin HEAD:p147-machine-reconciliation
