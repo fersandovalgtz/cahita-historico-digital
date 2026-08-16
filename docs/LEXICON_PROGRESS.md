@@ -2,19 +2,26 @@
 
 ## Estado — 2026-08-16
 
-El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El extractor `hybrid_margin_mode_v0.2` produce **2,072 candidatos** de frontera sobre 45 páginas; esos candidatos no equivalen automáticamente a artículos históricos publicados.
+El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El extractor `hybrid_margin_mode_v0.2` produce **2,072 candidatos** de frontera sobre 45 páginas; esos candidatos no equivalen automáticamente a artículos históricos.
 
-La secuencia curatorial contiene **734 artículos históricos estructurados**. Las **45/45 páginas del vocabulario cuentan ya con representación lexicográfica estructurada**. Todos los objetos permanecen `machine_corrected_unverified` o `unresolved`; **ninguno** ha sido declarado `human_verified`.
+La secuencia curatorial contiene ahora **770 artículos históricos estructurados**. Las **45/45 páginas del vocabulario cuentan ya con representación lexicográfica estructurada**. Todos los objetos permanecen `machine_corrected_unverified` o `unresolved`; **ninguno** ha sido declarado `human_verified`.
 
-El inventario canónico de 2,072 candidatos está persistido de forma fila-a-fila reconstruible y verificable. El primer tramo de reconciliación candidata, **pp.133–134, quedó cerrado en 61/61 candidatos**.
+El inventario canónico de 2,072 candidatos está persistido de forma fila-a-fila reconstruible y verificable. El tramo de control **pp.133–134** quedó cerrado en dos sentidos distintos:
+
+- **61/61 candidatos** tienen reconciliación editorial;
+- los **57 candidatos clasificados `article` enlazan ya objetos históricos**, por lo que `pending_promotion = 0`.
+
+Esto todavía **no** equivale a cerrar todos los inicios visibles de ambas páginas, porque existe una capa separada de falsos negativos.
 
 ## Cobertura curatorial vigente
 
 | Tramo | Artículos |
 |---|---:|
-| p.133 | 15 |
-| p.134 piloto | 12 |
+| p.133 selección inicial | 15 |
+| p.134 piloto histórico | 12 |
 | artículo trans-página 133–134 | 1 |
+| promociones de candidatos p.133 | 11 |
+| promociones de candidatos p.134 | 25 |
 | pp.135–137 | 45 |
 | p.138 | 33 |
 | p.139 | 39 |
@@ -25,27 +32,33 @@ El inventario canónico de 2,072 candidatos está persistido de forma fila-a-fil
 | pp.143–145 | 42 |
 | p.146 | 25 |
 | pp.147–177 | 465 |
-| **Total principal** | **734** |
+| **Total principal** | **770** |
 
-## Retroprocesamiento de apertura — pp.133 y 135–137
+## Apertura y materialidad — pp.133–134
 
 La frontera 133→134 confirmó un artículo materialmente partido entre páginas:
 
-`Ablandar lo que eſtá duro / como barro. Namacae-buaruna.`
+`Ablandar lo que eſtá duro como barro. Namacae-buaruna.`
 
-Se representa mediante `sourceSpans`; el fragmento de continuidad no se transforma en entrada independiente.
+Se representa mediante `sourceSpans`; el salto físico no genera dos entradas.
+
+El cierre de promociones añadió además un caso intra-página de continuidad entre columnas en p.133:
+
+`Abeja monteza de color blanco. Pochocu--mumu--toſali.`
+
+El comienzo queda al pie de la columna izquierda y el segmento final `ſali` aparece al inicio de la columna derecha. El artículo se conserva como una unidad histórica con `sourceSpans` izquierda→derecha.
 
 ## Inventario candidato canónico v0.2
 
-La cifra **2,072** ya no es sólo una métrica de ejecución. El inventario completo fue generado con la revisión fijada `f175b4bc455ff40a066d092a94e0a89a0ca2ae10`, usando:
+La cifra **2,072** corresponde a un inventario canónico reproducible, no sólo a una métrica de ejecución. Fue generado con la revisión fijada `f175b4bc455ff40a066d092a94e0a89a0ca2ae10`, usando:
 
 - `scripts/extract_vocab_candidates.py`, blob `0ac729164895b0b4afd462350892426aca6e5f3d`;
 - `scripts/extract_vocab_layout.py`, blob `e0bee9ddaad0c114405f13d456cc2a00317d7107`;
 - PDF fuente SHA-256 `69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37`.
 
-El JSONL resultante contiene exactamente **2,072 filas** y tiene SHA-256 `f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3`.
+El JSONL canónico tiene SHA-256 `f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3`.
 
-Para persistirlo mediante archivos UTF-8 se usa una representación **lossless**: JSONL → gzip determinista → base64 → 12 partes ordenadas. `data/lexicon/candidates/candidate_inventory_manifest.json` registra hashes y tamaños de cada parte, además de los hashes agregados. `scripts/reconstruct_candidate_inventory.py` verifica partes, base64, gzip, JSONL, parseo de cada fila y conteo total.
+Para persistirlo mediante archivos UTF-8 se usa una representación **lossless**: JSONL → gzip determinista → base64 → 12 partes ordenadas. `data/lexicon/candidates/candidate_inventory_manifest.json` registra hashes y tamaños; `scripts/reconstruct_candidate_inventory.py` verifica partes, base64, gzip, JSONL, parseo y conteo.
 
 `data/lexicon/candidates/inventory_status.json` marca `canonical_inventory_persisted_lossless_sharded`, `reconciliationPrecondition: satisfied` y `exhaustiveReconciliationAllowed: true`.
 
@@ -55,13 +68,13 @@ El archivo histórico `p134_candidates.jsonl` corresponde a `indentation_margin_
 
 El cierre del tramo se registra en `data/lexicon/reconciliation/p133_p134_reconciliation_status.json`.
 
-Los **61/61 candidatos** tienen ya decisión editorial:
+Los **61/61 candidatos** tienen decisión editorial:
 
 - 57 `article`;
 - 3 `continuation`;
 - 1 `unresolved` (`ALC1737-vcand-p133-L-002`).
 
-La calidad geométrica resultó:
+La calidad geométrica es:
 
 - 52 `exact`;
 - 5 `merged_articles`;
@@ -69,33 +82,62 @@ La calidad geométrica resultó:
 - 1 `undersegmented`;
 - 1 `ambiguous`.
 
-De los 57 candidatos `article`, 21 ya pueden enlazarse a objetos históricos existentes —28 artículos únicos por la presencia de candidatos fusionados— y **36** quedan con `articleLinkStatus: pending_promotion`. Esta categoría significa que la frontera está materialmente resuelta, pero el artículo todavía no se ha promovido con transcripción/estructura suficiente. No se usa `unresolved` para esconder un simple estado pendiente del pipeline.
+### Cierre de promoción
 
-`schemas/lexicon-candidate-review.schema.json` y `docs/LEXICON_RECONCILIATION_PROTOCOL.md` fueron ampliados para separar estas dos dimensiones.
+Antes de este ciclo, 36 fronteras `article` estaban `pending_promotion`. Se promovieron de forma facsimilar y se enlazaron:
+
+- `p133_pending_promotions_batch01.jsonl`: **11** artículos, `ALC1737-art-000735`–`000745`;
+- `p134_pending_promotions_batch01.jsonl`: **25** artículos, `ALC1737-art-000746`–`000770`.
+
+El estado actual es:
+
+- candidatos `article` enlazados: **57 / 57**;
+- artículos históricos únicos enlazados desde esos candidatos: **64**;
+- candidatos `article` `pending_promotion`: **0**.
+
+El cierre de promoción no convierte lecturas IA-asistidas en revisión humana y tampoco resuelve los falsos negativos del extractor.
 
 ## Falsos negativos visibles
 
-Completar todos los candidatos de una página no equivale a capturar todos sus artículos visibles. Se añadió `schemas/lexicon-missed-start.schema.json` y el dataset `data/lexicon/reconciliation/missed_visible_starts_p133_p134.jsonl`.
+Completar todos los candidatos de una página no equivale a capturar todos sus artículos visibles. `schemas/lexicon-missed-start.schema.json` y `data/lexicon/reconciliation/missed_visible_starts_p133_p134.jsonl` mantienen una capa específica para inicios omitidos.
 
-El conjunto registra por ahora **14 inicios visibles omitidos** por el extractor en pp.133–134. Incluye casos absorbidos dentro de candidatos fusionados —por ejemplo `Abajar la cabeza`, `Abiſmo agua profunda`, `Abiſpa, que haze ſu caſa de lodo`, `Abivar à otro` y el comienzo trans-página `Ablandar lo que eſtá duro como barro`— y comienzos sin candidato propio como `Abotonarſe la flor`, `Abrigarſe para defenderſe del viento`, `Abuela paterna` y `Abuela tercera`.
+El conjunto registra por ahora **14 inicios visibles omitidos observados** en pp.133–134. Incluye artículos absorbidos dentro de candidatos fusionados y comienzos sin candidato propio.
 
-Este conjunto se marca expresamente como **observado, no todavía exhaustivo**. La completitud de candidatos (61/61) y la completitud de inicios visibles son métricas diferentes.
+Este conjunto se marca expresamente como **observado, no todavía exhaustivo**. El siguiente trabajo debe reconciliar cada uno de esos 14 inicios contra objetos históricos existentes o crear, cuando corresponda, nuevos artículos; después debe hacerse una pasada página-a-página para poder declarar cerrado el inventario visible.
 
-## QA diagnóstico disponible
+## QA diagnóstico
 
-`data/lexicon/review/stratified_boundary_evaluation.json` evalúa intencionalmente pp.133, 134, 150 y 177. Registra 171 candidatos, 188 inicios visibles, 163 verdaderos positivos, 8 falsos positivos y 25 falsos negativos: precisión **0.9532**, recobrado **0.8670** y F1 **0.9081**.
+La comparación canónica en `data/lexicon/review/boundary_algorithm_comparison.json` utiliza una muestra intencional de pp.133, 134, 150 y 177:
 
-El propio archivo declara el diseño `purposive_stratified_diagnostic`. Estas cifras son útiles para diagnóstico del algoritmo, pero **no constituyen estimadores probabilísticos del vocabulario completo**.
+| Método | TP | FP | FN | Precisión | Recall | F1 |
+|---|---:|---:|---:|---:|---:|---:|
+| `indentation_margin_v0.1` | 163 | 8 | 25 | 95.32% | 86.70% | 90.81% |
+| `hybrid_margin_mode_v0.2` | 169 | 5 | 19 | **97.13%** | **89.89%** | **93.37%** |
+
+La muestra es `purposive_stratified_diagnostic`, no probabilística, y su referencia visual es IA-asistida. Las métricas describen comportamiento de ingeniería editorial; no constituyen estimadores filológicos poblacionales.
+
+## QA automatizado
+
+`.github/workflows/qa.yml` valida automáticamente, entre otros controles:
+
+- reconstrucción íntegra de las 2,072 filas canónicas;
+- unicidad de `articleId` y coherencia de autoridad;
+- artículos históricos contra `schemas/lexical-article.schema.json`;
+- lotes de reconciliación contra `schemas/lexicon-candidate-review.schema.json`;
+- capa de inicios omitidos contra su schema;
+- JSON de control seleccionados.
+
+El alcance y límites se documentan en `docs/QA_AUTOMATION.md`. Una corrida verde es **QA computacional**, no validación filológica humana.
 
 ## Identificadores y procedencia
 
 La reconciliación de p.165 eliminó la colisión del antiguo piloto `000013`–`000016`; las cuatro remisiones fueron migradas a `000490`–`000493` y la operación quedó documentada en `data/lexicon/provenance/p165_pilot_id_reconciliation.json`.
 
-Los objetos de apertura ocupan `ALC1737-art-000674`–`000734`. `scripts/validate_lexicon_ids.py` permanece como control de unicidad de `articleId`, parseo JSONL y coherencia entre `reviewStatus` y `humanVerified`.
+La secuencia curatorial alcanza ahora `ALC1737-art-000770`. `scripts/validate_lexicon_ids.py` controla unicidad global, parseo JSONL y coherencia entre `reviewStatus` y `humanVerified`.
 
 ## Remisiones y anáforas
 
-Las remisiones `Buſca` se modelan como relaciones documentales. `Lo miſmo` sigue tratado como anáfora distinta y permanece sin resolución automática.
+Las remisiones `Buſca` se modelan como relaciones documentales. `Lo miſmo` permanece como anáfora distinta y no se resuelve automáticamente.
 
 ## Catchwords, continuidades y lagunas
 
@@ -110,8 +152,8 @@ La p.177 concluye la serie alfabética visible. La p.178 termina X/Z y abre `NOM
 
 ## Próximo frente
 
-1. Promover los **36 artículos pendientes** de pp.133–134 mediante lectura facsimilar y microestructura histórica.
-2. Cerrar el inventario de inicios visibles/falsos negativos del tramo y producir métricas de página.
+1. Reconciliar los **14 inicios visibles omitidos observados** de pp.133–134 contra la capa histórica.
+2. Cerrar el inventario página-a-página de inicios visibles y producir métricas finales del tramo de control.
 3. Mantener `ALC1737-vcand-p133-L-002` `unresolved` salvo que un cotejo específico permita resolverlo.
-4. Escalar la reconciliación candidata al siguiente lote de páginas sólo después de cerrar ese QA de apertura.
-5. Continuar después con anáforas `Lo miſmo`, grafo `Buſca`, exportación canónica y TEI Lex-0.
+4. Escalar la reconciliación candidata a p.135 en adelante sólo después de cerrar el QA de apertura.
+5. Continuar después con anáforas `Lo miſmo`, grafo `Buſca`, menciones históricas de variedades, exportación canónica y TEI Lex-0.
