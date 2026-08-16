@@ -1,0 +1,16 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":98,
+  "sourcePagePrinted":84,
+  "section":"part_iii",
+  "transcriptionType":"diplomatic",
+  "coverage":"full_page",
+  "scope":"printed_text",
+  "text":"[continuación de 267] ... yo te avia de dar, in emchi mic eiau: lo que avias de aver acabado, emchupaſu eiacau: lo que ſe avia de aver comido, hibuafu euacau: lo que ſe avia de repartir, [forma cahíta]. Eſte es el vſo mas frequente, que tal vez ſe vſa en los demás tiempos, y participios, v. g. el que te avia de azotar, emchi veb eiame: el que te avia de amar, emchi eria eiacame: el que avia de aver ſido amado, eriaſu euauame, &c.\n\n§. III. Otras coſas tocantes á Sum, es, fui.\n268. Eſte verbo equivale en eſta lengua, para nombres ſubſtantivos eſta partícula tuc, vel tue, y para adjetivos eſta partícula iec, las quales dos partículas tienen otra ſignificacion, de que ſe dixo arriba. Eſtas dos partículas tuc, y iec ſe varían por todos los modos, y tiempos de la conjugación. La partícula tuc haze el pretérito imperfecto, perfecto, y pluſquam perfecto en tucai, aunque aliquando vſan por pretérito perfecto el tuc, y entonces forman el preſente ſin la c, con ſola la partícula tu; y para ſaber como, y quando ſe ha de vſar con eſta variedad, lo enſeñará el vſo.\n\n269. La partícula iec no tiene futuro, y aſſi ſe añade el naque al nombre adjetivo, como ſi él ſolo fuera el verbo, v. g. Nueſtro Señor Jeſu Chriſto, no ſolo era hombre, ſino que ſiendo hombre era juntamente Dios, [ejemplo cahíta]. En eſta oración eſtá el verbo Sum, es, fui, tres vezes repetido, ioremtucai, era hombre: ioremtucacari, id eſt, tucacari, ſiendo hombre, que es el tiempo gerundivo en cari, como ya ſe dixo, y Dios tucai, era Dios. Otro: todos los deleytes del mundo, aunque todos ſe junten, comparados con los gozos del Cielo ſerán nada, [ejemplo cahíta]. En eſta oración eſtá el verbo Sum, es, fui en futuro, que es cahita tunaque, ſerán nada. Otro [continúa].",
+  "lineBreakPolicy":"Section heading and rule numbers preserved; running line breaks normalized; long examples may be represented as unresolved placeholders.",
+  "reviewStatus":"unresolved",
+  "humanVerified":false,
+  "uncertainties":[{"token":"[forma cahíta]","note":"One form in continuation of rule 267 is not secure."},{"token":"[ejemplo cahíta]","note":"Two long examples under rule 269 require second collation."}],
+  "materialNotes":[{"type":"bleed_through","note":"Moderate show-through; paragraph structure and rule numbering clear.","transcription":null}],
+  "provenance":{"derivedFrom":"ALC1737:digital-page-98;printed-page-84","agent":"GPT-5.6 Sol visual collation","method":"Full-page transcription from facsimile with parsed text as secondary comparison; no independent human verification","processedAt":null}
+}
