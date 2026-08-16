@@ -4,21 +4,40 @@
   "script": "scripts/extract_vocab_candidates.py",
   "pageRangeDigital": [133, 177],
   "reportedCandidateCount": 2072,
-  "reportedCountStatus": "documented_execution_metric",
-  "canonicalInventoryStatus": "incomplete_in_repository",
+  "reportedCountStatus": "documented_execution_metric_independently_reproduced",
+  "countRegenerationVerification": {
+    "status": "verified_local_regression",
+    "regeneratedCount": 2072,
+    "perPageCountsPath": "data/lexicon/candidates/candidate_counts_by_page.csv",
+    "sourcePdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "generatedJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3",
+    "generatedJsonlGzipSha256": "8136d3d2eb58608e33b90d8a7fc23262e24e48ebec5c2f0c611a531341129e5d",
+    "environment": {
+      "python": "3.13.5",
+      "pdftotext": "25.06.0"
+    },
+    "provenanceCaveat": "The regression was executed in the working environment from a semantic reconstruction of the current extraction logic. It verifies the count and page distribution but is not yet a byte-for-byte provenance substitute for running a checked-out repository revision and persisting its complete row-level output."
+  },
+  "canonicalInventoryStatus": "count_verified_rows_not_fully_persisted",
   "persistedCandidateArtifacts": [
     {
       "path": "data/lexicon/candidates/p134_candidates.jsonl",
-      "scope": "digital_page_134"
+      "scope": "digital_page_134",
+      "artifactType": "row_level_candidates"
+    },
+    {
+      "path": "data/lexicon/candidates/candidate_counts_by_page.csv",
+      "scope": "digital_pages_133_177",
+      "artifactType": "aggregate_counts"
     }
   ],
-  "missingCanonicalScope": "digital_pages_133_and_135_through_177",
+  "missingCanonicalScope": "row_level_candidate_records_for_digital_pages_133_and_135_through_177",
   "exhaustiveReconciliationAllowed": false,
-  "blockingReason": "The repository does not yet contain a canonical row-level candidate inventory for all 45 vocabulary pages. The reported total must not be mistaken for fully persisted candidate records.",
+  "blockingReason": "The total of 2072 and its per-page distribution are now independently reproduced, but the repository still lacks a canonical row-level candidate inventory for all 45 vocabulary pages.",
   "requiredNextActions": [
-    "Regenerate candidates from the fixed ALC1737 PDF using scripts/extract_vocab_candidates.py.",
-    "Verify the regenerated count against the documented total of 2072 or record the reproducible reason for divergence.",
-    "Persist the complete candidate inventory with generator version and source checksum.",
+    "Run the repository scripts from a fixed checked-out revision against the PDF identified by the recorded SHA-256.",
+    "Persist the complete row-level candidate inventory with generator commit/revision and source checksum.",
+    "Verify the persisted row count and per-page distribution against candidate_counts_by_page.csv.",
     "Only then create one reconciliation record per persisted candidate."
   ],
   "reviewStatus": "machine_corrected_unverified",
