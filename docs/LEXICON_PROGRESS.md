@@ -22,21 +22,24 @@ La promoción curatorial ha comenzado con artículos visualmente cotejados y est
 | `p147_selected_articles.jsonl` | 147 | 15 | equivalencias y remisión `Borracho → Buſca beodo` |
 | `p148_selected_articles.jsonl` | 148 | 15 | incluye `Bronce. Lo miſmo.` como anáfora no resuelta |
 | `p149_selected_articles.jsonl` | 149 | 15 | primer artículo que cruza de columna izquierda a derecha |
-| **Total** | — | **253** | todos sin revisión humana independiente |
+| `p150_selected_articles.jsonl` | 150 | 15 | dos remisiones `Buſca` y dos anáforas `Lo miſmo` |
+| `p151_selected_articles.jsonl` | 151 | 15 | remisiones `Compaſſion → compadecerſe` y `Comulgar → comunion` |
+| `p152_selected_articles.jsonl` | 152 | 15 | equivalencias + remisiones `Cueva → caverna` y `Culpar à otro → acuſar` |
+| **Total** | — | **298** | todos sin revisión humana independiente |
 
 ## Regla de autoridad
 
-Los 253 objetos están estructurados, pero permanecen en estados `machine_corrected_unverified` o `unresolved`. Una estructura válida no equivale a una lectura filológicamente cerrada ni a `human_verified`.
+Los 298 objetos están estructurados, pero permanecen en estados `machine_corrected_unverified` o `unresolved`. Una estructura válida no equivale a una lectura filológicamente cerrada ni a `human_verified`.
 
 ## Remisiones internas
 
 La p.141 confirma dentro de la secuencia productiva una remisión explícita: `Apercibirſe para hazer algo. Buſca aparejarſe.` Se representa como `articleType: cross_reference`, conservando el marcador y su destino sin sustituir el testimonio.
 
-La p.146 muestra además una densidad mayor de remisiones internas en una sola página, entre ellas `Barbo. Buſca Bagre.`, `Barrenar. Buſca agurear con barrena.` y `Baſta, coſa ſin pulir. Buſca aſpero.`. En p.147 se añadió `Borracho. Buſca beodo.`. Estas relaciones permanecen documentales: CHD no reemplaza el artículo remitente por el contenido de su destino.
+La p.146 muestra además una densidad mayor de remisiones internas en una sola página, entre ellas `Barbo. Buſca Bagre.`, `Barrenar. Buſca agurear con barrena.` y `Baſta, coſa ſin pulir. Buſca aſpero.`. En p.147 se añadió `Borracho. Buſca beodo.`. Las páginas 150–152 añaden `Caro venderſe → Buſca cara coſa`, `Carrizo → Buſca caña hueca`, `Compaſſion → Buſca compadecerſe`, `Comulgar → Buſca comunion`, `Cueva → Buſca caverna` y `Culpar à otro → Buſca acuſar`. Estas relaciones permanecen documentales: CHD no reemplaza el artículo remitente por el contenido de su destino.
 
 ## Anáforas distintas de `Buſca`
 
-La p.145 aporta `Azero. Lo miſmo.` y la p.148 `Bronce. Lo miſmo.`. CHD conserva estos objetos como `unresolved`: `Lo miſmo` es una fórmula anafórica que exige resolución contextual y no autoriza a copiar automáticamente la forma del artículo precedente. Este comportamiento confirma la necesidad de distinguir remisión explícita, anáfora y equivalencia.
+La p.145 aporta `Azero. Lo miſmo.` y la p.148 `Bronce. Lo miſmo.`. En p.150 se añaden dos casos contiguos: `Cobrar lo que ſe debe. Lo miſmo.` y `Cobre metal. Lo miſmo.`. CHD conserva estos objetos como `unresolved`: `Lo miſmo` es una fórmula anafórica que exige resolución contextual y no autoriza a copiar automáticamente la forma del artículo precedente. Este comportamiento confirma la necesidad de distinguir remisión explícita, anáfora y equivalencia.
 
 ## Artículos que cruzan página
 
@@ -72,4 +75,4 @@ La normalización léxica, resolución de anáforas, identificación de especies
 
 ## Siguiente lote
 
-Continuar desde **p.150**, conservando por separado equivalencias simples, remisiones, anáforas, artículos descriptivos, agrupaciones, continuaciones físicas y lecturas `unresolved`.
+Continuar desde **p.153**, conservando por separado equivalencias simples, remisiones, anáforas, artículos descriptivos, agrupaciones, continuaciones físicas y lecturas `unresolved`.
