@@ -15,9 +15,9 @@ Estado canónico de cobertura de Cahíta Histórico Digital para `ALC1737` — 2
 | Sistema numeral histórico | **1 bloque estructurado** | digitales 178–180 |
 | Observaciones de variación histórica | **17+** | exportación combinada pendiente de consolidación |
 | Candidatos lexicográficos v0.2 | **2,072 / 2,072 persistidos canónicamente** | inventario reconstruible |
-| Artículos históricos estructurados | **979** | capa curatorial actual; no conteo final del vocabulario |
+| Artículos históricos estructurados | **1,013** | capa curatorial actual; no conteo final del vocabulario |
 | Páginas de vocabulario con representación estructurada | **45 / 45** | al menos una representación por página |
-| Páginas con reconciliación + censo + promoción cerrados | **133–142** | IA-asistido; no `human_verified` |
+| Páginas con reconciliación + censo + promoción cerrados | **133–143** | IA-asistido; no `human_verified` |
 | Reconciliación pp.133–134 | **61 / 61 candidatos** | 57 article; 4 continuation |
 | Censo visible pp.133–134 | **72 inicios** | TP57 / FP4 / FN15; F1 0.857143 |
 | Reconciliación p.135 | **43 / 43 candidatos** | 35 article; 8 continuation |
@@ -36,11 +36,13 @@ Estado canónico de cobertura de Cahíta Histórico Digital para `ALC1737` — 2
 | Censo visible p.141 | **40 inicios** | TP34 / FP7 / FN6; F1 0.839506 |
 | Reconciliación p.142 | **53 / 53 candidatos** | 50 article; 2 paratext; 1 false_positive |
 | Censo visible p.142 | **50 inicios** | TP50 / FP3 / FN0; F1 0.970874 |
-| Agregado pp.133–142 | **429 candidatos / 447 inicios visibles** | TP400 / FP29 / FN47; F1 0.913242 |
-| `pending_promotion` pp.133–142 | **0** | candidatos article y falsos negativos visibles enlazados |
+| Reconciliación p.143 | **46 / 46 candidatos** | 44 article; 2 continuation |
+| Censo visible p.143 | **48 inicios** | TP44 / FP2 / FN4; F1 0.936170 |
+| Agregado pp.133–143 | **475 candidatos / 495 inicios visibles** | TP444 / FP31 / FN51; F1 0.915464 |
+| `pending_promotion` pp.133–143 | **0** | candidatos article y falsos negativos visibles enlazados |
 | Lagunas/discontinuidades del testimonio | **1** | `ALC1737-gap-0001`, digital 157→158 |
 | Anomalías de frontera adicionales | **1 abierta** | p.161 `Lucer-` → p.162 sin lema visible |
-| QA automatizado | **activo** | GitHub Actions valida inventario, IDs, schemas y reconciliaciones hasta p.142 |
+| QA automatizado | **activo** | GitHub Actions valida inventario, IDs, schemas y reconciliaciones hasta p.143 |
 | Revisión humana independiente | **0** | no iniciada |
 
 ## Arte gramatical
@@ -49,7 +51,7 @@ Las páginas impresas 1–118, digitales 15–132, están representadas de forma
 
 ## Vocabulario
 
-El vocabulario ocupa las digitales 133–177. `hybrid_margin_mode_v0.2` produce **2,072 candidatos de frontera**, mientras que la capa curatorial contiene **979 artículos históricos estructurados**. Son objetos distintos y ninguna cifra debe interpretarse como el número final de entradas de la obra.
+El vocabulario ocupa las digitales 133–177. `hybrid_margin_mode_v0.2` produce **2,072 candidatos de frontera**, mientras que la capa curatorial contiene **1,013 artículos históricos estructurados**. Son objetos distintos y ninguna cifra debe interpretarse como el número final de entradas de la obra.
 
 El inventario completo está fijado a la revisión generadora `f175b4bc455ff40a066d092a94e0a89a0ca2ae10` y al PDF fuente SHA-256 `69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37`. El JSONL reconstruido tiene SHA-256 `f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3`.
 
@@ -138,11 +140,33 @@ La continuación de `ALC1737-art-000141` al comienzo de la columna izquierda (`p
 
 El antiguo piloto botánico de p.142 fue recotejado a 600 dpi antes del cierre. Se corrigieron, conservando IDs y trazabilidad, `ALC1737-art-000131` de `Hohuno` a **`Hohuo`** y `ALC1737-art-000135` de `Maccchua` a **`Maccehua`**. Las afirmaciones terapéuticas o botánicas históricas siguen representándose exclusivamente como contenido de la fuente, sin identificación taxonómica moderna ni validación de eficacia.
 
+## Página 143 — ciclo cerrado
+
+`data/lexicon/reconciliation/p143_reconciliation_status.json` registra:
+
+- **46/46 candidatos** reconciliados: 30 izquierda + 16 derecha;
+- **44 `article`** y **2 `continuation`**;
+- calidad geométrica: **40 `exact`**, 4 `merged_articles` y 2 `oversegmented`;
+- **48 inicios históricos visibles**;
+- TP44 / FP2 / FN4;
+- precisión **0.956522**, recall **0.916667**, F1 **0.936170**;
+- 44/44 candidatos `article` enlazados;
+- 4/4 falsos negativos enlazados;
+- **34 artículos nuevos**, `ALC1737-art-000980`–`001013`;
+- corpus acumulado **1,013**;
+- `pending_promotion = 0`.
+
+Los cuatro inicios visibles omitidos por el extractor son `Arbol. Sapo.`, `Arenal. Sepai.`, `Armarſe para la batalla. Emo anahuſacana bechibuo.` y `Arriba como en la ſotea. Catabepa.`. El primero ya tenía objeto seleccionado (`000147`); los otros tres fueron promovidos en el cierre. Los candidatos L-021 (`cori.`) y L-027 (`betec.`) son continuaciones físicas, no entradas nuevas.
+
+La recollación a 600 dpi corrigió dos lecturas antiguas conservando sus IDs: `ALC1737-art-000143` de `Hilobue` a **`Hiolhue`** y `ALC1737-art-000153` de `Curuat` a **`Curuas`**. La trazabilidad quedó registrada en `data/lexicon/provenance/p143_selected_recollation_corrections.json`.
+
+En `Arrendar dar algo à renta` se conserva literalmente el separador histórico `l` de `Hitare urec, l, reureuri`; no se le asignó una función lingüística moderna. Del mismo modo, guiones y separadores de `Namacari --- buecamta popona`, `Hitaric -- huique` y formas afines se conservaron cuando eran visibles, eliminando sólo particiones tipográficas inequívocas de fin de línea.
+
 ## QA diagnóstico y automático
 
 La muestra diagnóstica del extractor conserva para `hybrid_margin_mode_v0.2` precisión 97.13%, recall 89.89% y F1 93.37% sobre pp.133, 134, 150 y 177. Es una muestra intencional, no probabilística.
 
-**CHD QA run #122** concluyó en `success` después del cierre de p.142 y de ampliar el workflow. Verificó el inventario canónico, unicidad/estados de IDs, todos los artículos históricos contra schema, los lotes de reconciliación hasta p.142, las capas de falsos negativos —incluida la capa vacía de p.142— y la sintaxis JSON de los estados de reconciliación hasta p.142. Una corrida verde es QA computacional, no revisión filológica humana.
+**CHD QA run #135** concluyó en `success` después del cierre de p.143 y de ampliar nuevamente el workflow. Verificó el inventario canónico, unicidad/estados de IDs, todos los artículos históricos contra schema, reconciliaciones hasta p.143, capas de falsos negativos hasta p.143 y sintaxis JSON de los estados/proveniencias incluidos. Una corrida verde es QA computacional, no revisión filológica humana.
 
 ## Fuentes de control textual
 
@@ -154,7 +178,7 @@ Permanecen, entre otras, `obra tripartita` frente a `quatro partes`, la duplicac
 
 ## Próximos criterios de cobertura
 
-1. procesar la página digital **143** mediante candidato → censo visible → promoción → QA;
+1. procesar la página digital **144** mediante candidato → censo visible → promoción → QA;
 2. escalar página por página hasta 177;
 3. resolver las tareas puntuales de metadatos/corrección detectadas en p.139;
 4. consolidar concordancias y exportaciones gramaticales/variacionales;
