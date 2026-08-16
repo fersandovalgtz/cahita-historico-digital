@@ -1,0 +1,79 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 147,
+  "pageStatus": {
+    "candidateReconciliation": "complete",
+    "visibleStartCensus": "not_exhaustive",
+    "promotionLinkage": "partial",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 51,
+    "left": 26,
+    "right": 25,
+    "classification": {
+      "article": 51,
+      "continuation": 0,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 49,
+      "undersegmented": 2,
+      "merged_articles": 0,
+      "oversegmented": 0,
+      "ambiguous": 0,
+      "not_applicable": 0
+    }
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000209",
+      "ALC1737-art-000223"
+    ],
+    "candidateRecordsLinked": 15,
+    "structuredArticlesLinkedFromCandidates": 15,
+    "selectedArticlesUnlinked": 0
+  },
+  "promotion": {
+    "articleCandidatesPendingPromotion": 36,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045
+  },
+  "visibleStartEvidence": {
+    "exhaustive": false,
+    "knownVisibleStartsMinimum": 51,
+    "knownMissedStartRecords": 0,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "All 51 canonical candidates are structurally classified, but the sparse selected layer and absence of a direct full-page facsimile census do not prove that no additional visible starts were missed. Metrics are withheld rather than treating candidate count as the denominator."
+  },
+  "physicalContinuities": [
+    {
+      "from": "ALC1737-vcand-p146-R-026",
+      "to": "ALC1737-vcand-p147-L-001",
+      "type": "catchword_to_article",
+      "note": "The p.146 catchword `Bebida` anticipates p.147 L-001; L-001 is a fresh article start."
+    },
+    {
+      "from": "ALC1737-vcand-p147-R-025",
+      "to": "ALC1737-vcand-p148-L-001",
+      "type": "catchword_to_next_page",
+      "note": "Trailing `Brum*` is treated as damaged catchword material anticipating p.148 L-001 `Bruñidor`; it is not a second p.147 article."
+    }
+  ],
+  "evidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "canonicalCandidateInventoryCount": 2072,
+    "selectedP147LayerUsedAsAnchor": true,
+    "p148OpeningInspectedFromCanonicalInventory": true,
+    "directFacsimileAvailableThisPass": false,
+    "policy": "Structural decisions may be closed from convergent machine evidence; textual promotions remain pending where raw OCR is not a sufficient transcription anchor."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
