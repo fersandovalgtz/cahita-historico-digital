@@ -1,0 +1,31 @@
+{
+  "operation": "page_break_continuity_recollation",
+  "articleId": "ALC1737-art-000734",
+  "sourceId": "ALC1737",
+  "pages": [137, 138],
+  "before": {
+    "transcriptionRaw": "Aguja para trancas. Cuta.",
+    "continuesToNextPage": false,
+    "sourceSpansPresent": false
+  },
+  "after": {
+    "transcriptionRaw": "Aguja para trancas. Cuta. buoboi.",
+    "continuesToNextPage": true,
+    "sourceSpans": [
+      {"pageDigital":137,"column":"right","role":"start"},
+      {"pageDigital":138,"column":"left","role":"end"}
+    ]
+  },
+  "evidence": {
+    "p137": "The final article begins `Aguja para trancas. Cuta.` and the lower-margin catchword previews the continuation.",
+    "p138": "The page opens with lowercase `buoboi.` before the next Spanish guide `Aguja para coſer`, confirming continuation rather than a new article."
+  },
+  "editorialDecision": "Represent one historical article across the page break; do not count the catchword or the p.138 continuation fragment as separate entries.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "AI-assisted direct comparison of the adjacent p.137 and p.138 primary facsimiles",
+    "processedAt": null
+  }
+}
