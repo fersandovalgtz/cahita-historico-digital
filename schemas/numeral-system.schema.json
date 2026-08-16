@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/numeral-system.schema.json",
+  "title": "CHD historical numeral system",
+  "type": "object",
+  "required": ["sourceId", "pageRangeDigital", "cardinals", "systems", "reviewStatus", "humanVerified", "provenance"],
+  "properties": {
+    "sourceId": {"const": "ALC1737"},
+    "pageRangeDigital": {"type": "array", "prefixItems": [{"const": 178}, {"const": 180}], "minItems": 2, "maxItems": 2},
+    "cardinals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["value", "formRaw"],
+        "properties": {
+          "value": {"type": "integer", "minimum": 1},
+          "formRaw": {"type": "string", "minLength": 1},
+          "alternativesRaw": {"type": "array", "items": {"type": "string"}},
+          "historicalVariety": {"type": "string", "enum": ["unspecified", "Hiaqui", "other_explicit_source_label"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "systems": {
+      "type": "object",
+      "required": ["ordinal", "distributive", "adverbial"],
+      "properties": {
+        "ordinal": {"type": "object"},
+        "distributive": {"type": "object"},
+        "adverbial": {"type": "object"}
+      },
+      "additionalProperties": false
+    },
+    "sourceNotesRaw": {"type": "array", "items": {"type": "string"}},
+    "reviewStatus": {"type": "string", "enum": ["machine_corrected_unverified", "human_verified", "unresolved"]},
+    "humanVerified": {"type": "boolean"},
+    "provenance": {
+      "type": "object",
+      "required": ["derivedFrom", "agent", "method"],
+      "properties": {
+        "derivedFrom": {"type": "string"},
+        "agent": {"type": "string"},
+        "method": {"type": "string"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
