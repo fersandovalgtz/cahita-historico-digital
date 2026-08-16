@@ -1,0 +1,38 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 11,
+  "sourcePagePrinted": null,
+  "section": "preliminaries",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "AL LECTOR.\n\nSE ofrece à tu vigilante eſtudio, y zeloſa aplicacion\nen eſta obra tripartita (ò, fervoroſo Lector) el Arte,\nò como forma de la lengua Cahita, que es la Synta-\nxis, conſtruccion, ò recta compoſicion de las ocho\npartes de la oracion entre ſi. Si ſabes componer, y colocar\neſtas, podrás con verdad decir, que ſabes la lengua ſin echar\nſoleciſmos. Confieſſo ſer muy dilatada ſu materia; pero eſto,\ncomo no ignoras, es comun à los Idiomas todos; y ſi de eſte\nes con eſpecialidad propria la latitud, es por comprehender\nvna Provincia mui eſtendida, y habitada de innumerable gen-\nte: toda eſta vſa de vn miſmo Idioma, los Hiaquis, los Ma-\nyos, y los Thehuecos; pero ſe diferencian en el modo. Sirva\nde exemplo: pide lumbre el Hiaqui diciendo: Taita vin hua-\nquin huertas trae aqui aprieſſa lumbre: el Mayo: Taita nuce\ntrae lumbre: el Thehueco: Taita nemica dame lumbre. En\nlo qual conſta la diferencia por vna parte en el modo de ha-\nblar, y vniformidad por otra en los vocablos, ſin que por\neſſo dexe de ſer vno miſmo el Idioma; pues los Latinos dicen\nà las vezes vna miſma coſa, y varian no poco en el modo\nde hablarlas, vſando vnos de eſtilo levantado otros del me-\ndio, y otros por vltimo del pedeſtre, ſiendo todo latin. Mas\ncomo para eſto es el maeſtro mejor el vſo, aprovechando mas\ncon eſte los hombres, que con las reglas todas, por eſſo en\neſte Idioma el mejor modo de aprehender es informarſe,\ny hablar con cuidado con los Indios. Con eſto aprehen-\nderás, no ſolo los vocablos, ſino lo principal para jugar de\nellos, que es la compoſicion de las oraciones; elegancia en\nel decir, energia en la colocacion, &c. En eſte pequeño dic-\ncionario van preciſſamente los vocablos mas vſuales, omi-\ntiendo phraſes, circumlocuciones, &c. por no aumentar\nla obra, y dexarte algo al eſtudio. Por la miſma cauſa no\n",
+  "lineBreakPolicy": "Printed line breaks and line-end hyphenation are preserved. Long s is represented as ſ where visually legible. Quire/signature marks at the foot are described separately rather than incorporated into the prose transcription.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {
+      "token": "Taita vin hua- / quin huertas",
+      "note": "Cahíta example visually collated from the facsimile; exact historical spacing and segmentation remain unverified by an independent specialist.",
+      "line": 14
+    }
+  ],
+  "materialNotes": [
+    {
+      "type": "other",
+      "note": "Quire/signature marks are printed at the foot of the page; they are excluded from the prose transcription scope.",
+      "transcription": "A"
+    },
+    {
+      "type": "bleed_through",
+      "note": "Faint show-through from the opposite side is visible around the heading and margins.",
+      "transcription": null
+    }
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-11",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from rendered facsimile at high resolution, assisted by provider OCR only as a navigation aid; no independent human verification",
+    "processedAt": null
+  }
+}
