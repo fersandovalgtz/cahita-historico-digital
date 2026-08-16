@@ -1,0 +1,21 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 135,
+  "articleId": "ALC1737-art-000704",
+  "correctionType": "spanish_guide_transcription_correction",
+  "previousReading": "Azotar. Ahlocotua.",
+  "correctedReading": "Azofar. Ahlocotua.",
+  "evidence": {
+    "primary": "Targeted direct inspection of the bottom-right area of the 1737 facsimile clearly distinguishes the guide `Azofar` from the following separate article `Azotar con cuero, ò ſoga. Abeba.`",
+    "secondaryControl": "BUE1890 preserves the same lexical distinction and is treated only as later corroborating evidence, not as authority over ALC1737."
+  },
+  "impact": [
+    "ALC1737-art-000704 spanishGuideRaw corrected",
+    "ALC1737-art-000704 transcriptionRaw corrected",
+    "p135 missed-start record for Azofar can now link to article 000704",
+    "a distinct historical article must still be promoted for `Azotar con cuero, ò ſoga. Abeba.`"
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "recordedAt": "2026-08-16"
+}
