@@ -1,0 +1,33 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://github.com/fersandovalgtz/cahita-historico-digital/schemas/participle-construction.schema.json",
+  "title":"CHD historical participle construction",
+  "description":"Structured representation of participial constructions as described in ALC1737. Historical categories and meanings are preserved separately from later linguistic interpretation.",
+  "type":"object",
+  "required":["id","sourceId","part","participleTypeRaw","sourcePagesDigital","sourceRuleRange","sourceDescription","reviewStatus","humanVerified","provenance"],
+  "properties":{
+    "id":{"type":"string","pattern":"^ALC1737-pt-[0-9]{4}$"},
+    "sourceId":{"const":"ALC1737"},
+    "part":{"const":"part_iii"},
+    "participleTypeRaw":{"type":"string"},
+    "sourcePagesDigital":{"type":"array","minItems":1,"items":{"type":"integer","minimum":94,"maximum":104}},
+    "sourcePagesPrinted":{"type":"array","items":{"type":"integer","minimum":80,"maximum":90}},
+    "sourceRuleRange":{"type":"string"},
+    "formationMarkersRaw":{"type":"array","items":{"type":"string"}},
+    "voiceBehaviorRaw":{"type":["string","null"]},
+    "declensionBehaviorRaw":{"type":["string","null"]},
+    "semanticFunctionRaw":{"type":["string","null"]},
+    "sourceDescription":{"type":"string","minLength":1},
+    "structuredDescription":{"type":["object","null"],"additionalProperties":true},
+    "examplesRaw":{"type":"array","items":{"type":"string"}},
+    "editorialCaution":{"type":["string","null"]},
+    "reviewStatus":{"type":"string","enum":["machine_corrected_unverified","editorial_proposal","human_verified","unresolved"]},
+    "humanVerified":{"type":"boolean"},
+    "provenance":{"type":"object","required":["derivedFrom","agent","method"],"properties":{"derivedFrom":{"type":"string"},"agent":{"type":"string"},"method":{"type":"string"},"processedAt":{"type":["string","null"],"format":"date-time"}},"additionalProperties":false}
+  },
+  "allOf":[
+    {"if":{"properties":{"reviewStatus":{"const":"human_verified"}}},"then":{"properties":{"humanVerified":{"const":true}}}},
+    {"if":{"properties":{"humanVerified":{"const":true}}},"then":{"properties":{"reviewStatus":{"const":"human_verified"}}}}
+  ],
+  "additionalProperties":false
+}
