@@ -1,0 +1,6 @@
+source_id,digital_page,printed_page,section,coverage,review_status,transcription_file,uncertainty_count,notes
+ALC1737,36,22,part_i,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p036.json,2,Frequentativos rule 75 continuation; § IV begins; pronunciation rules 76–77
+ALC1737,37,23,part_i,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p037.json,2,Pronunciation and letter variation rules 77–81
+ALC1737,38,24,part_i,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p038.json,3,Synalepha rules 82–85 begin
+ALC1737,39,25,part_i,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p039.json,4,Synalepha/phonotactic rules 85–91 begin; Teueco-specific note in rule 88
+ALC1737,40,26,part_i,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p040.json,3,Rule 91 continuation; explicit Hiaqui/Teueco/Mayo accent comparison; word-order rules 92–95 begin
