@@ -1,0 +1,26 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 37,
+  "sourcePagePrinted": 23,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE I.\n\ncablos, v. g. ueie con u, vocal ſignifica ir, ò venir, y veie con v, conſonante ſignifica ſobrar algo. Tambien hà meneſter cuidado en diſtinguir con la pronunciacion la v, conſonante de la b, v. g. buiuc con b, es accuſativo de buiu, mucho, y vuiuc con v, conſonante es preterito de vuie por reñir.\n\n78. Muchas ſyllabas ſe eſcriben con dos conſonantes en medio de diccion, y de pronunciarlas bien depende la variedad de ſignificados, v. g. tenne con dos nn, correr muchos, y tene con vna n, mormurar: inottene mormura de mi. Matte con dos tt, ſignifica manifeſtar, y mate con vna t, ſuplicar: emou ne mate.\n\n79. En muchos partidos convierten la ſ, en h, quando la ſ eſtá en medio de diccion, y ſe le ſigue conſonante, v. g. tuſi la harina, genitivo tuhta, en Teueco dicen tuſta: hioſte, vel hiohte eſcribir. La h, es mui vſada, aſpirada con lentitud, y con eſta aſpiracion ſuave ſe diferencian muchos vocablos, v. g. bota con h, es nombre, y verbo, ſignifica la enramada, y cortar con cuchillo: ota ſin h, ſignifica el hueſſo. No tiene eſta lengua la que decimos erre, tiene la que llamamos ere, v. g. repte peſtañear: core andar al rededor.\n\nLetras, que mudan, y quitan.\n\n80. Vſan muchos trocar algunas letras: las mas ordinarias ſon la r, y la l, y aſſi dicen vnos hiocore, y otros hiocole. Vnos dicen tuuri, y otros tuuli; pero no en todos los vocablos ay eſta mutacion: aprendaſe de los Indios, que la vſan con gracia.\n\n81. Otros vocablos ay, que no admiten eſta mudanza de l, y r, porque con la r, tienen vn ſignificado, y con la l, otro, v. g. ſuri es conjuncion, y ſuli es nombre adjetivo, que ſignifica ſolamente. Eſta particula ara es del verbo araue poder: y eſta ala es del adverbio alaua approbantis, y entrambas guardan ſu diferente ſignificado, conforme à la r, ò l, con que ſe eſcriben, quando ſe componen con verbos, v. g. aranoca poder hablar, y alanoca hablar bien, id\n\neſt,\n",
+  "lineBreakPolicy": "Continuation of rule 77, numbered rules, subsection heading and catchword are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "tuſi / tuhta / tuſta", "note": "Series used in the s/h discussion is visually legible but should be re-collated before phonological analysis.", "line": null},
+    {"token": "alaua approbantis", "note": "Latin metalinguistic label retained as printed; exact grammatical form should be checked in specialist review.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Moderate show-through in lower half; text remains legible.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-37;printed-page-23",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
