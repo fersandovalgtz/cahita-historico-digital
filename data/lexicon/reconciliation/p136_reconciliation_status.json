@@ -1,0 +1,74 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 136,
+  "candidateMethod": "hybrid_margin_mode_v0.2",
+  "canonicalCandidates": 48,
+  "candidateColumns": {
+    "left": 24,
+    "right": 24
+  },
+  "candidateReconciliationComplete": true,
+  "candidateClassifications": {
+    "article": 48,
+    "continuation": 0,
+    "unresolved": 0,
+    "paratext": 0,
+    "false_positive": 0
+  },
+  "boundaryAssessments": {
+    "exact": 48,
+    "merged_articles": 0,
+    "oversegmented": 0,
+    "undersegmented": 0,
+    "ambiguous": 0,
+    "not_applicable": 0
+  },
+  "articleLinkState": {
+    "articleCandidatesLinked": 48,
+    "articleCandidatesPendingPromotion": 0,
+    "newHistoricalArticlesPromoted": 34,
+    "newPromotionIdRange": "ALC1737-art-000811--ALC1737-art-000844"
+  },
+  "visibleStartCensus": {
+    "status": "closed_machine_corrected_unverified",
+    "visibleHistoricalArticleStarts": 49,
+    "truePositiveCandidateStarts": 48,
+    "falsePositiveCandidateStarts": 0,
+    "missedVisibleStarts": 1,
+    "precision": 1.0,
+    "recall": 0.979592,
+    "f1": 0.989691,
+    "missedStartsLinkedToExistingArticles": 1,
+    "missedStartsStillRequiringPromotionOrCorrection": 0
+  },
+  "physicalContinuities": [
+    {
+      "articleId": "ALC1737-art-000821",
+      "kind": "cross_column",
+      "sourceSpans": [
+        "p136:left:start",
+        "p136:right:end"
+      ],
+      "note": "`Adobar cueros. Huacabeata-` continues as `buiaruna.` at the top of the right column."
+    },
+    {
+      "articleId": "ALC1737-art-000844",
+      "kind": "cross_page",
+      "sourceSpans": [
+        "p136:right:start",
+        "p137:left:end"
+      ],
+      "note": "`Afligirſe, ò apurarſe. Chuntia-` continues on p.137 as `ca, l, chunti iauetua.`."
+    }
+  ],
+  "interpretation": "Page 136 is closed at candidate, visible-start, promotion, and linkage levels in the AI-assisted layer. All 48 canonical candidates correspond to visible article starts; one additional page-edge start was missed by the extractor and was already represented. The page also supplies two material continuity cases, one across columns and one across the p.136→137 boundary.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "nextActions": [
+    "Run CI over the p.136 reconciliation and article-promotion files.",
+    "Synchronize coverage/progress/Issue #3 to 844 historical articles.",
+    "Proceed to p.137 while preserving the already identified continuation from p.136.",
+    "Keep small-type uncertain forms subject to independent human collation."
+  ],
+  "recordedAt": "2026-08-16"
+}
