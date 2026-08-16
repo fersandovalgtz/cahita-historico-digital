@@ -1,0 +1,28 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 143,
+  "recordedAt": "2026-08-16",
+  "method": "AI-assisted direct recollation against 600 dpi facsimile render; no OCR authority and no independent human verification",
+  "corrections": [
+    {
+      "articleId": "ALC1737-art-000143",
+      "field": "cahitaFormsRaw[0].formRaw",
+      "previousReading": "Hilobue",
+      "correctedReading": "Hiolhue",
+      "candidateId": "ALC1737-vcand-p143-L-002",
+      "evidenceNote": "The 600 dpi crop shows the sequence Hiolhue; the former selected reading transposed/altered internal letters."
+    },
+    {
+      "articleId": "ALC1737-art-000153",
+      "field": "cahitaFormsRaw[0].formRaw",
+      "previousReading": "Curuat",
+      "correctedReading": "Curuas",
+      "candidateId": "ALC1737-vcand-p143-L-022",
+      "evidenceNote": "The final glyph is a long/terminal s form, not t, in the 600 dpi facsimile."
+    }
+  ],
+  "authority": {
+    "reviewStatus": "machine_corrected_unverified",
+    "humanVerified": false
+  }
+}
