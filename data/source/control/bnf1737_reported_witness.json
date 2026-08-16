@@ -1,0 +1,31 @@
+{
+  "sourceId": "BNF1737-REPORTED",
+  "sourceType": "independent_same_edition_witness_reported_not_ingested",
+  "work": "Arte de la lengua cahita conforme à las reglas de muchos peritos en ella",
+  "editionYear": 1737,
+  "institution": "Bibliothèque nationale de France",
+  "collectionRaw": "Réserve des Livres rares",
+  "relationshipToALC1737": "reported independent exemplar of the same 1737 edition",
+  "evidence": [
+    {
+      "type": "scholarly_secondary_source",
+      "author": "Rosío Molina Landeros",
+      "title": "Aproximación a la textualidad de cinco vocabularios del noroeste novohispano",
+      "reportedFact": "The author states that the 1737 Cahita edition used for her description belongs to the Réserve des Livres rares of the Bibliothèque nationale de France and notes that it lacks the catechism present in Buelna's 1890 reprint."
+    }
+  ],
+  "catalogueRecordVerifiedDirectly": false,
+  "digitalSurrogateLocated": false,
+  "localFileIngested": false,
+  "localFileSha256": null,
+  "researchValue": [
+    "potential independent control for ALC1737 gaps and damaged readings",
+    "collation of printing-state or exemplar-level differences",
+    "verification of the p157-p158 discontinuity and p161-p162 Lucer- anomaly",
+    "same-edition control preferable to later BUE1890 when accessible"
+  ],
+  "authorityRule": "Do not use this reported witness to alter ALC1737 until the BnF exemplar or an authoritative catalogue/digital surrogate is directly inspected. If obtained, ingest it under a distinct witness identifier and record all collation decisions separately.",
+  "status": "reported_witness_requires_direct_verification",
+  "reviewStatus": "bibliographic_control_registered",
+  "recordedAt": "2026-08-16"
+}
