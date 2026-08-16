@@ -1,0 +1,52 @@
+{
+  "sourceId": "BUE1890",
+  "sourceType": "historical_reprint_control",
+  "title": "Arte de la lengua cahita",
+  "publicationYear": 1890,
+  "publisher": "Imprenta del Gobierno Federal",
+  "editorRaw": "Eustaquio Buelna",
+  "historicalAttributionStatus": "disputed_in_catalogues",
+  "relationshipToALC1737": "later_editorial_reprint_not_same_witness",
+  "knownDigitalSurrogates": [
+    {
+      "provider": "Google Books",
+      "identifier": "yohMqoTJ7KMC",
+      "holdingInstitution": "Austrian National Library",
+      "digitized": "2024-07-19"
+    },
+    {
+      "provider": "Google Books",
+      "identifier": "acVQAAAAMAAJ",
+      "holdingInstitution": "University of Texas",
+      "digitized": "2007-11-19"
+    },
+    {
+      "provider": "Google Books",
+      "identifier": "EHISAAAAYAAJ",
+      "holdingInstitution": "Harvard University",
+      "digitized": "2007-12-06"
+    },
+    {
+      "provider": "Internet Archive/Open Library",
+      "identifier": "artedelalenguac00jesgoog",
+      "openLibraryEditionId": "OL4298666M"
+    }
+  ],
+  "intendedUse": [
+    "control readings for unresolved 1737 passages",
+    "history of transmission and editorial intervention",
+    "comparison of lexical segmentation and later normalization",
+    "never silently overwrite ALC1737"
+  ],
+  "knownEditorialDifferences": [
+    "later reprint edited by Eustaquio Buelna",
+    "orthography and spacing may be normalized or altered",
+    "contains editorial notes and additional material not present in the ALC1737 work PDF",
+    "contains catechism and indices in the reprint volume"
+  ],
+  "localFileIngested": false,
+  "localFileSha256": null,
+  "authorityRule": "BUE1890 may corroborate or challenge a reading, but ALC1737 remains the authority for transcription of the 1737 witness. Divergences must be stored as collation evidence, not substituted silently.",
+  "reviewStatus": "bibliographic_control_registered",
+  "recordedAt": "2026-08-16"
+}
