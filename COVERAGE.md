@@ -14,27 +14,22 @@ Estado de cobertura de Cahíta Histórico Digital para la fuente `ALC1737`.
 | Líneas OCR/layout del vocabulario | **3,899** | pp. 133–177 |
 | Candidatos lexicográficos v0.2 | **2,072** | 2,072/2,072 estructuralmente válidos |
 | Precisión / recall / F1 v0.2 | **97.13% / 89.89% / 93.37%** | muestra diagnóstica |
-| Transcripciones diplomáticas `full_page` | **67 páginas** | preliminares textuales + Parte I + Parte II + apertura de Parte III |
+| Transcripciones diplomáticas `full_page` | **72 páginas** | preliminares textuales + Partes I–II + Parte III hasta p. 76 |
 | **Parte I** | **completa** | digitales 15–50 / impresas 1–36 |
 | **Parte II** | **completa hasta su cierre textual** | digitales 51–68 + segmento superior de digital 69 / impresa 55 |
-| Parte III | **iniciada** | segmento inferior de p. 69 + pp. 70–71 |
+| Parte III | **en curso hasta digital 76 / impresa 62** | segmento inferior de p. 69 + pp. 70–76 |
 | Reglas gramaticales estructuradas | **15** | lote inicial 46–60 |
-| Paradigmas gramaticales estructurados | **2** | presente de `Eria` + comparación Tehueco/Hiaqui/Mayo |
-| Observaciones de variación histórica | **11 entidades** | 10 en exportación JSONL + nueva observación modular p. 58 |
+| Paradigmas gramaticales estructurados | **3** | presente de `Eria`; comparación temporal; comparación optativa |
+| Observaciones de variación histórica | **13 entidades** | 10 en exportación JSONL + 3 modulares (`0011`–`0013`) |
 | Extractos diplomáticos del vocabulario | **1 página** | p. 134, piloto |
 | Entradas lexicográficas piloto | **12** | esquema válido; no producción |
 | Revisión humana independiente | **0** | no iniciada |
 
 ## Segmentación refinada
 
-La frontera entre Parte II y Parte III **no coincide exactamente con un salto de página**. La página digital 69 / impresa 55 contiene dos segmentos:
+La frontera entre Parte II y Parte III **ocurre dentro de la página digital 69 / impresa 55**. La parte superior concluye la regla 188 bajo el encabezado de Parte II; debajo aparece `PARTE III` y comienzan las reglas 189–190.
 
-- en la parte superior continúa `CAHITA. PARTE II.` y concluye la regla 188;
-- más abajo aparece el encabezado `PARTE III` y comienzan las reglas 189–190.
-
-Por ello [`data/source/alc1737/sections.json`](data/source/alc1737/sections.json) representa ahora la frontera como **intra-page section boundary**, y [`schemas/page-transcription.schema.json`](schemas/page-transcription.schema.json) admite páginas `mixed` mediante `sectionSegments`.
-
-La segmentación vigente es:
+Por ello [`data/source/alc1737/sections.json`](data/source/alc1737/sections.json) representa una frontera intra-página y [`schemas/page-transcription.schema.json`](schemas/page-transcription.schema.json) admite páginas `mixed` mediante `sectionSegments`.
 
 | Sección | Páginas digitales | Páginas impresas |
 |---|---:|---:|
@@ -49,38 +44,51 @@ La segmentación vigente es:
 
 ## Transcripción
 
-La Fase 2 utiliza una unidad JSON por página y un manifiesto de 182 filas en [`data/transcription/status.csv`](data/transcription/status.csv).
+La Fase 2 utiliza una unidad JSON por página y el manifiesto maestro [`data/transcription/status.csv`](data/transcription/status.csv), actualizado ahora hasta la página digital **76 / impresa 62**.
 
-La **Parte I está completamente representada** en digitales 15–50. La **Parte II también está completa en su continuidad textual**: digitales 51–68 y el segmento superior de la página 69, donde concluye la regla 188. La misma página 69 inaugura Parte III; las páginas 70–71 continúan con la descripción verbal y los primeros paradigmas.
+La **Parte I** está completamente representada. La **Parte II** también está completa en su continuidad textual, incluyendo su cierre en el segmento superior de p. 69. La **Parte III** avanza desde el segmento inferior de p. 69 hasta p. 76.
 
-Los nuevos lotes son:
+Lotes recientes:
 
 - [`data/transcription/batches/part_ii_p056_p069.csv`](data/transcription/batches/part_ii_p056_p069.csv)
 - [`data/transcription/batches/part_iii_p069_p071.csv`](data/transcription/batches/part_iii_p069_p071.csv)
+- [`data/transcription/batches/part_iii_p072_p076.csv`](data/transcription/batches/part_iii_p072_p076.csv)
 
-`full_page` significa que la superficie textual impresa de la página está representada, incluso cuando existen secuencias `[ileg.]` o incertidumbres tipadas. No equivale a `human_verified`.
+`full_page` significa que la superficie textual impresa de la página está representada editorialmente. Puede contener secuencias `[ileg.]`, celdas pendientes o incertidumbres tipadas; **no equivale a `human_verified`**.
 
-## Hallazgos de Parte II
+## Parte II: resultados acumulados
 
-La transcripción de Parte II añadió varios objetos útiles para investigación:
+La Parte II ha aportado, entre otros objetos:
 
 - regla 128: contraste `Tehuecos` frente a `Hiaqui, y Mayo` en la formación del oblicuo (`tuſta/maſta` frente a `tuhta/mahta`);
 - p. 53 / impresa 39: `paros la liebre`, atribuida a `los Mayos, y el Hiaqui ſuaue`;
-- p. 58 / impresa 44: `Los Hiaquis dicen nepo en lugar del inopo`, registrado como observación pronominal independiente;
-- duplicación histórica visible del número de regla `129` en p. 52, preservada sin corrección silenciosa.
+- p. 58 / impresa 44: `Los Hiaquis dicen nepo en lugar del inopo`, conservado como observación pronominal `ALC1737-var-0011`;
+- duplicación histórica del número de regla `129`, preservada sin corrección silenciosa.
 
-La observación de p. 58 se conserva modularmente en [`data/linguistic/variety_observations/ALC1737_var_0011.json`](data/linguistic/variety_observations/ALC1737_var_0011.json). La exportación combinada `variety_observations.jsonl` contiene todavía las diez entidades anteriores y deberá regenerarse al siguiente ciclo de exportación.
+## Parte III: paradigmas y variación
 
-## Parte III y paradigmas
-
-Las pp. 70–71 contienen uno de los núcleos comparativos más densos del *Arte*. La fuente declara:
+Las pp. 70–71 contienen un núcleo comparativo explícito:
 
 - pretérito imperfecto: `Tehuecos = e`, `Hiaquis = n`, `Mayos = i`;
 - perfecto: `c` para todos;
 - pluscuamperfecto: `Tehuecos = cat`, `Hiaquis = can`, `Mayos = cai`;
 - futuro imperfecto: `naque` para todos.
 
-Se creó [`schemas/grammatical-paradigm.schema.json`](schemas/grammatical-paradigm.schema.json) y los dos primeros paradigmas en [`data/grammar/paradigms_part_iii_p070_p071.jsonl`](data/grammar/paradigms_part_iii_p070_p071.jsonl). El modelo se documenta en [`docs/PARADIGM_MODEL.md`](docs/PARADIGM_MODEL.md).
+El modelo de paradigmas está formalizado en [`schemas/grammatical-paradigm.schema.json`](schemas/grammatical-paradigm.schema.json). Los dos primeros objetos están en [`data/grammar/paradigms_part_iii_p070_p071.jsonl`](data/grammar/paradigms_part_iii_p070_p071.jsonl).
+
+Las pp. 73–74 añaden un segundo contraste histórico de alto valor. La regla 198 distribuye las notas optativas `hau` para `los Tehuecos` y `amatuc` para `las demás Naciones`; la regla 200 afirma que los Tehuecos usan el optativo en `na` solamente en primera persona y sin semipronombre, mientras las demás Naciones lo usan para todas las personas con semipronombres.
+
+Estas dos observaciones se conservan como `ALC1737-var-0012` y `ALC1737-var-0013`, y se integraron además en el paradigma comparativo [`data/grammar/paradigms_part_iii_p073_p074.jsonl`](data/grammar/paradigms_part_iii_p073_p074.jsonl) como `ALC1737-par-0003`.
+
+## Variación histórica: estado de exportación
+
+La exportación combinada [`data/linguistic/variety_observations.jsonl`](data/linguistic/variety_observations.jsonl) contiene todavía las **10 entidades** iniciales. Las nuevas observaciones modulares se encuentran en:
+
+- `data/linguistic/variety_observations/ALC1737_var_0011.json`
+- `data/linguistic/variety_observations/ALC1737_var_0012.json`
+- `data/linguistic/variety_observations/ALC1737_var_0013.json`
+
+La exportación combinada deberá regenerarse de manera reproducible en el siguiente ciclo de exportación, sin copiar manualmente datos que ya tienen una fuente modular autoritativa.
 
 ## Corpus lexicográfico
 
