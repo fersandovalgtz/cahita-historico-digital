@@ -1,0 +1,7 @@
+source_id,digital_page,printed_page,section,coverage,review_status,transcription_file,uncertainty_count,notes
+ALC1737,15,1,part_i,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p015.json,0,Prohemio and § I opening
+ALC1737,16,2,part_i,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p016.json,2,Preterite rules; two readings queued for second collation
+ALC1737,17,3,part_i,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p017.json,2,Future formation rules 6–8; two uncertain lexical forms
+ALC1737,18,4,part_i,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p018.json,3,Future rules 9–15; three uncertain forms
+ALC1737,19,5,part_i,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p019.json,2,Future rules 16–21; explicit Mayo-attributed variant in rule 20
+ALC1737,20,6,part_i,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p020.json,2,Future rules 21–26; catchword VOZ
