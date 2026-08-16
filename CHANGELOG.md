@@ -17,44 +17,49 @@ Todos los cambios relevantes de Cahíta Histórico Digital se documentan en este
 - el inventario `hybrid_margin_mode_v0.2` de **2,072 candidatos** quedó persistido canónicamente en una representación fila-a-fila lossless y reconstruible;
 - se fijaron revisión generadora, hashes del PDF y del JSONL canónico, manifiesto de integridad y script de reconstrucción;
 - las **45/45 páginas** del vocabulario tienen representación lexicográfica estructurada;
-- la capa curatorial alcanza **1,013 artículos históricos estructurados**;
+- la capa curatorial alcanza **1,045 artículos históricos estructurados**;
 - se modelaron remisiones `Buſca`, anáforas `Lo miſmo`, agrupaciones históricas, catchwords y spans entre columnas/páginas;
 - se registraron la discontinuidad `ALC1737-gap-0001` (157→158) y la anomalía `Lucer-` (161→162);
 - se corrigió una colisión histórica de identificadores del antiguo piloto de p.165 y se incorporó un validador de unicidad;
 - el piloto botánico de p.142 fue recotejado a 600 dpi, corrigiendo `ALC1737-art-000131` de `Hohuno` a `Hohuo` y `ALC1737-art-000135` de `Maccchua` a `Maccehua`, sin cambiar sus IDs ni elevar su autoridad editorial;
-- la capa seleccionada de p.143 fue recotejada a 600 dpi, corrigiendo `ALC1737-art-000143` de `Hilobue` a `Hiolhue` y `ALC1737-art-000153` de `Curuat` a `Curuas`, con proveniencia versionada separadamente.
+- la capa seleccionada de p.143 fue recotejada a 600 dpi, corrigiendo `ALC1737-art-000143` de `Hilobue` a `Hiolhue` y `ALC1737-art-000153` de `Curuat` a `Curuas`, con proveniencia versionada separadamente;
+- la capa seleccionada de p.144 fue recotejada a 600 dpi con seis correcciones versionadas, entre ellas `000156 Ahuma→Ahima`, `000160 Aletear/Amumuifuc→Aſaetear/Amumuiſuc`, `000162 Aſir/Auhinei→Aſſir/Auhineu` y `000165 Tapeto→Tapeti`.
 
 ### Reconciliación y QA
 
 - se definió `schemas/lexicon-candidate-review.schema.json` y el protocolo formal de reconciliación;
 - se añadió `articleLinkStatus` para separar frontera confirmada de promoción curatorial;
-- las páginas digitales **133–143** tienen ya ciclo cerrado de candidato → censo visible → promoción → QA;
-- en ese tramo se reconciliaron **475/475 candidatos canónicos**;
-- el censo facsimilar registra **495 inicios históricos visibles**: TP444 / FP31 / FN51; precisión **0.934737**, recall **0.896970** y F1 **0.915464**;
+- las páginas digitales **133–144** tienen ya ciclo cerrado de candidato → censo visible → promoción → QA;
+- en ese tramo se reconciliaron **514/514 candidatos canónicos**;
+- el censo facsimilar registra **541 inicios históricos visibles**: TP483 / FP31 / FN58; precisión **0.939689**, recall **0.892791** y F1 **0.915640**;
 - todos los candidatos `article` y todos los falsos negativos visibles del tramo cerrado están enlazados; **`pending_promotion = 0`**;
 - la p.140 cerró con 47 candidatos, 48 inicios visibles, TP44 / FP3 / FN4, F1 0.926316 y 12 promociones nuevas `ALC1737-art-000899`–`000910`;
 - la p.141 cerró con 41 candidatos, 40 inicios visibles, TP34 / FP7 / FN6, F1 0.839506 y 29 promociones nuevas `ALC1737-art-000911`–`000939`; `000930` y `000936` conservan microestructura `unresolved` en lugar de imponer segmentaciones no demostradas;
 - la p.142 cerró con 53 candidatos, 50 inicios visibles, TP50 / FP3 / FN0, precisión 0.943396, recall 1.000000 y F1 0.970874; se promovieron 40 artículos nuevos `ALC1737-art-000940`–`000979`;
 - en p.142 los candidatos L-006 y R-004 se clasificaron como encabezados de agrupación, L-020 como falso positivo OCR/layout, y los encabezados/reclamos absorbidos en R-022/R-033 se excluyeron del conteo lexicográfico;
-- la p.143 cerró con 46 candidatos, 48 inicios visibles, TP44 / FP2 / FN4, precisión 0.956522, recall 0.916667 y F1 0.936170; se promovieron **34 artículos nuevos** `ALC1737-art-000980`–`001013`;
+- la p.143 cerró con 46 candidatos, 48 inicios visibles, TP44 / FP2 / FN4, precisión 0.956522, recall 0.916667 y F1 0.936170; se promovieron 34 artículos nuevos `ALC1737-art-000980`–`001013`;
 - los cuatro falsos negativos de p.143 son `Arbol. Sapo.`, `Arenal. Sepai.`, `Armarſe para la batalla...` y `Arriba como en la ſotea. Catabepa.`; los candidatos L-021 y L-027 son continuaciones físicas, no entradas nuevas;
 - el separador histórico `l` de `Arrendar dar algo à renta. Hitare urec, l, reureuri.` se conserva como evidencia sin interpretación lingüística moderna;
+- la p.144 cerró con 39 candidatos, 46 inicios visibles, TP39 / FP0 / FN7, precisión 1.000000, recall 0.847826 y F1 0.917647; se promovieron **32 artículos nuevos** `ALC1737-art-001014`–`001045`;
+- los siete falsos negativos de p.144 son `Arrimarſe à alguna coſa`, `Arrugada tener la cara`, `Aſpera coſa`, `Aſſiento donde ſientan`, `Aſſomar la cabeza`, `Atar los pies` y `Ataviarſe`; cinco candidatos contienen dos comienzos históricos visibles y se modelan como `merged_articles`;
+- el borde derecho recortado de p.144 se resolvió con ALC1737 como autoridad primaria y BUE1890 sólo como control secundario explícito; no se sustituyeron lecturas silenciosamente;
+- `Atormentar` (`001045`) quedó modelado como artículo trans-página 144→145 y `unresolved` únicamente en la lectura fina de su segunda forma, preservando el reclamo `chum-` y la continuidad física;
 - `CHD QA` valida inventario canónico, unicidad/autoridad de IDs, artículos contra schema, lotes de reconciliación, capas de inicios omitidos y sintaxis JSON;
-- el workflow se amplió sucesivamente para validar explícitamente las reconciliaciones, capas de inicios omitidos y estados JSON hasta p.143;
-- **CHD QA run #135** concluyó en `success` con la cobertura ampliada de p.143;
+- el workflow se amplió sucesivamente para validar explícitamente las reconciliaciones, capas de inicios omitidos y estados JSON hasta p.144;
+- **CHD QA run #148** concluyó en `success` con la cobertura ampliada de p.144;
 - la comparación v0.2 sobre pp.133, 134, 150 y 177 conserva precisión 97.13%, recall 89.89% y F1 93.37%, con muestra intencional e IA-asistida.
 
 ### Auditoría de consistencia
 
 - `README.md`, `ROADMAP.md` y `COVERAGE.md` fueron sincronizados durante la serie 0.2.x con el estado real del repositorio;
-- `COVERAGE.md` registra actualmente **1,013 artículos** y reconciliación cerrada hasta p.143;
+- `COVERAGE.md` registra actualmente **1,045 artículos** y reconciliación cerrada hasta p.144;
 - se distinguieron explícitamente las métricas históricas v0.1 de las vigentes v0.2;
 - el estado de desarrollo permanece en **`0.2.0-dev`** sin declarar una release científica estable;
 - permanece **0 `human_verified`** y no existe aún DOI del proyecto.
 
 ### Pendientes de la serie 0.2.x
 
-- escalar la reconciliación exhaustiva desde p.144 hasta p.177;
+- escalar la reconciliación exhaustiva desde p.145 hasta p.177;
 - normalizar `sourceSpans` de `ALC1737-art-000068` y realizar la recollación versionada de `000073`/`000074` detectada al cerrar p.139;
 - consolidar documentación y metadatos restantes;
 - actualizar Issues históricos que aún describen estados superados;
