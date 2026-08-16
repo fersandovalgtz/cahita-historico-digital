@@ -21,11 +21,11 @@
     "not_applicable": 0
   },
   "articleLinkState": {
-    "articleCandidatesWithExistingLinks": 32,
-    "uniqueExistingHistoricalArticlesLinked": 39,
-    "articleCandidatesPendingPromotion": 25,
-    "newHistoricalArticlesPromotedThisCycle": 11,
-    "newHistoricalArticleIdRange": "ALC1737-art-000735--ALC1737-art-000745"
+    "articleCandidatesWithExistingLinks": 57,
+    "uniqueExistingHistoricalArticlesLinked": 64,
+    "articleCandidatesPendingPromotion": 0,
+    "historicalArticlesPromotedAcrossClosureCycle": 36,
+    "newHistoricalArticleIdRange": "ALC1737-art-000735--ALC1737-art-000770"
   },
   "unresolvedCandidateIds": ["ALC1737-vcand-p133-L-002"],
   "reviewFiles": [
@@ -35,20 +35,21 @@
     "data/lexicon/reconciliation/p134_batch02b_pending_articles.jsonl"
   ],
   "promotionFiles": [
-    "data/lexicon/articles/p133_pending_promotions_batch01.jsonl"
+    "data/lexicon/articles/p133_pending_promotions_batch01.jsonl",
+    "data/lexicon/articles/p134_pending_promotions_batch01.jsonl"
   ],
   "observedMissedVisibleStarts": {
     "count": 14,
     "path": "data/lexicon/reconciliation/missed_visible_starts_p133_p134.jsonl",
     "status": "observed_set_not_claimed_exhaustive"
   },
-  "interpretation": "All 61 canonical candidates on digital pages 133-134 have an editorial reconciliation record. Eleven previously pending p.133 article boundaries have now been promoted and linked to historical-article objects. Candidate-level coverage remains distinct from visible-article-start coverage: the extractor has false negatives, and 25 boundaries confirmed as articles still await promotion.",
+  "interpretation": "All 61 canonical candidates on digital pages 133-134 have an editorial reconciliation record, and every one of the 57 candidates classified as article now links to at least one historical-article object. This closes candidate-to-article promotion for the control pages, but not visible-start coverage: the extractor has documented false negatives, the observed missed-start set is not yet claimed exhaustive, and ALC1737-vcand-p133-L-002 remains unresolved.",
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false,
   "nextActions": [
-    "Promote the remaining 25 pending article boundaries on pp.133-134 using facsimile-based transcription and explicit uncertainty.",
-    "Continue auditing missed visible starts; do not treat the current set of 14 as exhaustive until a page-level start inventory is closed.",
+    "Close the page-level visible-start inventory for pp.133-134 and reconcile each missed start against existing or newly promoted historical articles.",
+    "Compute final per-page detection and reconciliation metrics only after the visible-start inventory is declared closed.",
     "Resolve or retain ALC1737-vcand-p133-L-002 as unresolved after dedicated collation.",
-    "Proceed to candidate reconciliation for the next page batch only after page-level QA metrics for pp.133-134 are summarized."
+    "Proceed to candidate reconciliation for the next page batch only after page-level QA for pp.133-134 is closed."
   ]
 }
