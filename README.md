@@ -2,7 +2,7 @@
 
 **Edición histórico-digital, corpus abierto e infraestructura reproducible del _Arte de la lengua cahita_ impreso en México en 1737.**
 
-Cahíta Histórico Digital (CHD) es una infraestructura de investigación orientada a conservar, describir, transcribir y estructurar de forma reproducible una fuente fundamental para la historia de las lenguas cahítas y de la lingüística misionera novohispana. El proyecto separa explícitamente el testimonio histórico, el OCR, la transcripción, la segmentación computacional, las decisiones curatoriales y la eventual revisión filológica humana.
+Cahíta Histórico Digital (CHD) es una infraestructura de investigación orientada a conservar, describir, transcribir y estructurar de forma reproducible una fuente fundamental para la historia de las lenguas cahítas y de la lingüística misionera novohispana. El proyecto separa explícitamente el testimonio histórico, el OCR, la transcripción, la segmentación computacional y las decisiones curatoriales IA-asistidas.
 
 > **Estado:** `0.2.0-dev` — desarrollo activo. No existe todavía una release científica estable ni un DOI del proyecto.
 
@@ -25,9 +25,10 @@ A 2026-08-16:
 
 - **2,072 candidatos lexicográficos** `hybrid_margin_mode_v0.2` están persistidos canónicamente;
 - **1,045 artículos históricos estructurados** integran la capa curatorial;
-- las páginas **133–144** están cerradas en reconciliación de candidatos, censo de inicios visibles y promoción/enlace IA-asistidos;
-- las páginas **145–177** ya poseen representación lexicográfica estructurada, pero su reconciliación exhaustiva página por página sigue pendiente;
-- no existen objetos `human_verified`;
+- las páginas **133–144** están cerradas técnicamente en reconciliación de candidatos, censo de inicios visibles y promoción/enlace IA-asistidos;
+- la página **145** tiene sus **39 candidatos canónicos reconciliados** a nivel de máquina: 33 `article`, 3 `continuation` y 3 `unresolved`; su censo visible exhaustivo y la promoción de 20 fronteras de artículo permanecen abiertos;
+- las páginas **146–177** ya poseen representación lexicográfica estructurada, pero su reconciliación exhaustiva página por página sigue pendiente;
+- no existen objetos `human_verified` y la política vigente no contempla intervención humana independiente;
 - las lecturas inciertas se conservan como tales y no se completan por inferencia silenciosa.
 
 El detalle cuantitativo y el siguiente frente de trabajo se mantienen en [`docs/LEXICON_PROGRESS.md`](docs/LEXICON_PROGRESS.md) y [`COVERAGE.md`](COVERAGE.md).
@@ -36,7 +37,9 @@ El detalle cuantitativo y el siguiente frente de trabajo se mantienen en [`docs/
 
 CHD no equipara OCR con transcripción ni reconciliación computacional con edición crítica. La autoridad primaria permanece en `ALC1737`. Las capas derivadas registran su método, procedencia y estado de revisión. `BUE1890`, cuando se utiliza, funciona sólo como reimpresión histórica de control; nunca sustituye silenciosamente una lectura del ejemplar de 1737.
 
-Los estados como `machine_corrected_unverified` significan que hubo corrección y estructuración asistidas por máquina, pero **no** colación filológica humana independiente.
+Los estados `machine_corrected_unverified` y `unresolved` identifican explícitamente el carácter IA-asistido del trabajo. Bajo la política vigente, `humanVerified` permanece en `false`; `human_verified` se conserva únicamente como estado reservado del esquema, no como una etapa futura obligatoria.
+
+Una página puede alcanzar **cierre técnico** cuando sus fronteras, continuidades, enlaces/promociones y zonas irresueltas quedan completamente modeladas y el QA computacional es satisfactorio. Ese cierre no debe confundirse con autoridad diplomática o filológica humana.
 
 ## Arquitectura del repositorio
 
@@ -53,17 +56,19 @@ Los estados como `machine_corrected_unverified` significan que hubo corrección 
 
 ## Reproducibilidad y QA
 
-El proyecto incluye validadores de JSONL, control de identificadores lexicográficos, reconstrucción del inventario canónico de candidatos y un flujo de QA en GitHub Actions. Una corrida verde verifica consistencia computacional; no certifica corrección filológica.
+El proyecto incluye validadores de JSONL, control de identificadores lexicográficos, reconstrucción del inventario canónico de candidatos y un flujo de QA en GitHub Actions. Una corrida verde verifica consistencia computacional; no certifica corrección filológica humana.
 
 Consulte [`docs/QA_AUTOMATION.md`](docs/QA_AUTOMATION.md), [`docs/LEXICON_RECONCILIATION_PROTOCOL.md`](docs/LEXICON_RECONCILIATION_PROTOCOL.md) y [`docs/TRANSCRIPTION_CONVENTIONS.md`](docs/TRANSCRIPTION_CONVENTIONS.md).
 
 ## Incertidumbres y límites abiertos
 
-El repositorio conserva explícitamente problemas materiales y textuales en lugar de ocultarlos. Entre ellos se encuentran la discontinuidad material registrada entre las páginas digitales 157–158, lecturas de baja confianza en tipografía pequeña y artículos transpaginales cuya microestructura todavía requiere colación independiente. El artículo `ALC1737-art-001045` (`Atormentar`) enlaza las pp.144–145 y permanece parcialmente `unresolved` en su forma cahíta.
+El repositorio conserva explícitamente problemas materiales y textuales en lugar de ocultarlos. Entre ellos se encuentran la discontinuidad material registrada entre las páginas digitales 157–158, lecturas de baja confianza en tipografía pequeña y artículos transpaginales cuya microestructura no puede resolverse con seguridad a partir de la evidencia disponible. El artículo `ALC1737-art-001045` (`Atormentar`) enlaza las pp.144–145 y permanece parcialmente `unresolved` en su forma cahíta.
+
+La ausencia de una capa humana no autoriza a fortalecer estas lecturas. Cuando la evidencia de máquina no basta, la incertidumbre permanece codificada.
 
 ## Próximo frente científico
 
-La reconciliación exhaustiva continúa en la **página digital 145**, que contiene **39 candidatos canónicos: 22 en la columna izquierda y 17 en la derecha**. El protocolo es: clasificación de candidatos → censo de inicios visibles → enlace/promoción → registro de continuidades físicas → QA → sincronización documental.
+En la **página digital 145** ya se completó la reconciliación candidato por candidato. El siguiente objetivo es reducir sus **20 `pending_promotion`**, resolver en la medida posible los 3 candidatos `unresolved` y construir un censo visible exhaustivo sólo si el denominador puede sostenerse sin inventar datos. En paralelo, puede iniciarse el preflight de la **página 146**, con 47 candidatos canónicos.
 
 ## Cita
 
@@ -77,4 +82,4 @@ El repositorio declara **CC BY 4.0** para el dataset y la documentación corresp
 
 ## Principio editorial
 
-**Preservar primero; estructurar después; inferir sólo en capas explícitas; verificar humanamente antes de declarar autoridad filológica.**
+**Preservar primero; estructurar después; inferir sólo en capas explícitas; mantener toda incertidumbre visible y trazable.**

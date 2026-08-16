@@ -1,0 +1,72 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 145,
+  "pageStatus": {
+    "candidateReconciliation": "complete_with_explicit_unresolved",
+    "visibleStartCensus": "incomplete_machine_evidence",
+    "structuralClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 39,
+    "left": 22,
+    "right": 17,
+    "classification": {
+      "article": 33,
+      "continuation": 3,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 3
+    },
+    "boundaryAssessment": {
+      "exact": 26,
+      "merged_articles": 3,
+      "undersegmented": 4,
+      "oversegmented": 0,
+      "ambiguous": 4,
+      "not_applicable": 2
+    }
+  },
+  "linkage": {
+    "articleCandidateRecordsLinked": 13,
+    "preExistingStructuredArticlesLinked": 14,
+    "articleCandidatesPendingPromotion": 20,
+    "unresolvedCandidateBoundaries": 3
+  },
+  "curation": {
+    "preExistingSelectedArticlesOnPage": 14,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045,
+    "crossPageArticleFromP144": "ALC1737-art-001045",
+    "crossPageArticleStatus": "unresolved_low_confidence_form"
+  },
+  "visibleStartCensus": {
+    "exhaustive": false,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "The preserved machine evidence demonstrates absorbed and missed starts, but without the page image it does not support a defensible exhaustive visible-start denominator. TP/FP/FN metrics are therefore intentionally withheld rather than inferred."
+  },
+  "machineEvidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "candidateInventoryCount": 2072,
+    "p146OpeningInspectedFromCanonicalInventory": true,
+    "p146OpeningInterpretation": "Digital p.146 begins with fresh B entries in both columns; no long p.145-to-p.146 continuation is asserted from the preserved geometry.",
+    "selectedP145LayerUsedAsAnchor": true,
+    "directFacsimileRetrievalAttempted": true,
+    "directFacsimileRetrievalResult": "temporarily_unavailable_http_503",
+    "bue1890SecondaryControlRetrievalAttempted": true,
+    "bue1890SecondaryControlRetrievalResult": "temporarily_unavailable_http_503"
+  },
+  "unresolvedNotes": [
+    "L-002 begins with apparent carry-over material and contains a probable internal A-entry start; the unique boundary assignment remains unresolved.",
+    "L-005 mixes continuation-like and article-like fragments and remains unresolved.",
+    "R-011 contains Ardilla/Rio material whose start-versus-continuation relationship to the article absorbed by R-010 remains unresolved.",
+    "R-012 is accepted as an article boundary but its exact guide/form reading is too damaged for promotion.",
+    "R-017 begins at the selected Bagre article and appears to absorb a later bottom-right start; that extra start is not promoted without a reliable reading.",
+    "ALC1737-art-001045 (Atormentar) continues from p.144 and retains low-confidence `chumtieſte`; no human recollation is planned under the current workflow."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "authorityNote": "P.145 has complete candidate-level machine reconciliation, but not an exhaustive visible-start census. The current project policy intentionally does not include independent human verification. Technical decisions are retained as machine_corrected_unverified or unresolved, and no uncertainty is silently upgraded to philological fact."
+}
