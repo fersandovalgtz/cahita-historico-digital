@@ -56,7 +56,8 @@ jobs:
             data/lexicon/reconciliation/p133_opening_resolution.jsonl \
             data/lexicon/reconciliation/p135_left_reconciliation.jsonl \
             data/lexicon/reconciliation/p135_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p135_candidate_linkage_overlay.jsonl; do
+            data/lexicon/reconciliation/p135_candidate_linkage_overlay.jsonl \
+            data/lexicon/reconciliation/p136_reconciliation.jsonl; do
             python scripts/validate_jsonl.py \
               --schema schemas/lexicon-candidate-review.schema.json \
               --jsonl "$file"
@@ -69,7 +70,8 @@ jobs:
           for file in \
             data/lexicon/reconciliation/missed_visible_starts_p133_p134.jsonl \
             data/lexicon/reconciliation/p133_opening_missed_start.jsonl \
-            data/lexicon/reconciliation/p135_missed_visible_starts.jsonl; do
+            data/lexicon/reconciliation/p135_missed_visible_starts.jsonl \
+            data/lexicon/reconciliation/p136_missed_visible_starts.jsonl; do
             python scripts/validate_jsonl.py \
               --schema schemas/lexicon-missed-start.schema.json \
               --jsonl "$file"
@@ -85,6 +87,7 @@ jobs:
           python -m json.tool data/lexicon/reconciliation/p133_p134_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p133_p134_visible_start_census.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p135_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p136_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/provenance/p135_art000704_correction.json >/dev/null
           python -m json.tool data/lexicon/review/boundary_algorithm_comparison.json >/dev/null
           python -m json.tool data/source/control/bue1890.json >/dev/null
