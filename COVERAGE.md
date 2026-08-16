@@ -23,10 +23,11 @@ Estado de cobertura de Cahíta Histórico Digital para `ALC1737` — 2026-08-15.
 | Grupos de conjunciones/metacategorías | **6** | reglas 360–373 + interjecciones |
 | Observaciones de variación histórica | **17 entidades** | fuente histórica; no taxonomía moderna |
 | Candidatos lexicográficos v0.2 | **2,072** | 45 páginas; no equivalen a artículos publicados |
-| Artículos históricos estructurados | **388** | piloto p.134 + secuencia curatorial pp.138–158 |
-| Artículos de remisión piloto adicionales | **4** | p.165; fuera del conteo principal |
+| Artículos históricos estructurados | **478** | piloto p.134 + secuencia curatorial pp.138–164 |
+| Artículos de remisión piloto adicionales | **4** | p.165; fuera del conteo principal hasta reconciliación |
 | Ciclos recíprocos de remisión modelados | **1** | `Demonio ↔ Diablo` |
 | Lagunas/discontinuidades del testimonio registradas | **1** | `ALC1737-gap-0001`, digital 157→158 |
+| Anomalías de frontera adicionales | **1 abierta** | p.161 `Lucer-` → p.162 sin lema visible |
 | Revisión humana independiente | **0** | no iniciada |
 
 ## Arte gramatical
@@ -50,33 +51,32 @@ CHD conserva datasets estructurados para paradigmas, tiempos modales, construcci
 
 ## Vocabulario: estado de producción
 
-El vocabulario ocupa digitales 133–177. El pipeline geométrico v0.2 produce **2,072 candidatos de frontera**, pero la secuencia curatorial principal contiene **388 artículos históricos efectivamente estructurados** en p.134 y pp.138–158.
+El vocabulario ocupa digitales 133–177. El pipeline geométrico v0.2 produce **2,072 candidatos de frontera**, pero la secuencia curatorial principal contiene **478 artículos históricos efectivamente estructurados** en p.134 y pp.138–164.
 
-El modelo ya representa:
+El modelo ya representa equivalencias, remisiones `Buſca`, anáforas `Lo miſmo`, agrupaciones históricas, artículos descriptivos, continuidad entre páginas/columnas, catchwords como paratexto, relaciones recíprocas de remisión y lagunas/anomalías documentales explícitas.
 
-- equivalencias simples y múltiples;
-- remisiones `Buſca`;
-- anáforas `Lo miſmo` mantenidas `unresolved`;
-- agrupaciones históricas mediante `sourceGroupingRaw`;
-- artículos descriptivos;
-- continuidad entre páginas y entre columnas mediante `sourceSpans`;
-- catchwords/reclamos como paratexto de frontera;
-- relaciones recíprocas de remisión;
-- lagunas documentales explícitas del testimonio.
+### Nuevos lotes pp.159–164
 
-### Catchwords
+Se añadieron seis lotes de 15 artículos cada uno (`p159_selected_articles.jsonl` … `p164_selected_articles.jsonl`), total **90 artículos nuevos**. Entre los fenómenos documentados figuran:
 
-`data/lexicon/boundary_markers/catchwords_p153_p154.jsonl` documenta `Desbaſ-` (p.153 → `Desbaſtar madera`, p.154) y `Dar` (p.154 → serie inicial de p.155). Estos reclamos no se cuentan como artículos.
+- `Yerva buena. Lo miſmo.`;
+- `Libro. Lo miſmo.` y `Limon. Lo miſmo.`;
+- `Noez, y nogal. Lo miſmo.`;
+- remisiones `Yr por agua → agua traer`, `Jubilo → gozo`, `Loco bolverſe → enloquecer`, `Loma → ladera`, `Mentar à alguno → mencionar`, `Mozo de edad → mancebo`, `Montear → caçar`, `Ninguna coſa → nada` y `Nombrar, poner nombre → llamar`.
 
-### Ciclo de remisión
+### Catchwords y QA de frontera
 
-Las pp.153–154 contienen el ciclo explícito `Demonio. Buſca diablo.` ↔ `Diablo. Buſca demonio.`. Se conserva en `data/lexicon/relations/reciprocal_cross_references.jsonl` sin escoger artificialmente un lema canónico.
+`data/lexicon/boundary_markers/catchwords_p159_p164.jsonl` registra:
+
+- p.159 `Yr` → p.160 normal;
+- p.160 `Que-` → continuación del artículo al inicio de p.161;
+- p.161 `Lucer-` → p.162 comienza con `Tohuopo, l, aioa.` sin lema visible: incidencia `unresolved`, no reconstruida;
+- p.163 `Naci-` → `Nacido...` p.164;
+- p.164 `Obr-` → pendiente de comprobación en p.165.
 
 ### Discontinuidad digital 157→158
 
-La p.157 termina con voces de F, incluida `Flecha. Huihua.`, y muestra un reclamo inferior que comienza `Fle...`. La digital 158 comienza directamente con voces de H (`Hallarſe bien en vn lugar`, `Hambre`, etc.). La representación HTML guardada reproduce el mismo salto.
-
-La incidencia está registrada como `ALC1737-gap-0001` en `data/source/alc1737/gaps.jsonl` y documentada en `docs/SOURCE_GAPS.md`. CHD no determina todavía el número de páginas/folios faltantes y no reconstruye el material ausente sin otro testimonio documentado.
+La p.157 termina con voces de F, incluida `Flecha. Huihua.`, y muestra un reclamo inferior que comienza `Fle...`. La digital 158 comienza directamente con voces de H. La incidencia está registrada como `ALC1737-gap-0001`; CHD no determina todavía el número de páginas/folios faltantes ni reconstruye el material ausente sin otro testimonio documentado.
 
 ## Incidencias editoriales abiertas
 
@@ -85,7 +85,8 @@ La incidencia está registrada como `ALC1737-gap-0001` en `data/source/alc1737/g
 - OCR 241 vs lectura visual 242;
 - OCR 281 vs lectura visual 282;
 - posible ausencia visible de 294;
-- discontinuidad del vocabulario F→H entre digitales 157 y 158.
+- discontinuidad del vocabulario F→H entre digitales 157 y 158;
+- reclamo `Lucer-` en p.161 sin lema visible al comienzo de p.162.
 
 Ninguna incidencia se corrige silenciosamente.
 
@@ -95,4 +96,4 @@ Ninguna incidencia se corrige silenciosamente.
 
 ## Siguiente frente
 
-Continuar la promoción curatorial desde **digital 159**, manteniendo visible la laguna 157→158 y sincronizando cada lote sustantivo con GitHub y Notion.
+Reconciliar **digital 165** con los cuatro artículos piloto ya existentes, evitar duplicados y continuar después la promoción curatorial hacia p.166, manteniendo sincronización GitHub ↔ Notion.
