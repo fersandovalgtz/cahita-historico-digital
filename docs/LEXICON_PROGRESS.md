@@ -40,8 +40,16 @@ El tramo conserva incertidumbres textuales explícitas cuando la evidencia prima
 
 Todo el tramo 133–144 debe describirse como **`machine_corrected_unverified`**. Una corrida verde de QA o una reconciliación cerrada no equivalen a revisión filológica humana.
 
+## Página 145 — preflight de reconciliación
+
+La página digital **145** tiene **39 candidatos canónicos: 22 en la columna izquierda y 17 en la derecha**. Existe además una capa anterior de **14 artículos seleccionados de alta legibilidad** (`ALC1737-art-000170`–`000183`), pero esa selección no constituye un censo exhaustivo de la página.
+
+`data/lexicon/reconciliation/p145_preflight.json` fija el estado previo al cierre. La página recibe en su apertura la continuación material de `ALC1737-art-001045` (`Atormentar`), iniciado al pie de p.144. La segunda forma se conserva como lectura de baja confianza `chumtieſte` y no debe promoverse como un nuevo artículo ni fortalecerse editorialmente sin colación independiente.
+
+La consulta del texto OCR derivado de Internet Archive confirma el bloque de vocabulario alrededor de la transición p.144→145, pero también evidencia que la salida lineal mezcla el orden de las dos columnas. Por ello el OCR no se utiliza para inventar métricas de frontera, TP/FP/FN ni transcripciones diplomáticas. El preflight permanece deliberadamente **abierto** hasta inspeccionar las 39 filas canónicas con geometría y realizar cotejo directo de la página.
+
 ## Próximo frente
 
-La siguiente página de trabajo es la **digital 145**, con **39 candidatos canónicos: 22 en la columna izquierda y 17 en la derecha**. El ciclo debe continuar con el mismo protocolo: candidato → clasificación de frontera → censo de inicios visibles → enlace/promoción → registro de continuidades físicas → QA → actualización documental.
+Cerrar exhaustivamente la **digital 145** con el protocolo ya estabilizado: exportar/inspeccionar candidatos → cotejar facsímil → clasificar fronteras → construir censo visible → enlazar/promover artículos → registrar continuidades físicas → ejecutar QA → sincronizar documentación, Issue #3 y Notion.
 
-La apertura de p.145 debe preservar expresamente la continuidad del artículo `ALC1737-art-001045` iniciado en p.144 y mantener su forma cahíta de baja confianza sin imponer una reconstrucción no sustentada.
+Hasta completar ese ciclo, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo cerrado.
