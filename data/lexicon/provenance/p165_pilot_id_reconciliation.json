@@ -1,0 +1,32 @@
+{
+  "sourceId": "ALC1737",
+  "event": "p165_pilot_reconciliation",
+  "date": "2026-08-15",
+  "status": "completed",
+  "formerFile": "data/lexicon/articles/p165_cross_reference_pilot.jsonl",
+  "replacementFile": "data/lexicon/articles/p165_selected_articles.jsonl",
+  "reason": "The pilot reused articleId values ALC1737-art-000013 through ALC1737-art-000016, which were already occupied by the main sequence beginning on digital page 138. The four documentary cross-references were preserved, assigned new globally unique IDs, and integrated into the production page-165 lot. The obsolete pilot file was then removed.",
+  "mappings": [
+    {
+      "formerArticleId": "ALC1737-art-000013",
+      "replacementArticleId": "ALC1737-art-000490",
+      "spanishGuideRaw": "Orejear"
+    },
+    {
+      "formerArticleId": "ALC1737-art-000014",
+      "replacementArticleId": "ALC1737-art-000491",
+      "spanishGuideRaw": "Orina"
+    },
+    {
+      "formerArticleId": "ALC1737-art-000015",
+      "replacementArticleId": "ALC1737-art-000492",
+      "spanishGuideRaw": "Orinar"
+    },
+    {
+      "formerArticleId": "ALC1737-art-000016",
+      "replacementArticleId": "ALC1737-art-000493",
+      "spanishGuideRaw": "Oſado ſer"
+    }
+  ],
+  "authorityNote": "This is an identifier/provenance correction only. It does not change the historical readings or promote any article to human_verified."
+}
