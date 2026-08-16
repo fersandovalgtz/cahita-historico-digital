@@ -1,0 +1,29 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 55,
+  "sourcePagePrinted": 41,
+  "section": "part_ii",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE II.\n\nvo, eſto como hablando à otro, y captandole la atencion. Primera: vſaſe del me, para corregir à otro, v. g. va contando vno, erróſe en la cuenta, y por decir quatro, dixo cinco, entonces otro lo corregirá diciendo: naequim me, advierte, que no ſon ſino quatro. Segunda: para aprobar la calidad buena, ò mala de la coſa, v. g. eſtá vno comiendo vna batea, y dice cacame, ò qué dulce! tuurime, ò qué bueno! chivuime, ò qué amargo! y eſte modo es yá hablando con otro, à quien v. g. quiere incitar à comer de lo meſmo.\n\n139. Tercera: ſe vſa del me, hablando con otro para advertirle de lo que ſe pretende, v. g. eſtán muchos pobres aguardando limoſna, manda el Padre ſe les dé: acaſo ſe dexaron à vno ſin darle nada, y aviendose ido los demàs, él ſe queda eſperando ſocorro: ſi acaſo le preguntan, qué eſperas? Reſponderá: canemiſuame; como ſi dixeſſe: adviertes, que no me han dado, no hé ſido ſocorrido, &c.\n\nNOMBRES DEFECTIVOS.\n\n140. Algunos nombres carecen de plural, otros de ſingular, otros ſon indeclinables en el ſingular: carecen de plural los verbales en ia, vel ria, v. g. Hibeoria: etzia la llave, ò cerradura: valiria el gozo, ſuabuſaria el regozijo: huanaria el llanto, &c. no dicen hibeoriam, etziam, valiriam, &c.\n\n141. Tampoco tienen plural los verbales en ye, inanimados, v. g. buayeyen la comida, no dicen buayeyem: cotzeye dormitio, no dicen cotzeyem. Tampoco tienen plural uachi maiz: ſee arena: Taa el Sol: Metza la Luna: Teueca el Cielo: buiya la tierra: tahi el fuego: heca el ayre: hiepſi, y otros.\n\n142. Carecen de ſingular ſupem el veſtido: uauatzim la rana: ſitorim la miel: tzim la cera, ſoam la pita: tzoquim las eſtrellas: puuſim los ojos: nacam las orejas: pipim los pechos, y otros que dará el vſo. Son indeclinables en el ſingular todos los verbales en ye, aſſi de animados, como de inanimados; pero los animados tienen plural, v. g. naiyeye\n\nel\n",
+  "lineBreakPolicy": "Continuation of rule 138, numbered rules, heading and page-turn split are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "naequim me", "note": "Correction formula in rule 138 is transcribed from the facsimile but requires specialist verification.", "line": null},
+    {"token": "canemiſuame", "note": "Response formula in rule 139 is provisionally transcribed.", "line": null},
+    {"token": "Hibeoria", "note": "First defective verbal noun in rule 140 is difficult to read; retained as a working diplomatic form.", "line": null},
+    {"token": "ſitorim / tzim / ſoam", "note": "Defective-noun examples in rule 142 require second lexical collation before reuse as structured lexicon data.", "line": null},
+    {"token": "naiyeye", "note": "Final animated verbal form continues onto the next page; current reading is provisional.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Moderate show-through and uneven inking affect some lexical examples.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-55;printed-page-41",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render; no independent human verification",
+    "processedAt": null
+  }
+}
