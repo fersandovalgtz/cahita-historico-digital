@@ -1,0 +1,26 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 36,
+  "sourcePagePrinted": 22,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ARTE DE LA LENGVA\n\nordinario, ò por habito anda pidiendo, decimos, que pide frequentativamente, y ſe explica con el verbo petito. Eſtos, pues, verbos frequentativos ſe explican en la lengua con otro verbo, que es el ſiſime para ſingular, y ſaſaca para plural, añadidos en lugar del naque del futuro del verbo, cuya accion ſe frequenta, v. g. de vn hombre, que parece no tiene otro oficio, que andar viſitando todos los pueblos, y eſto yá con tanta habitualidad, que le llaman el viſitador, ſe dice, hoanaſiſime del verbo hoanare viſitar, y la particula ſiſime, que ſe junta en lugar del naque del futuro. De otro, que yá por coſtumbre ſe anda huyendo, ſe dirá, buiteſiſime. De otros habladores, que todo lo parlan, ſe dirá, nocſaſaca. Eſtos frequentativos tienen la conſtruccion del verbo radical, con que ſe compone el frequentativo ſiſime, vel ſaſaca.\n\n§. IV.\nCOLOCACION DE PALABRAS; LETRAS, DE\nque carece eſta lengua, y pronunciacion\nde las que tiene.\n\n76. En eſta lengua no ay G, ni X, ni tampoco parece aver D, y algunos vocablos Caſtellanos, que tienen D, apenas los pronuncian con D, v. g. Padre, vnos dicen Pale, otros Pare; las demàs letras ſe hallan, y todas con rigoroſa pronunciacion.\n\n77. La U, vocal, y la V, conſonante la vſan igualmente en principio, y medio de diccion, y ſe diſtinguen tanto en la pronunciacion, que ſiguiendoſele à la u, vocal otra vocal, ſe pronuncia de vn modo, que parece ſepararſe la vna de la otra, v. g. uari, el canal, en donde la u, primera es vocal, y no ſe pronuncia hiriendo en la a, como en Caſtellano guari, ſino como ſi por ſi ſola ſe pronunciaſſe. Y es tan neceſſario el no confundir la u, vocal con la conſonante, que de diſtinguirlas bien, depende la diſtincion de vocablos,\n",
+  "lineBreakPolicy": "Continuation of rule 75, section heading, numbered rules and page-end continuation are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "ſiſime / ſaſaca", "note": "Frequentative auxiliaries/particles are visually clear enough for a working transcription but require specialist morphological verification.", "line": null},
+    {"token": "uari, el canal", "note": "Spanish gloss appears to be 'el canal'; confirm against another reproduction before lexical reuse.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Light show-through and lower-margin wear are visible.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-36;printed-page-22",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
