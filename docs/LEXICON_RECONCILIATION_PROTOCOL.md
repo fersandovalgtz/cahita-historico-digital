@@ -38,13 +38,20 @@ La clasificación se mantiene separada de `boundaryAssessment`, que describe la 
 
 ## Enlace con artículos históricos
 
-Un candidato clasificado como `article` debe enlazarse a uno o más `ALC1737-art-XXXXXX`. La relación puede ser muchos-a-uno o uno-a-muchos porque el OCR/layout puede:
+La clasificación de una frontera y el estado de promoción del artículo son dimensiones distintas. Un candidato clasificado como `article` puede tener:
+
+- `articleLinkStatus: linked`: ya existe al menos un objeto `ALC1737-art-XXXXXX` enlazable;
+- `articleLinkStatus: pending_promotion`: el facsímil confirma que la frontera inicia un artículo histórico, pero el objeto curatorial correspondiente todavía no ha sido promovido con lectura suficiente; `linkedArticleIds` queda vacío hasta entonces.
+
+`pending_promotion` **no equivale a `unresolved`**. Se usa cuando la frontera está resuelta pero falta una operación posterior del pipeline. `unresolved` queda reservado para evidencia material insuficiente o ambigua.
+
+La relación candidato↔artículo puede ser muchos-a-uno o uno-a-muchos porque el OCR/layout puede:
 
 - fragmentar un artículo histórico;
 - fusionar varios artículos en un solo candidato;
 - cortar un artículo entre columnas o páginas.
 
-Por ello no se presupone una correspondencia 1:1. Si el facsímil muestra un artículo real que todavía no tiene objeto curatorial, primero debe promoverse o registrarse explícitamente como pendiente; no se fabricará un enlace inexistente.
+Por ello no se presupone una correspondencia 1:1 y nunca se fabricará un `articleId` para cerrar artificialmente una reconciliación.
 
 ## Paratexto y materialidad
 
@@ -58,12 +65,12 @@ La reconciliación se versionará por lotes pequeños y auditables. Cada lote de
 
 1. páginas y candidatos cubiertos;
 2. inventario canónico de procedencia;
-3. artículos históricos enlazados;
+3. artículos históricos enlazados y artículos pendientes de promoción;
 4. conteos por clasificación y calidad de frontera;
 5. decisiones `unresolved` y falsos negativos observados;
 6. estado de revisión humana.
 
-El primer tramo de control es pp.133–134. Se permite comenzar con un subconjunto de alta confianza, siempre que la cobertura del lote se declare explícitamente y no se confunda con reconciliación completa de las páginas.
+El primer tramo de control es pp.133–134. La cobertura de candidatos y la cobertura de **inicios visibles** deben informarse por separado: completar todos los candidatos de una página no elimina los falsos negativos del extractor.
 
 ## QA y muestreo
 
@@ -84,6 +91,6 @@ La fase se considerará técnicamente completa cuando existan:
 1. inventario canónico reproducible de candidatos — **completado**;
 2. un registro de reconciliación por cada candidato persistido;
 3. métricas agregadas por clase y página;
-4. lista de candidatos/artículos `unresolved`;
+4. lista separada de candidatos `unresolved`, artículos pendientes de promoción y falsos negativos del extractor;
 5. exportación canónica de artículos sin duplicados;
 6. informe de QA que distinga métricas automáticas, revisión editorial IA-asistida y revisión humana.
