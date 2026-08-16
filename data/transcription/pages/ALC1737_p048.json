@@ -1,0 +1,27 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 48,
+  "sourcePagePrinted": 34,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ARTE DE LA LENGVA\n\nINTEREST, ET REFERT.\n\n115. Eſtos verbos poſſeſſivos tienen tambien la ſignificacion de intereſt, & refert, que es pertenecer, y entonces rigen genitivo de la perſona à quien pertenece la coſa, v. g. ſi yo pregunto de quien es, ò à quien pertenece eſte maiz? Reſponderán: es de la gente, yoremta vachec, vel Padreta vachec es de el Padre. De quien es eſte veſtido? Pedrota ſupec: es mio inſupec, porque el genitivo de tu, es em, vel empo, y el de ego, es in, vel inepo; y aſſi aunque reſpondan inopoſupec, inopo vachec, es mi veſtido, ò es mi maiz, ſe entienda, que entonces aquel inopo, no ſon en eſte ſignificado intereſt nominativos, ſino genitivos. O ſe haze la pregunta por el verbo ateuac, que ſignifica tener hazienda, ò por el verbo puquec tener ganados, y entonces ſe pone en accuſativo la coſa poſſeyda, y en genitivo el relativo perſonal de la pregunta, v. g. De quien es aqueſte cavallo? Ica cavaita haveta vuquec? En donde ica cavaita es el accuſativo de la coſa, el haveta es el genitivo de perſona. Item de quien es aqueſte veſtido? Ime ſupem haveta ateuac? En donde ime ſupem es accuſativo de numero plural de la coſa, y haveta es el genitivo de perſona.\n\n116. O ſe haze la pregunta por el nombre miſmo ſubſtantivo hecho, ò formado verbo poſſeſſivo, y entonces el relativo adjetivo, que avia de concertar con el ſubſtantivo, que ſe hizo verbo, ſe pone en accuſativo, y la perſona à quien pertenece la coſa en genitivo, v. g. De quien es, ò à quien pertenece eſte maiz? Huca haveta vachec? En donde aquel huca es el accuſativo de hic, hæc, hoc, que avia de concertar con vachi en accuſativo, ſi el nominativo vachi no ſe huviera hecho verbo poſſeſſivo, y el haveta es genitivo de perſona.\n\n117. Eſta conſtruccion de los poſſeſſivos es, como queda dicho, quando ſignifica pertenecer, ora ſea en preguntas, ora en reſpueſtas: porque quando ſe haze la pregunta, no en el ſignificado de pertenecer, ſino en el de poſſeer, entonces ſe conſtruyen con nominativo de perſona que poſſee, y accuſati-\n\nvo\n",
+  "lineBreakPolicy": "Heading, numbered rules and page-turn split are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "inopoſupec", "note": "Possessive response form in rule 115 is retained from visual collation but requires specialist verification.", "line": null},
+    {"token": "Ica cavaita haveta vuquec", "note": "Question concerning ownership of a horse is provisionally transcribed.", "line": null},
+    {"token": "Ime ſupem haveta ateuac", "note": "Plural clothing example in rule 115 requires second linguistic collation.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "damage", "note": "Small upper-margin marks and uneven inking are visible; text remains substantially legible.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-48;printed-page-34",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
