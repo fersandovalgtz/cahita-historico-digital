@@ -29,6 +29,10 @@
       "enum": ["equivalence", "cross_reference", "mixed", "descriptive", "unresolved"]
     },
     "spanishGuideRaw": {"type": ["string", "null"]},
+    "sourceGroupingRaw": {
+      "type": ["string", "null"],
+      "description": "Historical grouping or sectional heading governing the article in the printed vocabulary, e.g. Arboles, cuyo fruto es comestible."
+    },
     "cahitaFormsRaw": {
       "type": "array",
       "items": {
