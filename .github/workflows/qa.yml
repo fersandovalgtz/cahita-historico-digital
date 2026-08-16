@@ -55,7 +55,8 @@ jobs:
             data/lexicon/reconciliation/p134_batch02b_pending_articles.jsonl \
             data/lexicon/reconciliation/p133_opening_resolution.jsonl \
             data/lexicon/reconciliation/p135_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p135_right_reconciliation.jsonl; do
+            data/lexicon/reconciliation/p135_right_reconciliation.jsonl \
+            data/lexicon/reconciliation/p135_candidate_linkage_overlay.jsonl; do
             python scripts/validate_jsonl.py \
               --schema schemas/lexicon-candidate-review.schema.json \
               --jsonl "$file"
