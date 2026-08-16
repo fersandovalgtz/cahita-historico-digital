@@ -1,0 +1,56 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 143,
+  "candidateInventory": {
+    "total": 46,
+    "left": 30,
+    "right": 16,
+    "classification": {
+      "article": 44,
+      "continuation": 2,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 40,
+      "merged_articles": 4,
+      "oversegmented": 2,
+      "undersegmented": 0,
+      "ambiguous": 0,
+      "not_applicable": 0
+    }
+  },
+  "visibleStartCensus": {
+    "visibleHistoricalArticleStarts": 48,
+    "truePositiveStarts": 44,
+    "falsePositiveCandidateStarts": 2,
+    "falseNegativeVisibleStarts": 4,
+    "precision": 0.956522,
+    "recall": 0.916667,
+    "f1": 0.936170,
+    "missedStartFile": "data/lexicon/reconciliation/p143_missed_visible_starts.jsonl"
+  },
+  "linkage": {
+    "articleCandidatesLinked": 44,
+    "missedStartsLinked": 4,
+    "pendingPromotion": 0
+  },
+  "curation": {
+    "preExistingStructuredArticlesOnPage": 14,
+    "newPromotions": 34,
+    "newArticleIdRange": "ALC1737-art-000980--ALC1737-art-001013",
+    "corpusTotalAfterPromotion": 1013,
+    "unresolvedPromotions": []
+  },
+  "physicalAndEditorialNotes": [
+    "The grouping `Arboles chaparros` continues materially from p.142 into the opening tree articles of p.143; the visible heading `Arboles de mariſmas` appears after `Arbol. Chopo.` and is paratext, not an article start.",
+    "Candidate L-005 begins at `Arbol. Bachomo.` and absorbs the visible start `Arbol. Sapo.`; L-028 begins at `Arena. See.` and absorbs `Arenal. Sepai.`; L-030 begins at `Arina. Tirico tuſi.` and absorbs `Armarſe para la batalla...`; R-016 begins at `Arriba por donde viene el Rio` and absorbs `Arriba como en la ſotea. Catabepa.`.",
+    "Candidates L-021 (`cori.`) and L-027 (`betec.`) are physical continuation lines of the preceding articles and are not lexical starts.",
+    "The selected layer was recollated at 600 dpi before closure: ALC1737-art-000143 was corrected from `Hilobue` to `Hiolhue`, and ALC1737-art-000153 from `Curuat` to `Curuas`, preserving IDs and machine-corrected authority.",
+    "The source separator `l` in `Arrendar dar algo à renta. Hitare urec, l, reureuri.` is preserved as printed and is not assigned a modern linguistic interpretation."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "authorityNote": "Candidate reconciliation, visible-start census, selected-article corrections and promotions are AI-assisted direct facsimile collation at 600 dpi. No object is human_verified and uncertain historical separators are preserved rather than interpreted from OCR or analogy."
+}
