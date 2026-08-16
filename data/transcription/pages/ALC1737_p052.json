@@ -1,0 +1,28 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 52,
+  "sourcePagePrinted": 38,
+  "section": "part_ii",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ARTE DE LA LENGVA\n\n126. Los acabados en qui, mudan el qui, en c, para recebir el ta, del obliquo, v. g. vuqui el eſclavo, genitivo vucta: vaqui comida coſida, genitivo vacta: baqui el rio, genitivo bacta: taſequi el iztle, haze taſeta. Los acabados en ri, pierden la ri, para recebir el ta, del obliquo, v. g. cari la caſa, genitivo cata: ſotori la olla, genitivo ſotota: ſacovari la batea, genitivo ſacovata: oſori el tapeztle, genitivo oſota: Yori el Eſpañol, la fiera, ò valiente, haze genitivo yorita. Aſſi como el Caſtellano no acordandoſe del nombre de alguno dice Fulano; aſſi en eſta lengua vſan de eſte nombre ota, para perſonas, y el genitivo es otata, y para coſas vſan de eſte nombre ori, genitivo orita, para lugar dicen orimpo.\n\n128. Los en ſi, y en ſo, pierden vnas Naciones las vocales vltimas para recebir el ta, del obliquo; como en Tehuecos que dicen tuſi la harina, genitivo tuſta: maſo el venado, genitivo maſta: en Hiaqui, y Mayo dicen tuhta, y mahta, mudando el ſi, y ſo, en h, para recebir el ta: voſo el ſacate, genitivo vohta: abaſo el alamo, genitivo abahta. A eſta declinacion pertenecen los verbales ſubſtantivos, v. g. buani el lloron, genitivo buanta: noqui el idioma, genitivo nocta: ieuari la hechura de qualquier coſa, genitivo ieuata: eriari el amado, genitivo eriata: muquiari el muerto, genitivo muquiata: cuſi la voz, genitivo cuſta, vel cuhta.\n\n129. Los en me, pierden la e, para recebir el ta, vt yoreme, gente, ò perſona, genitivo yoremta: huiteme la ballena, genitivo huitemta: ſacaſe veme la doncella, que haze vemta. Eſta regla ſiguen los participios aſſi de activa, como de paſſiva, y los verbales en me; como eriame el que ama, genitivo eriamta: eriacame el que amó, genitivo eriacamta: eriauame el que es amado, genitivo eriauamta: erianaqueme el que amará, genitivo erianaquemta: erianauame, el que ſerá amado, genitivo erianauamta.\n\n129. Los participios activos, y paſſivos acabados en ua, pierden la u, para recebir el ta, del obliquo, vt eriau el que amaba, genitivo eriata: eriacau el que avia amado, geniti-\n\nvo\n",
+  "lineBreakPolicy": "Numbered rules, including the repeated historical number `129`, and the page-end split are preserved. Ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "taſequi / taſeta", "note": "Iztle example in rule 126 requires second collation; source lettering is uneven.", "line": null},
+    {"token": "Tehuecos ... tuſta / maſta; Hiaqui, y Mayo ... tuhta / mahta", "note": "Comparative forms are visually clear enough for a documentary record but require specialist phonological review.", "line": null},
+    {"token": "huiteme", "note": "Form glossed 'la ballena' is transcribed provisionally.", "line": null},
+    {"token": "rule number 129 repeated", "note": "The printed page visibly uses 129 for two successive rules; CHD preserves the historical numbering rather than silently renumbering it.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Light show-through and irregular inking affect some forms but not the overall rule structure.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-52;printed-page-38",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render; no independent human verification",
+    "processedAt": null
+  }
+}
