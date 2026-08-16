@@ -1,0 +1,48 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 13,
+  "sourcePagePrinted": null,
+  "section": "preliminaries",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ERRATA SIC CORRIGE.\nF. folio.... N. numero.... L. linea, ò renglon.\n\nERRATA.                         CORRIGUNTUR.\nProl:go. Hueras-                Hueria.\nF. 1. n. 2. l. ult. Suite, ſuitec-   Siut, ſiutec;\nF. 11. n. 43. l. 8. Saluame-        [S?]alhuame.\nF. 19. n. 68. l. 7. Us-              Uiſi.\nF. 27. n. 98. l. 5. lee, ſe comiò la a.\nF. 35. n. 118. l. 5. Necbo,-          Necbi.\nF. 37. n. 225. l. 11. N’vi-           N’vi, Gen. Ninta[s?]\nF. 89. n. 286. l. 5. Pebre-           leſſe.\nF. 90. n. 288 l. 3. Vacaine-          Vocaine;\n\nVOCABULARIO;\nL. littera... V. verbo.\n\nL. A. V. amàr: lee, eria.\nL. E. V. eſtera: lee, hipeta- de palma- taco- de carrizo- baca- de tule tobare.\nL. F. V. fiar: lee, nahuiquiliatua.\nL. G. V. grande: lee, bueruboca;\nL. H. V. holgarſe: lee, baleme.\nL. P. V. pecado: lee, tatacoli.\nIbid. pecador: tatacolihoane.\nIbid. pecar: caturiſiane.\nL. Q. V. quebrantar la ley: lee, aneſaque cahipure[?]\nL. V. V. un par: lee, huihalai.\n",
+  "lineBreakPolicy": "Printed line structure is represented one correction per line rather than reproducing exact horizontal alignment. Long s is represented as ſ where visually legible. Square-bracket question marks mark unresolved letter sequences and are linked to uncertainties.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [
+    {
+      "token": "[S?]alhuame",
+      "note": "Corrected form in the F. 11 / n. 43 / l. 8 row is not fully legible in the available facsimile render; the medial sequence is preserved only provisionally.",
+      "line": 7
+    },
+    {
+      "token": "Ninta[s?]",
+      "note": "Ending of the genitive form in the F. 37 / n. 225 / l. 11 row remains visually uncertain.",
+      "line": 11
+    },
+    {
+      "token": "aneſaque cahipure[?]",
+      "note": "Final characters of the Q vocabulary correction are visually damaged/blurred; no completion is asserted.",
+      "line": 25
+    }
+  ],
+  "materialNotes": [
+    {
+      "type": "other",
+      "note": "The page contains two distinct historical correction blocks: general errata for the Arte and a separate VOCABULARIO correction list.",
+      "transcription": null
+    },
+    {
+      "type": "damage",
+      "note": "Several letterforms in the correction column are faint or blurred; unresolved sequences are retained explicitly rather than silently normalized.",
+      "transcription": null
+    }
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-13",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from high-resolution facsimile render with explicit unresolved tokens; provider OCR used only as a secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
