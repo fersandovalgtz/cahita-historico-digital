@@ -1,0 +1,27 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 43,
+  "sourcePagePrinted": 29,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE I.\n\nal verbo con quien ſe componen, v. g. Vaa agua, muque morirſe vno, componeſe el verbo vaamuque tener vno ſed. Tahi el fuego, uetze caer, componeſe el verbo tahi[u?]etze tener calentura. Seue coſa fria, iore deſcanſar, componeſe el verbo ſeveiore refreſcarſe el que tenia calor. Siquiri coſa colorada, buita regir el cuerpo, ſicbuita tener camaras de ſangre.\n\nVerbos con verbos.\n\n103. Vſan mucho componer vnos verbos con otros de que reſulta tercer verbo, v. g. cotze dormir: hunaſte entre otras ſignificaciones tiene eſta de hazer con toda intencion alguna coſa: de eſtos dos, pues, reſulta otro tercer verbo, que es cothunaſte dormir con profundidad. El modo de componerſe vnos verbos con otros, es poniendo al vno en lugar del naque del futuro del otro. El ſignificado de eſte tercer verbo compueſto, que reſulta de dos ſimples, ſuele ſer totalmente diverſo de lo que ſignifican los dos verbos de la compoſicion. Mas el vſo lo enſeñará facilmente.\n\n104. Lo mas ordinario es, que el verbo ſegundo, id eſt, aquel que ſe pone en lugar del naque del futuro del verbo antecedente dá mas exceſſo, diminucion, eficacia, ò energia al ſignificado del verbo primero, v. g. vcu[e?] deſſear: muque morirſe vno, el verbo compueſto de eſtos dos es: vcu[e?]muque morirſe vno de deſſeos, vel deſſear con todo conato. Tzaie ſignifica gritar, himaia arrojar, de eſtos dos ſe compone el verbo tzahimaia, que propriamente es llorar dando vozes, &c.\n\n105. Dos verbos ay, que no ſe componen con otros en lugar del naque del futuro, ſino que ſe añaden à qualquier tiempo entero del verbo antecedente: eſtos ſon teeia, vel teca penſar, tia, vel tihua decir, de los quales yá ſe dixo en la conjugacion del verbo. Videatur. Otros verbos ay, que aunque para componerſe ſiguen la regla general de ligarſe con el verbo antecedente, en lugar del naque del futuro; pero nunca ſe hallan, ſi no es en compoſicion, y fuera de ella\n\nnun-\n",
+  "lineBreakPolicy": "Continuation of rule 102, subsection heading, numbered rules and catchword are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained; uncertain forms use explicit markers.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "tahi[u?]etze", "note": "Compound glossed 'tener calentura'; internal sequence requires second collation.", "line": null},
+    {"token": "vcu[e?] / vcu[e?]muque", "note": "Verb glossed 'deſſear' and its compound are typographically difficult; no silent completion is asserted.", "line": null},
+    {"token": "teeia, vel teca", "note": "First pair in rule 105 is preserved as read but requires specialist comparison with the earlier conjugation section.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Light show-through and ink wear are visible, especially in the upper examples.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-43;printed-page-29",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
