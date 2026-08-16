@@ -1,0 +1,27 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 30,
+  "sourcePagePrinted": 16,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ARTE DE LA LENGVA\n\nquila hablador: loyla coxo: uacapila ſordo. Tambien ſuele juntarſe à ſubſtantivos, pero no à todos, que ſon raros à los que ſe junta: oioue te viejo, vel oiola amioue vieja: amiola nochi el niño, nochila, &c. ſuelen quitar la l, y quedar ſola la a, v. g. muquila, muquia: uaquila, uaquia, &c. los adjetivos con la dicha particula ſe ſubſtantivan, y aſſi ſe declinan por la primera declinacion, v. g. azoté al hablador: nonoquilata, vel nonoquiata nevebat.\n\nParticula RA, vel I.\n\n58. Añadiendo al verbo en el preſente eſta particula ra, ſe haze nombre ſubſtantivo, que ſe declina por la primera declinacion, y ſu ſignificado es de exceſſo, y habituacion en lo que ſignifica el verbo vuie reñir, addito ra, haze vuiera, el que ſiempre anda riñendo: hibua comer: hibuara tragon: naſonte, vel naſante dañar, naſontera, naſantera el que ſiempre nos daña.\n\n59. Añadiendo à los nombres en el recto, y à los verbos en el preſente, ò en el preterito eſta letra i, ſe haze nombre de la miſma ſignificacion, que el de arriba, v. g. buacai comilon: huanai lloron: buicai cantor: cobai de grande cabeza. Eſtos nombres en i, formados ſic, dice el P. Oton, que ſon adjetivos.\n\nParticula UA.\n\n60. Eſta particula ua, es generaliſſima, añadeſe à nombres, pronombres, adverbios, prepoſiciones, y conjunciones: vnos dicen, que denota poſſeſſion de la coſa ſignificada por el nombre à quien ſe añade: otros, que es particula de reſpecto; ſea lo que fuere, lo cierto es, que dicha particula es mui vſada en todas las partes de la oracion, que no ſon verbo, y le dà mas emphaſis à lo ſignificado de aquella parte de la oracion à quien ſe junta, y ſu vſo mas frequente es, quando ſe habla con mas energia: inopirua yo miſmo; ahariua aquel proprio: iminimua aqui en eſte lugar:\n\nama-\n",
+  "lineBreakPolicy": "Continuation from the preceding page, headings, numbered rules and catchword are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "loyla", "note": "Adjective glossed 'coxo'; first consonant sequence requires second collation.", "line": null},
+    {"token": "nevebat", "note": "Final form in the example 'azoté al hablador' is transcribed as printed but its linguistic segmentation/function remains unresolved.", "line": null},
+    {"token": "inopirua", "note": "Form glossed 'yo miſmo' is provisionally transcribed; verify before structured grammatical extraction.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Light show-through is visible; lower examples remain readable.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-30;printed-page-16",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
