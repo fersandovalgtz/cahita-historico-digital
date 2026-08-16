@@ -14,117 +14,100 @@ Estado de cobertura de Cahíta Histórico Digital para la fuente `ALC1737`.
 | Líneas OCR/layout del vocabulario | **3,899** | pp. 133–177 |
 | Candidatos lexicográficos v0.2 | **2,072** | 2,072/2,072 estructuralmente válidos |
 | Precisión / recall / F1 v0.2 | **97.13% / 89.89% / 93.37%** | muestra diagnóstica |
-| Transcripciones diplomáticas `full_page` | **92 páginas** | preliminares textuales + Partes I–II + Parte III hasta p. 96 |
+| Transcripciones diplomáticas `full_page` | **102 páginas** | preliminares textuales + Partes I–III + inicio de Parte IV hasta p. 106 |
 | **Parte I** | **completa** | digitales 15–50 / impresas 1–36 |
-| **Parte II** | **completa hasta su cierre textual** | digitales 51–68 + segmento superior de digital 69 / impresa 55 |
-| Parte III | **en curso hasta digital 96 / impresa 82** | reglas 189–264 representadas; regla 264 continúa |
+| **Parte II** | **completa** | digitales 51–69 parcial / impresas 37–55 parcial |
+| **Parte III** | **completa en continuidad textual** | digital 69 parcial–105 parcial / impresa 55 parcial–91 parcial; reglas 189–291 |
+| Parte IV | **iniciada** | digital 105 parcial–106 / impresa 91 parcial–92; reglas 292–293 |
 | Reglas gramaticales estructuradas | **15** | lote inicial 46–60 |
 | Paradigmas gramaticales estructurados | **3** | presente de `Eria`; comparación temporal; comparación optativa |
-| Construcciones modales estructuradas | **9** | reglas 207–234; `vn supuesto` / `dos supuestos` |
-| Construcciones no finitas estructuradas | **5** | infinitivos y gerundios; reglas 237–256 |
-| Construcciones participiales estructuradas | **3** | reglas 257–264; `me`, `u`, `ye` |
+| Construcciones modales estructuradas | **9** | reglas 207–234 |
+| Construcciones no finitas estructuradas | **5** | reglas 237–256 |
+| Construcciones participiales estructuradas | **3** | reglas 257–265 |
+| Construcciones predicativas/modales estructuradas | **6** | reglas 266–284 |
+| Verbos irregulares estructurados | **6** | reglas 286–291 |
 | Observaciones de variación histórica | **13 entidades** | 10 en exportación JSONL + 3 modulares (`0011`–`0013`) |
 | Extractos diplomáticos del vocabulario | **1 página** | p. 134, piloto |
 | Entradas lexicográficas piloto | **12** | esquema válido; no producción |
 | Revisión humana independiente | **0** | no iniciada |
 
-## Segmentación refinada
+## Segmentación refinada: dos fronteras intra-página
 
-La frontera entre Parte II y Parte III **ocurre dentro de la página digital 69 / impresa 55**. La parte superior concluye la regla 188 bajo el encabezado de Parte II; debajo aparece `PARTE III` y comienzan las reglas 189–190.
+La fuente contiene al menos dos fronteras de partes que no coinciden con el salto de página digital:
 
-Por ello [`data/source/alc1737/sections.json`](data/source/alc1737/sections.json) representa una frontera intra-página y [`schemas/page-transcription.schema.json`](schemas/page-transcription.schema.json) admite páginas `mixed` mediante `sectionSegments`.
+1. **digital 69 / impresa 55**: la parte superior concluye Parte II con la regla 188; debajo comienza `PARTE III`.
+2. **digital 105 / impresa 91**: la parte superior conserva `CAHITA. PARTE III.`, concluye las reglas 290–291; debajo aparece `IV. ULT. PARTE` y comienza la regla 292.
+
+[`data/source/alc1737/sections.json`](data/source/alc1737/sections.json) representa ambas fronteras y [`schemas/page-transcription.schema.json`](schemas/page-transcription.schema.json) admite páginas `mixed` mediante `sectionSegments`.
 
 | Sección | Páginas digitales | Páginas impresas |
 |---|---:|---:|
 | Preliminares | 1–14 | no paginadas |
 | Parte I | 15–50 | 1–36 |
 | Parte II | 51–69 parcial | 37–55 parcial |
-| Parte III | 69 parcial–104 | 55 parcial–90 |
-| Parte IV | 105–132 | 91–118 |
+| Parte III | 69 parcial–105 parcial | 55 parcial–91 parcial |
+| Parte IV | 105 parcial–132 | 91 parcial–118 |
 | Vocabulario | 133–177 | no paginado |
 | Numerales | 178–180 | no paginados |
 | Finales materiales | 181–182 | no paginados |
 
 ## Transcripción
 
-La Fase 2 utiliza una unidad JSON por página. El manifiesto maestro [`data/transcription/status.csv`](data/transcription/status.csv) está consolidado hasta la página digital **91 / impresa 77**; el lote vigente adicional [`data/transcription/batches/part_iii_p092_p096.csv`](data/transcription/batches/part_iii_p092_p096.csv) añade las páginas 92–96 y constituye el delta que deberá incorporarse en la próxima consolidación del manifiesto.
+La Fase 2 utiliza una unidad JSON por página. El manifiesto maestro [`data/transcription/status.csv`](data/transcription/status.csv) sigue consolidado hasta digital 91 / impresa 77; los avances posteriores están versionados como lotes delta y deberán incorporarse en una consolidación reproducible del manifiesto, sin perder el historial de lotes.
 
-La **Parte I** está completamente representada. La **Parte II** también está completa en su continuidad textual, incluyendo su cierre en el segmento superior de p. 69. La **Parte III** avanza desde el segmento inferior de p. 69 hasta p. 96 y cubre las reglas 189–264; la regla 264 queda abierta hacia p. 97.
+Lotes posteriores a la última consolidación del manifiesto:
 
-Lotes recientes:
-
-- [`data/transcription/batches/part_ii_p056_p069.csv`](data/transcription/batches/part_ii_p056_p069.csv)
-- [`data/transcription/batches/part_iii_p069_p071.csv`](data/transcription/batches/part_iii_p069_p071.csv)
-- [`data/transcription/batches/part_iii_p072_p076.csv`](data/transcription/batches/part_iii_p072_p076.csv)
-- [`data/transcription/batches/part_iii_p077_p086.csv`](data/transcription/batches/part_iii_p077_p086.csv)
-- [`data/transcription/batches/part_iii_p087_p091.csv`](data/transcription/batches/part_iii_p087_p091.csv)
 - [`data/transcription/batches/part_iii_p092_p096.csv`](data/transcription/batches/part_iii_p092_p096.csv)
+- [`data/transcription/batches/part_iii_p097_p101.csv`](data/transcription/batches/part_iii_p097_p101.csv)
+- [`data/transcription/batches/part_iii_iv_p102_p106.csv`](data/transcription/batches/part_iii_iv_p102_p106.csv)
+
+Con estos lotes, la **Parte III queda completamente representada en continuidad textual** hasta su cierre en la porción superior de p. 105. La Parte IV comienza en la misma página y ya se encuentra transcrita hasta p. 106.
 
 `full_page` significa que la superficie textual impresa de la página está representada editorialmente. Puede contener secuencias `[ileg.]`, lecturas provisionales o incertidumbres tipadas; **no equivale a `human_verified`**.
 
-## Parte II: resultados acumulados
+## Parte III: capas derivadas consolidadas
 
-La Parte II ha aportado, entre otros objetos:
+### Modalidad — reglas 207–234
 
-- regla 128: contraste `Tehuecos` frente a `Hiaqui, y Mayo` en la formación del oblicuo (`tuſta/maſta` frente a `tuhta/mahta`);
-- p. 53 / impresa 39: `paros la liebre`, atribuida a `los Mayos, y el Hiaqui ſuaue`;
-- p. 58 / impresa 44: `Los Hiaquis dicen nepo en lugar del inopo`, conservado como observación pronominal `ALC1737-var-0011`;
-- duplicación histórica del número de regla `129`, preservada sin corrección silenciosa.
-
-## Parte III: paradigmas, modalidad y variación
-
-Las pp. 70–71 contienen un núcleo comparativo explícito:
-
-- pretérito imperfecto: `Tehuecos = e`, `Hiaquis = n`, `Mayos = i`;
-- perfecto: `c` para todos;
-- pluscuamperfecto: `Tehuecos = cat`, `Hiaquis = can`, `Mayos = cai`;
-- futuro imperfecto: `naque` para todos.
-
-El modelo de paradigmas está formalizado en [`schemas/grammatical-paradigm.schema.json`](schemas/grammatical-paradigm.schema.json). Los dos primeros objetos están en [`data/grammar/paradigms_part_iii_p070_p071.jsonl`](data/grammar/paradigms_part_iii_p070_p071.jsonl).
-
-Las pp. 73–74 añaden un segundo contraste histórico: la regla 198 distribuye `hau` para `los Tehuecos` y `amatuc` para `las demás Naciones`; la regla 200 afirma que los Tehuecos usan el optativo en `na` solamente en primera persona y sin semipronombre, mientras las demás Naciones lo usan para todas las personas con semipronombres. Estas evidencias están en `ALC1737-var-0012`, `ALC1737-var-0013` y `ALC1737-par-0003`.
-
-### Sistema de tiempos modales
-
-Las pp. 77–86 / impresas 63–72 contienen un bloque coherente de reglas 207–234. CHD creó un modelo específico en [`schemas/modal-construction.schema.json`](schemas/modal-construction.schema.json) y una primera exportación de **9 construcciones históricas** en [`data/grammar/modal_constructions_part_iii_p077_p086.jsonl`](data/grammar/modal_constructions_part_iii_p077_p086.jsonl).
-
-El dataset preserva la oposición interna del impreso entre `vn supuesto` y `dos supuestos` y organiza, sin modernizarlas, las series asociadas a `ſi`, `antes`, `como`, `quando`, `aunque`, `deſpues`, `porque`, `para / paraque` y `como ſi`. Entre los marcadores documentados aparecen `teca`, `cari`, `cacari`, `yo`, `co`, `caco`, `ituca`, `varecari`, `rocacari`, `poea`, `iyaacari`, `teeiacari`, `ten`, `tzaua` y `ven / veni`.
+[`data/grammar/modal_constructions_part_iii_p077_p086.jsonl`](data/grammar/modal_constructions_part_iii_p077_p086.jsonl) contiene **9 construcciones** que preservan la oposición histórica entre `vn supuesto` y `dos supuestos` y las series asociadas a `ſi`, `antes`, `como`, `quando`, `aunque`, `deſpues`, `porque`, `para / paraque` y `como ſi`.
 
 → [`docs/MODAL_CONSTRUCTIONS.md`](docs/MODAL_CONSTRUCTIONS.md)
 
-### Infinitivos y gerundios
+### Infinitivos y gerundios — reglas 237–256
 
-Las pp. digitales 87–93 / impresas 73–79 cierran los tiempos modales y desarrollan el sistema de construcciones no finitas. CHD formalizó [`schemas/nonfinite-construction.schema.json`](schemas/nonfinite-construction.schema.json) y mantiene **5 objetos** en [`data/grammar/nonfinite_constructions_part_iii_p087_p093.jsonl`](data/grammar/nonfinite_constructions_part_iii_p087_p093.jsonl).
+[`data/grammar/nonfinite_constructions_part_iii_p087_p093.jsonl`](data/grammar/nonfinite_constructions_part_iii_p087_p093.jsonl) contiene **5 objetos**: primer y segundo modo de infinitivo, gerundios en `DI`, `DO` y `DVM`.
 
-Los objetos distinguen:
-
-- primer modo de infinitivo, reglas 237–241;
-- segundo modo de infinitivo, regla 242;
-- gerundios en `DI`, reglas 243–245;
-- gerundio en `DO`, reglas 246–249;
-- gerundio en `DVM`, reglas 250–256.
-
-La lectura visual de la página 89 apoya **242** para `SEGUNDO MODO DE INFINITIVO`, aunque el OCR de esa página produjo 241. CHD conserva explícitamente este desacuerdo entre capas en vez de corregirlo sin registro.
+La discrepancia OCR/facsímil de la regla **242** permanece documentada: el OCR leyó 241; el cotejo visual apoya 242.
 
 → [`docs/NONFINITE_CONSTRUCTIONS.md`](docs/NONFINITE_CONSTRUCTIONS.md)
 
-### Participios
+### Participios — reglas 257–265
 
-Las pp. digitales 94–96 / impresas 80–82 abren `§ II. DE LOS PARTICIPIOS EN COMUN` y desarrollan tres núcleos: participios comunes en `me`, participios en `u` y nombres verbales/participios en `ye`. CHD creó [`schemas/participle-construction.schema.json`](schemas/participle-construction.schema.json) y **3 objetos iniciales** en [`data/grammar/participles_part_iii_p094_p096.jsonl`](data/grammar/participles_part_iii_p094_p096.jsonl).
-
-La fuente atribuye a los participios en `u` valores discursivos de acción o estado ya terminado, pérdida o cese, lamentación y ausencia prolongada; CHD registra esas formulaciones como análisis histórico del gramático y no como etiquetas aspectuales modernas asumidas. La regla 264 inicia además una derivación instrumental de los participios en `ye` mediante `aye / ayeye` y continúa en p. 97.
+[`data/grammar/participles_part_iii_p094_p097.jsonl`](data/grammar/participles_part_iii_p094_p097.jsonl) contiene **3 objetos** para participios en `me`, `u` y `ye`. Las reglas 264–265 documentan además extensiones que el gramático trata como instrumentales (`aye / ayeye`) y locativas (`aet`).
 
 → [`docs/PARTICIPLES.md`](docs/PARTICIPLES.md)
 
+### Predicación y poder — reglas 266–284
+
+[`data/grammar/predicative_modal_part_iii_p097_p103.jsonl`](data/grammar/predicative_modal_part_iii_p097_p103.jsonl) contiene **6 objetos**: `avia de / avia de aver`; `Sum, es, fui` con `tuc / iec`; poder `phyſicè` con `araue/ara`; no poder `moralitèr` con `machi`; no poder `voluntariè` con `poeta`; y querer/no querer con `vare / ca vare`.
+
+La página 102 presenta otra incidencia entre capas: el OCR repite **281**, mientras el facsímil apoya **282** para la regla sobre verbales en `bilis`. CHD conserva el desacuerdo explícitamente.
+
+→ [`docs/PREDICATIVE_MODAL_CONSTRUCTIONS.md`](docs/PREDICATIVE_MODAL_CONSTRUCTIONS.md)
+
+### Verbos irregulares y cierre de Parte III — reglas 285–291
+
+[`data/grammar/irregular_verbs_part_iii_p103_p105.jsonl`](data/grammar/irregular_verbs_part_iii_p103_p105.jsonl) contiene **6 grupos verbales** estructurados. La regla 290 cruza de p. 104 a p. 105; la regla 291 se completa antes de la aparición de `IV. ULT. PARTE` en la misma página.
+
+→ [`docs/IRREGULAR_VERBS.md`](docs/IRREGULAR_VERBS.md)
+
+## Inicio de Parte IV
+
+La regla 292 formula una generalización histórica sobre las preposiciones y su colocación. La regla 293 abre el tratamiento de `ui` y enumera múltiples significaciones con ejemplos; la explicación continúa después de p. 106. Todavía no se ha promovido este material a un dataset estable de preposiciones, porque conviene observar primero varias entradas para fijar una microestructura adecuada.
+
 ## Variación histórica: estado de exportación
 
-La exportación combinada [`data/linguistic/variety_observations.jsonl`](data/linguistic/variety_observations.jsonl) contiene todavía las **10 entidades** iniciales. Las nuevas observaciones modulares se encuentran en:
-
-- `data/linguistic/variety_observations/ALC1737_var_0011.json`
-- `data/linguistic/variety_observations/ALC1737_var_0012.json`
-- `data/linguistic/variety_observations/ALC1737_var_0013.json`
-
-La exportación combinada deberá regenerarse de manera reproducible, sin copiar manualmente datos que ya tienen una fuente modular autoritativa.
+La exportación combinada [`data/linguistic/variety_observations.jsonl`](data/linguistic/variety_observations.jsonl) contiene todavía las **10 entidades** iniciales. Las nuevas observaciones modulares `0011`–`0013` permanecen pendientes de una regeneración reproducible de la exportación combinada.
 
 ## Corpus lexicográfico
 
