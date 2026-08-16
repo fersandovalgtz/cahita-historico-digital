@@ -1,0 +1,27 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 25,
+  "sourcePagePrinted": 11,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE I.\n\nque: vata acarrear agua vatnaque: eſtos para formar el inſtrumental en ia, reciben z, deſpues de la t, v. g. Etzia llave: vatzia tinaja: todos eſtos ſe declinan por la primera declinacion.\n\nEn ME.\n\n43. Tambien ſe hazen los inſtrumentales por el participio paſſivo de preſente, y el ablativo ayeye, en eſta forma, v. g. jarro, id eſt, con lo que ſe bebe: ayeye htuame: pluma, id eſt, con lo que ſe eſcrive: ayeyehiohtiuame. Con eſte modo ſe explican tambien las enfermedades, v. g. dolores de cabeza mortales: cobahuittauaca, ayeyecouame. Tambien eſtos inſtrumentales ſe dicen ſin el ablativo ayeye, v. g. Fides qua Deus creditur, Dioſta ſaluame: muerte cauſada de hinchazon: puhtiuaca cocouame. Quando ſe ponen à eſtos inſtrumentales los pronombres poſſeſſivos, no ſe dicen por el participio paſſivo en ueme; ſino por los verbales en ye, vt infra, v. g. Dios os embia tribulaciones, id eſt, os embia con que ſeais atribulados: Dios emo[r?] noqui chupa ſime, em ayeye hiocotenaqueye.\n\nVerbales en YE.\n\n44. Eſtos ſon los participios en ye, que ſe explicaron en ſu lugar, mas buelveſe à tratar ſu formacion como propria de aqui, ſic: añadiendo al verbo en qualquier tiempo de activa, y paſſiva eſta particula ye, ſe forma vn nombre, el qual ſi el verbo es activo, ſignifica la accion, ò el termino de ella, v. g. Eriaye amatio, vel amatus; mas con verbos neutros ſolo ſignifica la accion, v. g. Cotzeye dormitio: ſiempre ſe les antepone à eſtos verbales en ye, el poſſeſſivo, v. g. in eriaye, in cotzeye.\n\n45. La regla, pues, para conocer ſus ſignificados es, que quando à eſtos en ye, que ſalen de verbos activos ſe les antepone el poſſeſſivo, ſignifican el ſujeto, ò termino en que ſe executa la accion, v. g. Diſcipulo de Chriſto: Ieſu Chriſtota noctehoaye: tu amado emeriaye: pero quando ſe quiere ſignificar la accion ſolamente, ſe pone al verbal en ye, el\n\ncaſo\n",
+  "lineBreakPolicy": "Headings, numbered rules and the catchword are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained; unresolved readings are marked explicitly.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "z", "note": "Character named in rule 42/continuation before the instrumental examples has a historical z-like shape; encoded provisionally as z.", "line": null},
+    {"token": "Dios emo[r?] noqui chupa ſime, em ayeye hiocotenaqueye", "note": "Cahíta example in rule 43 is only partially secure and requires a second high-resolution collation.", "line": null},
+    {"token": "noctehoaye", "note": "Form in the example 'Diſcipulo de Chriſto' is provisional.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Moderate show-through is present; the page is otherwise comparatively legible.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-25;printed-page-11",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
