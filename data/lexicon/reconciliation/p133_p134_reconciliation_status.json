@@ -1,0 +1,49 @@
+{
+  "batchScope": "ALC1737 digital pages 133-134",
+  "candidateMethod": "hybrid_margin_mode_v0.2",
+  "canonicalInventoryManifest": "data/lexicon/candidates/candidate_inventory_manifest.json",
+  "canonicalCandidatesOnPages": 61,
+  "reconciledCandidates": 61,
+  "candidateReconciliationComplete": true,
+  "candidateClassifications": {
+    "article": 57,
+    "continuation": 3,
+    "unresolved": 1,
+    "paratext": 0,
+    "false_positive": 0
+  },
+  "boundaryAssessments": {
+    "exact": 52,
+    "merged_articles": 5,
+    "oversegmented": 2,
+    "undersegmented": 1,
+    "ambiguous": 1,
+    "not_applicable": 0
+  },
+  "articleLinkState": {
+    "articleCandidatesWithExistingLinks": 21,
+    "uniqueExistingHistoricalArticlesLinked": 28,
+    "articleCandidatesPendingPromotion": 36
+  },
+  "unresolvedCandidateIds": ["ALC1737-vcand-p133-L-002"],
+  "reviewFiles": [
+    "data/lexicon/reconciliation/p133_p134_batch01.jsonl",
+    "data/lexicon/reconciliation/p133_batch02_pending_articles.jsonl",
+    "data/lexicon/reconciliation/p134_batch02a_pending_articles.jsonl",
+    "data/lexicon/reconciliation/p134_batch02b_pending_articles.jsonl"
+  ],
+  "observedMissedVisibleStarts": {
+    "count": 14,
+    "path": "data/lexicon/reconciliation/missed_visible_starts_p133_p134.jsonl",
+    "status": "observed_set_not_claimed_exhaustive"
+  },
+  "interpretation": "All 61 canonical candidates on digital pages 133-134 now have an editorial reconciliation record. This completes candidate-level coverage for the two pages, not visible-article-start coverage: the extractor has false negatives, and 36 boundaries confirmed as articles still await promotion to full historical-article objects.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "nextActions": [
+    "Promote the 36 pending article boundaries to historical lexical articles using facsimile-based transcription and explicit uncertainty.",
+    "Continue auditing missed visible starts; do not treat the current set of 14 as exhaustive until a page-level start inventory is closed.",
+    "Resolve or retain ALC1737-vcand-p133-L-002 as unresolved after dedicated collation.",
+    "Proceed to candidate reconciliation for the next page batch only after page-level QA metrics for pp.133-134 are summarized."
+  ]
+}
