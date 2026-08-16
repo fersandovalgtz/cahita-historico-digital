@@ -1,0 +1,86 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 137,
+  "candidateMethod": "hybrid_margin_mode_v0.2",
+  "canonicalCandidates": 39,
+  "candidateColumns": {
+    "left": 22,
+    "right": 17
+  },
+  "candidateReconciliationComplete": true,
+  "candidateClassifications": {
+    "article": 36,
+    "continuation": 3,
+    "unresolved": 0,
+    "paratext": 0,
+    "false_positive": 0
+  },
+  "boundaryAssessments": {
+    "exact": 33,
+    "merged_articles": 3,
+    "oversegmented": 3,
+    "undersegmented": 0,
+    "ambiguous": 0,
+    "not_applicable": 0
+  },
+  "articleLinkState": {
+    "articleCandidatesLinked": 36,
+    "articleCandidatesPendingPromotion": 0,
+    "visibleFalseNegativesLinked": 6,
+    "newHistoricalArticlesPromoted": 27,
+    "newPromotionIdRange": "ALC1737-art-000845--ALC1737-art-000871"
+  },
+  "visibleStartCensus": {
+    "status": "closed_machine_corrected_unverified",
+    "visibleHistoricalArticleStarts": 42,
+    "truePositiveCandidateStarts": 36,
+    "falsePositiveCandidateStarts": 3,
+    "missedVisibleStarts": 6,
+    "precision": 0.923077,
+    "recall": 0.857143,
+    "f1": 0.888889,
+    "missedStartsLinkedToHistoricalArticles": 6,
+    "missedStartsStillRequiringPromotionOrCorrection": 0
+  },
+  "pageOpening": {
+    "textRaw": "ca, l, chunti iauetua.",
+    "role": "continuation_from_previous_page",
+    "linkedArticleId": "ALC1737-art-000844",
+    "note": "The first visible line of p.137 closes the article `Afligirſe, ò apurarſe` begun on p.136 and is not counted as a new historical article start."
+  },
+  "facsimileCorrections": [
+    {
+      "articleId": "ALC1737-art-000729",
+      "previous": "Vaaſuſume",
+      "revised": "Baaſuſume",
+      "provenance": "data/lexicon/provenance/p137_art000729_correction.json"
+    },
+    {
+      "articleId": "ALC1737-art-000731",
+      "previous": "Aguacero",
+      "revised": "Aguazero",
+      "provenance": "data/lexicon/provenance/p137_art000731_correction.json"
+    }
+  ],
+  "unresolvedMicrostructure": [
+    "ALC1737-art-000856",
+    "ALC1737-art-000867",
+    "ALC1737-art-000868",
+    "ALC1737-art-000869"
+  ],
+  "pageEnd": {
+    "textRaw": "buo-",
+    "role": "catchword",
+    "countedAsArticle": false
+  },
+  "interpretation": "Page 137 is closed at candidate, visible-start, promotion, and linkage levels in the AI-assisted layer. Three candidate boundaries are OCR/layout continuations rather than starts, and three article candidates absorb a second visible article. Six visible starts are therefore represented in the separate missed-start layer. All 36 article candidates and all six false negatives link historical-article objects; pending promotion is zero.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "nextActions": [
+    "Run CI over p.137 reconciliation, promotions, missed starts, corrections, and status metadata.",
+    "Synchronize coverage/progress/Issue #3 to 871 historical articles.",
+    "Proceed to digital p.138 using the same closed-cycle protocol.",
+    "Retain unresolved microstructure until primary evidence or identifiable human collation supports a stronger reading."
+  ],
+  "recordedAt": "2026-08-16"
+}
