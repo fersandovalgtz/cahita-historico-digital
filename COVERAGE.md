@@ -14,12 +14,13 @@ Estado de cobertura de Cahíta Histórico Digital para la fuente `ALC1737`.
 | Líneas OCR/layout del vocabulario | **3,899** | pp. 133–177 |
 | Candidatos lexicográficos v0.2 | **2,072** | 2,072/2,072 estructuralmente válidos |
 | Precisión / recall / F1 v0.2 | **97.13% / 89.89% / 93.37%** | muestra diagnóstica |
-| Transcripciones diplomáticas `full_page` | **72 páginas** | preliminares textuales + Partes I–II + Parte III hasta p. 76 |
+| Transcripciones diplomáticas `full_page` | **82 páginas** | preliminares textuales + Partes I–II + Parte III hasta p. 86 |
 | **Parte I** | **completa** | digitales 15–50 / impresas 1–36 |
 | **Parte II** | **completa hasta su cierre textual** | digitales 51–68 + segmento superior de digital 69 / impresa 55 |
-| Parte III | **en curso hasta digital 76 / impresa 62** | segmento inferior de p. 69 + pp. 70–76 |
+| Parte III | **en curso hasta digital 86 / impresa 72** | reglas 189–234 representadas; frontera inicial intra-página |
 | Reglas gramaticales estructuradas | **15** | lote inicial 46–60 |
 | Paradigmas gramaticales estructurados | **3** | presente de `Eria`; comparación temporal; comparación optativa |
+| Construcciones modales estructuradas | **9** | reglas 207–234; `vn supuesto` / `dos supuestos` |
 | Observaciones de variación histórica | **13 entidades** | 10 en exportación JSONL + 3 modulares (`0011`–`0013`) |
 | Extractos diplomáticos del vocabulario | **1 página** | p. 134, piloto |
 | Entradas lexicográficas piloto | **12** | esquema válido; no producción |
@@ -44,15 +45,16 @@ Por ello [`data/source/alc1737/sections.json`](data/source/alc1737/sections.json
 
 ## Transcripción
 
-La Fase 2 utiliza una unidad JSON por página y el manifiesto maestro [`data/transcription/status.csv`](data/transcription/status.csv), actualizado ahora hasta la página digital **76 / impresa 62**.
+La Fase 2 utiliza una unidad JSON por página y el manifiesto maestro [`data/transcription/status.csv`](data/transcription/status.csv), actualizado ahora hasta la página digital **86 / impresa 72**.
 
-La **Parte I** está completamente representada. La **Parte II** también está completa en su continuidad textual, incluyendo su cierre en el segmento superior de p. 69. La **Parte III** avanza desde el segmento inferior de p. 69 hasta p. 76.
+La **Parte I** está completamente representada. La **Parte II** también está completa en su continuidad textual, incluyendo su cierre en el segmento superior de p. 69. La **Parte III** avanza desde el segmento inferior de p. 69 hasta p. 86 y cubre, en esta capa de trabajo, las reglas 189–234.
 
 Lotes recientes:
 
 - [`data/transcription/batches/part_ii_p056_p069.csv`](data/transcription/batches/part_ii_p056_p069.csv)
 - [`data/transcription/batches/part_iii_p069_p071.csv`](data/transcription/batches/part_iii_p069_p071.csv)
 - [`data/transcription/batches/part_iii_p072_p076.csv`](data/transcription/batches/part_iii_p072_p076.csv)
+- [`data/transcription/batches/part_iii_p077_p086.csv`](data/transcription/batches/part_iii_p077_p086.csv)
 
 `full_page` significa que la superficie textual impresa de la página está representada editorialmente. Puede contener secuencias `[ileg.]`, celdas pendientes o incertidumbres tipadas; **no equivale a `human_verified`**.
 
@@ -65,7 +67,7 @@ La Parte II ha aportado, entre otros objetos:
 - p. 58 / impresa 44: `Los Hiaquis dicen nepo en lugar del inopo`, conservado como observación pronominal `ALC1737-var-0011`;
 - duplicación histórica del número de regla `129`, preservada sin corrección silenciosa.
 
-## Parte III: paradigmas y variación
+## Parte III: paradigmas, modalidad y variación
 
 Las pp. 70–71 contienen un núcleo comparativo explícito:
 
@@ -76,9 +78,15 @@ Las pp. 70–71 contienen un núcleo comparativo explícito:
 
 El modelo de paradigmas está formalizado en [`schemas/grammatical-paradigm.schema.json`](schemas/grammatical-paradigm.schema.json). Los dos primeros objetos están en [`data/grammar/paradigms_part_iii_p070_p071.jsonl`](data/grammar/paradigms_part_iii_p070_p071.jsonl).
 
-Las pp. 73–74 añaden un segundo contraste histórico de alto valor. La regla 198 distribuye las notas optativas `hau` para `los Tehuecos` y `amatuc` para `las demás Naciones`; la regla 200 afirma que los Tehuecos usan el optativo en `na` solamente en primera persona y sin semipronombre, mientras las demás Naciones lo usan para todas las personas con semipronombres.
+Las pp. 73–74 añaden un segundo contraste histórico: la regla 198 distribuye `hau` para `los Tehuecos` y `amatuc` para `las demás Naciones`; la regla 200 afirma que los Tehuecos usan el optativo en `na` solamente en primera persona y sin semipronombre, mientras las demás Naciones lo usan para todas las personas con semipronombres. Estas evidencias están en `ALC1737-var-0012`, `ALC1737-var-0013` y `ALC1737-par-0003`.
 
-Estas dos observaciones se conservan como `ALC1737-var-0012` y `ALC1737-var-0013`, y se integraron además en el paradigma comparativo [`data/grammar/paradigms_part_iii_p073_p074.jsonl`](data/grammar/paradigms_part_iii_p073_p074.jsonl) como `ALC1737-par-0003`.
+### Sistema de tiempos modales
+
+Las pp. 77–86 / impresas 63–72 contienen un bloque coherente de reglas 207–234. CHD creó un modelo específico en [`schemas/modal-construction.schema.json`](schemas/modal-construction.schema.json) y una primera exportación de **9 construcciones históricas** en [`data/grammar/modal_constructions_part_iii_p077_p086.jsonl`](data/grammar/modal_constructions_part_iii_p077_p086.jsonl).
+
+El dataset preserva la oposición interna del impreso entre `vn supuesto` y `dos supuestos` y organiza, sin modernizarlas, las series asociadas a `ſi`, `antes`, `como`, `quando`, `aunque`, `deſpues`, `porque`, `para / paraque` y `como ſi`. Entre los marcadores documentados aparecen `teca`, `cari`, `cacari`, `yo`, `co`, `caco`, `ituca`, `varecari`, `rocacari`, `poea`, `iyaacari`, `teeiacari`, `ten`, `tzaua` y `ven / veni`.
+
+→ [`docs/MODAL_CONSTRUCTIONS.md`](docs/MODAL_CONSTRUCTIONS.md)
 
 ## Variación histórica: estado de exportación
 
@@ -88,7 +96,7 @@ La exportación combinada [`data/linguistic/variety_observations.jsonl`](data/li
 - `data/linguistic/variety_observations/ALC1737_var_0012.json`
 - `data/linguistic/variety_observations/ALC1737_var_0013.json`
 
-La exportación combinada deberá regenerarse de manera reproducible en el siguiente ciclo de exportación, sin copiar manualmente datos que ya tienen una fuente modular autoritativa.
+La exportación combinada deberá regenerarse de manera reproducible, sin copiar manualmente datos que ya tienen una fuente modular autoritativa.
 
 ## Corpus lexicográfico
 
