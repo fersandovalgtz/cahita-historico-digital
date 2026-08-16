@@ -4,7 +4,7 @@
 
 El Vocabulario de `ALC1737` ocupa las páginas digitales 133–177. El extractor `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera sobre 45 páginas, pero los candidatos no se cuentan como artículos históricos publicados.
 
-La secuencia curatorial principal contiene ahora **343 artículos históricos estructurados**: piloto p.134 + avance continuo pp.138–155. Todos permanecen `machine_corrected_unverified` o `unresolved`; **ninguno** ha sido declarado `human_verified`.
+La secuencia curatorial principal contiene ahora **388 artículos históricos estructurados**: piloto p.134 + avance continuo pp.138–158 dentro del material efectivamente conservado. Todos permanecen `machine_corrected_unverified` o `unresolved`; **ninguno** ha sido declarado `human_verified`.
 
 ## Lotes estructurados
 
@@ -30,7 +30,10 @@ La secuencia curatorial principal contiene ahora **343 artículos históricos es
 | `p153_selected_articles.jsonl` | 153 | 15 |
 | `p154_selected_articles.jsonl` | 154 | 15 |
 | `p155_selected_articles.jsonl` | 155 | 15 |
-| **Total principal** | — | **343** |
+| `p156_selected_articles.jsonl` | 156 | 15 |
+| `p157_selected_articles.jsonl` | 157 | 15 |
+| `p158_selected_articles.jsonl` | 158 | 15 |
+| **Total principal** | — | **388** |
 
 Existen además **4 artículos de remisión piloto** en p.165, mantenidos fuera del conteo principal mientras no se consolide el tramo intermedio.
 
@@ -40,22 +43,7 @@ Una estructura válida no equivale a una lectura filológicamente cerrada. `mach
 
 ## Remisiones internas `Buſca`
 
-Las remisiones se modelan como relaciones documentales, no como sustitución del artículo remitente por el contenido de su destino. Entre los casos ya estructurados se encuentran:
-
-- `Apercibirſe para hazer algo → aparejarſe`;
-- `Barbo → Bagre`;
-- `Barrenar → agurear con barrena`;
-- `Baſta, coſa ſin pulir → aſpero`;
-- `Borracho → beodo`;
-- `Caro venderſe → cara coſa`;
-- `Carrizo → caña hueca`;
-- `Compaſſion → compadecerſe`;
-- `Comulgar → comunion`;
-- `Cueva → caverna`;
-- `Culpar à otro → acuſar`;
-- `Dilatar → diferir`;
-- `Embolver → doblar`;
-- `Empacharſe → hartarſe`.
+Las remisiones se modelan como relaciones documentales, no como sustitución del artículo remitente por el contenido de su destino. Entre los casos ya estructurados se encuentran `Apercibirſe → aparejarſe`, `Barbo → Bagre`, `Borracho → beodo`, `Compaſſion → compadecerſe`, `Cueva → caverna`, `Dilatar → diferir`, `Embolver → doblar`, `Empacharſe → hartarſe`, `Eſcoger → entreſacar`, `Eſperar → confiar`, `Fee, ò creencia → creer`, `Henchimiento → llenar` y `Holgarſe → gozarſe`.
 
 ### Primer ciclo recíproco
 
@@ -63,40 +51,39 @@ Las pp.153–154 revelan el primer ciclo explícito de remisión del corpus:
 
 `Demonio. Buſca diablo.` ↔ `Diablo. Buſca demonio.`
 
-Se preserva como una propiedad documental en `data/lexicon/relations/reciprocal_cross_references.jsonl`. CHD no infiere cuál de las dos voces debe ser el destino canónico.
+Se preserva en `data/lexicon/relations/reciprocal_cross_references.jsonl`. CHD no infiere cuál de las dos voces debe ser el destino canónico.
 
 ## Anáforas `Lo miſmo`
 
-`Lo miſmo` se mantiene separado de `Buſca`. Los casos `Azero`, `Bronce`, `Cobrar lo que ſe debe` y `Cobre metal` permanecen `unresolved` mientras no se resuelva documentalmente su antecedente. No se copia de forma automática la equivalencia anterior.
+`Lo miſmo` se mantiene separado de `Buſca`. Los casos `Azero`, `Bronce`, `Cobrar lo que ſe debe` y `Cobre metal` permanecen `unresolved` mientras no se resuelva documentalmente su antecedente.
 
-## Agrupaciones históricas y artículos descriptivos
+## Agrupaciones, spans y microestructura
 
-`sourceGroupingRaw` conserva encabezados como `Arboles, cuyo fruto es comeſtible`, `Arboles que ſirven para madera`, `Arboles chaparros` y `Arboles de mariſmas`. Las afirmaciones históricas de usos medicinales o materiales se documentan como contenido de 1737 y no se convierten en recomendaciones modernas.
-
-## Continuidades físicas
-
-`sourceSpans` representa artículos que ocupan más de un segmento material. Dos casos ya comprobados son:
-
-1. p.141 derecha → p.142 izquierda: `Arbol, cuya leche ſirve para vilma à las mugeres, que padecen de las caderas. Bapſam.`;
-2. p.149 izquierda → p.149 derecha: `Camarón. Cecobi, grande del Rio. Bacauri.`.
+`sourceGroupingRaw` conserva agrupaciones históricas; `sourceSpans` representa artículos que cruzan página o columna. Ya están comprobados el artículo botánico pp.141–142 y `Camarón. Cecobi, grande del Rio. Bacauri.` en p.149.
 
 ## Catchwords y control de falsas entradas
 
-Las pp.153–155 confirman que los reclamos tipográficos de pie de página deben excluirse del conteo de artículos. Se documentaron dos ejemplos en `data/lexicon/boundary_markers/catchwords_p153_p154.jsonl`:
+Los reclamos de pie de página se conservan como paratexto, no como artículos. `data/lexicon/boundary_markers/catchwords_p153_p154.jsonl` registra:
 
-- p.153: `Desbaſ-` anticipa `Desbaſtar madera` en p.154;
-- p.154: `Dar` anticipa la breve serie `Dar de comer / Dar de beber / Dar de veſtir` que abre p.155.
+- p.153: `Desbaſ-` → `Desbaſtar madera` en p.154;
+- p.154: `Dar` → serie `Dar de comer / Dar de beber / Dar de veſtir` en p.155.
 
-Estos marcadores son evidencia material para reconstruir continuidad, pero **no son artículos lexicográficos independientes**. Esta regla debe incorporarse al QA del extractor para evitar falsos positivos en los 2,072 candidatos.
+Esta regla debe incorporarse al QA del extractor para reducir falsos positivos.
+
+## Discontinuidad del testimonio entre F y H
+
+La p.157 termina la secuencia visible con `Flecha. Huihua.` y presenta al pie un reclamo `Fle...`. La digital 158, sin embargo, comienza directamente con `Hallarſe bien en vn lugar` y otras voces de H. El HTML guardado reproduce el mismo salto.
+
+CHD registra el punto como `ALC1737-gap-0001` en `data/source/alc1737/gaps.jsonl` y lo documenta en `docs/SOURCE_GAPS.md`. **No se reconstruye la sección faltante ni se afirma todavía cuántas páginas o folios se perdieron.** El tramo ausente parece incluir la continuación de F y al menos G, pero esa formulación permanece como interpretación editorial del salto observable.
 
 ## Consecuencia metodológica
 
-La unidad maestra continúa siendo el **artículo histórico**. El modelo operativo ya representa:
+La unidad maestra continúa siendo el **artículo histórico**:
 
-`página/columna → spans físicos → agrupación histórica opcional → artículo → formas/remisiones/anáforas/notas → autoridad editorial`.
+`página/columna → spans físicos → agrupación opcional → artículo → formas/remisiones/anáforas/notas → autoridad editorial`.
 
-Los catchwords se mantienen en una capa paratextual de frontera. La normalización, resolución de anáforas, equivalencias modernas y proyección TEI Lex-0 pertenecen a capas posteriores.
+Catchwords y lagunas del testimonio se mantienen en capas separadas de paratexto/procedencia. La normalización, resolución de anáforas, equivalencias modernas y proyección TEI Lex-0 pertenecen a capas posteriores.
 
 ## Siguiente lote
 
-Continuar desde **digital 156**, mantener el doble registro GitHub ↔ Notion y revisar especialmente nuevos reclamos, remisiones, anáforas y posibles continuidades entre columna/página.
+Continuar desde **digital 159**, sin ocultar la discontinuidad 157→158 y manteniendo el doble registro GitHub ↔ Notion.
