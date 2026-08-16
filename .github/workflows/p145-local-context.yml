@@ -1,0 +1,17 @@
+name: P145 Local Boundary Context
+
+on:
+  push:
+    branches:
+      - p145-ai-collation
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify inventory and inspect p146 opening
+        run: |
+          python scripts/reconstruct_candidate_inventory.py
+          echo '--- p146 first 8 candidates per column ---'
+          python scripts/export_candidate_page.py --page 146 | python -c 'import sys,json; rows=[json.loads(x) for x in sys.stdin if x.strip()]; [print(json.dumps(r,ensure_ascii=False,sort_keys=True)) for r in rows if r.get("candidateOrderInColumn",99)<=8]'
