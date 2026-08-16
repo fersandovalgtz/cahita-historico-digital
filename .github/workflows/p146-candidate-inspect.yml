@@ -14,3 +14,6 @@ jobs:
         run: python scripts/reconstruct_candidate_inventory.py
       - name: Export p146 candidates
         run: python scripts/export_candidate_page.py --page 146
+      - name: Inspect p147 opening
+        run: |
+          python scripts/export_candidate_page.py --page 147 | python -c 'import sys,json; rows=[json.loads(x) for x in sys.stdin if x.strip()]; [print(json.dumps(r,ensure_ascii=False,sort_keys=True)) for r in rows if r.get("candidateOrderInColumn",99)<=5]'
