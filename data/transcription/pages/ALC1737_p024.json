@@ -1,0 +1,26 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 24,
+  "sourcePagePrinted": 10,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ARTE DE LA LENGVA\n\nde vuque, vuqui el eſclavo: de hinenca, hinenqui el repartimiento, que aunque parece por ſu futuro avia de hazer hinenquii, mas eſtas dos ii, imbibuntur in vna. Los demàs verbales en i, vel ri, ſe remiten al vſo, y todos ſe declinan por la primera declinacion, v. g. noqui, genitivo nocta: hinenqui, genitivo hinencta.\n\nEn IRIA, RIA, vel IA.\n\n39. Tambien ſe forman ſubſtantivos de la miſma ſignificacion, que los paſſados, y de la miſma manera, poniendo en lugar del naque del futuro vna de eſtas tres particulas iria, ria, vel ia, v. g. Vale gozarſe, futuro valnaque, ſale eſte ſubſtantivo valiria el gozo: de ſuabuſa, ſuabuſaria el regocijo: de ſime irſe vno, ſimiria el auſente: de buite huirſe, buitiria el fugitivo: de tenne huirſe muchos, tenniria los fugitivos. La miſma dificultad padecen, que los paſſados para ſaberſe quales toman vnas particulas, y quales otras, haſta que la experiencia lo enſeñe.\n\n40. Con eſtas particulas ſe forman los nombres de enfermedades, v. g. tahiwetze tener calentura, tahiwetziria la calentura: vaahuita tener camaras, vaahuitiria las camaras: temte tener viruelas, temtiria las viruelas, declinanſe por la primera declinacion.\n\nInſtrumentales en IA.\n\n41. Los inſtrumentales ſubſtantivos ſe forman de verbos activos, añadiendo al verbo en lugar del naque eſta particula ia, obſervando, que los verbos, que tienen c, en el futuro antes del naque, convierten la c, en qu, v. g. Hipona golpear, hiponia el martillo: uique eſtirar, uiquia inſtrumento de tirar como ſoga: hibeha azotar, hibehia el azote: en todos eſtos verbos eſtà ia, en lugar del naque de futuro: hiponnaque, uicnaque, hibehnaque.\n\n42. Los acabados en ta, para formar el futuro pierden el a, y terminan en t, para recebir el naque, v. g. eta, etna-\n\nque:\n",
+  "lineBreakPolicy": "Headings, numbered rules and the page-end split are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "nocta", "note": "Genitive form following noqui is visually difficult and should be collated again before morphological analysis.", "line": null},
+    {"token": "tahiwetze", "note": "Form in the fever example is provisionally segmented from the facsimile; retain as documentary reading pending second review.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Show-through and light ink loss are visible, especially in the lower half of the leaf.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-24;printed-page-10",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
