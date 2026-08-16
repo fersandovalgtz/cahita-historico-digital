@@ -1,0 +1,98 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 146,
+  "stage": "preflight",
+  "candidateInventory": {
+    "method": "hybrid_margin_mode_v0.2",
+    "total": 47,
+    "left": 21,
+    "right": 26,
+    "canonicalInventoryTotal": 2072,
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p146_selected_articles.jsonl",
+    "articleCount": 25,
+    "articleIdRange": ["ALC1737-art-000184", "ALC1737-art-000208"],
+    "columnCounts": {
+      "left": 20,
+      "right": 5
+    },
+    "exhaustive": false,
+    "reviewStatus": "machine_corrected_unverified",
+    "humanVerified": false
+  },
+  "initialAlignment": [
+    {
+      "type": "missed_visible_start_before_first_candidate",
+      "column": "left",
+      "articleId": "ALC1737-art-000184",
+      "spanishGuideRaw": "Baho, q ſale de la boca",
+      "note": "The selected article precedes canonical candidate L-001; it is therefore a known top-edge false negative of the candidate extractor."
+    },
+    {"candidateId":"ALC1737-vcand-p146-L-001","linkedArticleIds":["ALC1737-art-000185"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p146-L-002","linkedArticleIds":["ALC1737-art-000186"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p146-L-003","linkedArticleIds":["ALC1737-art-000187"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p146-L-004","linkedArticleIds":["ALC1737-art-000188"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p146-L-005","linkedArticleIds":["ALC1737-art-000189"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p146-L-006","linkedArticleIds":["ALC1737-art-000190"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p146-L-007","linkedArticleIds":["ALC1737-art-000191"],"assessment":"probable_exact_anchor"},
+    {
+      "candidateId":"ALC1737-vcand-p146-L-008",
+      "linkedArticleIds":["ALC1737-art-000192","ALC1737-art-000193"],
+      "assessment":"probable_merged_articles",
+      "note":"The candidate begins with selected `Bañarſe` and its preserved OCR also contains the following selected start `Barata darſe la coſa`."
+    },
+    {"candidateId":"ALC1737-vcand-p146-R-001","linkedArticleIds":["ALC1737-art-000204"],"assessment":"probable_exact_anchor"},
+    {
+      "candidateId":"ALC1737-vcand-p146-R-002",
+      "linkedArticleIds":[],
+      "assessment":"probable_article_not_in_selected_layer",
+      "note":"The OCR-visible guide appears to be a distinct B-entry; no selected-layer object is assigned at preflight."
+    },
+    {"candidateId":"ALC1737-vcand-p146-R-003","linkedArticleIds":["ALC1737-art-000205"],"assessment":"probable_exact_anchor"},
+    {
+      "candidateId":"ALC1737-vcand-p146-R-004",
+      "linkedArticleIds":[],
+      "assessment":"probable_article_not_in_selected_layer"
+    },
+    {
+      "candidateId":"ALC1737-vcand-p146-R-005",
+      "linkedArticleIds":[],
+      "assessment":"probable_article_not_in_selected_layer"
+    },
+    {
+      "candidateId":"ALC1737-vcand-p146-R-006",
+      "linkedArticleIds":[],
+      "assessment":"probable_article_not_in_selected_layer"
+    },
+    {"candidateId":"ALC1737-vcand-p146-R-007","linkedArticleIds":["ALC1737-art-000206"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p146-R-008","linkedArticleIds":["ALC1737-art-000207"],"assessment":"probable_exact_anchor"}
+  ],
+  "unplacedSelectedAnchors": [
+    {
+      "articleId": "ALC1737-art-000208",
+      "spanishGuideRaw": "Bajo, adv.",
+      "note": "The selected article is not among the first eight right-column candidates inspected during the preceding boundary-context pass and must be aligned during full-page reconciliation."
+    }
+  ],
+  "pageEdgeAssessment": {
+    "previousPage": "No long p145→p146 continuation is asserted; p146 opens with fresh B entries in both columns.",
+    "topLeftFalseNegativeKnown": true,
+    "knownTopLeftFalseNegativeArticleId": "ALC1737-art-000184"
+  },
+  "policy": {
+    "independentHumanVerificationPlanned": false,
+    "humanVerified": false,
+    "operationalReviewStates": ["machine_corrected_unverified", "unresolved"],
+    "rule": "Do not convert OCR damage or uncertain glyph sequences into strengthened historical readings merely to close the page."
+  },
+  "pageStatus": {
+    "preflight": "complete",
+    "candidateReconciliation": "not_started_full_page",
+    "visibleStartCensus": "not_started_full_page",
+    "promotionLinkage": "partial_anchor_layer_only",
+    "technicalClosure": false
+  },
+  "nextAction": "Export and inspect all 47 canonical candidates, align the 25 selected anchors, classify every candidate, identify additional visible starts, and promote only entries whose guide/form evidence is sufficient under the machine-only policy."
+}
