@@ -1,0 +1,16 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":95,
+  "sourcePagePrinted":81,
+  "section":"part_iii",
+  "transcriptionType":"diplomatic",
+  "coverage":"full_page",
+  "scope":"printed_text",
+  "text":"[continuación de 258] ... nombre, y de eſte participio de pretérito vſan muchas vezes por el participio de preſente con eſte verbo, ó nombre venna, que ſignifica, á la manera de que, ó de quien, v. g. á manera de quien ama, ó como quien ama, eriacamta venna: á manera de quien es amado, ó como quien es amado, eriauacamta venna.\n\nParticipios en U.\n259. Tienen dos participios acabados en u, entrambos de pretérito en activa, y paſſiva: el vno, añadiendo la u al preſente, correſponde al pretérito imperfecto: el otro, añadiendo á la c del pretérito au, correſponde al pretérito pluſquam perfecto. Declínanſe por la primera declinación, y para recebir el ta del obliquo pierden la u del recto, v. g. Pret. imp. El que amaba. Aeria u. G. aeriata. Paſſiva. El que era amado. Eriauau. G. eriauata. Plur. Activa. N. aeriaum. Paſſiva. N. eriauam.\n\nPluſq. perf. Activa. El que avia amado. N. aeriacau. G. aeriacata. Paſſiva. El que avia ſido amado. N. eriauacau. G. eriauacata. Plural. Activa. N. aeriacaum. Paſſiva. N. eriauacaum.\n\n260. De eſtos participios en u ſe vſa para ſignificar averſe acabado, ó conſumido la acción, ó termino del verbo, v. g. aeriau, el que amaba, pero ya no ama: eriauau, el que era amado, y ya no: inuſecau ueric iya, mi hijo que era, y ya no es, por decir: mi hijo eſtá ya á la muerte. Item: para lamentarſe de vna deſgracia que les ha ſucedido, dicen: netucau! ay de mí, que fui, y ya no ſoy! También con eſtos participios ſignifican las auſencias largas de ſujetos que parece que ya no los han de bolver á veer: mecunacau! dirá vna muger de ſu marido auſente largo tiempo.\n\n261. Item: para ſignificar los ſentidos ya dichos de los participios en u, añaden al nombre ſi trae nota de poſſeſſion, ó de ſemipronombre poſſeſſivo eſta partícula cau, v. g. mi [continúa].",
+  "lineBreakPolicy":"Section headings, rule numbers and paradigm labels preserved; running line breaks normalized.",
+  "reviewStatus":"unresolved",
+  "humanVerified":false,
+  "uncertainties":[{"token":"Aeria u / aeriaum","note":"Spacing and exact paradigm typography require second collation."},{"token":"mecunacau","note":"Form is visually plausible but should be rechecked before production use."}],
+  "materialNotes":[{"type":"bleed_through","note":"Light-to-moderate show-through; main text readable.","transcription":null}],
+  "provenance":{"derivedFrom":"ALC1737:digital-page-95;printed-page-81","agent":"GPT-5.6 Sol visual collation","method":"Full-page transcription from facsimile with parsed text as secondary comparison; no independent human verification","processedAt":null}
+}
