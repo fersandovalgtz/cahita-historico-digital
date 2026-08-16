@@ -1,0 +1,42 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 13,
+  "recordType": "historical_errata_leaf",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "abbreviationsDeclaredBySource": {
+    "F": "folio",
+    "N": "numero",
+    "L": "linea, ò renglon",
+    "V": "verbo"
+  },
+  "generalErrata": [
+    {"locationRaw": "Prol:go.", "erratumRaw": "Hueras-", "correctionRaw": "Hueria.", "status": "machine_corrected_unverified"},
+    {"locationRaw": "F. 1. n. 2. l. ult.", "erratumRaw": "Suite, ſuitec-", "correctionRaw": "Siut, ſiutec;", "status": "machine_corrected_unverified"},
+    {"locationRaw": "F. 11. n. 43. l. 8.", "erratumRaw": "Saluame-", "correctionRaw": "[S?]alhuame.", "status": "unresolved"},
+    {"locationRaw": "F. 19. n. 68. l. 7.", "erratumRaw": "Us-", "correctionRaw": "Uiſi.", "status": "machine_corrected_unverified"},
+    {"locationRaw": "F. 27. n. 98. l. 5.", "erratumRaw": "lee", "correctionRaw": "ſe comiò la a.", "status": "machine_corrected_unverified", "note": "The source describes an omitted letter rather than printing a simple replacement pair."},
+    {"locationRaw": "F. 35. n. 118. l. 5.", "erratumRaw": "Necbo,-", "correctionRaw": "Necbi.", "status": "machine_corrected_unverified"},
+    {"locationRaw": "F. 37. n. 225. l. 11.", "erratumRaw": "N’vi-", "correctionRaw": "N’vi, Gen. Ninta[s?]", "status": "unresolved"},
+    {"locationRaw": "F. 89. n. 286. l. 5.", "erratumRaw": "Pebre-", "correctionRaw": "leſſe.", "status": "machine_corrected_unverified"},
+    {"locationRaw": "F. 90. n. 288 l. 3.", "erratumRaw": "Vacaine-", "correctionRaw": "Vocaine;", "status": "machine_corrected_unverified"}
+  ],
+  "vocabularyErrata": [
+    {"sourceLocatorRaw": "L. A. V.", "guideRaw": "amàr", "instructionRaw": "lee", "correctionRaw": "eria", "status": "machine_corrected_unverified"},
+    {"sourceLocatorRaw": "L. E. V.", "guideRaw": "eſtera", "instructionRaw": "lee", "correctionRaw": "hipeta- de palma- taco- de carrizo- baca- de tule tobare", "status": "machine_corrected_unverified"},
+    {"sourceLocatorRaw": "L. F. V.", "guideRaw": "fiar", "instructionRaw": "lee", "correctionRaw": "nahuiquiliatua", "status": "machine_corrected_unverified"},
+    {"sourceLocatorRaw": "L. G. V.", "guideRaw": "grande", "instructionRaw": "lee", "correctionRaw": "bueruboca", "status": "machine_corrected_unverified"},
+    {"sourceLocatorRaw": "L. H. V.", "guideRaw": "holgarſe", "instructionRaw": "lee", "correctionRaw": "baleme", "status": "machine_corrected_unverified"},
+    {"sourceLocatorRaw": "L. P. V.", "guideRaw": "pecado", "instructionRaw": "lee", "correctionRaw": "tatacoli", "status": "machine_corrected_unverified"},
+    {"sourceLocatorRaw": "Ibid.", "guideRaw": "pecador", "instructionRaw": null, "correctionRaw": "tatacolihoane", "status": "machine_corrected_unverified"},
+    {"sourceLocatorRaw": "Ibid.", "guideRaw": "pecar", "instructionRaw": null, "correctionRaw": "caturiſiane", "status": "machine_corrected_unverified"},
+    {"sourceLocatorRaw": "L. Q. V.", "guideRaw": "quebrantar la ley", "instructionRaw": "lee", "correctionRaw": "aneſaque cahipure[?]", "status": "unresolved"},
+    {"sourceLocatorRaw": "L. V. V.", "guideRaw": "un par", "instructionRaw": "lee", "correctionRaw": "huihalai", "status": "machine_corrected_unverified"}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-13",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "AI-assisted visual structuring of the historical errata leaf; unresolved sequences retained explicitly; no independent human verification",
+    "processedAt": null
+  }
+}
