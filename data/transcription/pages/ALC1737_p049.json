@@ -1,0 +1,29 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 49,
+  "sourcePagePrinted": 35,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE I.\n\nvo de la coſa poſſeyda, como verbos activos, v. g. Quien tiene mucho maiz? Habe buruc vachec? Yo tengo mucho maiz: inopo buruc vachec, vel inopo ne buruc vachec. Tienes por ventura algodon? E chinec hani? No tengo algodon: cane chinec. Tiene la gente buenas ſementeras? Qui yoreme ala ſunuc? Si buenas ſementeras tienen: Heui ala ſunuc yoreme.\n\nAPLICATIVOS.\nItem commodi, & incommodi.\n\n118. Los verbos aplicativos, y los verbos commodi, & incommodi, rigen accuſativo de coſa, y de perſona à quien viene daño, ò provecho, v. g. Pedro me mató vna baca, id eſt, mató para mi vna baca: Pedro ſenuc uacaſta, ne, vel nech meri[a?]c. El Padre me dió maiz: Padre uachita ne, vel nech micac. Eſtos verbos tienen por paſſiva la conſtruccion de doceo, doces, quedandoſe por paſſiva en accuſativo la coſa, que tambien eſtaba en accuſativo por activa, v. g. ſe dió maiz: uachita miuac: el pariente fué reñido: ſiauaita vuiſuac: le fué muerta la baca: uacaſta ameariuac.\n\n119. Quando el verbo es intranſitivo, ſe pone el accuſativo de acquiſicion, que es de la perſona à quien viene daño, ò provecho en ablativo con la prepoſicion tzi, v. g. me conviene: inotquiua. Mas adviertaſe, que en los exemplos pueſtos ſe pone ne, vel nech, porque aſſi el accuſativo de pronombre ego: y para que ſe conozca, que no es dativo de adquiſicion en eſta lengua, ſino accuſativo, porque el pronombre ego haze el dativo netzi. Los Cynaloas vſan mucho del accuſativo netzi, y aſſi es facil à quien oye equivocarſe, entendiendo que hablan en dativo, no ſiendo ſino accuſativo, v. g. guardó el ganado, los Cynaloas dirán netzavuriac, y otros dirán ne, vel netzavuriac; y en ambas oraciones el netz es accuſativo de ego, mei.\n\n120. Compulſivos: eſtos rigen accuſativo de perſona à quien ſe compele, v. g. Haz que entre aquel Indio en la Igleſia: Teopau e aca yoremta quivatuanaque. Eſta conſtruccion tiene tambien el verbo tebo, que ſiempre es compulſivo: mandarás à vn varon q trayga leña: ſenuc e outa quequeuitebonaque.\n\nInfi-\n",
+  "lineBreakPolicy": "Continuation of rule 117, subsection heading, numbered rules and catchword are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained; doubtful forms are explicitly marked.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "meri[a?]c", "note": "Verb in the cow-benefactive example of rule 118 is not fully secure in the facsimile.", "line": null},
+    {"token": "ſiauaita vuiſuac", "note": "Passive example glossed 'el pariente fué reñido' requires specialist collation.", "line": null},
+    {"token": "uacaſta ameariuac", "note": "Passive example glossed 'le fué muerta la baca' is provisionally transcribed.", "line": null},
+    {"token": "netzavuriac", "note": "Form explicitly attributed to `los Cynaloas` in rule 119; documentary reading is retained pending linguistic verification.", "line": null},
+    {"token": "ſenuc e outa quequeuitebonaque", "note": "Compulsive example at page bottom requires second high-resolution collation.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Mild show-through and lower-margin ink wear are present.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-49;printed-page-35",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
