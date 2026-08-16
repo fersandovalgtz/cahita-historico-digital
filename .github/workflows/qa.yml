@@ -52,17 +52,24 @@ jobs:
             data/lexicon/reconciliation/p133_p134_batch01.jsonl \
             data/lexicon/reconciliation/p133_batch02_pending_articles.jsonl \
             data/lexicon/reconciliation/p134_batch02a_pending_articles.jsonl \
-            data/lexicon/reconciliation/p134_batch02b_pending_articles.jsonl; do
+            data/lexicon/reconciliation/p134_batch02b_pending_articles.jsonl \
+            data/lexicon/reconciliation/p133_opening_resolution.jsonl; do
             python scripts/validate_jsonl.py \
               --schema schemas/lexicon-candidate-review.schema.json \
               --jsonl "$file"
           done
 
-      - name: Validate missed-start layer
+      - name: Validate missed-start layers
+        shell: bash
         run: |
-          python scripts/validate_jsonl.py \
-            --schema schemas/lexicon-missed-start.schema.json \
-            --jsonl data/lexicon/reconciliation/missed_visible_starts_p133_p134.jsonl
+          set -euo pipefail
+          for file in \
+            data/lexicon/reconciliation/missed_visible_starts_p133_p134.jsonl \
+            data/lexicon/reconciliation/p133_opening_missed_start.jsonl; do
+            python scripts/validate_jsonl.py \
+              --schema schemas/lexicon-missed-start.schema.json \
+              --jsonl "$file"
+          done
 
       - name: Validate core JSON metadata syntax
         shell: bash
@@ -72,4 +79,6 @@ jobs:
           python -m json.tool data/lexicon/candidates/inventory_status.json >/dev/null
           python -m json.tool data/lexicon/candidates/candidate_inventory_manifest.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p133_p134_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p133_p134_visible_start_census.json >/dev/null
           python -m json.tool data/lexicon/review/boundary_algorithm_comparison.json >/dev/null
+          python -m json.tool data/source/control/bue1890.json >/dev/null
