@@ -1,0 +1,29 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 41,
+  "sourcePagePrinted": 27,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE I.\n\njuntan, de forma, que ſi acaſo empezare la oracion con nombre, y prepoſicion, ſe uſurpan la prepoſicion con el nombre por vna diccion ſola, y ſe coloca deſpues de la prepoſicion el ſemi-pronombre, v. g. Yo te daré limoſna por amor de Dios: Dioſta vetzivo ne emchihiocorinaque: mañana vendré à verte: emore ne ievitnaque ioco, en donde el emore es el genitivo emo del pronombre tu, y la u, es la prepoſicion ui. Le hablé con enojo aieu ne oempteca nocac, en donde el aieu es el genitivo ai[e?] de ille, illa, illud, y la u, es la prepoſicion ui.\n\n96. Quinto: el pronombre poſſeſſivo, ò genitivo de poſſeſſion ſe coloca ſiempre inmediatamente antes del nombre, ò verbo que le rije, v. g. No hallo mi veſtido: Inſupem ne tauarne: el maiz del Padre ſe halló palomilla: Padreta vachi neca. Eſto es en quanto à la colocacion de eſtas cinco dicciones: las demàs aunque en la colocacion ſon libres ſuelen guardar eſtas reglas.\n\n97. Primera: con elegancia empiezan las oraciones por adverbio, quando le ay en la oracion, y en ella no ſe halla accuſativo de perſona que padece, v. g. Mañana vendré acà: uaquin ne ioco ievitnaque, vel ioco ne uaquin ievitnaque.\n\n98. Segunda: quando en la oracion ay accuſativo de perſona que padece, ſe empieza mejor por el accuſativo, v. g. Amarás à Dios ſobre todas las coſas: Dioſta e chibiti veuahvuitti erianaque, vel Dioſte e chibiti veuahvuitti erianaque; el qual ſemi-pronombre e, ſe comió per ſynalepham, como ſe dixo ſuprà.\n\n99. Tercera: quando la oracion es de paſſiva, aunque aya adverbio, ſe empieza por la perſona que padece por paſſiva, la qual ſe pone en nominativo, v. g. Trataſe de que Pedro ſea llevado mañana: Pedro ioco ñue ſacaſ mocua.\n\n100. Fuera de eſtas reglas ſe obſerve, que excepto el nombre, verbo, y participio, todas las demàs partes de la oracion ſuelen perder la vltima ſyllaba, ò la mitad, quando ſe le ſigue otra diccion, præcipuè, ſi empieza con conſonante, v. g. Huca ne ca tuuriſi anec, en donde el accuſativo\n\ndel\n",
+  "lineBreakPolicy": "Continuation of rule 95, numbered rules and page-turn catchword are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained; doubtful sequences are explicitly marked or noted.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "ai[e?]", "note": "Genitive form identified by the source with ille/illa/illud is typographically unclear in the facsimile.", "line": null},
+    {"token": "Inſupem ne tauarne", "note": "Example glossed 'No hallo mi veſtido' requires second linguistic collation.", "line": null},
+    {"token": "Dioſta e chibiti veuahvuitti erianaque", "note": "Cahíta example for 'Amarás à Dios sobre todas las cosas' is transcribed provisionally.", "line": null},
+    {"token": "Pedro ioco ñue ſacaſ mocua", "note": "Passive example in rule 99 remains provisional; several forms require specialist review.", "line": null},
+    {"token": "Huca ne ca tuuriſi anec", "note": "Example beginning rule 100 is visually readable only in part; retained as a working diplomatic reading.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Moderate show-through and ink irregularity affect several examples but not the overall argument.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-41;printed-page-27",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
