@@ -24,6 +24,16 @@ El JSONL se conserva mediante una transformación reversible `JSONL → gzip det
 
 El antiguo `p134_candidates.jsonl` pertenece a `indentation_margin_v0.1` y es **legacy/no canónico**.
 
+## Política de verificación vigente — sin intervención humana
+
+El flujo editorial vigente de Cahíta Histórico Digital **no contempla una capa posterior de verificación humana independiente**. En consecuencia, `humanVerified` permanecerá en `false` para los objetos producidos bajo esta política y no se utilizará `human_verified` como estado operativo de cierre.
+
+El valor `human_verified` se conserva en el esquema únicamente como estado reservado para compatibilidad y para una eventual modificación futura de la política; no constituye un hito esperado ni una condición pendiente del proyecto actual.
+
+Una página puede alcanzar **cierre técnico o estructural IA-asistido** cuando se cumplan conjuntamente estas condiciones: todos sus candidatos canónicos están clasificados; los inicios visibles pueden censarse con la evidencia de máquina disponible; los enlaces y promociones están resueltos o sus incertidumbres se registran explícitamente; las continuidades físicas están modeladas; no se fabrican lecturas para eliminar huecos; y el QA computacional correspondiente resulta satisfactorio.
+
+Ese cierre técnico **no equivale a autoridad diplomática o filológica humana**. Una lectura puede permanecer `unresolved`, de baja confianza o `[ileg.]` dentro de una página técnicamente cerrada si la incertidumbre está localizada, documentada y no altera la frontera estructural. Cuando la evidencia de máquina tampoco permite resolver la estructura, la página permanece abierta o parcialmente reconciliada.
+
 ## Clasificación editorial
 
 Cada candidato deberá recibir exactamente una clasificación primaria conforme a `schemas/lexicon-candidate-review.schema.json`:
@@ -41,17 +51,17 @@ La clasificación se mantiene separada de `boundaryAssessment`, que describe la 
 La clasificación de una frontera y el estado de promoción del artículo son dimensiones distintas. Un candidato clasificado como `article` puede tener:
 
 - `articleLinkStatus: linked`: ya existe al menos un objeto `ALC1737-art-XXXXXX` enlazable;
-- `articleLinkStatus: pending_promotion`: el facsímil confirma que la frontera inicia un artículo histórico, pero el objeto curatorial correspondiente todavía no ha sido promovido con lectura suficiente; `linkedArticleIds` queda vacío hasta entonces.
+- `articleLinkStatus: pending_promotion`: la evidencia de máquina sostiene que la frontera inicia un artículo histórico, pero el objeto curatorial correspondiente todavía no puede promoverse con lectura suficiente; `linkedArticleIds` queda vacío hasta entonces.
 
 `pending_promotion` **no equivale a `unresolved`**. Se usa cuando la frontera está resuelta pero falta una operación posterior del pipeline. `unresolved` queda reservado para evidencia material insuficiente o ambigua.
 
-La relación candidato↔artículo puede ser muchos-a-uno o uno-a-muchos porque el OCR/layout puede:
+La relación candidato↔artículo puede ser muchos-a-uno o uno-a-muchos porque el OCR/layout puede fragmentar un artículo histórico, fusionar varios artículos en un solo candidato o cortar un artículo entre columnas o páginas. Por ello no se presupone una correspondencia 1:1 y nunca se fabricará un `articleId` para cerrar artificialmente una reconciliación.
 
-- fragmentar un artículo histórico;
-- fusionar varios artículos en un solo candidato;
-- cortar un artículo entre columnas o páginas.
+## Jerarquía de evidencia de máquina
 
-Por ello no se presupone una correspondencia 1:1 y nunca se fabricará un `articleId` para cerrar artificialmente una reconciliación.
+La reconciliación utilizará, en este orden, evidencia convergente y con procedencia explícita: facsímil de `ALC1737` cuando sea accesible; geometría del inventario canónico; objetos ya colacionados y continuidades físicas persistidas; OCR/layout derivados del mismo testimonio; páginas adyacentes para resolver bordes; y testigos históricos secundarios registrados, como `BUE1890`, únicamente como control explícito.
+
+La indisponibilidad temporal de una fuente externa no autoriza a rellenar lecturas. Si la geometría permite resolver una frontera pero el texto no, se resuelve la estructura y se conserva la lectura como incierta. Si tampoco la frontera es recuperable, se usa `unresolved`.
 
 ## Paratexto y materialidad
 
@@ -68,7 +78,7 @@ La reconciliación se versionará por lotes pequeños y auditables. Cada lote de
 3. artículos históricos enlazados y artículos pendientes de promoción;
 4. conteos por clasificación y calidad de frontera;
 5. decisiones `unresolved` y falsos negativos observados;
-6. estado de revisión humana.
+6. estado epistemológico y nivel de evidencia utilizado.
 
 El primer tramo de control es pp.133–134. La cobertura de candidatos y la cobertura de **inicios visibles** deben informarse por separado: completar todos los candidatos de una página no elimina los falsos negativos del extractor.
 
@@ -78,11 +88,13 @@ El primer tramo de control es pp.133–134. La cobertura de candidatos y la cobe
 
 Estas cifras son **diagnósticas, no inferenciales**: el propio diseño se declara `purposive_stratified_diagnostic`, no probabilístico. No deben presentarse con intervalos de confianza ni extrapolarse como desempeño exacto sobre las 45 páginas.
 
-La siguiente evaluación deberá aumentar el tamaño muestral y estratificar al menos por inicio/medio/final del vocabulario, densidad de artículos, presencia de `Buſca` y `Lo miſmo`, continuidad de página/columna, proximidad a lagunas/anomalías y calidad OCR.
+No se calcularán TP/FP/FN, precisión, recobrado o F1 para una página cuando no exista un denominador de inicios visibles suficientemente defendible. En tal caso debe registrarse expresamente que el censo es incompleto y retenerse las métricas como `null` en lugar de estimarlas.
 
 ## Autoridad
 
-Una clasificación IA-asistida permanece `machine_corrected_unverified` o `unresolved`. `human_verified` exige una persona revisora identificable y cotejo contra el facsímil. La reconciliación exhaustiva podrá completarse técnicamente antes de que exista revisión humana independiente, pero ambos estados deben permanecer claramente diferenciados.
+Bajo la política vigente, una clasificación IA-asistida permanece `machine_corrected_unverified` o `unresolved` y `humanVerified:false`. El proyecto distingue por diseño **cierre técnico** de **verificación humana**: el primero sí forma parte del pipeline actual; la segunda no.
+
+`ALC1737` conserva primacía como testimonio fuente. `BUE1890` y otros controles no sustituyen silenciosamente una lectura del impreso de 1737. La trazabilidad, la reproducibilidad y la conservación explícita de incertidumbre son los mecanismos de control epistemológico del flujo actual.
 
 ## Productos de esta fase
 
@@ -90,7 +102,7 @@ La fase se considerará técnicamente completa cuando existan:
 
 1. inventario canónico reproducible de candidatos — **completado**;
 2. un registro de reconciliación por cada candidato persistido;
-3. métricas agregadas por clase y página;
+3. métricas agregadas por clase y página cuando el censo visible permita calcularlas responsablemente;
 4. lista separada de candidatos `unresolved`, artículos pendientes de promoción y falsos negativos del extractor;
 5. exportación canónica de artículos sin duplicados;
-6. informe de QA que distinga métricas automáticas, revisión editorial IA-asistida y revisión humana.
+6. informe de QA que distinga extracción automática, revisión editorial IA-asistida y zonas irresueltas, sin presentar como revisión humana lo que no lo es.
