@@ -1,0 +1,16 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":100,
+  "sourcePagePrinted":86,
+  "section":"part_iii",
+  "transcriptionType":"diplomatic",
+  "coverage":"full_page",
+  "scope":"printed_text",
+  "text":"[continuación de 273] participios en me, en u, en ie, como quedan explicados, ſon, vt ſequitur, con eſtas partículas de Sum, es, fui, v. g. en eſte cunatuc, que ſignifica el marido, para la partícula tuc, y en el nombre tuuri, coſa buena, adjetivo, para la partícula iec.\n\n274. En me, el que es mi marido, cunatucame: el que fué marido, cunatucacame: el que ſerá marido, cunatunaqueme. En u, el que era marido, cunatucau: el que fué, ó avia ſido marido, cunatucacau. En ie, el que es mi marido, incunatucaie: el que ſerá mi marido, incunatunaqueie.\n\n275. En me con el adjetivo: el que es bueno, tuuriyecame: el que fué bueno, tuuriyecacame: el que ſerá bueno, tuurinaqueme. En u, el que era bueno, tuuriyecau: el que avia ſido, ó fué bueno, tuuriyecau. En ie, el que es mi bueno, intuuriyecaie: el que ſerá mi bueno, intuurinaqueie.\n\n276. Adviertanſe dos coſas, lo primero: que el ordinario participio es en came, y eſte ſirve á preſente, y pretérito. Lo ſegundo: que como la partícula iec no tiene futuro, ſino que el naque ſe junta al nombre adjetivo como ſi fuera verbo; conſiguientemente ſe forman los participios de futuro, como queda exemplificado, v. g. el que ſerá hermoſo, alamachinaqueme: el que ſerá mi hermoſo, inalamachinaqueie. Declínanſe como los demás. Eſta partícula iec ſuele perder la i, accelerate pronunciationis cauſa, v. g. tuuri, bueno: tuuriyec, vel tuuriec, es bueno: caca, dulce: cacayec, vel cacaec, es dulce, &c.\n\n277. Tambien con ſolo el nombre aſſi ſubſtantivo, como adjetivo ſin añadirle nada, ſubintelligitur el verbo Sum, es, fui, praecipue en preſente, v. g. quemuchi, todavía es niño: ueric ilitzi, es mui chico: alamachi, es mui lindo. Muchas vezes juntan el tu á los adverbios, que ſignifican ſazon, acceleracion, ó detención de tiempo, v. g. iehuri, ſignifica en eſta ſazon, ó parte del año: iehuritu ſerá eſta ſazon del año: enfermando llegué á eſta ſazon de tiempo, id eſt, por eſte tiempo enfermé, cocorecane iehurituc. Item: vinua, ſignifica mucho tiempo: vinuatuc, estar mucho tiempo [continúa].",
+  "lineBreakPolicy":"Rule numbers and example series preserved; running line breaks normalized.",
+  "reviewStatus":"unresolved",
+  "humanVerified":false,
+  "uncertainties":[{"token":"cunatucau / cunatucacau","note":"Exact paradigm forms require second collation."},{"token":"cacayec / cacaec","note":"Orthographic alternation visually plausible but should be rechecked."}],
+  "materialNotes":[{"type":"bleed_through","note":"Light show-through; text readable.","transcription":null}],
+  "provenance":{"derivedFrom":"ALC1737:digital-page-100;printed-page-86","agent":"GPT-5.6 Sol visual collation","method":"Full-page transcription from facsimile with parsed text as secondary comparison; no independent human verification","processedAt":null}
+}
