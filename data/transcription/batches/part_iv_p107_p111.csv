@@ -1,0 +1,6 @@
+source_id,digital_page,printed_page,section,coverage,review_status,transcription_file,uncertainty_count,notes
+ALC1737,107,93,part_iv,full_page,unresolved,data/transcription/pages/ALC1737_p107.json,2,UI concludes; TZI begins at visible rule 295; possible missing rule 294 noted
+ALC1737,108,94,part_iv,full_page,unresolved,data/transcription/pages/ALC1737_p108.json,2,TZI concludes; YE rule 298
+ALC1737,109,95,part_iv,full_page,unresolved,data/transcription/pages/ALC1737_p109.json,2,MAQUE 299; PATZI/VEPATZI 300–301; VEUATZI 302 begins
+ALC1737,110,96,part_iv,full_page,unresolved,data/transcription/pages/ALC1737_p110.json,2,VEUATZI 302; VEUITZI 303; UAAM 304; UAASI 305 begins
+ALC1737,111,97,part_iv,full_page,unresolved,data/transcription/pages/ALC1737_p111.json,2,UAASI 305; VELECANA 306; VINAVO/VINATZAUA 307; UAITANA/UANAVO 308–309 begins
