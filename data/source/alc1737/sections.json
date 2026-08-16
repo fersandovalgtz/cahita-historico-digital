@@ -35,16 +35,16 @@
     {
       "id": "part_iii",
       "label": "Parte III — verbo, participios y materias tocantes al verbo",
-      "digitalPages": {"start": 69, "startIsPartial": true, "end": 104},
-      "printedPages": {"start": 55, "startIsPartial": true, "end": 90},
-      "evidence": ["PARTE III heading appears within digital page 69 / printed page 55 after the conclusion of rule 188 of Parte II", "Parte IV begins on digital page 105 / printed page 91"]
+      "digitalPages": {"start": 69, "startIsPartial": true, "end": 105, "endIsPartial": true},
+      "printedPages": {"start": 55, "startIsPartial": true, "end": 91, "endIsPartial": true},
+      "evidence": ["PARTE III heading appears within digital page 69 / printed page 55 after the conclusion of rule 188 of Parte II", "Digital page 104 / printed page 90 ends during rule 290 under VERBOS IRREGULARES", "Digital page 105 / printed page 91 begins under running header CAHITA. PARTE III., concludes rule 290 and contains rule 291", "IV. ULT. PARTE begins lower on the same digital page 105 / printed page 91"]
     },
     {
       "id": "part_iv",
       "label": "Parte IV — preposiciones, adverbios, interjecciones y conjunciones",
-      "digitalPages": {"start": 105, "end": 132},
-      "printedPages": {"start": 91, "end": 118},
-      "evidence": ["IV. ULT. PARTE appears on digital page 105 / printed page 91", "FIN DEL ARTE appears on digital page 132 / printed page 118"]
+      "digitalPages": {"start": 105, "startIsPartial": true, "end": 132},
+      "printedPages": {"start": 91, "startIsPartial": true, "end": 118},
+      "evidence": ["IV. ULT. PARTE appears within digital page 105 / printed page 91 after rule 291 of Parte III", "Rule 292 DE LAS PREPOSICIONES begins below the Part IV heading on the same page", "FIN DEL ARTE appears on digital page 132 / printed page 118"]
     },
     {
       "id": "vocabulary",
@@ -68,6 +68,9 @@
       "evidence": ["Digital page 181 is the inside back cover with material/manuscript marks", "Digital page 182 is the outer back cover"]
     }
   ],
-  "boundaryNotes": [{"digitalPage":69,"printedPage":55,"type":"intra_page_section_boundary","from":"part_ii","to":"part_iii","evidence":"Rule 188 of Parte II ends in the upper half; PARTE III heading follows on the same page."}],
-  "caveat": "Macro boundaries are visually checked at all section starts/ends listed above. Digital page 69 / printed page 55 is explicitly multi-section. This does not constitute page-by-page philological verification of the text."
+  "boundaryNotes": [
+    {"digitalPage":69,"printedPage":55,"type":"intra_page_section_boundary","from":"part_ii","to":"part_iii","evidence":"Rule 188 of Parte II ends in the upper half; PARTE III heading follows on the same page."},
+    {"digitalPage":105,"printedPage":91,"type":"intra_page_section_boundary","from":"part_iii","to":"part_iv","evidence":"The page begins under CAHITA. PARTE III., concludes irregular-verb rules 290–291, then displays IV. ULT. PARTE and begins rule 292."}
+  ],
+  "caveat": "Macro boundaries are visually checked at all section starts/ends listed above. Digital pages 69/55 and 105/91 are explicitly multi-section. This does not constitute page-by-page independent human philological verification of the text."
 }
