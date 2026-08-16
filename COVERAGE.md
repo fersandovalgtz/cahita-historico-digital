@@ -14,13 +14,14 @@ Estado de cobertura de Cahíta Histórico Digital para la fuente `ALC1737`.
 | Líneas OCR/layout del vocabulario | **3,899** | pp. 133–177 |
 | Candidatos lexicográficos v0.2 | **2,072** | 2,072/2,072 estructuralmente válidos |
 | Precisión / recall / F1 v0.2 | **97.13% / 89.89% / 93.37%** | muestra diagnóstica |
-| Transcripciones diplomáticas `full_page` | **82 páginas** | preliminares textuales + Partes I–II + Parte III hasta p. 86 |
+| Transcripciones diplomáticas `full_page` | **87 páginas** | preliminares textuales + Partes I–II + Parte III hasta p. 91 |
 | **Parte I** | **completa** | digitales 15–50 / impresas 1–36 |
 | **Parte II** | **completa hasta su cierre textual** | digitales 51–68 + segmento superior de digital 69 / impresa 55 |
-| Parte III | **en curso hasta digital 86 / impresa 72** | reglas 189–234 representadas; frontera inicial intra-página |
+| Parte III | **en curso hasta digital 91 / impresa 77** | reglas 189–250 representadas; regla 250 continúa |
 | Reglas gramaticales estructuradas | **15** | lote inicial 46–60 |
 | Paradigmas gramaticales estructurados | **3** | presente de `Eria`; comparación temporal; comparación optativa |
 | Construcciones modales estructuradas | **9** | reglas 207–234; `vn supuesto` / `dos supuestos` |
+| Construcciones no finitas estructuradas | **5** | infinitivos y gerundios; reglas 237–250 |
 | Observaciones de variación histórica | **13 entidades** | 10 en exportación JSONL + 3 modulares (`0011`–`0013`) |
 | Extractos diplomáticos del vocabulario | **1 página** | p. 134, piloto |
 | Entradas lexicográficas piloto | **12** | esquema válido; no producción |
@@ -45,9 +46,9 @@ Por ello [`data/source/alc1737/sections.json`](data/source/alc1737/sections.json
 
 ## Transcripción
 
-La Fase 2 utiliza una unidad JSON por página y el manifiesto maestro [`data/transcription/status.csv`](data/transcription/status.csv), actualizado ahora hasta la página digital **86 / impresa 72**.
+La Fase 2 utiliza una unidad JSON por página y el manifiesto maestro [`data/transcription/status.csv`](data/transcription/status.csv), actualizado ahora hasta la página digital **91 / impresa 77**.
 
-La **Parte I** está completamente representada. La **Parte II** también está completa en su continuidad textual, incluyendo su cierre en el segmento superior de p. 69. La **Parte III** avanza desde el segmento inferior de p. 69 hasta p. 86 y cubre, en esta capa de trabajo, las reglas 189–234.
+La **Parte I** está completamente representada. La **Parte II** también está completa en su continuidad textual, incluyendo su cierre en el segmento superior de p. 69. La **Parte III** avanza desde el segmento inferior de p. 69 hasta p. 91 y cubre las reglas 189–250; la regla 250 queda marcada como continuada en la página siguiente.
 
 Lotes recientes:
 
@@ -55,8 +56,9 @@ Lotes recientes:
 - [`data/transcription/batches/part_iii_p069_p071.csv`](data/transcription/batches/part_iii_p069_p071.csv)
 - [`data/transcription/batches/part_iii_p072_p076.csv`](data/transcription/batches/part_iii_p072_p076.csv)
 - [`data/transcription/batches/part_iii_p077_p086.csv`](data/transcription/batches/part_iii_p077_p086.csv)
+- [`data/transcription/batches/part_iii_p087_p091.csv`](data/transcription/batches/part_iii_p087_p091.csv)
 
-`full_page` significa que la superficie textual impresa de la página está representada editorialmente. Puede contener secuencias `[ileg.]`, celdas pendientes o incertidumbres tipadas; **no equivale a `human_verified`**.
+`full_page` significa que la superficie textual impresa de la página está representada editorialmente. Puede contener secuencias `[ileg.]`, lecturas provisionales o incertidumbres tipadas; **no equivale a `human_verified`**.
 
 ## Parte II: resultados acumulados
 
@@ -87,6 +89,22 @@ Las pp. 77–86 / impresas 63–72 contienen un bloque coherente de reglas 207�
 El dataset preserva la oposición interna del impreso entre `vn supuesto` y `dos supuestos` y organiza, sin modernizarlas, las series asociadas a `ſi`, `antes`, `como`, `quando`, `aunque`, `deſpues`, `porque`, `para / paraque` y `como ſi`. Entre los marcadores documentados aparecen `teca`, `cari`, `cacari`, `yo`, `co`, `caco`, `ituca`, `varecari`, `rocacari`, `poea`, `iyaacari`, `teeiacari`, `ten`, `tzaua` y `ven / veni`.
 
 → [`docs/MODAL_CONSTRUCTIONS.md`](docs/MODAL_CONSTRUCTIONS.md)
+
+### Infinitivos y gerundios
+
+El bloque siguiente, pp. digitales 87–91 / impresas 73–77, cierra los tiempos modales con las reglas 235–236 y abre una nueva secuencia de construcciones no finitas. CHD formalizó [`schemas/nonfinite-construction.schema.json`](schemas/nonfinite-construction.schema.json) y creó **5 objetos iniciales** en [`data/grammar/nonfinite_constructions_part_iii_p087_p091.jsonl`](data/grammar/nonfinite_constructions_part_iii_p087_p091.jsonl).
+
+Los objetos distinguen:
+
+- primer modo de infinitivo, reglas 237–241;
+- segundo modo de infinitivo, regla 242;
+- gerundios en `DI`, reglas 243–245;
+- gerundio en `DO`, reglas 246–249;
+- comienzo del gerundio en `DVM`, regla 250.
+
+La lectura visual de la página 89 apoya **242** para `SEGUNDO MODO DE INFINITIVO`, aunque el OCR de esa página produjo 241. CHD conserva explícitamente este desacuerdo entre capas en vez de corregirlo sin registro.
+
+→ [`docs/NONFINITE_CONSTRUCTIONS.md`](docs/NONFINITE_CONSTRUCTIONS.md)
 
 ## Variación histórica: estado de exportación
 
