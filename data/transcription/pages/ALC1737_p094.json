@@ -1,0 +1,16 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":94,
+  "sourcePagePrinted":80,
+  "section":"part_iii",
+  "transcriptionType":"diplomatic",
+  "coverage":"full_page",
+  "scope":"printed_text",
+  "text":"§. II. DE LOS PARTICIPIOS EN COMUN.\n257. De ordinario ſe forman añadiendo al preſente, pretérito, y futuro de activa, y paſſiva eſta partícula me. Declínanſe por la primera declinación, conforme á los nombres acabados en me, y tiene el plural como ellos, ó quedándole el recto ſin añadirle nada, ó añadiendo m al obliquo de ſingular, ó reduplicando la primera ſylaba en los verbos que admiten reduplicación; porque no todos vſan reduplicar la primera ſylaba, y en particular el verbo eria de la practica de la conjugación, el qual nunca reduplica.\n\nPreſente. Activa ſic. El que ama. N. aeriame. G. aeriamta. D. aeriamta. Acc. aeriamta. V. aeriame. Ab. aeriamta. Paſſiva. El que es amado. N. eriauame. G. eriauamta. D. eriauamta. Ac. eriauamta. V. eriauame. Ab. eriauamta. Plural. Activa. N. aeriame, vel aeriamtam, &c. Paſſiva. N. eriauame, vel eriauamtam.\n\nPretérito. Activa. El que amó, ó ha amado. N. aeriacame. G. aeriacamta, &c. Paſſiva. El que fué, ó ha ſido amado. N. eriauacame. G. eriauacamta, &c. Plural. Activa. N. aeriacame, vel aeriacamtam. Paſſiva. N. eriauacame, vel eriauacamtam.\n\nFuturo. Activa. El que amará. N. aerianaqueme. G. aerianaquemta. Paſſiva. El que ſerá amado. N. erianauame. G. erianauamta. Plural. Activa. N. aerianaqueme. G. aerianaquemtam. Paſſiva. N. erianauame, vel erianauamtam, &c.\n\n258. Nota. Para formar el participio de pretérito ſe añadió antes del me eſta letra a por la pronunciación, que es propriedad de los pretéritos, quando al terminar con ellos la oración ſe les ſigue conſonante con nombre, ó ſemipronombre [continúa].",
+  "lineBreakPolicy":"Section heading, rule numbers and paradigm labels preserved; running line breaks normalized.",
+  "reviewStatus":"machine_corrected_unverified",
+  "humanVerified":false,
+  "uncertainties":[{"token":"aeriame / aeriamtam plural alternation","note":"Paradigm typography is legible overall but should receive second collation before production use."}],
+  "materialNotes":[{"type":"bleed_through","note":"Light show-through; paradigm remains readable.","transcription":null}],
+  "provenance":{"derivedFrom":"ALC1737:digital-page-94;printed-page-80","agent":"GPT-5.6 Sol visual collation","method":"Full-page transcription from facsimile with parsed text as secondary comparison; no independent human verification","processedAt":null}
+}
