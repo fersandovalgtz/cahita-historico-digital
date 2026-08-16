@@ -17,6 +17,21 @@
     "sourcePageDigital": {"type": "integer", "minimum": 133, "maximum": 177},
     "sourcePagePrinted": {"type": ["string", "null"]},
     "column": {"enum": ["left", "right"]},
+    "sourceSpans": {
+      "type": "array",
+      "description": "Ordered physical spans when one historical article crosses columns or digital pages.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["pageDigital", "column"],
+        "properties": {
+          "pageDigital": {"type": "integer", "minimum": 133, "maximum": 177},
+          "column": {"enum": ["left", "right"]},
+          "role": {"type": "string", "enum": ["start", "continuation", "end", "single"]}
+        },
+        "additionalProperties": false
+      }
+    },
     "continuesFromPreviousPage": {"type": "boolean", "default": false},
     "continuesToNextPage": {"type": "boolean", "default": false},
     "derivedFromCandidates": {
