@@ -1,75 +1,75 @@
 source_id,digital_page,printed_page,section,material_role,coverage,review_status,transcription_file,uncertainty_count,notes
 ALC1737,1,,preliminaries,front_cover,not_applicable_material,material_identified,,,front_cover
 ALC1737,2,,preliminaries,bookplate,not_applicable_material,material_identified,,,bookplate
-ALC1737,3,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p003.json,0,printed text complete; manuscript additions excluded from scope
-ALC1737,4,,preliminaries,title_page_verso_drawing,not_applicable_material,material_identified,,,title_page_verso_drawing
-ALC1737,5,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p005.json,0,Dedicatoria p.1; full printed text
-ALC1737,6,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p006.json,1,Dedicatoria p.2; marginal source note isolated
-ALC1737,7,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p007.json,0,Dedicatoria p.3; marginal attribution isolated
-ALC1737,8,,preliminaries,,full_page,unresolved,data/transcription/pages/ALC1737_p008.json,2,Dedicatoria p.4; Latin citation retains two explicit uncertainties
-ALC1737,9,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p009.json,0,Dedicatoria p.5; full printed text
-ALC1737,10,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p010.json,1,Dedicatoria p.6; closing page with one explicit lexical uncertainty
-ALC1737,11,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p011.json,1,Al lector p.1; one linguistic-spacing uncertainty
-ALC1737,12,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p012.json,0,Al lector p.2; catchword PRO retained
-ALC1737,13,,preliminaries,,full_page,unresolved,data/transcription/pages/ALC1737_p013.json,3,Historical errata leaf; structured corrections in data/corrections/ALC1737_p013_errata.json
+ALC1737,3,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p003.json,0,title page; printed text represented
+ALC1737,4,,preliminaries,title_page_verso_drawing,not_applicable_material,material_identified,,,title-page verso drawing
+ALC1737,5,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p005.json,0,Dedicatoria p1
+ALC1737,6,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p006.json,1,Dedicatoria p2; marginal source note
+ALC1737,7,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p007.json,0,Dedicatoria p3; marginal attribution
+ALC1737,8,,preliminaries,,full_page,unresolved,data/transcription/pages/ALC1737_p008.json,2,Dedicatoria p4; Latin citation uncertainties
+ALC1737,9,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p009.json,0,Dedicatoria p5
+ALC1737,10,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p010.json,1,Dedicatoria p6
+ALC1737,11,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p011.json,1,Al lector p1
+ALC1737,12,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p012.json,0,Al lector p2
+ALC1737,13,,preliminaries,,full_page,unresolved,data/transcription/pages/ALC1737_p013.json,3,historical errata leaf; structured corrections
 ALC1737,14,,preliminaries,errata_verso,not_applicable_material,material_identified,,,blank verso with bleed-through; no substantive printed text
-ALC1737,15,1,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p015.json,0,Part I / printed p.1; Prohemio and § I transcribed
-ALC1737,16,2,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p016.json,2,Preterite rules; two readings queued for second collation
-ALC1737,17,3,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p017.json,2,Future formation rules 6–8
-ALC1737,18,4,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p018.json,3,Future formation rules 9–15
+ALC1737,15,1,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p015.json,0,Parte I diplomatic transcription
+ALC1737,16,2,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p016.json,2,Parte I diplomatic transcription
+ALC1737,17,3,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p017.json,2,Parte I diplomatic transcription
+ALC1737,18,4,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p018.json,3,Parte I diplomatic transcription
 ALC1737,19,5,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p019.json,2,Future rules 16–21; explicit Mayo-attributed variant in rule 20
-ALC1737,20,6,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p020.json,2,Future rules 21–26; catchword VOZ
-ALC1737,21,7,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p021.json,2,Voz passiva rules 27–32
-ALC1737,22,8,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p022.json,2,Rule 33 and § II abstract nouns rules 34–35
-ALC1737,23,9,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p023.json,2,Abstract nouns rules 36–38
-ALC1737,24,10,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p024.json,2,Nominal derivation rules 39–42
-ALC1737,25,11,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p025.json,3,Instrumentals and verbals rules 43–45
-ALC1737,26,12,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p026.json,2,Verbales en ME and start of adjetivos rules 46–47
-ALC1737,27,13,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p027.json,2,Adjetivos rules 48–50
-ALC1737,28,14,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p028.json,2,Adjetivos rules 51–52 and Verbales en BILIS rules 53–54
-ALC1737,29,15,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p029.json,3,Verbales en BILIS rules 55–56 and particle la rule 57
-ALC1737,30,16,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p030.json,3,Particle la continuation; RA/I rules 58–59; UA rule 60
-ALC1737,31,17,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p031.json,2,Rule 60 continuation; LIUA rule 61; adverbs rule 62; § III begins rule 63
-ALC1737,32,18,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p032.json,3,Possessive verbs rules 63–64; RI rule 65; TE rule 66 begins
-ALC1737,33,19,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p033.json,3,TE rules 66–67; RE rule 68; U rule 69 begins
-ALC1737,34,20,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p034.json,2,U rule 69 continuation; TUC/YEC rule 70; SUC rule 71; Compulsivos rule 72 begins
-ALC1737,35,21,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p035.json,3,Compulsivos rule 72 continuation; Aplicativos rule 73; Frequentativos rules 74–75 begin
-ALC1737,36,22,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p036.json,2,Frequentativos rule 75 continuation; § IV begins; pronunciation rules 76–77
-ALC1737,37,23,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p037.json,2,Pronunciation and letter variation rules 77–81; Teueco note in rule 79
-ALC1737,38,24,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p038.json,3,Synalepha rules 82–85 begin
-ALC1737,39,25,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p039.json,4,Synalepha/phonotactic rules 85–91 begin; Teueco-specific note in rule 88
-ALC1737,40,26,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p040.json,3,Rule 91 continuation; explicit Hiaqui/Teueco/Mayo accent comparison; word-order rules 92–95 begin
-ALC1737,41,27,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p041.json,5,Word-order rules 95–100
-ALC1737,42,28,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p042.json,4,Rule 100 continuation; § V composition begins; rules 101–102
-ALC1737,43,29,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p043.json,3,Rule 102 continuation; verb composition rules 103–105
-ALC1737,44,30,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p044.json,4,Rule 105 continuation; adverb+verb composition 106; particles hi/ne/iore 107
-ALC1737,45,31,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p045.json,3,§ VI Syntax begins; rules 108–110
-ALC1737,46,32,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p046.json,4,Syntax rules 110–112; possession/genitive distinctions
-ALC1737,47,33,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p047.json,4,Rule 112 continuation; DEL VERBO rules 113–114
-ALC1737,48,34,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p048.json,3,INTEREST ET REFERT rules 115–117 begin
-ALC1737,49,35,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p049.json,5,Rule 117 continuation; Aplicativos rules 118–120; explicit Cynaloas usage note
+ALC1737,20,6,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p020.json,2,Parte I diplomatic transcription
+ALC1737,21,7,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p021.json,2,Parte I diplomatic transcription
+ALC1737,22,8,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p022.json,2,Parte I diplomatic transcription
+ALC1737,23,9,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p023.json,2,Parte I diplomatic transcription
+ALC1737,24,10,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p024.json,2,Parte I diplomatic transcription
+ALC1737,25,11,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p025.json,3,Parte I diplomatic transcription
+ALC1737,26,12,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p026.json,2,Parte I diplomatic transcription
+ALC1737,27,13,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p027.json,2,Parte I diplomatic transcription
+ALC1737,28,14,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p028.json,2,Parte I diplomatic transcription
+ALC1737,29,15,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p029.json,3,Parte I diplomatic transcription
+ALC1737,30,16,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p030.json,3,Parte I diplomatic transcription
+ALC1737,31,17,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p031.json,2,Parte I diplomatic transcription
+ALC1737,32,18,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p032.json,3,Parte I diplomatic transcription
+ALC1737,33,19,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p033.json,3,Parte I diplomatic transcription
+ALC1737,34,20,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p034.json,2,Parte I diplomatic transcription
+ALC1737,35,21,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p035.json,3,Parte I diplomatic transcription
+ALC1737,36,22,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p036.json,2,Parte I diplomatic transcription
+ALC1737,37,23,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p037.json,3,Pronunciation/variation; Teueco note in rule 79
+ALC1737,38,24,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p038.json,4,Parte I diplomatic transcription
+ALC1737,39,25,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p039.json,3,Synalepha/phonotactics; Teueco note in rule 88
+ALC1737,40,26,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p040.json,5,Explicit Hiaqui/Teueco/Mayo accent comparison
+ALC1737,41,27,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p041.json,4,Parte I diplomatic transcription
+ALC1737,42,28,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p042.json,4,Parte I diplomatic transcription
+ALC1737,43,29,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p043.json,3,Parte I diplomatic transcription
+ALC1737,44,30,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p044.json,3,Parte I diplomatic transcription
+ALC1737,45,31,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p045.json,4,Parte I diplomatic transcription
+ALC1737,46,32,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p046.json,3,Parte I diplomatic transcription
+ALC1737,47,33,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p047.json,4,Parte I diplomatic transcription
+ALC1737,48,34,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p048.json,3,Parte I diplomatic transcription
+ALC1737,49,35,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p049.json,5,Aplicativos; explicit Cynaloas usage note
 ALC1737,50,36,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p050.json,7,Rules 121–123; final page of Parte I; catchword PAR-
-ALC1737,51,37,part_ii,,pending,unreviewed,,,
-ALC1737,52,38,part_ii,,pending,unreviewed,,,
-ALC1737,53,39,part_ii,,pending,unreviewed,,,
-ALC1737,54,40,part_ii,,pending,unreviewed,,,
-ALC1737,55,41,part_ii,,pending,unreviewed,,,
-ALC1737,56,42,part_ii,,pending,unreviewed,,,
-ALC1737,57,43,part_ii,,pending,unreviewed,,,
-ALC1737,58,44,part_ii,,pending,unreviewed,,,
-ALC1737,59,45,part_ii,,pending,unreviewed,,,
-ALC1737,60,46,part_ii,,pending,unreviewed,,,
-ALC1737,61,47,part_ii,,pending,unreviewed,,,
-ALC1737,62,48,part_ii,,pending,unreviewed,,,
-ALC1737,63,49,part_ii,,pending,unreviewed,,,
-ALC1737,64,50,part_ii,,pending,unreviewed,,,
-ALC1737,65,51,part_ii,,pending,unreviewed,,,
-ALC1737,66,52,part_ii,,pending,unreviewed,,,
-ALC1737,67,53,part_ii,,pending,unreviewed,,,
-ALC1737,68,54,part_ii,,pending,unreviewed,,,
-ALC1737,69,55,part_iii,,pending,unreviewed,,,
-ALC1737,70,56,part_iii,,pending,unreviewed,,,
-ALC1737,71,57,part_iii,,pending,unreviewed,,,
+ALC1737,51,37,part_ii,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p051.json,,Parte II begins; DEL NOMBRE
+ALC1737,52,38,part_ii,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p052.json,,Declension rules; Tehuecos vs Hiaqui/Mayo contrast; duplicated historical rule 129
+ALC1737,53,39,part_ii,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p053.json,,Second/third declension; paros attributed to Mayos and Hiaqui ſuaue
+ALC1737,54,40,part_ii,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p054.json,,Parte II diplomatic transcription
+ALC1737,55,41,part_ii,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p055.json,,Parte II diplomatic transcription
+ALC1737,56,42,part_ii,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p056.json,2,Comparativo y superlativo
+ALC1737,57,43,part_ii,,full_page,unresolved,data/transcription/pages/ALC1737_p057.json,2,Parte II diplomatic transcription
+ALC1737,58,44,part_ii,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p058.json,2,§ II DEL PRONOMBRE; Hiaquis nepo vs inopo
+ALC1737,59,45,part_ii,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p059.json,2,Parte II diplomatic transcription
+ALC1737,60,46,part_ii,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p060.json,2,Parte II diplomatic transcription
+ALC1737,61,47,part_ii,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p061.json,2,§ III DEL SEMIPRONOMBRE
+ALC1737,62,48,part_ii,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p062.json,3,Parte II diplomatic transcription
+ALC1737,63,49,part_ii,,full_page,unresolved,data/transcription/pages/ALC1737_p063.json,2,Parte II diplomatic transcription
+ALC1737,64,50,part_ii,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p064.json,2,Parte II diplomatic transcription
+ALC1737,65,51,part_ii,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p065.json,2,Parte II diplomatic transcription
+ALC1737,66,52,part_ii,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p066.json,2,Parte II diplomatic transcription
+ALC1737,67,53,part_ii,,full_page,unresolved,data/transcription/pages/ALC1737_p067.json,3,Parte II diplomatic transcription
+ALC1737,68,54,part_ii,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p068.json,2,Concordancias; rule 187 continues to p69
+ALC1737,69,55,mixed,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p069.json,2,Mixed page: Parte II rule 188 concludes; PARTE III begins on same printed p55
+ALC1737,70,56,part_iii,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p070.json,1,Parte III rules 190–191; comparative Hiaqui/Tehueco/Mayo tense endings; conjugation begins
+ALC1737,71,57,part_iii,,full_page,unresolved,data/transcription/pages/ALC1737_p071.json,3,Comparative paradigm by Tehueco/Hiaqui/Mayo; rule 192 begins
 ALC1737,72,58,part_iii,,pending,unreviewed,,,
 ALC1737,73,59,part_iii,,pending,unreviewed,,,
 ALC1737,74,60,part_iii,,pending,unreviewed,,,
@@ -179,5 +179,5 @@ ALC1737,177,,vocabulary,,pending,unreviewed,,,
 ALC1737,178,,numerals,,pending,unreviewed,,,
 ALC1737,179,,numerals,,pending,unreviewed,,,
 ALC1737,180,,numerals,,pending,unreviewed,,,
-ALC1737,181,,end_matter,inside_back_cover,not_applicable_material,material_identified,,,inside_back_cover
-ALC1737,182,,end_matter,back_cover,not_applicable_material,material_identified,,,back_cover
+ALC1737,181,,end_matter,inside_back_cover,not_applicable_material,material_identified,,,inside back cover / material marks
+ALC1737,182,,end_matter,back_cover,not_applicable_material,material_identified,,,outer back cover
