@@ -1,0 +1,16 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":96,
+  "sourcePagePrinted":82,
+  "section":"part_iii",
+  "transcriptionType":"diplomatic",
+  "coverage":"full_page",
+  "scope":"printed_text",
+  "text":"[continuación de 261] ... mi Padre que fué, matzaecau: mi eſclavo que fué, invuquecau: pero ſi no trae nota de poſſeſſion, ó ſemipronombre poſſeſſivo, ſe añade al nombre en el recto eſta partícula tucau, v. g. el mais que fué, vachitucau: la gente que fué, y ya no es, ioremtucau.\n\n262. Eſtas partículas, ó participios en cau, y el tucau ſe declinan por la primera declinación, v. g. la gente que fué, y ya no es. N. ioremtucau. G. ioremtucata. Plural. N. ioremtucaum. Los cavallos ſe comieron el mais que era, cavaim vachitucata buaca. Dios lo hizo todo de nada, Dios caitucata [forma cahíta] tuac.\n\nParticipios en YE.\n263. Eſtos ſon los que de ordinario ſe llaman nombres verbales en ye. Formanſe añadiendo eſta partícula ye al preſente, pretérito, y futuro de activa, y paſſiva, anteponiéndoles ſiempre la nota, ó ſemipronombre de poſſeſſion; y aunque ſe forman con la voz activa, ſe llaman paſivos en la ſignificacion, porque correſponden á lo que en latin amatus, a, um. Eſtos participios no ſe declinan en el ſingular, y ſolo tienen plural los de activa, los quales con ſus romances ſe forman en entrambas vozes, vt ſequitur.\n\nPreſente. Activa. El que es amado de mi, ó mi amado. Ineriaye. Plural. Ineriayem. Pretérito. Activa. El que fué amado de mi. Ineriacaye. Plural. Ineriacayem. Futuro. Activa. El que ſerá amado de mi. Inerianaqueye. Plural. Inerianaqueyem. Preſente voz paſſ. El amor conque ſoy amado, Ineriauaye. Pretér. Paſſ. El amor con que fui amado, Ineriauacaye. Futuro. Paſſ. El amor conque ſeré amado. Inerianauaye.\n\n264. A eſtos participios en ye, y a los en u, anteponiéndoles eſte ablativo aye por ſi ſolo, ó con la partícula ye, vt ayeye, ſe hazen inſtrumentales, v. g. ayeye inhiohteye, con lo que yo eſcribo: ayeye inhiohteyaye, con lo que me eſcriben, [continúa].",
+  "lineBreakPolicy":"Headings, rule numbers and paradigm labels preserved; running line breaks normalized; doubtful form retained as unresolved.",
+  "reviewStatus":"unresolved",
+  "humanVerified":false,
+  "uncertainties":[{"token":"[forma cahíta]","note":"One form in rule 262 is not secure in the current collation."},{"token":"ayeye inhiohteyaye","note":"Final instrumental example should be rechecked against facsimile before production use."}],
+  "materialNotes":[{"type":"bleed_through","note":"Moderate show-through; section headings and paradigms remain legible.","transcription":null}],
+  "provenance":{"derivedFrom":"ALC1737:digital-page-96;printed-page-82","agent":"GPT-5.6 Sol visual collation","method":"Full-page transcription from facsimile with parsed text as secondary comparison; no independent human verification","processedAt":null}
+}
