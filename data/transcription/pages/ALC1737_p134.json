@@ -1,21 +1,9 @@
 {
-  "sourceId": "ALC1737",
-  "sourcePageDigital": 134,
-  "sourcePagePrinted": null,
-  "section": "vocabulary",
-  "transcriptionType": "diplomatic",
-  "coverage": "excerpt",
-  "scope": "printed_text",
-  "text": "Abofetear. Achonſu.\nAbofeteador. Iorechoname.\nAbogacia. Nocria.\nAbollar. Hepeſte.\nAborrecer. Caeria.\nAborrecimiento. Caeriari.\nAbortadura tal. Tomaherete.\nAbraſarſe de calor interior.\nTatare,\nAbrigado lugar. Cabecapo.\nAbrigar à otro con ropa.\nSenu bintua.\n\n[segunda columna]\nAbrojo. Huichacame.\nAbſtenerſe. Abiore.\n",
-  "lineBreakPolicy": "Line breaks preserve the selected visual transcription excerpt; column transition is represented by an explicit editorial marker in square brackets.",
-  "reviewStatus": "machine_corrected_unverified",
-  "humanVerified": false,
-  "uncertainties": [],
-  "materialNotes": [],
-  "provenance": {
-    "derivedFrom": "ALC1737:digital-page-134",
-    "agent": "GPT-5.6 Sol visual collation",
-    "method": "AI-assisted visual collation against facsimile; selected high-legibility excerpt; no independent human verification",
-    "processedAt": null
-  }
+  "sourceId":"ALC1737","sourcePageDigital":134,"sourcePagePrinted":null,"section":"vocabulary","transcriptionType":"diplomatic","coverage":"full_page","scope":"printed_text",
+  "text":"VOCABVLARIO\n\n[columna izquierda]\n[continuación de p.133] como barro. Buaruna.\nAblandar el coraçon. [forma incierta].\nAbofetear. Achonſu.\nAbofeteador. Iorechoname.\nAbogar por otro. Senuetzhio-noca.\nAbogacia. Nocria.\nAbogado. Yore-nocriame, -l, aranocame.\nAbollar. Hepeſte.\nAbordar à la orilla. [forma incierta].\nAborrecer. Caeria.\nAborrecimiento. Caeriari.\nAborrecedor. [forma incierta].\nAbortar. [forma incierta].\nAbortadura tal. Tomaherete.\nAbotonarſe la flor. Seacavate.\nAbraçar à otro. Senuibata.\nAbraçarſe dos. Naue mo-ibata.\nAbraſarſe de calor interior. Tatare.\nAbraſarſe de el Sol. [forma incierta].\nAbraſarſe con el fuego. Au-taiac.\nAbrigado lugar. Cabeccapo.\nAbrigar à otro con ropa. Senu bintua.\nAbrigarſe para defenderſe [continúa/lectura incierta].\n\n[columna derecha]\n[continuación incierta] Namaca- del viento. Cabeccapo iemeque.\nAbrego viento. Tabebo-[forma incierta].\nAbrir como puerta. [forma incierta]-etapo.\nAbrir como caxa. Caſata-etapo.\nAbrir la boca. Tenta-etapo.\nAbrir como libro. Librua-etaponcha.\nAbrir la mano. Mamam-etapo, l, etaporia.\nAbrir zanja, ò cimiento. Buiata-etapo.\nAbrochar. Aubotonitua.\nAbril. Baimecha, -l, taſamecha.\nAbrojo. Huiſchacame.\nAbſtenerſe. Abiore.\nAbuela paterna. Naca.\nAbuela. Aſu — reſpecto de madre; reſpecto de padre. Nabori.\nAbuelo materno. Napa. [continuación incierta].\nAbundar en riquezas. Abuquim-buruec.\nAbundar la gente, ò el ganado. Ioreme-buruec-[forma incierta].\nAbuelo ſegundo. Nabori.\nAbuelo tercero. Namuli.\nAbuela ſegunda. Nabori.\nAbuela tercera. Namuli.\nAbubu- [catchword].",
+  "lineBreakPolicy":"Two-column order preserved left-to-right; cross-page/cross-column continuations and catchword are explicit; uncertain forms remain marked rather than reconstructed.",
+  "reviewStatus":"unresolved","humanVerified":false,
+  "uncertainties":[{"token":"several Cahíta forms","note":"The page is now fully represented at entry level, but multiple forms require second visual collation."}],
+  "materialNotes":[{"type":"bleed_through","note":"Moderate show-through and edge distortion; Spanish headwords and most entry boundaries are clear.","transcription":null}],
+  "provenance":{"derivedFrom":"ALC1737:digital-page-134","agent":"GPT-5.6 Sol visual collation","method":"Full-page two-column transcription from facsimile; previous excerpt superseded; no independent human verification","processedAt":null}
 }
