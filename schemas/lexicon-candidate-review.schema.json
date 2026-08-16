@@ -63,7 +63,10 @@
   },
   "allOf": [
     {
-      "if": {"properties": {"classification": {"const": "article"}}},
+      "if": {
+        "required": ["classification"],
+        "properties": {"classification": {"const": "article"}}
+      },
       "then": {
         "anyOf": [
           {"properties": {"linkedArticleIds": {"minItems": 1}}},
@@ -78,23 +81,38 @@
       }
     },
     {
-      "if": {"properties": {"articleLinkStatus": {"const": "linked"}}},
+      "if": {
+        "required": ["articleLinkStatus"],
+        "properties": {"articleLinkStatus": {"const": "linked"}}
+      },
       "then": {"properties": {"linkedArticleIds": {"minItems": 1}}}
     },
     {
-      "if": {"properties": {"classification": {"const": "paratext"}}},
+      "if": {
+        "required": ["classification"],
+        "properties": {"classification": {"const": "paratext"}}
+      },
       "then": {"required": ["paratextType"]}
     },
     {
-      "if": {"properties": {"classification": {"const": "continuation"}}},
+      "if": {
+        "required": ["classification"],
+        "properties": {"classification": {"const": "continuation"}}
+      },
       "then": {"required": ["continuationType"]}
     },
     {
-      "if": {"properties": {"reviewStatus": {"const": "human_verified"}}},
+      "if": {
+        "required": ["reviewStatus"],
+        "properties": {"reviewStatus": {"const": "human_verified"}}
+      },
       "then": {"properties": {"humanVerified": {"const": true}}}
     },
     {
-      "if": {"properties": {"humanVerified": {"const": true}}},
+      "if": {
+        "required": ["humanVerified"],
+        "properties": {"humanVerified": {"const": true}}
+      },
       "then": {"properties": {"reviewStatus": {"const": "human_verified"}}}
     }
   ],
