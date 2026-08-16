@@ -2,7 +2,7 @@
 
 ## Estado — 2026-08-16
 
-El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El inventario canónico `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera. La capa curatorial contiene actualmente **1,045 artículos históricos estructurados**. Las páginas **133–144** están cerradas en reconciliación de candidatos, censo de inicios visibles, promoción/enlace y control computacional IA-asistido. **Ningún objeto es `human_verified`.**
+El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El inventario canónico `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera. La capa curatorial contiene actualmente **1,045 artículos históricos estructurados**. Las páginas **133–144** están cerradas en reconciliación de candidatos, censo de inicios visibles, promoción/enlace y control computacional IA-asistido. La **p.145 tiene ya reconciliación completa de sus 39 candidatos**, pero permanece abierta para censo exhaustivo de inicios visibles y promoción. **Ningún objeto es `human_verified` y la política vigente no contempla intervención humana independiente.**
 
 ## Inventario canónico
 
@@ -26,7 +26,7 @@ Las 2,072 filas están fijadas al PDF SHA-256 `69ccbe5da1d0834d78ea3957dcc79e64b
 | p.143 | 46 | 44 | 2 continuaciones | 48 | 44 | 2 | 4 | 0.936170 | 0 |
 | p.144 | 39 | 39 | 0 | 46 | 39 | 0 | 7 | 0.917647 | 0 |
 
-Las métricas son diagnósticas de ingeniería editorial IA-asistida y no sustituyen la colación filológica humana.
+Las métricas son diagnósticas de ingeniería editorial IA-asistida. Bajo la política vigente no existe una capa posterior de revisión humana; por ello los objetos permanecen `machine_corrected_unverified` o `unresolved` aun cuando una página alcance cierre técnico.
 
 ## Crecimiento de la capa curatorial
 
@@ -38,18 +38,31 @@ El tramo conserva incertidumbres textuales explícitas cuando la evidencia prima
 
 `ALC1737` sigue siendo la autoridad primaria. `BUE1890` funciona únicamente como reimpresión histórica de control y nunca sustituye silenciosamente al testimonio de 1737. `BNF1737-REPORTED` permanece como testimonio independiente reportado pendiente de verificación directa. Las lecturas dudosas se conservan como `[ileg.]`, de baja confianza o `unresolved` en lugar de completarse por analogía.
 
-Todo el tramo 133–144 debe describirse como **`machine_corrected_unverified`**. Una corrida verde de QA o una reconciliación cerrada no equivalen a revisión filológica humana.
+El flujo vigente de Cahíta Histórico Digital **no contempla intervención humana independiente**. `humanVerified` permanece en `false`; `human_verified` se conserva únicamente como estado reservado del esquema. El criterio de cierre es técnico: reconciliación computacional completa, incertidumbre localizada, continuidades físicas modeladas y QA satisfactorio. Ese cierre no debe describirse como autoridad diplomática o filológica humana.
 
-## Página 145 — preflight de reconciliación
+## Página 145 — reconciliación de candidatos completada
 
-La página digital **145** tiene **39 candidatos canónicos: 22 en la columna izquierda y 17 en la derecha**. Existe además una capa anterior de **14 artículos seleccionados de alta legibilidad** (`ALC1737-art-000170`–`000183`), pero esa selección no constituye un censo exhaustivo de la página.
+La página digital **145** tiene **39 candidatos canónicos: 22 en la columna izquierda y 17 en la derecha**. Los 39 están ahora persistidos en `p145_left_reconciliation.jsonl` y `p145_right_reconciliation.jsonl`.
 
-`data/lexicon/reconciliation/p145_preflight.json` fija el estado previo al cierre. La página recibe en su apertura la continuación material de `ALC1737-art-001045` (`Atormentar`), iniciado al pie de p.144. La segunda forma se conserva como lectura de baja confianza `chumtieſte` y no debe promoverse como un nuevo artículo ni fortalecerse editorialmente sin colación independiente.
+La clasificación de máquina actual es:
 
-La consulta del texto OCR derivado de Internet Archive confirma el bloque de vocabulario alrededor de la transición p.144→145, pero también evidencia que la salida lineal mezcla el orden de las dos columnas. Por ello el OCR no se utiliza para inventar métricas de frontera, TP/FP/FN ni transcripciones diplomáticas. El preflight permanece deliberadamente **abierto** hasta inspeccionar las 39 filas canónicas con geometría y realizar cotejo directo de la página.
+- **33 `article`**;
+- **3 `continuation`**;
+- **3 `unresolved`**;
+- 0 `paratext` y 0 `false_positive`.
+
+Las fronteras se distribuyen en **26 `exact`**, 3 `merged_articles`, 4 `undersegmented`, 4 `ambiguous` y 2 `not_applicable`. Trece candidatos de artículo enlazan **14 objetos estructurados preexistentes** de la capa seleccionada; **20 candidatos de artículo quedan `pending_promotion`** porque la frontera puede sostenerse pero la lectura textual disponible no justifica todavía crear un objeto curatorial confiable.
+
+La apertura de p.145 conserva la continuación material de `ALC1737-art-001045` (`Atormentar`), iniciado al pie de p.144. La segunda forma sigue como lectura de baja confianza `chumtieſte`; no se duplica como entrada nueva ni se fortalece por analogía.
+
+El censo de inicios visibles **no se declara exhaustivo**. La evidencia preservada demuestra que algunos candidatos absorben inicios internos —por ejemplo el primer candidato derecho contiene las entradas seleccionadas `Aventarſe el vientre` y `Axi, ò pimienta`— y existen otros inicios probables cuyo texto es demasiado dañado para promoción responsable. Por esa razón TP/FP/FN, precisión, recobrado y F1 se mantienen deliberadamente sin calcular para p.145.
+
+Durante este pase se intentó recuperar tanto el PDF de `ALC1737` como el derivado B/W y el texto de control `BUE1890` desde Internet Archive; el proveedor devolvió HTTP 503 de manera repetida. Esa indisponibilidad quedó registrada y **no se compensó inventando lecturas**. En cambio, se verificó de nuevo el inventario canónico y se inspeccionó la apertura geométrica de p.146: ambas columnas comienzan con nuevas entradas en B, por lo que no se afirma una continuidad larga p.145→146.
+
+`data/lexicon/reconciliation/p145_machine_reconciliation_status.json` documenta el estado completo de este pase.
 
 ## Próximo frente
 
-Cerrar exhaustivamente la **digital 145** con el protocolo ya estabilizado: exportar/inspeccionar candidatos → cotejar facsímil → clasificar fronteras → construir censo visible → enlazar/promover artículos → registrar continuidades físicas → ejecutar QA → sincronizar documentación, Issue #3 y Notion.
+El trabajo inmediato es reducir los **20 `pending_promotion`** y los **3 candidatos `unresolved`** de p.145 mediante la evidencia de máquina que pueda recuperarse, construir sólo entonces un censo visible exhaustivo si el denominador es defendible y cerrar técnicamente la página. En paralelo puede abrirse el preflight de la **p.146**, que contiene 47 candidatos canónicos, sin degradar la trazabilidad de p.145.
 
-Hasta completar ese ciclo, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo cerrado.
+Hasta que el censo visible y la promoción de p.145 estén suficientemente resueltos, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo técnicamente cerrado.
