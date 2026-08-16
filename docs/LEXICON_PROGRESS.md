@@ -2,7 +2,7 @@
 
 ## Estado — 2026-08-16
 
-El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El inventario canónico `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera. La capa curatorial contiene actualmente **1,045 artículos históricos estructurados**. Las páginas **133–144** están cerradas en reconciliación de candidatos, censo de inicios visibles, promoción/enlace y control computacional IA-asistido. La **p.145 tiene ya reconciliación completa de sus 39 candidatos**, pero permanece abierta para censo exhaustivo de inicios visibles y promoción. **Ningún objeto es `human_verified` y la política vigente no contempla intervención humana independiente.**
+El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El inventario canónico `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera. La capa curatorial contiene actualmente **1,045 artículos históricos estructurados**. Las páginas **133–144** están cerradas en reconciliación de candidatos, censo de inicios visibles, promoción/enlace y control computacional IA-asistido. La **p.145 tiene ya reconciliación completa de sus 39 candidatos**, pero permanece abierta para censo exhaustivo de inicios visibles y promoción. La **p.146 tiene preflight reproducible abierto sobre 47 candidatos y 25 artículos seleccionados preexistentes**. **Ningún objeto es `human_verified` y la política vigente no contempla intervención humana independiente.**
 
 ## Inventario canónico
 
@@ -44,14 +44,7 @@ El flujo vigente de Cahíta Histórico Digital **no contempla intervención huma
 
 La página digital **145** tiene **39 candidatos canónicos: 22 en la columna izquierda y 17 en la derecha**. Los 39 están ahora persistidos en `p145_left_reconciliation.jsonl` y `p145_right_reconciliation.jsonl`.
 
-La clasificación de máquina actual es:
-
-- **33 `article`**;
-- **3 `continuation`**;
-- **3 `unresolved`**;
-- 0 `paratext` y 0 `false_positive`.
-
-Las fronteras se distribuyen en **26 `exact`**, 3 `merged_articles`, 4 `undersegmented`, 4 `ambiguous` y 2 `not_applicable`. Trece candidatos de artículo enlazan **14 objetos estructurados preexistentes** de la capa seleccionada; **20 candidatos de artículo quedan `pending_promotion`** porque la frontera puede sostenerse pero la lectura textual disponible no justifica todavía crear un objeto curatorial confiable.
+La clasificación de máquina actual es **33 `article`**, **3 `continuation`** y **3 `unresolved`**. Las fronteras se distribuyen en **26 `exact`**, 3 `merged_articles`, 4 `undersegmented`, 4 `ambiguous` y 2 `not_applicable`. Trece candidatos de artículo enlazan **14 objetos estructurados preexistentes** de la capa seleccionada; **20 candidatos de artículo quedan `pending_promotion`** porque la frontera puede sostenerse pero la lectura textual disponible no justifica todavía crear un objeto curatorial confiable.
 
 La apertura de p.145 conserva la continuación material de `ALC1737-art-001045` (`Atormentar`), iniciado al pie de p.144. La segunda forma sigue como lectura de baja confianza `chumtieſte`; no se duplica como entrada nueva ni se fortalece por analogía.
 
@@ -61,8 +54,18 @@ Durante este pase se intentó recuperar tanto el PDF de `ALC1737` como el deriva
 
 `data/lexicon/reconciliation/p145_machine_reconciliation_status.json` documenta el estado completo de este pase.
 
+## Página 146 — preflight reproducible
+
+La página digital **146** contiene **47 candidatos canónicos: 21 en la columna izquierda y 26 en la derecha**. Ya existe una capa seleccionada no exhaustiva de **25 artículos históricos consecutivos, `ALC1737-art-000184`–`ALC1737-art-000208`**: 20 en la columna izquierda y 5 en la derecha.
+
+El preflight confirma un falso negativo material en el borde superior izquierdo: `ALC1737-art-000184`, **`Baho, q ſale de la boca. Tempo-habua.`**, aparece antes del primer candidato canónico L-001. L-001 se alinea en cambio con `ALC1737-art-000185`, `Baho, que ſale de la tierra`. Este caso demuestra desde la apertura que la cobertura de candidatos y la cobertura de inicios visibles deben seguir midiéndose por separado.
+
+Los primeros candidatos izquierdos L-001–L-007 se alinean de manera preliminar con `000185`–`000191`. L-008 es un caso probable de `merged_articles`: comienza con `000192` (`Bañarſe`) y su evidencia OCR preservada contiene también el siguiente inicio seleccionado `000193` (`Barata darſe la coſa`). En la columna derecha, R-001 se alinea con `000204`, R-003 con `000205`, R-007 con `000206` y R-008 con `000207`; R-002 y R-004–R-006 parecen inicios de artículos no representados en la capa seleccionada. El artículo seleccionado `000208` (`Bajo, adv.`) deberá situarse al inspeccionar el resto de la columna derecha.
+
+`data/lexicon/reconciliation/p146_preflight.json` fija estos anclajes sin presentarlos todavía como reconciliación completa. Ningún conteo TP/FP/FN ni métrica de rendimiento se asignará hasta inspeccionar los 47 candidatos y construir un denominador visible defendible.
+
 ## Próximo frente
 
-El trabajo inmediato es reducir los **20 `pending_promotion`** y los **3 candidatos `unresolved`** de p.145 mediante la evidencia de máquina que pueda recuperarse, construir sólo entonces un censo visible exhaustivo si el denominador es defendible y cerrar técnicamente la página. En paralelo puede abrirse el preflight de la **p.146**, que contiene 47 candidatos canónicos, sin degradar la trazabilidad de p.145.
+En p.145 continúa la reducción de los **20 `pending_promotion`** y los **3 candidatos `unresolved`** cuando exista evidencia de máquina suficiente. El frente operativo paralelo es ahora **p.146**: exportar sus 47 candidatos completos, alinear los 25 anclajes seleccionados, clasificar cada frontera, localizar falsos negativos adicionales y promover sólo las entradas cuya lectura esté suficientemente sustentada.
 
-Hasta que el censo visible y la promoción de p.145 estén suficientemente resueltos, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo técnicamente cerrado.
+Hasta que p.145 complete censo visible y promoción, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo técnicamente cerrado.
