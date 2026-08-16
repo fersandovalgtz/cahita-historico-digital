@@ -63,7 +63,14 @@ jobs:
             data/lexicon/reconciliation/p138_left_reconciliation.jsonl \
             data/lexicon/reconciliation/p138_right_reconciliation.jsonl \
             data/lexicon/reconciliation/p139_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p139_right_reconciliation.jsonl; do
+            data/lexicon/reconciliation/p139_right_reconciliation.jsonl \
+            data/lexicon/reconciliation/p140_left_reconciliation.jsonl \
+            data/lexicon/reconciliation/p140_right_reconciliation.jsonl \
+            data/lexicon/reconciliation/p141_left_reconciliation.jsonl \
+            data/lexicon/reconciliation/p141_right_reconciliation.jsonl \
+            data/lexicon/reconciliation/p142_left_reconciliation.jsonl \
+            data/lexicon/reconciliation/p142_right_reconciliation_a.jsonl \
+            data/lexicon/reconciliation/p142_right_reconciliation_b.jsonl; do
             python scripts/validate_jsonl.py \
               --schema schemas/lexicon-candidate-review.schema.json \
               --jsonl "$file"
@@ -80,7 +87,10 @@ jobs:
             data/lexicon/reconciliation/p136_missed_visible_starts.jsonl \
             data/lexicon/reconciliation/p137_missed_visible_starts.jsonl \
             data/lexicon/reconciliation/p138_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p139_missed_visible_starts.jsonl; do
+            data/lexicon/reconciliation/p139_missed_visible_starts.jsonl \
+            data/lexicon/reconciliation/p140_missed_visible_starts.jsonl \
+            data/lexicon/reconciliation/p141_missed_visible_starts.jsonl \
+            data/lexicon/reconciliation/p142_missed_visible_starts.jsonl; do
             python scripts/validate_jsonl.py \
               --schema schemas/lexicon-missed-start.schema.json \
               --jsonl "$file"
@@ -100,6 +110,9 @@ jobs:
           python -m json.tool data/lexicon/reconciliation/p137_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p138_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p139_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p140_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p141_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p142_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/provenance/p135_art000704_correction.json >/dev/null
           python -m json.tool data/lexicon/provenance/p137_art000729_correction.json >/dev/null
           python -m json.tool data/lexicon/provenance/p137_art000731_correction.json >/dev/null
