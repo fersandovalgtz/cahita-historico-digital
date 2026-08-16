@@ -3,17 +3,17 @@ ALC1737,1,,preliminaries,front_cover,not_applicable_material,material_identified
 ALC1737,2,,preliminaries,bookplate,not_applicable_material,material_identified,,,bookplate
 ALC1737,3,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p003.json,0,printed text complete; manuscript additions excluded from scope
 ALC1737,4,,preliminaries,title_page_verso_drawing,not_applicable_material,material_identified,,,title_page_verso_drawing
-ALC1737,5,,preliminaries,,pending,unreviewed,,,
-ALC1737,6,,preliminaries,,pending,unreviewed,,,
-ALC1737,7,,preliminaries,,pending,unreviewed,,,
-ALC1737,8,,preliminaries,,pending,unreviewed,,,
-ALC1737,9,,preliminaries,,pending,unreviewed,,,
-ALC1737,10,,preliminaries,,pending,unreviewed,,,
-ALC1737,11,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p011.json,1,Al lector page 1; printed prose complete; one linguistic-spacing uncertainty
-ALC1737,12,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p012.json,0,Al lector page 2; catchword PRO retained
-ALC1737,13,,preliminaries,,full_page,unresolved,data/transcription/pages/ALC1737_p013.json,3,historical errata leaf; structured corrections also in data/corrections/ALC1737_p013_errata.json
+ALC1737,5,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p005.json,0,Dedicatoria p.1; full printed text
+ALC1737,6,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p006.json,1,Dedicatoria p.2; marginal source note isolated
+ALC1737,7,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p007.json,0,Dedicatoria p.3; marginal attribution isolated
+ALC1737,8,,preliminaries,,full_page,unresolved,data/transcription/pages/ALC1737_p008.json,2,Dedicatoria p.4; Latin citation retains two explicit uncertainties
+ALC1737,9,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p009.json,0,Dedicatoria p.5; full printed text
+ALC1737,10,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p010.json,1,Dedicatoria p.6; closing page with one explicit lexical uncertainty
+ALC1737,11,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p011.json,1,Al lector p.1; one linguistic-spacing uncertainty
+ALC1737,12,,preliminaries,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p012.json,0,Al lector p.2; catchword PRO retained
+ALC1737,13,,preliminaries,,full_page,unresolved,data/transcription/pages/ALC1737_p013.json,3,Historical errata leaf; structured corrections in data/corrections/ALC1737_p013_errata.json
 ALC1737,14,,preliminaries,errata_verso,not_applicable_material,material_identified,,,blank verso with bleed-through; no substantive printed text
-ALC1737,15,1,part_i,,pending,unreviewed,,,
+ALC1737,15,1,part_i,,full_page,machine_corrected_unverified,data/transcription/pages/ALC1737_p015.json,0,Part I / printed p.1; Prohemio and § I transcribed
 ALC1737,16,2,part_i,,pending,unreviewed,,,
 ALC1737,17,3,part_i,,pending,unreviewed,,,
 ALC1737,18,4,part_i,,pending,unreviewed,,,
