@@ -1,0 +1,14 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 137,
+  "articleId": "ALC1737-art-000731",
+  "field": "spanishGuideRaw",
+  "previousReading": "Aguacero",
+  "revisedReading": "Aguazero",
+  "evidence": "Targeted high-resolution inspection of the primary 1737 facsimile visibly reads `Aguazero. Yucria.`.",
+  "authority": "ALC1737 primary facsimile",
+  "method": "AI-assisted targeted visual recollation",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "recordedAt": "2026-08-16"
+}
