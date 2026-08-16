@@ -21,8 +21,11 @@
     "not_applicable": 0
   },
   "articleLinkState": {
-    "articleCandidatesLinked": 9,
-    "articleCandidatesPendingPromotion": 26
+    "articleCandidatesLinked": 35,
+    "articleCandidatesPendingPromotion": 0,
+    "linkageOverlay": "data/lexicon/reconciliation/p135_candidate_linkage_overlay.jsonl",
+    "newCandidateStartPromotions": 26,
+    "candidatePromotionIdRange": "ALC1737-art-000779--ALC1737-art-000804"
   },
   "visibleStartCensus": {
     "status": "closed_machine_corrected_unverified",
@@ -33,29 +36,45 @@
     "precision": 0.813953,
     "recall": 0.744681,
     "f1": 0.777778,
-    "missedStartsLinkedToExistingArticles": 5,
-    "missedStartsStillRequiringPromotionOrCorrection": 7
+    "missedStartsLinked": 12,
+    "missedStartsUnlinked": 0,
+    "newMissedStartPromotions": 6,
+    "missedPromotionIdRange": "ALC1737-art-000805--ALC1737-art-000810"
   },
   "reviewFiles": [
     "data/lexicon/reconciliation/p135_left_reconciliation.jsonl",
     "data/lexicon/reconciliation/p135_right_reconciliation.jsonl",
+    "data/lexicon/reconciliation/p135_candidate_linkage_overlay.jsonl",
     "data/lexicon/reconciliation/p135_missed_visible_starts.jsonl"
+  ],
+  "promotionFiles": [
+    "data/lexicon/articles/p135_candidate_promotions_left.jsonl",
+    "data/lexicon/articles/p135_candidate_promotions_right.jsonl",
+    "data/lexicon/articles/p135_missed_start_promotions_batch01.jsonl"
   ],
   "importantEditorialFinding": {
     "articleId": "ALC1737-art-000704",
-    "currentRepositoryGuide": "Azotar",
-    "facsimileReading": "Azofar",
+    "previousRepositoryGuide": "Azotar",
+    "correctedFacsimileReading": "Azofar",
     "facsimileForm": "Ahlocotua",
-    "status": "correction_required_before_linking_missed_start"
+    "provenancePath": "data/lexicon/provenance/p135_art000704_correction.json",
+    "status": "corrected_machine_corrected_unverified"
   },
-  "interpretation": "Page 135 is fully reconciled at the candidate-boundary and visible-start census levels. The extractor proposes 43 boundaries against 47 visible historical article starts. Eight candidate boundaries fall inside continuations and twelve visible starts are missed. Twenty-six candidate-start articles and seven missed-start cases still require article promotion or correction before candidate-to-article linkage is closed.",
+  "unresolvedHistoricalArticles": [
+    {
+      "articleId": "ALC1737-art-000809",
+      "spanishGuideRaw": "Acoſtar à otro",
+      "reason": "Cahíta form begins visibly with Senu but remaining characters are not sufficiently legible in ALC1737; later control evidence is not substituted into the 1737 transcription."
+    }
+  ],
+  "interpretation": "Page 135 is closed at the candidate-boundary, candidate-to-article linkage, visible-start census, and missed-start linkage levels. The extractor proposes 43 boundaries against 47 visible historical article starts. Eight candidate boundaries fall inside continuations and twelve visible starts are missed. All 35 candidate starts classified as article and all 12 missed visible starts now link historical-article objects. One promoted historical article, ALC1737-art-000809, remains unresolved at the Cahíta-form level. This closure is machine-corrected/unverified and does not constitute human verification.",
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false,
   "nextActions": [
-    "Version the ALC1737-art-000704 correction from Azotar to Azofar and link the corresponding missed start.",
-    "Promote 26 pending candidate-start articles and the remaining unlinked missed starts on p.135.",
-    "Update reconciliation records from pending_promotion to linked as articles are promoted.",
-    "Run CI after promotion closure and then proceed to p.136."
+    "Run CI after p.135 promotion closure and confirm 810 unique historical lexical article IDs.",
+    "Synchronize canonical documentation and Issue #3 with the p.135 closure.",
+    "Begin candidate reconciliation and visible-start census for digital page 136.",
+    "Keep ALC1737-art-000809 unresolved until stronger primary evidence or identifiable human collation is available."
   ],
   "recordedAt": "2026-08-16"
 }
