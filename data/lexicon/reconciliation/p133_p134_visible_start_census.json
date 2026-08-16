@@ -1,0 +1,58 @@
+{
+  "sourceId": "ALC1737",
+  "pageScopeDigital": [133, 134],
+  "censusMethod": "AI-assisted full-page facsimile census of every visible lexical article start, reconciled against canonical v0.2 candidates and missed-start records",
+  "censusStatus": "closed_machine_corrected_unverified",
+  "humanVerified": false,
+  "authorityNotes": [
+    "The large centered `A.` on p.133 is an alphabetic section heading, not a lexical article.",
+    "The first lexical article is `A. denotando la persona que padece. A. Aa.` and begins before canonical candidate p133-L-001.",
+    "Candidate p133-L-002 is superseded by `p133_opening_resolution.jsonl` and is treated as a continuation/oversegmentation within the first article.",
+    "Visible starts absorbed within merged candidates count as false negatives for start detection even when their containing candidate is a true positive.",
+    "Cross-column and cross-page articles count once, at their visible start location."
+  ],
+  "pages": {
+    "133": {
+      "canonicalCandidates": 24,
+      "truePositiveCandidateStarts": 20,
+      "falsePositiveCandidateStarts": 4,
+      "missedVisibleStarts": 10,
+      "visibleHistoricalArticleStarts": 30,
+      "precision": 0.833333,
+      "recall": 0.666667,
+      "f1": 0.740741
+    },
+    "134": {
+      "canonicalCandidates": 37,
+      "truePositiveCandidateStarts": 37,
+      "falsePositiveCandidateStarts": 0,
+      "missedVisibleStarts": 5,
+      "visibleHistoricalArticleStarts": 42,
+      "precision": 1.0,
+      "recall": 0.880952,
+      "f1": 0.936709
+    }
+  },
+  "aggregate": {
+    "canonicalCandidates": 61,
+    "truePositiveCandidateStarts": 57,
+    "falsePositiveCandidateStarts": 4,
+    "missedVisibleStarts": 15,
+    "visibleHistoricalArticleStarts": 72,
+    "precision": 0.934426,
+    "recall": 0.791667,
+    "f1": 0.857143
+  },
+  "missedStartSources": [
+    "data/lexicon/reconciliation/missed_visible_starts_p133_p134.jsonl",
+    "data/lexicon/reconciliation/p133_opening_missed_start.jsonl"
+  ],
+  "candidateResolutionOverlay": "data/lexicon/reconciliation/p133_opening_resolution.jsonl",
+  "controlEvidence": {
+    "sourceId": "BUE1890",
+    "use": "secondary corroboration of the opening entry only; not authority over the 1737 witness",
+    "openingAgreement": "A, denotando la persona que padece. A, Aa."
+  },
+  "interpretation": "The control pages now have a closed machine-collated inventory of visible article starts. Performance is strongly page-dependent: p.133, where the extractor retains the conservative first-page behavior and encounters the opening heading/entry geometry, has substantially lower recall than p.134. These page-level figures are diagnostic and not probabilistic estimates for the full vocabulary.",
+  "recordedAt": "2026-08-16"
+}
