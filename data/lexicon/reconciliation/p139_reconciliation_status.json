@@ -1,0 +1,65 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 139,
+  "candidateInventory": {
+    "total": 50,
+    "left": 25,
+    "right": 25,
+    "classification": {
+      "article": 49,
+      "continuation": 1,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 47,
+      "merged_articles": 2,
+      "oversegmented": 1,
+      "undersegmented": 0,
+      "ambiguous": 0,
+      "not_applicable": 0
+    }
+  },
+  "visibleStartCensus": {
+    "visibleHistoricalArticleStarts": 51,
+    "truePositiveStarts": 49,
+    "falsePositiveCandidateStarts": 1,
+    "falseNegativeVisibleStarts": 2,
+    "precision": 0.98,
+    "recall": 0.960784,
+    "f1": 0.970297,
+    "missedStartFile": "data/lexicon/reconciliation/p139_missed_visible_starts.jsonl"
+  },
+  "linkage": {
+    "articleCandidatesLinked": 49,
+    "missedStartsLinked": 2,
+    "pendingPromotion": 0
+  },
+  "curation": {
+    "preExistingStructuredArticlesOnPage": 39,
+    "newPromotions": 12,
+    "newArticleIdRange": "ALC1737-art-000887--ALC1737-art-000898",
+    "corpusTotalAfterPromotion": 898,
+    "unresolvedPromotions": [
+      "ALC1737-art-000889",
+      "ALC1737-art-000891",
+      "ALC1737-art-000892",
+      "ALC1737-art-000894",
+      "ALC1737-art-000895",
+      "ALC1737-art-000897",
+      "ALC1737-art-000898"
+    ]
+  },
+  "physicalAndEditorialNotes": [
+    "ALC1737-vcand-p139-L-003 merges `Aliento, ó huelgo` and the visible start `A limpiar algo`.",
+    "ALC1737-vcand-p139-L-025 merges `Amancebarſe hurtando à la muger` and the visible start `A man derecha`.",
+    "The Cahita form of `A man derecha` continues physically at the top of the right column; object-level sourceSpans normalization for ALC1737-art-000068 remains a targeted metadata task.",
+    "ALC1737-vcand-p139-R-002 is a continuation of `A man izquierda`, not an article.",
+    "The bottom catchword `Ancia-` points to p.140 `Anciano. Oola.` and is excluded from article counts.",
+    "Two pre-existing selected objects are flagged for targeted recollation: ALC1737-art-000073 (`Sahualic` indicated by facsimile/candidate evidence) and ALC1737-art-000074 (guide visibly `Amaſar`, not prior `Amalar`)."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "authorityNote": "Candidate reconciliation, visible-start census and promotions are AI-assisted facsimile collation. No object is human_verified; illegible or internally ambiguous source sequences remain unresolved rather than reconstructed from OCR."
+}
