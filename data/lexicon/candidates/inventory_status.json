@@ -1,0 +1,27 @@
+{
+  "sourceId": "ALC1737",
+  "candidateMethod": "hybrid_margin_mode_v0.2",
+  "script": "scripts/extract_vocab_candidates.py",
+  "pageRangeDigital": [133, 177],
+  "reportedCandidateCount": 2072,
+  "reportedCountStatus": "documented_execution_metric",
+  "canonicalInventoryStatus": "incomplete_in_repository",
+  "persistedCandidateArtifacts": [
+    {
+      "path": "data/lexicon/candidates/p134_candidates.jsonl",
+      "scope": "digital_page_134"
+    }
+  ],
+  "missingCanonicalScope": "digital_pages_133_and_135_through_177",
+  "exhaustiveReconciliationAllowed": false,
+  "blockingReason": "The repository does not yet contain a canonical row-level candidate inventory for all 45 vocabulary pages. The reported total must not be mistaken for fully persisted candidate records.",
+  "requiredNextActions": [
+    "Regenerate candidates from the fixed ALC1737 PDF using scripts/extract_vocab_candidates.py.",
+    "Verify the regenerated count against the documented total of 2072 or record the reproducible reason for divergence.",
+    "Persist the complete candidate inventory with generator version and source checksum.",
+    "Only then create one reconciliation record per persisted candidate."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "recordedAt": "2026-08-16"
+}
