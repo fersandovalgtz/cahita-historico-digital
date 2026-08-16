@@ -19,25 +19,36 @@ La promoción curatorial ha comenzado con artículos visualmente cotejados y est
 | `p144_selected_articles.jsonl` | 144 | 14 | equivalencias y una remisión `Buſca` |
 | `p145_selected_articles.jsonl` | 145 | 14 | incluye `Lo miſmo` conservado como anáfora no resuelta |
 | `p146_selected_articles.jsonl` | 146 | 25 | equivalencias y tres remisiones `Buſca` |
-| **Total** | — | **208** | todos sin revisión humana independiente |
+| `p147_selected_articles.jsonl` | 147 | 15 | equivalencias y remisión `Borracho → Buſca beodo` |
+| `p148_selected_articles.jsonl` | 148 | 15 | incluye `Bronce. Lo miſmo.` como anáfora no resuelta |
+| `p149_selected_articles.jsonl` | 149 | 15 | primer artículo que cruza de columna izquierda a derecha |
+| **Total** | — | **253** | todos sin revisión humana independiente |
 
 ## Regla de autoridad
 
-Los 208 objetos están estructurados, pero permanecen en estados `machine_corrected_unverified` o `unresolved`. Una estructura válida no equivale a una lectura filológicamente cerrada ni a `human_verified`.
+Los 253 objetos están estructurados, pero permanecen en estados `machine_corrected_unverified` o `unresolved`. Una estructura válida no equivale a una lectura filológicamente cerrada ni a `human_verified`.
 
 ## Remisiones internas
 
 La p.141 confirma dentro de la secuencia productiva una remisión explícita: `Apercibirſe para hazer algo. Buſca aparejarſe.` Se representa como `articleType: cross_reference`, conservando el marcador y su destino sin sustituir el testimonio.
 
-La p.146 muestra además una densidad mayor de remisiones internas en una sola página, entre ellas `Barbo. Buſca Bagre.`, `Barrenar. Buſca agurear con barrena.` y `Baſta, coſa ſin pulir. Buſca aſpero.`. Estas relaciones permanecen documentales: CHD no reemplaza el artículo remitente por el contenido de su destino.
+La p.146 muestra además una densidad mayor de remisiones internas en una sola página, entre ellas `Barbo. Buſca Bagre.`, `Barrenar. Buſca agurear con barrena.` y `Baſta, coſa ſin pulir. Buſca aſpero.`. En p.147 se añadió `Borracho. Buſca beodo.`. Estas relaciones permanecen documentales: CHD no reemplaza el artículo remitente por el contenido de su destino.
 
 ## Anáforas distintas de `Buſca`
 
-La p.145 aporta `Azero. Lo miſmo.`. CHD conserva este objeto como `unresolved`: `Lo miſmo` es una fórmula anafórica que exige resolución contextual y no autoriza a copiar automáticamente la forma del artículo precedente. Este caso confirma la necesidad de distinguir remisión explícita, anáfora y equivalencia.
+La p.145 aporta `Azero. Lo miſmo.` y la p.148 `Bronce. Lo miſmo.`. CHD conserva estos objetos como `unresolved`: `Lo miſmo` es una fórmula anafórica que exige resolución contextual y no autoriza a copiar automáticamente la forma del artículo precedente. Este comportamiento confirma la necesidad de distinguir remisión explícita, anáfora y equivalencia.
 
 ## Artículos que cruzan página
 
 El último artículo de la columna derecha de p.141 termina con `...que pade-` y continúa en la parte superior de p.142 con `padecen de las caderas. Bapſam.`. La unidad completa se conserva como `ALC1737-art-000141` y utiliza `sourceSpans` para registrar p.141 derecha → p.142 izquierda.
+
+## Artículo que cruza columnas dentro de una misma página
+
+La p.149 introduce un segundo tipo de continuidad física. Al pie de la columna izquierda aparece `Camarón. Cecobi, grande del` y la columna derecha comienza `Rio. Bacauri.`. CHD lo representa como un único artículo histórico:
+
+`Camarón. Cecobi, grande del Rio. Bacauri.`
+
+El objeto `ALC1737-art-000247` utiliza `sourceSpans` con dos segmentos en la misma página: izquierda → derecha. Esta observación demuestra que las fronteras de artículo no pueden derivarse únicamente de página o columna: deben reconstruirse a partir de la continuidad tipográfica del impreso.
 
 ## Microestructura botánica jerárquica
 
@@ -61,4 +72,4 @@ La normalización léxica, resolución de anáforas, identificación de especies
 
 ## Siguiente lote
 
-Continuar desde **p.147**, conservando por separado equivalencias simples, remisiones, anáforas, artículos descriptivos, agrupaciones, continuaciones físicas y lecturas `unresolved`.
+Continuar desde **p.150**, conservando por separado equivalencias simples, remisiones, anáforas, artículos descriptivos, agrupaciones, continuaciones físicas y lecturas `unresolved`.
