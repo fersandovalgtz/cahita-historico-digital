@@ -24,8 +24,8 @@
     "articleCandidatesWithExistingLinks": 57,
     "uniqueExistingHistoricalArticlesLinked": 64,
     "articleCandidatesPendingPromotion": 0,
-    "historicalArticlesPromotedAcrossClosureCycle": 36,
-    "newHistoricalArticleIdRange": "ALC1737-art-000735--ALC1737-art-000770"
+    "historicalArticlesPromotedAcrossCandidateClosure": 36,
+    "candidatePromotionIdRange": "ALC1737-art-000735--ALC1737-art-000770"
   },
   "unresolvedCandidateIds": ["ALC1737-vcand-p133-L-002"],
   "reviewFiles": [
@@ -36,20 +36,24 @@
   ],
   "promotionFiles": [
     "data/lexicon/articles/p133_pending_promotions_batch01.jsonl",
-    "data/lexicon/articles/p134_pending_promotions_batch01.jsonl"
+    "data/lexicon/articles/p134_pending_promotions_batch01.jsonl",
+    "data/lexicon/articles/p133_p134_missed_start_promotions_batch01.jsonl"
   ],
   "observedMissedVisibleStarts": {
     "count": 14,
     "path": "data/lexicon/reconciliation/missed_visible_starts_p133_p134.jsonl",
-    "status": "observed_set_not_claimed_exhaustive"
+    "linkedToHistoricalArticles": 14,
+    "newHistoricalArticlesPromotedForPreviouslyUnlinkedMisses": 7,
+    "newPromotionIdRange": "ALC1737-art-000771--ALC1737-art-000777",
+    "status": "observed_set_fully_linked_not_yet_claimed_exhaustive"
   },
-  "interpretation": "All 61 canonical candidates on digital pages 133-134 have an editorial reconciliation record, and every one of the 57 candidates classified as article now links to at least one historical-article object. This closes candidate-to-article promotion for the control pages, but not visible-start coverage: the extractor has documented false negatives, the observed missed-start set is not yet claimed exhaustive, and ALC1737-vcand-p133-L-002 remains unresolved.",
+  "interpretation": "All 61 canonical candidates on digital pages 133-134 have an editorial reconciliation record, every one of the 57 candidates classified as article links to at least one historical-article object, and all 14 currently observed missed visible starts also link to historical articles. Candidate-to-article promotion and linkage of the observed false-negative set are therefore closed. Page-level visible-start exhaustiveness is still open because the observed set has not yet been declared complete and ALC1737-vcand-p133-L-002 remains unresolved at the opening of p.133.",
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false,
   "nextActions": [
-    "Close the page-level visible-start inventory for pp.133-134 and reconcile each missed start against existing or newly promoted historical articles.",
-    "Compute final per-page detection and reconciliation metrics only after the visible-start inventory is declared closed.",
-    "Resolve or retain ALC1737-vcand-p133-L-002 as unresolved after dedicated collation.",
-    "Proceed to candidate reconciliation for the next page batch only after page-level QA for pp.133-134 is closed."
+    "Perform a dedicated page-opening collation around ALC1737-vcand-p133-L-002 and the initial A-section material.",
+    "Close or expand the page-level visible-start inventory for pp.133-134 before computing final per-page detection metrics.",
+    "Keep the two newly promoted unresolved historical articles (ALC1737-art-000771 and ALC1737-art-000774) explicit until their Cahíta forms can be read responsibly.",
+    "Proceed to candidate reconciliation for p.135 only after page-level QA for pp.133-134 is declared closed."
   ]
 }
