@@ -1,0 +1,51 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 145,
+  "candidateMethod": "hybrid_margin_mode_v0.2",
+  "canonicalCandidateInventory": {
+    "total": 39,
+    "left": 22,
+    "right": 17,
+    "source": "data/lexicon/candidates/candidate_counts_by_page.csv"
+  },
+  "preExistingCuratorialLayer": {
+    "path": "data/lexicon/articles/p145_selected_articles.jsonl",
+    "selectedArticles": 14,
+    "articleIdRange": "ALC1737-art-000170--ALC1737-art-000183",
+    "note": "This earlier selected high-legibility layer is not an exhaustive page census and must not be treated as complete reconciliation."
+  },
+  "incomingPhysicalContinuity": {
+    "articleId": "ALC1737-art-001045",
+    "spanishGuideRaw": "Atormentar",
+    "sourceSpans": [
+      {"pageDigital": 144, "column": "right", "role": "start"},
+      {"pageDigital": 145, "column": "left", "role": "end"}
+    ],
+    "openingContinuationFormRaw": "chumtieſte",
+    "reviewStatus": "unresolved",
+    "instruction": "Do not create a new article at the top-of-page continuation and do not normalize or strengthen the low-confidence internal glyph sequence without independent collation."
+  },
+  "externalEvidence": {
+    "internetArchiveIdentifier": "artedelalenguaca00gonz",
+    "fullTextUrlKind": "Internet Archive DJVU-derived full text",
+    "observedOcrRegion": "The OCR region around the p.144→145 transition preserves `AtQrmcn&r. Cocoféoate, I, chtitn*` followed by the next-page vocabulary block, but interleaves the two printed columns.",
+    "useRestriction": "The linear OCR is an evidence layer only. Because column order is interleaved and historical typography is noisy, it is insufficient by itself for candidate-to-visible-start classification or diplomatic transcription."
+  },
+  "closureState": {
+    "candidateReconciliationComplete": false,
+    "visibleStartCensusComplete": false,
+    "promotionLinkageComplete": false,
+    "pageClosed": false,
+    "reason": "Direct page-level facsimile collation and canonical candidate row inspection are still required before assigning TP/FP/FN counts or promoting new articles."
+  },
+  "nextActions": [
+    "Export or inspect the 39 canonical p.145 candidate rows with their column geometry.",
+    "Collate p.145 directly against the facsimile, preserving the incoming continuation of ALC1737-art-001045.",
+    "Classify all 39 candidate boundaries and build a complete visible-start census.",
+    "Link existing p.145 selected articles where valid, promote only genuinely new historical articles, and leave uncertain microstructure unresolved.",
+    "Run CHD QA and only then update LEXICON_PROGRESS, README totals, Issue #3, and Notion to a closed p.145 state."
+  ],
+  "reviewStatus": "preflight_only",
+  "humanVerified": false,
+  "recordedAt": "2026-08-16"
+}
