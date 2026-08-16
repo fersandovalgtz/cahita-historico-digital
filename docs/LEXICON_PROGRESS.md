@@ -2,7 +2,7 @@
 
 ## Estado — 2026-08-16
 
-El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El inventario canónico `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera. La capa curatorial contiene actualmente **1,045 artículos históricos estructurados**. Las páginas **133–144** están cerradas en reconciliación de candidatos, censo de inicios visibles, promoción/enlace y control computacional IA-asistido. Las páginas **145–146 tienen ya reconciliación completa de sus candidatos canónicos**, pero permanecen abiertas para censo exhaustivo de inicios visibles y promoción de fronteras sin transcripción suficientemente sustentada. **Ningún objeto es `human_verified` y la política vigente no contempla intervención humana independiente.**
+El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El inventario canónico `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera. La capa curatorial contiene actualmente **1,045 artículos históricos estructurados**. Las páginas **133–144** están cerradas en reconciliación de candidatos, censo de inicios visibles, promoción/enlace y control computacional IA-asistido. Las páginas **145–146 tienen ya reconciliación completa de sus candidatos canónicos**, pero permanecen abiertas para censo exhaustivo de inicios visibles y promoción de fronteras sin transcripción suficientemente sustentada. La **p.147 tiene preflight reproducible abierto sobre 51 candidatos y 15 artículos seleccionados preexistentes**. **Ningún objeto es `human_verified` y la política vigente no contempla intervención humana independiente.**
 
 ## Inventario canónico
 
@@ -66,10 +66,18 @@ Quedan **22 candidatos de artículo `pending_promotion`**. Sus fronteras estruct
 
 `p146_missed_visible_starts.jsonl` registra los **dos falsos negativos ya demostrados**, pero el censo visible todavía se considera un **mínimo conocido, no exhaustivo**. Por ello no se calculan TP/FP/FN agregados ni precisión, recobrado o F1 para p.146. `p146_machine_reconciliation_status.json` conserva esta distinción explícita.
 
+## Página 147 — preflight reproducible
+
+La página digital **147** contiene **51 candidatos canónicos: 26 izquierda y 25 derecha**. La capa seleccionada preexistente es más escasa que en p.146: **15 artículos `ALC1737-art-000209`–`ALC1737-art-000223`**, 14 en la columna izquierda y sólo 1 en la derecha. Por ello se trata explícitamente como capa de anclaje, no como expectativa de cobertura.
+
+El borde p.146→147 queda físicamente aclarado: el `Bebida` final de p.146 R-026 es un reclamo que anticipa p.147 L-001, **`Bebida de chía, y maíz toſtado`**, alineado con `ALC1737-art-000209`. L-002 (`Bebida otra de maíz`) aparece como un inicio distinto fuera de la capa seleccionada; L-003 y L-004 se alinean con `000210` (`Beſtia`) y `000211` (`Bibora`), mientras L-005 contiene otra entrada `Bibora...` no seleccionada.
+
+En la columna derecha, R-001 (`Bordón`) no tiene ancla seleccionada; R-002 inicia el único artículo derecho seleccionado, `ALC1737-art-000223` (`Borracho. Buſca beodo.`), aunque contiene material OCR adicional que deberá resolverse al reconciliar la página completa. R-003–R-005 son también inicios probables fuera de la capa seleccionada.
+
+`data/lexicon/reconciliation/p147_preflight.json` fija estos hechos sin declarar todavía clasificación completa, promociones ni métricas.
+
 ## Próximo frente
 
-En p.145 continúa la reducción de los **20 `pending_promotion`** y los **3 candidatos `unresolved`** cuando exista evidencia de máquina suficiente. En p.146 la reconciliación estructural está completa y el siguiente objetivo son sus **22 `pending_promotion`** y un censo visible exhaustivo si la evidencia llega a permitirlo.
-
-El siguiente frente de geometría puede abrirse ya en la **página digital 147**, con **51 candidatos canónicos: 26 izquierda y 25 derecha**, sin declarar cerradas prematuramente p.145 o p.146.
+En p.145 continúa la reducción de **20 `pending_promotion`** y 3 `unresolved`; en p.146 quedan **22 `pending_promotion`** y el censo visible exhaustivo. El frente geométrico activo es ahora **p.147**: exportar los 51 candidatos completos, alinear los 15 anclajes seleccionados, clasificar cada frontera y detectar falsos negativos adicionales.
 
 Hasta que p.145 complete censo visible y promoción, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo técnicamente cerrado.

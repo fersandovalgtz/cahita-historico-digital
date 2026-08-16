@@ -1,0 +1,54 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 147,
+  "stage": "preflight",
+  "candidateInventory": {
+    "method": "hybrid_margin_mode_v0.2",
+    "total": 51,
+    "left": 26,
+    "right": 25,
+    "canonicalInventoryTotal": 2072,
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p147_selected_articles.jsonl",
+    "articleCount": 15,
+    "articleIdRange": ["ALC1737-art-000209", "ALC1737-art-000223"],
+    "columnCounts": {"left": 14, "right": 1},
+    "exhaustive": false,
+    "reviewStatus": "machine_corrected_unverified",
+    "humanVerified": false
+  },
+  "crossPageContext": {
+    "fromPage146": "The final `Bebida` on p.146 R-026 is a catchword anticipating p.147 L-001.",
+    "firstArticleCandidate": "ALC1737-vcand-p147-L-001",
+    "firstSelectedArticle": "ALC1737-art-000209",
+    "interpretation": "p147 L-001 is a fresh article start, not continuation text from p146."
+  },
+  "initialAlignment": [
+    {"candidateId":"ALC1737-vcand-p147-L-001","linkedArticleIds":["ALC1737-art-000209"],"assessment":"probable_exact_anchor","note":"Candidate `Bebida de chía, y maíz toſtado` aligns to selected article 000209 and is anticipated by the p146 catchword."},
+    {"candidateId":"ALC1737-vcand-p147-L-002","linkedArticleIds":[],"assessment":"probable_article_not_in_selected_layer","note":"`Bebida otra de maíz` is a distinct candidate start absent from the selected layer."},
+    {"candidateId":"ALC1737-vcand-p147-L-003","linkedArticleIds":["ALC1737-art-000210"],"assessment":"probable_exact_anchor","note":"Candidate aligns to selected `Beſtia`."},
+    {"candidateId":"ALC1737-vcand-p147-L-004","linkedArticleIds":["ALC1737-art-000211"],"assessment":"probable_exact_anchor","note":"Candidate aligns to selected `Bibora`."},
+    {"candidateId":"ALC1737-vcand-p147-L-005","linkedArticleIds":[],"assessment":"probable_article_not_in_selected_layer","note":"A distinct second `Bibora...` entry appears in the canonical candidate output and is not represented in the selected layer."},
+    {"candidateId":"ALC1737-vcand-p147-R-001","linkedArticleIds":[],"assessment":"probable_article_not_in_selected_layer","note":"`Bordón` appears as a distinct right-column start outside the selected layer."},
+    {"candidateId":"ALC1737-vcand-p147-R-002","linkedArticleIds":["ALC1737-art-000223"],"assessment":"probable_anchor_with_trailing_material","note":"Candidate starts selected cross-reference `Borracho. Buſca beodo.`; trailing OCR material requires full-page reconciliation before assigning boundary quality."},
+    {"candidateId":"ALC1737-vcand-p147-R-003","linkedArticleIds":[],"assessment":"probable_article_not_in_selected_layer","note":"`Borrachera` is a distinct candidate start outside the selected layer."},
+    {"candidateId":"ALC1737-vcand-p147-R-004","linkedArticleIds":[],"assessment":"probable_article_not_in_selected_layer","note":"`Borrar` is a distinct candidate start outside the selected layer."},
+    {"candidateId":"ALC1737-vcand-p147-R-005","linkedArticleIds":[],"assessment":"probable_article_not_in_selected_layer","note":"A distinct B-entry follows `Borrar`; exact historical guide/form awaits full-page reconciliation."}
+  ],
+  "policy": {
+    "independentHumanVerificationPlanned": false,
+    "humanVerified": false,
+    "operationalReviewStates": ["machine_corrected_unverified", "unresolved"],
+    "rule": "Selected articles are anchors only; their sparse distribution, especially on the right column, must not be treated as expected page coverage."
+  },
+  "pageStatus": {
+    "preflight": "complete",
+    "candidateReconciliation": "not_started_full_page",
+    "visibleStartCensus": "not_started_full_page",
+    "promotionLinkage": "partial_anchor_layer_only",
+    "technicalClosure": false
+  },
+  "nextAction": "Export and inspect all 51 canonical candidates, align the 15 selected anchors, classify every boundary, identify internal/missed starts, and promote only entries supported beyond damaged raw OCR."
+}
