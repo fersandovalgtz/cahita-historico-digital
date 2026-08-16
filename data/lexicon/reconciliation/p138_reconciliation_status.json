@@ -1,0 +1,85 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 138,
+  "status": "closed_ai_assisted_unverified",
+  "candidateInventory": {
+    "method": "hybrid_margin_mode_v0.2",
+    "leftCandidates": 24,
+    "rightCandidates": 23,
+    "totalCandidates": 47
+  },
+  "classificationCounts": {
+    "article": 47,
+    "continuation": 0,
+    "paratext": 0,
+    "false_positive": 0,
+    "unresolved": 0
+  },
+  "boundaryAssessmentCounts": {
+    "exact": 46,
+    "merged_articles": 1,
+    "oversegmented": 0,
+    "undersegmented": 0,
+    "ambiguous": 0,
+    "not_applicable": 0
+  },
+  "visibleStartCensus": {
+    "historicalArticleStarts": 48,
+    "truePositives": 47,
+    "falsePositives": 0,
+    "falseNegatives": 1,
+    "precision": 1.0,
+    "recall": 0.979167,
+    "f1": 0.989474,
+    "missedStartIds": ["ALC1737-miss-p138-L-001"]
+  },
+  "linkage": {
+    "articleCandidatesLinked": 47,
+    "articleCandidatesTotal": 47,
+    "missedVisibleStartsLinked": 1,
+    "missedVisibleStartsTotal": 1,
+    "pendingPromotion": 0
+  },
+  "historicalArticles": {
+    "existingObjectsOnPageBeforeClosure": 33,
+    "newPromotions": 15,
+    "newArticleIdRange": ["ALC1737-art-000872", "ALC1737-art-000886"],
+    "resultingTotalStructuredArticles": 886
+  },
+  "materialContinuity": {
+    "fromPreviousPage": {
+      "articleId": "ALC1737-art-000734",
+      "start": "digital p.137, right column: Aguja para trancas. Cuta.",
+      "continuation": "digital p.138, left column top: buoboi.",
+      "model": "single historical article represented with sourceSpans"
+    },
+    "bottomCatchword": {
+      "raw": "Algun",
+      "countedAsArticle": false,
+      "nextPageEvidence": "digital p.139 begins with Algun tanto de tiempo"
+    }
+  },
+  "recollationCorrections": [
+    {"articleId":"ALC1737-art-000013","before":"Hiquia arbuhuame","after":"Hiquia aribuhuame"},
+    {"articleId":"ALC1737-art-000021","before":"Ayſar à otro","after":"Ayrar à otro"},
+    {"articleId":"ALC1737-art-000031","before":"Amocta","after":"Amoſa"},
+    {"articleId":"ALC1737-art-000032","before":"Maſabuecori","after":"Maſahuecori"},
+    {"articleId":"ALC1737-art-000044","before":"Hita buneri","after":"Hita huneri"},
+    {"articleId":"ALC1737-art-000045","before":"Seſa buneri","after":"Seſa huneri"}
+  ],
+  "unresolvedReadings": [
+    {
+      "articleId": "ALC1737-art-000884",
+      "spanishGuideRaw": "Alargar algo",
+      "cahitaEvidence": "Hitaric--ru-[ileg.]",
+      "reason": "The continuation is not sufficiently legible in the primary facsimile for a responsible completion."
+    }
+  ],
+  "authority": {
+    "reviewStatus": "machine_corrected_unverified",
+    "humanVerified": false,
+    "primaryEvidence": "ALC1737 digital p.138 facsimile",
+    "note": "Candidate closure, visible-start census, promotions and corrections are AI-assisted editorial work, not independent human collation."
+  },
+  "nextPage": 139
+}
