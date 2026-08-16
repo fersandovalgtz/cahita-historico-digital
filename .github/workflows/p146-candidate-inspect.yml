@@ -1,0 +1,16 @@
+name: P146 Candidate Inspect
+
+on:
+  push:
+    branches:
+      - p146-machine-reconciliation
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify canonical inventory
+        run: python scripts/reconstruct_candidate_inventory.py
+      - name: Export p146 candidates
+        run: python scripts/export_candidate_page.py --page 146
