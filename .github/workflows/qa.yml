@@ -31,6 +31,9 @@ jobs:
       - name: Verify canonical candidate inventory
         run: python scripts/reconstruct_candidate_inventory.py
 
+      - name: Diagnostic candidate page 139
+        run: python scripts/export_candidate_page.py --page 139
+
       - name: Validate lexical article IDs and authority states
         run: python scripts/validate_lexicon_ids.py
 
