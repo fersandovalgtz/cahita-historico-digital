@@ -1,0 +1,26 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 27,
+  "sourcePagePrinted": 13,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE I.\n\n48. Todos los adjetivos en ri, vel i, que ſalen de verbos activos ſe forman quitando la a, de ſus aplicativos, porque todos los aplicativos ſe forman en ria, vel ia, v. g. ſuma atar, ſu aplicativo es ſumria, quitada la a, queda ſumri lo atado: chiue deſgranar, ſu aplicativo es chiuria, quitada la a, queda chiuri lo deſgranado: ietza poner en hieſtro, ſu aplicativo es ietzaria, quitada la a, queda ietzari lo pueſto aſſi: hoa hazer, ſu aplicativo es horia, quitada la a, queda hori lo hecho: noca hablar, ſu aplicativo es nocria, quitada la a, queda nocri lo razonado. Los compulſivos admiten tambien formacion de aplicativos, y aſſi eſta es regla cierta para ellos, v. g. Ieuatu[a?] es compulſivo, ſignifica catequizar: ſu aplicativo es ieuatuaria, quitada la a, ieuatuari lo catequizado. De los adjetivos formados de los verbos activos ſe ſaca hinenca repartir, que aunque ſu aplicativo es hinenquiaria, haze el verbal hinenqui lo repartido. Item del verbo veta dejar que ſobre algo ſe divierta, que ſu aplicativo es veria, y quitada la a, queda veri lo ſobrado, activo, v. g. inhbua[u?]veri lo que dejé ſobrado de mi comida: eſto ſe advierta para que no ſe confunda el veri activo con el veri neutro, que ſignifica lo que reſtó, ò ſobró neutraliter.\n\n49. Los neutros tambien forman aplicativos, y es cierta para ſus adjetivos la regla dicha, v. g. veri quedar, ò ſobrar algo, ſu aplicativo es viria, quitada la a, queda viri lo ſobrado, ò lo que quedó: yeie baylar, ſu aplicativo es yiria, quitada la a, queda yiri lo baylado.\n\n50. Item todos los verbos acabados en ta, tza, tze, que en el futuro terminan en t, para recebir el naque, hazen el adjetivo en tzi, v. g. eta cerrar, futuro etnaque, adjetivo etzi lo cerrado: etza ſembrar, futuro etnaque, adjetivo etzi lo ſembrado: bota remoler, futuro botnaque, adjetivo botzi lo remolido: maveta recebir, futuro mavetnaque, adjetivo mavetzi lo recibido: uetze, futuro uetnaque, adjetivo uetzi lo caido: tatze reſplandecer, futuro tatnaque, adjetivo tatzi.\n\n51. Tam-\n",
+  "lineBreakPolicy": "Numbered rules and catchword are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained; doubtful forms are marked explicitly.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "Ieuatu[a?]", "note": "Forma del compulsivo glosado 'catequizar'; vocal final requiere nueva colación.", "line": null},
+    {"token": "inhbua[u?]veri", "note": "Forma del ejemplo 'lo que dejé ſobrado de mi comida' parcialmente afectada por impresión; transcripción provisional.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Traspaso leve y desgaste tipográfico en algunas formas del cuerpo medio de la página.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-27;printed-page-13",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
