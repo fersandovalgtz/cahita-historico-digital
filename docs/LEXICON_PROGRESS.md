@@ -16,15 +16,24 @@ La promoción curatorial ha comenzado con artículos visualmente cotejados y est
 | `p142_botanical_pilot.jsonl` | 142 | 10 | artículos descriptivos y agrupaciones botánicas |
 | `p141_p142_cross_page_article.jsonl` | 141–142 | 1 | primer artículo reconstruido a través de salto de página |
 | `p143_selected_articles.jsonl` | 143 | 14 | continuidad de agrupación + nueva agrupación de árboles + voces `Arco`/`Arriba` |
-| **Total** | — | **155** | todos sin revisión humana independiente |
+| `p144_selected_articles.jsonl` | 144 | 14 | equivalencias y una remisión `Buſca` |
+| `p145_selected_articles.jsonl` | 145 | 14 | incluye `Lo miſmo` conservado como anáfora no resuelta |
+| `p146_selected_articles.jsonl` | 146 | 25 | equivalencias y tres remisiones `Buſca` |
+| **Total** | — | **208** | todos sin revisión humana independiente |
 
 ## Regla de autoridad
 
-Los 155 objetos están estructurados, pero permanecen `machine_corrected_unverified`. Una estructura válida no equivale a una lectura filológicamente cerrada ni a `human_verified`.
+Los 208 objetos están estructurados, pero permanecen en estados `machine_corrected_unverified` o `unresolved`. Una estructura válida no equivale a una lectura filológicamente cerrada ni a `human_verified`.
 
 ## Remisiones internas
 
 La p.141 confirma dentro de la secuencia productiva una remisión explícita: `Apercibirſe para hazer algo. Buſca aparejarſe.` Se representa como `articleType: cross_reference`, conservando el marcador y su destino sin sustituir el testimonio.
+
+La p.146 muestra además una densidad mayor de remisiones internas en una sola página, entre ellas `Barbo. Buſca Bagre.`, `Barrenar. Buſca agurear con barrena.` y `Baſta, coſa ſin pulir. Buſca aſpero.`. Estas relaciones permanecen documentales: CHD no reemplaza el artículo remitente por el contenido de su destino.
+
+## Anáforas distintas de `Buſca`
+
+La p.145 aporta `Azero. Lo miſmo.`. CHD conserva este objeto como `unresolved`: `Lo miſmo` es una fórmula anafórica que exige resolución contextual y no autoriza a copiar automáticamente la forma del artículo precedente. Este caso confirma la necesidad de distinguir remisión explícita, anáfora y equivalencia.
 
 ## Artículos que cruzan página
 
@@ -46,10 +55,10 @@ El mismo lote abandona después la secuencia botánica y registra voces independ
 
 La unidad maestra sigue siendo el **artículo histórico**. El modelo representa ahora:
 
-`spans físicos → agrupación histórica opcional → artículo histórico → formas/remisiones/notas → autoridad editorial`.
+`spans físicos → agrupación histórica opcional → artículo histórico → formas/remisiones/anáforas/notas → autoridad editorial`.
 
-La normalización léxica, identificación de especies, equivalencias con variedades modernas y futura proyección TEI Lex-0 pertenecen a capas posteriores.
+La normalización léxica, resolución de anáforas, identificación de especies, equivalencias con variedades modernas y futura proyección TEI Lex-0 pertenecen a capas posteriores.
 
 ## Siguiente lote
 
-Continuar desde p.144, conservando por separado equivalencias simples, remisiones, artículos descriptivos, agrupaciones, continuaciones físicas y lecturas `unresolved`.
+Continuar desde **p.147**, conservando por separado equivalencias simples, remisiones, anáforas, artículos descriptivos, agrupaciones, continuaciones físicas y lecturas `unresolved`.
