@@ -2,7 +2,7 @@
 
 ## Estado — 2026-08-16
 
-El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El inventario canónico `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera. La capa curatorial contiene actualmente **1,045 artículos históricos estructurados**. Las páginas **133–144** están cerradas en reconciliación de candidatos, censo de inicios visibles, promoción/enlace y control computacional IA-asistido. La **p.145 tiene ya reconciliación completa de sus 39 candidatos**, pero permanece abierta para censo exhaustivo de inicios visibles y promoción. La **p.146 tiene preflight reproducible abierto sobre 47 candidatos y 25 artículos seleccionados preexistentes**. **Ningún objeto es `human_verified` y la política vigente no contempla intervención humana independiente.**
+El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El inventario canónico `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera. La capa curatorial contiene actualmente **1,045 artículos históricos estructurados**. Las páginas **133–144** están cerradas en reconciliación de candidatos, censo de inicios visibles, promoción/enlace y control computacional IA-asistido. Las páginas **145–146 tienen ya reconciliación completa de sus candidatos canónicos**, pero permanecen abiertas para censo exhaustivo de inicios visibles y promoción de fronteras sin transcripción suficientemente sustentada. **Ningún objeto es `human_verified` y la política vigente no contempla intervención humana independiente.**
 
 ## Inventario canónico
 
@@ -42,7 +42,7 @@ El flujo vigente de Cahíta Histórico Digital **no contempla intervención huma
 
 ## Página 145 — reconciliación de candidatos completada
 
-La página digital **145** tiene **39 candidatos canónicos: 22 en la columna izquierda y 17 en la derecha**. Los 39 están ahora persistidos en `p145_left_reconciliation.jsonl` y `p145_right_reconciliation.jsonl`.
+La página digital **145** tiene **39 candidatos canónicos: 22 en la columna izquierda y 17 en la derecha**. Los 39 están persistidos en `p145_left_reconciliation.jsonl` y `p145_right_reconciliation.jsonl`.
 
 La clasificación de máquina actual es **33 `article`**, **3 `continuation`** y **3 `unresolved`**. Las fronteras se distribuyen en **26 `exact`**, 3 `merged_articles`, 4 `undersegmented`, 4 `ambiguous` y 2 `not_applicable`. Trece candidatos de artículo enlazan **14 objetos estructurados preexistentes** de la capa seleccionada; **20 candidatos de artículo quedan `pending_promotion`** porque la frontera puede sostenerse pero la lectura textual disponible no justifica todavía crear un objeto curatorial confiable.
 
@@ -50,22 +50,26 @@ La apertura de p.145 conserva la continuación material de `ALC1737-art-001045` 
 
 El censo de inicios visibles **no se declara exhaustivo**. La evidencia preservada demuestra que algunos candidatos absorben inicios internos —por ejemplo el primer candidato derecho contiene las entradas seleccionadas `Aventarſe el vientre` y `Axi, ò pimienta`— y existen otros inicios probables cuyo texto es demasiado dañado para promoción responsable. Por esa razón TP/FP/FN, precisión, recobrado y F1 se mantienen deliberadamente sin calcular para p.145.
 
-Durante este pase se intentó recuperar tanto el PDF de `ALC1737` como el derivado B/W y el texto de control `BUE1890` desde Internet Archive; el proveedor devolvió HTTP 503 de manera repetida. Esa indisponibilidad quedó registrada y **no se compensó inventando lecturas**. En cambio, se verificó de nuevo el inventario canónico y se inspeccionó la apertura geométrica de p.146: ambas columnas comienzan con nuevas entradas en B, por lo que no se afirma una continuidad larga p.145→146.
-
 `data/lexicon/reconciliation/p145_machine_reconciliation_status.json` documenta el estado completo de este pase.
 
-## Página 146 — preflight reproducible
+## Página 146 — reconciliación de candidatos completada
 
-La página digital **146** contiene **47 candidatos canónicos: 21 en la columna izquierda y 26 en la derecha**. Ya existe una capa seleccionada no exhaustiva de **25 artículos históricos consecutivos, `ALC1737-art-000184`–`ALC1737-art-000208`**: 20 en la columna izquierda y 5 en la derecha.
+La página digital **146** contiene **47 candidatos canónicos: 21 en la columna izquierda y 26 en la derecha**. Los 47 quedaron clasificados en `p146_left_reconciliation.jsonl` y `p146_right_reconciliation.jsonl`.
 
-El preflight confirma un falso negativo material en el borde superior izquierdo: `ALC1737-art-000184`, **`Baho, q ſale de la boca. Tempo-habua.`**, aparece antes del primer candidato canónico L-001. L-001 se alinea en cambio con `ALC1737-art-000185`, `Baho, que ſale de la tierra`. Este caso demuestra desde la apertura que la cobertura de candidatos y la cobertura de inicios visibles deben seguir midiéndose por separado.
+La clasificación estructural es **45 `article` y 2 `continuation`**, sin candidatos `unresolved`, `paratext` o `false_positive`. La calidad de frontera se distribuye en **42 `exact`**, 1 `merged_articles`, 2 `oversegmented` y 2 `not_applicable`.
 
-Los primeros candidatos izquierdos L-001–L-007 se alinean de manera preliminar con `000185`–`000191`. L-008 es un caso probable de `merged_articles`: comienza con `000192` (`Bañarſe`) y su evidencia OCR preservada contiene también el siguiente inicio seleccionado `000193` (`Barata darſe la coſa`). En la columna derecha, R-001 se alinea con `000204`, R-003 con `000205`, R-007 con `000206` y R-008 con `000207`; R-002 y R-004–R-006 parecen inicios de artículos no representados en la capa seleccionada. El artículo seleccionado `000208` (`Bajo, adv.`) deberá situarse al inspeccionar el resto de la columna derecha.
+La capa seleccionada preexistente contiene **25 artículos, `ALC1737-art-000184`–`ALC1737-art-000208`**. Veintitrés candidatos enlazan 24 de esos objetos; `ALC1737-art-000184`, `Baho, q ſale de la boca`, es un falso negativo de borde superior sin candidato contenedor. L-008 enlaza simultáneamente `000192` (`Bañarſe`) y `000193` (`Barata darſe la coſa`), por lo que `000193` constituye un segundo inicio visible omitido por el detector de fronteras.
 
-`data/lexicon/reconciliation/p146_preflight.json` fija estos anclajes sin presentarlos todavía como reconciliación completa. Ningún conteo TP/FP/FN ni métrica de rendimiento se asignará hasta inspeccionar los 47 candidatos y construir un denominador visible defendible.
+La inspección de toda la geometría confirma además dos continuidades en el pie derecho. R-023 inicia `Beber agua con la mano arrojándola à la boca` y R-024 conserva su continuación. R-025 inicia `Bebida de maíz toſtado`; R-026 comienza con material de continuidad y termina en el reclamo **`Bebida`**, que anticipa la apertura de p.147: `Bebida de chía, y maíz toſtado`. Ese reclamo no se cuenta como nuevo artículo de p.146.
+
+Quedan **22 candidatos de artículo `pending_promotion`**. Sus fronteras estructurales son suficientemente claras, pero carecen de una lectura facsimilar/seleccionada suficientemente fuerte para convertir el OCR dañado en transcripción curatorial. No se promovió ninguno durante este pase y el corpus permanece en **1,045 artículos**.
+
+`p146_missed_visible_starts.jsonl` registra los **dos falsos negativos ya demostrados**, pero el censo visible todavía se considera un **mínimo conocido, no exhaustivo**. Por ello no se calculan TP/FP/FN agregados ni precisión, recobrado o F1 para p.146. `p146_machine_reconciliation_status.json` conserva esta distinción explícita.
 
 ## Próximo frente
 
-En p.145 continúa la reducción de los **20 `pending_promotion`** y los **3 candidatos `unresolved`** cuando exista evidencia de máquina suficiente. El frente operativo paralelo es ahora **p.146**: exportar sus 47 candidatos completos, alinear los 25 anclajes seleccionados, clasificar cada frontera, localizar falsos negativos adicionales y promover sólo las entradas cuya lectura esté suficientemente sustentada.
+En p.145 continúa la reducción de los **20 `pending_promotion`** y los **3 candidatos `unresolved`** cuando exista evidencia de máquina suficiente. En p.146 la reconciliación estructural está completa y el siguiente objetivo son sus **22 `pending_promotion`** y un censo visible exhaustivo si la evidencia llega a permitirlo.
+
+El siguiente frente de geometría puede abrirse ya en la **página digital 147**, con **51 candidatos canónicos: 26 izquierda y 25 derecha**, sin declarar cerradas prematuramente p.145 o p.146.
 
 Hasta que p.145 complete censo visible y promoción, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo técnicamente cerrado.
