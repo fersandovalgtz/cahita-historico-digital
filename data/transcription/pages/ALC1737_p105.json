@@ -1,0 +1,14 @@
+{
+  "sourceId":"ALC1737","sourcePageDigital":105,"sourcePagePrinted":91,"section":"mixed",
+  "sectionSegments":[
+    {"order":1,"section":"part_iii","note":"Upper portion concludes irregular verbs, continuing rule 290 and containing rule 291 under the running header CAHITA. PARTE III.","startsWith":"Perfecto. Yo llegué","endsWith":"como ieſac, iſabac, &c."},
+    {"order":2,"section":"part_iv","note":"Lower portion begins IV. ULT. PARTE and § I DE LAS PREPOSICIONES on the same printed page.","startsWith":"IV. ULT. PARTE","endsWith":"nombre regido de pre-"}
+  ],
+  "transcriptionType":"diplomatic","coverage":"full_page","scope":"printed_text",
+  "text":"[PARTE III — continuación de 290]\nPerfecto. Yo llegué, ieſac ne: noſotros, iſabac te. Pluſquam perfecto. Yo avia llegado, [forma]: noſotros, [forma]. Futuro. Llegaré, ievitnaque: noſotros, iſabinaque te. Futuro perfecto. Avré llegado, ievitſunaque: avremos llegado, [forma]: no tienen imperativos.\n\n291. Sexto. Ir, ó venir ueie para ſingular, cate para plural. Preſente. Voy, ó vengo, ueie ne: vamos, ó venimos, cate te. Imperfecto. Iba, ó venia, ueiecai: íbamos, ó veniamos, catecai. Perfecto, y pluſquam perfecto, [formas]. Futuro. Iremos, ó vendremos, catenaque te. Imperativo ſiempre le ponen el adverbio aman de lugar, v. g. ven acá, [forma]; ve allá, aman ueie: venid acá, [forma]; id allá, aman cate. Del verbo ueie, ir, ó venir ſe dice no tener pretérito perfecto, ni futuro; no obſtante los Indios lo vſan, y dicen pretérito [forma], futuro [forma]. Los pretéritos de los verbos dichos ſe han pueſto con el ſemipronombre deſpues ſin añadirle a, como ſe debia, para que ſe conozcan los pretéritos, que verdaderamente hazen en ca, v. g. ſica, ſacac, &c. y los que terminan en c, como ieſac, iſabac, &c.\n\nIV. ULT. PARTE.\nPREPOSICIONES, ADVERBIOS, INTERJECCIONES, y conjunciones.\n\n§. I. DE LAS PREPOSICIONES.\n292. Las prepoſiciones en eſta lengua ſe poſponen ſiempre al nombre con quien ſe juntan, y ſe colocan immediatamente con él: de modo, que ſi empieza la oración con algun nombre regido de pre- [continúa].",
+  "lineBreakPolicy":"Intra-page boundary explicitly represented. Running header, display heading, rule numbers and section labels preserved; doubtful paradigm cells remain unresolved.",
+  "reviewStatus":"unresolved","humanVerified":false,
+  "uncertainties":[{"token":"[forma]","note":"Several irregular-verb paradigm cells in rules 290–291 require dedicated second collation."}],
+  "materialNotes":[{"type":"bleed_through","note":"Moderate show-through; IV. ULT. PARTE display heading and section boundary are visually unambiguous.","transcription":null}],
+  "provenance":{"derivedFrom":"ALC1737:digital-page-105;printed-page-91","agent":"GPT-5.6 Sol visual collation","method":"Full-page transcription with explicit intra-page Part III/IV segmentation; no independent human verification","processedAt":null}
+}
