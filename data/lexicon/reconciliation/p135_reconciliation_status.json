@@ -1,0 +1,61 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 135,
+  "candidateMethod": "hybrid_margin_mode_v0.2",
+  "canonicalCandidates": 43,
+  "candidateColumns": {"left": 26, "right": 17},
+  "candidateReconciliationComplete": true,
+  "candidateClassifications": {
+    "article": 35,
+    "continuation": 8,
+    "unresolved": 0,
+    "paratext": 0,
+    "false_positive": 0
+  },
+  "boundaryAssessments": {
+    "exact": 33,
+    "merged_articles": 4,
+    "oversegmented": 6,
+    "undersegmented": 0,
+    "ambiguous": 0,
+    "not_applicable": 0
+  },
+  "articleLinkState": {
+    "articleCandidatesLinked": 9,
+    "articleCandidatesPendingPromotion": 26
+  },
+  "visibleStartCensus": {
+    "status": "closed_machine_corrected_unverified",
+    "visibleHistoricalArticleStarts": 47,
+    "truePositiveCandidateStarts": 35,
+    "falsePositiveCandidateStarts": 8,
+    "missedVisibleStarts": 12,
+    "precision": 0.813953,
+    "recall": 0.744681,
+    "f1": 0.777778,
+    "missedStartsLinkedToExistingArticles": 5,
+    "missedStartsStillRequiringPromotionOrCorrection": 7
+  },
+  "reviewFiles": [
+    "data/lexicon/reconciliation/p135_left_reconciliation.jsonl",
+    "data/lexicon/reconciliation/p135_right_reconciliation.jsonl",
+    "data/lexicon/reconciliation/p135_missed_visible_starts.jsonl"
+  ],
+  "importantEditorialFinding": {
+    "articleId": "ALC1737-art-000704",
+    "currentRepositoryGuide": "Azotar",
+    "facsimileReading": "Azofar",
+    "facsimileForm": "Ahlocotua",
+    "status": "correction_required_before_linking_missed_start"
+  },
+  "interpretation": "Page 135 is fully reconciled at the candidate-boundary and visible-start census levels. The extractor proposes 43 boundaries against 47 visible historical article starts. Eight candidate boundaries fall inside continuations and twelve visible starts are missed. Twenty-six candidate-start articles and seven missed-start cases still require article promotion or correction before candidate-to-article linkage is closed.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "nextActions": [
+    "Version the ALC1737-art-000704 correction from Azotar to Azofar and link the corresponding missed start.",
+    "Promote 26 pending candidate-start articles and the remaining unlinked missed starts on p.135.",
+    "Update reconciliation records from pending_promotion to linked as articles are promoted.",
+    "Run CI after promotion closure and then proceed to p.136."
+  ],
+  "recordedAt": "2026-08-16"
+}
