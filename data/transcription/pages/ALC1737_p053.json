@@ -1,0 +1,26 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 53,
+  "sourcePagePrinted": 39,
+  "section": "part_ii",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE II.\n\nvo eriacata: eriauau el que era amado, genitivo eriauacata. Todos los demàs ni pierden, ni mudan letra, ſino que al recto ſe añade el ta, del obliquo.\n\nSEGUNDA DECLINACION.\n\n130. Todos los nombres ſubſtantivos acabados en conſonante hazen el obliquo añadiendo al recto vna e, v. g. paros la liebre (aſſi la llaman los Mayos, y el Hiaqui ſuaue) genitivo paroſe: turus vna araña, genitivo turuſe; mas los acabados en t, ponen tz, deſpues de la t, para recebir la e, v. g. yaut, genitivo yauttze: hamut, genitivo hamuttze: bacot la culebra, genitivo bacottze: uiq[u?]it el pajaro, genitivo uiq[u?]ittze.\n\nTERCERA DECLINACION.\n\n131. Eſta declinacion es de los nombres adjetivos, y todos hazen el obliquo añadiendo c, al recto, v. g. en a, bueca coſa ancha, genitivo buecac. En e, tebe coſa larga, genitivo tebec. En i, toſali coſa blanca, genitivo toſalic. En o, beloco blanco como el del huevo, genitivo belococ. En u, chibu coſa amarga, genitivo chibuc.\n\nDEL NUMERO PLURAL DE TODAS\nLAS DECLINACIONES.\n\n132. El numero plural no tiene variacion de caſos, todos ſon ſemejantes al nominativo de plural. Eſte ſe haze de varias maneras. Primera: todos aſſi ſubſtantivos, como adjetivos hazen el plural añadiendo m, al recto de ſingular, v. g. etzo, plural etzom: achai, plural achaim: tabu, plural tabum: tuuri, plural tuurim: toſali, plural toſalim.\n\n133. Los acabados en conſonante de la ſegunda declinacion hazen el plural añadiendo im, al recto de ſingular: y los acabados en t, añaden à la t, eſta ſyllaba tzim, v. g. paros, plural paroſim: turus, plural turuſim: copas el nacar, plural copaſim: bacot, plural bacottzim: yaut, plural yauttzim: uiq[u?]it pajaro, plural uiq[u?]ittzim.\n\nSe-\n",
+  "lineBreakPolicy": "Continuation of the repeated rule 129, declension headings, numbered rules and catchword are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained; uncertain characters are marked explicitly.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "uiq[u?]it / uiq[u?]ittze / uiq[u?]ittzim", "note": "Bird noun in rules 130/133 contains an unclear medial character; no normalization is asserted.", "line": null},
+    {"token": "paros la liebre (aſſi la llaman los Mayos, y el Hiaqui ſuaue)", "note": "Explicit historical variety attribution is visually clear and separately represented in the variation dataset; no modern identification is inferred.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "damage", "note": "Minor marginal wear and uneven inking are visible; headings and rule structure remain legible.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-53;printed-page-39",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render; no independent human verification",
+    "processedAt": null
+  }
+}
