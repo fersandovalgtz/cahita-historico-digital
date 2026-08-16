@@ -4,12 +4,13 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/estado-0.1.5--dev-6b7280?style=flat-square" alt="Estado 0.1.5-dev">
+  <img src="https://img.shields.io/badge/estado-0.2.0--dev-6b7280?style=flat-square" alt="Estado 0.2.0-dev">
   <img src="https://img.shields.io/badge/fuente-1737-7a263a?style=flat-square" alt="Fuente 1737">
   <img src="https://img.shields.io/badge/páginas-182%2F182-2d6a4f?style=flat-square" alt="182 de 182 páginas inventariadas">
-  <img src="https://img.shields.io/badge/OCR%20micro--CER-25.66%25-b7791f?style=flat-square" alt="Micro CER OCR 25.66%">
-  <img src="https://img.shields.io/badge/candidatos%20v0.2-2%2C072-455B55?style=flat-square" alt="2072 candidatos de límites de artículo v0.2">
-  <img src="https://img.shields.io/badge/F1%20fronteras-93.37%25-455B55?style=flat-square" alt="F1 diagnóstico de fronteras 93.37%">
+  <img src="https://img.shields.io/badge/full__page-128-2d6a4f?style=flat-square" alt="128 páginas full_page">
+  <img src="https://img.shields.io/badge/candidatos%20v0.2-2%2C072-455B55?style=flat-square" alt="2072 candidatos v0.2">
+  <img src="https://img.shields.io/badge/artículos%20estructurados-734-455B55?style=flat-square" alt="734 artículos históricos estructurados">
+  <img src="https://img.shields.io/badge/revisión%20humana-0-b7791f?style=flat-square" alt="0 unidades human_verified">
   <a href="DATA_LICENSE.md"><img src="https://img.shields.io/badge/datos-CC%20BY%204.0-9a6b1f?style=flat-square" alt="Datos CC BY 4.0"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/código-MIT-172033?style=flat-square" alt="Código MIT"></a>
   <a href="https://orcid.org/0000-0002-3168-6725"><img src="https://img.shields.io/badge/ORCID-0000--0002--3168--6725-A6CE39?style=flat-square&logo=orcid&logoColor=white" alt="ORCID"></a>
@@ -18,8 +19,8 @@
 <p align="center">
   <a href="docs/SOURCE_ALC1737.md"><strong>Fuente histórica</strong></a> ·
   <a href="COVERAGE.md"><strong>Cobertura</strong></a> ·
-  <a href="docs/OCR_QUALITY.md"><strong>Calidad OCR</strong></a> ·
-  <a href="docs/VOCAB_BOUNDARY_V02.md"><strong>Fronteras v0.2</strong></a> ·
+  <a href="docs/LEXICON_PROGRESS.md"><strong>Lexicografía</strong></a> ·
+  <a href="docs/LEXICON_RECONCILIATION_PROTOCOL.md"><strong>Reconciliación</strong></a> ·
   <a href="docs/TRANSCRIPTION_MODEL.md"><strong>Transcripción</strong></a> ·
   <a href="EDITORIAL_POLICY.md"><strong>Política editorial</strong></a> ·
   <a href="PROVENANCE.md"><strong>Procedencia</strong></a> ·
@@ -31,11 +32,13 @@
 
 ## Qué es Cahíta Histórico Digital
 
-**Cahíta Histórico Digital (CHD)** es una infraestructura de investigación destinada a transformar testimonios históricos sobre la lengua cahíta y las variedades documentadas por sus fuentes en objetos digitales **trazables, versionados, citables, interoperables y reproducibles**. El proyecto mantiene separadas la reproducción histórica, el OCR, la reconstrucción de layout, la segmentación, la transcripción, la normalización, los datos estructurados y las inferencias analíticas.
+**Cahíta Histórico Digital (CHD)** es una infraestructura de investigación destinada a transformar testimonios históricos sobre la lengua cahíta y las variedades documentadas por sus fuentes en objetos digitales **trazables, versionados, citables, interoperables y reproducibles**.
 
-La fuente inicial es el *Arte de la lengua cahita conforme à las reglas de muchos peritos en ella*, impreso en México en 1737 por Francisco Xavier Sánchez. La portada no declara un autor personal: atribuye la obra a “vn Padre de la Compañía de JESUS, Missionero de mas de treinta años en la Provincia de Cynaloa”. CHD conserva esa **anonimia de la fuente primaria** y registra por separado la historia de atribuciones posteriores, sin convertir una atribución discutida en autoría resuelta.
+El proyecto separa deliberadamente testimonio, OCR, reconstrucción de layout, candidatos computacionales, transcripción diplomática, estructuración lexicográfica y gramatical, normalización, inferencias analíticas y eventual revisión humana independiente. Ninguna de esas capas se trata como equivalente a otra.
 
-El testimonio inicial se identifica internamente como **`ALC1737`**. La arquitectura permite incorporar futuras fuentes cahítas sin mezclar obras, ediciones, ejemplares, capas editoriales ni estados de autoridad.
+La fuente inicial es el *Arte de la lengua cahita conforme à las reglas de muchos peritos en ella*, impreso en México en 1737 por Francisco Xavier Sánchez. La portada no declara un autor personal: atribuye la obra a “vn Padre de la Compañía de JESUS, Missionero de mas de treinta años en la Provincia de Cynaloa”. CHD conserva esa **anonimia de la fuente primaria** y registra por separado las atribuciones posteriores divergentes.
+
+El testimonio inicial se identifica internamente como **`ALC1737`**. La arquitectura permite incorporar testimonios y fuentes futuras sin mezclar ejemplares, ediciones, decisiones editoriales ni estados de autoridad.
 
 ## Fuente ALC1737
 
@@ -43,119 +46,149 @@ El testimonio inicial se identifica internamente como **`ALC1737`**. La arquitec
 
 El ejemplar digital de trabajo procede del registro de Internet Archive [`artedelalenguaca00gonz`](https://archive.org/details/artedelalenguaca00gonz), asociado a la John Carter Brown Library, Brown University.
 
-La obra contiene una gramática extensa y un vocabulario castellano–cahíta. `AL LECTOR` menciona expresamente **Hiaquis, Mayes y Thehuecos**, con observaciones sobre similitudes léxicas y diferencias de uso. CHD conserva esas denominaciones como categorías históricas de la fuente y no las proyecta automáticamente sobre identidades lingüísticas contemporáneas.
+La obra contiene una gramática extensa, ejemplos en cahíta, un vocabulario castellano–cahíta y una sección final de numerales. `AL LECTOR` menciona expresamente **Hiaquis, Mayes y Thehuecos**. CHD conserva esas denominaciones como categorías históricas de la fuente y no las proyecta automáticamente sobre identidades lingüísticas contemporáneas.
 
-Un problema filológico de interés aparece en la organización declarada del impreso: `AL LECTOR` denomina la obra “tripartita”, mientras el `PROHEMIO` anuncia **cuatro partes** y el ejemplar desarrolla `PARTE I`–`PARTE IV`. La inconsistencia se documenta, no se corrige silenciosamente.
+Un problema filológico de interés aparece en la propia organización declarada: `AL LECTOR` denomina la obra “tripartita”, mientras el `PROHEMIO` anuncia **cuatro partes** y el ejemplar desarrolla `PARTE I`–`PARTE IV`. La inconsistencia se documenta; no se corrige silenciosamente.
 
 → [Fuente e historia material](docs/SOURCE_ALC1737.md) · [Autoría y atribuciones](docs/AUTHORSHIP.md) · [Fuentes](SOURCES.md)
 
 ## Estado científico actual
 
-CHD se encuentra en desarrollo **`0.1.5-dev`**. La Fase 1 de ingestión quedó cerrada y están activas la transcripción histórico-digital y el modelado lexicográfico. El repositorio **no declara todavía una edición filológica cerrada**.
+CHD se encuentra en desarrollo **`0.2.0-dev`**. No existe todavía una edición filológica cerrada, una release científica estable ni un DOI del proyecto.
 
-| Dimensión | Estado |
+| Dimensión | Estado actual |
 |---|---:|
 | Páginas digitales inventariadas | **182 / 182** |
 | Páginas impresas numeradas mapeadas | **118 / 118** |
-| Segmentación macro | **182 / 182** |
-| Extracción OCR reproducible | **182 / 182** |
-| Micro-CER OCR normalizado | **25.66%** |
-| Micro-WER OCR normalizado | **51.96%** |
-| Líneas OCR/layout del vocabulario | **3,899** |
-| Candidatos de frontera v0.2 | **2,072** |
-| Validación estructural de candidatos v0.2 | **2,072 / 2,072** |
-| F1 diagnóstico de fronteras v0.2 | **93.37%** |
-| Páginas con transcripción diplomática completa | **1** |
-| Páginas con extracto diplomático piloto | **1** |
-| Entradas lexicográficas piloto | **12** |
-| Entradas lexicográficas de producción | **0** |
+| OCR paginado reproducible | **182 / 182** |
+| Transcripciones diplomáticas `full_page` | **128** |
+| Partes I–IV del Arte | **completas en capa IA-asistida** |
+| Candidatos lexicográficos v0.2 | **2,072 / 2,072 persistidos canónicamente** |
+| Páginas del vocabulario con representación estructurada | **45 / 45** |
+| Artículos históricos estructurados | **734** |
+| Candidatos reconciliados en pp. 133–134 | **61 / 61** |
+| Inicios visibles omitidos observados en pp. 133–134 | **14** |
+| Paradigmas históricos | **3** |
+| Construcciones modales | **9** |
+| Construcciones no finitas | **5** |
+| Construcciones participiales | **3** |
+| Construcciones predicativas/modales | **6** |
+| Grupos de verbos irregulares | **6** |
+| Preposiciones/grupos | **43** |
+| Grupos de adverbios | **11** |
+| Conjunciones/metacategorías | **6** |
+| Sistema numeral histórico | **1 bloque estructurado** |
+| Observaciones de variación histórica identificadas | **17+** |
 | Revisión humana independiente | **0** |
 
-Las cifras `3,899` y `2,072` describen **capas computacionales**, no el número de entradas del vocabulario histórico. Las métricas de fronteras proceden de una muestra diagnóstica intencional y de cotejo visual IA-asistido; no son una estimación probabilística de todo el volumen. Los 12 registros lexicográficos piloto siguen marcados `machine_corrected_unverified`.
+La cifra **2,072** describe candidatos computacionales, no entradas del vocabulario. Los **734 artículos** representan la capa curatorial actualmente estructurada y tampoco constituyen todavía el recuento final del vocabulario histórico.
 
-→ [Cobertura y significado de las métricas](COVERAGE.md)
+En las páginas 133–134 ya se completó la reconciliación candidato por candidato: 57 candidatos fueron clasificados como `article`, 3 como `continuation` y 1 permanece `unresolved`. Esta revisión mostró además 14 inicios visibles omitidos por el extractor. Por ello CHD mantiene separadas la cobertura de candidatos y la cobertura real de comienzos de artículo.
+
+→ [Cobertura y significado de las métricas](COVERAGE.md) · [Progreso lexicográfico](docs/LEXICON_PROGRESS.md)
+
+## Calidad OCR y fronteras lexicográficas
+
+El diagnóstico OCR estratificado produjo **micro-CER 25.66%** y **micro-WER 51.96%** después de una normalización que neutraliza `ſ/s`, diacríticos, mayúsculas y puntuación. El OCR bruto sirve como capa de recuperación, alineación y triage, pero no se promueve directamente a texto científico.
+
+El extractor vigente de fronteras, `hybrid_margin_mode_v0.2`, produjo **2,072 candidatos** sobre las 45 páginas del vocabulario. En la comparación diagnóstica intencional de pp. 133, 134, 150 y 177, v0.2 registró **97.13% de precisión, 89.89% de recall y 93.37% de F1**. Esta muestra es deliberada, no probabilística, y su referencia visual es IA-asistida; las métricas son de ingeniería editorial, no estimadores filológicos poblacionales.
+
+El inventario v0.2 completo está persistido de forma lossless y reconstruible, con revisión generadora, hashes, manifiesto y script de verificación.
+
+→ [Calidad OCR](docs/OCR_QUALITY.md) · [Extractor v0.2](docs/VOCAB_BOUNDARY_V02.md) · [Reconciliación](docs/LEXICON_RECONCILIATION_PROTOCOL.md)
 
 ## Arquitectura de evidencia
 
 CHD adopta una cadena no destructiva:
 
-**testimonio → OCR bruto → líneas/layout → candidatos de límites de artículo → revisión de fronteras → transcripción diplomática → transcripción corregida → estructuración lexicográfica → normalización → análisis derivado → revisión humana independiente cuando exista**.
+**testimonio → OCR bruto → líneas/layout → candidatos de frontera → reconciliación material → transcripción diplomática → estructuración histórica → normalización → análisis derivado → revisión humana independiente cuando exista**.
 
-Cinco reglas gobiernan el proyecto:
+Reglas centrales:
 
 1. **La fuente no se sobrescribe.** Correcciones, expansiones y modernizaciones viven en capas separadas.
-2. **La procedencia acompaña al dato.** Cada unidad debe poder remontarse a una fuente, página y actividad de procesamiento.
-3. **La incertidumbre se conserva.** Una lectura dudosa o una frontera incierta son resultados documentales legítimos.
-4. **La autoridad está tipada.** OCR, candidato computacional, corrección IA-asistida, propuesta editorial y revisión humana no son estados intercambiables.
-5. **La comparación diacrónica es una inferencia.** Ninguna forma histórica se declara automáticamente equivalente a una forma contemporánea.
+2. **La procedencia acompaña al dato.** Cada unidad debe remontarse a una fuente, página y actividad de procesamiento.
+3. **La incertidumbre se conserva.** Una lectura dudosa o frontera incierta es un resultado documental legítimo.
+4. **La autoridad está tipada.** `raw_ocr`, `machine_corrected_unverified`, `editorial_proposal`, `human_verified` y `unresolved` no son estados intercambiables.
+5. **Un candidato no es un artículo.** Una frontera material confirmada tampoco implica que la lectura curatorial esté completa.
+6. **La comparación diacrónica es una inferencia.** Ninguna forma histórica se declara automáticamente equivalente a una forma contemporánea.
 
 Documentos normativos: [EDITORIAL_POLICY.md](EDITORIAL_POLICY.md) · [PROVENANCE.md](PROVENANCE.md) · [DATASHEET.md](DATASHEET.md) · [docs/TRANSCRIPTION_CONVENTIONS.md](docs/TRANSCRIPTION_CONVENTIONS.md) · [docs/DERIVED_ARTIFACTS_POLICY.md](docs/DERIVED_ARTIFACTS_POLICY.md).
 
 ## Paginación y estructura del volumen
 
-El PDF de trabajo contiene **182 páginas digitales**. El cuerpo gramatical numerado ocupa las páginas digitales 15–132 y corresponde exactamente a las páginas impresas 1–118:
-
-```text
-printed_page = digital_page - 14
-```
+El PDF de trabajo contiene **182 páginas digitales**. El cuerpo gramatical numerado ocupa las digitales 15–132 y corresponde a las impresas 1–118.
 
 | Sección | Digital | Impresa |
 |---|---:|---:|
 | Preliminares | 1–14 | no paginadas |
 | Parte I | 15–50 | 1–36 |
-| Parte II | 51–68 | 37–54 |
-| Parte III | 69–104 | 55–90 |
-| Parte IV | 105–132 | 91–118 |
+| Parte II | 51–69 parcial | 37–55 parcial |
+| Parte III | 69 parcial–105 parcial | 55 parcial–91 parcial |
+| Parte IV | 105 parcial–132 | 91 parcial–118 |
 | Vocabulario | 133–177 | no paginado |
 | Numerales | 178–180 | no paginados |
 | Finales materiales | 181–182 | no paginados |
 
-El inventario máquina-legible se conserva en [`data/source/alc1737/page_manifest.csv`](data/source/alc1737/page_manifest.csv) y [`data/source/alc1737/sections.json`](data/source/alc1737/sections.json).
+Las digitales **69** y **105** contienen fronteras intra-página entre partes y se modelan explícitamente como páginas mixtas. El inventario máquina-legible se conserva en [`data/source/alc1737/page_manifest.csv`](data/source/alc1737/page_manifest.csv) y [`data/source/alc1737/sections.json`](data/source/alc1737/sections.json).
 
-## OCR: por qué no se usa como transcripción
+## Corpus gramatical histórico
 
-Una evaluación estratificada en seis zonas del volumen produjo un **micro-CER de 25.66%** y un **micro-WER de 51.96%** después de neutralizar `ſ/s`, diacríticos, mayúsculas y puntuación. El OCR bruto es útil como capa de recuperación y alineación, pero no puede promoverse directamente a texto científico.
+La capa de superficie del Arte está representada continuamente hasta `FIN DEL ARTE`. Sobre ella se han estructurado, entre otros objetos:
 
-→ [Diagnóstico, muestra y método reproducible](docs/OCR_QUALITY.md)
+- 3 paradigmas históricos;
+- 9 construcciones modales, reglas 207–234;
+- 5 construcciones no finitas, reglas 237–256;
+- 3 construcciones participiales, reglas 257–265;
+- 6 construcciones predicativas/modales, reglas 266–284;
+- 6 grupos de verbos irregulares, reglas 286–291;
+- 43 preposiciones/grupos, reglas 293–340;
+- 11 grupos de adverbios, reglas 341–359;
+- 6 grupos de conjunciones/metacategorías, reglas 360–373 e interjecciones;
+- sistema numeral histórico de digitales 178–180;
+- 17+ observaciones de variación histórica identificadas.
 
-## Vocabulario: del layout al artículo
+Estas categorías se conservan primero en los términos del gramático de 1737. Las reinterpretaciones lingüísticas modernas deberán vivir en una capa analítica separada.
 
-El vocabulario utiliza dos columnas y admite artículos multilínea. `scripts/extract_vocab_layout.py` conserva líneas OCR, coordenadas y columna. `scripts/extract_vocab_candidates.py`, actualmente en **`hybrid_margin_mode_v0.2`**, propone después fronteras conservadoras de artículo.
+→ [Issue de gramática y variación](https://github.com/fersandovalgtz/cahita-historico-digital/issues/4)
 
-La versión v0.2 produjo **2,072 candidatos** en las páginas 133–177. Sobre la misma muestra diagnóstica usada para v0.1, mejoró de **95.32% / 86.70% / 90.81%** a **97.13% / 89.89% / 93.37%** en precisión / recall / F1 de inicios de artículo. La mejora no autoriza a interpretar los 2,072 candidatos como entradas: la siguiente capa sigue siendo la **revisión de fronteras y agrupación interna**.
+## Corpus lexicográfico
 
-→ [Extractor v0.2 y comparación](docs/VOCAB_BOUNDARY_V02.md) · [Protocolo de revisión](docs/VOCAB_REVIEW_PROTOCOL.md) · [Evaluación v0.1](docs/VOCAB_BOUNDARY_EVALUATION.md)
+El vocabulario ocupa digitales 133–177 y utiliza dos columnas con artículos multilínea. CHD ya dispone de:
 
-## Transcripción por página
+- reconstrucción de layout;
+- inventario canónico de 2,072 candidatos v0.2;
+- 734 artículos históricos estructurados;
+- representación curatorial en 45/45 páginas;
+- modelado de remisiones `Buſca`, anáforas `Lo miſmo`, agrupaciones históricas y continuidades entre columnas/páginas;
+- registro de catchwords como paratexto;
+- reconciliación 61/61 de candidatos en pp. 133–134;
+- capa específica para falsos negativos/inicios visibles omitidos.
 
-La unidad maestra de la Fase 2 es la página digital. `schemas/page-transcription.schema.json` tipa cobertura, alcance, texto diplomático, incertidumbres, notas materiales, procedencia y estado de revisión. `data/transcription/status.csv` mantiene una fila por cada una de las 182 páginas.
+Persisten una discontinuidad material F→H entre digitales 157–158 (`ALC1737-gap-0001`) y una anomalía `Lucer-` entre 161–162. Ninguna se rellena desde conocimiento externo.
 
-La portada (página digital 3) dispone ya de una transcripción diplomática completa del texto impreso; la página 134 conserva un extracto piloto. Ambas son IA-asistidas y **no** se presentan como `human_verified`.
-
-→ [Modelo de transcripción](docs/TRANSCRIPTION_MODEL.md)
+→ [Progreso lexicográfico](docs/LEXICON_PROGRESS.md) · [Issue de corpus lexicográfico](https://github.com/fersandovalgtz/cahita-historico-digital/issues/3)
 
 ## Reproducibilidad
 
-El repositorio incluye scripts versionados para:
+El repositorio incluye scripts versionados para ingestión, hashes, OCR, layout, generación de candidatos, validación JSONL/JSON Schema, evaluación de OCR, validación de identificadores y reconstrucción del inventario canónico de candidatos.
 
-- calcular hashes e inventariar las 182 páginas;
-- extraer OCR por página;
-- reconstruir columnas mediante `pdftotext -bbox-layout`;
-- generar candidatos de límites de artículo;
-- validar JSONL contra JSON Schema;
-- medir CER/WER sobre una muestra versionada.
+La reproducción del inventario v0.2 queda fijada al PDF de trabajo con SHA-256 `69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37` y al JSONL canónico con SHA-256 `f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3`.
 
-Los artefactos masivos regenerables pueden conservarse fuera de Git cuando sus fuentes, receta y SHA-256 están fijados. Esta política evita confundir datos curatoriales con salidas intermedias sin perder reproducibilidad.
+Todavía falta cerrar una capa de integración continua/CI que ejecute automáticamente validadores, hashes y pruebas de integridad en cada cambio relevante.
 
-→ [Ingestión reproducible](docs/INGESTION_ALC1737.md) · [Política de derivados](docs/DERIVED_ARTIFACTS_POLICY.md) · [`scripts/`](scripts/) · [`schemas/`](schemas/)
+## Estado de autoridad y validación humana
+
+**Ningún objeto del repositorio está declarado actualmente `human_verified`.** Las transcripciones y decisiones curatoriales existentes son IA-asistidas y conservan su estado correspondiente. Esta limitación es explícita y forma parte del diseño científico del proyecto.
+
+Antes de una edición filológica cerrada deberán ampliarse el cotejo humano, la revisión de anomalías y el QA estratificado.
 
 ## Citación
 
-GitHub puede generar una cita desde [`CITATION.cff`](CITATION.cff). Mientras no exista una release archivada en Zenodo, cite el proyecto como versión de desarrollo:
+GitHub puede generar una cita desde [`CITATION.cff`](CITATION.cff). Mientras no exista una release archivada en Zenodo, cite el proyecto como versión de desarrollo y, cuando una afirmación dependa de una lectura histórica concreta, cite además el impreso de 1737 y la página correspondiente.
 
-> Sandoval Gutierrez, Fernando. 2026. *Cahíta Histórico Digital — Arte de la lengua cahita (1737)*. Versión de desarrollo. GitHub. https://github.com/fersandovalgtz/cahita-historico-digital
+> Sandoval Gutierrez, Fernando. 2026. *Cahíta Histórico Digital — Arte de la lengua cahita (1737)*. Versión de desarrollo. GitHub.
 
-Cuando una afirmación dependa de una lectura histórica concreta, cite además el impreso de 1737 y la página correspondiente. Un futuro DOI del proyecto no sustituirá la referencia a la fuente primaria.
+Un futuro DOI del proyecto no sustituirá la referencia a la fuente primaria.
 
 ## Licencias y derechos
 
@@ -163,9 +196,22 @@ Cuando una afirmación dependa de una lectura histórica concreta, cite además 
 - **Datos, metadatos, anotaciones y capas editoriales originales de CHD:** [CC BY 4.0](DATA_LICENSE.md).
 - **Fuente histórica y digitalizaciones de terceros:** conservan su propio estatus jurídico y condiciones de procedencia; CHD no las relicencia.
 
+## Próximas prioridades antes de productos científicos finales
+
+1. sincronizar y auditar continuamente documentación, métricas e Issues;
+2. completar la reconciliación lexicográfica y promover las unidades históricas pendientes;
+3. cerrar la capa de falsos negativos e inventario real de inicios visibles;
+4. ampliar la estructuración gramatical exhaustiva de Partes I–II y construir concordancias forma↔regla↔ejemplo↔página;
+5. consolidar la exportación de variación histórica;
+6. buscar e incorporar, con procedencia separada, testimonios independientes útiles para control textual;
+7. incorporar CI y QA reproducible;
+8. estabilizar exportaciones JSON/CSV y preparar interoperabilidad TEI/TEI Lex-0/IIIF cuando corresponda;
+9. ampliar revisión humana independiente;
+10. sólo después congelar una release científica estable y archivarla en Zenodo.
+
 ## Ecosistema científico
 
-CHD forma parte del ecosistema de humanidades digitales y ciencia abierta mantenido por Fernando Sandoval Gutierrez. Comparte principios metodológicos con [Rarámuri Histórico Digital](https://github.com/fersandovalgtz/raramuri-historico), pero mantiene corpus, vocabularios, decisiones editoriales e inferencias separados. También se vincula con [Rarámuri Digital](https://github.com/fersandovalgtz/raramuri-digital) y [Libro de Texto Mexicano Digital](https://github.com/fersandovalgtz/libro-texto-mexicano-digital).
+CHD forma parte del ecosistema de humanidades digitales y ciencia abierta mantenido por Fernando Sandoval Gutierrez. Comparte principios metodológicos con [Rarámuri Histórico Digital](https://github.com/fersandovalgtz/raramuri-historico), pero mantiene corpus, decisiones editoriales e inferencias separados. También se vincula con [Rarámuri Digital](https://github.com/fersandovalgtz/raramuri-digital) y [Libro de Texto Mexicano Digital](https://github.com/fersandovalgtz/libro-texto-mexicano-digital).
 
 → [Mapa del ecosistema](docs/ECOSYSTEM.md)
 
@@ -178,4 +224,4 @@ GitHub: [@fersandovalgtz](https://github.com/fersandovalgtz)
 
 ---
 
-**Estado:** desarrollo científico activo. No existe todavía una release cerrada ni un DOI de Cahíta Histórico Digital.
+**Estado:** desarrollo científico activo `0.2.0-dev`. No existe todavía una release científica cerrada ni un DOI de Cahíta Histórico Digital.
