@@ -1,0 +1,32 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 5,
+  "sourcePagePrinted": null,
+  "section": "preliminaries",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DEDICATORIA.\n\nSiendo eſta obra, Santiſſimo Padre\nFRANCISCO XAVIER, Arte\nde lengua Indica, dirigida al bien\nde las Almas de los Naturales, y mayor\ngloria de Dios; no ay que admirar, que\ncomo por ſus paſſos contados, vaya à\nconſagrarſe à vueſtras Aras; pues aun-\nque por ſer obra mia debiera eſtar eſcõ-\ndida dentro de ſu propria pequeñez; pe-\nro llevando por Norte la gloria de Dios,\ny ſalud de los Indios, que tanto promo-\nvio vueſtra Apoſtolica charidad, como el\nmundo ſabe, y vió el Oriente, pueſta à\nvueſtros pies puede ſin rubor ſalir à la luz\npublica: porque eſtando colocada en el\nthrono de vueſtra aceptacion, bien pue-\nde gloriarſe, q̃ eſtà conſtituida en ſu pro-\nprio lugar. Quien dudará, que eſta obra,\nò Arte de lengua, cuyo fin es inſtruir\nVarones Apoſtolicos vueſtros herma-\nnos, para que con mayor expedicion,\ny facilidad puedan predicar, y atender\nal bien eſpiritual de los pobres Indios,\n",
+  "lineBreakPolicy": "Printed line breaks and line-end hyphenation are preserved. Long s is represented as ſ where visually legible. The printed abbreviation q̃ is retained rather than silently expanded.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [],
+  "materialNotes": [
+    {
+      "type": "bleed_through",
+      "note": "Noticeable show-through from the opposite side is visible around the heading and right margin.",
+      "transcription": null
+    },
+    {
+      "type": "other",
+      "note": "A quire/catch mark is visible at the foot and is excluded from the prose transcription.",
+      "transcription": "V"
+    }
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-5",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from high-resolution rendered facsimile; provider OCR used only as a secondary navigation aid; no independent human verification",
+    "processedAt": null
+  }
+}
