@@ -1,0 +1,84 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 146,
+  "pageStatus": {
+    "candidateReconciliation": "complete",
+    "visibleStartCensus": "known_minimum_not_exhaustive",
+    "promotionLinkage": "partial",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 47,
+    "left": 21,
+    "right": 26,
+    "classification": {
+      "article": 45,
+      "continuation": 2,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 42,
+      "merged_articles": 1,
+      "oversegmented": 2,
+      "undersegmented": 0,
+      "ambiguous": 0,
+      "not_applicable": 2
+    }
+  },
+  "selectedLayer": {
+    "preExistingArticles": 25,
+    "articleIdRange": ["ALC1737-art-000184", "ALC1737-art-000208"],
+    "candidateRecordsLinked": 23,
+    "structuredArticlesLinkedFromCandidates": 24,
+    "selectedArticlesRepresentedAsKnownMissedStarts": 2,
+    "note": "ALC1737-art-000193 is both linked through merged candidate L-008 and registered as a missed internal start; ALC1737-art-000184 is a top-edge miss without a containing candidate."
+  },
+  "promotion": {
+    "articleCandidatesPendingPromotion": 22,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045
+  },
+  "visibleStartEvidence": {
+    "exhaustive": false,
+    "knownVisibleStartsMinimum": 47,
+    "knownMissedStartRecords": 2,
+    "knownMissedStartIds": ["ALC1737-miss-p146-L-001", "ALC1737-miss-p146-L-002"],
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "All 47 canonical candidates are structurally classified, but without a direct full-page facsimile census this pass cannot prove that the two demonstrated missed starts are the only false negatives. Metrics are therefore withheld rather than treating a known minimum as an exhaustive denominator."
+  },
+  "physicalContinuities": [
+    {
+      "from": "ALC1737-vcand-p146-R-023",
+      "to": "ALC1737-vcand-p146-R-024",
+      "type": "article_form_continuation",
+      "note": "R-024 continues the article begun at R-023."
+    },
+    {
+      "from": "ALC1737-vcand-p146-R-025",
+      "to": "ALC1737-vcand-p146-R-026",
+      "type": "article_microstructure_continuation",
+      "note": "R-026 begins with continuation material from R-025."
+    },
+    {
+      "from": "ALC1737-vcand-p146-R-026",
+      "to": "ALC1737-vcand-p147-L-001",
+      "type": "catchword_to_next_page",
+      "note": "Final `Bebida` on p.146 anticipates p.147 L-001 `Bebida de chía, y maíz toſtado`; it is not counted as a new p.146 article."
+    }
+  ],
+  "evidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "canonicalCandidateInventoryCount": 2072,
+    "selectedP146LayerUsedAsAnchor": true,
+    "p147OpeningInspectedFromCanonicalInventory": true,
+    "directFacsimileAvailableThisPass": false,
+    "policy": "Structural decisions may be closed from convergent machine evidence; textual promotions remain pending where raw OCR is not a sufficient transcription anchor."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}

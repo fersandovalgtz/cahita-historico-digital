@@ -26,8 +26,9 @@ A 2026-08-16:
 - **2,072 candidatos lexicográficos** `hybrid_margin_mode_v0.2` están persistidos canónicamente;
 - **1,045 artículos históricos estructurados** integran la capa curatorial;
 - las páginas **133–144** están cerradas técnicamente en reconciliación de candidatos, censo de inicios visibles y promoción/enlace IA-asistidos;
-- la página **145** tiene sus **39 candidatos canónicos reconciliados** a nivel de máquina: 33 `article`, 3 `continuation` y 3 `unresolved`; su censo visible exhaustivo y la promoción de 20 fronteras de artículo permanecen abiertos;
-- las páginas **146–177** ya poseen representación lexicográfica estructurada, pero su reconciliación exhaustiva página por página sigue pendiente;
+- la página **145** tiene sus **39 candidatos canónicos reconciliados**: 33 `article`, 3 `continuation` y 3 `unresolved`; su censo visible exhaustivo y la promoción de 20 fronteras permanecen abiertos;
+- la página **146** tiene sus **47 candidatos canónicos reconciliados**: 45 `article` y 2 `continuation`, sin candidatos `unresolved`; conserva 22 fronteras `pending_promotion` y un censo visible todavía no exhaustivo;
+- las páginas **147–177** ya poseen representación lexicográfica estructurada, pero su reconciliación exhaustiva página por página sigue pendiente;
 - no existen objetos `human_verified` y la política vigente no contempla intervención humana independiente;
 - las lecturas inciertas se conservan como tales y no se completan por inferencia silenciosa.
 
@@ -68,7 +69,7 @@ La ausencia de una capa humana no autoriza a fortalecer estas lecturas. Cuando l
 
 ## Próximo frente científico
 
-En la **página digital 145** ya se completó la reconciliación candidato por candidato. El siguiente objetivo es reducir sus **20 `pending_promotion`**, resolver en la medida posible los 3 candidatos `unresolved` y construir un censo visible exhaustivo sólo si el denominador puede sostenerse sin inventar datos. En paralelo, puede iniciarse el preflight de la **página 146**, con 47 candidatos canónicos.
+En **p.145** quedan 20 fronteras `pending_promotion` y 3 candidatos `unresolved`. En **p.146** la reconciliación estructural de los 47 candidatos está completa, con 22 `pending_promotion`; se han demostrado dos falsos negativos —`ALC1737-art-000184` antes de L-001 y `ALC1737-art-000193` dentro de L-008—, pero no se declara todavía un censo visible exhaustivo. El siguiente frente geométrico es la **página 147**, con 51 candidatos canónicos.
 
 ## Cita
 
