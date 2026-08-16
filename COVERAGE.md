@@ -14,14 +14,15 @@ Estado de cobertura de Cahíta Histórico Digital para la fuente `ALC1737`.
 | Líneas OCR/layout del vocabulario | **3,899** | pp. 133–177 |
 | Candidatos lexicográficos v0.2 | **2,072** | 2,072/2,072 estructuralmente válidos |
 | Precisión / recall / F1 v0.2 | **97.13% / 89.89% / 93.37%** | muestra diagnóstica |
-| Transcripciones diplomáticas `full_page` | **87 páginas** | preliminares textuales + Partes I–II + Parte III hasta p. 91 |
+| Transcripciones diplomáticas `full_page` | **92 páginas** | preliminares textuales + Partes I–II + Parte III hasta p. 96 |
 | **Parte I** | **completa** | digitales 15–50 / impresas 1–36 |
 | **Parte II** | **completa hasta su cierre textual** | digitales 51–68 + segmento superior de digital 69 / impresa 55 |
-| Parte III | **en curso hasta digital 91 / impresa 77** | reglas 189–250 representadas; regla 250 continúa |
+| Parte III | **en curso hasta digital 96 / impresa 82** | reglas 189–264 representadas; regla 264 continúa |
 | Reglas gramaticales estructuradas | **15** | lote inicial 46–60 |
 | Paradigmas gramaticales estructurados | **3** | presente de `Eria`; comparación temporal; comparación optativa |
 | Construcciones modales estructuradas | **9** | reglas 207–234; `vn supuesto` / `dos supuestos` |
-| Construcciones no finitas estructuradas | **5** | infinitivos y gerundios; reglas 237–250 |
+| Construcciones no finitas estructuradas | **5** | infinitivos y gerundios; reglas 237–256 |
+| Construcciones participiales estructuradas | **3** | reglas 257–264; `me`, `u`, `ye` |
 | Observaciones de variación histórica | **13 entidades** | 10 en exportación JSONL + 3 modulares (`0011`–`0013`) |
 | Extractos diplomáticos del vocabulario | **1 página** | p. 134, piloto |
 | Entradas lexicográficas piloto | **12** | esquema válido; no producción |
@@ -46,9 +47,9 @@ Por ello [`data/source/alc1737/sections.json`](data/source/alc1737/sections.json
 
 ## Transcripción
 
-La Fase 2 utiliza una unidad JSON por página y el manifiesto maestro [`data/transcription/status.csv`](data/transcription/status.csv), actualizado ahora hasta la página digital **91 / impresa 77**.
+La Fase 2 utiliza una unidad JSON por página. El manifiesto maestro [`data/transcription/status.csv`](data/transcription/status.csv) está consolidado hasta la página digital **91 / impresa 77**; el lote vigente adicional [`data/transcription/batches/part_iii_p092_p096.csv`](data/transcription/batches/part_iii_p092_p096.csv) añade las páginas 92–96 y constituye el delta que deberá incorporarse en la próxima consolidación del manifiesto.
 
-La **Parte I** está completamente representada. La **Parte II** también está completa en su continuidad textual, incluyendo su cierre en el segmento superior de p. 69. La **Parte III** avanza desde el segmento inferior de p. 69 hasta p. 91 y cubre las reglas 189–250; la regla 250 queda marcada como continuada en la página siguiente.
+La **Parte I** está completamente representada. La **Parte II** también está completa en su continuidad textual, incluyendo su cierre en el segmento superior de p. 69. La **Parte III** avanza desde el segmento inferior de p. 69 hasta p. 96 y cubre las reglas 189–264; la regla 264 queda abierta hacia p. 97.
 
 Lotes recientes:
 
@@ -57,6 +58,7 @@ Lotes recientes:
 - [`data/transcription/batches/part_iii_p072_p076.csv`](data/transcription/batches/part_iii_p072_p076.csv)
 - [`data/transcription/batches/part_iii_p077_p086.csv`](data/transcription/batches/part_iii_p077_p086.csv)
 - [`data/transcription/batches/part_iii_p087_p091.csv`](data/transcription/batches/part_iii_p087_p091.csv)
+- [`data/transcription/batches/part_iii_p092_p096.csv`](data/transcription/batches/part_iii_p092_p096.csv)
 
 `full_page` significa que la superficie textual impresa de la página está representada editorialmente. Puede contener secuencias `[ileg.]`, lecturas provisionales o incertidumbres tipadas; **no equivale a `human_verified`**.
 
@@ -92,7 +94,7 @@ El dataset preserva la oposición interna del impreso entre `vn supuesto` y `dos
 
 ### Infinitivos y gerundios
 
-El bloque siguiente, pp. digitales 87–91 / impresas 73–77, cierra los tiempos modales con las reglas 235–236 y abre una nueva secuencia de construcciones no finitas. CHD formalizó [`schemas/nonfinite-construction.schema.json`](schemas/nonfinite-construction.schema.json) y creó **5 objetos iniciales** en [`data/grammar/nonfinite_constructions_part_iii_p087_p091.jsonl`](data/grammar/nonfinite_constructions_part_iii_p087_p091.jsonl).
+Las pp. digitales 87–93 / impresas 73–79 cierran los tiempos modales y desarrollan el sistema de construcciones no finitas. CHD formalizó [`schemas/nonfinite-construction.schema.json`](schemas/nonfinite-construction.schema.json) y mantiene **5 objetos** en [`data/grammar/nonfinite_constructions_part_iii_p087_p093.jsonl`](data/grammar/nonfinite_constructions_part_iii_p087_p093.jsonl).
 
 Los objetos distinguen:
 
@@ -100,11 +102,19 @@ Los objetos distinguen:
 - segundo modo de infinitivo, regla 242;
 - gerundios en `DI`, reglas 243–245;
 - gerundio en `DO`, reglas 246–249;
-- comienzo del gerundio en `DVM`, regla 250.
+- gerundio en `DVM`, reglas 250–256.
 
 La lectura visual de la página 89 apoya **242** para `SEGUNDO MODO DE INFINITIVO`, aunque el OCR de esa página produjo 241. CHD conserva explícitamente este desacuerdo entre capas en vez de corregirlo sin registro.
 
 → [`docs/NONFINITE_CONSTRUCTIONS.md`](docs/NONFINITE_CONSTRUCTIONS.md)
+
+### Participios
+
+Las pp. digitales 94–96 / impresas 80–82 abren `§ II. DE LOS PARTICIPIOS EN COMUN` y desarrollan tres núcleos: participios comunes en `me`, participios en `u` y nombres verbales/participios en `ye`. CHD creó [`schemas/participle-construction.schema.json`](schemas/participle-construction.schema.json) y **3 objetos iniciales** en [`data/grammar/participles_part_iii_p094_p096.jsonl`](data/grammar/participles_part_iii_p094_p096.jsonl).
+
+La fuente atribuye a los participios en `u` valores discursivos de acción o estado ya terminado, pérdida o cese, lamentación y ausencia prolongada; CHD registra esas formulaciones como análisis histórico del gramático y no como etiquetas aspectuales modernas asumidas. La regla 264 inicia además una derivación instrumental de los participios en `ye` mediante `aye / ayeye` y continúa en p. 97.
+
+→ [`docs/PARTICIPLES.md`](docs/PARTICIPLES.md)
 
 ## Variación histórica: estado de exportación
 
