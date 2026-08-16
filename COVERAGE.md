@@ -26,7 +26,8 @@ Estado de cobertura de Cahíta Histórico Digital para `ALC1737` — 2026-08-15.
 | Grupos de conjunciones / metacategorías | **6** | reglas 360–373 + interjecciones |
 | Observaciones de variación histórica identificadas | **17 entidades** | `0014–0017` añadidas desde Parte IV |
 | Candidatos lexicográficos v0.2 | **2,072** | 45 páginas; no equivalen a entradas publicadas |
-| Entradas lexicográficas piloto | **12** | no producción |
+| Artículos históricos estructurados | **253** | secuencia curatorial p.134 y pp.138–149; no revisión humana |
+| Artículos de remisión piloto adicionales | **4** | p.165; fuera del conteo principal de 253 |
 | Revisión humana independiente | **0** | no iniciada |
 
 ## Hito: el Arte gramatical está completamente representado
@@ -108,9 +109,21 @@ Las formas exactas y el alcance de algunas construcciones permanecen sujetos a s
 
 Ninguna incidencia se corrige silenciosamente.
 
-## Siguiente gran frente: vocabulario
+## Vocabulario: estado de producción
 
-El vocabulario ocupa digitales **133–177**. El pipeline geométrico v0.2 ya propone **2,072 candidatos** sobre esas 45 páginas, pero siguen siendo candidatos de frontera. El siguiente objetivo es combinar la transcripción paginada con la microestructura lexicográfica ya diseñada y promover progresivamente artículos históricos trazables, sin confundir cantidad de candidatos con número real de entradas.
+El vocabulario ocupa digitales **133–177**. El pipeline geométrico v0.2 propone **2,072 candidatos** sobre esas 45 páginas; siguen siendo candidatos de frontera y no entradas publicadas.
+
+La secuencia curatorial principal contiene ahora **253 artículos históricos estructurados**, desde el piloto p.134 y el avance continuo pp.138–149. El modelo ya ha demostrado capacidad para representar:
+
+- equivalencias simples y múltiples;
+- remisiones `Buſca`;
+- anáforas `Lo miſmo` mantenidas `unresolved`;
+- agrupaciones históricas mediante `sourceGroupingRaw`;
+- artículos descriptivos;
+- continuidad entre páginas;
+- continuidad entre columnas dentro de una misma página mediante `sourceSpans`.
+
+La p.149 aportó el primer artículo reconstruido de izquierda a derecha en la misma página: `Camarón. Cecobi, grande del Rio. Bacauri.`. El siguiente frente comienza en digital **150**. → [`docs/LEXICON_PROGRESS.md`](docs/LEXICON_PROGRESS.md)
 
 ## Interpretación de autoridad
 
