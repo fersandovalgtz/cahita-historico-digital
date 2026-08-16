@@ -1,0 +1,28 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 47,
+  "sourcePagePrinted": 33,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE I.\n\nbo paſſivo. De eſta regla ſe ſacan los nombres de parenteſco, que aunque traygan el ſemi-pronombre poſſeſſivo, ſe ponen ò en nominativo, como queda dicho, ò en accuſativo, quando el verbo, ò la ocaſion lo pidiere, v. g. reverencia à mi Padre, inatzai, vel matzaita ne ioioure: quiero bacas para mi hijo, inaſoa vetzivo, vel maſoata vetzivo ne uatia uacaſim.\n\nDEL VERBO.\n\n113. Los neutros, y paſſivos ponen en nominativo la perſona, ò coſa de quien hablan, ò ſobre que apelan, v. g. murió vn Indio, ſenu Ioreme mucuc: cayó la piedra, ſeta uetzec: rajóſe la olla, ſotori canec: rajóſe el palo, cuta ſiutec. Los activos rigen nominativo de perſona que haze, y accuſativo de perſona que padece, v. g. yo amo à Dios, Dioſta ne eria: la culebra te muerde, bacot emchiqueye: el leon mató al conejo, ouſcu tabuita meac.\n\n114. Poſſeſſivos. Eſtos ſon activos en la conſtruccion, y rigen accuſativo de perſona que poſſee, con eſta advertencia, que el accuſativo de coſa poſſeyda es ſiempre de adjetivo, ò ſubſtantivo, que avia de concertar con el principal ſubſtantivo de la coſa poſſeyda. Porque eſte ſubſtantivo principal, que ſignifica la coſa poſſeyda, es el que ſe haze verbo poſſeſſivo conforme à la regla de la formacion de los verbos poſſeſſivos, v. g. tengo mucho maiz: buruc ne vachec: tienes buena manta, tuuric et[a?]orec: tienes mui mal corazon, huuenac e hiepſec: tiene natural mui cuerdo, ſula muquiata hiepſec: en donde los nombres vachi, t[a?]ori, hiepſi, que ſon los ſubſtantivos principales de eſtos exemplos, ſe hizieron verbos poſſeſſivos, vachec, t[a?]orec, hiepſec, y aſſi eſtán ſus adjetivos, que avian de concertar con ellos en accuſativo, ſcilicet, buruc, tuuric, huuenac: y en el vltimo exemplo eſtá tambien en accuſativo el ſubſtantivo ſula muquiari, que pertenece al nombre hiepſi, que fué el ſubſtantivo principal, que ſe hizo verbo poſſeſſivo.\n\nIN-\n",
+  "lineBreakPolicy": "Continuation of rule 112, heading, numbered rules and catchword are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained; uncertain forms are explicitly marked.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "inatzai, vel matzaita", "note": "Kinship example in continuation of rule 112 requires second collation; initial consonant of the second form is not fully secure.", "line": null},
+    {"token": "ouſcu tabuita meac", "note": "Example glossed 'el leon mató al conejo' is a provisional diplomatic reading.", "line": null},
+    {"token": "et[a?]orec / t[a?]ori / t[a?]orec", "note": "Manta-related noun and possessive verb in rule 114 contain a difficult medial letter; no silent normalization is asserted.", "line": null},
+    {"token": "ſula muquiata hiepſec", "note": "Example glossed 'tiene natural mui cuerdo' requires specialist linguistic collation.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Moderate show-through and scattered ink loss are present, especially in the possessive examples.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-47;printed-page-33",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
