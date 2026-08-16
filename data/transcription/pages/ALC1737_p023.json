@@ -1,0 +1,26 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 23,
+  "sourcePagePrinted": 9,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE I.\n\nriua, vel tuuraua la bondad. Quales nombres toman mas aynas el ua, que el raua, & è contra dabit vſus.\n\n36. Los verbos forman eſte nombre abſtracto poniendo el ua, vel raua, en lugar del naque del futuro, v. g. Eria amar, futuro erianaque: en lugar del naque, qualquiera de las dichas particulas forma eſte nombre: eriaua, eriaraua el amor, v. g. Dios por el amor que nos tiene nos haze bien: Dios à itom eriu[a?]ie itom hiocore. En donde ſe note, que eſtos abſtractos, que ſalen de verbos, rigen el caſo del verbo de donde ſalen, y por eſſo aquel primer itom del exemplo es accuſativo regido del verbo eria amar. Sacaſe hunaſte ſeñalar, que forma eſte abſtracto, añidiendo el ua, vel raua al preſente del verbo, v. g. Hunaſteraua la ſeñal. Todos eſtos abſtractos ſe declinan como ſubſtantivos que ſon, por la primera declinacion, v. g. Eriaraua, genitivo eriarauata: tuuraua, genitivo tuurauata: ioremraua, genitivo ioremrauata.\n\nEn I, vel RI.\n\n37. Ay nombres ſubſtantivos en i, vel ri, que ſe forman de verbos, añidiendo la i, vel ri, en lugar del naque del futuro, v. g. noca, y roca, hazen el futuro nocnaque, rocnaque, poniendo la i, en lugar del naque, forman eſtos nombres noquiroqui la palabra, convirtiendo la c, en qu, para recebir la i: hiaua parlar, hiauari la voz. Eſtos nombres aſſi formados ſignifican el termino ſubſtantivo de la accion del verbo, v. g. la accion del verbo maca dar, es dacion, el termino ſubſtantivo es el don, y aſſi maqui es el don. Quales verbos ayan de tomar el i, ſolamente, y quales el ri, es dificil ſaber por reglas: el vſo lo enſeñará.\n\n38. Solo ſe puede por aora dar eſta regla para alguna parte de los verbos, y es, que todos los verbos acabados en ca, ò en que, que caſi todos forman el futuro, vnos perdiendo el a, y otros el que, mudando el que, en c, eſtos tales hazen el vocal ſubſtantivo en i, mudada la c, del futuro en qu, v. g. noca, noqui la palabra: de maca, maqui el don:\n\nde\n",
+  "lineBreakPolicy": "Headings, numbered rules and the catchword are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and long s are retained; uncertain sequences are marked.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "eriu[a?]ie", "note": "Forma dentro del ejemplo 'Dios por el amor que nos tiene...' requiere segunda colación; la secuencia central está desgastada.", "line": null},
+    {"token": "noquiroqui", "note": "Forma glosada 'la palabra' se conserva según lectura visual; revisar segmentación morfológica en una capa analítica posterior.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Moderate show-through and ink irregularity are visible across the page.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-23;printed-page-9",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
