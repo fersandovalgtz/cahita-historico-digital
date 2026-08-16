@@ -4,7 +4,7 @@
 
 El Vocabulario de `ALC1737` ocupa las páginas digitales 133–177. El extractor `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera sobre 45 páginas, pero los candidatos no se cuentan como artículos históricos publicados.
 
-La secuencia curatorial principal contiene ahora **478 artículos históricos estructurados**: piloto p.134 + avance continuo pp.138–164 dentro del material efectivamente conservado. Todos permanecen `machine_corrected_unverified` o `unresolved`; **ninguno** ha sido declarado `human_verified`.
+La secuencia curatorial principal contiene ahora **538 artículos históricos estructurados**: piloto p.134 + avance continuo pp.138–168 dentro del material efectivamente conservado. Todos permanecen `machine_corrected_unverified` o `unresolved`; **ninguno** ha sido declarado `human_verified`.
 
 ## Lotes estructurados
 
@@ -39,9 +39,21 @@ La secuencia curatorial principal contiene ahora **478 artículos históricos es
 | `p162_selected_articles.jsonl` | 162 | 15 |
 | `p163_selected_articles.jsonl` | 163 | 15 |
 | `p164_selected_articles.jsonl` | 164 | 15 |
-| **Total principal** | — | **478** |
+| `p165_selected_articles.jsonl` | 165 | 15 |
+| `p166_selected_articles.jsonl` | 166 | 15 |
+| `p167_selected_articles.jsonl` | 167 | 15 |
+| `p168_selected_articles.jsonl` | 168 | 15 |
+| **Total principal** | — | **538** |
 
-Existen además **4 artículos de remisión piloto** en p.165, mantenidos fuera del conteo principal mientras no se reconcilie esa página con la secuencia productiva.
+## Reconciliación del piloto de p.165
+
+La p.165 ya no mantiene un lote piloto separado. Durante la reconciliación se detectó que `p165_cross_reference_pilot.jsonl` reutilizaba los identificadores `ALC1737-art-000013`–`000016`, ya ocupados por la secuencia principal iniciada en p.138. El problema era de **identidad de objeto**, no de lectura histórica.
+
+Los cuatro artículos piloto (`Orejear`, `Orina`, `Orinar`, `Oſado ſer`) fueron preservados, reasignados a `ALC1737-art-000490`–`000493` e integrados en `p165_selected_articles.jsonl`. El archivo piloto obsoleto fue eliminado. La trazabilidad del cambio se conserva en:
+
+`data/lexicon/provenance/p165_pilot_id_reconciliation.json`
+
+Para reducir el riesgo de regresión se añadió `scripts/validate_lexicon_ids.py`, que comprueba JSONL, unicidad global de `articleId` y coherencia entre `reviewStatus` y `humanVerified`.
 
 ## Regla de autoridad
 
@@ -49,19 +61,13 @@ Una estructura válida no equivale a una lectura filológicamente cerrada. `mach
 
 ## Remisiones internas `Buſca`
 
-Las remisiones se modelan como relaciones documentales, no como sustitución del artículo remitente por el contenido de su destino. Los nuevos lotes añaden, entre otras, `Yr por agua → agua traer`, `Jubilo → gozo`, `Legumbres → frixol, habas, &c.`, `Loco bolverſe → enloquecer`, `Loma → ladera`, `Mentar à alguno → mencionar`, `Mozo de edad → mancebo`, `Mofar, eſcarnecer → menoſpreciar`, `Montear → caçar`, `Neceſſidad tener de alguna coſa → meneſter ſer`, `Ninguna coſa → nada` y `Nombrar, poner nombre → llamar`.
+Las remisiones se modelan como relaciones documentales, no como sustitución del artículo remitente por el contenido de su destino. La p.165 consolida `Ofender → pecar`, `Ofenſa → pecado`, `Ofenſor → pecador`, `Orejear → menear las orejas`, `Orina → meados`, `Orinar → mear` y `Oſado ſer → atrevido`. La p.166 añade `Palo para eſcarbar tierra → coa`; la p.167 incorpora la serie recíproca `Pecado → ofenſa`, `Pecador → ofenſor` y `Pecar → ofender`.
 
-### Primer ciclo recíproco
-
-Las pp.153–154 conservan el primer ciclo explícito de remisión del corpus:
-
-`Demonio. Buſca diablo.` ↔ `Diablo. Buſca demonio.`
-
-Se preserva en `data/lexicon/relations/reciprocal_cross_references.jsonl`. CHD no infiere cuál de las dos voces debe ser el destino canónico.
+Esto amplía el grafo documental de remisiones y muestra que algunas relaciones forman pares o ciclos semánticos explícitos dentro del propio vocabulario.
 
 ## Anáforas `Lo miſmo`
 
-`Lo miſmo` se mantiene separado de `Buſca`. Además de los casos anteriores, los nuevos lotes conservan como `unresolved` `Yerva buena`, `Libro`, `Limon` y `Noez, y nogal`. No se copia automáticamente la forma de la entrada precedente.
+`Lo miſmo` se mantiene separado de `Buſca`. Los casos ya detectados permanecen `unresolved` hasta que su antecedente pueda identificarse mediante una operación editorial explícita; no se copia automáticamente la forma de la entrada precedente.
 
 ## Agrupaciones, spans y microestructura
 
@@ -69,15 +75,16 @@ Se preserva en `data/lexicon/relations/reciprocal_cross_references.jsonl`. CHD n
 
 ## Catchwords y control de fronteras
 
-Los reclamos de pie de página se conservan como paratexto, no como artículos. La capa `data/lexicon/boundary_markers/` registra ahora también:
+Los reclamos de pie de página se conservan como paratexto, no como artículos. La capa `data/lexicon/boundary_markers/` documenta ahora, entre otros:
 
-- p.159 `Yr` → inicio normal de p.160;
-- p.160 `Que-` → continuación en la parte superior de p.161 de un artículo cuyo lema comienza en la página anterior;
-- p.161 `Lucer-` → anomalía de frontera: p.162 comienza con la forma visible `Tohuopo, l, aioa.` sin que el lema anunciado por el reclamo sea visible en el escaneo;
-- p.163 `Naci-` → `Nacido...` en p.164;
-- p.164 `Obr-` → pendiente de cotejo al reconciliar p.165.
+- p.161 `Lucer-` → anomalía de frontera: p.162 comienza con `Tohuopo, l, aioa.` sin lema visible;
+- p.164 `Obr-` → `Obra aſſi, hechura. Chupari.` en p.165, continuidad ya resuelta;
+- p.165 `Paga-` → `Paga tal. Bebeti.` en p.166;
+- p.166 `Paſſo` → `Paſſo de las beſtias. Arabuerama.` en p.167;
+- p.167 `Pena-` → `Penacho` en p.168;
+- p.168 `Pie-` → pendiente de cotejo en p.169.
 
-El caso p.161→162 **no se reconstruye por conjetura**: puede responder a recorte, pérdida de una línea o comportamiento material del testimonio, y queda `unresolved` hasta contar con evidencia adicional.
+El caso p.161→162 **no se reconstruye por conjetura**. El reclamo `Pie-` permanece igualmente `unresolved` hasta procesar la página siguiente.
 
 ## Discontinuidad del testimonio entre F y H
 
@@ -91,8 +98,8 @@ La unidad maestra continúa siendo el **artículo histórico**:
 
 `página/columna → spans físicos → agrupación opcional → artículo → formas/remisiones/anáforas/notas → autoridad editorial`.
 
-Catchwords, anomalías de frontera y lagunas del testimonio se mantienen en capas separadas de paratexto/procedencia. La normalización, resolución de anáforas, equivalencias modernas y proyección TEI Lex-0 pertenecen a capas posteriores.
+A esta arquitectura se añade ahora una capa explícita de QA de **identificadores persistentes**, además de catchwords, anomalías de frontera y lagunas documentales. La normalización, resolución de anáforas, equivalencias modernas y proyección TEI Lex-0 pertenecen a capas posteriores.
 
 ## Siguiente lote
 
-Reconciliar **digital 165** con los cuatro artículos piloto ya existentes, evitar duplicados y continuar después la secuencia productiva hacia p.166.
+Continuar desde **digital 169**, resolver el reclamo `Pie-` de p.168 y mantener la sincronización GitHub ↔ Notion por cada lote sustantivo.
