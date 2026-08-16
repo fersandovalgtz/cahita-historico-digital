@@ -1,0 +1,58 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 142,
+  "candidateInventory": {
+    "total": 53,
+    "left": 20,
+    "right": 33,
+    "classification": {
+      "article": 50,
+      "continuation": 0,
+      "paratext": 2,
+      "false_positive": 1,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 50,
+      "merged_articles": 0,
+      "oversegmented": 0,
+      "undersegmented": 0,
+      "ambiguous": 0,
+      "not_applicable": 3
+    }
+  },
+  "visibleStartCensus": {
+    "visibleHistoricalArticleStarts": 50,
+    "truePositiveStarts": 50,
+    "falsePositiveCandidateStarts": 3,
+    "falseNegativeVisibleStarts": 0,
+    "precision": 0.943396,
+    "recall": 1.0,
+    "f1": 0.970874,
+    "missedStartFile": "data/lexicon/reconciliation/p142_missed_visible_starts.jsonl"
+  },
+  "linkage": {
+    "articleCandidatesLinked": 50,
+    "missedStartsLinked": 0,
+    "pendingPromotion": 0
+  },
+  "curation": {
+    "preExistingStructuredArticlesOnPage": 11,
+    "preExistingArticleStartsOnPage": 10,
+    "newPromotions": 40,
+    "newArticleIdRange": "ALC1737-art-000940--ALC1737-art-000979",
+    "corpusTotalAfterPromotion": 979,
+    "unresolvedPromotions": []
+  },
+  "physicalAndEditorialNotes": [
+    "ALC1737-art-000141 begins on p.141 and ends at the top of p.142 (`padecen de las caderas. Bapſam.`); that continuation is not counted as a new p.142 article start.",
+    "Candidate L-006 is the historical section heading `Arboles, cuyo fruto es comeſtible`; candidate R-004 is `Arboles que ſirven para madera`; both are paratext and excluded from lexical-start metrics.",
+    "Candidate L-020 (`t~-`) has no corresponding visible lexical or paratext boundary and is classified as an OCR/layout false positive.",
+    "Candidate R-022 contains `Arbol. Hocona.` followed by the grouping heading `Arboles chaparros`; only the former contributes an article start.",
+    "Candidate R-033 contains `Arbol. Sañia.` plus the bottom catchword `Arbol.` for p.143; the catchword is paratext and excluded.",
+    "The earlier p142 botanical pilot is recollated at 600 dpi: ALC1737-art-000131 is corrected from `Hohuno` to `Hohuo`, and ALC1737-art-000135 from `Maccchua` to `Maccehua`, without changing their IDs."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "authorityNote": "Candidate reconciliation, visible-start census, pilot corrections and promotions are AI-assisted direct facsimile collation at 600 dpi. No object is human_verified; historical therapeutic claims are source testimony only and no modern botanical identification is inferred."
+}
