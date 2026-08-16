@@ -1,0 +1,26 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 20,
+  "sourcePagePrinted": 6,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ARTE DE LA LENGVA\n\nel naque: v. g. Cate hazer caſa, catenaque: ſotote hazer ollas, ſototenaque: ioremte engendrar, ioremtenaque: ſacaſe hunaſti ſeñalar, ordeñar, y criar, que haze hunaſtinaque: tuute aderezar, y componer, tuutinaque.\n\n22. Mas los en te, que no ſalen, ni ſe forman de nombres, mudan el te, en ti, para el naque, v. g. Muſute bajar la cabeza, muſutinaque: reprepte peſtañear, repreptinaque: puhte abrir los ojos, puhtinaque: pohte hincharſe, pohtinaque: ſiute rajarſe, ſiutinaque. Sacanſe cate ir, ò venir muchos, que haze catnaque: quite pararſe vno, quitenaque: hapte pararſe muchos, haptenaque, &c.\n\n23. Decimaquinta: los acabados en tze, pierden el tze, para recebir el naque, v. g. Tatze reſplandecer, ò brillar, tainaque: ſuamuetze tener experiencia, ſuamuetnaque: nauuetze recogerſe, ò congregarſe, nauuetnaque.\n\n24. Los demàs verbos acabados en e, que antes de la e, tienen qualquier otra conſonante, pierden la e, para recebir el naque, v. g. Sime ir vno, ſimnaque: cupe cerrar los ojos, cupnaque: ſuale creer, ſualnaque: tene murmurar, tennaque: cune eſconderſe, cunnaque: ucuie deſlear, ucuinaque: ſacaſe tenne correr, ò huirſe muchos, que haze tenninaque.\n\n25. Vltima regla: los verbos acabados en ue, pierden la e, para recebir el naque, v. g. Hibiue aſſechar eſpiando, hibiunaque: hichiue deſgranar, hichiunaque: tiue tener verguenza, tiunaque: queue leñar, queunaque. Todos los demàs verbos de qualquier terminacion que ſean parece hazer el futuro añadiendo al recto el naque, ſi alguna excepcion huviere, dabit vſus.\n\n26. Por vltimo ſe advierta, que quando los verbos en ie, reduplican la primera ſyllaba, aunque hazen el preterito de diferente manera vt ſupra, mas el futuro lo hazen reduplicando la ſyllaba del futuro, v. g. Neie volar, ninaque, el reduplicativo haze el futuro nininaque, &c. nine tener lengua, futuro ninenaque, y aſſi ſe diſtingue del nininaque por volar muchas vezes.\n\nVOZ\n",
+  "lineBreakPolicy": "Paragraphs, numbered rules, running headers and catchwords are preserved. Ordinary line wrapping is normalized within paragraphs; historical spelling and visible long s are retained. Explicit [?] markers flag unresolved readings.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "ſotote", "note": "Forma glosada 'hazer ollas' requiere segunda colación por desgaste tipográfico.", "line": null},
+    {"token": "tze", "note": "Nombre de la terminación en la regla 23 se conserva según lectura visual; revisar contra otra reproducción si se dispone.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Show-through and uneven inking are visible on the leaf; they affect some linguistic forms.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-20;printed-page-6",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
