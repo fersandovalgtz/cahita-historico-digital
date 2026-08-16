@@ -1,0 +1,56 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 144,
+  "candidateInventory": {
+    "total": 39,
+    "left": 21,
+    "right": 18,
+    "classification": {
+      "article": 39,
+      "continuation": 0,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 34,
+      "merged_articles": 5,
+      "oversegmented": 0,
+      "undersegmented": 0,
+      "ambiguous": 0,
+      "not_applicable": 0
+    }
+  },
+  "visibleStartCensus": {
+    "visibleHistoricalArticleStarts": 46,
+    "truePositiveStarts": 39,
+    "falsePositiveCandidateStarts": 0,
+    "falseNegativeVisibleStarts": 7,
+    "precision": 1.0,
+    "recall": 0.847826,
+    "f1": 0.917647,
+    "missedStartFile": "data/lexicon/reconciliation/p144_missed_visible_starts.jsonl"
+  },
+  "linkage": {
+    "articleCandidatesLinked": 39,
+    "missedStartsLinked": 7,
+    "pendingPromotion": 0
+  },
+  "curation": {
+    "preExistingStructuredArticlesOnPage": 14,
+    "newPromotions": 32,
+    "newArticleIdRange": "ALC1737-art-001014--ALC1737-art-001045",
+    "corpusTotalAfterPromotion": 1045,
+    "unresolvedPromotions": ["ALC1737-art-001045"]
+  },
+  "physicalAndEditorialNotes": [
+    "Seven visible starts are missed by the candidate extractor: `Arrimarſe à alguna coſa`, `Arrugada tener la cara`, `Aſpera coſa`, `Aſſiento donde ſientan`, `Aſſomar la cabeza`, `Atar los pies` and `Ataviarſe`.",
+    "Candidates L-007, L-014, L-020, R-007 and R-011 each begin at a valid article but absorb one additional visible article start; therefore they are `merged_articles`, not false-positive starts.",
+    "The p.144 right edge materially clips several wrapped Cahita forms. ALC1737 remains primary; registered BUE1890 is used only as explicit secondary corroboration where necessary and never silently substituted.",
+    "The selected layer was recollated at 600 dpi before closure, with six versioned corrections: 000156 Ahuma→Ahima; 000160 Aletear/Amumuifuc→Aſaetear/Amumuiſuc; 000162 Aſir/Auhinei→Aſſir/Auhineu; 000163 Aſirſe→Aſſirſe; 000164 Aſombrarſe→Aſſombrarſe; 000165 Tapeto→Tapeti.",
+    "`Atormentar` (001045) is a cross-page article spanning pp.144–145. The bottom `chum-` is a catchword anticipating the second form printed at the top of p.145. That second form is retained as lower-confidence `chumtieſte` and the article remains `unresolved` pending independent human recollation."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "authorityNote": "P.144 is closed structurally through AI-assisted direct 600 dpi facsimile collation. BUE1890 functions only as documented secondary control for clipped-edge readings. No object is human_verified and low-confidence cross-page microstructure remains explicitly unresolved rather than inferred."
+}
