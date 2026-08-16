@@ -1,0 +1,17 @@
+{
+  "id":"ALC1737-var-0017",
+  "sourceId":"ALC1737",
+  "sourcePageDigital":127,
+  "sourcePagePrinted":113,
+  "section":"part_iv",
+  "varietiesRaw":["Teueco","Mayo"],
+  "observationType":"other_explicit_source_attribution",
+  "phenomenon":"frecuencia atribuida de un modo de hablar en la sección de haco/hacum",
+  "sourceText":"En Teueco, y Mayo es mui vſado eſte modo de hablar",
+  "structuredClaim":{"sourceFrequencyRaw":"mui vſado","attributedToRaw":["Teueco","Mayo"],"constructionContextRaw":"haco / hacum; explicación continúa en la página siguiente"},
+  "editorialInterpretation":"La fuente atribuye explícitamente a Teueco y Mayo alta frecuencia de un modo de hablar tratado en la sección de `haco / hacum`. La construcción exacta se conserva vinculada a las reglas 353–357 y no se reduce aquí a una etiqueta moderna.",
+  "caution":"La atribución es clara, pero el alcance preciso de `eſte modo de hablar` debe cotejarse conjuntamente con la continuación de la regla 355 en p.128 antes de cualquier análisis comparativo moderno.",
+  "reviewStatus":"unresolved",
+  "humanVerified":false,
+  "provenance":{"derivedFrom":"ALC1737:digital-pages-127-128;printed-pages-113-114;rules-353-357","agent":"GPT-5.6 Sol visual collation","method":"Explicit historical variety attribution extracted from facsimile/transcription; no independent human verification","processedAt":null}
+}
