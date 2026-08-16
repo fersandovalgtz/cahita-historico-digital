@@ -26,8 +26,8 @@ Estado de cobertura de Cahíta Histórico Digital para `ALC1737` — 2026-08-15.
 | Grupos de conjunciones / metacategorías | **6** | reglas 360–373 + interjecciones |
 | Observaciones de variación histórica identificadas | **17 entidades** | `0014–0017` añadidas desde Parte IV |
 | Candidatos lexicográficos v0.2 | **2,072** | 45 páginas; no equivalen a entradas publicadas |
-| Artículos históricos estructurados | **253** | secuencia curatorial p.134 y pp.138–149; no revisión humana |
-| Artículos de remisión piloto adicionales | **4** | p.165; fuera del conteo principal de 253 |
+| Artículos históricos estructurados | **298** | secuencia curatorial p.134 y pp.138–152; no revisión humana |
+| Artículos de remisión piloto adicionales | **4** | p.165; fuera del conteo principal de 298 |
 | Revisión humana independiente | **0** | no iniciada |
 
 ## Hito: el Arte gramatical está completamente representado
@@ -113,7 +113,7 @@ Ninguna incidencia se corrige silenciosamente.
 
 El vocabulario ocupa digitales **133–177**. El pipeline geométrico v0.2 propone **2,072 candidatos** sobre esas 45 páginas; siguen siendo candidatos de frontera y no entradas publicadas.
 
-La secuencia curatorial principal contiene ahora **253 artículos históricos estructurados**, desde el piloto p.134 y el avance continuo pp.138–149. El modelo ya ha demostrado capacidad para representar:
+La secuencia curatorial principal contiene ahora **298 artículos históricos estructurados**, desde el piloto p.134 y el avance continuo pp.138–152. El modelo ya ha demostrado capacidad para representar:
 
 - equivalencias simples y múltiples;
 - remisiones `Buſca`;
@@ -123,7 +123,7 @@ La secuencia curatorial principal contiene ahora **253 artículos históricos es
 - continuidad entre páginas;
 - continuidad entre columnas dentro de una misma página mediante `sourceSpans`.
 
-La p.149 aportó el primer artículo reconstruido de izquierda a derecha en la misma página: `Camarón. Cecobi, grande del Rio. Bacauri.`. El siguiente frente comienza en digital **150**. → [`docs/LEXICON_PROGRESS.md`](docs/LEXICON_PROGRESS.md)
+Las pp.150–152 amplían la muestra de remisiones y anáforas: p.150 contiene `Caro venderſe → Buſca cara coſa`, `Carrizo → Buſca caña hueca`, además de `Cobrar lo que ſe debe. Lo miſmo.` y `Cobre metal. Lo miſmo.`; p.151 incorpora `Compaſſion → compadecerſe` y `Comulgar → comunion`; p.152 añade `Cueva → caverna` y `Culpar à otro → acuſar`. El siguiente frente comienza en digital **153**. → [`docs/LEXICON_PROGRESS.md`](docs/LEXICON_PROGRESS.md)
 
 ## Interpretación de autoridad
 
