@@ -15,9 +15,9 @@ Estado canónico de cobertura de Cahíta Histórico Digital para `ALC1737` — 2
 | Sistema numeral histórico | **1 bloque estructurado** | digitales 178–180 |
 | Observaciones de variación histórica | **17+** | exportación combinada pendiente de consolidación |
 | Candidatos lexicográficos v0.2 | **2,072 / 2,072 persistidos canónicamente** | inventario reconstruible |
-| Artículos históricos estructurados | **1,013** | capa curatorial actual; no conteo final del vocabulario |
+| Artículos históricos estructurados | **1,045** | capa curatorial actual; no conteo final del vocabulario |
 | Páginas de vocabulario con representación estructurada | **45 / 45** | al menos una representación por página |
-| Páginas con reconciliación + censo + promoción cerrados | **133–143** | IA-asistido; no `human_verified` |
+| Páginas con reconciliación + censo + promoción cerrados | **133–144** | IA-asistido; no `human_verified` |
 | Reconciliación pp.133–134 | **61 / 61 candidatos** | 57 article; 4 continuation |
 | Censo visible pp.133–134 | **72 inicios** | TP57 / FP4 / FN15; F1 0.857143 |
 | Reconciliación p.135 | **43 / 43 candidatos** | 35 article; 8 continuation |
@@ -38,11 +38,13 @@ Estado canónico de cobertura de Cahíta Histórico Digital para `ALC1737` — 2
 | Censo visible p.142 | **50 inicios** | TP50 / FP3 / FN0; F1 0.970874 |
 | Reconciliación p.143 | **46 / 46 candidatos** | 44 article; 2 continuation |
 | Censo visible p.143 | **48 inicios** | TP44 / FP2 / FN4; F1 0.936170 |
-| Agregado pp.133–143 | **475 candidatos / 495 inicios visibles** | TP444 / FP31 / FN51; F1 0.915464 |
-| `pending_promotion` pp.133–143 | **0** | candidatos article y falsos negativos visibles enlazados |
+| Reconciliación p.144 | **39 / 39 candidatos** | 39 article; 34 exact + 5 merged_articles |
+| Censo visible p.144 | **46 inicios** | TP39 / FP0 / FN7; F1 0.917647 |
+| Agregado pp.133–144 | **514 candidatos / 541 inicios visibles** | TP483 / FP31 / FN58; F1 0.915640 |
+| `pending_promotion` pp.133–144 | **0** | candidatos article y falsos negativos visibles enlazados |
 | Lagunas/discontinuidades del testimonio | **1** | `ALC1737-gap-0001`, digital 157→158 |
 | Anomalías de frontera adicionales | **1 abierta** | p.161 `Lucer-` → p.162 sin lema visible |
-| QA automatizado | **activo** | GitHub Actions valida inventario, IDs, schemas y reconciliaciones hasta p.143 |
+| QA automatizado | **activo** | GitHub Actions valida inventario, IDs, schemas y reconciliaciones hasta p.144 |
 | Revisión humana independiente | **0** | no iniciada |
 
 ## Arte gramatical
@@ -51,7 +53,7 @@ Las páginas impresas 1–118, digitales 15–132, están representadas de forma
 
 ## Vocabulario
 
-El vocabulario ocupa las digitales 133–177. `hybrid_margin_mode_v0.2` produce **2,072 candidatos de frontera**, mientras que la capa curatorial contiene **1,013 artículos históricos estructurados**. Son objetos distintos y ninguna cifra debe interpretarse como el número final de entradas de la obra.
+El vocabulario ocupa las digitales 133–177. `hybrid_margin_mode_v0.2` produce **2,072 candidatos de frontera**, mientras que la capa curatorial contiene **1,045 artículos históricos estructurados**. Son objetos distintos y ninguna cifra debe interpretarse como el número final de entradas de la obra.
 
 El inventario completo está fijado a la revisión generadora `f175b4bc455ff40a066d092a94e0a89a0ca2ae10` y al PDF fuente SHA-256 `69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37`. El JSONL reconstruido tiene SHA-256 `f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3`.
 
@@ -162,11 +164,33 @@ La recollación a 600 dpi corrigió dos lecturas antiguas conservando sus IDs: `
 
 En `Arrendar dar algo à renta` se conserva literalmente el separador histórico `l` de `Hitare urec, l, reureuri`; no se le asignó una función lingüística moderna. Del mismo modo, guiones y separadores de `Namacari --- buecamta popona`, `Hitaric -- huique` y formas afines se conservaron cuando eran visibles, eliminando sólo particiones tipográficas inequívocas de fin de línea.
 
+## Página 144 — ciclo cerrado
+
+`data/lexicon/reconciliation/p144_reconciliation_status.json` registra:
+
+- **39/39 candidatos** reconciliados: 21 izquierda + 18 derecha;
+- los **39 son `article`**;
+- calidad geométrica: **34 `exact`** y **5 `merged_articles`**;
+- **46 inicios históricos visibles**;
+- TP39 / FP0 / FN7;
+- precisión **1.000000**, recall **0.847826**, F1 **0.917647**;
+- 39/39 candidatos `article` enlazados;
+- 7/7 falsos negativos enlazados;
+- **32 artículos nuevos**, `ALC1737-art-001014`–`001045`;
+- corpus acumulado **1,045**;
+- `pending_promotion = 0`.
+
+Los siete inicios visibles omitidos son `Arrimarſe à alguna coſa`, `Arrugada tener la cara`, `Aſpera coſa`, `Aſſiento donde ſientan`, `Aſſomar la cabeza`, `Atar los pies` y `Ataviarſe`. Cinco candidatos (`L-007`, `L-014`, `L-020`, `R-007`, `R-011`) empiezan correctamente en un artículo pero absorben un segundo inicio visible, por lo que se modelan como `merged_articles` y no como falsos positivos.
+
+La recollación a 600 dpi corrigió seis lecturas del estrato seleccionado conservando IDs: `000156` **`Ahuma`→`Ahima`**; `000160` **`Aletear. Amumuifuc.`→`Aſaetear. Amumuiſuc.`**; `000162` **`Aſir algo. Auhinei.`→`Aſſir algo. Auhineu.`**; `000163` **`Aſirſe`→`Aſſirſe`**; `000164` **`Aſombrarſe`→`Aſſombrarſe`**; `000165` **`Tapeto`→`Tapeti`**. La proveniencia de estas correcciones se conserva en `data/lexicon/provenance/p144_selected_recollation_corrections.json`.
+
+La columna derecha está materialmente recortada en varios renglones del escaneo 1737. `ALC1737` sigue siendo autoridad primaria; `BUE1890` se utilizó únicamente como control secundario explícito para corroborar formas afectadas por el borde y nunca como sustitución silenciosa. El artículo `Atormentar` (`ALC1737-art-001045`) cruza p.144→145: el `chum-` inferior es reclamo y la segunda forma aparece al comienzo de p.145. Esa segunda forma se conserva como lectura de menor confianza `chumtieſte` y el artículo permanece `unresolved` en su microestructura hasta revisión humana independiente.
+
 ## QA diagnóstico y automático
 
 La muestra diagnóstica del extractor conserva para `hybrid_margin_mode_v0.2` precisión 97.13%, recall 89.89% y F1 93.37% sobre pp.133, 134, 150 y 177. Es una muestra intencional, no probabilística.
 
-**CHD QA run #135** concluyó en `success` después del cierre de p.143 y de ampliar nuevamente el workflow. Verificó el inventario canónico, unicidad/estados de IDs, todos los artículos históricos contra schema, reconciliaciones hasta p.143, capas de falsos negativos hasta p.143 y sintaxis JSON de los estados/proveniencias incluidos. Una corrida verde es QA computacional, no revisión filológica humana.
+**CHD QA run #148** concluyó en `success` después del cierre de p.144 y de ampliar nuevamente el workflow. Verificó el inventario canónico, unicidad/estados de IDs, todos los artículos históricos contra schema, reconciliaciones hasta p.144, capas de falsos negativos hasta p.144 y sintaxis JSON de los estados/proveniencias incluidos. Una corrida verde es QA computacional, no revisión filológica humana.
 
 ## Fuentes de control textual
 
@@ -174,11 +198,11 @@ La muestra diagnóstica del extractor conserva para `hybrid_margin_mode_v0.2` pr
 
 ## Incidencias editoriales abiertas
 
-Permanecen, entre otras, `obra tripartita` frente a `quatro partes`, la duplicación de la regla 129, las discrepancias OCR 241/242 y 281/282, la posible ausencia visible de 294, la discontinuidad F→H p.157→158, `Lucer-` p.161→162, la normalización de `sourceSpans` de `000068` y la recollación versionada de `000073`/`000074`. Las lecturas de baja confianza se mantienen como `[ileg.]` o `unresolved`.
+Permanecen, entre otras, `obra tripartita` frente a `quatro partes`, la duplicación de la regla 129, las discrepancias OCR 241/242 y 281/282, la posible ausencia visible de 294, la discontinuidad F→H p.157→158, `Lucer-` p.161→162, la normalización de `sourceSpans` de `000068`, la recollación versionada de `000073`/`000074` y la lectura humana pendiente de la segunda forma de `Atormentar` (`001045`). Las lecturas de baja confianza se mantienen como `[ileg.]` o `unresolved`.
 
 ## Próximos criterios de cobertura
 
-1. procesar la página digital **144** mediante candidato → censo visible → promoción → QA;
+1. procesar la página digital **145** mediante candidato → censo visible → promoción → QA;
 2. escalar página por página hasta 177;
 3. resolver las tareas puntuales de metadatos/corrección detectadas en p.139;
 4. consolidar concordancias y exportaciones gramaticales/variacionales;
