@@ -1,0 +1,31 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "$id":"https://github.com/fersandovalgtz/cahita-historico-digital/schemas/predicative-modal-construction.schema.json",
+  "title":"CHD historical predicative/modal construction",
+  "description":"Structured representation of historical constructions in ALC1737 involving predication, periphrasis, copular equivalence or ability. The source's own grammatical categories are preserved before later reinterpretation.",
+  "type":"object",
+  "required":["id","sourceId","part","constructionTypeRaw","sourcePagesDigital","sourceRuleRange","sourceDescription","reviewStatus","humanVerified","provenance"],
+  "properties":{
+    "id":{"type":"string","pattern":"^ALC1737-pm-[0-9]{4}$"},
+    "sourceId":{"const":"ALC1737"},
+    "part":{"const":"part_iii"},
+    "constructionTypeRaw":{"type":"string"},
+    "sourcePagesDigital":{"type":"array","minItems":1,"items":{"type":"integer","minimum":97,"maximum":104}},
+    "sourcePagesPrinted":{"type":"array","items":{"type":"integer","minimum":83,"maximum":90}},
+    "sourceRuleRange":{"type":"string"},
+    "sourceHeadingRaw":{"type":["string","null"]},
+    "markersRaw":{"type":"array","items":{"type":"string"}},
+    "sourceDescription":{"type":"string","minLength":1},
+    "structuredDescription":{"type":["object","null"],"additionalProperties":true},
+    "examplesRaw":{"type":"array","items":{"type":"string"}},
+    "editorialCaution":{"type":["string","null"]},
+    "reviewStatus":{"type":"string","enum":["machine_corrected_unverified","editorial_proposal","human_verified","unresolved"]},
+    "humanVerified":{"type":"boolean"},
+    "provenance":{"type":"object","required":["derivedFrom","agent","method"],"properties":{"derivedFrom":{"type":"string"},"agent":{"type":"string"},"method":{"type":"string"},"processedAt":{"type":["string","null"],"format":"date-time"}},"additionalProperties":false}
+  },
+  "allOf":[
+    {"if":{"properties":{"reviewStatus":{"const":"human_verified"}}},"then":{"properties":{"humanVerified":{"const":true}}}},
+    {"if":{"properties":{"humanVerified":{"const":true}}},"then":{"properties":{"reviewStatus":{"const":"human_verified"}}}}
+  ],
+  "additionalProperties":false
+}
