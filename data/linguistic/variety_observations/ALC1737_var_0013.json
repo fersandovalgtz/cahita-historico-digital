@@ -1,0 +1,17 @@
+{
+  "id":"ALC1737-var-0013",
+  "sourceId":"ALC1737",
+  "sourcePageDigital":74,
+  "sourcePagePrinted":60,
+  "section":"part_iii",
+  "varietiesRaw":["Tehuecos","Las demás Naciones"],
+  "observationType":"morphological",
+  "phenomenon":"distribución por persona del optativo en na",
+  "sourceText":"los Tehuecos ſolamente vſan de eſte optativo en la primera perſona, y aſſi no ponen el ſemipronombre ... Las demás Naciones vſan de eſte optativo en na, para todas perſonas, y aſſi ponen los ſemipronombres",
+  "structuredClaim":{"Tehuecos":{"constructionRaw":"optativo en na","personDistributionRaw":"solamente primera persona","semipronounRaw":"no ponen el semipronombre"},"otherNations":{"labelRaw":"Las demás Naciones","constructionRaw":"optativo en na","personDistributionRaw":"para todas personas","semipronounRaw":"ponen los semipronombres"}},
+  "editorialInterpretation":"La regla 200 contrapone explícitamente el alcance personal y la presencia del semipronombre en una construcción optativa atribuida a Tehuecos frente a las demás Naciones.",
+  "caution":"La estructuración conserva el análisis gramatical del impreso; no demuestra por sí misma el sistema morfológico de variedades modernas ni la naturaleza sincrónica exacta de `na`.",
+  "reviewStatus":"machine_corrected_unverified",
+  "humanVerified":false,
+  "provenance":{"derivedFrom":"ALC1737:digital-page-74;printed-page-60;rule-200","agent":"GPT-5.6 Sol visual collation","method":"Full-page visual collation against facsimile; no independent human verification","processedAt":null}
+}
