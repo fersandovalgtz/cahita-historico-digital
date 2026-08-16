@@ -10,6 +10,7 @@
   <img src="https://img.shields.io/badge/full__page-128-2d6a4f?style=flat-square" alt="128 páginas full_page">
   <img src="https://img.shields.io/badge/candidatos%20v0.2-2%2C072-455B55?style=flat-square" alt="2072 candidatos v0.2">
   <img src="https://img.shields.io/badge/artículos%20estructurados-734-455B55?style=flat-square" alt="734 artículos históricos estructurados">
+  <a href="https://github.com/fersandovalgtz/cahita-historico-digital/actions/workflows/qa.yml"><img src="https://github.com/fersandovalgtz/cahita-historico-digital/actions/workflows/qa.yml/badge.svg" alt="CHD QA"></a>
   <img src="https://img.shields.io/badge/revisión%20humana-0-b7791f?style=flat-square" alt="0 unidades human_verified">
   <a href="DATA_LICENSE.md"><img src="https://img.shields.io/badge/datos-CC%20BY%204.0-9a6b1f?style=flat-square" alt="Datos CC BY 4.0"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/código-MIT-172033?style=flat-square" alt="Código MIT"></a>
@@ -22,6 +23,7 @@
   <a href="docs/LEXICON_PROGRESS.md"><strong>Lexicografía</strong></a> ·
   <a href="docs/LEXICON_RECONCILIATION_PROTOCOL.md"><strong>Reconciliación</strong></a> ·
   <a href="docs/TRANSCRIPTION_MODEL.md"><strong>Transcripción</strong></a> ·
+  <a href="docs/QA_AUTOMATION.md"><strong>QA automatizado</strong></a> ·
   <a href="EDITORIAL_POLICY.md"><strong>Política editorial</strong></a> ·
   <a href="PROVENANCE.md"><strong>Procedencia</strong></a> ·
   <a href="ROADMAP.md"><strong>Hoja de ruta</strong></a> ·
@@ -80,6 +82,7 @@ CHD se encuentra en desarrollo **`0.2.0-dev`**. No existe todavía una edición 
 | Conjunciones/metacategorías | **6** |
 | Sistema numeral histórico | **1 bloque estructurado** |
 | Observaciones de variación histórica identificadas | **17+** |
+| QA automatizado | **activo; primera ejecución verde #3** |
 | Revisión humana independiente | **0** |
 
 La cifra **2,072** describe candidatos computacionales, no entradas del vocabulario. Los **734 artículos** representan la capa curatorial actualmente estructurada y tampoco constituyen todavía el recuento final del vocabulario histórico.
@@ -169,13 +172,15 @@ Persisten una discontinuidad material F→H entre digitales 157–158 (`ALC1737-
 
 → [Progreso lexicográfico](docs/LEXICON_PROGRESS.md) · [Issue de corpus lexicográfico](https://github.com/fersandovalgtz/cahita-historico-digital/issues/3)
 
-## Reproducibilidad
+## Reproducibilidad y QA automatizado
 
 El repositorio incluye scripts versionados para ingestión, hashes, OCR, layout, generación de candidatos, validación JSONL/JSON Schema, evaluación de OCR, validación de identificadores y reconstrucción del inventario canónico de candidatos.
 
 La reproducción del inventario v0.2 queda fijada al PDF de trabajo con SHA-256 `69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37` y al JSONL canónico con SHA-256 `f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3`.
 
-Todavía falta cerrar una capa de integración continua/CI que ejecute automáticamente validadores, hashes y pruebas de integridad en cada cambio relevante.
+El workflow `.github/workflows/qa.yml` ejecuta automáticamente puertas de integridad sobre `main` y pull requests. La primera ejecución completamente verde fue **CHD QA #3**, en el commit `26be9763b8001ff082524368000ab7fccfa6778c`. Esa corrida reconstruyó las 2,072 filas canónicas, verificó **734 `articleId` únicos**, validó todos los artículos históricos contra su JSON Schema y validó las capas de reconciliación y falsos negativos. Esto es **QA computacional**, no revisión filológica humana.
+
+→ [Alcance y límites del QA automatizado](docs/QA_AUTOMATION.md)
 
 ## Estado de autoridad y validación humana
 
@@ -205,7 +210,7 @@ Un futuro DOI del proyecto no sustituirá la referencia a la fuente primaria.
 4. ampliar la estructuración gramatical exhaustiva de Partes I–II y construir concordancias forma↔regla↔ejemplo↔página;
 5. consolidar la exportación de variación histórica;
 6. buscar e incorporar, con procedencia separada, testimonios independientes útiles para control textual;
-7. incorporar CI y QA reproducible;
+7. ampliar las puertas CI/QA a transcripción, capas gramaticales, enlaces y consistencia de métricas;
 8. estabilizar exportaciones JSON/CSV y preparar interoperabilidad TEI/TEI Lex-0/IIIF cuando corresponda;
 9. ampliar revisión humana independiente;
 10. sólo después congelar una release científica estable y archivarla en Zenodo.
