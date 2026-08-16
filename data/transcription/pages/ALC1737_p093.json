@@ -1,0 +1,16 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":93,
+  "sourcePagePrinted":79,
+  "section":"part_iii",
+  "transcriptionType":"diplomatic",
+  "coverage":"full_page",
+  "scope":"printed_text",
+  "text":"[continuación de 254] ... idos á amar, a eriavouac: ſerán idos á amar, aquim erianaque.\n\nGerundio en DVM por otros modos.\n255. En otras ocaſiones ſe haze eſte gerundio con oraciones de vno, y dos ſupueſtos, vt ſequitur. Con oraciones de vn ſupueſto ſe haze con las partículas verbales varecari, vel rocacari; y con oraciones de dos ſupueſtos con el iyaacari, vel teeiacari; compueſtas con el verbo regido, de la manera que ſe dixo en la partícula para, ó paraque de las modales de ſubjuntivo, v. g. te he venido á veer, uaquim ne ſica emchi vitvarecari: os predico paraque entréis en el Cielo, emchi ne vacauaria, teuecau emchi quiquimu iyaacari.\n\n256. Tambien ſe haze el gerundio en dum con eſtas partículas teca producida la vltima, vel cari; pero con eſta diferencia con que ſe diſtingue del gerundio en do: que para el gerundio en do ſe añade la partícula cari á ſolo el preſente del verbo, y aſſi ſirve á todos tiempos: pero para el gerundio en dum la partícula cari, y la partícula teca ſe añaden al futuro de activa, y paſſiva ſin quitarles nada: advirtiendo, que eſte gerundio en dum con el teca, vel cari ſolo ſirve para oraciones de vn ſupueſto, v. g. Nueſtro Señor Jeſu Chriſto baxará del Cielo á juzgarnos, [ejemplo cahíta]; he llegado aqui á oir Miſſa, uaquim ne [ileg.] Miſſata vitnaque teca; y por la conjugación ſic activa por el cari: iréis allá á amar á los buenos, aman em ſacanaque tuurim erianaque cari. Paſſiva. Iréis donde eſtán los buenos a ſer amados, tuurimeti em ſacanaque erianauacacari. Activa por el teca: entro en la Igleſia á amar á Dios, Teopau ne quivaque Dioſta erianaque teca. Paſſiva. Entro en la Igleſia á ſer amado de Dios, Teopau ne quivaque Dioſta veu erianaua teca.",
+  "lineBreakPolicy":"Heading and rule numbers preserved; running line breaks normalized; doubtful cahíta sequences left unresolved.",
+  "reviewStatus":"unresolved",
+  "humanVerified":false,
+  "uncertainties":[{"token":"[ejemplo cahíta]","note":"Long example in rule 256 requires second collation."},{"token":"uaquim ne [ileg.] Miſſata vitnaque teca","note":"One form before Miſſata is not securely legible."}],
+  "materialNotes":[{"type":"other","note":"Decorative section ending and transition to § II visible at foot of page.","transcription":null}],
+  "provenance":{"derivedFrom":"ALC1737:digital-page-93;printed-page-79","agent":"GPT-5.6 Sol visual collation","method":"Full-page transcription from facsimile with parsed text as secondary comparison; no independent human verification","processedAt":null}
+}
