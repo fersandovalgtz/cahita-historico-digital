@@ -1,0 +1,26 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 31,
+  "sourcePagePrinted": 17,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE I.\n\namaniua allá miſmo: achaiua padre: aiua madre: hubiua muger caſada, &c: eſta particula ſigue la condicion de la parte de la oracion à quien ſe junta. Si es nombre declinable ſe declina por la primera declinacion, v. g. atzaiua, genitivo atzaiuata: hubiua, genitivo hubiuata: cunaiua, genitivo cunaiuata. Si es adverbio, prepoſicion, ò conjuncion no ſe declina, v. g. Siuſiuiua raſgadamente: cocoſiua doloroſamente: el ſignificado de eſte ua, conſta clarius de la particula ſiguiente.\n\nParticula LIUA.\n\n61. Eſta ſe ſuele añadir para mas emphaſis à los adverbios, y prepoſiciones, advirtiendo, que aquel li, ſe antepone à la particula ua, para darle mejor pronunciacion en adverbios, y prepoſiciones en que no cae con buen ſonido ſolamente el ua; y aſſi vſan ſolo de liua, ò de liua con algunas dicciones, que igualmente admiten en buena pronunciacion las particulas dichas, v. g. aora hiemi, addita ua, vel liua, ſe dice hiemiliua, hiemiua lo que ſolemos decir aora en eſte punto cepi, nunc, ſtatim, cepeliua al inſtante, al momento: ave deſpues: aveliua de aqui à tantito: vootzi en el camino, vootziliua en el miſmo camino.\n\nFormacion de adverbios.\n\n62. Vna regla ay para ellos, y ſu formacion, y es, que añadiendo à los adjetivos eſta particula ſiua, ſe forma adverbio, que correſponde à los que en Caſtellano acaban en mente, v. g. lindamente tuuriſiua: fuertemente vteſiua: doloroſamente cocoſiua: convenientemente quivaſiua: feamente huuenaſiua, &c.\n\n§. III.\nFORMACION DE VERBOS POSSESSIVOS EN C.\n\n63. Añadiendo à qualquier nombre ſubſtantivo vna c, ſe haze verbo, y ſignifica tener lo ſignificado por\n\nel\n",
+  "lineBreakPolicy": "Continuation of rule 60, headings, numbered rules and catchword are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "Siuſiuiua", "note": "Adverbial example glossed 'raſgadamente'; initial form requires second collation before morphological analysis.", "line": null},
+    {"token": "cepeliua", "note": "Example glossed 'al inſtante, al momento'; documentary reading is provisional.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Ligero traspaso de tinta; el bloque impreso es legible en conjunto.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-31;printed-page-17",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
