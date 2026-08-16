@@ -17,8 +17,9 @@ Estado de cobertura de Cahíta Histórico Digital para la fuente `ALC1737`.
 | Candidatos v0.2 vigentes | **2,072** | 45 páginas; 2,072/2,072 válidos por JSON Schema |
 | Muestra de evaluación v0.2 | **4 páginas / 188 comienzos visibles** | diagnóstica, IA-asistida |
 | Precisión / recall / F1 v0.2 | **97.13% / 89.89% / 93.37%** | inicios de artículo, muestra no probabilística |
-| Transcripciones diplomáticas `full_page` | **21 páginas** | pp. 3, 5–13 y 15–25; algunas conservan incertidumbres explícitas |
-| Parte I transcrita | **11 / 36 páginas** | digitales 15–25 = impresas 1–11; **30.56%** de Parte I |
+| Transcripciones diplomáticas `full_page` | **26 páginas** | pp. 3, 5–13 y 15–30; algunas conservan incertidumbres explícitas |
+| Parte I transcrita | **16 / 36 páginas** | digitales 15–30 = impresas 1–16; **44.44%** de Parte I |
+| Reglas gramaticales estructuradas | **15** | reglas históricas 46–60; lote inicial |
 | Extractos diplomáticos | **1 página** | p. 134, piloto |
 | Observaciones de variación histórica estructuradas | **5** | Hiaqui/Mayo/Thehueco; dataset inicial |
 | Entradas lexicográficas piloto estructuradas | **12** | JSON Schema válido; `machine_corrected_unverified` |
@@ -58,13 +59,19 @@ La muestra es diagnóstica e intencional; sus referencias son cotejos visuales I
 
 ## Transcripción
 
-La Fase 2 usa una unidad JSON por página y un manifiesto de 182 filas en [`data/transcription/status.csv`](data/transcription/status.csv). Ya existen **21 unidades `full_page`** del texto impreso: portada (p. 3), dedicatoria y preliminares textuales (pp. 5–13) y las primeras once páginas impresas de la Parte I (digitales 15–25).
+La Fase 2 usa una unidad JSON por página y un manifiesto de 182 filas en [`data/transcription/status.csv`](data/transcription/status.csv). Ya existen **26 unidades `full_page`** del texto impreso: portada (p. 3), dedicatoria y preliminares textuales (pp. 5–13) y las primeras dieciséis páginas impresas de la Parte I (digitales 15–30).
 
-La Parte I ha alcanzado **30.56% de cobertura por página**: 11 de sus 36 páginas. Las páginas 16–25 fueron cotejadas contra renders de 300 dpi; las formas que no permiten lectura segura se conservan mediante marcadores de incertidumbre y no se elevan a `human_verified`.
+La Parte I ha alcanzado **44.44% de cobertura por página**: 16 de sus 36 páginas. Las páginas 16–30 fueron cotejadas contra renders de 300 dpi; las formas que no permiten lectura segura se conservan mediante marcadores de incertidumbre y no se elevan a `human_verified`.
 
-Los lotes de trabajo están registrados en [`data/transcription/batches/part_i_p015_p020.csv`](data/transcription/batches/part_i_p015_p020.csv) y [`data/transcription/batches/part_i_p021_p025.csv`](data/transcription/batches/part_i_p021_p025.csv).
+Los lotes de trabajo están registrados en [`data/transcription/batches/part_i_p015_p020.csv`](data/transcription/batches/part_i_p015_p020.csv), [`data/transcription/batches/part_i_p021_p025.csv`](data/transcription/batches/part_i_p021_p025.csv) y [`data/transcription/batches/part_i_p026_p030.csv`](data/transcription/batches/part_i_p026_p030.csv).
 
 → [`docs/TRANSCRIPTION_MODEL.md`](docs/TRANSCRIPTION_MODEL.md)
+
+## Corpus gramatical
+
+Se definió [`schemas/grammatical-rule.schema.json`](schemas/grammatical-rule.schema.json) para representar las reglas históricas sin convertirlas en generalizaciones lingüísticas modernas. El primer lote, [`data/grammar/rules_part_i_046_060.jsonl`](data/grammar/rules_part_i_046_060.jsonl), contiene **15 reglas** de las páginas digitales 26–30 / impresas 12–16.
+
+Este bloque estructura verbales en `ME`, formación de adjetivos, las cuatro maneras de los `Verbales en BILIS` y las partículas `la`, `ra`, `i` y el comienzo de `ua`. Cada entidad conserva extracto de fuente, explicación estructurada separada, ejemplos, página, autoridad y procedencia. La regla 60 está marcada como continuada en p. digital 31.
 
 ## Variación histórica explícita
 
@@ -77,5 +84,7 @@ Se inauguró una capa independiente para pasajes en los que el impreso atribuye 
 `OCR extraído` significa recuperación automática de una capa textual, no exactitud filológica. `Candidato de límites de artículo` significa una propuesta geométrica que requiere revisión. `Entrada piloto estructurada` significa que el contrato de datos funciona; no equivale a entrada publicada o validada.
 
 `Transcripción full_page` significa que el texto impreso visible de una página está representado en la unidad editorial, pero **no implica revisión humana independiente**. Una unidad puede ser completa y conservar lecturas `unresolved`.
+
+`Regla gramatical estructurada` significa que el análisis expuesto por el gramático de 1737 ha sido convertido en una entidad trazable; no implica que CHD adopte esa regla como descripción lingüística contemporánea.
 
 Las cifras de cobertura deben leerse siempre junto con el **estado de autoridad** de la capa que describen.
