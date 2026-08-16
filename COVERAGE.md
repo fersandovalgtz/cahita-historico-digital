@@ -24,6 +24,9 @@ Estado de cobertura de Cahíta Histórico Digital para `ALC1737` — 2026-08-16.
 | Sistema numeral histórico | **1 bloque estructurado** | digitales 178–180 |
 | Observaciones de variación histórica | **17+** | nuevas observaciones numéricas pendientes de integración combinada |
 | Candidatos lexicográficos v0.2 | **2,072 / 2,072 persistidos canónicamente** | inventario fila-a-fila reconstruible y verificable |
+| Reconciliación candidata pp.133–134 | **61 / 61** | 57 `article`, 3 `continuation`, 1 `unresolved`; IA-asistida |
+| Artículos candidatos pendientes de promoción pp.133–134 | **36** | frontera confirmada; objeto `ALC1737-art-*` aún no promovido |
+| Inicios visibles omitidos observados pp.133–134 | **14** | conjunto explícito; todavía no se declara inventario exhaustivo de falsos negativos |
 | Diagnóstico de fronteras | **4 páginas / 171 candidatos** | muestra intencional: precisión 0.9532, recobrado 0.8670, F1 0.9081; no probabilística |
 | Artículos históricos estructurados | **734** | representación selectiva de digitales 133–177 |
 | Páginas de vocabulario con al menos representación estructurada | **45 / 45** | cobertura selectiva inicial completa |
@@ -43,7 +46,7 @@ Este hito significa cobertura de superficie textual, no edición crítica cerrad
 
 El vocabulario ocupa digitales 133–177. El pipeline geométrico v0.2 produce **2,072 candidatos de frontera**. La capa curatorial contiene **734 artículos históricos estructurados** y todas las **45 páginas** poseen al menos una representación lexicográfica estructurada.
 
-La cobertura por página es **selectiva**. No significa que 734 sea el número final de entradas históricas. La diferencia entre candidato geométrico y artículo histórico se conserva explícitamente.
+La cobertura por página es **selectiva**. No significa que 734 sea el número final de entradas históricas. La diferencia entre candidato geométrico, inicio visible y artículo histórico se conserva explícitamente.
 
 ### Inventario candidato canónico
 
@@ -52,6 +55,20 @@ El inventario fila-a-fila de los **2,072 candidatos** quedó fijado a la revisi�
 El JSONL canónico tiene SHA-256 `f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3`. Para conservarlo mediante artefactos UTF-8 se almacena de forma **lossless** como gzip determinista → base64 → 12 partes ordenadas. `data/lexicon/candidates/candidate_inventory_manifest.json` registra los hashes por parte y los hashes de las representaciones JSONL/gzip/base64. `scripts/reconstruct_candidate_inventory.py` reconstruye el JSONL y verifica integridad, parseo y conteo de 2,072 filas.
 
 El antiguo `data/lexicon/candidates/p134_candidates.jsonl` pertenece a `indentation_margin_v0.1`; se conserva únicamente como artefacto histórico/no canónico para comparación de algoritmos.
+
+### Reconciliación de control — pp.133–134
+
+Los **61/61 candidatos canónicos** de pp.133–134 ya cuentan con registro editorial. El cierre del tramo queda documentado en `data/lexicon/reconciliation/p133_p134_reconciliation_status.json`.
+
+La clasificación candidata es:
+
+- 57 `article`;
+- 3 `continuation`;
+- 1 `unresolved` (`ALC1737-vcand-p133-L-002`).
+
+La evaluación de frontera es 52 `exact`, 5 `merged_articles`, 2 `oversegmented`, 1 `undersegmented` y 1 `ambiguous`. De los 57 candidatos clasificados como artículo, 21 enlazan objetos históricos ya existentes —28 artículos únicos por las fusiones— y **36** quedan con `articleLinkStatus: pending_promotion`: el facsímil permite confirmar la frontera, pero todavía falta promover el artículo histórico con lectura suficiente.
+
+Completar 61/61 candidatos **no equivale a completar todos los inicios visibles**. `data/lexicon/reconciliation/missed_visible_starts_p133_p134.jsonl` registra por ahora **14 inicios visibles omitidos** por el extractor, incluidos artículos absorbidos dentro de candidatos fusionados y comienzos sin candidato propio. Este conjunto explícito todavía no se declara exhaustivo.
 
 ### QA diagnóstico de fronteras
 
@@ -92,8 +109,8 @@ La capa numeral incluye esquema, dataset y documentación para cardinales 1–10
 
 ## Interpretación de autoridad
 
-`raw_ocr`, `machine_corrected_unverified`, `unresolved`, `editorial_proposal` y `human_verified` son estados distintos. CHD no convierte una lectura IA-asistida en validación humana ni completa lagunas sin una capa de procedencia separada.
+`raw_ocr`, `machine_corrected_unverified`, `unresolved`, `editorial_proposal` y `human_verified` son estados distintos. `pending_promotion` describe estado del pipeline y no incertidumbre de frontera. CHD no convierte una lectura IA-asistida en validación humana ni completa lagunas sin una capa de procedencia separada.
 
 ## Siguiente frente
 
-La precondición de inventario está satisfecha. La prioridad es ahora la **reconciliación exhaustiva de los 2,072 candidatos**: cada candidato deberá clasificarse como artículo histórico, paratexto, continuación física, falso positivo o `unresolved`, con calidad de frontera y trazabilidad separadas. El primer lote de reconciliación cubre pp.133–134.
+La reconciliación candidata de pp.133–134 está cerrada. El siguiente paso es **promover los 36 artículos pendientes del tramo, cerrar el inventario visible de falsos negativos y producir métricas de página**, antes de escalar el mismo protocolo a las páginas siguientes del vocabulario.
