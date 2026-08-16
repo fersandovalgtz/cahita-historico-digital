@@ -1,0 +1,27 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 45,
+  "sourcePagePrinted": 31,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE I.\n\n§. VI.\nSYNTAXIS DE LA ORACION.\n\n108. Tiene eſta lengua ſus conſtrucciones particulares, aſſi de nombres, como de verbos, y depende mucho la inteligencia de la oracion, de no echar ſoleciſmo; y en eſto es ſingular, porque en otras lenguas, v. g. en el Latin, aunque ſe eche ſoleciſmo ſe dexa entender la oracion: como ſi dixeſſe vno: ego amo Deus, en lugar de ego amo Deum, bien ſe entiende, que quiere decir: yo amo à Dios: pero en eſta lengua echado el ſoleciſmo ſe pierde totalmente la inteligencia, y ſentido: v. g. en el miſmo exemplo: yo amo à Dios: Dioſta ne eria: Dioſta es accuſativo de perſona que padece; ne es nominativo de perſona que haze; eria es el verbo amar; pues ſi poniendo con ſoleciſmo el accuſativo Dioſta en nominativo dixeſſe: Dios ne eria, totalmente ſe mudaria el ſentido de eſta oracion, yo amo à Dios: porque eſta oracion Dios ne eria, quiere decir: Dios me ama à mi. No tiene muchos preceptos de ſyntaxys; pero los que tiene ſon infalibles, y ſon como ſe ſiguen.\n\nDE EL NOMBRE.\n\n109. Quando en la oracion ay dos, ò muchos ſubſtantivos continuados, que pertenecen à vna miſma coſa, ſe ponen todos en vn miſmo caſo: v. g. creo en Dios todo poderoſo, que hizo el Cielo, y la tierra: todos eſtos ſon ſubſtantivos: chibiti ita araueme, ateuecateueme, abuiatecame; y formada la oracion dirá: Dioſta ne chibiti ita arauementa, ateuecatecamta, abuiatecamta ſoſuale, en donde todos eſtán en accuſativo, concertando con el accuſativo Dioſta à quien todos pertenecen.\n\n110. Pero ſi poniendo en nominativo todos los demàs ſubſtantivos dixeſſe: Dioſta ne chibiti ita araueme, ateuecatecame, abuiatecame ſoſuale, querrá decir: yo que ſoy todo poderoſo, que hize el Cielo, y la tierra creo en Dios. Si poniendo el\n\nDioſta\n",
+  "lineBreakPolicy": "Section heading, subsection heading, numbered rules and page-turn catchword are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "chibiti ita araueme, ateuecateueme, abuiatecame", "note": "Series used in rule 109 for the Spanish relative construction is transcribed provisionally; specialist collation is required before grammatical decomposition.", "line": null},
+    {"token": "Dioſta ne chibiti ita arauementa, ateuecatecamta, abuiatecamta ſoſuale", "note": "Full Cahíta example in rule 109 is a documentary working reading, not yet morphologically validated.", "line": null},
+    {"token": "Dioſta ne chibiti ita araueme, ateuecatecame, abuiatecame ſoſuale", "note": "Contrasting nominative example in rule 110 is retained provisionally.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "damage", "note": "Small marginal stains and ink loss occur, but the syntax section is largely legible.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-45;printed-page-31",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
