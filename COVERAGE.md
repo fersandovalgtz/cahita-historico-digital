@@ -1,6 +1,6 @@
 # Cobertura
 
-Estado de cobertura de Cahíta Histórico Digital para `ALC1737` — 2026-08-15.
+Estado de cobertura de Cahíta Histórico Digital para `ALC1737` — 2026-08-16.
 
 ## Métricas vigentes
 
@@ -21,11 +21,14 @@ Estado de cobertura de Cahíta Histórico Digital para `ALC1737` — 2026-08-15.
 | Preposiciones/grupos | **43** | reglas 293–340 |
 | Grupos de adverbios | **11** | reglas 341–359 |
 | Grupos de conjunciones/metacategorías | **6** | reglas 360–373 + interjecciones |
-| Observaciones de variación histórica | **17 entidades** | fuente histórica; no taxonomía moderna |
+| Sistema numeral histórico | **1 bloque estructurado** | digitales 178–180; cardinales 1–10 + orden/distributivos/adverbiales |
+| Observaciones de variación histórica | **17+** | fuente histórica; nuevas observaciones numéricas pendientes de integración al corpus combinado |
 | Candidatos lexicográficos v0.2 | **2,072** | 45 páginas; no equivalen a artículos publicados |
-| Artículos históricos estructurados | **538** | p.134 + secuencia curatorial pp.138–168 |
+| Artículos históricos estructurados | **673** | p.134 + pase selectivo continuo pp.138–177 |
+| Páginas con pase selectivo continuo | **40 / 40** | pp.138–177 |
+| Páginas iniciales por retroprocesar | **4** | p.133 y pp.135–137; p.134 posee piloto |
 | Pilotos lexicográficos fuera de secuencia | **0** | p.165 reconciliado e integrado |
-| Ciclos recíprocos de remisión modelados | **1+** | incluye `Demonio ↔ Diablo`; nuevas reciprocidades ofender/ofensa/pecar |
+| Ciclos/reciprocidades de remisión modelados | **1+** | incluye `Demonio ↔ Diablo` y reciprocidades ofender/ofensa/pecar |
 | Lagunas/discontinuidades del testimonio registradas | **1** | `ALC1737-gap-0001`, digital 157→158 |
 | Anomalías de frontera adicionales | **1 abierta** | p.161 `Lucer-` → p.162 sin lema visible |
 | QA de identificadores | **validador incorporado** | `scripts/validate_lexicon_ids.py` |
@@ -37,57 +40,31 @@ Las páginas impresas 1–118, digitales 15–132, están representadas de forma
 
 Este hito significa cobertura de superficie textual, no edición crítica cerrada. Las lecturas `unresolved` permanecen visibles y ninguna página ha sido declarada `human_verified`.
 
-## Fronteras materiales del Arte
+## Vocabulario
 
-Se han comprobado dos páginas `mixed`:
+El vocabulario alfabético ocupa digitales 133–177. El pipeline geométrico v0.2 conserva **2,072 candidatos**. La secuencia curatorial contiene **673 artículos históricos efectivamente estructurados**.
 
-- digital 69 / impresa 55: cierre de Parte II e inicio de Parte III;
-- digital 105 / impresa 91: cierre de Parte III e inicio de `IV. ULT. PARTE`.
+El pase selectivo es ahora continuo desde **p.138 hasta p.177**. La p.177 cierra materialmente la serie alfabética con voces de V; la p.178 cambia a X/Z y después a `NOMBRES NUMERALES`.
 
-Estas fronteras se conservan en `data/source/alc1737/sections.json` y en las unidades de página.
+Quedan pendientes de retroprocesamiento p.133 y pp.135–137. P.134 posee un piloto de 12 artículos, por lo que todavía no debe describirse el vocabulario completo como exhaustivamente curado.
 
-## Capas gramaticales derivadas
+### Fronteras y reclamos
 
-CHD conserva datasets estructurados para paradigmas, tiempos modales, construcciones no finitas, participios, predicación/modalidad, verbos irregulares, preposiciones, adverbios y conjunciones. Las categorías históricas del gramático se mantienen separadas de cualquier análisis lingüístico moderno.
+La secuencia 168–177 confirma continuidad normal mediante los reclamos `Pie-`, `Por`, `Que-`, `Relam-`, `Rubio,`, `S`, `Tar-`, `Tor-` y `Vn par`. `Pie-` quedó resuelto contra `Piedra de que ſe ſacan navajas` en p.169.
 
-## Vocabulario: estado de producción
+La anomalía `Lucer-` p.161→162 sigue abierta. La laguna F→H p.157→158 continúa documentada como `ALC1737-gap-0001` y no se rellena desde conocimiento externo.
 
-El vocabulario ocupa digitales 133–177. El pipeline geométrico v0.2 produce **2,072 candidatos de frontera**, mientras la secuencia curatorial principal contiene **538 artículos históricos efectivamente estructurados** en p.134 y pp.138–168.
+## Sistema numeral — digitales 178–180
 
-El modelo representa equivalencias, remisiones `Buſca`, anáforas `Lo miſmo`, agrupaciones históricas, artículos descriptivos, continuidad entre páginas/columnas, catchwords como paratexto, relaciones recíprocas de remisión y lagunas/anomalías documentales explícitas.
+Se añadieron:
 
-### Lotes pp.165–168
+- `schemas/numeral-system.schema.json`;
+- `data/grammar/numerals_p178_p180.json`;
+- `docs/NUMERAL_SYSTEM.md`.
 
-Se añadieron cuatro lotes de 15 artículos cada uno:
+La primera estructuración conserva los cardinales de alta confianza 1–10 (`ſenu`, `uoi`, `vabi`, `naequi`, `mammi`, `buſani`, `uobuſani`, `uonaequi/uonaiequi`, `batani`, `uomamni`), la descripción histórica de ordinales, la regla de reduplicación de distributivos y una serie inicial de adverbios numerales.
 
-- `p165_selected_articles.jsonl`;
-- `p166_selected_articles.jsonl`;
-- `p167_selected_articles.jsonl`;
-- `p168_selected_articles.jsonl`.
-
-Total nuevo: **60 artículos**. Entre las nuevas relaciones aparecen `Ofender → pecar`, `Ofenſa → pecado`, `Ofenſor → pecador`, `Orejear → menear las orejas`, `Orina → meados`, `Orinar → mear`, `Oſado ſer → atrevido`, `Palo para eſcarbar tierra → coa`, `Pecado → ofenſa`, `Pecador → ofenſor` y `Pecar → ofender`.
-
-### Reconciliación de identificadores en p.165
-
-El antiguo `p165_cross_reference_pilot.jsonl` utilizaba `ALC1737-art-000013`–`000016`, identificadores ya usados por la secuencia principal de p.138. Los cuatro objetos documentales se conservaron, se reasignaron a `000490`–`000493` y se integraron en `p165_selected_articles.jsonl`; el piloto duplicado fue eliminado.
-
-La migración queda documentada en `data/lexicon/provenance/p165_pilot_id_reconciliation.json`. Para evitar regresiones se añadió `scripts/validate_lexicon_ids.py`, que comprueba parseo JSONL, unicidad global de `articleId` y coherencia de estados de revisión.
-
-### Catchwords y QA de frontera
-
-`data/lexicon/boundary_markers/` registra ahora:
-
-- p.164 `Obr-` → `Obra aſſi, hechura. Chupari.` p.165;
-- p.165 `Paga-` → `Paga tal. Bebeti.` p.166;
-- p.166 `Paſſo` → `Paſſo de las beſtias. Arabuerama.` p.167;
-- p.167 `Pena-` → `Penacho` p.168;
-- p.168 `Pie-` → pendiente de cotejo en p.169.
-
-La anomalía anterior `Lucer-` p.161 → p.162 sigue abierta y no se reconstruye por conjetura.
-
-### Discontinuidad digital 157→158
-
-La p.157 termina con voces de F, incluida `Flecha. Huihua.`, y muestra un reclamo inferior que comienza `Fle...`. La digital 158 comienza directamente con voces de H. La incidencia está registrada como `ALC1737-gap-0001`; CHD no determina todavía el número de páginas/folios faltantes ni reconstruye el material ausente sin otro testimonio documentado.
+Las páginas 179–180 contienen además observaciones explícitas sobre `Naciones` y `Hiaqui`; se preservan como descripción histórica y todavía deben integrarse formalmente a la capa combinada de variación.
 
 ## Incidencias editoriales abiertas
 
@@ -97,15 +74,14 @@ La p.157 termina con voces de F, incluida `Flecha. Huihua.`, y muestra un reclam
 - OCR 281 vs lectura visual 282;
 - posible ausencia visible de 294;
 - discontinuidad del vocabulario F→H entre digitales 157 y 158;
-- reclamo `Lucer-` en p.161 sin lema visible al comienzo de p.162;
-- reclamo `Pie-` de p.168 pendiente de comprobación en p.169.
+- reclamo `Lucer-` en p.161 sin lema visible al comienzo de p.162.
 
-La colisión de identificadores del piloto p.165 **ya está resuelta** y no se considera una incidencia abierta.
+El reclamo `Pie-` ya está resuelto y la colisión de identificadores del piloto p.165 también.
 
 ## Interpretación de autoridad
 
-`raw_ocr`, `machine_corrected_unverified`, `unresolved`, `editorial_proposal` y `human_verified` son estados distintos. CHD no convierte una lectura IA-asistida en validación humana ni completa lagunas desde conocimiento externo sin una capa de procedencia separada.
+`raw_ocr`, `machine_corrected_unverified`, `unresolved`, `editorial_proposal` y `human_verified` son estados distintos. CHD no convierte una lectura IA-asistida en validación humana ni completa lagunas sin una capa de procedencia separada.
 
 ## Siguiente frente
 
-Continuar desde **digital 169**, resolver el reclamo `Pie-` y mantener sincronización GitHub ↔ Notion por lote sustantivo.
+Retroprocesar **p.133 y pp.135–137**, integrar formalmente las observaciones numéricas de variación y comenzar la reconciliación exhaustiva de los 2,072 candidatos con artículos, paratexto y falsos positivos.
