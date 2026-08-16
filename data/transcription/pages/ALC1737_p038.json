@@ -1,0 +1,27 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 38,
+  "sourcePagePrinted": 24,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ARTE DE LA LENGVA\n\neſt, à propoſito; tambien truecan muchas vezes la r, en y, v. g. buiru mucho, buyu.\n\nSynalepha.\n\n82. Vſa muchiſſimo de ellas eſta lengua, comiendoſe la vocal de la diccion ſiguiente, la vocal final de la diccion antecedente. A cada paſſo ſe veerá en los exemplos. En particular apenas omiten ſynalepha los ſemi-pronombres, que empiezan en vocal, quales ſon: e tu; em voſotros, im aquellos, v. g. tuuriſe aiua eres alabado, en donde el ſemi-pronombre e, ſe comió la i, del adverbio tuuriſi, avia de decir, v. g. tuuriſi e aiua. Item, hablais bien alemnoca, y el ſemi-pronombre em, ſe comió la a, del adverbio ala, que avia de decir alaemnoca. Vienen paſſo à paſſo: halitiuſimcate, vbi el ſemi-pronombre im, la a, del adverbio halitiua.\n\n83. Eſta ſynalepha es inevitable en los accuſativos acabados en ta, ò aunque no ſean accuſativos en qualquier caſo obliquo acabado en ta, ſiguiendoſele qualquiera de los tres dichos ſemipronombres e, em, im, v. g. tu crees en Dios: Dioſt e ſuale, avia de decir Dioſta e ſuale: voſotros Dioſt em ſuale, avia de decir Dioſta em ſuale: aquellos Dioſt im ſuale, avia de decir Dioſta im ſuale. Atendiendo con cuidado à eſte modo de ſynalephas ſerá facil la inteligencia del Idioma.\n\n84. Aunque es tan frequente eſta ſynalepha, ſuelen interponer entre la diccion, que acaba con vocal, ſiguiendoſele qualquiera de los tres ſemi-pronombres e, em, im, eſta letra r: mueſtras tu mal corazon: em buuena hiepſire matte, en donde aquel re de hiepſire es el ſemi-pronombre e, entre el qual, y el nombre hiepſi ſe interpuſo la r: ellos miſmos ſe aporrean: emoi im ucha, entre el emo, y el im, eſtá la r, avia de decir, emo im ucha: dame agua, vaare ne mica, aquel re de vaare es el ſemi-pronombre, y de la miſma manera: emo tacaare mea, matas tu cuerpo.\n\n85. Siempre, que à la particula ca negativa ſe le ſigue alguno de los tres ſemi-pronombres e, em, im, ſe pone en-\n\ntre\n",
+  "lineBreakPolicy": "Continuation of rule 81, subsection heading, numbered rules and page-turn split are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "halitiuſimcate", "note": "Example used to illustrate synalepha with im; internal segmentation requires second collation.", "line": null},
+    {"token": "emoi im ucha", "note": "Example in rule 84 is visually difficult; relation between written r and semipronoun requires specialist review.", "line": null},
+    {"token": "emo tacaare mea", "note": "Final example in rule 84 is retained provisionally from facsimile reading.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Show-through and uneven lower-margin inking are visible.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-38;printed-page-24",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
