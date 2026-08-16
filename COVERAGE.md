@@ -10,7 +10,7 @@ Estado de cobertura de Cahíta Histórico Digital para `ALC1737` — 2026-08-16.
 | Páginas impresas numeradas mapeadas | **118 / 118** | digitales 15–132 ↔ impresas 1–118 |
 | OCR paginado reproducible | **182 / 182** | derivado; no transcripción |
 | Diagnóstico OCR | **6 muestras** | micro-CER 25.66%; micro-WER 51.96% |
-| Transcripciones diplomáticas `full_page` | **128 páginas** | portada + preliminares textuales + todo el Arte impreso pp. 1–118 |
+| Transcripciones diplomáticas `full_page` | **128 páginas** | portada + preliminares textuales + todo el Arte impreso pp.1–118 |
 | Partes I–IV del Arte | **completas en capa IA-asistida** | incluye fronteras intra-página 69 y 105 |
 | Paradigmas históricos | **3** | estructurados |
 | Construcciones modales | **9** | reglas 207–234 |
@@ -21,17 +21,15 @@ Estado de cobertura de Cahíta Histórico Digital para `ALC1737` — 2026-08-16.
 | Preposiciones/grupos | **43** | reglas 293–340 |
 | Grupos de adverbios | **11** | reglas 341–359 |
 | Grupos de conjunciones/metacategorías | **6** | reglas 360–373 + interjecciones |
-| Sistema numeral histórico | **1 bloque estructurado** | digitales 178–180; cardinales 1–10 + orden/distributivos/adverbiales |
-| Observaciones de variación histórica | **17+** | fuente histórica; nuevas observaciones numéricas pendientes de integración al corpus combinado |
+| Sistema numeral histórico | **1 bloque estructurado** | digitales 178–180 |
+| Observaciones de variación histórica | **17+** | nuevas observaciones numéricas pendientes de integración combinada |
 | Candidatos lexicográficos v0.2 | **2,072** | 45 páginas; no equivalen a artículos publicados |
-| Artículos históricos estructurados | **673** | p.134 + pase selectivo continuo pp.138–177 |
-| Páginas con pase selectivo continuo | **40 / 40** | pp.138–177 |
-| Páginas iniciales por retroprocesar | **4** | p.133 y pp.135–137; p.134 posee piloto |
-| Pilotos lexicográficos fuera de secuencia | **0** | p.165 reconciliado e integrado |
-| Ciclos/reciprocidades de remisión modelados | **1+** | incluye `Demonio ↔ Diablo` y reciprocidades ofender/ofensa/pecar |
+| Artículos históricos estructurados | **734** | representación selectiva de digitales 133–177 |
+| Páginas de vocabulario con al menos representación estructurada | **45 / 45** | cobertura selectiva inicial completa |
+| Pilotos lexicográficos fuera de secuencia | **0** | p.165 reconciliado; p.134 es parte de la secuencia de cobertura |
 | Lagunas/discontinuidades del testimonio registradas | **1** | `ALC1737-gap-0001`, digital 157→158 |
 | Anomalías de frontera adicionales | **1 abierta** | p.161 `Lucer-` → p.162 sin lema visible |
-| QA de identificadores | **validador incorporado** | `scripts/validate_lexicon_ids.py` |
+| QA de identificadores | **validador incorporado** | `scripts/validate_lexicon_ids.py`; ejecución CI aún no afirmada |
 | Revisión humana independiente | **0** | no iniciada |
 
 ## Arte gramatical
@@ -42,29 +40,30 @@ Este hito significa cobertura de superficie textual, no edición crítica cerrad
 
 ## Vocabulario
 
-El vocabulario alfabético ocupa digitales 133–177. El pipeline geométrico v0.2 conserva **2,072 candidatos**. La secuencia curatorial contiene **673 artículos históricos efectivamente estructurados**.
+El vocabulario ocupa digitales 133–177. El pipeline geométrico v0.2 conserva **2,072 candidatos de frontera**. La capa curatorial contiene ahora **734 artículos históricos estructurados** y todas las **45 páginas** poseen al menos una representación lexicográfica estructurada.
 
-El pase selectivo es ahora continuo desde **p.138 hasta p.177**. La p.177 cierra materialmente la serie alfabética con voces de V; la p.178 cambia a X/Z y después a `NOMBRES NUMERALES`.
+La cobertura por página es **selectiva**. No significa que los 2,072 candidatos hayan sido ya clasificados ni que 734 sea el número final de entradas históricas.
 
-Quedan pendientes de retroprocesamiento p.133 y pp.135–137. P.134 posee un piloto de 12 artículos, por lo que todavía no debe describirse el vocabulario completo como exhaustivamente curado.
+### Apertura retroprocesada
 
-### Fronteras y reclamos
+Se añadieron lotes para p.133 y pp.135–137, además de un artículo trans-página 133→134. La frontera documenta:
 
-La secuencia 168–177 confirma continuidad normal mediante los reclamos `Pie-`, `Por`, `Que-`, `Relam-`, `Rubio,`, `S`, `Tar-`, `Tor-` y `Vn par`. `Pie-` quedó resuelto contra `Piedra de que ſe ſacan navajas` en p.169.
+`Ablandar lo que eſtá duro / como barro. Namacae-buaruna.`
 
-La anomalía `Lucer-` p.161→162 sigue abierta. La laguna F→H p.157→158 continúa documentada como `ALC1737-gap-0001` y no se rellena desde conocimiento externo.
+El artículo se representa con `sourceSpans`; el salto físico no genera dos entradas.
+
+### Continuidades, catchwords y anomalías
+
+La arquitectura separa artículos, reclamos y lagunas. Las continuidades normales están documentadas a lo largo del vocabulario. Permanecen abiertas:
+
+- la discontinuidad F→H p.157→158 (`ALC1737-gap-0001`);
+- el reclamo `Lucer-` p.161 → p.162 sin lema visible correspondiente.
+
+Ninguna se rellena desde conocimiento externo.
 
 ## Sistema numeral — digitales 178–180
 
-Se añadieron:
-
-- `schemas/numeral-system.schema.json`;
-- `data/grammar/numerals_p178_p180.json`;
-- `docs/NUMERAL_SYSTEM.md`.
-
-La primera estructuración conserva los cardinales de alta confianza 1–10 (`ſenu`, `uoi`, `vabi`, `naequi`, `mammi`, `buſani`, `uobuſani`, `uonaequi/uonaiequi`, `batani`, `uomamni`), la descripción histórica de ordinales, la regla de reduplicación de distributivos y una serie inicial de adverbios numerales.
-
-Las páginas 179–180 contienen además observaciones explícitas sobre `Naciones` y `Hiaqui`; se preservan como descripción histórica y todavía deben integrarse formalmente a la capa combinada de variación.
+La capa numeral incluye esquema, dataset y documentación para cardinales 1–10 de alta confianza, numerales de orden descritos por la fuente, distributivos y adverbios numerales. Las observaciones explícitas sobre `Naciones` y `Hiaqui/Hiaquis` permanecen como descripción histórica y deben integrarse todavía a la capa combinada de variación.
 
 ## Incidencias editoriales abiertas
 
@@ -76,12 +75,10 @@ Las páginas 179–180 contienen además observaciones explícitas sobre `Nacion
 - discontinuidad del vocabulario F→H entre digitales 157 y 158;
 - reclamo `Lucer-` en p.161 sin lema visible al comienzo de p.162.
 
-El reclamo `Pie-` ya está resuelto y la colisión de identificadores del piloto p.165 también.
-
 ## Interpretación de autoridad
 
 `raw_ocr`, `machine_corrected_unverified`, `unresolved`, `editorial_proposal` y `human_verified` son estados distintos. CHD no convierte una lectura IA-asistida en validación humana ni completa lagunas sin una capa de procedencia separada.
 
 ## Siguiente frente
 
-Retroprocesar **p.133 y pp.135–137**, integrar formalmente las observaciones numéricas de variación y comenzar la reconciliación exhaustiva de los 2,072 candidatos con artículos, paratexto y falsos positivos.
+La prioridad deja de ser cubrir nuevas páginas del vocabulario. Pasa a ser la **reconciliación exhaustiva de los 2,072 candidatos**: cada candidato deberá clasificarse como artículo histórico, paratexto, continuación física o falso positivo, con métricas reproducibles y exportación canónica de producción.
