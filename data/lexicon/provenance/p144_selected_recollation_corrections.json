@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 144,
+  "recordedAt": "2026-08-16",
+  "method": "AI-assisted direct recollation against 600 dpi ALC1737 facsimile; BUE1890 used only as explicit secondary control where the 1737 scan edge clips text; no independent human verification",
+  "corrections": [
+    {"articleId":"ALC1737-art-000156","field":"cahitaFormsRaw[0].formRaw","previousReading":"Ahuma","correctedReading":"Ahima","candidateId":"ALC1737-vcand-p144-L-002"},
+    {"articleId":"ALC1737-art-000160","field":"spanishGuideRaw + cahitaFormsRaw[0].formRaw","previousReading":"Aletear. Amumuifuc.","correctedReading":"Aſaetear. Amumuiſuc.","candidateId":"ALC1737-vcand-p144-L-009"},
+    {"articleId":"ALC1737-art-000162","field":"spanishGuideRaw + cahitaFormsRaw[0].formRaw","previousReading":"Aſir algo. Auhinei.","correctedReading":"Aſſir algo. Auhineu.","candidateId":"ALC1737-vcand-p144-L-011"},
+    {"articleId":"ALC1737-art-000163","field":"spanishGuideRaw","previousReading":"Aſirſe de algo","correctedReading":"Aſſirſe de algo","candidateId":"ALC1737-vcand-p144-L-012"},
+    {"articleId":"ALC1737-art-000164","field":"spanishGuideRaw","previousReading":"Aſombrarſe","correctedReading":"Aſſombrarſe","candidateId":"ALC1737-vcand-p144-R-001"},
+    {"articleId":"ALC1737-art-000165","field":"cahitaFormsRaw[0].formRaw","previousReading":"Tapeto","correctedReading":"Tapeti","candidateId":"ALC1737-vcand-p144-R-002"}
+  ],
+  "controlRule": "BUE1890 is a later editorial reprint, not the same witness. It may corroborate clipped or uncertain ALC1737 readings but never silently overwrites the 1737 testimony.",
+  "authority": {"reviewStatus":"machine_corrected_unverified","humanVerified":false}
+}
