@@ -1,0 +1,32 @@
+{
+  "batchId": "ALC1737-reconciliation-p133-p134-b01",
+  "sourceId": "ALC1737",
+  "candidateMethod": "hybrid_margin_mode_v0.2",
+  "canonicalInventoryManifest": "data/lexicon/candidates/candidate_inventory_manifest.json",
+  "pagesDigital": [133, 134],
+  "canonicalCandidatesOnPages": 61,
+  "reviewedCandidates": 25,
+  "pageBatchCoverage": 0.4098360655737705,
+  "classifications": {
+    "article": 21,
+    "continuation": 3,
+    "unresolved": 1,
+    "paratext": 0,
+    "false_positive": 0
+  },
+  "boundaryAssessments": {
+    "exact": 16,
+    "merged_articles": 5,
+    "oversegmented": 2,
+    "undersegmented": 1,
+    "ambiguous": 1,
+    "not_applicable": 0
+  },
+  "uniqueLinkedHistoricalArticles": 28,
+  "reviewFile": "data/lexicon/reconciliation/p133_p134_batch01.jsonl",
+  "reviewFileSha256BeforeUpload": "9e03012d3041dd2896047e5fe4bfd582fc90c48c8605ef1dc254a4397efe0ef1",
+  "scopeNote": "Controlled high-confidence first subset. This is not complete reconciliation of pp.133-134. Unreviewed candidates remain pending; merged candidates also expose visible article starts that still require promotion to the historical-article layer.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "nextAction": "Promote missing historical articles needed by the remaining 36 candidates on pp.133-134, then complete page-level reconciliation and record false-negative visible starts separately."
+}
