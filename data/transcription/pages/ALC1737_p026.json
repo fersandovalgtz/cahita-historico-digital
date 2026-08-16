@@ -1,0 +1,26 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 26,
+  "sourcePagePrinted": 12,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ARTE DE LA LENGVA\n\ncaſo que pide el verbo de donde ſale, y eſte adverbio veni, v. g. No aveis procedido ſegun mi orden, ò no aveis executado mi aviſo: Catem amalianec, in emchitehoaye veni, vel in emchi [ſau?]ye veni, vel in emchi hunaſteye veni. Con los verbos neutros, ò paſſivos ſiempre ſignifican la accion: in cotzeye, in eriauaye el amor conque yo ſoy amado: en los participios en ye, ſe puede veer como ſe van formando por todos los tiempos. Eſtos nombres no ſe declinan en el ſingular, pero tienen plural, v. g. mis diſcipulos, innoſtehoayen: vueſtros criados, emſaueyen: ſus amados, vemeriayen.\n\nVerbales en ME.\n\n46. Ay otros verbales ſubſtantivos, que ſignifican el termino abſtracto, ò el efecto de la accion del verbo: vt de amar amor, de comer comida, de enſeñar doctrina, los quales ſiempre ſon paſſivos: doctrina qua ab alio recipitur, &c. Eſtos ſon participios paſſivos en me, v. g. Eriauame, buauame, hiuame, el amor, la comida, la bebida; y eſtos ſubſtantivos ſe declinan por la primera declinacion, ſiguiendo las reglas de los acabados en me, v. g. Eriauame, genitivo eriauanta: buauame, genitivo buauanta. En eſtando ſazonada la comida nos aviſarás: Buauanta buaſei, itom etehoanaque, hunaſteuame la ſeñal. Por la ſeñal de la Santa Cruz: Santa Cruzta hunaſteuantaye. Comida buena, tuuribuauame. Veanſe los participios comunes de la voz paſſiva por todos ſus tiempos.\n\nAdjetivos.\n\n47. Haſe tratado de verbales ſubſtantivos, ſigueſe la formacion de los adjetivos, los quales no tienen mas terminacion, que ri, vel i: eſtos ſignifican la accion executada del verbo de donde ſe forman, v. g. lo amado, lo cortado, lo comido: formanſe, aſſi de verbos activos, como de neutros, y aunque ſe forman poniendo vna de las dichas particulas ri, vel i, con todo ſe ſeñalan las reglas ſiguientes para mas facilidad.\n\n48. To-\n",
+  "lineBreakPolicy": "Headings, numbered rules and catchword are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained; uncertain sequences use CHD markers.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "[ſau?]ye", "note": "Forma dentro de la serie de ejemplos con veni; caracteres centrales no permiten una lectura segura en el facsímil disponible.", "line": null},
+    {"token": "innoſtehoayen", "note": "Forma glosada 'mis diſcipulos' transcrita provisionalmente; requiere segunda colación morfológica.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Ligero traspaso de tinta y variación de entintado; no impiden la lectura general.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-26;printed-page-12",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
