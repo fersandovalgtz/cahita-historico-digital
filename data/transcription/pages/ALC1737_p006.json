@@ -1,0 +1,33 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 6,
+  "sourcePagePrinted": null,
+  "section": "preliminaries",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "y promover la Religion Catholica, no\nla mirais con ojos gratos, y que admiti-\nda en el ſeno de vueſtra benignidad lu-\ncirá con el claro eſplendor de vueſtra\nhonra, como en ſu centro. Pues entre\nlos ſignos milagroſos de lanzar demo-\nnios de los cuerpos, curar enfermos, re-\nſuſcitar muertos, favorecer naufragos,\ny otros muchos dones admirables, con\nque os adornó el Cielo para llenar vueſ-\ntro Apoſtolado, en que no hiziſteis me-\nnos, que los grandes Apoſtoles, fuè ſingu-\nlariſſimo aquel Don de lenguas diver-\nſas, y dificiliſſimas aprendidas en el Arte\nde la Divina Sabiduria: con que no ſo-\nlamente hablaſteis ciento; ſino que con-\ncurriendo à vueſtros Sermones innume-\nrables gentes de diſtinctos Idiomas, pre-\ndicando en vno ſolo, cada qual os en-\ntendia en el proprio ſuyo, como ſi à vn\nmiſmo tiempo predicarais, y hablarais\ncon los de todos. Y ſiendo importuna-\ndo de los Japones, que à vandadas con-\ncurrian con muchas, é impertinentes\npreguntas de coſas totalmente diſpara-\ntas, diverſas, y entre ſi repugnantes, con\nvna ſola reſpueſta dabais ſatisfacion al\ntenor\n",
+  "lineBreakPolicy": "Printed line breaks and line-end hyphenation are preserved. Long s is represented as ſ where visually legible. The marginal citation is recorded separately from the main prose.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {
+      "token": "In Bulla ca- / nonizat.",
+      "note": "Marginal bibliographic/source note is visually legible only in abbreviated form; no expansion is supplied.",
+      "line": null
+    }
+  ],
+  "materialNotes": [
+    {
+      "type": "other",
+      "note": "Printed marginal citation adjacent to the passage about the apostolate; retained as an abbreviated marginal note rather than merged into the prose.",
+      "transcription": "In Bulla ca-\nnonizat."
+    }
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-6",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full main-text transcription from high-resolution rendered facsimile with marginal note isolated; no independent human verification",
+    "processedAt": null
+  }
+}
