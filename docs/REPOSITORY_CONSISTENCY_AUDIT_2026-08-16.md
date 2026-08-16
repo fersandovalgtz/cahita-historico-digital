@@ -45,11 +45,11 @@ La documentación mezclaba en algunos lugares las métricas históricas de `inde
 
 ### Issue #2
 
-El Issue de transcripción todavía declaraba Parte IV en curso sólo hasta digital 106 y 102 páginas `full_page`, aunque el cuerpo gramatical ya había sido representado hasta digital 132.
+El Issue de transcripción todavía declaraba Parte IV en curso sólo hasta digital 106 y 102 páginas `full_page`, aunque el cuerpo gramatical ya había sido representado hasta digital 132. El Issue fue corregido durante esta auditoría y ahora refleja **128 páginas `full_page`**, Partes I–IV completas en capa IA-asistida y el alcance todavía pendiente para vocabulario/numerales.
 
 ### Metadatos
 
-`CITATION.cff`, `codemeta.json` y `DATASHEET.md` conservaban versión/estado inicial `0.1.0` o metadatos de proyecto en etapa conceptual. Deben reflejar el estado activo de desarrollo sin sugerir una release estable inexistente.
+`CITATION.cff`, `codemeta.json` y `DATASHEET.md` conservaban versión/estado inicial `0.1.0` o metadatos de proyecto en etapa conceptual. Fueron actualizados a un estado de desarrollo activo sin sugerir una release estable inexistente.
 
 ## Correcciones ejecutadas
 
@@ -61,17 +61,17 @@ Durante esta auditoría se sincronizaron:
 - `CHANGELOG.md`;
 - `CITATION.cff`;
 - `codemeta.json`;
-- `DATASHEET.md`.
+- `DATASHEET.md`;
+- Issue #2 de transcripción.
 
 La serie de desarrollo vigente queda denominada **`0.2.0-dev`**. Esta denominación no implica DOI ni release archivada.
 
 ## Pendientes posteriores a la auditoría
 
-1. actualizar Issues históricos rezagados, especialmente el de transcripción;
-2. revisar documentación secundaria adicional por cifras obsoletas mediante búsqueda de `1,680`, `12 entradas`, `0.1.5-dev`, `102 páginas` y expresiones equivalentes;
-3. incorporar una prueba automatizada de consistencia de métricas/documentación cuando se implemente CI;
-4. retomar el cierre lexicográfico de pp.133–134 y después escalar la reconciliación;
-5. mantener esta auditoría como registro histórico, no como archivo que se reescriba retroactivamente.
+1. revisar documentación secundaria adicional por cifras obsoletas mediante búsqueda de `1,680`, `12 entradas`, `0.1.5-dev`, `102 páginas` y expresiones equivalentes;
+2. incorporar una prueba automatizada de consistencia de métricas/documentación cuando se implemente CI;
+3. retomar el cierre lexicográfico de pp.133–134 y después escalar la reconciliación;
+4. mantener esta auditoría como registro histórico, no como archivo que se reescriba retroactivamente.
 
 ## Regla de autoridad
 
