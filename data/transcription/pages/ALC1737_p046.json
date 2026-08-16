@@ -1,0 +1,28 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 46,
+  "sourcePagePrinted": 32,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ARTE DE LA LENGVA\n\nDioſta en nominativo, y los demàs ſubſtantivos en accuſativo dixeſſe: Dios ne chibiti ita arauemta, ateuecatecamta, abuiatecamta ſoſuale, querrá decir: Dios cree en mi, que ſoy todo poderoſo, que hize el Cielo, y la tierra, &c. Otro exemplo: vna perſona dueño de ganados, y hazienda hurtó à vna muger: ſenu yoreme vuquecame, ateuacame, ſe ſenuc amutz[e?] nucetbua buitec, en donde los ſubſtantivos vuquecame, ateuacame eſtán en nominativo, como el yoreme, à quien pertenecen: pero ſi echado ſoleciſmo ſe puſieran en accuſativo diciendo: ſenuc yoreme vuque camta, ateuacamta ſoco ſenuc amutze nucetbua buitec, querrá decir: vna perſona ſe huyó llevandole hurtada à vna muger, la qual es dueño de ganados, y hazienda.\n\n111. Segundo: genitivo de poſſeſſion. En genitivo ſe pone la perſona, ò coſa que trae la nota de, la qual es de poſſeſſion, quando la coſa poſſeyda es extrinſecus adveniens à la perſona, ò coſa que ſe poſſee, v. g. el veſtido de Pedro, Pedrota ſupem: la cuerda del arco, uicota uiteri: la cinta de la cabeza, covatabua: la madera de la caſa, catacutam; pero ſi la nota de, apela ſobre la coſa que eſtá, ò eſtaba, como inherente en el poſſeedor como in ſubiecto, entonces no rige genitivo, ſino nominativo, v. g. cuero de venado, Maſoveua: cabello de la cabeza, cova tzoni: fruta del arbol, cuta tacam: eſtrellas del Cielo, teueca tzoquim, &c. y aſſi en eſte exemplo, el cuero de Pedro, ſi ſe habla de la piel del cuerpo de Pedro ſe dirá, Pedro veua, poniendo à Pedro en nominativo; mas ſi ſe habla de otra piel, que poſſee Pedro, y le es extrinſecus adveniente, Pedrota veua, poniendo à Pedro en genitivo, en donde patet la diferencia de ſentidos, que cauſa la falta en qualquiera regla de la ſyntaxys.\n\n112. Tercero: los ſemi-pronombres poſſeſſivos, y genitivos de poſſeſſion ponen en nominativo la perſona, ò coſa à quien ſe juntan, no obſtante qualquiera otra prepoſicion, ò verbo, que ſe le llegue, v. g. el maiz de mi labor, inuaſa vachi: la ramada de tu caſa, emcari bota: quiero hilo para mi manta, intaori vetzivo ne uatia hicuta: repartí el maiz del Padre, Padreta vachi ne hinen[c?]ac. Veaſe la conſtruccion del ver-\n\nbo\n",
+  "lineBreakPolicy": "Continuation of rule 110, numbered rules and page-turn split are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained; doubtful forms are explicitly marked.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "amutze / amutz[e?]", "note": "Form in the stolen-woman example is difficult in the first occurrence; second occurrence is clearer. Retain as unresolved variant pending specialist collation.", "line": null},
+    {"token": "teueca tzoquim", "note": "Example glossed 'eſtrellas del Cielo' requires second linguistic collation.", "line": null},
+    {"token": "inuaſa vachi", "note": "Example glossed 'el maiz de mi labor' is provisionally transcribed.", "line": null},
+    {"token": "hinen[c?]ac", "note": "Final verb in the example 'repartí el maiz del Padre' is not fully secure in the facsimile.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Light show-through and localized ink wear are visible.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-46;printed-page-32",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
