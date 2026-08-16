@@ -2,11 +2,13 @@
 
 ## Estado — 2026-08-16
 
-El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera y la capa curatorial contiene **886 artículos históricos estructurados**. Las páginas **133–138** están cerradas en reconciliación, censo visible, promoción/enlace y QA computacional IA-asistidos. **Ningún objeto es `human_verified`.**
+El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera y la capa curatorial contiene **898 artículos históricos estructurados**. Las páginas **133–139** están cerradas en reconciliación, censo visible, promoción/enlace y QA computacional IA-asistidos. **Ningún objeto es `human_verified`.**
 
 ## Inventario canónico
 
 Las 2,072 filas están fijadas al PDF SHA-256 `69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37`; el JSONL canónico tiene SHA-256 `f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3`.
+
+`scripts/export_candidate_page.py` reconstruye el inventario en memoria y permite inspeccionar de manera reproducible una página/columna concreta sin modificar el objeto canónico.
 
 ## Estado por páginas cerradas
 
@@ -17,26 +19,31 @@ Las 2,072 filas están fijadas al PDF SHA-256 `69ccbe5da1d0834d78ea3957dcc79e64b
 | p.136 | 48 | 48 | 0 | 49 | 48 | 0 | 1 | 0.989691 | 0 |
 | p.137 | 39 | 36 | 3 | 42 | 36 | 3 | 6 | 0.888889 | 0 |
 | p.138 | 47 | 47 | 0 | 48 | 47 | 0 | 1 | 0.989474 | 0 |
+| p.139 | 50 | 49 | 1 | 51 | 49 | 1 | 2 | 0.970297 | 0 |
 
-## Página 138 — ciclo cerrado
+Las métricas son diagnósticas de ingeniería editorial IA-asistida y no sustituyen la colación filológica humana.
 
-`data/lexicon/reconciliation/p138_reconciliation_status.json` registra **47/47 candidatos** reconciliados, 24 izquierda + 23 derecha. Todos son `article`; 46 límites son `exact` y `ALC1737-vcand-p138-L-006` es `merged_articles` porque absorbe el inicio siguiente `Ahogarſe con el bocado`.
+## Página 139 — ciclo cerrado
 
-El censo visual registra **48 inicios históricos**, TP47 / FP0 / FN1, precisión **1.000000**, recall **0.979167** y F1 **0.989474**. El único falso negativo enlaza `ALC1737-art-000017`. Se promovieron **15 artículos nuevos**, `ALC1737-art-000872`–`000886`; `pending_promotion = 0`.
+`data/lexicon/reconciliation/p139_reconciliation_status.json` documenta los **50/50 candidatos**: 25 por columna. Cuarenta y nueve corresponden a inicios de artículo y uno, `ALC1737-vcand-p139-R-002`, es una continuación sobregenerada de `A man izquierda`. La geometría queda en 47 `exact`, 2 `merged_articles` y 1 `oversegmented`.
 
-### Continuidad material p.137→138
+El censo registra **51 inicios históricos visibles**, TP49 / FP1 / FN2, precisión **0.980000**, recall **0.960784** y F1 **0.970297**. Los dos falsos negativos son `A limpiar algo` dentro de L-003 y `A man derecha` dentro de L-025. Ambos ya enlazan sus artículos históricos.
 
-`ALC1737-art-000734` no termina en p.137: `Aguja para trancas. Cuta.` continúa al inicio de p.138 con `buoboi.`. Se conserva como una sola unidad mediante `sourceSpans` p.137 derecha → p.138 izquierda y la decisión se documenta en `data/lexicon/provenance/p137_p138_art000734_continuation.json`. El reclamo `Algun` al pie de p.138 se excluye; p.139 abre con `Algun tanto de tiempo`.
+Se promovieron **12 artículos nuevos**, `ALC1737-art-000887`–`000898`, elevando el corpus a **898**. Siete promociones conservan `unresolved` por ilegibilidad o microestructura histórica no resuelta: `000889`, `000891`, `000892`, `000894`, `000895`, `000897` y `000898`. `pending_promotion = 0`.
 
-### Recollación de artículos existentes
+### Fronteras físicas y reclamos
 
-La recollación de los 33 objetos seleccionados ya existentes corrigió seis lecturas: `Hiquia arbuhuame` → `Hiquia aribuhuame`; `Ayſar à otro` → `Ayrar à otro`; `Amocta` → `Amoſa`; `Maſabuecori` → `Maſahuecori`; `Hita buneri` → `Hita huneri`; `Seſa buneri` → `Seſa huneri`. La procedencia se conserva en `data/lexicon/provenance/p138_selected_recollation_corrections.json`.
+`A man derecha` (`ALC1737-art-000068`) comienza al final de la columna izquierda y su forma continúa al inicio de la derecha. La continuidad está identificada en la reconciliación; queda pendiente actualizar el objeto histórico con `sourceSpans` explícitos.
 
-`ALC1737-art-000884`, `Alargar algo`, permanece `unresolved` como `Hitaric--ru-[ileg.]`: el facsímil primario no permite una terminación responsable.
+Los reclamos `Algun` p.138 → `Algun tanto de tiempo` p.139 y `Ancia-` p.139 → `Anciano. Oola.` p.140 están registrados en `data/lexicon/boundary_markers/catchwords_p138_p140.jsonl` como paratexto, no como artículos.
+
+### Incidencias de recollación detectadas
+
+La revisión de p.139 detectó dos lecturas antiguas que requieren corrección versionada específica antes de considerarlas cerradas a nivel textual: `ALC1737-art-000073`, cuya evidencia apunta a `Sahualic`, y `ALC1737-art-000074`, cuyo lema visible es `Amaſar` frente a la lectura previa `Amalar`. Se mantienen como tareas puntuales y no se silencian dentro de la reconciliación.
 
 ## QA automático
 
-**CHD QA run #81** concluyó en `success`. Reconstruyó las 2,072 filas canónicas y verificó **886 objetos en 61 JSONL / 886 `articleId` únicos**, además de los 24+23 registros de reconciliación de p.138, su falso negativo y los JSON de estado/procedencia. Una corrida verde es QA computacional, no revisión filológica humana.
+**CHD QA run #92** concluyó en `success`. Reconstruyó las 2,072 filas canónicas y verificó **898 objetos en 62 JSONL / 898 `articleId` únicos**, además de los 25+25 registros de reconciliación de p.139, sus dos falsos negativos y el JSON de estado. Una corrida verde es QA computacional, no revisión filológica humana.
 
 ## Fuentes y autoridad
 
@@ -44,4 +51,4 @@ La recollación de los 33 objetos seleccionados ya existentes corrigió seis lec
 
 ## Próximo frente
 
-La siguiente página es la **digital 139**, con **50 candidatos canónicos (25+25)**. Debe procesarse con el mismo ciclo: candidato → censo visible → promoción/enlace → QA.
+La siguiente página es la **digital 140**, con **47 candidatos canónicos (24 izquierda + 23 derecha)**. Debe procesarse con el mismo ciclo candidato → censo visible → promoción/enlace → QA, sin perder las tareas puntuales de p.139 (`000068`, `000073`, `000074`).
