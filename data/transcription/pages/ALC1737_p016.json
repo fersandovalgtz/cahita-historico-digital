@@ -1,0 +1,26 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 16,
+  "sourcePagePrinted": 2,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ARTE DE LA LENGVA\n\nIoioure, reverenciar, ioiourec, &c. Tambien ſe ſaca Vuaque, poſſeer coſas animadas, que haze vuaquec, y Tuſe, moler, tuſec, vel tuſu. Y aqui ſe advierta vna regla general, que todos los preteritos de todos los verbos para ſignificar accion completa, y conſumada, ſe acaban en u, de eſta manera: Simpſu beſa, yá ſe fué in totum. Chupſu, ſe acabò la obra. Subinſu, del todo pereciò, y eſto tam activè, quàm paſſivè.\n\n2. Mas los verbos acabados en e, que tienen o, en la penultima, mudan la e, en oc, para formar el preterito de activa, v. g. Moie, carcomerſe maderas, &c. preterito moioc. Cotze, dormir, cotzoc. Buaſove, aplacarſe el enojado, buaſovoc preterito. Sacanſe Vome, y uoque, que hazen vomec, uoquec.\n\n3. Tambien ſe ſacan los acabados en te, y teque, aunque tengan o, en la penultima, van por la regla general, v. g. Poſote, doblar el cuerpo, poſotec. Pohte, hincharſe qualquier coſa, pohtec. Cote, quebrarſe vn palo, cotec. Hiuore, abſtenerſe, hiuorec. Core, andar al rededor. Corec.\n\n4. Los en ie, hazen el preterito de activa mudando el ie, en ca, v. g. Buaie, comer, preterito buaca. Heie, beber, heca. Tzaie, mamar, tzeca. Neie, volar, neca. Ieie, baylar, ieca: ſacaſe ueie, por ir, y venir, que haze ueiec, v. g. yá ſe fué fuera, o yá ſalió, beſa ieuieiec. Et nota, que el verbo ueie, por ir, o venir, conforme al adverbio, que ſe llega, es diſtincto del verbo ueiec, por eſtár, del qual ſe tratará en los verbos irregulares. Item ſe advierta, que eſtos verbos acabados en ie, pierden la ie, quando reduplican la primera ſyllaba, v. g. Vuaie, reduplicando la ua, vuaua, comer muchas vezes. Heie, reduplicando hehe, beber muchas vezes, y entonces eſtos verbos reduplicativos hazen el preterito por la regla general añadiendo c, al recto, v. g. vuauac, &c.\n\n5. Los verbos poſſeſſivos, y los demàs, todos acaba-\ndos en c, como ſon los compueſtos con las particulas ſue,\n",
+  "lineBreakPolicy": "Paragraphs, numbered rules, running headers and catchwords are preserved. Ordinary line wrapping is normalized within paragraphs; historical spelling and visible long s are retained. Explicit [?] markers flag unresolved readings.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "Subinſu", "note": "Lectura de la forma cahíta en la primera regla general; requiere segunda colación.", "line": null},
+    {"token": "beſa ieuieiec", "note": "Secuencia del ejemplo castellano-cahíta visualmente difícil; transcripción provisional.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Show-through and uneven inking are visible on the leaf; they affect some linguistic forms.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-16;printed-page-2",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
