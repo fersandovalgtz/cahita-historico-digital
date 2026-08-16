@@ -1,0 +1,28 @@
+{
+  "sourceId": "ALC1737",
+  "generatorRevision": "f175b4bc455ff40a066d092a94e0a89a0ca2ae10",
+  "generatorScriptBlobs": {
+    "extract_vocab_candidates.py": "0ac729164895b0b4afd462350892426aca6e5f3d",
+    "extract_vocab_layout.py": "e0bee9ddaad0c114405f13d456cc2a00317d7107"
+  },
+  "sourcePdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+  "candidateCount": 2072,
+  "jsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3",
+  "gzipSha256": "2b284d1d94f4567c75d39f4675092a7a9e43f9a863e31469f7bdad1b31245859",
+  "base64Sha256": "0cd3b06133de4a35171e8e04137d5c89bf0df3b8842736ef244cddde13570fe4",
+  "encoding": "concatenate ordered parts -> base64 decode -> gzip decompress -> JSONL",
+  "parts": [
+    {"part": 1, "filename": "candidates_full_v02.jsonl.gz.b64.part01", "chars": 10000, "sha256": "a2fc5f04b96c651c70fc9d04c026f7487bb8acfad659b1342cebf1084c06cfdd"},
+    {"part": 2, "filename": "candidates_full_v02.jsonl.gz.b64.part02", "chars": 10000, "sha256": "747a3c23b94788f227e8afa1cc9bd3716c43a8fb53d41b3064a32321c86cb25c"},
+    {"part": 3, "filename": "candidates_full_v02.jsonl.gz.b64.part03", "chars": 10000, "sha256": "f874241b550980e79f30433b6486979bca44130b56d782c1686727b27aebb153"},
+    {"part": 4, "filename": "candidates_full_v02.jsonl.gz.b64.part04", "chars": 10000, "sha256": "bb022029d54a0fc7dbeec4cfe2db20d421dcf79541ef3a4b68dcee8b79a30c0c"},
+    {"part": 5, "filename": "candidates_full_v02.jsonl.gz.b64.part05", "chars": 10000, "sha256": "11c44f0370d417422941c026c13b854f27ef7026d8635b7fe6cb01c6a5814f73"},
+    {"part": 6, "filename": "candidates_full_v02.jsonl.gz.b64.part06", "chars": 10000, "sha256": "41e5aa439d3486ccd616256bc5208e9a671b3b2da129d6936c58db6fd0311af1"},
+    {"part": 7, "filename": "candidates_full_v02.jsonl.gz.b64.part07", "chars": 10000, "sha256": "80701ca12ce1489a13a005b6bba02f148454d8b4b62a0e2b3ffbab581e994435"},
+    {"part": 8, "filename": "candidates_full_v02.jsonl.gz.b64.part08", "chars": 10000, "sha256": "7290b3c128629376d0a57ed3a0922ff7b645ae263f806f0d724ba54605f20117"},
+    {"part": 9, "filename": "candidates_full_v02.jsonl.gz.b64.part09", "chars": 10000, "sha256": "18200308e54b66ef6713caf0ee6e41c0546582aac7e03ebf39a599f076463c45"},
+    {"part": 10, "filename": "candidates_full_v02.jsonl.gz.b64.part10", "chars": 10000, "sha256": "7fd4209c39df64a6e29d325eed5472ed32ee0dc92f3c6eb3754f35a551cc331d"},
+    {"part": 11, "filename": "candidates_full_v02.jsonl.gz.b64.part11", "chars": 10000, "sha256": "3dc69207f6f765d65f3e77246936172ea16dedae6d02ac0e6f3d798803593f6c"},
+    {"part": 12, "filename": "candidates_full_v02.jsonl.gz.b64.part12", "chars": 2352, "sha256": "b951db6b17ea2182170d7fd53fe6be20df688a7c89994c4919bc3645c2f51534"}
+  ]
+}
