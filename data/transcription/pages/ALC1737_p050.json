@@ -1,0 +1,32 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 50,
+  "sourcePagePrinted": 36,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "ARTE DE LA LENGVA\n\n121. Infinitivo: por paſſiva rige nominativo de perſona que padece, v. g. trataſe de que Juan ſea azotado: Juan vebrocua: trataſe de que Pedro ſea llevado: Pedro nucſaca rocua. Quando la oracion es de dos ſupueſtos, ora ſea de infinitivo, ora de qualquiera de los modos particulares de ſubjuntivo, ſe pone en accuſativo la perſona que haze, ſobre que apela el infinitivo, ò el modo, y eſto aſſi por activa, como paſſiva. Veanſe los tiempos modales de ſubjuntivo, è infinitivo en ſu lugar.\n\n122. Conſtruccion particular. Yyaa pretender, y teeia penſar, rigen accuſativo de perſona, v. g. penſé que eras otro: emchi ne tabuic te eiai: pretendo que te vayas: emchi neſim yia. El verbo tia, vel tibia ſignifica decir refiriendo, v. g. dice Pedro eſto, y eſto otro; quando con eſte verbo ſe refiere de otro alguna accion immanente in ſe, vel extra ſe non tranſeunte, ſe conſtruye con reflexivo, v. g. dice, que no ſe quiere morir: auocamuc varetia: dices, que no fuiſtes allá: ca emo amaſſicatia: ſi yo dixere, que no le conozco mentiré como voſotros: inone ca ataiatiatec, emoven ara noquichinaque.\n\n123. El verbo ſuba, ò ſuua ſignifica prohibir, y quiere dos accuſativos, vno de perſona, y otro de coſa, v. g. tu me prohibes la comida: empo buauanta ne, vel nech ſuba yaa, por ayudar à exercitar la accion del verbo à quien ſe junta quiere accuſativo de perſona à quien ſe ayuda, v. g. ayuda à ſembrar à Pedro: Pedrota etziaa. Amua quando ſignifica defenderſe es reflexivo, ſin vſar de los pronombres reflexivos, v. g. yo me defenderé: aniuanaque ne: ſiendo yo aporreado me defendí: meuaca ne aniuac: en la tierra de los Eſpañoles no matan à los que no ſe defienden: Iorimpo ca aniuauacame, ca ſuuauac: el que mató al que ſe defendia: Aniuameai; y eſte es apellido.\n\n[ORNAMENTO]\n\nPAR-\n",
+  "lineBreakPolicy": "Numbered rules, ornament placeholder and final catchword of Part I are preserved. Ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained; doubtful linguistic forms are recorded as uncertainties rather than silently normalized.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "Juan vebrocua", "note": "Passive example glossed 'Juan sea azotado' requires specialist second collation.", "line": null},
+    {"token": "Pedro nucſaca rocua", "note": "Passive example glossed 'Pedro sea llevado' is provisionally transcribed.", "line": null},
+    {"token": "emchi neſim yia", "note": "Example glossed 'pretendo que te vayas' requires second linguistic collation.", "line": null},
+    {"token": "inone ca ataiatiatec, emoven ara noquichinaque", "note": "Long reflexive/reportative example in rule 122 is a working documentary reading.", "line": null},
+    {"token": "Pedrota etziaa", "note": "Example glossed 'ayuda à sembrar à Pedro' is provisionally transcribed.", "line": null},
+    {"token": "Iorimpo ca aniuauacame, ca ſuuauac", "note": "Example concerning those who do not defend themselves requires specialist collation.", "line": null},
+    {"token": "Aniuameai", "note": "Final form identified by the source as an apellido is retained provisionally.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "other", "note": "A typographic ornament appears above the catchword `PAR-`; represented as [ORNAMENTO] rather than transcribed as text.", "transcription": null},
+    {"type": "bleed_through", "note": "Light show-through is visible in the lower half of the page.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-50;printed-page-36",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
