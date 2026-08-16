@@ -1,0 +1,27 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 33,
+  "sourcePagePrinted": 19,
+  "section": "part_i",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "CAHITA. PARTE I.\n\nte hazer caſa: ioreme, ioremta, addita te, ſe forma ioremte verbo, engendrar, y à eſte modo ſe van formando los verbos efectivos, v. g. ſotori olla, ſotote, hazerlas: oſori tapeſtle, oſote hazerlos.\n\n67. Tuuri adjetivo en lugar del ri, el te, ſe forma tuute hazer bueno, id eſt, aderezar, ò componer: tzoco coſa ſalobre, tzocote hazer, que eſté ſalobre: toſali coſa blanca, toſalite hazer blanco, ò blanquear: bueca coſa ancha, buecate hazer ancho, ò enſanchar: huuena coſa mala, forma el adjetivo huuenete hazer malo, ò echar à perder. Eſtos verbos ſon activos, conjuganſe, y tienen paſſiva.\n\nEn RE.\n\n68. Añadiendo à los ſubſtantivos, adjetivos, y adverbios eſta particula re, ſe hazen verbos, y ſignifican tener, y eſtimar alguna coſa en lo que ſignifica el nombre, y adverbio, que recibe la particula re; la qual ſe junta à los nombres ſubſtantivos en lugar de la particula del obliquo, v. g. maſo venado, maſta genitivo, el ta, en re, forma el verbo maſore tener por venado: uſ el muchacho, genitivo uſe, la e, en re, forma el verbo uſire, vel uſre tener por muchacho, y aſſi de los demàs, como nocbire tener por niño: cauaire tener por cavallo: tetare por piedra: cutare por palo. Con los adjetivos ſe añade el re, al recto ſin quitarle nada: tuurire tener por bueno: toſalire por blanco: chivure por amargo: namacare por duro. Con los adverbios ſi acaban en conſonante, ſe les quita la conſonante con que acaban: hiocot miſerable, hiocore tener por miſerable, id eſt, digno de piedad. Eſtos verbos ſon activos, conjuganſe, y tienen paſſiva.\n\nEn U.\n\n69. Añadiendo à los nombres ſubſtantivos vna u, en el recto, ſe hazen verbos, y ſignifican ir, por lo ſignificado por el nombre, v. g. uaſo ſacate, uaſou ir por ſacate: tahi el fuego, tahiu ir por fuego; cuta leña, cutau ir por leña, &c.\n\nquan-\n",
+  "lineBreakPolicy": "Continuation of rule 66, headings, numbered rules and catchword are preserved; ordinary line wrapping is normalized within paragraphs. Historical spelling and visible long s are retained.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "uncertainties": [
+    {"token": "oſori tapeſtle, oſote hazerlos", "note": "Segundo ejemplo de la regla 66 es tipográficamente difícil; lectura documental provisional.", "line": null},
+    {"token": "nocbire", "note": "Forma glosada 'tener por niño'; consonante central requiere segunda colación.", "line": null},
+    {"token": "uſire, vel uſre", "note": "Dos variantes impresas del ejemplo 'tener por muchacho'; conservar ambas hasta nueva revisión.", "line": null}
+  ],
+  "materialNotes": [
+    {"type": "bleed_through", "note": "Traspaso ligero y desgaste localizado en ejemplos de la mitad superior.", "transcription": null}
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-33;printed-page-19",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full printed-text transcription from 300 dpi facsimile render with provider OCR used only as secondary comparison; no independent human verification",
+    "processedAt": null
+  }
+}
