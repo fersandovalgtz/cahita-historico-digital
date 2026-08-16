@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/modal-construction.schema.json",
+  "title": "CHD historical modal construction",
+  "description": "Structured representation of the modal/hypothetical construction system described in ALC1737 Part III. It preserves the source's categories such as 'vn supuesto' and 'dos supuestos' without equating them automatically with modern syntactic analyses.",
+  "type": "object",
+  "required": ["id","sourceId","part","sourcePagesDigital","sourcePagesPrinted","sourceRuleRange","particleRaw","subjectConfigurationRaw","sourceDescription","reviewStatus","humanVerified","provenance"],
+  "properties": {
+    "id": {"type":"string","pattern":"^ALC1737-mod-[0-9]{4}$"},
+    "sourceId": {"const":"ALC1737"},
+    "part": {"const":"part_iii"},
+    "sourcePagesDigital": {"type":"array","minItems":1,"items":{"type":"integer","minimum":69,"maximum":104}},
+    "sourcePagesPrinted": {"type":"array","minItems":1,"items":{"type":"integer","minimum":55,"maximum":90}},
+    "sourceRuleRange": {"type":"string","minLength":1},
+    "particleRaw": {"type":"array","minItems":1,"items":{"type":"string"}},
+    "subjectConfigurationRaw": {"type":"string","enum":["vn supuesto","dos supuestos","mixed_or_general"]},
+    "formationMarkersRaw": {"type":"array","items":{"type":"string"}},
+    "sourceDescription": {"type":"string","minLength":1},
+    "structuredDescription": {"type":["object","null"],"additionalProperties":true},
+    "examplesRaw": {"type":"array","items":{"type":"string"}},
+    "historicalVarietyObservationIds": {"type":"array","items":{"type":"string","pattern":"^ALC1737-var-[0-9]{4}$"}},
+    "editorialCaution": {"type":["string","null"]},
+    "reviewStatus": {"type":"string","enum":["machine_corrected_unverified","editorial_proposal","human_verified","unresolved"]},
+    "humanVerified": {"type":"boolean"},
+    "provenance": {
+      "type":"object",
+      "required":["derivedFrom","agent","method"],
+      "properties": {
+        "derivedFrom":{"type":"string"},
+        "agent":{"type":"string"},
+        "method":{"type":"string"},
+        "processedAt":{"type":["string","null"],"format":"date-time"}
+      },
+      "additionalProperties":false
+    }
+  },
+  "allOf":[
+    {"if":{"properties":{"reviewStatus":{"const":"human_verified"}}},"then":{"properties":{"humanVerified":{"const":true}}}},
+    {"if":{"properties":{"humanVerified":{"const":true}}},"then":{"properties":{"reviewStatus":{"const":"human_verified"}}}}
+  ],
+  "additionalProperties":false
+}
