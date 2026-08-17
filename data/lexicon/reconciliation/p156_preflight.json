@@ -1,0 +1,60 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 156,
+  "stage": "preflight",
+  "candidateInventory": {
+    "total": 52,
+    "left": 26,
+    "right": 26,
+    "canonicalInventoryTotal": 2072,
+    "boundaryMethod": "hybrid_margin_mode_v0.2"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p156_selected_articles.jsonl",
+    "preExistingArticles": 15,
+    "articleIdRange": ["ALC1737-art-000344", "ALC1737-art-000358"],
+    "nonExhaustive": true,
+    "humanVerified": false
+  },
+  "edgeContext": {
+    "fromPreviousPage": "p155 R-026 contains damaged page-edge/catchword material anticipating fresh p156 Enſeñar; no long continuation into p156 is asserted.",
+    "toNextPage": "p156 R-026 is a distinct Eſquina article. p157 begins with fresh Eſt- material rather than a continuation of R-026."
+  },
+  "knownStructuralFeatures": [
+    {
+      "candidateId": "ALC1737-vcand-p156-L-001",
+      "assessment": "merged_articles",
+      "linkedArticleIds": ["ALC1737-art-000344", "ALC1737-art-000345"],
+      "note": "The canonical candidate starts Enſeñar and also absorbs the distinct selected start Enſeñanza."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p156-L-025",
+      "assessment": "textually_truncated_not_structurally_reclassified",
+      "note": "OCR ends `Eſcobeta para peinarſe. Co-`; this is preserved as textual damage and does not by itself create a continuation candidate."
+    }
+  ],
+  "knownMissedStarts": [
+    {
+      "visibleStartRaw": "Enſeñanza. Amaſtianaque.",
+      "linkedArticleId": "ALC1737-art-000345",
+      "missType": "inside_candidate_group",
+      "containingCandidateId": "ALC1737-vcand-p156-L-001"
+    }
+  ],
+  "evidenceLimits": {
+    "selectedLayerIsCoverageExpectation": false,
+    "directFacsimileInspectedThisPass": false,
+    "visibleStartCensusExhaustive": false,
+    "metricsAllowed": false,
+    "reason": "The selected layer demonstrates one internal missed start but is not exhaustive; structural candidate reconciliation remains separate from lexical transcription authority."
+  },
+  "pageStatus": {
+    "candidateReconciliation": "ready_for_full_page_materialization",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial_anchor_layer",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
