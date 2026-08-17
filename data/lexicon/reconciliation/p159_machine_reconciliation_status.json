@@ -38,27 +38,28 @@
     "structuredArticlesLinked": 15,
     "continuationCandidateRecordsLinked": 1,
     "selectedArticlesUnlinked": 0,
-    "selectedColumnMetadataMismatches": [
+    "selectedColumnMetadataMismatches": [],
+    "columnMetadataCorrectionAppliedThisPass": true,
+    "columnMetadataCorrections": [
       {
         "articleId": "ALC1737-art-000398",
-        "selectedColumn": "right",
-        "candidateId": "ALC1737-vcand-p159-L-017",
-        "candidateColumn": "left"
+        "oldColumn": "right",
+        "newColumn": "left",
+        "candidateId": "ALC1737-vcand-p159-L-017"
       },
       {
         "articleId": "ALC1737-art-000399",
-        "selectedColumn": "right",
-        "candidateId": "ALC1737-vcand-p159-L-023",
-        "candidateColumn": "left"
+        "oldColumn": "right",
+        "newColumn": "left",
+        "candidateId": "ALC1737-vcand-p159-L-023"
       },
       {
         "articleId": "ALC1737-art-000400",
-        "selectedColumn": "right",
-        "candidateId": "ALC1737-vcand-p159-L-024",
-        "candidateColumn": "left"
+        "oldColumn": "right",
+        "newColumn": "left",
+        "candidateId": "ALC1737-vcand-p159-L-024"
       }
-    ],
-    "columnMetadataCorrectionAppliedThisPass": false
+    ]
   },
   "promotion": {
     "articleCandidatesPendingPromotion": 34,
@@ -109,8 +110,8 @@
   "structuralNotes": [
     "L-001 and L-003 absorb forms belonging to the immediately following selected articles but do not erase those fresh candidate starts.",
     "L-017, R-012 and R-022 contain additional guide-like material that remains unpromoted and is not counted as an exhaustive missed-start layer.",
-    "Selected article column metadata for 000398–000400 conflicts with canonical candidate geometry; the mismatch is documented but not silently corrected in this structural pass.",
-    "R-026 is a distinct article/cross-reference-like start with edge material; p160 begins a fresh Yr sequence."
+    "R-026 is a distinct article/cross-reference-like start with edge material; p160 begins a fresh Yr sequence.",
+    "Selected article column metadata for 000398–000400 was corrected right→left with a dedicated provenance layer; lexical transcription was not changed."
   ],
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
@@ -119,7 +120,7 @@
     "p158ReconciliationUsedForOpeningEdge": true,
     "p160CanonicalOpeningUsedForLowerEdge": true,
     "directFacsimileAvailableThisPass": false,
-    "policy": "Candidate geometry and selected direct collations are used only to support demonstrated starts and continuations. Column-metadata discrepancies and unanchored internal guide-like material remain explicit rather than silently normalized or promoted."
+    "policy": "Candidate geometry and selected direct collations are used only to support demonstrated starts and continuations. The demonstrated 000398–000400 column drift is corrected with explicit provenance; unanchored internal guide-like material remains unpromoted."
   },
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false

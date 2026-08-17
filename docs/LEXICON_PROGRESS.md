@@ -188,7 +188,7 @@ La capa seleccionada preexistente contiene **15 artículos `ALC1737-art-000389`�
 
 Las continuidades modeladas son **L-025→L-026** (`Yerva para quelite`), **R-001→R-002** (`Yerva de la golondrina`) y **R-003→R-004**, donde `000401` (`Yerva que ſe cria en los arboles. Chibichiam.`) continúa en R-004. L-017, R-012 y R-022 contienen material guía adicional demasiado dañado o sin ancla independiente; queda marcado como `undersegmented`, pero no se promociona ni se convierte en un censo exhaustivo de falsos negativos.
 
-La alineación detecta además una discrepancia de metadatos que se preserva para auditoría: `ALC1737-art-000398`, `000399` y `000400` están marcados como columna derecha en la capa seleccionada, mientras los textos coinciden con los candidatos geométricos izquierdos L-017, L-023 y L-024. **No se aplicó corrección silenciosa de columna en esta pasada estructural.**
+La alineación detectó además una discrepancia de metadatos: `ALC1737-art-000398`, `000399` y `000400` estaban marcados como columna derecha, mientras sus textos coinciden con los candidatos geométricos izquierdos L-017, L-023 y L-024. Se corrigió **right→left** de forma auditada en `data/lexicon/provenance/p159_column_metadata_corrections.jsonl`; la transcripción, el tipo de artículo y las formas históricas no cambiaron.
 
 R-026 inicia un artículo/cross-reference tipo `Yſlabon. Buſca eſlabon.` y conserva un pequeño fragmento de borde/catchword. El inventario canónico de p.160 abre con **`Yr derecho à alguna parte`**, por lo que se modela una transición fresca de página y no una continuación larga desde R-026.
 
