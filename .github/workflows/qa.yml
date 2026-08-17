@@ -1,4 +1,4 @@
-name: CHD p162 corrected docs sync
+name: CHD p162 cleanup
 
 on:
   push:
@@ -11,35 +11,36 @@ permissions:
   contents: write
 
 jobs:
-  synchronize:
+  cleanup:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.13'
-      - name: Synchronize corrected p162 docs
-        run: python scripts/_tmp_sync_p162.py
-      - name: Validate corrected p162 evidence and docs
+      - name: Restore permanent QA through p162 and remove auxiliaries
+        shell: bash
         run: |
-          python -m pip install -r requirements-dev.txt
-          python scripts/reconstruct_candidate_inventory.py
-          python scripts/validate_lexicon_ids.py
-          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p162_left_reconciliation.jsonl
-          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p162_right_reconciliation.jsonl
-          python scripts/validate_jsonl.py --schema schemas/lexicon-missed-start.schema.json --jsonl data/lexicon/reconciliation/p162_missed_visible_starts.jsonl
-          python -m json.tool data/lexicon/reconciliation/p162_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p162_preflight.json >/dev/null
-          grep -F '39 `article`, sin candidatos estructuralmente `unresolved`' README.md
-          grep -F '25 fronteras `pending_promotion`' README.md
-          grep -F '49 candidatos canónicos —26 izquierda y 23 derecha—' README.md
-          grep -F '39 `article`' docs/LEXICON_PROGRESS.md
-          grep -F '25 `pending_promotion`' docs/LEXICON_PROGRESS.md
-          grep -F '49 candidatos canónicos: 26 izquierda y 23 derecha' docs/LEXICON_PROGRESS.md
-      - name: Commit corrected documentation
-        run: |
+          set -euo pipefail
           git config user.name 'Fernando Sandoval'
           git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
-          git add README.md docs/LEXICON_PROGRESS.md
-          git commit -m 'docs: corregir cierre conservador de p.162' -m 'Sincroniza 39 article, 0 unresolved, 25 pending_promotion, alineación 000448→R-016, reclamo Mozo y p.163=49 candidatos.'
+          git show 3e01afc9fe98eed619f47b51dc57eb27e55a6d1e:.github/workflows/qa.yml > .github/workflows/qa.yml
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('.github/workflows/qa.yml')
+          s=p.read_text(encoding='utf-8')
+          old='            data/lexicon/reconciliation/p161_right_reconciliation.jsonl; do'
+          new='            data/lexicon/reconciliation/p161_right_reconciliation.jsonl \\\n            data/lexicon/reconciliation/p162_left_reconciliation.jsonl \\\n            data/lexicon/reconciliation/p162_right_reconciliation.jsonl; do'
+          assert old in s
+          s=s.replace(old,new,1)
+          old='            data/lexicon/reconciliation/p161_missed_visible_starts.jsonl; do'
+          new='            data/lexicon/reconciliation/p161_missed_visible_starts.jsonl \\\n            data/lexicon/reconciliation/p162_missed_visible_starts.jsonl; do'
+          assert old in s
+          s=s.replace(old,new,1)
+          old='for page in 150 151 152 153 154 155 156 157 158 159 160 161; do'
+          new='for page in 150 151 152 153 154 155 156 157 158 159 160 161 162; do'
+          assert old in s
+          s=s.replace(old,new,1)
+          p.write_text(s,encoding='utf-8')
+          PY
+          git rm -f scripts/_tmp_materialize_p162.py scripts/_tmp_sync_p162.py
+          git add .github/workflows/qa.yml
+          git commit -m 'chore: restaurar QA permanente tras p.162' -m 'Amplía validación permanente a p.162 y retira materializador/sincronizador temporales.'
           git push origin HEAD:work/p162-reconciliation
