@@ -1,4 +1,4 @@
-name: CHD p175 materialize reconciliation
+name: CHD p175 synchronize docs
 
 on:
   push:
@@ -11,56 +11,33 @@ permissions:
   contents: write
 
 jobs:
-  materialize:
+  synchronize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Materialize p175 reconciliation
-        run: python scripts/_tmp_materialize_p175.py
-      - name: Validate p175 evidence
+      - name: Synchronize p175 docs
+        run: python scripts/_tmp_sync_p175.py
+      - name: Validate synchronized docs
         run: |
-          python -m pip install -r requirements-dev.txt
-          python scripts/reconstruct_candidate_inventory.py
-          python scripts/validate_lexicon_ids.py
-          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p175_left_reconciliation.jsonl
-          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p175_right_reconciliation.jsonl
-          python scripts/validate_jsonl.py --schema schemas/lexicon-missed-start.schema.json --jsonl data/lexicon/reconciliation/p175_missed_visible_starts.jsonl
-          python -m json.tool data/lexicon/reconciliation/p175_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p175_preflight.json >/dev/null
           python - <<'PY'
-          import json
           from pathlib import Path
-          rows=[]
-          for name in ['p175_left_reconciliation.jsonl','p175_right_reconciliation.jsonl']:
-              rows += [json.loads(x) for x in Path('data/lexicon/reconciliation',name).read_text(encoding='utf-8').splitlines() if x.strip()]
-          assert len(rows)==35
-          cls={k:sum(r['classification']==k for r in rows) for k in ['article','continuation','unresolved','paratext','false_positive']}
-          assert cls=={'article':35,'continuation':0,'unresolved':0,'paratext':0,'false_positive':0}, cls
-          merged={f'ALC1737-vcand-p175-{x}' for x in ['L-012','L-014','L-020','R-007','R-015']}
-          assert {r['candidateId'] for r in rows if r['boundaryAssessment']=='merged_articles'}==merged
-          assert sum(r['boundaryAssessment']=='exact' for r in rows)==30
-          linked={aid for r in rows for aid in r.get('linkedArticleIds',[])}
-          expected={f'ALC1737-art-{n:06d}' for n in range(629,644)}
-          assert linked==expected, (linked,expected)
-          by={r['candidateId']:r for r in rows}
-          assert by['ALC1737-vcand-p175-L-014']['linkedArticleIds']==['ALC1737-art-000639','ALC1737-art-000640']
-          miss=[json.loads(x) for x in Path('data/lexicon/reconciliation/p175_missed_visible_starts.jsonl').read_text(encoding='utf-8').splitlines() if x.strip()]
-          assert len(miss)==3
-          assert {a for m in miss for a in m['linkedArticleIds']}=={f'ALC1737-art-{n:06d}' for n in [637,640,643]}
-          assert {m['containingCandidateId'] for m in miss}=={'ALC1737-vcand-p175-L-012','ALC1737-vcand-p175-L-014','ALC1737-vcand-p175-R-007'}
-          status=json.loads(Path('data/lexicon/reconciliation/p175_machine_reconciliation_status.json').read_text(encoding='utf-8'))
-          assert status['promotion']['articleCandidatesPendingPromotion']==21
-          assert status['visibleStartEvidence']['knownVisibleStartsMinimum']==38
-          assert status['nextPage']['candidateInventoryTotal']==49
-          assert status['promotion']['corpusTotalAfterPass']==1045
+          r=Path('README.md').read_text(encoding='utf-8')
+          p=Path('docs/LEXICON_PROGRESS.md').read_text(encoding='utf-8')
+          assert 'la página **175** tiene sus **35 candidatos canónicos reconciliados**' in r
+          assert 'las páginas **176–177** ya poseen representación lexicográfica estructurada' in r
+          assert '## Página 175 — reconciliación conservadora completada' in p
+          assert 'Las páginas **145–175 tienen reconciliación completa de sus candidatos canónicos**' in p
+          assert 'en p.175, **21 `pending_promotion`**' in p
+          assert 'El siguiente frente geométrico es la **página digital 176**' in p
+          assert '49 candidatos canónicos: 26 izquierda y 23 derecha' in p
           PY
-      - name: Commit generated p175 evidence
+      - name: Commit synchronized docs
         run: |
           git config user.name 'Fernando Sandoval'
           git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
-          git add data/lexicon/reconciliation/p175_left_reconciliation.jsonl data/lexicon/reconciliation/p175_right_reconciliation.jsonl data/lexicon/reconciliation/p175_missed_visible_starts.jsonl data/lexicon/reconciliation/p175_machine_reconciliation_status.json data/lexicon/reconciliation/p175_preflight.json
-          git commit -m 'data: reconciliar conservadoramente p.175' -m '35 candidatos article; tres missed-starts seleccionados, cinco regiones merged_articles, 21 pending_promotion y borde p176 fresco tras catchword.'
+          git add README.md docs/LEXICON_PROGRESS.md
+          git commit -m 'docs: sincronizar progreso con reconciliación de p.175'
           git push origin HEAD:work/p175-reconciliation
