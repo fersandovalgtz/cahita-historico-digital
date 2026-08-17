@@ -1,0 +1,54 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 149,
+  "recordType": "phase_ii_promotion_triage_queue",
+  "recordedAt": "2026-08-17",
+  "scope": {
+    "pendingPromotionCandidates": 41,
+    "candidateIds": [
+      "ALC1737-vcand-p149-L-005","ALC1737-vcand-p149-L-007","ALC1737-vcand-p149-L-009","ALC1737-vcand-p149-L-012","ALC1737-vcand-p149-L-013","ALC1737-vcand-p149-L-014","ALC1737-vcand-p149-L-016","ALC1737-vcand-p149-L-017","ALC1737-vcand-p149-L-018","ALC1737-vcand-p149-L-019","ALC1737-vcand-p149-L-021","ALC1737-vcand-p149-L-022","ALC1737-vcand-p149-L-024","ALC1737-vcand-p149-L-026","ALC1737-vcand-p149-L-027","ALC1737-vcand-p149-L-028","ALC1737-vcand-p149-L-030",
+      "ALC1737-vcand-p149-R-001","ALC1737-vcand-p149-R-003","ALC1737-vcand-p149-R-005","ALC1737-vcand-p149-R-006","ALC1737-vcand-p149-R-007","ALC1737-vcand-p149-R-010","ALC1737-vcand-p149-R-011","ALC1737-vcand-p149-R-013","ALC1737-vcand-p149-R-014","ALC1737-vcand-p149-R-015","ALC1737-vcand-p149-R-016","ALC1737-vcand-p149-R-017","ALC1737-vcand-p149-R-018","ALC1737-vcand-p149-R-019","ALC1737-vcand-p149-R-020","ALC1737-vcand-p149-R-021","ALC1737-vcand-p149-R-022","ALC1737-vcand-p149-R-023","ALC1737-vcand-p149-R-024","ALC1737-vcand-p149-R-026","ALC1737-vcand-p149-R-027","ALC1737-vcand-p149-R-028","ALC1737-vcand-p149-R-029","ALC1737-vcand-p149-R-030"
+    ]
+  },
+  "triagePolicy": {
+    "automaticPromotionAllowed": false,
+    "rule": "The direct local ALC1737 facsimile is now available. Promotion requires article-level same-witness visual collation; source damage or opaque readings remain unresolved rather than normalized, and no secondary witness may supply ALC1737 text.",
+    "visibleStartCensusExhaustive": false,
+    "humanVerified": false
+  },
+  "categories": {
+    "left_column_direct_facsimile_pending": {
+      "count": 17,
+      "candidateIds": [
+        "ALC1737-vcand-p149-L-005","ALC1737-vcand-p149-L-007","ALC1737-vcand-p149-L-009","ALC1737-vcand-p149-L-012","ALC1737-vcand-p149-L-013","ALC1737-vcand-p149-L-014","ALC1737-vcand-p149-L-016","ALC1737-vcand-p149-L-017","ALC1737-vcand-p149-L-018","ALC1737-vcand-p149-L-019","ALC1737-vcand-p149-L-021","ALC1737-vcand-p149-L-022","ALC1737-vcand-p149-L-024","ALC1737-vcand-p149-L-026","ALC1737-vcand-p149-L-027","ALC1737-vcand-p149-L-028","ALC1737-vcand-p149-L-030"
+      ],
+      "reason": "Exact current pending set in the left reconciliation; direct local facsimile is available for the next promotion/census pass.",
+      "evidence": "p149_local_facsimile_preflight_2026-08-17.json"
+    },
+    "right_column_direct_facsimile_pending": {
+      "count": 24,
+      "candidateIds": [
+        "ALC1737-vcand-p149-R-001","ALC1737-vcand-p149-R-003","ALC1737-vcand-p149-R-005","ALC1737-vcand-p149-R-006","ALC1737-vcand-p149-R-007","ALC1737-vcand-p149-R-010","ALC1737-vcand-p149-R-011","ALC1737-vcand-p149-R-013","ALC1737-vcand-p149-R-014","ALC1737-vcand-p149-R-015","ALC1737-vcand-p149-R-016","ALC1737-vcand-p149-R-017","ALC1737-vcand-p149-R-018","ALC1737-vcand-p149-R-019","ALC1737-vcand-p149-R-020","ALC1737-vcand-p149-R-021","ALC1737-vcand-p149-R-022","ALC1737-vcand-p149-R-023","ALC1737-vcand-p149-R-024","ALC1737-vcand-p149-R-026","ALC1737-vcand-p149-R-027","ALC1737-vcand-p149-R-028","ALC1737-vcand-p149-R-029","ALC1737-vcand-p149-R-030"
+      ],
+      "reason": "Exact current pending set in the right reconciliation; direct local facsimile is available for the next promotion/census pass.",
+      "evidence": "p149_local_facsimile_preflight_2026-08-17.json"
+    }
+  },
+  "nextPassOrder": [
+    {"priority":1,"category":"left_column_direct_facsimile_pending","rationale":"Proceed in printed reading order from the p.148 catchword into the p.149 left column, resolving oversegmented/undersegmented microstructure as encountered."},
+    {"priority":2,"category":"right_column_direct_facsimile_pending","rationale":"Continue the exhaustive census and promotion pass through the right column and page-edge material after completing the left column."}
+  ],
+  "epistemicGuards": [
+    "This queue itself changes no p.149 transcription and promotes no p.149 article.",
+    "The 41 pending candidate starts are an exact reconciliation scope, not a claim that every candidate will require an independent normalized lexeme.",
+    "Direct same-witness visual evidence will control the next pass; BUE1890 remains secondary-only and cannot supply ALC1737 text.",
+    "No precision, recall, or F1 value is claimed until the p.149 visible-start census is exhaustive."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "derivedFrom": ["p149_left_reconciliation.jsonl","p149_right_reconciliation.jsonl","p149_machine_reconciliation_status.json","p149_local_facsimile_preflight_2026-08-17.json"],
+    "method": "Exact current p.149 pending-promotion inventory partitioned by printed column after direct local ALC1737 facsimile became available; no lexical promotion and no human verification."
+  }
+}
