@@ -1,0 +1,25 @@
+name: CHD p150 export
+
+on:
+  push:
+    branches: [work/p150-reconciliation]
+    paths:
+      - '.github/workflows/p150-export.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Export canonical p150 candidates
+        run: |
+          echo '---P150-BEGIN---'
+          python scripts/export_candidate_page.py --page 150
+          echo '---P150-END---'
