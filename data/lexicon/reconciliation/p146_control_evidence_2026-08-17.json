@@ -1,0 +1,70 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 146,
+  "recordType": "phase_ii_primary_ocr_secondary_control_triage",
+  "recordedAt": "2026-08-17",
+  "primaryWitnessEvidence": {
+    "provider": "Internet Archive",
+    "identifier": "artedelalenguaca00gonz",
+    "derivative": "artedelalenguaca00gonz_djvu.txt",
+    "pageSequence": "digital p.146 lexical B sequence",
+    "relevantTextRange": "public full-text OCR around lines 6283-6371",
+    "authority": "same_witness_ocr_only",
+    "limitation": "OCR may identify guides and suggest forms, but under current project policy it is not by itself sufficient to promote a new ALC1737 transcription without direct facsimile recollation."
+  },
+  "secondaryControl": {
+    "sourceId": "BUE1890",
+    "relationship": "later_editorial_reprint_not_same_witness",
+    "registeredMetadata": "data/source/control/bue1890.json",
+    "comparisonAccess": {
+      "provider": "Scribd web OCR mirror",
+      "documentId": "749472052",
+      "relevantTextRange": "B entries around Barbero–Bebida de maíz tostado",
+      "use": "triage-only secondary comparison; never transcription authority for ALC1737"
+    }
+  },
+  "observations": [
+    {"candidateId":"ALC1737-vcand-p146-L-009","guideIdentification":"Barbero","primaryOcrForm":"hrc-hjtmfireñia","secondaryControlReading":"Iore himsirectia","assessment":"primary_form_too_noisy","decision":"Guide stable; primary form OCR is too damaged to promote.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-L-014","guideIdentification":"Barranca aver","primaryOcrForm":"Ama — búa-hoi","secondaryControlReading":"Ama bualioi","assessment":"near_convergence_needs_facsimile","decision":"Guide and form structure nearly converge, but glyphs/spacing require direct facsimile.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-L-020","guideIdentification":"Barba, pelos que salen en la cara","primaryOcrForm":"Himfi","secondaryControlReading":"Himsi","assessment":"near_convergence_needs_facsimile","decision":"Long-s/f-like OCR ambiguity; direct facsimile should be high-yield.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-002","guideIdentification":"Bastecer al que va de camino","primaryOcrForm":"Anutua","secondaryControlReading":"Anutua","assessment":"near_convergence_needs_facsimile","decision":"Primary OCR and later control agree, but primary facsimile has not been directly recollated.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-004","guideIdentification":"Baston","primaryOcrForm":"Cutahifia","secondaryControlReading":"CutaMsoa","assessment":"primary_secondary_divergence","decision":"Control OCR does not securely corroborate the 1737 form; retain unresolved.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-005","guideIdentification":"Batallar los Exercitos","primaryOcrForm":"Nafiiahua","secondaryControlReading":"Nasuahua","assessment":"near_convergence_needs_facsimile","decision":"Likely historical typography/OCR ambiguity; direct facsimile required.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-006","guideIdentification":"Batea de la tierra","primaryOcrForm":"Cutabatea","secondaryControlReading":"Cutabatea","assessment":"near_convergence_needs_facsimile","decision":"Primary OCR and later control agree, but no direct facsimile recollation.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-009","guideIdentification":"Bautisterio","primaryOcrForm":"Iore babatoapo","secondaryControlReading":"Iore babatoapo","assessment":"near_convergence_needs_facsimile","decision":"Strong OCR/control agreement; still below project promotion threshold without direct ALC1737 facsimile.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-011","guideIdentification":"Beber","primaryOcrForm":"fíese","secondaryControlReading":"Heie","assessment":"primary_form_too_noisy","decision":"Primary form OCR is visibly unstable; guide is secure.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-012","guideIdentification":"Beber llevando el agua à la boca","primaryOcrForm":"Hitaré cúchese","secondaryControlReading":"Hitari cuelmo","assessment":"primary_secondary_divergence","decision":"Both OCR streams are noisy and disagree materially at form level.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-013","guideIdentification":"Begiga","primaryOcrForm":"Sitié","secondaryControlReading":"Vejiga. Siiia","assessment":"historical_orthography_or_normalization","decision":"1890 moves/normalizes the guide under Vejiga; do not back-project spelling or form.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-014","guideIdentification":"Bellota de encino","primaryOcrForm":"Tohi","secondaryControlReading":"Tolii","assessment":"primary_secondary_divergence","decision":"Form differs in internal/final glyphs; facsimile required.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-015","guideIdentification":"Bellota de roble","primaryOcrForm":"Chihutohi","secondaryControlReading":"Chibutolü","assessment":"primary_secondary_divergence","decision":"Multiple glyph differences between OCR streams; no promotion.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-016","guideIdentification":"Beodo","primaryOcrForm":"Binoe — namucu","secondaryControlReading":"Binoc namucu","assessment":"primary_form_too_noisy","decision":"Near sequence agreement but punctuation/final glyph remain unresolved.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-017","guideIdentification":"Berdobgas","primaryOcrForm":"Buaron","secondaryControlReading":"Verdolagas. Buarom","assessment":"historical_orthography_or_normalization","decision":"Guide is an OCR/historical spelling problem and final form glyph differs.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-018","guideIdentification":"Berra eo","primaryOcrForm":"Oufimachi","secondaryControlReading":"Verraco. Oasimachi","assessment":"historical_orthography_or_normalization","decision":"Guide and form both require facsimile because 1890 normalizes to Verraco.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-019","guideIdentification":"Berruga","primaryOcrForm":"S%$.\\quia","secondaryControlReading":"Verruga. Sipaquia","assessment":"primary_form_too_noisy","decision":"Primary form is damaged; later control suggests identity only.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-020","guideIdentification":"Besar a otro","primaryOcrForm":"Nautent&","secondaryControlReading":"Nautente","assessment":"near_convergence_needs_facsimile","decision":"Terminal glyph/punctuation ambiguity only; high-yield facsimile target.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-021","guideIdentification":"Beso tal","primaryOcrForm":"Atétente","secondaryControlReading":"Aulente","assessment":"primary_secondary_divergence","decision":"Forms disagree materially; no promotion.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-022","guideIdentification":"Besar las manos, ò pies","primaryOcrForm":"Chuchuñe — mámame … httoquimet","secondaryControlReading":"Chuchune mamamet, huoquimet","assessment":"wrapped_microstructure","decision":"Multi-line form requires direct facsimile reconstruction.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-023","guideIdentification":"Beber agua con la mano arrojándola à la boca","primaryOcrForm":"Basquefta","secondaryControlReading":"Baqueptu","assessment":"oversegmented_and_divergent","decision":"Candidate is oversegmented and form readings diverge; resolve structure+form together.","promotionDecision":"retain_pending_promotion"},
+    {"candidateId":"ALC1737-vcand-p146-R-025","guideIdentification":"Bebida de maíz tostado","primaryOcrForm":"H*« COpjfti","secondaryControlReading":"Hicopori","assessment":"wrapped_microstructure","decision":"Form is severely damaged in primary OCR and article microstructure continues into R-026.","promotionDecision":"retain_pending_promotion"}
+  ],
+  "decisions": [
+    "All 22 current p.146 pending_promotion candidates receive guide/form triage from recovered ALC1737 OCR plus explicit BUE1890 secondary control.",
+    "No candidate is promoted in this pass because direct ALC1737 facsimile recollation is unavailable through the current retrieval path.",
+    "Candidates with near OCR/control convergence are prioritized for a future direct same-witness facsimile pass because they are the most likely high-yield promotions.",
+    "BUE1890 is used only to corroborate guide identity, sequence, or the location of likely OCR damage; its readings are not copied into ALC1737.",
+    "Historical spelling/normalization differences are preserved as evidence rather than silently regularized."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "derivedFrom": ["p146_left_reconciliation.jsonl","p146_right_reconciliation.jsonl","p146_machine_reconciliation_status.json"],
+    "method": "Conservative Phase II triage from the public ALC1737 Internet Archive full-text OCR, compared against explicit BUE1890 secondary-control OCR. No facsimile-level promotion and no human verification."
+  },
+  "epistemicGuards": [
+    "The public Internet Archive OCR is evidence from the ALC1737 witness but is not equivalent to direct visual facsimile collation.",
+    "BUE1890 is a later edited reprint and may normalize orthography, spacing, punctuation, or lexical organization.",
+    "No reading in this file should be cited as human_verified.",
+    "No precision/recall/F1 metric is inferred from this triage because the visible-start census remains non-exhaustive."
+  ]
+}
