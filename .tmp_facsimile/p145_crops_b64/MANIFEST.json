@@ -1,0 +1,100 @@
+{
+  "source": "p145-target.pdf",
+  "renderDpi": 320,
+  "fullSize": [
+    1374,
+    1925
+  ],
+  "crops": {
+    "left_top": {
+      "box": [
+        0,
+        0,
+        728,
+        808
+      ],
+      "pixelSize": [
+        728,
+        808
+      ],
+      "jpegBytes": 163930,
+      "base64Lines": 219,
+      "sha256": "f40f3cd4ef6da3e4423f2f1668051fee7c031de223a7ff66cdc332504424dbdc"
+    },
+    "left_mid": {
+      "box": [
+        0,
+        577,
+        728,
+        1386
+      ],
+      "pixelSize": [
+        728,
+        809
+      ],
+      "jpegBytes": 176940,
+      "base64Lines": 236,
+      "sha256": "5fff24b40b9d8d87940826ea70276d7e78905a2766dca2a76e616776977ff880"
+    },
+    "left_bottom": {
+      "box": [
+        0,
+        1155,
+        728,
+        1925
+      ],
+      "pixelSize": [
+        728,
+        770
+      ],
+      "jpegBytes": 121794,
+      "base64Lines": 163,
+      "sha256": "980177f0dde7fb08af8a690bc2815c9bec23804870b3f5905f0d055e440c5046"
+    },
+    "right_top": {
+      "box": [
+        645,
+        0,
+        1374,
+        808
+      ],
+      "pixelSize": [
+        729,
+        808
+      ],
+      "jpegBytes": 96651,
+      "base64Lines": 129,
+      "sha256": "c1982dc07a3c30b88f58d8a350e0931b898e0a3fb5f276e03a29cac1e9a41eab"
+    },
+    "right_mid": {
+      "box": [
+        645,
+        577,
+        1374,
+        1386
+      ],
+      "pixelSize": [
+        729,
+        809
+      ],
+      "jpegBytes": 110278,
+      "base64Lines": 148,
+      "sha256": "7ee20b1dfdb8be6ea97b4db6cda611b89d0b13d38125e9a0e6fa9bd43653f457"
+    },
+    "right_bottom": {
+      "box": [
+        645,
+        1155,
+        1374,
+        1925
+      ],
+      "pixelSize": [
+        729,
+        770
+      ],
+      "jpegBytes": 73923,
+      "base64Lines": 99,
+      "sha256": "5c7b5de339497e1fcaf702e6b1c59beeab2f711173738450751844ac88ee782a"
+    }
+  }
+}
