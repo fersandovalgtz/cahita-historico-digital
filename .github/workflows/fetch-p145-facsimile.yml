@@ -13,14 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Fetch temporary Internet Archive page images
+      - name: Fetch temporary Internet Archive BookReader images
         run: |
           mkdir -p .tmp_facsimile/p145_window
+          rm -f .tmp_facsimile/p145_window/*.jpg .tmp_facsimile/p145_window/SHA256SUMS.txt
           for n in $(seq 140 150); do
-            url="https://archive.org/download/artedelalenguaca00gonz/page/n${n}_w1600.jpg"
-            echo "$url"
-            curl --fail --location --retry 3 --retry-delay 2 "$url" -o ".tmp_facsimile/p145_window/n${n}.jpg"
+            idx=$(printf '%04d' "$n")
+            url="https://archive.org/BookReader/BookReaderImages.php?zip=/0/items/artedelalenguaca00gonz/artedelalenguaca00gonz_jp2.zip&file=artedelalenguaca00gonz_jp2/artedelalenguaca00gonz_${idx}.jp2&id=artedelalenguaca00gonz&scale=3&rotate=0"
+            echo "Fetching scan index ${idx}"
+            curl --fail --location --max-time 45 --retry 2 --retry-delay 1 "$url" -o ".tmp_facsimile/p145_window/n${n}.jpg"
             test -s ".tmp_facsimile/p145_window/n${n}.jpg"
+            file ".tmp_facsimile/p145_window/n${n}.jpg" | grep -Ei 'JPEG|image'
           done
           sha256sum .tmp_facsimile/p145_window/*.jpg > .tmp_facsimile/p145_window/SHA256SUMS.txt
       - name: Commit temporary facsimile window
