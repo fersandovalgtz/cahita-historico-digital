@@ -1,0 +1,115 @@
+name: Apply p145 Phase II pilot A v2
+
+on:
+  push:
+    branches:
+      - work/p145-phase2-pilot-a
+
+permissions:
+  contents: write
+
+jobs:
+  apply:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply four conservative promotions
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          from pathlib import Path
+          root=Path('.')
+          artdir=root/'data/lexicon/articles'
+          existing=[]
+          for p in sorted(artdir.glob('*.jsonl')):
+              existing += [json.loads(x) for x in p.read_text(encoding='utf-8').splitlines() if x.strip()]
+          assert len(existing)==len({x['articleId'] for x in existing})
+          assert max(int(x['articleId'].rsplit('-',1)[1]) for x in existing)==1045
+
+          ev=json.loads((root/'data/lexicon/reconciliation/p145_phase2_pilot_a_evidence_2026-08-17.json').read_text(encoding='utf-8'))
+          assert [x['articleId'] for x in ev['promotions']]==[
+            'ALC1737-art-001046','ALC1737-art-001047','ALC1737-art-001048','ALC1737-art-001049']
+          promoted=[]
+          for x in ev['promotions']:
+              promoted.append({
+                'articleId':x['articleId'],'sourceId':'ALC1737','sourcePageDigital':145,'column':'left',
+                'articleType':'equivalence','spanishGuideRaw':x['spanishGuideRaw'],
+                'cahitaFormsRaw':[{'formRaw':f,'historicalVariety':'unspecified'} for f in x['cahitaFormsRaw']],
+                'transcriptionRaw':x['transcriptionRaw'],
+                'editorialNote':'Phase II pilot A: promoted only after strong convergence across three independent readings of verified ALC1737 PDF page 145 at 420 dpi. Materially divergent candidates were excluded; BUE1890 did not supply the transcription.',
+                'reviewStatus':'machine_corrected_unverified','humanVerified':False,
+                'provenance':{
+                  'derivedFrom':f"ALC1737:digital-page-145; canonical-v0.2:{x['candidateId']}; p145_phase2_pilot_a_evidence_2026-08-17.json",
+                  'agent':'GPT-5.6 Sol facsimile-assisted collation',
+                  'method':'AI-assisted collation of verified ALC1737 PDF page 145 (SHA-256 4dcc4abacefa94396e5dd2255184080b868cdca3f73ef5093b1c752611713959), rendered at 420 dpi and compared across three independent same-witness OCR passes; no independent human verification',
+                  'processedAt':None},
+                'derivedFromCandidates':[x['candidateId']]
+              })
+          (artdir/'p145_promotions_phase2_a.jsonl').write_text('\n'.join(json.dumps(x,ensure_ascii=False,separators=(',',':')) for x in promoted)+'\n',encoding='utf-8')
+
+          leftp=root/'data/lexicon/reconciliation/p145_left_reconciliation.jsonl'
+          rightp=root/'data/lexicon/reconciliation/p145_right_reconciliation.jsonl'
+          left=[json.loads(x) for x in leftp.read_text(encoding='utf-8').splitlines() if x.strip()]
+          right=[json.loads(x) for x in rightp.read_text(encoding='utf-8').splitlines() if x.strip()]
+          mapping={x['candidateId']:x['articleId'] for x in ev['promotions']}
+          changed=0
+          for r in left:
+              if r['candidateId'] in mapping:
+                  assert r['classification']=='article' and r['articleLinkStatus']=='pending_promotion' and not r['linkedArticleIds']
+                  r['linkedArticleIds']=[mapping[r['candidateId']]]; r['articleLinkStatus']='linked'; changed+=1
+                  r['editorialNote']=r['editorialNote'].rstrip()+f" Phase II pilot A promotes this candidate as {mapping[r['candidateId']]}; see p145_phase2_pilot_a_evidence_2026-08-17.json."
+                  r['provenance']={'derivedFrom':'canonical-v0.2 candidate inventory; verified ALC1737 PDF page 145; p145_phase2_pilot_a_evidence_2026-08-17.json','agent':'GPT-5.6 Sol facsimile-assisted collation','method':'Candidate linkage after conservative same-witness multi-pass facsimile collation; no independent human verification','processedAt':None}
+          assert changed==4
+          allrows=left+right
+          assert sum(r['articleLinkStatus']=='linked' for r in allrows)==17
+          assert sum(r['articleLinkStatus']=='pending_promotion' for r in allrows)==17
+          leftp.write_text('\n'.join(json.dumps(x,ensure_ascii=False,separators=(',',':')) for x in left)+'\n',encoding='utf-8')
+
+          sp=root/'data/lexicon/reconciliation/p145_machine_reconciliation_status.json'
+          s=json.loads(sp.read_text(encoding='utf-8'))
+          s['linkage'].update({'articleCandidateRecordsLinked':17,'preExistingStructuredArticlesLinked':18,'articleCandidatesPendingPromotion':17,'unresolvedCandidateBoundaries':0})
+          s['curation']['newPromotionsThisPass']=4; s['curation']['corpusTotalAfterPass']=1049
+          s['machineEvidence']['phase2PilotAEvidence']='p145_phase2_pilot_a_evidence_2026-08-17.json'
+          s['machineEvidence']['phase2PilotAFacsimile']={'provider':'Internet Archive','identifier':'artedelalenguaca00gonz','pdfPage':145,'pageSha256':'4dcc4abacefa94396e5dd2255184080b868cdca3f73ef5093b1c752611713959','renderDpi':420,'passes':3,'use':'promotion only where guide and Cahita form converge strongly across same-witness readings'}
+          s['resolvedThisPass'].append('Phase II pilot A promotes L-011→001046 (`Ave. Saperac.`), L-013→001047 (`Ave. Baecuberi.`), L-018→001048 (`A vno. Cae.`), and L-019→001049 (`Aunque. Elapo.`) after strong same-witness facsimile convergence; divergent candidates remain pending.')
+          s['authorityNote']='P.145 has complete candidate-level structural reconciliation and a first conservative Phase II facsimile-assisted promotion batch. Four candidates were promoted only after strong same-witness convergence on verified ALC1737 PDF page 145. Seventeen article candidates remain pending_promotion; the visible-start census is non-exhaustive and humanVerified remains false.'
+          sp.write_text(json.dumps(s,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+
+          subprocess.run(['python','scripts/summarize_open_lexicon_work.py','--output','data/lexicon/reconciliation/phase2_open_work_summary.json'],check=True)
+          q=json.loads((root/'data/lexicon/reconciliation/phase2_open_work_summary.json').read_text(encoding='utf-8'))
+          z=q['summary']; assert z['pendingPromotionTotal']==1047 and z['unresolvedCandidateTotal']==1 and z['currentCuratorialArticleCount']==1049
+
+          top=q['pendingPromotionRanking'][:10]
+          phase=['# Fase II — promoción, enlace y censo visible','', 'Estado computacional regenerable para p.145–177.','',f'- Páginas cubiertas: **{z["pages"]}**.',f'- Candidatos `pending_promotion`: **{z["pendingPromotionTotal"]}**.',f'- Candidatos estructuralmente `unresolved`: **{z["unresolvedCandidateTotal"]}**.',f'- Páginas con censo visible exhaustivo: **{z["pagesWithExhaustiveVisibleStartCensus"]}**.',f'- Corpus curatorial actual: **{z["currentCuratorialArticleCount"]:,} artículos**.','','## Avance de fase II','','El lote piloto **p.145-A** promovió cuatro artículos mediante colación facsimilar asistida del ALC1737. El total pendiente descendió de **1,051 a 1,047**; las lecturas con discrepancias materiales permanecieron sin promoción.','','## Excepción estructural conservada','','La única página con candidato estructural `unresolved` es **p.161**, donde R-016 permanece deliberadamente abierto por evidencia terminal no única.','','## Priorización por volumen de promoción pendiente','','| Página | `pending_promotion` |','|---:|---:|']
+          phase += [f'| {x["page"]} | {x["pendingPromotion"]} |' for x in top]
+          phase += ['','## Regla de trabajo','','La fase II separa **promoción/enlace**, **registro de falsos negativos visibles** y **censo exhaustivo**. Un candidato no se promueve sólo porque el OCR sugiera una lectura: para texto cahíta incierto se exige evidencia suficientemente fuerte del testigo ALC1737; BUE1890 permanece como control secundario.','','El archivo `phase2_open_work_summary.json` puede regenerarse con `python scripts/summarize_open_lexicon_work.py --output data/lexicon/reconciliation/phase2_open_work_summary.json`.','']
+          (root/'docs/PHASE2_LEXICON_WORK.md').write_text('\n'.join(phase),encoding='utf-8')
+
+          dp=root/'docs/LEXICON_PROGRESS.md'; text=dp.read_text(encoding='utf-8')
+          assert 'La capa curatorial contiene actualmente **1,045 artículos históricos estructurados**.' in text
+          text=text.replace('La capa curatorial contiene actualmente **1,045 artículos históricos estructurados**.','La capa curatorial contiene actualmente **1,049 artículos históricos estructurados**.',1)
+          old='Trece candidatos de artículo enlazan **14 objetos estructurados preexistentes** y **21 candidatos de artículo permanecen `pending_promotion`**. No hubo promociones nuevas en el pase estructural y el corpus permanece en **1,045 artículos**.'
+          assert old in text
+          text=text.replace(old,'Tras el primer lote de fase II, **17 candidatos de artículo enlazan 18 objetos estructurados** y **17 candidatos de artículo permanecen `pending_promotion`**. El lote piloto p.145-A añadió cuatro promociones (`ALC1737-art-001046`–`001049`) y elevó el corpus curatorial actual a **1,049 artículos**.',1)
+          marker='La reconciliación candidate-level de p.145 está completa con **0 límites `unresolved`**'
+          insertion='El **lote piloto p.145-A** usó la página 145 del PDF ALC1737 verificada por SHA-256 y tres lecturas independientes de un render a 420 dpi. Se promovieron únicamente `Ave. Saperac.`, `Ave. Baecuberi.`, `A vno. Cae.` y `Aunque. Elapo.`; lecturas discrepantes (`Huchai/Hucbai`, `Tenbie/Tenbile`, `Tucabuiro/Tucabuire`, `Putre/Huite/Hutte`) permanecen pendientes. Véase `p145_phase2_pilot_a_evidence_2026-08-17.json`.\n\n'
+          assert marker in text
+          text=text.replace(marker,insertion+marker,1)
+          dp.write_text(text,encoding='utf-8')
+          PY
+      - name: Validate pilot output
+        run: |
+          python scripts/validate_lexicon_ids.py
+          python scripts/validate_jsonl.py --schema schemas/lexical-article.schema.json --jsonl data/lexicon/articles/p145_promotions_phase2_a.jsonl
+          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p145_left_reconciliation.jsonl
+          python -m json.tool data/lexicon/reconciliation/p145_machine_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p145_phase2_pilot_a_evidence_2026-08-17.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/phase2_open_work_summary.json >/dev/null
+          python scripts/reconstruct_candidate_inventory.py
+      - name: Commit pilot batch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/lexicon/articles/p145_promotions_phase2_a.jsonl data/lexicon/reconciliation/p145_left_reconciliation.jsonl data/lexicon/reconciliation/p145_machine_reconciliation_status.json data/lexicon/reconciliation/phase2_open_work_summary.json docs/PHASE2_LEXICON_WORK.md docs/LEXICON_PROGRESS.md
+          git commit -m "data: promover lote piloto p145-A en fase II"
+          git push
