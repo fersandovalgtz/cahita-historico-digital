@@ -30,7 +30,7 @@ jobs:
           python scripts/validate_jsonl.py --schema schemas/lexicon-missed-start.schema.json --jsonl data/lexicon/reconciliation/p165_missed_visible_starts.jsonl
           python -m json.tool data/lexicon/reconciliation/p165_machine_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p165_preflight.json >/dev/null
-          grep -F '52 `article` y **4 `continuation`**' docs/LEXICON_PROGRESS.md
+          grep -F '**52 `article`** y **4 `continuation`**' docs/LEXICON_PROGRESS.md
           grep -F '38 candidatos de artículo `pending_promotion`' docs/LEXICON_PROGRESS.md
           grep -F '50 candidatos canónicos: 28 izquierda y 22 derecha' docs/LEXICON_PROGRESS.md
           grep -F 'la página **165** tiene sus **56 candidatos canónicos reconciliados**' README.md
