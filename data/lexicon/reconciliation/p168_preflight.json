@@ -1,0 +1,68 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 168,
+  "stage": "preflight",
+  "candidateInventory": {
+    "total": 32,
+    "left": 14,
+    "right": 18,
+    "canonicalInventoryTotal": 2072,
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p168_selected_articles.jsonl",
+    "articleIdRange": ["ALC1737-art-000524", "ALC1737-art-000538"],
+    "count": 15,
+    "columnDistribution": {"left": 15, "right": 0},
+    "exhaustive": false,
+    "humanVerified": false
+  },
+  "selectedAnchorAlignmentHypothesis": [
+    {"candidateId":"ALC1737-vcand-p168-L-002","articleIds":["ALC1737-art-000524"]},
+    {"candidateId":"ALC1737-vcand-p168-L-003","articleIds":["ALC1737-art-000525"]},
+    {"candidateId":"ALC1737-vcand-p168-L-004","articleIds":["ALC1737-art-000526"]},
+    {"candidateId":"ALC1737-vcand-p168-L-005","articleIds":["ALC1737-art-000527"]},
+    {"candidateId":null,"articleIds":["ALC1737-art-000528"],"assessment":"selected_start_missing_between_candidates","note":"`Pepita generalmente. Tepſia.` is present in selected direct collation between 000527 and 000529 but has no canonical boundary."},
+    {"candidateId":"ALC1737-vcand-p168-L-006","articleIds":["ALC1737-art-000529"],"assessment":"undersegmented","note":"Canonical L-006 begins selected `Pequeño. Ilichi.` and also carries `...tuc-bochi`-like material consistent with selected 000531 (`Perderſe en el camino. Chituc-bochi.`)."},
+    {"candidateId":null,"articleIds":["ALC1737-art-000530"],"assessment":"selected_start_missing_between_candidates","note":"`Perder generalmente. Ataru.` occurs in the selected sequence after 000529 and before 000531/L-007, without its own canonical boundary."},
+    {"candidateId":null,"articleIds":["ALC1737-art-000531"],"assessment":"selected_start_missing_between_candidates","note":"`Perderſe en el camino. Chituc-bochi.` has no canonical guide boundary; a tail/form-like fragment is displaced into L-006, so the guide start is recorded separately without forcing a containing candidate."},
+    {"candidateId":"ALC1737-vcand-p168-L-007","articleIds":["ALC1737-art-000532","ALC1737-art-000533"],"assessment":"merged_articles","note":"Canonical group begins selected `Perdon. Nehiocore.` and contains the distinct selected start `Perdonar la injuria. Ahiocore.`."},
+    {"candidateId":"ALC1737-vcand-p168-L-009","articleIds":["ALC1737-art-000534"]},
+    {"candidateId":"ALC1737-vcand-p168-L-010","articleIds":["ALC1737-art-000535"]},
+    {"candidateId":"ALC1737-vcand-p168-L-011","articleIds":["ALC1737-art-000536"]},
+    {"candidateId":"ALC1737-vcand-p168-L-013","articleIds":["ALC1737-art-000537"],"assessment":"merged_articles","note":"L-013 begins selected `Perſona. Ioreme.` and visibly contains a second `Pertenecer...`-like guide unit without an independent selected anchor."},
+    {"candidateId":"ALC1737-vcand-p168-L-014","articleIds":["ALC1737-art-000538"],"assessment":"undersegmented","note":"L-014 begins selected `Peſada coſa. Beete.` and carries additional `Buſca penar`-like adjacent material without an independent selected anchor."}
+  ],
+  "structuralHypothesis": {
+    "classification": {"article": 32, "continuation": 0, "paratext": 0, "false_positive": 0, "unresolved": 0},
+    "knownMergedRegions": ["ALC1737-vcand-p168-L-007", "ALC1737-vcand-p168-L-013", "ALC1737-vcand-p168-R-009"],
+    "knownUndersegmentedOrReadingOrderLeakageRegions": ["ALC1737-vcand-p168-L-006", "ALC1737-vcand-p168-L-012", "ALC1737-vcand-p168-L-014", "ALC1737-vcand-p168-R-011", "ALC1737-vcand-p168-R-018"],
+    "knownSelectedMisses": [
+      {"articleId":"ALC1737-art-000528","visibleStartRaw":"Pepita generalmente. Tepſia.","containingCandidateId":null,"missType":"between_candidates"},
+      {"articleId":"ALC1737-art-000530","visibleStartRaw":"Perder generalmente. Ataru.","containingCandidateId":null,"missType":"between_candidates"},
+      {"articleId":"ALC1737-art-000531","visibleStartRaw":"Perderſe en el camino. Chituc-bochi.","containingCandidateId":null,"missType":"between_candidates"},
+      {"articleId":"ALC1737-art-000533","visibleStartRaw":"Perdonar la injuria. Ahiocore.","containingCandidateId":"ALC1737-vcand-p168-L-007","missType":"inside_candidate_group"}
+    ],
+    "note": "All 32 canonical rows are compatible with fresh lexical starts. Selected direct collation demonstrates four additional starts absent as independent canonical boundaries. OCR-only internal units in L-013/L-014/R-009/R-011 are preserved structurally without synthetic article promotion."
+  },
+  "pageEdges": {
+    "fromPrevious": {"status":"fresh_page_transition_after_edge_fragment","openingCandidate":"Penacho, ...","note":"p167 R-025 ends with `Pena-` edge/catchword material; p168 L-001 begins a fresh `Penacho` article."},
+    "toNext": {"status":"catchword_or_edge_fragment_to_fresh_next_page_article","lastCandidate":"ALC1737-vcand-p168-R-018","nextPage":169,"nextPageCandidateInventory":{"total":35,"left":19,"right":16},"nextFirstSelectedArticle":"ALC1737-art-000539","nextFirstSelectedOpening":"Piedra de que ſe ſacan navajas. Buſca pedernal prieto.","note":"R-018 begins a distinct `Pie de animal` article and ends with `Pie-` edge/catchword material. P169 selected 000539 is a fresh article; canonical p169 L-001 starts in its tail `...bajas. Buſca pedernal prieto.` and then absorbs several following articles."}
+  },
+  "evidenceLimits": {
+    "directFacsimileInspectedThisPass": false,
+    "selectedLayerIsCoverageExpectation": false,
+    "ocrOnlyInternalUnitsPromotable": false,
+    "metricsAllowed": false,
+    "reasonMetricsWithheld": "Selected anchors are non-exhaustive and multiple OCR groups are merged/undersegmented; a complete visible-start denominator is not established."
+  },
+  "pageStatus": {
+    "candidateReconciliation": "preflight_complete_pending_materialization",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial_anchor_hypothesis",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
