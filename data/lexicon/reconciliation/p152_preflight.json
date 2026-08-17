@@ -1,0 +1,78 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 152,
+  "stage": "preflight",
+  "candidateInventory": {
+    "method": "hybrid_margin_mode_v0.2",
+    "total": 52,
+    "left": 28,
+    "right": 24,
+    "canonicalInventoryTotal": 2072,
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p152_selected_articles.jsonl",
+    "articleCount": 15,
+    "articleIdRange": ["ALC1737-art-000284", "ALC1737-art-000298"],
+    "columnCounts": {"left": 13, "right": 2},
+    "exhaustive": false,
+    "reviewStatus": "machine_corrected_unverified",
+    "humanVerified": false
+  },
+  "crossPageContext": {
+    "fromPage151": "p151 R-027 begins `Coronilla...` at the page bottom and may continue into unrepresented top-left material before p152 L-001. p152 L-001 itself begins the fresh selected article `Crecer el hombre. Iotuc.`",
+    "firstArticleCandidate": "ALC1737-vcand-p152-L-001",
+    "firstSelectedArticle": "ALC1737-art-000284",
+    "toPage153": "p152 R-024 begins `Cuñado de muger...`. p153 L-001 begins the fresh selected article `Cuñado de hombre. Mocari.`; no long p152→p153 continuation is asserted."
+  },
+  "selectedAnchors": [
+    {"candidateId":"ALC1737-vcand-p152-L-001","linkedArticleIds":["ALC1737-art-000284"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p152-L-002","linkedArticleIds":["ALC1737-art-000285"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p152-L-003","linkedArticleIds":["ALC1737-art-000286"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p152-L-004","linkedArticleIds":["ALC1737-art-000287"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p152-L-005","linkedArticleIds":["ALC1737-art-000288"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p152-L-007","linkedArticleIds":["ALC1737-art-000289"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p152-L-009","linkedArticleIds":["ALC1737-art-000290"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p152-L-010","linkedArticleIds":["ALC1737-art-000291"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p152-L-011","linkedArticleIds":["ALC1737-art-000292"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p152-L-015","linkedArticleIds":["ALC1737-art-000293"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p152-L-016","linkedArticleIds":["ALC1737-art-000294"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p152-L-019","linkedArticleIds":["ALC1737-art-000295"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p152-L-020","linkedArticleIds":["ALC1737-art-000296"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p152-R-004","linkedArticleIds":["ALC1737-art-000297"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p152-R-021","linkedArticleIds":["ALC1737-art-000298"],"assessment":"probable_exact_anchor"}
+  ],
+  "structuralSignals": {
+    "probableArticleCandidates": 52,
+    "probableContinuations": [],
+    "crossColumnOcrContamination": {
+      "candidateId": "ALC1737-vcand-p152-R-002",
+      "note": "R-002 reads `Cuyo ? Abcatea. Iotuc*`; `Iotuc` is the selected Cahíta form of p152 L-001 (`Crecer el hombre`). This is treated as likely OCR/layout contamination across columns, not as evidence for an additional article boundary."
+    },
+    "hyphenatedArticle": {
+      "candidateId": "ALC1737-vcand-p152-L-006",
+      "note": "`Criador Dios. Itotq tehuaca-` ends hyphenated. The next canonical candidate L-007 begins the fresh `Crucificar` article; no separate continuation candidate is available, so the article start is retained while textual completeness remains limited by OCR."
+    }
+  },
+  "evidenceLimits": {
+    "fullCandidateRecordsInspectedInThisPass": true,
+    "directFacsimileInspectedInThisPass": false,
+    "selectedLayerTreatedAsCoverageExpectation": false,
+    "metricsAllowed": false,
+    "reason": "The canonical candidate inventory and selected direct-collation anchors support page-wide structural reconciliation, but the selected layer is not exhaustive and direct facsimile inspection is not available in this pass. No exhaustive visible-start denominator or performance metric is asserted."
+  },
+  "policy": {
+    "independentHumanVerificationPlanned": false,
+    "humanVerified": false,
+    "operationalReviewStates": ["machine_corrected_unverified", "unresolved"],
+    "rule": "Candidate starts may be structurally classified from convergent geometry, OCR context and selected anchors. OCR contamination and uncertain lexical readings remain visible and are not silently normalized."
+  },
+  "pageStatus": {
+    "preflight": "complete",
+    "candidateReconciliation": "ready_for_full_page",
+    "visibleStartCensus": "not_started_full_page",
+    "promotionLinkage": "partial_anchor_layer_only",
+    "technicalClosure": false
+  },
+  "nextAction": "Classify all 52 candidates, link the 15 selected anchors, retain R-002 cross-column contamination explicitly, preserve L-006 textual incompleteness without inventing a continuation candidate, model the p152→p153 edge, and withhold metrics until an exhaustive visible-start census exists."
+}

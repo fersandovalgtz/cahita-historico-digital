@@ -1,0 +1,82 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 152,
+  "pageStatus": {
+    "candidateReconciliation": "complete",
+    "visibleStartCensus": "not_exhaustive",
+    "promotionLinkage": "partial",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 52,
+    "left": 28,
+    "right": 24,
+    "classification": {
+      "article": 52,
+      "continuation": 0,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 52,
+      "oversegmented": 0,
+      "undersegmented": 0,
+      "merged_articles": 0,
+      "ambiguous": 0,
+      "not_applicable": 0
+    }
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000284",
+      "ALC1737-art-000298"
+    ],
+    "articleCandidateRecordsLinked": 15,
+    "structuredArticlesLinked": 15,
+    "selectedArticlesUnlinked": 0
+  },
+  "promotion": {
+    "articleCandidatesPendingPromotion": 37,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045
+  },
+  "visibleStartEvidence": {
+    "exhaustive": false,
+    "knownVisibleStartsMinimum": 52,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "All 52 canonical candidates are structurally consistent with lexical starts, but the selected anchor layer is not exhaustive and cannot prove absence of additional missed starts. No performance denominator is asserted."
+  },
+  "physicalContinuities": [
+    {
+      "from": "ALC1737-vcand-p151-R-027",
+      "to": "p152:left-top-unrepresented",
+      "type": "page_edge_article_continuation",
+      "note": "p151 `Coronilla...` may continue into page-top material before p152 L-001; p152 L-001 is fresh `Crecer el hombre`."
+    },
+    {
+      "from": "ALC1737-vcand-p152-R-024",
+      "to": "ALC1737-vcand-p153-L-001",
+      "type": "page_edge_context",
+      "note": "R-024 begins `Cuñado de muger...`; p153 L-001 begins fresh `Cuñado de hombre. Mocari.` No long article continuation is asserted."
+    }
+  ],
+  "structuralNotes": [
+    "R-002 contains probable cross-column OCR/layout contamination: trailing `Iotuc*` matches the selected form of p152 L-001 and is not counted as another start.",
+    "L-006 ends hyphenated in OCR, but L-007 begins a fresh `Crucificar` article; no continuation candidate is invented."
+  ],
+  "evidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "canonicalCandidateInventoryCount": 2072,
+    "selectedP152LayerUsedAsAnchor": true,
+    "p151AndP153LayersUsedForPageEdges": true,
+    "directFacsimileAvailableThisPass": false,
+    "policy": "Structural starts may be classified from convergent candidate geometry, OCR context and selected anchors; OCR contamination and textual incompleteness remain explicit, and metrics are withheld without an exhaustive visible-start census."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
