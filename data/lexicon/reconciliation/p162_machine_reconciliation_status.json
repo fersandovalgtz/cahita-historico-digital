@@ -1,0 +1,89 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 162,
+  "pageStatus": {
+    "candidateReconciliation": "complete",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 39,
+    "left": 20,
+    "right": 19,
+    "classification": {
+      "article": 38,
+      "continuation": 0,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 1
+    },
+    "boundaryAssessment": {
+      "exact": 36,
+      "oversegmented": 0,
+      "undersegmented": 0,
+      "merged_articles": 1,
+      "ambiguous": 2,
+      "not_applicable": 0
+    }
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000434",
+      "ALC1737-art-000448"
+    ],
+    "articleCandidateRecordsLinked": 14,
+    "structuredArticlesLinked": 15,
+    "continuationCandidateRecordsLinked": 0,
+    "selectedStartsInsideMergedCandidate": 1,
+    "selectedStartsOutsideCandidateInventory": 0,
+    "selectedArticlesUnlinked": 0
+  },
+  "promotion": {
+    "articleCandidatesPendingPromotion": 24,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045
+  },
+  "visibleStartEvidence": {
+    "exhaustive": false,
+    "knownVisibleStartsMinimum": 39,
+    "knownMissedStartRecords": 1,
+    "unresolvedCandidateRecords": 1,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "The 38 article candidates plus selected 000439 absorbed inside L-006 establish at least 39 starts. R-011 remains structurally unresolved and the selected layer is non-exhaustive; no complete denominator is asserted."
+  },
+  "physicalContinuities": [
+    {
+      "from": "ALC1737-vcand-p161-R-016",
+      "to": "ALC1737-vcand-p162-L-001",
+      "type": "fresh_page_transition_after_unresolved_fragment",
+      "note": "p161 R-016 remains unresolved; p162 opens fresh selected `Media coſa la mitad. Najucu.`."
+    },
+    {
+      "from": "ALC1737-vcand-p162-R-019",
+      "to": "ALC1737-vcand-p163-L-001",
+      "type": "fresh_page_transition",
+      "note": "p162 bottom `Moverſe` is structurally distinct; p163 opens fresh `Mucho. Hibua.`."
+    }
+  ],
+  "structuralNotes": [
+    "L-006 is a merged region containing selected 000438 (`Melon`) and 000439 (`Memoria`).",
+    "L-020 is retained as article/ambiguous because geometry supports a start while OCR loses the guide.",
+    "R-011 remains unresolved rather than being forced into a `Miedo tener` reconstruction from its form-only `Mahahuene.` fragment."
+  ],
+  "evidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "canonicalCandidateInventoryCount": 2072,
+    "selectedP162LayerUsedAsAnchor": true,
+    "p161ReconciliationUsedForOpeningEdge": true,
+    "p163CanonicalOpeningUsedForLowerEdge": true,
+    "directFacsimileAvailableThisPass": false,
+    "policy": "Selected direct collations support demonstrated starts and the one known missed start. Form-only unresolved material is not assigned to a hypothetical guide; metrics stay withheld without exhaustive census."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
