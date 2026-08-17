@@ -1,0 +1,88 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 150,
+  "pageStatus": {
+    "candidateReconciliation": "complete_with_explicit_unresolved",
+    "visibleStartCensus": "not_exhaustive",
+    "promotionLinkage": "partial",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 56,
+    "left": 26,
+    "right": 30,
+    "classification": {
+      "article": 55,
+      "continuation": 0,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 1
+    },
+    "boundaryAssessment": {
+      "exact": 54,
+      "oversegmented": 0,
+      "undersegmented": 1,
+      "merged_articles": 0,
+      "ambiguous": 1,
+      "not_applicable": 0
+    }
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000254",
+      "ALC1737-art-000268"
+    ],
+    "articleCandidateRecordsLinked": 15,
+    "structuredArticlesLinked": 15,
+    "selectedArticlesUnlinked": 0
+  },
+  "promotion": {
+    "articleCandidatesPendingPromotion": 40,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045
+  },
+  "visibleStartEvidence": {
+    "exhaustive": false,
+    "knownVisibleStartsMinimum": 55,
+    "knownMissedStartRecords": 0,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "Candidate reconciliation identifies 55 article starts and one unresolved candidate. The selected anchor layer is not exhaustive and cannot prove absence of additional missed starts, including within damaged OCR; no performance denominator is asserted."
+  },
+  "physicalContinuities": [
+    {
+      "from": "ALC1737-vcand-p149-R-030",
+      "to": "ALC1737-vcand-p150-L-001",
+      "type": "page_edge_context",
+      "note": "p149 R-030 absorbs damaged bottom material; p150 L-001 is the fresh selected `Carcel` article, so no long p149→p150 article continuation is asserted."
+    },
+    {
+      "from": "ALC1737-vcand-p150-L-026",
+      "to": "p150:right-top-unrepresented",
+      "type": "cross_column_article_continuation",
+      "note": "L-026 ends hyphenated at the left-column bottom and continues physically into unrepresented top-right material before R-001; the exact lexical transcription remains unpromoted."
+    },
+    {
+      "from": "ALC1737-vcand-p150-R-030",
+      "to": "ALC1737-vcand-p151-L-001",
+      "type": "page_edge_context",
+      "note": "R-030 contains a complete `Como...` start plus trailing `Com-` catchword/page-edge material. p151 L-001 begins a fresh `Compadecerſe` candidate; no long article continuation is asserted."
+    }
+  ],
+  "unresolvedNotes": [
+    "R-023 remains unresolved because OCR interleaves damaged material between the `Colgar algo` and `Colmar` region; the evidence does not establish continuation, layout noise, or an additional lexical start."
+  ],
+  "evidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "canonicalCandidateInventoryCount": 2072,
+    "selectedP150LayerUsedAsAnchor": true,
+    "p149AndP151CandidateLayersUsedForPageEdges": true,
+    "directFacsimileAvailableThisPass": false,
+    "policy": "Structural decisions may be closed from convergent machine evidence; ambiguous boundary microstructure remains unresolved and uncertain lexical text is not strengthened."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
