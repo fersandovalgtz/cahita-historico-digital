@@ -1,0 +1,107 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 157,
+  "pageStatus": {
+    "candidateReconciliation": "complete",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 42,
+    "left": 19,
+    "right": 23,
+    "classification": {
+      "article": 38,
+      "continuation": 2,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 2
+    },
+    "boundaryAssessment": {
+      "exact": 31,
+      "oversegmented": 2,
+      "undersegmented": 1,
+      "merged_articles": 4,
+      "ambiguous": 2,
+      "not_applicable": 2
+    }
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000359",
+      "ALC1737-art-000373"
+    ],
+    "articleCandidateRecordsLinked": 11,
+    "structuredArticlesLinked": 15,
+    "continuationCandidateRecordsLinked": 1,
+    "selectedArticlesUnlinked": 0,
+    "mergedCandidateCount": 4
+  },
+  "promotion": {
+    "articleCandidatesPendingPromotion": 27,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045
+  },
+  "visibleStartEvidence": {
+    "exhaustive": false,
+    "knownVisibleStartsMinimum": 42,
+    "knownMissedStartRecords": 4,
+    "knownMergedInternalStarts": 4,
+    "unresolvedCandidateRecords": 2,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "The 38 article candidates plus four selected starts absorbed inside merged candidates establish at least 42 starts, but two cropped candidate regions remain unresolved and the selected layer is non-exhaustive."
+  },
+  "physicalContinuities": [
+    {
+      "from": "ALC1737-vcand-p156-R-026",
+      "to": "ALC1737-vcand-p157-L-001",
+      "type": "fresh_page_transition",
+      "note": "p156 `Eſquina` is distinct; p157 opens with fresh cropped Eſt- material."
+    },
+    {
+      "from": "ALC1737-vcand-p157-L-004",
+      "to": "ALC1737-vcand-p157-L-005",
+      "type": "article_continuation",
+      "note": "The Eſtera-like article crosses the candidate boundary."
+    },
+    {
+      "from": "ALC1737-vcand-p157-L-012",
+      "to": "ALC1737-vcand-p157-L-013",
+      "type": "article_continuation",
+      "note": "Selected `Eſtrella las tres Marias. Himuim.` continues into L-013."
+    }
+  ],
+  "sourceGap": {
+    "gapId": "ALC1737-gap-0001",
+    "afterDigitalPage": 157,
+    "beforeDigitalPage": 158,
+    "status": "suspected_missing_source_material",
+    "extent": "unresolved",
+    "visibleEnd": "Flecha. Huihua.",
+    "catchword": "Fle...",
+    "nextDigitalPageOpening": "Hallarſe bien en vn lugar",
+    "editorialPolicy": "Do not synthesize or reconstruct missing F/G entries from modern dictionaries or other editions; recovery requires an independently identified witness and separate provenance layer."
+  },
+  "structuralNotes": [
+    "The left scan edge is cropped, producing systematic loss of initial glyphs and reading-order leakage across several candidate groups.",
+    "L-003 and L-006 remain unresolved rather than being forced into article/continuation classes.",
+    "Four selected internal starts are recorded separately as known false negatives inside merged candidates.",
+    "The p157→158 discontinuity is a source gap, not a normal page continuation."
+  ],
+  "evidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "canonicalCandidateInventoryCount": 2072,
+    "selectedP157LayerUsedAsAnchor": true,
+    "sourceGapRecordUsed": true,
+    "p156AndP158CandidateLayersUsedForPageEdges": true,
+    "directFacsimileAvailableThisPass": false,
+    "policy": "Cropped-edge uncertainty and source loss are preserved explicitly. Selected direct collations anchor only demonstrated starts; missing F/G material is never reconstructed by inference."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
