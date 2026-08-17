@@ -1,0 +1,19 @@
+name: P149 Candidate Inspect
+
+on:
+  push:
+    branches:
+      - p149-machine-reconciliation
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify canonical inventory
+        run: python scripts/reconstruct_candidate_inventory.py
+      - name: Export p149 candidates
+        run: python scripts/export_candidate_page.py --page 149
+      - name: Inspect p150 opening
+        run: |
+          python scripts/export_candidate_page.py --page 150 | python -c 'import sys,json; rows=[json.loads(x) for x in sys.stdin if x.strip()]; [print(json.dumps(r,ensure_ascii=False,sort_keys=True)) for r in rows if r.get("candidateOrderInColumn",99)<=6]'
