@@ -8,12 +8,19 @@
     "candidateIds": [
       "ALC1737-vcand-p147-L-002","ALC1737-vcand-p147-L-005","ALC1737-vcand-p147-L-008","ALC1737-vcand-p147-L-010","ALC1737-vcand-p147-L-014","ALC1737-vcand-p147-L-020","ALC1737-vcand-p147-L-021","ALC1737-vcand-p147-L-022","ALC1737-vcand-p147-L-023","ALC1737-vcand-p147-L-024","ALC1737-vcand-p147-L-025","ALC1737-vcand-p147-L-026",
       "ALC1737-vcand-p147-R-001","ALC1737-vcand-p147-R-003","ALC1737-vcand-p147-R-004","ALC1737-vcand-p147-R-005","ALC1737-vcand-p147-R-006","ALC1737-vcand-p147-R-007","ALC1737-vcand-p147-R-008","ALC1737-vcand-p147-R-009","ALC1737-vcand-p147-R-010","ALC1737-vcand-p147-R-011","ALC1737-vcand-p147-R-012","ALC1737-vcand-p147-R-013","ALC1737-vcand-p147-R-014","ALC1737-vcand-p147-R-015","ALC1737-vcand-p147-R-016","ALC1737-vcand-p147-R-017","ALC1737-vcand-p147-R-018","ALC1737-vcand-p147-R-019","ALC1737-vcand-p147-R-020","ALC1737-vcand-p147-R-021","ALC1737-vcand-p147-R-022","ALC1737-vcand-p147-R-023","ALC1737-vcand-p147-R-024","ALC1737-vcand-p147-R-025"
+    ],
+    "missedVisibleStartsPendingPromotion": 4,
+    "missedStartIds": [
+      "ALC1737-miss-p147-L-001",
+      "ALC1737-miss-p147-L-002",
+      "ALC1737-miss-p147-R-001",
+      "ALC1737-miss-p147-R-002"
     ]
   },
   "triagePolicy": {
     "automaticPromotionAllowed": false,
-    "rule": "This queue ranks p.147 pending candidates from same-witness OCR legibility and structural state. Promotion still requires sufficiently stable evidence from ALC1737 itself; OCR is not treated as facsimile-level authority and no secondary witness may silently supply the transcription.",
-    "visibleStartCensusExhaustive": false,
+    "rule": "Candidate-level priority categories were created from same-witness OCR. Direct local ALC1737 facsimile is now available and is the required authority for textual promotion; no secondary witness may silently supply the transcription.",
+    "visibleStartCensusExhaustive": true,
     "humanVerified": false
   },
   "categories": {
@@ -23,7 +30,7 @@
         "ALC1737-vcand-p147-L-014","ALC1737-vcand-p147-L-020","ALC1737-vcand-p147-L-021","ALC1737-vcand-p147-L-023","ALC1737-vcand-p147-L-024","ALC1737-vcand-p147-L-026",
         "ALC1737-vcand-p147-R-001","ALC1737-vcand-p147-R-003","ALC1737-vcand-p147-R-004","ALC1737-vcand-p147-R-008","ALC1737-vcand-p147-R-009","ALC1737-vcand-p147-R-010","ALC1737-vcand-p147-R-012","ALC1737-vcand-p147-R-013","ALC1737-vcand-p147-R-016","ALC1737-vcand-p147-R-019","ALC1737-vcand-p147-R-022","ALC1737-vcand-p147-R-023","ALC1737-vcand-p147-R-025"
       ],
-      "reason": "Compact same-witness OCR units offer the highest expected return from a future direct facsimile pass.",
+      "reason": "Compact same-witness OCR units remain the highest-yield candidate promotions for direct facsimile recollation.",
       "evidence": "p147_primary_ocr_triage_2026-08-17.json"
     },
     "wrapped_but_locally_legible": {
@@ -32,39 +39,40 @@
         "ALC1737-vcand-p147-L-002","ALC1737-vcand-p147-L-005","ALC1737-vcand-p147-L-010","ALC1737-vcand-p147-L-022","ALC1737-vcand-p147-L-025",
         "ALC1737-vcand-p147-R-014","ALC1737-vcand-p147-R-015","ALC1737-vcand-p147-R-017","ALC1737-vcand-p147-R-018","ALC1737-vcand-p147-R-021","ALC1737-vcand-p147-R-024"
       ],
-      "reason": "Guide/form evidence is locally coherent but spans OCR line breaks or multi-part microstructure; recollation should reconstruct the historical sequence before promotion.",
+      "reason": "Guide/form evidence is locally coherent but spans line breaks or multi-part microstructure; direct facsimile should reconstruct the historical sequence before promotion.",
       "evidence": "p147_primary_ocr_triage_2026-08-17.json"
     },
     "guide_or_form_materially_ocr_damaged": {
       "count": 5,
       "candidateIds": ["ALC1737-vcand-p147-L-008","ALC1737-vcand-p147-R-005","ALC1737-vcand-p147-R-006","ALC1737-vcand-p147-R-007","ALC1737-vcand-p147-R-011"],
-      "reason": "Primary OCR damage is substantial enough that normalization without direct visual evidence would risk inventing a historical reading.",
+      "reason": "Primary OCR damage is substantial enough that the direct local facsimile, rather than normalization, must control promotion.",
       "evidence": "p147_primary_ocr_triage_2026-08-17.json"
     },
     "structural_undersegmentation": {
       "count": 1,
       "candidateIds": ["ALC1737-vcand-p147-R-020"],
-      "reason": "Candidate R-020 retains material associated with the following Brincar entry; boundary and transcription need joint facsimile recollation.",
+      "reason": "Candidate R-020 contains trailing material associated with R-021; direct facsimile supports joint structural/textual recollation.",
       "evidence": ["p147_right_reconciliation.jsonl","p147_primary_ocr_triage_2026-08-17.json"]
     }
   },
   "nextPassOrder": [
     {"priority":1,"category":"compact_primary_ocr_high_yield","rationale":"Maximum expected number of safe resolutions per direct facsimile inspection."},
     {"priority":2,"category":"wrapped_but_locally_legible","rationale":"The text is broadly identifiable; work is mainly line/microstructure reconstruction."},
-    {"priority":3,"category":"guide_or_form_materially_ocr_damaged","rationale":"Direct visual evidence is necessary before any textual strengthening."},
+    {"priority":3,"category":"guide_or_form_materially_ocr_damaged","rationale":"Direct visual evidence must control every textual strengthening."},
     {"priority":4,"category":"structural_undersegmentation","rationale":"Requires simultaneous structural and textual recollation rather than simple form reading."}
   ],
   "epistemicGuards": [
-    "This queue changes no transcription and promotes no article.",
-    "Same-witness OCR is evidence but is not equated with direct visual collation of ALC1737.",
-    "The 36 pending candidates are candidate-level article starts and are not automatically equivalent to 36 missing historical articles.",
-    "No precision, recall, or F1 value is claimed while the p.147 visible-start census remains non-exhaustive."
+    "This queue still changes no transcription and promotes no article by itself.",
+    "The direct facsimile census establishes 55 visible starts and four detector false negatives; those four missed starts are tracked outside the 36 candidate queue.",
+    "The 36 pending candidates are candidate-level starts and are not conflated with the four additional unstructured missed starts.",
+    "Page-level detector metrics are now defensible because the visible-start census is exhaustive: precision 1.0, recall 0.927273, F1 0.962264.",
+    "humanVerified remains false."
   ],
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false,
   "provenance": {
     "agent": "GPT-5.6 Sol",
-    "derivedFrom": ["p147_left_reconciliation.jsonl","p147_right_reconciliation.jsonl","p147_machine_reconciliation_status.json","p147_primary_ocr_triage_2026-08-17.json"],
-    "method": "Conservative prioritization of every current p.147 pending_promotion candidate from same-witness OCR legibility and known candidate structure."
+    "derivedFrom": ["p147_left_reconciliation.jsonl","p147_right_reconciliation.jsonl","p147_machine_reconciliation_status.json","p147_primary_ocr_triage_2026-08-17.json","p147_local_facsimile_census_2026-08-17.json","p147_missed_visible_starts.jsonl"],
+    "method": "Conservative candidate triage synchronized with exhaustive direct same-witness facsimile census; no automatic promotion."
   }
 }
