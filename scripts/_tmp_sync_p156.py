@@ -1,0 +1,61 @@
+from pathlib import Path
+import re
+
+
+def sub1(text, pattern, repl, label, flags=0):
+    out, n = re.subn(pattern, repl, text, count=1, flags=flags)
+    if n != 1:
+        raise SystemExit(f"{label}: expected 1 replacement, got {n}")
+    return out
+
+
+# README
+p = Path("README.md")
+text = p.read_text(encoding="utf-8")
+text = sub1(
+    text,
+    r"- las páginas \*\*156–177\*\* ya poseen representación lexicográfica estructurada, pero su reconciliación exhaustiva página por página sigue pendiente;",
+    "- la página **156** tiene sus **52 candidatos canónicos reconciliados**: 52 `article`, sin continuaciones ni candidatos estructuralmente irresueltos; L-001 queda `merged_articles` con `Enſeñar` + `Enſeñanza`, se documenta 1 falso negativo interno, los 15 artículos seleccionados `ALC1737-art-000344`–`000358` quedaron enlazados, permanecen 38 fronteras `pending_promotion` y el censo visible sigue no exhaustivo;\n- las páginas **157–177** ya poseen representación lexicográfica estructurada, pero su reconciliación exhaustiva página por página sigue pendiente;",
+    "README coverage",
+)
+text = sub1(
+    text,
+    r"En \*\*p\.145\*\* quedan .*?El siguiente frente geométrico es la \*\*página 156\*\*, con 52 candidatos canónicos —26 izquierda y 26 derecha—; se mantendrá la misma separación entre frontera estructural confirmada, promoción curatorial e incertidumbre textual\.",
+    "En **p.145** quedan 20 fronteras `pending_promotion` y 3 candidatos `unresolved`; en **p.146** quedan 22 `pending_promotion`; en **p.147** quedan 36 `pending_promotion`; en **p.148** quedan 29 `pending_promotion`; en **p.149** quedan 40 `pending_promotion` y 1 candidato `unresolved`; en **p.150** quedan 40 `pending_promotion` y 1 candidato estructural `unresolved`; en **p.151** quedan 34 `pending_promotion`; en **p.152** quedan 37 `pending_promotion`; en **p.153** quedan 34 `pending_promotion` y 4 candidatos estructurales `unresolved`; en **p.154** quedan 41 `pending_promotion`; en **p.155** quedan 32 `pending_promotion`; y en **p.156** quedan 38 `pending_promotion`. Las páginas 145–156 tienen reconciliación de candidatos completa, pero sus censos visibles aún no se consideran exhaustivos. El siguiente frente geométrico es la **página 157**, con 42 candidatos canónicos —19 izquierda y 23 derecha—; se mantendrá la misma separación entre frontera estructural confirmada, promoción curatorial e incertidumbre textual.",
+    "README next front",
+    flags=re.S,
+)
+p.write_text(text, encoding="utf-8")
+
+
+# LEXICON_PROGRESS
+p = Path("docs/LEXICON_PROGRESS.md")
+text = p.read_text(encoding="utf-8")
+text = text.replace(
+    "Las páginas **145–155 tienen reconciliación completa de sus candidatos canónicos**",
+    "Las páginas **145–156 tienen reconciliación completa de sus candidatos canónicos**",
+    1,
+)
+marker = "## Próximo frente\n"
+if text.count(marker) != 1:
+    raise SystemExit(f"LEXICON marker count {text.count(marker)}")
+section = """## Página 156 — reconciliación de candidatos completada
+
+La página digital **156** contiene **52 candidatos canónicos: 26 izquierda y 26 derecha**. La reconciliación machine-only clasifica los **52 como `article`**, sin candidatos `continuation`, `unresolved`, `paratext` o `false_positive`. La calidad de frontera se distribuye en **51 `exact`** y **1 `merged_articles`**.
+
+La capa seleccionada preexistente contiene **15 artículos `ALC1737-art-000344`–`000358`**. Los quince quedaron enlazados mediante 14 candidatos canónicos. El caso central es **L-001**, que inicia `000344` (`Enſeñar. Amaſtia.`) y absorbe además el comienzo distinto de `000345` (`Enſeñanza. Amaſtianaque.`). Por ello L-001 se conserva como `merged_articles` y `000345` se registra de manera separada en `p156_missed_visible_starts.jsonl` como falso negativo interno conocido.
+
+El material dañado del borde inferior de p.155 anticipa el inicio fresco `Enſeñar` de p.156, por lo que L-001 no se modela como continuación transpaginal. En el otro extremo, R-026 inicia `Eſquina`; la inspección del inventario de p.157 muestra que la página siguiente abre con material fresco de la serie Eſt-, por lo que tampoco se afirma continuidad p.156→157. L-025 (`Eſcobeta para peinarſe`) termina en OCR truncado `Co-`, pero ese daño textual no modifica por sí mismo la frontera estructural ni convierte L-026 en continuación.
+
+Quedan **38 candidatos de artículo `pending_promotion`**. No hubo promociones nuevas y el corpus permanece en **1,045 artículos**. Los 52 candidatos de artículo y el inicio adicional absorbido dentro de L-001 establecen al menos **53 comienzos visibles conocidos**; como la capa seleccionada no es exhaustiva, no se calculan TP/FP/FN, precisión, recall ni F1. `p156_machine_reconciliation_status.json` conserva el detalle y los límites de autoridad.
+
+"""
+text = text.replace(marker, section + marker, 1)
+text = sub1(
+    text,
+    r"En p\.145 quedan \*\*20 `pending_promotion`\*\*.*?El siguiente frente geométrico es la \*\*página digital 156\*\*, con \*\*52 candidatos canónicos: 26 izquierda y 26 derecha\*\*\. Hasta que p\.145 complete censo visible y promoción, el corpus sigue publicando \*\*1,045 artículos estructurados\*\* y \*\*pp\.133–144\*\* como último tramo técnicamente cerrado\.",
+    "En p.145 quedan **20 `pending_promotion`** y 3 `unresolved`; en p.146, **22 `pending_promotion`**; en p.147, **36 `pending_promotion`**; en p.148, **29 `pending_promotion`**; en p.149, **40 `pending_promotion`** y 1 `unresolved`; en p.150, **40 `pending_promotion`** y 1 candidato estructural `unresolved`; en p.151, **34 `pending_promotion`**; en p.152, **37 `pending_promotion`**; en p.153, **34 `pending_promotion`** y 4 candidatos estructurales `unresolved`; en p.154, **41 `pending_promotion`**; en p.155, **32 `pending_promotion`**; y en p.156, **38 `pending_promotion`**. Las páginas 145–156 tienen reconciliación de candidatos completa, pero no un censo visible exhaustivo.\n\nEl siguiente frente geométrico es la **página digital 157**, con **42 candidatos canónicos: 19 izquierda y 23 derecha**. Hasta que p.145 complete censo visible y promoción, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo técnicamente cerrado.",
+    "LEXICON next front",
+    flags=re.S,
+)
+p.write_text(text, encoding="utf-8")
