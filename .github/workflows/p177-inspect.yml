@@ -1,4 +1,4 @@
-name: CHD p177 materialize reconciliation
+name: CHD p177 synchronize docs
 
 on:
   push:
@@ -11,55 +11,36 @@ permissions:
   contents: write
 
 jobs:
-  materialize:
+  synchronize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Materialize p177 reconciliation
-        run: python scripts/_tmp_materialize_p177.py
-      - name: Validate p177 evidence
+      - name: Synchronize p177 docs
+        run: python scripts/_tmp_sync_p177.py
+      - name: Validate synchronized docs
         run: |
-          python -m pip install -r requirements-dev.txt
-          python scripts/reconstruct_candidate_inventory.py
-          python scripts/validate_lexicon_ids.py
-          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p177_left_reconciliation.jsonl
-          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p177_right_reconciliation.jsonl
-          python -m json.tool data/lexicon/reconciliation/p177_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p177_preflight.json >/dev/null
           python - <<'PY'
-          import json
           from pathlib import Path
-          rows=[]
-          for name in ['p177_left_reconciliation.jsonl','p177_right_reconciliation.jsonl']:
-              rows += [json.loads(x) for x in Path('data/lexicon/reconciliation',name).read_text(encoding='utf-8').splitlines() if x.strip()]
-          assert len(rows)==57
-          cls={k:sum(r['classification']==k for r in rows) for k in ['article','continuation','unresolved','paratext','false_positive']}
-          assert cls=={'article':57,'continuation':0,'unresolved':0,'paratext':0,'false_positive':0}, cls
-          merged={f'ALC1737-vcand-p177-{x}' for x in ['L-008','L-029']}
-          ambiguous={f'ALC1737-vcand-p177-{x}' for x in ['L-014','R-019']}
-          under={f'ALC1737-vcand-p177-{x}' for x in ['R-008','R-028']}
-          assert {r['candidateId'] for r in rows if r['boundaryAssessment']=='merged_articles'}==merged
-          assert {r['candidateId'] for r in rows if r['boundaryAssessment']=='ambiguous'}==ambiguous
-          assert {r['candidateId'] for r in rows if r['boundaryAssessment']=='undersegmented'}==under
-          assert sum(r['boundaryAssessment']=='exact' for r in rows)==51
-          linked={aid for r in rows for aid in r.get('linkedArticleIds',[])}
-          expected={f'ALC1737-art-{n:06d}' for n in range(659,674)}
-          assert linked==expected
-          status=json.loads(Path('data/lexicon/reconciliation/p177_machine_reconciliation_status.json').read_text(encoding='utf-8'))
-          assert status['selectedLayer']['knownMissedSelectedArticleIds']==[]
-          assert status['promotion']['articleCandidatesPendingPromotion']==42
-          assert status['visibleStartEvidence']['knownVisibleStartsMinimum']==57
-          assert status['terminalSection']['p178LexiconCandidateCount']==0
-          assert status['terminalSection']['candidateReconciliationCoverageAfterPass']=='133-177 complete'
-          assert status['promotion']['corpusTotalAfterPass']==1045
+          r=Path('README.md').read_text(encoding='utf-8')
+          p=Path('docs/LEXICON_PROGRESS.md').read_text(encoding='utf-8')
+          assert 'la página **177** tiene sus **57 candidatos canónicos reconciliados**' in r
+          assert '45 páginas del Vocabulario (133–177)' in r
+          assert 'La reconciliación geométrica de candidatos del Vocabulario está completa en **pp.133–177 (45/45 páginas)**' in r
+          assert '## Estado — 2026-08-17' in p
+          assert 'Las páginas **145–177 tienen reconciliación completa de sus candidatos canónicos**' in p
+          assert '## Página 177 — reconciliación conservadora completada' in p
+          assert 'reconciliación de candidatos de las 45 páginas del Vocabulario, pp.133–177' in p
+          assert 'La **reconciliación de candidatos del Vocabulario está completa en pp.133–177 (45/45 páginas)**' in p
+          assert 'p.177 quedan **42 `pending_promotion`**' in p
+          assert 'pp.133–144' in p and 'último tramo técnicamente cerrado' in p
           PY
-      - name: Commit generated p177 evidence
+      - name: Commit synchronized docs
         run: |
           git config user.name 'Fernando Sandoval'
           git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
-          git add data/lexicon/reconciliation/p177_left_reconciliation.jsonl data/lexicon/reconciliation/p177_right_reconciliation.jsonl data/lexicon/reconciliation/p177_machine_reconciliation_status.json data/lexicon/reconciliation/p177_preflight.json
-          git commit -m 'data: reconciliar conservadoramente p.177' -m '57 candidatos article; cero missed-starts seleccionados, dos merged, dos ambiguous, dos undersegmented, 42 pending_promotion y borde terminal hacia numerales.'
+          git add README.md docs/LEXICON_PROGRESS.md
+          git commit -m 'docs: cerrar cobertura de reconciliación del Vocabulario'
           git push origin HEAD:work/p177-reconciliation
