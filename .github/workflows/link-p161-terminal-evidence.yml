@@ -35,7 +35,9 @@ jobs:
           status['reviewStatus'] = 'machine_corrected_unverified'
           status['humanVerified'] = False
           assert status['candidateInventory']['classification']['unresolved'] == 1
-          assert status['candidateInventory']['classification']['article'] == 32
+          assert status['candidateInventory']['classification']['article'] == 31
+          assert status['candidateInventory']['classification']['continuation'] == 1
+          assert status['candidateInventory']['total'] == 33
           assert status['promotion']['corpusTotalAfterPass'] == 1045
           assert status['humanVerified'] is False
           path.write_text(json.dumps(status, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
