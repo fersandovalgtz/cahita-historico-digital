@@ -1,4 +1,4 @@
-name: CHD p175 inspection
+name: CHD p175 targeted inspection
 
 on:
   push:
@@ -18,34 +18,28 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Inspect p175 and p176 edge
+      - name: Inspect ambiguous p175 regions
         run: |
           python scripts/export_candidate_page.py --page 175 > /tmp/p175.jsonl
           python scripts/export_candidate_page.py --page 176 > /tmp/p176.jsonl
           python - <<'PY'
-          import json,re,unicodedata
+          import json
           from pathlib import Path
-          from difflib import SequenceMatcher
-          def norm(s):
-              s=unicodedata.normalize('NFKD',s.lower().replace('ſ','s'))
-              s=''.join(c for c in s if not unicodedata.combining(c))
-              return re.sub(r'[^a-z0-9]+',' ',s).strip()
-          p175=[json.loads(x) for x in Path('/tmp/p175.jsonl').read_text().splitlines() if x.strip()]
-          p176=[json.loads(x) for x in Path('/tmp/p176.jsonl').read_text().splitlines() if x.strip()]
-          print('P175',len(p175),'L',sum(x['column']=='left' for x in p175),'R',sum(x['column']=='right' for x in p175))
-          for x in p175: print(x['candidateId'],'::',x['rawText'])
+          rows=[json.loads(x) for x in Path('/tmp/p175.jsonl').read_text().splitlines() if x.strip()]
+          by={r['candidateId']:r for r in rows}
+          ids=[f'ALC1737-vcand-p175-L-{n:03d}' for n in range(11,16)] + [f'ALC1737-vcand-p175-R-{n:03d}' for n in range(6,11)] + [f'ALC1737-vcand-p175-R-{n:03d}' for n in range(14,16)]
+          for cid in ids:
+              r=by[cid]
+              print('CAND',cid,'startY=',r.get('startY'),'flags=',r.get('flags'))
+              for i,line in enumerate(r.get('rawLines',[]),1): print(' ',i,repr(line))
           arts=[json.loads(x) for x in Path('data/lexicon/articles/p175_selected_articles.jsonl').read_text().splitlines() if x.strip()]
+          wanted={f'ALC1737-art-{n:06d}' for n in [637,638,639,640,643]}
+          print('SELECTED')
           for a in arts:
-              q=norm(a['spanishGuideRaw']); scored=[]
-              for c in p175:
-                  t=norm(c['rawText']); score=SequenceMatcher(None,q,t[:max(30,len(q)*2)]).ratio()
-                  if q and q.split()[0] in t: score+=0.25
-                  scored.append((score,c['candidateId'],c['rawText']))
-              print('ANCHOR',a['articleId'],a['spanishGuideRaw'])
-              for sc,cid,raw in sorted(scored,reverse=True)[:3]: print(f'  {sc:.3f} {cid} :: {raw}')
-          print('P176',len(p176),'L',sum(x['column']=='left' for x in p176),'R',sum(x['column']=='right' for x in p176))
-          print('P176-FIRST')
-          for x in p176[:10]: print(x['candidateId'],'::',x['rawText'])
-          print('P176-LAST')
-          for x in p176[-8:]: print(x['candidateId'],'::',x['rawText'])
+              if a['articleId'] in wanted: print(a['articleId'],'::',a['transcriptionRaw'])
+          p176=[json.loads(x) for x in Path('/tmp/p176.jsonl').read_text().splitlines() if x.strip()]
+          print('P176 EDGE')
+          for r in p176[:3]:
+              print(r['candidateId'],'startY=',r.get('startY'),'flags=',r.get('flags'))
+              for i,line in enumerate(r.get('rawLines',[]),1): print(' ',i,repr(line))
           PY
