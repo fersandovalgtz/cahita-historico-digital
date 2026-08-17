@@ -1,7 +1,9 @@
 {
-  "target": "p145_control_evidence_pass_2026-08-17",
-  "purpose": "Trigger repository-wide PR QA against the current p145 reconciliation and validation manifest.",
+  "target": "p145_left_guide_evidence_2026-08-17",
+  "purpose": "Trigger repository-wide PR QA after adding guide-level identifications for L-014 through L-022 without promoting uncertain ALC1737 Cahita forms.",
   "expectedStatusFile": "data/lexicon/reconciliation/p145_machine_reconciliation_status.json",
   "expectedValidationFile": "data/lexicon/reconciliation/p145_control_evidence_validation.json",
+  "expectedEvidenceFile": "data/lexicon/reconciliation/p145_control_evidence_2026-08-17.json",
+  "epistemicGuard": "guide identification is not diplomatic transcription; BUE1890 remains secondary control only",
   "humanVerified": false
 }
