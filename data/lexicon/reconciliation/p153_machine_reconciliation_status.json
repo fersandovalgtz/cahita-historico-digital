@@ -2,7 +2,7 @@
   "sourceId": "ALC1737",
   "sourcePageDigital": 153,
   "pageStatus": {
-    "candidateReconciliation": "complete_with_explicit_unresolved",
+    "candidateReconciliation": "complete",
     "visibleStartCensus": "known_misses_only_not_exhaustive",
     "promotionLinkage": "partial",
     "technicalClosure": false,
@@ -13,19 +13,19 @@
     "left": 25,
     "right": 26,
     "classification": {
-      "article": 46,
-      "continuation": 1,
+      "article": 47,
+      "continuation": 4,
       "paratext": 0,
       "false_positive": 0,
-      "unresolved": 4
+      "unresolved": 0
     },
     "boundaryAssessment": {
-      "exact": 40,
+      "exact": 41,
       "oversegmented": 1,
-      "undersegmented": 4,
+      "undersegmented": 6,
       "merged_articles": 1,
-      "ambiguous": 4,
-      "not_applicable": 1
+      "ambiguous": 0,
+      "not_applicable": 2
     }
   },
   "selectedLayer": {
@@ -46,19 +46,19 @@
     ]
   },
   "promotion": {
-    "articleCandidatesPendingPromotion": 34,
+    "articleCandidatesPendingPromotion": 35,
     "newPromotionsThisPass": 0,
     "corpusTotalAfterPass": 1045
   },
   "visibleStartEvidence": {
     "exhaustive": false,
-    "knownVisibleStartsMinimum": 49,
-    "knownMissedStartRecords": 2,
+    "knownVisibleStartsMinimum": 51,
+    "knownMissedStartRecords": 3,
     "knownMergedInternalStarts": 1,
     "precision": null,
     "recall": null,
     "f1": null,
-    "reasonMetricsWithheld": "The 46 confirmed article candidates, one additional selected start absorbed inside merged L-005, and two demonstrated top-right false negatives establish at least 49 starts. R-003–R-006 remain structurally unresolved and the selected layer is non-exhaustive, so no complete denominator or performance metric is asserted."
+    "reasonMetricsWithheld": "Candidate reconciliation now identifies 47 article candidates plus one known internal start absorbed by merged L-005 and three demonstrated extractor misses, establishing at least 51 visible starts. The census remains non-exhaustive and no complete denominator or performance metric is asserted."
   },
   "physicalContinuities": [
     {
@@ -74,29 +74,49 @@
       "note": "Selected `Dar coſas largas como palo` starts above R-001; R-001 preserves its form `Tebec. amaca.`."
     },
     {
-      "from": "ALC1737-vcand-p153-R-002",
-      "to": "ALC1737-vcand-p153-R-003",
-      "type": "article_text_spills_into_unresolved_region",
-      "note": "Selected `Dar coſas redondas, y mazizas` begins R-002; its completion occupies the opening of R-003, which also contains additional damaged guide material."
-    },
-    {
       "from": "ALC1737-vcand-p153-R-026",
       "to": "ALC1737-vcand-p154-L-001",
       "type": "catchword_to_article",
       "note": "Trailing `Desbat-` in R-026 anticipates fresh p154 `Desbaſtar madera. Atapetia.`; it is not a long article continuation."
+    },
+    {
+      "from": "ALC1737-vcand-p153-R-002",
+      "to": "ALC1737-vcand-p153-R-003",
+      "type": "article_to_continuation",
+      "note": "Selected `Dar coſas redondas, y mazizas` begins R-002 and completes at the opening of R-003."
+    },
+    {
+      "from": "ALC1737-vcand-p153-R-003",
+      "to": "ALC1737-vcand-p153-R-004",
+      "type": "mixed_group_to_article_start",
+      "note": "R-003 absorbs guide material associated with the fresh R-004 start `Dar coſas eſtendidas como libro`."
+    },
+    {
+      "from": "ALC1737-vcand-p153-R-005",
+      "to": "ALC1737-vcand-p153-R-006",
+      "type": "missed_start_to_form_continuation",
+      "note": "R-005 contains the extractor-missed `Dar coſas hondas como olla` start; R-006 preserves its form-region continuation."
     }
   ],
-  "unresolvedNotes": [
-    "R-003–R-006 form an interleaved damaged Dar-region. R-003 begins with completion of selected article 000311 and then introduces additional guide-like material; R-004–R-006 cannot be separated confidently into article starts versus continuations from OCR alone."
-  ],
+  "unresolvedNotes": [],
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
     "selectedP153LayerUsedAsAnchor": true,
     "p152AndP154LayersUsedForPageEdges": true,
     "directFacsimileAvailableThisPass": false,
-    "policy": "Demonstrated selected starts outside the candidate inventory are recorded explicitly as known misses; ambiguous OCR microstructure remains unresolved and metrics are withheld without an exhaustive visible-start census."
+    "policy": "The R-003–R-006 Dar-region is resolved structurally from canonical geometry, selected anchors and same-witness ALC1737 OCR sequence. OCR is used to establish order and boundary identity only; uncertain Cahita forms are not promoted and visible-start coverage remains non-exhaustive.",
+    "materializedCandidateView": "data/lexicon/candidates/p153_candidates.jsonl",
+    "structuralResolutionRecord": "p153_structural_resolution_2026-08-17.json",
+    "recoveredPrimaryOcrSequenceUsed": true,
+    "newInternalMissedStartRecorded": "ALC1737-miss-p153-R-003"
   },
   "reviewStatus": "machine_corrected_unverified",
-  "humanVerified": false
+  "humanVerified": false,
+  "resolvedThisPass": [
+    "R-003 is continuation/undersegmented: it closes selected article 000311 and absorbs guide material from the next article.",
+    "R-004 is an exact article start for structurally identified `Dar coſas eſtendidas como libro`; it remains pending_promotion and no OCR-derived Cahita form is promoted.",
+    "R-005 is continuation/undersegmented and contains a newly documented extractor false negative, ALC1737-miss-p153-R-003, for `Dar coſas hondas como olla`.",
+    "R-006 is continuation/not_applicable containing only the damaged form region of the preceding article before fresh R-007 `Dardo`."
+  ]
 }
