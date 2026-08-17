@@ -1,0 +1,34 @@
+name: CHD p166 inspection
+
+on:
+  push:
+    branches: [work/p166-reconciliation]
+    paths:
+      - '.github/workflows/p166-inspect.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Export p166 and p167 edge
+        run: |
+          echo '---P166-BEGIN---'
+          python scripts/export_candidate_page.py --page 166
+          echo '---P166-END---'
+          echo 'P167 TOTAL'
+          python scripts/export_candidate_page.py --page 167 --count-only
+          echo 'P167 LEFT'
+          python scripts/export_candidate_page.py --page 167 --column left --count-only
+          echo 'P167 RIGHT'
+          python scripts/export_candidate_page.py --page 167 --column right --count-only
+          echo '---P167-BEGIN---'
+          python scripts/export_candidate_page.py --page 167
+          echo '---P167-END---'
