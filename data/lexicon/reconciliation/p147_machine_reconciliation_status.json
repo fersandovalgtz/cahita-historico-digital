@@ -3,8 +3,9 @@
   "sourcePageDigital": 147,
   "pageStatus": {
     "candidateReconciliation": "complete",
-    "visibleStartCensus": "not_exhaustive",
+    "visibleStartCensus": "exhaustive_direct_local_facsimile",
     "promotionLinkage": "partial",
+    "structuralClosure": true,
     "technicalClosure": false,
     "humanVerificationPlanned": false
   },
@@ -40,19 +41,32 @@
   },
   "promotion": {
     "articleCandidatesPendingPromotion": 36,
+    "missedVisibleStartsPendingPromotion": 4,
+    "knownUnstructuredVisibleStarts": 40,
     "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
+    "corpusTotalAfterPass": 1096
   },
   "visibleStartEvidence": {
-    "exhaustive": false,
-    "knownVisibleStartsMinimum": 51,
-    "knownMissedStartRecords": 0,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "All 51 canonical candidates are structurally classified, but the sparse selected layer and absence of a direct full-page facsimile census do not prove that no additional visible starts were missed. Metrics are withheld rather than treating candidate count as the denominator."
+    "exhaustive": true,
+    "visibleHistoricalArticleStarts": 55,
+    "knownVisibleStartsMinimum": 55,
+    "truePositiveCandidateStarts": 51,
+    "falsePositiveCandidateStarts": 0,
+    "falseNegativeVisibleStarts": 4,
+    "knownMissedStartRecords": 4,
+    "knownMissedStartFile": "p147_missed_visible_starts.jsonl",
+    "precision": 1.0,
+    "recall": 0.927273,
+    "f1": 0.962264,
+    "countingNote": "Direct full-page facsimile census establishes 55 visible historical starts: all 51 article-class canonical candidates are true starts, and four additional starts were missed by the detector."
   },
   "physicalContinuities": [
+    {
+      "from": "p147:left:bottom",
+      "to": "p147:right:top",
+      "type": "cross_column_article_continuation",
+      "note": "`Bolver lo de dentro à fuera` continues with visible `Aropetua.` at the top of the right column; `Aropetua.` is not a new article start."
+    },
     {
       "from": "ALC1737-vcand-p146-R-026",
       "to": "ALC1737-vcand-p147-L-001",
@@ -60,36 +74,37 @@
       "note": "The p.146 catchword `Bebida` anticipates p.147 L-001; L-001 is a fresh article start."
     },
     {
-      "from": "ALC1737-vcand-p147-R-025",
+      "from": "p147:right:bottom-catchword",
       "to": "ALC1737-vcand-p148-L-001",
       "type": "catchword_to_next_page",
-      "note": "Trailing `Brum*` is treated as damaged catchword material anticipating p.148 L-001 `Bruñidor`; it is not a second p.147 article."
+      "note": "Trailing `Bruñi-` anticipates p.148 `Bruñidor`; it is paratext, not another p.147 lexical start."
     }
   ],
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
     "selectedP147LayerUsedAsAnchor": true,
-    "p148OpeningInspectedFromCanonicalInventory": true,
-    "directFacsimileAvailableThisPass": false,
-    "recoveredPrimaryOcr": {
-      "available": true,
-      "provider": "Internet Archive",
+    "directLocalFacsimileAvailableThisPass": true,
+    "primaryWitness": {
       "identifier": "artedelalenguaca00gonz",
-      "derivative": "artedelalenguaca00gonz_djvu.txt",
-      "use": "same-witness legibility and priority triage only; not treated as direct facsimile transcription authority"
+      "localFile": "Cahíta.pdf",
+      "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+      "pdfPageCount": 182,
+      "pageRenderSha256": "8757c7ad99b5ce69e882fc4e1bb431790c5516421d3221c10a79c4985843cfdb"
     },
+    "localFacsimileCensusRecord": "p147_local_facsimile_census_2026-08-17.json",
+    "missedStartRecord": "p147_missed_visible_starts.jsonl",
     "primaryOcrTriageRecord": "p147_primary_ocr_triage_2026-08-17.json",
     "phase2PromotionQueue": "p147_phase2_promotion_queue_2026-08-17.json",
-    "policy": "Structural decisions may be closed from convergent machine evidence; textual promotions remain pending where direct ALC1737 facsimile recollation is unavailable."
+    "secondaryControlPolicy": "BUE1890 remains secondary-only and supplies no ALC1737 reading in this census pass."
   },
   "resolvedThisPass": [
-    "All 36 current pending_promotion candidates now have an explicit same-witness OCR triage category.",
-    "Nineteen compact primary-OCR entries are prioritized as the highest-yield direct-facsimile targets; eleven wrapped entries form the second-priority group.",
-    "Five candidates are explicitly blocked by material OCR damage and R-020 remains a joint structural/textual undersegmentation case.",
-    "No lexical article is promoted from public OCR alone."
+    "The visible-start census is now exhaustive from direct local same-witness facsimile inspection.",
+    "Four detector false negatives are explicitly registered: `Bledos otros tardios`, `Bledos colorados`, `Braza. Buſca aſqua`, and `Braſil. Huebaco`.",
+    "The page-level detector metrics are now defensible: precision 1.0, recall 0.927273, F1 0.962264.",
+    "Top-right `Aropetua.` is classified as cross-column continuation of the final left-column article, while bottom `Bruñi-` is classified as a catchword to p.148."
   ],
-  "authorityNote": "P.147 retains complete candidate-level structural reconciliation and now has complete Phase II primary-OCR prioritization for all 36 pending candidates. This improves work ordering but does not strengthen any transcription: direct facsimile recollation remains required for promotion, the visible-start census remains non-exhaustive, and humanVerified remains false.",
+  "authorityNote": "P.147 now has complete candidate-level structural reconciliation and an exhaustive direct-facsimile visible-start census. It is not technically closed because 36 candidate-level starts plus four detector misses remain unpromoted. All authority remains machine_corrected_unverified and humanVerified=false.",
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
 }
