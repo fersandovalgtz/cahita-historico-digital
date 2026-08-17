@@ -1,0 +1,90 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 161,
+  "pageStatus": {
+    "candidateReconciliation": "complete",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 33,
+    "left": 17,
+    "right": 16,
+    "classification": {
+      "article": 31,
+      "continuation": 1,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 1
+    },
+    "boundaryAssessment": {
+      "exact": 29,
+      "oversegmented": 0,
+      "undersegmented": 0,
+      "merged_articles": 1,
+      "ambiguous": 2,
+      "not_applicable": 1
+    }
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000419",
+      "ALC1737-art-000433"
+    ],
+    "articleCandidateRecordsLinked": 12,
+    "structuredArticlesLinked": 15,
+    "continuationCandidateRecordsLinked": 0,
+    "selectedStartsInsideMergedCandidate": 1,
+    "selectedStartsOutsideCandidateInventory": 2,
+    "selectedArticlesUnlinked": 0
+  },
+  "promotion": {
+    "articleCandidatesPendingPromotion": 19,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045
+  },
+  "visibleStartEvidence": {
+    "exhaustive": false,
+    "knownVisibleStartsMinimum": 34,
+    "knownMissedStartRecords": 3,
+    "unresolvedCandidateRecords": 1,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "The 31 article candidates plus three selected starts missing from their own canonical candidates establish at least 34 starts. R-016 remains structurally unresolved and the selected layer is non-exhaustive; no complete denominator is asserted."
+  },
+  "physicalContinuities": [
+    {
+      "from": "ALC1737-vcand-p160-R-026",
+      "to": "ALC1737-vcand-p161-L-001",
+      "type": "article_continuation",
+      "note": "`Latir la vena, ò el corazón` continues as form-only `Qobobohftanhuante`."
+    },
+    {
+      "from": "ALC1737-vcand-p161-R-016",
+      "to": "ALC1737-vcand-p162-L-001",
+      "type": "fresh_page_transition_after_unresolved_fragment",
+      "note": "p161 R-016 is fragmentary and unresolved; p162 begins fresh `Media coſa la mitad`, so no long continuation is asserted."
+    }
+  ],
+  "structuralNotes": [
+    "L-014 is a merged region containing a fresh Levantar article plus selected 000429 (`Lengua de buey`).",
+    "Selected 000430 (`Libro`) and 000431 (`Limon`) are demonstrated column-edge false negatives after L-017 and before R-001.",
+    "R-015 is retained as an article with ambiguous boundary because geometry supports a fresh start while OCR loses the guide.",
+    "R-016 remains unresolved rather than being forced into article/continuation/noise classes."
+  ],
+  "evidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "canonicalCandidateInventoryCount": 2072,
+    "selectedP161LayerUsedAsAnchor": true,
+    "p160ReconciliationUsedForOpeningEdge": true,
+    "p162CanonicalOpeningUsedForLowerEdge": true,
+    "directFacsimileAvailableThisPass": false,
+    "policy": "Selected direct collations support demonstrated starts and known misses. Fragmentary bottom material and anaphoric selected entries remain explicitly unresolved; metrics stay withheld without exhaustive census."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
