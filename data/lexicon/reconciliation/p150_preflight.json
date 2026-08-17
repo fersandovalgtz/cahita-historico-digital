@@ -1,0 +1,83 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 150,
+  "stage": "preflight",
+  "candidateInventory": {
+    "method": "hybrid_margin_mode_v0.2",
+    "total": 56,
+    "left": 26,
+    "right": 30,
+    "canonicalInventoryTotal": 2072,
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p150_selected_articles.jsonl",
+    "articleCount": 15,
+    "articleIdRange": [
+      "ALC1737-art-000254",
+      "ALC1737-art-000268"
+    ],
+    "columnCounts": {
+      "left": 10,
+      "right": 5
+    },
+    "articleTypeCounts": {
+      "equivalence": 10,
+      "cross_reference": 2,
+      "mixed": 1,
+      "unresolved": 2
+    },
+    "exhaustive": false,
+    "reviewStatus": "machine_corrected_unverified_or_unresolved",
+    "humanVerified": false
+  },
+  "crossPageContext": {
+    "fromPage149": "p149 R-030 begins with `Carcoma de madera` and absorbs damaged bottom material; the existing p149 reconciliation explicitly does not assert a long continuation into p150.",
+    "firstArticleCandidate": "ALC1737-vcand-p150-L-001",
+    "firstSelectedArticle": "ALC1737-art-000254",
+    "firstSelectedGuide": "Carcel",
+    "firstSelectedTranscription": "Carcel. Tequiloacari.",
+    "interpretation": "p150 L-001 is a fresh article start anchored by ALC1737-art-000254, not continuation text from p149."
+  },
+  "selectedAnchors": [
+    {"articleId": "ALC1737-art-000254", "column": "left", "spanishGuideRaw": "Carcel", "candidateId": "ALC1737-vcand-p150-L-001", "assessment": "opening_anchor"},
+    {"articleId": "ALC1737-art-000255", "column": "left", "spanishGuideRaw": "Cardar", "candidateId": null, "assessment": "selected_anchor_pending_candidate_alignment"},
+    {"articleId": "ALC1737-art-000256", "column": "left", "spanishGuideRaw": "Carga llevar", "candidateId": null, "assessment": "selected_anchor_pending_candidate_alignment"},
+    {"articleId": "ALC1737-art-000257", "column": "left", "spanishGuideRaw": "Caridad", "candidateId": null, "assessment": "selected_anchor_pending_candidate_alignment"},
+    {"articleId": "ALC1737-art-000258", "column": "left", "spanishGuideRaw": "Carne", "candidateId": null, "assessment": "selected_anchor_pending_candidate_alignment"},
+    {"articleId": "ALC1737-art-000259", "column": "left", "spanishGuideRaw": "Carnero", "candidateId": null, "assessment": "selected_anchor_pending_candidate_alignment"},
+    {"articleId": "ALC1737-art-000260", "column": "left", "spanishGuideRaw": "Caro venderſe", "candidateId": null, "assessment": "selected_anchor_pending_candidate_alignment"},
+    {"articleId": "ALC1737-art-000261", "column": "left", "spanishGuideRaw": "Carrizo", "candidateId": null, "assessment": "selected_anchor_pending_candidate_alignment"},
+    {"articleId": "ALC1737-art-000262", "column": "left", "spanishGuideRaw": "Caſa", "candidateId": null, "assessment": "selected_anchor_pending_candidate_alignment"},
+    {"articleId": "ALC1737-art-000263", "column": "left", "spanishGuideRaw": "Caſamiento de hombre", "candidateId": null, "assessment": "selected_anchor_pending_candidate_alignment"},
+    {"articleId": "ALC1737-art-000264", "column": "right", "spanishGuideRaw": "Clamar", "candidateId": null, "assessment": "selected_anchor_pending_candidate_alignment"},
+    {"articleId": "ALC1737-art-000265", "column": "right", "spanishGuideRaw": "Claro eſtar", "candidateId": null, "assessment": "selected_anchor_pending_candidate_alignment"},
+    {"articleId": "ALC1737-art-000266", "column": "right", "spanishGuideRaw": "Cobrar lo que ſe debe", "candidateId": null, "assessment": "selected_unresolved_anchor_pending_candidate_alignment"},
+    {"articleId": "ALC1737-art-000267", "column": "right", "spanishGuideRaw": "Cobre metal", "candidateId": null, "assessment": "selected_unresolved_anchor_pending_candidate_alignment"},
+    {"articleId": "ALC1737-art-000268", "column": "right", "spanishGuideRaw": "Como?", "candidateId": null, "assessment": "selected_anchor_pending_candidate_alignment"}
+  ],
+  "evidenceLimits": {
+    "fullCandidateRecordsInspectedInThisPass": false,
+    "directFacsimileInspectedInThisPass": false,
+    "selectedLayerTreatedAsCoverageExpectation": false,
+    "metricsAllowed": false,
+    "reason": "The preflight fixes the canonical page geometry, sparse selected anchors, and page-edge context only. Full boundary classification requires inspection of all 56 canonical candidate records; no candidate class, promotion count, visible-start denominator, or performance metric is asserted prematurely."
+  },
+  "policy": {
+    "independentHumanVerificationPlanned": false,
+    "humanVerified": false,
+    "operationalReviewStates": [
+      "machine_corrected_unverified",
+      "unresolved"
+    ],
+    "rule": "Selected articles are anchors only. No missing guide, Cahíta form, boundary relation, or page metric may be reconstructed from lexical expectation when the canonical candidate evidence has not been inspected."
+  },
+  "pageStatus": {
+    "preflight": "complete",
+    "candidateReconciliation": "not_started_full_page",
+    "visibleStartCensus": "not_started_full_page",
+    "promotionLinkage": "partial_anchor_layer_only",
+    "technicalClosure": false
+  },
+  "nextAction": "Inspect all 56 canonical p150 candidates, align the 15 selected anchors, classify every boundary, model internal and cross-column continuities, identify candidate false positives and missed visible starts, and promote only entries supported beyond damaged raw OCR."
+}
