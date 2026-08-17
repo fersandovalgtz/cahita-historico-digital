@@ -1,0 +1,110 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 167,
+  "pageStatus": {
+    "candidateReconciliation": "complete",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 55,
+    "left": 30,
+    "right": 25,
+    "classification": {
+      "article": 54,
+      "continuation": 1,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 47,
+      "oversegmented": 1,
+      "undersegmented": 3,
+      "merged_articles": 2,
+      "ambiguous": 1,
+      "not_applicable": 1
+    }
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000509",
+      "ALC1737-art-000523"
+    ],
+    "articleCandidateRecordsLinked": 14,
+    "structuredArticlesLinked": 15,
+    "continuationCandidateRecordsLinked": 0,
+    "selectedStartsInsideMergedCandidate": 1,
+    "selectedStartsOutsideCandidateInventory": 0,
+    "selectedArticlesUnlinked": 0,
+    "knownMissedSelectedArticleIds": [
+      "ALC1737-art-000519"
+    ]
+  },
+  "promotion": {
+    "articleCandidatesPendingPromotion": 40,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045
+  },
+  "visibleStartEvidence": {
+    "exhaustive": false,
+    "knownVisibleStartsMinimum": 55,
+    "knownMissedStartRecords": 1,
+    "unresolvedCandidateRecords": 0,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "The 54 article candidates plus selected internal miss 000519 establish at least 55 starts, but the selected layer is non-exhaustive and merged/undersegmented OCR groups may contain additional unanchored starts."
+  },
+  "physicalContinuities": [
+    {
+      "from": "ALC1737-vcand-p166-R-022",
+      "to": "ALC1737-vcand-p167-L-001",
+      "type": "catchword_or_edge_fragment_to_fresh_next_page_article",
+      "note": "p166 carries `Paſſo`-like edge/catchword material; p167 opens fresh selected 000509."
+    },
+    {
+      "from": "ALC1737-vcand-p167-R-002",
+      "to": "ALC1737-vcand-p167-R-003",
+      "type": "article_continuation",
+      "note": "`Pedernal prieto para flechas` continues into form-only `Bicam`."
+    },
+    {
+      "from": "ALC1737-vcand-p167-R-025",
+      "to": "ALC1737-vcand-p168-L-001",
+      "type": "catchword_or_edge_fragment_to_fresh_next_page_article",
+      "note": "R-025 ends with `Pena-`; p168 L-001 begins a fresh `Penacho` article before selected p168 anchor 000524."
+    }
+  ],
+  "structuralNotes": [
+    "L-010 is `merged_articles` because it contains selected 000518 and selected 000519; 000519 is recorded as the known internal missed start.",
+    "R-002 is an article start with an oversegmented form continuation in R-003; R-003 is the sole canonical continuation row.",
+    "L-030 remains an `article` with `ambiguous` assessment because geometry supports a fresh start while OCR does not responsibly recover its guide.",
+    "R-011, R-013 and R-025 are `undersegmented`; adjacent/catchword material is preserved without synthesized lexical articles.",
+    "R-020 is `merged_articles` because it contains a second unselected Pelo-like guide unit; that internal unit is not promoted or counted as a missed start without independent direct-collation support."
+  ],
+  "nextPage": {
+    "sourcePageDigital": 168,
+    "candidateInventoryTotal": 32,
+    "left": 14,
+    "right": 18,
+    "firstCandidate": "ALC1737-vcand-p168-L-001",
+    "firstCandidateOpening": "Penacho, ...",
+    "firstSelectedArticle": "ALC1737-art-000524",
+    "firstSelectedOpening": "Penca de miſcal. Cuumaicoa."
+  },
+  "evidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "canonicalCandidateInventoryCount": 2072,
+    "selectedP167LayerUsedAsAnchor": true,
+    "p166ReconciliationUsedForOpeningEdge": true,
+    "p168CanonicalCandidatesAndSelectedLayerUsedForLowerEdge": true,
+    "directFacsimileAvailableThisPass": false,
+    "policy": "Selected direct collations support demonstrated starts and the known internal miss. OCR-only internal/adjacent units are preserved structurally without invented lexical transcription or promotion; metrics remain withheld without an exhaustive visible-start census."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
