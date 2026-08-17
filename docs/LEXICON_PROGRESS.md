@@ -2,7 +2,7 @@
 
 ## Estado — 2026-08-16
 
-El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El inventario canónico `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera. La capa curatorial contiene actualmente **1,045 artículos históricos estructurados**. Las páginas **133–144** están cerradas en reconciliación de candidatos, censo de inicios visibles, promoción/enlace y control computacional IA-asistido. Las páginas **145–149 tienen reconciliación completa de sus candidatos canónicos**, pero permanecen abiertas para censo exhaustivo de inicios visibles y promoción de fronteras sin transcripción suficientemente sustentada. La **p.150 tiene preflight reproducible abierto sobre 56 candidatos canónicos y 15 artículos seleccionados preexistentes**. **Ningún objeto es `human_verified` y la política vigente no contempla intervención humana independiente.**
+El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El inventario canónico `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera. La capa curatorial contiene actualmente **1,045 artículos históricos estructurados**. Las páginas **133–144** están cerradas en reconciliación de candidatos, censo de inicios visibles, promoción/enlace y control computacional IA-asistido. Las páginas **145–150 tienen reconciliación completa de sus candidatos canónicos**, pero permanecen abiertas para censo exhaustivo de inicios visibles y promoción de fronteras sin transcripción suficientemente sustentada. **Ningún objeto es `human_verified` y la política vigente no contempla intervención humana independiente.**
 
 ## Inventario canónico
 
@@ -82,18 +82,18 @@ Quedan **40 candidatos de artículo `pending_promotion`**. No hubo promociones n
 
 En el borde inferior, R-030 comienza con `Carcoma de madera` y absorbe material dañado adicional. La página 150 abre con el artículo seleccionado **`Carcel. Tequiloacari.`**, por lo que no se afirma una continuidad larga p.149→150. `p149_machine_reconciliation_status.json` conserva el detalle de estas decisiones.
 
-## Página 150 — preflight reproducible
+## Página 150 — reconciliación de candidatos completada
 
-La página digital **150** contiene **56 candidatos canónicos: 26 izquierda y 30 derecha**. La capa seleccionada preexistente contiene **15 artículos `ALC1737-art-000254`–`ALC1737-art-000268`**, distribuidos en 10 anclas de la columna izquierda y 5 de la derecha. La capa es explícitamente no exhaustiva y no se usa como expectativa de cobertura.
+La página digital **150** contiene **56 candidatos canónicos: 26 izquierda y 30 derecha**. La reconciliación machine-only clasifica **55 `article`** y **1 `unresolved`**, sin candidatos `continuation`, `paratext` o `false_positive`. La calidad de frontera se distribuye en **54 `exact`**, **1 `undersegmented`** y **1 `ambiguous`**.
 
-El borde p.149→150 queda fijado sin sobreinterpretación: `p149_machine_reconciliation_status.json` ya había establecido que el material dañado de p.149 R-030 no justifica una continuidad larga. P.150 L-001 abre un artículo nuevo, `ALC1737-art-000254`, **`Carcel. Tequiloacari.`**. Los otros catorce artículos seleccionados quedan registrados como anclas pendientes de alineación con los candidatos canónicos completos.
+La capa seleccionada preexistente contiene **15 artículos `ALC1737-art-000254`–`ALC1737-art-000268`**; los quince quedaron enlazados a candidatos canónicos. Las dos anáforas históricas seleccionadas `ALC1737-art-000266` (`Cobrar lo que ſe debe. Lo miſmo.`) y `ALC1737-art-000267` (`Cobre metal. Lo miſmo.`) mantienen su microestructura semántica `unresolved`, aunque sus fronteras físicas estén alineadas.
 
-Entre las anclas seleccionadas de p.150 hay dos objetos cuyo tipo sigue siendo `unresolved`: `ALC1737-art-000266` (`Cobrar lo que ſe debe. Lo miſmo.`) y `ALC1737-art-000267` (`Cobre metal. Lo miſmo.`). El preflight no fortalece esas anáforas ni propone referentes sin evidencia suficiente.
+El único candidato estructuralmente irresuelto es **R-023**, en la región `Colgar algo` / `Colmar`: el OCR intercala material dañado y no permite decidir de forma responsable si se trata de continuación, ruido de layout o un inicio adicional. No se impone microsegmentación. L-026 inicia un artículo al pie de la columna izquierda y continúa físicamente en material no representado de la parte superior derecha antes de R-001; permanece sin promoción. R-030 inicia un artículo `Como...` pero absorbe además un `Com-` de borde/reclamo; p.151 L-001 abre un candidato fresco `Compadecerſe`, por lo que no se afirma una continuidad larga p.150→151.
 
-`data/lexicon/reconciliation/p150_preflight.json` fija geometría, anclas, contexto de borde y límites de evidencia. No declara todavía clasificación completa de los 56 candidatos, promociones, censo visible, TP/FP/FN ni F1.
+Quedan **40 candidatos de artículo `pending_promotion`**. No hubo promociones nuevas y el corpus permanece en **1,045 artículos**. El censo visible no se declara exhaustivo: se conocen al menos 55 inicios candidatos de artículo, pero R-023 y la ausencia de un denominador facsimilar exhaustivo impiden calcular TP/FP/FN, precisión, recall o F1. `p150_machine_reconciliation_status.json` conserva estas decisiones y sus límites de evidencia.
 
 ## Próximo frente
 
-En p.145 quedan **20 `pending_promotion`** y 3 `unresolved`; en p.146, **22 `pending_promotion`**; en p.147, **36 `pending_promotion`**; en p.148, **29 `pending_promotion`**; y en p.149, **40 `pending_promotion`** y 1 `unresolved`. Las páginas 145–149 tienen reconciliación de candidatos completa, pero no un censo visible exhaustivo.
+En p.145 quedan **20 `pending_promotion`** y 3 `unresolved`; en p.146, **22 `pending_promotion`**; en p.147, **36 `pending_promotion`**; en p.148, **29 `pending_promotion`**; en p.149, **40 `pending_promotion`** y 1 `unresolved`; y en p.150, **40 `pending_promotion`** y 1 candidato estructural `unresolved`. Las páginas 145–150 tienen reconciliación de candidatos completa, pero no un censo visible exhaustivo.
 
-El frente geométrico activo es ahora la **página digital 150**: inspeccionar los 56 candidatos canónicos, alinear los 15 artículos seleccionados, clasificar cada frontera, modelar continuidades internas y entre columnas, detectar falsos positivos y posibles inicios visibles omitidos, y promover sólo entradas sustentadas más allá del OCR dañado. Hasta que p.145 complete censo visible y promoción, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo técnicamente cerrado.
+El siguiente frente geométrico es la **página digital 151**, con **50 candidatos canónicos: 23 izquierda y 27 derecha**. Hasta que p.145 complete censo visible y promoción, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo técnicamente cerrado.
