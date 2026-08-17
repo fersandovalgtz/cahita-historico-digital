@@ -6,6 +6,39 @@
   "primaryEvidence": {
     "source": "Internet Archive OCR derivative of ALC1737",
     "identifier": "artedelalenguaca00gonz",
+    "itemUri": "https://archive.org/details/artedelalenguaca00gonz",
+    "fullTextDerivativeUri": "https://archive.org/stream/artedelalenguaca00gonz/artedelalenguaca00gonz_djvu.txt",
+    "retrievalCheckedAt": "2026-08-17",
+    "retrievalStatus": "available",
+    "evidenceScope": "guide identification and segmentation support only; the OCR linearization interleaves the two printed columns and is not a facsimile-level visible-start census",
+    "observedRegionAnchors": {
+      "openingContext": "Atormentar continuation at the p.144→145 transition",
+      "closingContext": "Bagre followed by a damaged lower-right continuation/start region",
+      "normalizedEvidenceLabels": [
+        "Atole bebida de indias",
+        "Aves/Ave sequence",
+        "Avecindarse",
+        "Aventajar",
+        "Aventar como trigo",
+        "Aunque",
+        "Avenir",
+        "Azedarse algo",
+        "Azero",
+        "Ambre",
+        "Ambre tener",
+        "Ardilla por su especie pequeña",
+        "Ardilla por su especie grande",
+        "Ardilla que suele bajar al Rio",
+        "Atomo",
+        "Baba",
+        "Babear",
+        "Basto para cocer las tortillas",
+        "Bazo parte interior",
+        "Bagre"
+      ],
+      "labelStatus": "normalized_noncanonical_navigation_only",
+      "caution": "These labels are navigation anchors for structural reconciliation, not diplomatic transcription. Historical spelling and Cahita forms must come from direct witness collation or remain unresolved."
+    },
     "observations": [
       {
         "candidateId": "ALC1737-vcand-p145-R-011",
@@ -24,6 +57,7 @@
   "secondaryControl": {
     "sourceId": "BUE1890",
     "authority": "secondary_only",
+    "controlRecord": "data/source/control/bue1890.json",
     "observations": [
       {
         "candidateId": "ALC1737-vcand-p145-R-011",
@@ -37,11 +71,18 @@
       }
     ]
   },
+  "methodologicalConstraints": [
+    "Internet Archive full-text OCR is a machine derivative and does not preserve a trustworthy reading order for the two-column page.",
+    "The OCR may establish that a guide string is present, but it is not sufficient authority for uncertain Cahita forms or for an exhaustive visible-start denominator.",
+    "BUE1890 is a later reprint/control witness and is never silently substituted for ALC1737.",
+    "No precision, recall or F1 value is claimable until a facsimile-level exhaustive visible-start census exists."
+  ],
   "decisions": [
     "R-011 is reclassified from unresolved to article because the primary OCR preserves the guide start and BUE1890 independently corroborates the segmentation.",
     "R-011 remains pending_promotion because the exact ALC1737 Cahita form is not sufficiently reliable from OCR alone.",
     "R-012 remains an article with ambiguous boundary assessment and pending_promotion; its guide is identified as Atomo, but its exact ALC1737 Cahita form remains too uncertain for promotion.",
-    "No BUE1890 form is silently substituted for ALC1737."
+    "No BUE1890 form is silently substituted for ALC1737.",
+    "The recovered full-text derivative strengthens reproducibility but does not by itself close the facsimile-level visible-start census."
   ],
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
