@@ -83,6 +83,7 @@ jobs:
           python -m json.tool data/lexicon/candidates/inventory_status.json >/dev/null
           python -m json.tool data/lexicon/candidates/candidate_inventory_manifest.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p133_p134_visible_start_census.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/phase2_open_work_summary.json >/dev/null
 
           shopt -s nullglob
           status_files=(
@@ -115,3 +116,11 @@ jobs:
               if line.strip():
                   json.loads(line)
           PY
+
+      - name: Verify Phase II open-work summary is current
+        shell: bash
+        run: |
+          set -euo pipefail
+          tmp="$(mktemp)"
+          python scripts/summarize_open_lexicon_work.py --output "$tmp"
+          diff -u data/lexicon/reconciliation/phase2_open_work_summary.json "$tmp"
