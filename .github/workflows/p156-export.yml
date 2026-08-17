@@ -1,4 +1,4 @@
-name: CHD p156 materialize reconciliation
+name: CHD p156 synchronize docs
 
 on:
   push:
@@ -11,105 +11,79 @@ permissions:
   contents: write
 
 jobs:
-  materialize:
+  synchronize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Generate p156 reconciliation layers
+      - name: Synchronize p156 docs
         shell: bash
         run: |
           python - <<'PY'
-          import json
           from pathlib import Path
+          import re
 
-          links = {
-            'L-001':['ALC1737-art-000344','ALC1737-art-000345'],
-            'L-003':['ALC1737-art-000346'],'L-004':['ALC1737-art-000347'],
-            'L-005':['ALC1737-art-000348'],'L-006':['ALC1737-art-000349'],
-            'L-007':['ALC1737-art-000350'],'L-008':['ALC1737-art-000351'],
-            'L-009':['ALC1737-art-000352'],'L-012':['ALC1737-art-000353'],
-            'L-013':['ALC1737-art-000354'],'L-014':['ALC1737-art-000355'],
-            'R-003':['ALC1737-art-000356'],'L-026':['ALC1737-art-000357'],
-            'R-014':['ALC1737-art-000358']
-          }
-          provenance = {
-            'derivedFrom':'canonical-v0.2 candidate inventory; p156 selected article layer where linked; p155 and p157 candidate layers for page-edge context',
-            'agent':'GPT-5.6 Sol machine reconciliation',
-            'method':'AI-assisted structural reconciliation from canonical geometry/OCR and pre-existing selected direct-collation anchors; no independent human verification',
-            'processedAt':None
-          }
+          def sub1(text, pattern, repl, label, flags=0):
+              out, n = re.subn(pattern, repl, text, count=1, flags=flags)
+              if n != 1:
+                  raise SystemExit(f'{label}: expected 1 replacement, got {n}')
+              return out
 
-          def rec(side,n):
-            key=f'{side}-{n:03d}'
-            cid=f'ALC1737-vcand-p156-{key}'
-            linked=links.get(key,[])
-            assessment='exact'
-            if key=='L-001':
-              assessment='merged_articles'
-              note='Canonical L-001 begins selected 000344 (`Enſeñar. Amaſtia.`) and absorbs the distinct selected start 000345 (`Enſeñanza. Amaſtianaque.`). The internal start is recorded separately as a known missed start.'
-            elif key=='L-025':
-              note='Distinct `Eſcobeta para peinarſe` article start. OCR ends in truncated `Co-`; textual damage is preserved without converting the following fresh L-026 article into a continuation.'
-            elif key=='R-026':
-              note='Distinct `Eſquina` article start at the bottom of p156. p157 opens with fresh Eſt- material; no cross-page continuation is asserted.'
-            elif linked:
-              note='Aligned to selected direct-collation article anchor.'
-            else:
-              note='Distinct lexical start supported by canonical geometry; retained pending because raw OCR alone is not a sufficient transcription anchor for promotion.'
-            return {
-              'candidateId':cid,'sourceId':'ALC1737','sourcePageDigital':156,
-              'column':'left' if side=='L' else 'right','classification':'article',
-              'boundaryAssessment':assessment,'linkedArticleIds':linked,
-              'articleLinkStatus':'linked' if linked else 'pending_promotion','editorialNote':note,
-              'reviewStatus':'machine_corrected_unverified','humanVerified':False,'provenance':provenance
-            }
+          p = Path('README.md')
+          text = p.read_text(encoding='utf-8')
+          text = sub1(
+              text,
+              r'- las páginas \*\*156–177\*\* ya poseen representación lexicográfica estructurada, pero su reconciliación exhaustiva página por página sigue pendiente;',
+              '- la página **156** tiene sus **52 candidatos canónicos reconciliados**: 52 `article`, sin continuaciones ni candidatos estructuralmente irresueltos; L-001 queda `merged_articles` con `Enſeñar` + `Enſeñanza`, se documenta 1 falso negativo interno, los 15 artículos seleccionados `ALC1737-art-000344`–`000358` quedaron enlazados, permanecen 38 fronteras `pending_promotion` y el censo visible sigue no exhaustivo;\n- las páginas **157–177** ya poseen representación lexicográfica estructurada, pero su reconciliación exhaustiva página por página sigue pendiente;',
+              'README coverage')
+          text = sub1(
+              text,
+              r'En \*\*p\.145\*\* quedan .*?El siguiente frente geométrico es la \*\*página 156\*\*, con 52 candidatos canónicos —26 izquierda y 26 derecha—; se mantendrá la misma separación entre frontera estructural confirmada, promoción curatorial e incertidumbre textual\.',
+              'En **p.145** quedan 20 fronteras `pending_promotion` y 3 candidatos `unresolved`; en **p.146** quedan 22 `pending_promotion`; en **p.147** quedan 36 `pending_promotion`; en **p.148** quedan 29 `pending_promotion`; en **p.149** quedan 40 `pending_promotion` y 1 candidato `unresolved`; en **p.150** quedan 40 `pending_promotion` y 1 candidato estructural `unresolved`; en **p.151** quedan 34 `pending_promotion`; en **p.152** quedan 37 `pending_promotion`; en **p.153** quedan 34 `pending_promotion` y 4 candidatos estructurales `unresolved`; en **p.154** quedan 41 `pending_promotion`; en **p.155** quedan 32 `pending_promotion`; y en **p.156** quedan 38 `pending_promotion`. Las páginas 145–156 tienen reconciliación de candidatos completa, pero sus censos visibles aún no se consideran exhaustivos. El siguiente frente geométrico es la **página 157**, con 42 candidatos canónicos —19 izquierda y 23 derecha—; se mantendrá la misma separación entre frontera estructural confirmada, promoción curatorial e incertidumbre textual.',
+              'README next front', flags=re.S)
+          p.write_text(text, encoding='utf-8')
 
-          out=Path('data/lexicon/reconciliation')
-          for side,count,filename in [('L',26,'p156_left_reconciliation.jsonl'),('R',26,'p156_right_reconciliation.jsonl')]:
-            rows=[rec(side,i) for i in range(1,count+1)]
-            (out/filename).write_text('\n'.join(json.dumps(r,ensure_ascii=False) for r in rows)+'\n',encoding='utf-8')
+          p = Path('docs/LEXICON_PROGRESS.md')
+          text = p.read_text(encoding='utf-8')
+          text = text.replace('Las páginas **145–155 tienen reconciliación completa de sus candidatos canónicos**', 'Las páginas **145–156 tienen reconciliación completa de sus candidatos canónicos**', 1)
+          marker = '## Próximo frente\n'
+          if text.count(marker) != 1:
+              raise SystemExit(f'LEXICON marker count {text.count(marker)}')
+          section = '''## Página 156 — reconciliación de candidatos completada
 
-          miss={
-            'missedStartId':'ALC1737-miss-p156-L-001','sourceId':'ALC1737','sourcePageDigital':156,'column':'left',
-            'visibleStartRaw':'Enſeñanza. Amaſtianaque.','missType':'inside_candidate_group',
-            'containingCandidateId':'ALC1737-vcand-p156-L-001','linkedArticleIds':['ALC1737-art-000345'],
-            'editorialNote':'Selected 000345 is a distinct historical start absorbed inside canonical L-001 after selected 000344. This is a demonstrated internal false negative, not an exhaustive visible-start census claim.',
-            'reviewStatus':'machine_corrected_unverified','humanVerified':False,
-            'provenance':{'agent':'GPT-5.6 Sol machine reconciliation','method':'AI-assisted alignment of canonical p156 geometry with pre-existing selected direct-collation layer; no independent human verification','processedAt':None}
-          }
-          (out/'p156_missed_visible_starts.jsonl').write_text(json.dumps(miss,ensure_ascii=False)+'\n',encoding='utf-8')
+La página digital **156** contiene **52 candidatos canónicos: 26 izquierda y 26 derecha**. La reconciliación machine-only clasifica los **52 como `article`**, sin candidatos `continuation`, `unresolved`, `paratext` o `false_positive`. La calidad de frontera se distribuye en **51 `exact`** y **1 `merged_articles`**.
 
-          status={
-            'sourceId':'ALC1737','sourcePageDigital':156,
-            'pageStatus':{'candidateReconciliation':'complete','visibleStartCensus':'known_misses_only_not_exhaustive','promotionLinkage':'partial','technicalClosure':False,'humanVerificationPlanned':False},
-            'candidateInventory':{'total':52,'left':26,'right':26,'classification':{'article':52,'continuation':0,'paratext':0,'false_positive':0,'unresolved':0},'boundaryAssessment':{'exact':51,'oversegmented':0,'undersegmented':0,'merged_articles':1,'ambiguous':0,'not_applicable':0}},
-            'selectedLayer':{'preExistingArticles':15,'articleIdRange':['ALC1737-art-000344','ALC1737-art-000358'],'articleCandidateRecordsLinked':14,'structuredArticlesLinked':15,'selectedArticlesUnlinked':0,'mergedCandidateId':'ALC1737-vcand-p156-L-001','mergedSelectedArticleIds':['ALC1737-art-000344','ALC1737-art-000345']},
-            'promotion':{'articleCandidatesPendingPromotion':38,'newPromotionsThisPass':0,'corpusTotalAfterPass':1045},
-            'visibleStartEvidence':{'exhaustive':False,'knownVisibleStartsMinimum':53,'knownMissedStartRecords':1,'knownMergedInternalStarts':1,'precision':None,'recall':None,'f1':None,'reasonMetricsWithheld':'The 52 article candidates plus one distinct selected start absorbed inside L-001 establish at least 53 starts. The selected layer is non-exhaustive, so no complete denominator or performance metric is asserted.'},
-            'physicalContinuities':[
-              {'from':'ALC1737-vcand-p155-R-026','to':'ALC1737-vcand-p156-L-001','type':'catchword_to_article','note':'Damaged p155 edge material anticipates fresh p156 `Enſeñar`; L-001 is not classified as a continuation.'},
-              {'from':'ALC1737-vcand-p156-R-026','to':'ALC1737-vcand-p157-L-001','type':'fresh_page_transition','note':'p156 `Eſquina` is structurally distinct and p157 opens with fresh Eſt- material; no article continuation is asserted.'}
-            ],
-            'structuralNotes':['L-001 is a merged-start region containing selected 000344 and 000345.','L-025 has truncated OCR but remains a structurally distinct article start; no inferred continuation is created.'],
-            'evidence':{'canonicalCandidateInventoryVerified':True,'canonicalCandidateInventoryCount':2072,'selectedP156LayerUsedAsAnchor':True,'p155AndP157CandidateLayersUsedForPageEdges':True,'directFacsimileAvailableThisPass':False,'policy':'Known internal misses are separated from candidate reconciliation; OCR damage does not by itself alter structurally supported boundaries; metrics remain withheld without exhaustive census.'},
-            'reviewStatus':'machine_corrected_unverified','humanVerified':False
-          }
-          (out/'p156_machine_reconciliation_status.json').write_text(json.dumps(status,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+La capa seleccionada preexistente contiene **15 artículos `ALC1737-art-000344`–`000358`**. Los quince quedaron enlazados mediante 14 candidatos canónicos. El caso central es **L-001**, que inicia `000344` (`Enſeñar. Amaſtia.`) y absorbe además el comienzo distinto de `000345` (`Enſeñanza. Amaſtianaque.`). Por ello L-001 se conserva como `merged_articles` y `000345` se registra de manera separada en `p156_missed_visible_starts.jsonl` como falso negativo interno conocido.
+
+El material dañado del borde inferior de p.155 anticipa el inicio fresco `Enſeñar` de p.156, por lo que L-001 no se modela como continuación transpaginal. En el otro extremo, R-026 inicia `Eſquina`; la inspección del inventario de p.157 muestra que la página siguiente abre con material fresco de la serie Eſt-, por lo que tampoco se afirma continuidad p.156→157. L-025 (`Eſcobeta para peinarſe`) termina en OCR truncado `Co-`, pero ese daño textual no modifica por sí mismo la frontera estructural ni convierte L-026 en continuación.
+
+Quedan **38 candidatos de artículo `pending_promotion`**. No hubo promociones nuevas y el corpus permanece en **1,045 artículos**. Los 52 candidatos de artículo y el inicio adicional absorbido dentro de L-001 establecen al menos **53 comienzos visibles conocidos**; como la capa seleccionada no es exhaustiva, no se calculan TP/FP/FN, precisión, recall ni F1. `p156_machine_reconciliation_status.json` conserva el detalle y los límites de autoridad.
+
+'''
+          text = text.replace(marker, section + marker, 1)
+          text = sub1(
+              text,
+              r'En p\.145 quedan \*\*20 `pending_promotion`\*\*.*?El siguiente frente geométrico es la \*\*página digital 156\*\*, con \*\*52 candidatos canónicos: 26 izquierda y 26 derecha\*\*\. Hasta que p\.145 complete censo visible y promoción, el corpus sigue publicando \*\*1,045 artículos estructurados\*\* y \*\*pp\.133–144\*\* como último tramo técnicamente cerrado\.',
+              'En p.145 quedan **20 `pending_promotion`** y 3 `unresolved`; en p.146, **22 `pending_promotion`**; en p.147, **36 `pending_promotion`**; en p.148, **29 `pending_promotion`**; en p.149, **40 `pending_promotion`** y 1 `unresolved`; en p.150, **40 `pending_promotion`** y 1 candidato estructural `unresolved`; en p.151, **34 `pending_promotion`**; en p.152, **37 `pending_promotion`**; en p.153, **34 `pending_promotion`** y 4 candidatos estructurales `unresolved`; en p.154, **41 `pending_promotion`**; en p.155, **32 `pending_promotion`**; y en p.156, **38 `pending_promotion`**. Las páginas 145–156 tienen reconciliación de candidatos completa, pero no un censo visible exhaustivo.\n\nEl siguiente frente geométrico es la **página digital 157**, con **42 candidatos canónicos: 19 izquierda y 23 derecha**. Hasta que p.145 complete censo visible y promoción, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo técnicamente cerrado.',
+              'LEXICON next front', flags=re.S)
+          p.write_text(text, encoding='utf-8')
           PY
-      - name: Validate generated reconciliation
+      - name: Validate p156 evidence
         run: |
           python -m pip install -r requirements-dev.txt
+          python scripts/reconstruct_candidate_inventory.py
+          python scripts/validate_lexicon_ids.py
           python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p156_left_reconciliation.jsonl
           python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p156_right_reconciliation.jsonl
           python scripts/validate_jsonl.py --schema schemas/lexicon-missed-start.schema.json --jsonl data/lexicon/reconciliation/p156_missed_visible_starts.jsonl
           python -m json.tool data/lexicon/reconciliation/p156_machine_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p156_preflight.json >/dev/null
-      - name: Commit generated evidence
+      - name: Commit synchronized documentation
         run: |
           git config user.name 'Fernando Sandoval'
           git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
-          git add data/lexicon/reconciliation/p156_left_reconciliation.jsonl data/lexicon/reconciliation/p156_right_reconciliation.jsonl data/lexicon/reconciliation/p156_missed_visible_starts.jsonl data/lexicon/reconciliation/p156_machine_reconciliation_status.json
-          git commit -m 'data: reconciliar estructuralmente p.156' -m '52/52 candidatos article; L-001 merged_articles con Enſeñar + Enſeñanza, un falso negativo interno, 38 pending_promotion y censo no exhaustivo.'
+          git add README.md docs/LEXICON_PROGRESS.md
+          git commit -m 'docs: cerrar reconciliación de p.156' -m 'Registra 52 article, L-001 merged_articles, un falso negativo interno, 38 pending_promotion y fija p.157 como siguiente frente.'
           git push origin HEAD:work/p156-reconciliation
