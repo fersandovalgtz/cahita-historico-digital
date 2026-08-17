@@ -1,6 +1,6 @@
 # Hoja de ruta
 
-Estado de planificación de Cahíta Histórico Digital (`ALC1737`) — actualización 2026-08-16.
+Estado de planificación de Cahíta Histórico Digital (`ALC1737`) — actualización 2026-08-17.
 
 ## Principio rector
 
@@ -10,11 +10,11 @@ CHD no avanza por acumulación indiscriminada de archivos. Cada fase debe cerrar
 
 **Estado:** completada para la etapa de investigación activa; mantenimiento continuo.
 
-Se establecieron registro de fuente y procedencia, política de autoría, criterios editoriales, metadatos de citación, licencias, contratos de datos, documentación de riesgos, esquemas JSON y una arquitectura explícita de evidencia.
+Se establecieron registro de fuente y procedencia, política de autoría, criterios editoriales, metadatos de citación, licencias, contratos de datos, documentación de riesgos, esquemas JSON y una arquitectura explícita de evidencia. El repositorio dispone además de QA automatizado para reconstrucción del inventario canónico, validación de identificadores, esquemas y metadatos; la línea de fase II cuenta con un resumen computacional regenerable de trabajo abierto.
 
 **Criterio de salida alcanzado:** el repositorio es auditable y puede procesar `ALC1737` sin confundir fuente, OCR, transcripción, estructuración e inferencia.
 
-**Mantenimiento pendiente:** incorporar CI/QA automático y continuar sincronizando documentación, métricas y esquemas.
+**Mantenimiento pendiente:** ampliar CI/QA para impedir deriva entre datos, resúmenes y documentación; continuar sincronizando métricas, esquemas y artefactos derivados.
 
 ## Fase 1 — Ingestión de `ALC1737`
 
@@ -52,40 +52,46 @@ Pendientes antes de cerrar la fase:
 - consolidar `status.csv` y lotes posteriores en una única vista canónica coherente;
 - completar, si se decide necesario para la edición final, transcripción diplomática página-a-página del vocabulario y numerales además de sus capas estructuradas;
 - mantener una cola explícita de lecturas inciertas y anomalías;
-- ampliar cotejo humano independiente.
+- ampliar cotejo independiente sin convertir resultados automáticos en validación humana.
 
 **Criterio de salida:** cobertura textual definida para todas las zonas que vayan a formar parte de la edición científica, con métricas transparentes y sin falsas declaraciones de validación humana.
 
 ## Fase 3 — Corpus lexicográfico
 
-**Estado:** activa; ya existe una capa curatorial amplia, pero aún no un corpus lexicográfico exhaustivo cerrado.
+**Estado:** activa y avanzada; la reconciliación estructural ya cubre el vocabulario, pero el corpus lexicográfico exhaustivo todavía no está cerrado.
 
-Estado alcanzado:
+Estado computacional vigente al 17 de agosto de 2026:
 
 - 3,899 líneas OCR/layout documentadas para digitales 133–177;
 - extractor vigente `hybrid_margin_mode_v0.2`;
 - **2,072 / 2,072 candidatos canónicos** persistidos de forma lossless, reconstruible y verificable;
 - comparación diagnóstica v0.2 sobre pp. 133, 134, 150 y 177: precisión 97.13%, recall 89.89%, F1 93.37%;
-- **734 artículos históricos estructurados**;
+- **1,049 artículos históricos estructurados** en la capa curatorial actual;
 - **45 / 45 páginas** del vocabulario con representación lexicográfica estructurada;
+- páginas **133–144** cerradas técnicamente en reconciliación, censo visible y promoción/enlace IA-asistidos dentro del alcance declarado;
+- páginas **145–177** con reconciliación completa de sus candidatos canónicos y abiertas en fase II para promoción/enlace, censo exhaustivo de inicios visibles y cierre técnico;
+- **1,047 candidatos de artículo `pending_promotion`** en el alcance de fase II p.145–177;
+- **1 candidato estructuralmente `unresolved`** y **9 fronteras `ambiguous`** en ese mismo alcance;
+- **0 / 33 páginas** p.145–177 con censo visible exhaustivo y **0 / 33** con cierre técnico;
+- primera promoción conservadora de fase II en p.145: **4 artículos nuevos**, elevando el corpus de 1,045 a 1,049 y dejando **17** candidatos `pending_promotion` en esa página;
 - modelado de `Buſca`, `Lo miſmo`, agrupaciones, catchwords, spans trans-columna/trans-página y anomalías documentales;
-- pp. 133–134: **61 / 61 candidatos reconciliados**;
-- 14 inicios visibles omitidos observados en pp. 133–134;
-- 36 candidatos `article` de ese tramo todavía `pending_promotion`;
-- `ALC1737-gap-0001` (157→158) y anomalía `Lucer-` (161→162) registradas;
-- **0** artículos `human_verified`.
+- `ALC1737-gap-0001` (157→158) y anomalía `Lucer-` (161→162) preservadas sin reconstrucción silenciosa;
+- **0** artículos `human_verified`; la autoridad sigue siendo `machine_corrected_unverified` cuando corresponde.
+
+La fuente computacional de los totales de trabajo abierto es `data/lexicon/reconciliation/phase2_open_work_summary.json`, regenerable mediante `scripts/summarize_open_lexicon_work.py`. Los totales históricos almacenados en estados de página se tratan como instantáneas de cada pasada y no sustituyen el conteo actual de `articleId` únicos.
 
 Pendientes:
 
-- promover los artículos históricos pendientes de pp. 133–134;
-- cerrar el inventario de inicios visibles/falsos negativos de esas páginas;
-- escalar reconciliación candidato→resultado editorial a pp. 135–177;
+- continuar promociones conservadoras candidato→artículo únicamente cuando el propio testimonio `ALC1737` sustente guía y forma con evidencia suficiente;
+- mantener explícitamente como pendientes las lecturas materialmente divergentes, sin sustituirlas con formas de testigos secundarios;
+- completar el censo exhaustivo de inicios visibles en p.145–177 y registrar falsos negativos con denominador facsimilar explícito;
+- reducir la única incertidumbre estructural todavía abierta sin inventar una resolución;
 - construir el inventario final de artículos históricos, separado del conteo de candidatos;
 - resolver editorialmente, sin automatismos, anáforas `Lo miſmo`;
 - cerrar el grafo de remisiones `Buſca`;
 - detectar sistemáticamente atribuciones explícitas Hiaqui/Mayo/Thehueco dentro del vocabulario;
 - generar exportaciones canónicas JSON/CSV sin duplicados;
-- ampliar QA y revisión humana.
+- ampliar QA y revisión independiente.
 
 **Criterio de salida:** corpus lexicográfico exhaustivo respecto del testimonio disponible, reconstruible desde su procedencia, con fronteras, falsos negativos, incertidumbre y estado de revisión explícitos.
 
@@ -122,13 +128,20 @@ Pendientes:
 
 ## Fase 5 — Control textual, interoperabilidad y reproducibilidad avanzada
 
-**Estado:** preparación; no cerrada.
+**Estado:** preparación avanzada; QA básico ya implantado, interoperabilidad y control textual no cerrados.
+
+Estado alcanzado:
+
+- workflow de QA sobre `main` y pull requests;
+- reconstrucción automática del inventario canónico de candidatos;
+- validación de IDs, estados de autoridad, JSON Schema, capas de reconciliación y metadatos centrales;
+- resumen reproducible del trabajo abierto de fase II con conteo independiente de `articleId` curatoriales.
 
 Prioridades:
 
+- impedir por CI que el resumen de fase II quede desincronizado respecto de datos y estados de página;
 - localizar e incorporar, con procedencia separada, uno o más testimonios independientes útiles para control textual si están disponibles;
 - cotejar lagunas y anomalías sin rellenar silenciosamente el testimonio `ALC1737`;
-- implantar integración continua para validar JSON Schema, unicidad de IDs, hashes, reconstrucción de candidatos, referencias y exports;
 - estabilizar esquemas JSON de producción;
 - definir perfil TEI para la edición;
 - proyectar el vocabulario a TEI Lex-0 sólo cuando su microestructura esté estabilizada;
@@ -189,8 +202,9 @@ Los productos se diseñarán **después de estabilizar suficientemente los insum
 
 Antes de ampliar productos, CHD debe:
 
-1. mantener sincronizados README, ROADMAP, Issues, métricas y metadatos;
-2. cerrar QA de apertura lexicográfica y promover los 36 artículos pendientes de pp. 133–134;
-3. escalar la reconciliación al resto del vocabulario;
-4. consolidar variación y concordancias gramaticales;
-5. incorporar CI y control textual independiente cuando sea posible.
+1. mantener sincronizados README, ROADMAP, `phase2_open_work_summary.json`, Issues, métricas y metadatos;
+2. continuar fase II con promociones conservadoras desde p.145–177, sin convertir OCR divergente ni control secundario en transcripción de `ALC1737`;
+3. completar progresivamente el censo exhaustivo de inicios visibles y falsos negativos de p.145–177;
+4. cerrar la incertidumbre estructural restante y mantener separadas las incertidumbres semánticas/anafóricas;
+5. consolidar variación y concordancias gramaticales;
+6. ampliar CI, control textual independiente e interoperabilidad antes de una release científica estable.
