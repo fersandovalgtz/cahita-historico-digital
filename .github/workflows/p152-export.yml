@@ -1,4 +1,4 @@
-name: CHD p152 synchronize docs and QA
+name: CHD p152 synchronize docs
 
 on:
   push:
@@ -29,10 +29,10 @@ jobs:
           python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p152_right_reconciliation.jsonl
           python -m json.tool data/lexicon/reconciliation/p152_machine_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p152_preflight.json >/dev/null
-      - name: Commit synchronized state
+      - name: Commit synchronized documentation only
         run: |
           git config user.name 'Fernando Sandoval'
           git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
-          git add README.md docs/LEXICON_PROGRESS.md .github/workflows/qa.yml
-          git commit -m 'docs: cerrar reconciliación de p.152 y ampliar QA' -m 'Sincroniza el estado público a 52 article en p.152, conserva contaminación OCR y truncamiento textual explícitos, fija p.153 como siguiente frente y extiende CHD QA hasta p.152.'
+          git add README.md docs/LEXICON_PROGRESS.md
+          git commit -m 'docs: cerrar reconciliación de p.152' -m 'Sincroniza el estado público a 52 article en p.152, conserva contaminación OCR y truncamiento textual explícitos y fija p.153 como siguiente frente.'
           git push origin HEAD:work/p152-reconciliation
