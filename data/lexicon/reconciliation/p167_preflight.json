@@ -1,0 +1,68 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 167,
+  "stage": "preflight",
+  "candidateInventory": {
+    "total": 55,
+    "left": 30,
+    "right": 25,
+    "canonicalInventoryTotal": 2072,
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p167_selected_articles.jsonl",
+    "articleIdRange": ["ALC1737-art-000509", "ALC1737-art-000523"],
+    "count": 15,
+    "exhaustive": false,
+    "humanVerified": false
+  },
+  "selectedAnchorAlignmentHypothesis": [
+    {"candidateId":"ALC1737-vcand-p167-L-001","articleIds":["ALC1737-art-000509"]},
+    {"candidateId":"ALC1737-vcand-p167-L-002","articleIds":["ALC1737-art-000510"]},
+    {"candidateId":"ALC1737-vcand-p167-L-003","articleIds":["ALC1737-art-000511"]},
+    {"candidateId":"ALC1737-vcand-p167-L-004","articleIds":["ALC1737-art-000512"]},
+    {"candidateId":"ALC1737-vcand-p167-L-005","articleIds":["ALC1737-art-000513"]},
+    {"candidateId":"ALC1737-vcand-p167-L-006","articleIds":["ALC1737-art-000514"]},
+    {"candidateId":"ALC1737-vcand-p167-L-007","articleIds":["ALC1737-art-000515"]},
+    {"candidateId":"ALC1737-vcand-p167-L-008","articleIds":["ALC1737-art-000516"]},
+    {"candidateId":"ALC1737-vcand-p167-L-009","articleIds":["ALC1737-art-000517"]},
+    {"candidateId":"ALC1737-vcand-p167-L-010","articleIds":["ALC1737-art-000518","ALC1737-art-000519"],"assessment":"merged_articles","note":"Canonical group contains selected `Pato. Tepciabiri.` followed by selected `Paxaro generalmente. Moel.`; 000519 lacks its own canonical boundary."},
+    {"candidateId":"ALC1737-vcand-p167-L-027","articleIds":["ALC1737-art-000520"]},
+    {"candidateId":"ALC1737-vcand-p167-L-028","articleIds":["ALC1737-art-000521"]},
+    {"candidateId":"ALC1737-vcand-p167-L-029","articleIds":["ALC1737-art-000522"]},
+    {"candidateId":"ALC1737-vcand-p167-R-004","articleIds":["ALC1737-art-000523"]}
+  ],
+  "structuralHypothesis": {
+    "classification": {"article": 54, "continuation": 1, "paratext": 0, "false_positive": 0, "unresolved": 0},
+    "continuities": [
+      {"from":"ALC1737-vcand-p167-R-002","to":"ALC1737-vcand-p167-R-003","note":"`Pedernal prieto para flechas` continues into form-only `Bicam`."}
+    ],
+    "knownMergedRegions": ["ALC1737-vcand-p167-L-010", "ALC1737-vcand-p167-R-020"],
+    "knownUndersegmentedOrReadingOrderLeakageRegions": ["ALC1737-vcand-p167-R-011", "ALC1737-vcand-p167-R-013", "ALC1737-vcand-p167-R-025"],
+    "ambiguousArticleBoundaries": ["ALC1737-vcand-p167-L-030"],
+    "knownSelectedMisses": [
+      {"articleId":"ALC1737-art-000519","visibleStartRaw":"Paxaro generalmente. Moel.","containingCandidateId":"ALC1737-vcand-p167-L-010","missType":"inside_candidate_group"}
+    ],
+    "note": "R-020 visibly contains more than one Pelo-like guide unit but no selected/direct-collation anchor for the internal unit; it is retained `merged_articles` without synthesizing an article or inflating the missed-start census. L-030 is retained as an article boundary with ambiguous assessment because geometry supports a fresh start while OCR does not responsibly recover its guide."
+  },
+  "pageEdges": {
+    "fromPrevious": {"status":"fresh_page_transition","opening":"Paſſo de las beſtias. Arabuerama.","note":"p166 R-022 carries `Paſſo`-like edge/catchword material, but p167 L-001 is a fresh selected article start."},
+    "toNext": {"status":"catchword_or_edge_fragment_to_fresh_next_page_article","lastCandidate":"ALC1737-vcand-p167-R-025","nextPage":168,"nextPageCandidateInventory":{"total":32,"left":14,"right":18},"nextOpeningCandidate":"Penacho, ...","nextFirstSelectedArticle":"ALC1737-art-000524","nextFirstSelectedOpening":"Penca de miſcal. Cuumaicoa.","note":"R-025 begins `Pena generalmente` and ends with `Pena-`; p168 L-001 begins a fresh `Penacho` article before the first selected p168 anchor. No long p167→p168 lexical continuation is asserted."}
+  },
+  "evidenceLimits": {
+    "directFacsimileInspectedThisPass": false,
+    "selectedLayerIsCoverageExpectation": false,
+    "ocrOnlyInternalUnitsPromotable": false,
+    "metricsAllowed": false,
+    "reasonMetricsWithheld": "The selected layer is non-exhaustive and several OCR groups contain internal/adjacent material without independent selected/direct-collation anchors; a complete visible-start denominator is not established."
+  },
+  "pageStatus": {
+    "candidateReconciliation": "preflight_complete_pending_materialization",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial_anchor_hypothesis",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
