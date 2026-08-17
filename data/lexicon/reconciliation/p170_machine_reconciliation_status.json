@@ -1,0 +1,105 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 170,
+  "pageStatus": {
+    "candidateReconciliation": "complete",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 48,
+    "left": 26,
+    "right": 22,
+    "classification": {
+      "article": 48,
+      "continuation": 0,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 44,
+      "oversegmented": 0,
+      "undersegmented": 2,
+      "merged_articles": 2,
+      "ambiguous": 0,
+      "not_applicable": 0
+    }
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000554",
+      "ALC1737-art-000568"
+    ],
+    "articleCandidateRecordsLinked": 12,
+    "structuredArticlesLinked": 15,
+    "continuationCandidateRecordsLinked": 0,
+    "selectedStartsInsideMergedCandidate": 1,
+    "selectedStartsOutsideCandidateInventory": 2,
+    "selectedArticlesUnlinked": 0,
+    "knownMissedSelectedArticleIds": [
+      "ALC1737-art-000554",
+      "ALC1737-art-000563",
+      "ALC1737-art-000568"
+    ]
+  },
+  "promotion": {
+    "articleCandidatesPendingPromotion": 36,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045
+  },
+  "visibleStartEvidence": {
+    "exhaustive": false,
+    "knownVisibleStartsMinimum": 51,
+    "knownMissedStartRecords": 3,
+    "unresolvedCandidateRecords": 0,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "The 48 article candidates plus three selected missed starts establish at least 51 starts, but the selected layer is non-exhaustive and merged/undersegmented OCR groups may contain additional unanchored starts."
+  },
+  "physicalContinuities": [
+    {
+      "from": "ALC1737-vcand-p169-R-016",
+      "to": "ALC1737-vcand-p170-L-001",
+      "type": "fresh_page_transition_with_top_selected_miss",
+      "note": "p170 selected 000554 (`Por donde?`) is a fresh top-of-page start without its own candidate; L-001 begins selected 000555 (`Porqué?`)."
+    },
+    {
+      "from": "ALC1737-vcand-p170-R-022",
+      "to": "ALC1737-vcand-p171-L-001",
+      "type": "catchword_or_edge_fragment_to_fresh_next_page_article",
+      "note": "R-022 ends with `Que-` edge/catchword material; p171 L-001 opens fresh selected 000569 (`Querella. Natebo.`)."
+    }
+  ],
+  "structuralNotes": [
+    "All 48 canonical p170 rows are retained as article boundaries; no canonical continuation or structurally unresolved row is asserted.",
+    "Selected 000554 and 000568 are page/column-edge starts outside the canonical inventory; selected 000563 is an internal start absorbed in L-008.",
+    "L-008 and L-024 are `merged_articles`; only the selected internal start 000563 is added to the missed-start census.",
+    "L-004 and R-022 are `undersegmented` because of reading-order leakage and page-edge/catchword material, respectively.",
+    "No OCR-only internal unit is promoted or counted as a false negative without selected/direct-collation support."
+  ],
+  "nextPage": {
+    "sourcePageDigital": 171,
+    "candidateInventoryTotal": 24,
+    "left": 7,
+    "right": 17,
+    "firstCandidate": "ALC1737-vcand-p171-L-001",
+    "firstSelectedArticle": "ALC1737-art-000569",
+    "opening": "Querella. Natebo."
+  },
+  "evidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "canonicalCandidateInventoryCount": 2072,
+    "selectedP170LayerUsedAsAnchor": true,
+    "p169ReconciliationUsedForOpeningEdge": true,
+    "p171CanonicalCandidatesAndSelectedLayerUsedForLowerEdge": true,
+    "directFacsimileAvailableThisPass": false,
+    "policy": "Selected direct collations support demonstrated starts and known misses. OCR-only internal/adjacent units are preserved structurally without invented lexical transcription or promotion; metrics remain withheld without an exhaustive visible-start census."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}

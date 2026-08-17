@@ -1,0 +1,71 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 170,
+  "stage": "preflight",
+  "candidateInventory": {
+    "total": 48,
+    "left": 26,
+    "right": 22,
+    "canonicalInventoryTotal": 2072,
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p170_selected_articles.jsonl",
+    "articleIdRange": ["ALC1737-art-000554", "ALC1737-art-000568"],
+    "count": 15,
+    "columnDistribution": {"left": 14, "right": 1},
+    "exhaustive": false,
+    "humanVerified": false
+  },
+  "selectedAnchorAlignmentHypothesis": [
+    {"candidateId":null,"articleIds":["ALC1737-art-000554"],"assessment":"selected_start_missing_at_page_edge","note":"`Por donde? Hacumbichaca?` is a fresh top-of-page selected start before canonical L-001 (`Porqué?`)."},
+    {"candidateId":"ALC1737-vcand-p170-L-001","articleIds":["ALC1737-art-000555"]},
+    {"candidateId":"ALC1737-vcand-p170-L-002","articleIds":["ALC1737-art-000556"]},
+    {"candidateId":"ALC1737-vcand-p170-L-003","articleIds":["ALC1737-art-000557"]},
+    {"candidateId":"ALC1737-vcand-p170-L-004","articleIds":["ALC1737-art-000558"],"assessment":"undersegmented","note":"L-004 begins selected `Predicar hazer ſermon. Hinabaca.` and carries `Hinababacame`-like material from selected 000559, whose guide boundary is nevertheless preserved independently at L-005."},
+    {"candidateId":"ALC1737-vcand-p170-L-005","articleIds":["ALC1737-art-000559"]},
+    {"candidateId":"ALC1737-vcand-p170-L-006","articleIds":["ALC1737-art-000560"]},
+    {"candidateId":"ALC1737-vcand-p170-L-007","articleIds":["ALC1737-art-000561"]},
+    {"candidateId":"ALC1737-vcand-p170-L-008","articleIds":["ALC1737-art-000562","ALC1737-art-000563"],"assessment":"merged_articles","note":"L-008 contains selected `Pregunta. Atema.` followed by selected cross-reference `Premiar. Buſca pagar.`; 000563 lacks an independent canonical boundary."},
+    {"candidateId":"ALC1737-vcand-p170-L-010","articleIds":["ALC1737-art-000564"]},
+    {"candidateId":"ALC1737-vcand-p170-L-012","articleIds":["ALC1737-art-000565"]},
+    {"candidateId":"ALC1737-vcand-p170-L-013","articleIds":["ALC1737-art-000566"]},
+    {"candidateId":"ALC1737-vcand-p170-L-014","articleIds":["ALC1737-art-000567"]},
+    {"candidateId":null,"articleIds":["ALC1737-art-000568"],"assessment":"selected_start_missing_at_column_edge","note":"Selected `Puerco, ò puerca. Cobuu.` belongs to the right column but occurs before canonical R-001 (`Pulga. Teput.`); no independent canonical boundary represents its guide start."}
+  ],
+  "structuralHypothesis": {
+    "classification": {"article": 48, "continuation": 0, "paratext": 0, "false_positive": 0, "unresolved": 0},
+    "knownMergedRegions": ["ALC1737-vcand-p170-L-008", "ALC1737-vcand-p170-L-024"],
+    "knownUndersegmentedOrReadingOrderLeakageRegions": ["ALC1737-vcand-p170-L-004", "ALC1737-vcand-p170-R-022"],
+    "knownSelectedMisses": [
+      {"articleId":"ALC1737-art-000554","visibleStartRaw":"Por donde? Hacumbichaca?","containingCandidateId":null,"missType":"page_or_column_edge"},
+      {"articleId":"ALC1737-art-000563","visibleStartRaw":"Premiar. Buſca pagar.","containingCandidateId":"ALC1737-vcand-p170-L-008","missType":"inside_candidate_group"},
+      {"articleId":"ALC1737-art-000568","visibleStartRaw":"Puerco, ò puerca. Cobuu.","containingCandidateId":null,"missType":"page_or_column_edge"}
+    ],
+    "minimumVisibleStartsAccounting": {
+      "knownMinimum": 51,
+      "rationale": "All 48 canonical rows are compatible with fresh article starts. Selected 000554 and 000568 add two starts outside the inventory, and selected 000563 adds one internal start inside L-008: 48 + 3 = 51. OCR-only internal units such as `Publico ſer` inside L-024 are not counted without independent selected/direct-collation anchors."
+    },
+    "note": "L-024 visibly contains `Proximo` plus a second `Publico ſer`-like guide and is retained `merged_articles`; the internal unselected unit is neither promoted nor entered into the missed-start census."
+  },
+  "pageEdges": {
+    "fromPrevious": {"status":"fresh_top_selected_start_missed","note":"P169 R-016 ends with multiple `Por...` entries including `Por ventura`. P170 selected 000554 (`Por donde?`) is a fresh page-top article with no canonical boundary; L-001 begins selected 000555 (`Porqué?`). No long continuation from p169 is asserted."},
+    "toNext": {"status":"catchword_or_edge_fragment_to_fresh_next_page_article","lastCandidate":"ALC1737-vcand-p170-R-022","nextPage":171,"nextPageCandidateInventory":{"total":24,"left":7,"right":17},"nextFirstSelectedArticle":"ALC1737-art-000569","nextFirstSelectedOpening":"Querella. Natebo.","nextFirstCandidate":"ALC1737-vcand-p171-L-001","nextFirstCandidateOpening":"Querella. Hateo.","note":"R-022 begins a distinct Querellarse-like article and ends with `Que-` edge/catchword material; p171 L-001 opens fresh selected 000569 (`Querella`). No p170→p171 lexical continuation is asserted."}
+  },
+  "evidenceLimits": {
+    "directFacsimileInspectedThisPass": false,
+    "selectedLayerIsCoverageExpectation": false,
+    "ocrOnlyInternalUnitsPromotable": false,
+    "metricsAllowed": false,
+    "reasonMetricsWithheld": "The selected layer is non-exhaustive and merged/undersegmented OCR groups may contain additional unanchored starts; a complete visible-start denominator is not established."
+  },
+  "pageStatus": {
+    "candidateReconciliation": "preflight_complete_pending_materialization",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial_anchor_hypothesis",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
