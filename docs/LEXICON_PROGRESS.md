@@ -2,7 +2,7 @@
 
 ## Estado — 2026-08-17
 
-El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El inventario canónico `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera. La capa curatorial contiene actualmente **1,045 artículos históricos estructurados**. Las páginas **133–144** están cerradas en reconciliación de candidatos, censo de inicios visibles, promoción/enlace y control computacional IA-asistido. Las páginas **145–177 tienen reconciliación completa de sus candidatos canónicos**, pero permanecen abiertas para censo exhaustivo de inicios visibles y promoción de fronteras sin transcripción suficientemente sustentada. **Ningún objeto es `human_verified` y la política vigente no contempla intervención humana independiente.**
+El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El inventario canónico `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera. La capa curatorial contiene actualmente **1,049 artículos históricos estructurados**. Las páginas **133–144** están cerradas en reconciliación de candidatos, censo de inicios visibles, promoción/enlace y control computacional IA-asistido. Las páginas **145–177 tienen reconciliación completa de sus candidatos canónicos**, pero permanecen abiertas para censo exhaustivo de inicios visibles y promoción de fronteras sin transcripción suficientemente sustentada. **Ningún objeto es `human_verified` y la política vigente no contempla intervención humana independiente.**
 
 ## Inventario canónico
 
@@ -44,11 +44,13 @@ El flujo vigente de Cahíta Histórico Digital **no contempla intervención huma
 
 La página digital **145** tiene **39 candidatos canónicos: 22 izquierda y 17 derecha**. La clasificación actual es **34 `article` y 5 `continuation`**, sin candidatos `unresolved`, `paratext` o `false_positive`. Las fronteras se distribuyen en **27 `exact`**, **3 `merged_articles`**, **5 `undersegmented`**, **1 `ambiguous`** y **3 `not_applicable`**.
 
-Trece candidatos de artículo enlazan **14 objetos estructurados preexistentes** y **21 candidatos de artículo permanecen `pending_promotion`**. No hubo promociones nuevas en el pase estructural y el corpus permanece en **1,045 artículos**. `ALC1737-art-001045` (`Atormentar`) conserva su continuidad p.144→145 y la forma `chumtieſte` permanece de baja confianza.
+Tras el primer lote de fase II, **17 candidatos de artículo enlazan 18 objetos estructurados** y **17 candidatos de artículo permanecen `pending_promotion`**. El lote piloto p.145-A añadió cuatro promociones (`ALC1737-art-001046`–`001049`) y elevó el corpus curatorial actual a **1,049 artículos**. `ALC1737-art-001045` (`Atormentar`) conserva su continuidad p.144→145 y la forma `chumtieſte` permanece de baja confianza.
 
 Los dos límites que permanecían estructuralmente abiertos quedaron resueltos sin reconstrucción textual especulativa. **L-002** se clasifica como continuación de L-001 (`Atravesar la flecha al blanco`); el fragmento OCR final `Asi, o` se interpreta como contaminación entre columnas porque coincide con el artículo de la derecha ya colacionado `Axi, ò pimienta`. **L-005** se clasifica como continuación `undersegmented`: comienza con la cola del artículo anterior y absorbe un inicio de tipo `Atrepellar`, cuya lectura exacta en ALC1737 no se promueve desde OCR y control secundario.
 
 La evidencia suplementaria de **R-017** conserva `Babear` únicamente como hipótesis fuerte de guía para el comienzo dañado absorbido después de `Bagre`, apoyada por la secuencia del control histórico BUE1890; ninguna forma cahíta de la reimpresión se transfiere al testigo de 1737. R-012 mantiene la guía `Atomo`, pero su forma ALC1737 sigue demasiado dañada para promoción.
+
+El **lote piloto p.145-A** utilizó la página 145 del PDF de ALC1737 verificada por SHA-256 y tres lecturas independientes de un render a 420 dpi. Sólo se promovieron `Ave. Saperac.`, `Ave. Baecuberi.`, `A vno. Cae.` y `Aunque. Elapo.`; formas con divergencias como `Huchai/Hucbai`, `Tenbie/Tenbile`, `Tucabuiro/Tucabuire` o `Putre/Huite/Hutte` permanecen pendientes. La evidencia completa se conserva en `p145_phase2_pilot_a_evidence_2026-08-17.json`.
 
 La reconciliación candidate-level de p.145 está completa con **0 límites `unresolved`**, pero la página **no se declara cerrada filológicamente**: `visibleStartCensus.exhaustive=false`, continúan pendientes promociones/enlaces y no existe un denominador facsimilar exhaustivo que permita calcular precisión, recall o F1. Todos estos objetos permanecen `machine_corrected_unverified` y `humanVerified=false`.
 
