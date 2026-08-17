@@ -1,0 +1,30 @@
+name: P150 Inspect
+
+on:
+  push:
+    branches:
+      - p150-machine-reconciliation
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify canonical inventory
+        run: python scripts/reconstruct_candidate_inventory.py
+      - name: Export p150 candidates
+        run: python scripts/export_candidate_page.py --page 150
+      - name: List p150 selected anchors
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('data/lexicon/articles/p150_selected_articles.jsonl')
+          rows=[json.loads(x) for x in p.read_text(encoding='utf-8').splitlines() if x.strip()]
+          print('SELECTED_COUNT',len(rows))
+          for r in rows:
+              print(json.dumps({'articleId':r['articleId'],'column':r.get('column'),'spanishGuideRaw':r.get('spanishGuideRaw'),'articleType':r.get('articleType'),'continuesFromPreviousPage':r.get('continuesFromPreviousPage'),'continuesToNextPage':r.get('continuesToNextPage')},ensure_ascii=False))
+          PY
+      - name: Inspect p151 opening
+        run: |
+          python scripts/export_candidate_page.py --page 151 | python -c 'import sys,json; rows=[json.loads(x) for x in sys.stdin if x.strip()]; [print(json.dumps(r,ensure_ascii=False,sort_keys=True)) for r in rows if r.get("candidateOrderInColumn",99)<=6]'
