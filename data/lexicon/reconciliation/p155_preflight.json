@@ -1,0 +1,92 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 155,
+  "stage": "preflight",
+  "candidateInventory": {
+    "method": "hybrid_margin_mode_v0.2",
+    "total": 49,
+    "left": 23,
+    "right": 26,
+    "canonicalInventoryTotal": 2072,
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p155_selected_articles.jsonl",
+    "articleCount": 15,
+    "articleIdRange": ["ALC1737-art-000329", "ALC1737-art-000343"],
+    "columnCounts": {"left": 14, "right": 1},
+    "exhaustive": false,
+    "reviewStatus": "machine_corrected_unverified",
+    "humanVerified": false
+  },
+  "crossPageContext": {
+    "fromPage154": "p154 R-029 begins `Durar mucho tiempo...`; p155 L-001 is form-only continuation `nuc. bibuatua.` and is not a fresh article start.",
+    "firstFreshLeftArticleCandidate": "ALC1737-vcand-p155-L-002",
+    "toPage156": "p155 R-026 begins `Enroſcarſe la bibora...` and carries damaged trailing `Eafar-...` page-edge/catchword material. p156 L-001 begins the fresh selected article `Enſeñar. Amaſtia.`; no long p155→p156 article continuation is asserted."
+  },
+  "selectedAnchors": [
+    {"candidateId":null,"linkedArticleIds":["ALC1737-art-000329"],"assessment":"demonstrated_left_edge_false_negative","note":"Selected `Dar de beber à otro. Abitua.` occurs after the p154 continuation L-001 and before canonical L-002."},
+    {"candidateId":"ALC1737-vcand-p155-L-002","linkedArticleIds":["ALC1737-art-000330","ALC1737-art-000331"],"assessment":"probable_merged_articles","note":"L-002 begins selected `Dar de veſtir à otro` and absorbs damaged fragments of selected `Echar, ò vaciar`, including `aborotia`."},
+    {"candidateId":"ALC1737-vcand-p155-L-003","linkedArticleIds":["ALC1737-art-000332"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p155-L-004","linkedArticleIds":["ALC1737-art-000333"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p155-L-005","linkedArticleIds":["ALC1737-art-000334"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p155-L-007","linkedArticleIds":["ALC1737-art-000335"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p155-L-008","linkedArticleIds":["ALC1737-art-000336"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p155-L-009","linkedArticleIds":["ALC1737-art-000337"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p155-L-010","linkedArticleIds":["ALC1737-art-000338"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p155-L-011","linkedArticleIds":["ALC1737-art-000339"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p155-L-012","linkedArticleIds":["ALC1737-art-000340"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p155-L-013","linkedArticleIds":["ALC1737-art-000341"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p155-L-015","linkedArticleIds":["ALC1737-art-000342"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p155-R-001","linkedArticleIds":["ALC1737-art-000343"],"assessment":"probable_article_split_by_continuation_candidate","note":"The OCR of R-001 loses much of selected guide `Encender candela, ò tea` but preserves guide/form fragments; R-002 is form-only `Abetia.` continuation."}
+  ],
+  "knownMissedStarts": [
+    {
+      "linkedArticleId": "ALC1737-art-000329",
+      "visibleStartRaw": "Dar de beber à otro. Abitua.",
+      "missType": "page_or_column_edge"
+    },
+    {
+      "linkedArticleId": "ALC1737-art-000331",
+      "visibleStartRaw": "Echar, ò vaciar. Amahuotia, l, aborotia.",
+      "missType": "inside_candidate_group",
+      "containingCandidateId": "ALC1737-vcand-p155-L-002"
+    }
+  ],
+  "structuralSignals": {
+    "continuationCandidates": [
+      "ALC1737-vcand-p155-L-001",
+      "ALC1737-vcand-p155-R-002",
+      "ALC1737-vcand-p155-R-004",
+      "ALC1737-vcand-p155-R-007"
+    ],
+    "mergedCandidateId": "ALC1737-vcand-p155-L-002",
+    "splitArticleStarts": [
+      "ALC1737-vcand-p155-R-001",
+      "ALC1737-vcand-p155-R-003",
+      "ALC1737-vcand-p155-R-006"
+    ],
+    "pageEdgeCatchwordCandidate": "ALC1737-vcand-p155-R-026"
+  },
+  "evidenceLimits": {
+    "fullCandidateRecordsInspectedInThisPass": true,
+    "directFacsimileInspectedInThisPass": false,
+    "selectedLayerTreatedAsCoverageExpectation": false,
+    "metricsAllowed": false,
+    "reason": "The selected direct-collation layer demonstrates one edge false negative and one internal missed start, while several articles are split into form-only continuation candidates. The selected layer is still non-exhaustive; no complete visible-start denominator or performance metric is asserted."
+  },
+  "policy": {
+    "independentHumanVerificationPlanned": false,
+    "humanVerified": false,
+    "operationalReviewStates": ["machine_corrected_unverified", "unresolved"],
+    "rule": "Known missed starts are recorded separately from candidate reconciliation. OCR loss of a guide does not erase a geometrically supported boundary when selected collation and continuation evidence converge."
+  },
+  "pageStatus": {
+    "preflight": "complete",
+    "candidateReconciliation": "ready_for_full_page",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial_anchor_layer_only",
+    "technicalClosure": false
+  },
+  "nextAction": "Classify L-001/R-002/R-004/R-007 as continuations; model L-002 as merged_articles with selected 000330 and 000331; record selected 000329 and 000331 in a known-missed-start layer; link R-001 to selected 000343 and R-002 as its continuation; model R-026 page-edge catchword material; and withhold metrics until an exhaustive visible-start census exists."
+}

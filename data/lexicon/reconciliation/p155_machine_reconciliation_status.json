@@ -1,0 +1,108 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 155,
+  "pageStatus": {
+    "candidateReconciliation": "complete",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 49,
+    "left": 23,
+    "right": 26,
+    "classification": {
+      "article": 45,
+      "continuation": 4,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 39,
+      "oversegmented": 3,
+      "undersegmented": 2,
+      "merged_articles": 1,
+      "ambiguous": 0,
+      "not_applicable": 4
+    }
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000329",
+      "ALC1737-art-000343"
+    ],
+    "articleCandidateRecordsLinked": 13,
+    "structuredArticlesLinked": 15,
+    "continuationCandidateRecordsLinked": 1,
+    "selectedStartsOutsideCandidateInventory": 1,
+    "selectedArticlesUnlinked": 0,
+    "mergedCandidateId": "ALC1737-vcand-p155-L-002",
+    "mergedSelectedArticleIds": [
+      "ALC1737-art-000330",
+      "ALC1737-art-000331"
+    ]
+  },
+  "promotion": {
+    "articleCandidatesPendingPromotion": 32,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045
+  },
+  "visibleStartEvidence": {
+    "exhaustive": false,
+    "knownVisibleStartsMinimum": 47,
+    "knownMissedStartRecords": 2,
+    "knownMergedInternalStarts": 1,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "The 45 article candidates, one additional selected start absorbed inside L-002, and selected 000329 outside the candidate inventory establish at least 47 starts. The selected layer is non-exhaustive, so no complete denominator or performance metric is asserted."
+  },
+  "physicalContinuities": [
+    {
+      "from": "ALC1737-vcand-p154-R-029",
+      "to": "ALC1737-vcand-p155-L-001",
+      "type": "article_continuation",
+      "note": "`Durar mucho tiempo` continues as form-only `nuc. bibuatua.`."
+    },
+    {
+      "from": "ALC1737-vcand-p155-R-001",
+      "to": "ALC1737-vcand-p155-R-002",
+      "type": "article_continuation",
+      "note": "Selected `Encender candela, ò tea` spans OCR-damaged R-001 and form-only R-002 `Abetia.`."
+    },
+    {
+      "from": "ALC1737-vcand-p155-R-003",
+      "to": "ALC1737-vcand-p155-R-004",
+      "type": "article_continuation"
+    },
+    {
+      "from": "ALC1737-vcand-p155-R-006",
+      "to": "ALC1737-vcand-p155-R-007",
+      "type": "article_continuation"
+    },
+    {
+      "from": "ALC1737-vcand-p155-R-026",
+      "to": "ALC1737-vcand-p156-L-001",
+      "type": "catchword_to_article",
+      "note": "Trailing damaged `Eafar-...` is treated as page-edge/catchword material anticipating fresh p156 `Enſeñar`, not as a long p155 article continuation."
+    }
+  ],
+  "structuralNotes": [
+    "L-002 is a merged-start region containing selected 000330 and 000331.",
+    "Selected 000329 is a demonstrated left-edge false negative between the inherited continuation L-001 and fresh candidate L-002.",
+    "R-001 provides the structural boundary for selected 000343 despite severe guide loss in OCR; R-002 is its continuation."
+  ],
+  "evidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "canonicalCandidateInventoryCount": 2072,
+    "selectedP155LayerUsedAsAnchor": true,
+    "p154AndP156CandidateLayersUsedForPageEdges": true,
+    "directFacsimileAvailableThisPass": false,
+    "policy": "Known misses are separated from candidate reconciliation; OCR guide loss does not erase a geometrically supported boundary when selected collation and continuation evidence converge; metrics remain withheld without exhaustive census."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
