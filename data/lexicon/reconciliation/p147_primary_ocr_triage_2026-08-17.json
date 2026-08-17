@@ -1,0 +1,102 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 147,
+  "recordType": "phase_ii_primary_ocr_triage",
+  "recordedAt": "2026-08-17",
+  "primaryWitnessEvidence": {
+    "provider": "Internet Archive",
+    "identifier": "artedelalenguaca00gonz",
+    "derivative": "artedelalenguaca00gonz_djvu.txt",
+    "relevantTextRange": "digital p.147 lexical sequence, public full-text OCR around lines 6377-6475",
+    "authority": "same_witness_ocr_only",
+    "limitation": "This pass ranks pending candidates by OCR legibility and structural complexity. It does not treat OCR as direct facsimile collation and promotes no lexical article."
+  },
+  "scope": {
+    "pendingPromotionCandidates": 36,
+    "candidateIds": [
+      "ALC1737-vcand-p147-L-002","ALC1737-vcand-p147-L-005","ALC1737-vcand-p147-L-008","ALC1737-vcand-p147-L-010","ALC1737-vcand-p147-L-014","ALC1737-vcand-p147-L-020","ALC1737-vcand-p147-L-021","ALC1737-vcand-p147-L-022","ALC1737-vcand-p147-L-023","ALC1737-vcand-p147-L-024","ALC1737-vcand-p147-L-025","ALC1737-vcand-p147-L-026",
+      "ALC1737-vcand-p147-R-001","ALC1737-vcand-p147-R-003","ALC1737-vcand-p147-R-004","ALC1737-vcand-p147-R-005","ALC1737-vcand-p147-R-006","ALC1737-vcand-p147-R-007","ALC1737-vcand-p147-R-008","ALC1737-vcand-p147-R-009","ALC1737-vcand-p147-R-010","ALC1737-vcand-p147-R-011","ALC1737-vcand-p147-R-012","ALC1737-vcand-p147-R-013","ALC1737-vcand-p147-R-014","ALC1737-vcand-p147-R-015","ALC1737-vcand-p147-R-016","ALC1737-vcand-p147-R-017","ALC1737-vcand-p147-R-018","ALC1737-vcand-p147-R-019","ALC1737-vcand-p147-R-020","ALC1737-vcand-p147-R-021","ALC1737-vcand-p147-R-022","ALC1737-vcand-p147-R-023","ALC1737-vcand-p147-R-024","ALC1737-vcand-p147-R-025"
+    ]
+  },
+  "categories": {
+    "compact_primary_ocr_high_yield": {
+      "count": 19,
+      "candidateIds": [
+        "ALC1737-vcand-p147-L-014","ALC1737-vcand-p147-L-020","ALC1737-vcand-p147-L-021","ALC1737-vcand-p147-L-023","ALC1737-vcand-p147-L-024","ALC1737-vcand-p147-L-026",
+        "ALC1737-vcand-p147-R-001","ALC1737-vcand-p147-R-003","ALC1737-vcand-p147-R-004","ALC1737-vcand-p147-R-008","ALC1737-vcand-p147-R-009","ALC1737-vcand-p147-R-010","ALC1737-vcand-p147-R-012","ALC1737-vcand-p147-R-013","ALC1737-vcand-p147-R-016","ALC1737-vcand-p147-R-019","ALC1737-vcand-p147-R-022","ALC1737-vcand-p147-R-023","ALC1737-vcand-p147-R-025"
+      ],
+      "reason": "The same-witness OCR preserves a compact guide/form unit or a short, locally coherent entry. These are the best first targets for direct facsimile recollation, but OCR alone is insufficient for promotion."
+    },
+    "wrapped_but_locally_legible": {
+      "count": 11,
+      "candidateIds": [
+        "ALC1737-vcand-p147-L-002","ALC1737-vcand-p147-L-005","ALC1737-vcand-p147-L-010","ALC1737-vcand-p147-L-022","ALC1737-vcand-p147-L-025",
+        "ALC1737-vcand-p147-R-014","ALC1737-vcand-p147-R-015","ALC1737-vcand-p147-R-017","ALC1737-vcand-p147-R-018","ALC1737-vcand-p147-R-021","ALC1737-vcand-p147-R-024"
+      ],
+      "reason": "Guide and form are broadly identifiable in primary OCR but span line breaks, hyphenation, or multi-part microstructure. Direct facsimile should reconstruct the historical line sequence before promotion."
+    },
+    "guide_or_form_materially_ocr_damaged": {
+      "count": 5,
+      "candidateIds": [
+        "ALC1737-vcand-p147-L-008","ALC1737-vcand-p147-R-005","ALC1737-vcand-p147-R-006","ALC1737-vcand-p147-R-007","ALC1737-vcand-p147-R-011"
+      ],
+      "reason": "The primary OCR damages the guide, form, or both strongly enough that even local reconstruction would risk silently regularizing the 1737 witness."
+    },
+    "structural_undersegmentation": {
+      "count": 1,
+      "candidateIds": ["ALC1737-vcand-p147-R-020"],
+      "reason": "The candidate starts `Brincar de alto abajo` but its grouping retains trailing material associated with the following article. Structural and textual recollation should be resolved together before promotion."
+    }
+  },
+  "selectedPrimaryOcrObservations": [
+    {"candidateId":"ALC1737-vcand-p147-L-002","guide":"Bebida otra de maíz","ocrForm":"Tuji htpccort","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p147-L-005","guide":"Bibora otra que llaman coralillo","ocrForm":"Siccucha alad","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p147-L-008","guide":"B;bir","ocrForm":"Uifffa","assessment":"guide_or_form_materially_ocr_damaged"},
+    {"candidateId":"ALC1737-vcand-p147-L-010","guide":"Blanco hazer blanquear","ocrForm":"tít* tark — tofalituá","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p147-L-014","guide":"Bledos amarillos","ocrForm":"WuefabualL","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p147-L-020","guide":"Bocabajo","ocrForm":"Movela","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p147-L-021","guide":"Bofe","ocrForm":"Sarecbia","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p147-L-022","guide":"Bofetadas","ocrForm":"Mámame acbS-/«","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p147-L-023","guide":"Bola","ocrForm":"Lobola","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p147-L-024","guide":"Bolar","ocrForm":"Neie","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p147-L-025","guide":"Bolver de donde fue","ocrForm":"Noc-tec","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p147-L-026","guide":"Bolver lo de dentro á fuera","ocrForm":"Aropetta","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p147-R-001","guide":"Bordón","ocrForm":"Bufia baftoti?","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p147-R-003","guide":"Borrachera","ocrForm":"Nahuahe","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p147-R-004","guide":"Borrar","ocrForm":"ánufta","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p147-R-005","guide":"Biliar, ó borrmar","ocrForm":"Bifatal","assessment":"guide_or_form_materially_ocr_damaged"},
+    {"candidateId":"ALC1737-vcand-p147-R-006","guide":"Bofadura tal","ocrForm":"Bufia bomitárJ","assessment":"guide_or_form_materially_ocr_damaged"},
+    {"candidateId":"ALC1737-vcand-p147-R-007","guide":"B oft c z a r","ocrForm":"Tcr< bahua","assessment":"guide_or_form_materially_ocr_damaged"},
+    {"candidateId":"ALC1737-vcand-p147-R-008","guide":"Botón de la flor","ocrForm":"Caetomté","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p147-R-009","guide":"Borraja","ocrForm":"Tebofe hopem","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p147-R-010","guide":"Borrego","ocrForm":"lAohfi","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p147-R-011","guide":"Borrsco","ocrForm":"Burtt","assessment":"guide_or_form_materially_ocr_damaged"},
+    {"candidateId":"ALC1737-vcand-p147-R-012","guide":"Bofque","ocrForm":"Pochoi","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p147-R-013","guide":"Boz","ocrForm":"Hia","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p147-R-014","guide":"Braza vna midiendo","ocrForm":"ÍAam-po — teehomehui","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p147-R-015","guide":"Brazear menear los brazos","ocrForm":"Ccmim hima","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p147-R-016","guide":"Brazo","ocrForm":"Comi","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p147-R-017","guide":"Bramar los Toros","ocrForm":"Toron …","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p147-R-018","guide":"Bramar los Ciervos","ocrForm":"Majo-buana","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p147-R-019","guide":"Bravo","ocrForm":"Alchuamcbiachi","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p147-R-020","guide":"Brincar de alto abajo","ocrForm":"Rica-tana, conebepte","assessment":"structural_undersegmentation"},
+    {"candidateId":"ALC1737-vcand-p147-R-021","guide":"Brincar por el fuelo","ocrForm":"Che-ebepte","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p147-R-022","guide":"Brotar los Arboles","ocrForm":"Bafibue","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p147-R-023","guide":"Brotar las flores","ocrForm":"Sebua tebue","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p147-R-024","guide":"Bruja","ocrForm":"Auhuneria, ^avocóte* / aurnute","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p147-R-025","guide":"Bruñir","ocrForm":"Hm/^e","assessment":"compact_primary_ocr_high_yield"}
+  ],
+  "decisions": [
+    "All 36 current p.147 pending_promotion candidates receive an explicit same-witness OCR triage category.",
+    "Nineteen compact entries are prioritized for direct facsimile recollation because they offer the highest expected return per inspection.",
+    "No candidate is promoted from public OCR alone.",
+    "The p.147 visible-start census remains non-exhaustive and no retrieval-derived metric is asserted."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "derivedFrom": ["p147_left_reconciliation.jsonl","p147_right_reconciliation.jsonl","p147_machine_reconciliation_status.json"],
+    "method": "Conservative classification of all p.147 pending candidates by same-witness public OCR legibility, wrapping, and known structural complexity; no direct facsimile promotion."
+  }
+}

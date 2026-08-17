@@ -72,8 +72,24 @@
     "selectedP147LayerUsedAsAnchor": true,
     "p148OpeningInspectedFromCanonicalInventory": true,
     "directFacsimileAvailableThisPass": false,
-    "policy": "Structural decisions may be closed from convergent machine evidence; textual promotions remain pending where raw OCR is not a sufficient transcription anchor."
+    "recoveredPrimaryOcr": {
+      "available": true,
+      "provider": "Internet Archive",
+      "identifier": "artedelalenguaca00gonz",
+      "derivative": "artedelalenguaca00gonz_djvu.txt",
+      "use": "same-witness legibility and priority triage only; not treated as direct facsimile transcription authority"
+    },
+    "primaryOcrTriageRecord": "p147_primary_ocr_triage_2026-08-17.json",
+    "phase2PromotionQueue": "p147_phase2_promotion_queue_2026-08-17.json",
+    "policy": "Structural decisions may be closed from convergent machine evidence; textual promotions remain pending where direct ALC1737 facsimile recollation is unavailable."
   },
+  "resolvedThisPass": [
+    "All 36 current pending_promotion candidates now have an explicit same-witness OCR triage category.",
+    "Nineteen compact primary-OCR entries are prioritized as the highest-yield direct-facsimile targets; eleven wrapped entries form the second-priority group.",
+    "Five candidates are explicitly blocked by material OCR damage and R-020 remains a joint structural/textual undersegmentation case.",
+    "No lexical article is promoted from public OCR alone."
+  ],
+  "authorityNote": "P.147 retains complete candidate-level structural reconciliation and now has complete Phase II primary-OCR prioritization for all 36 pending candidates. This improves work ordering but does not strengthen any transcription: direct facsimile recollation remains required for promotion, the visible-start census remains non-exhaustive, and humanVerified remains false.",
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
 }
