@@ -1,0 +1,73 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 171,
+  "stage": "preflight",
+  "candidateInventory": {
+    "total": 24,
+    "left": 7,
+    "right": 17,
+    "canonicalInventoryTotal": 2072,
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p171_selected_articles.jsonl",
+    "articleIdRange": ["ALC1737-art-000569", "ALC1737-art-000583"],
+    "count": 15,
+    "declaredColumnDistribution": {"left": 15, "right": 0},
+    "columnMetadataCorrectionThisPass": false,
+    "exhaustive": false,
+    "humanVerified": false
+  },
+  "selectedAnchorAlignmentHypothesis": [
+    {"candidateId":"ALC1737-vcand-p171-L-001","articleIds":["ALC1737-art-000569"]},
+    {"candidateId":"ALC1737-vcand-p171-L-002","articleIds":["ALC1737-art-000570"]},
+    {"candidateId":"ALC1737-vcand-p171-L-003","articleIds":["ALC1737-art-000571"]},
+    {"candidateId":"ALC1737-vcand-p171-L-004","articleIds":["ALC1737-art-000572"],"assessment":"undersegmented","note":"L-004 begins selected `Quien eres? Habeempo?` and carries `Empohabeſa`-like material associated with selected 000573, whose guide boundary remains independently represented at L-005."},
+    {"candidateId":"ALC1737-vcand-p171-L-005","articleIds":["ALC1737-art-000573"],"assessment":"undersegmented","note":"L-005 begins selected `Quien ſois` and contains severe reading-order leakage including Raton-like material from the opposite column."},
+    {"candidateId":"ALC1737-vcand-p171-L-006","articleIds":["ALC1737-art-000574"]},
+    {"candidateId":"ALC1737-vcand-p171-L-007","articleIds":["ALC1737-art-000575","ALC1737-art-000576","ALC1737-art-000580","ALC1737-art-000581","ALC1737-art-000582"],"assessment":"merged_articles","note":"L-007 begins selected 000575 (`Quitarſe... Bahurina`) and visibly contains selected starts 000576 (`Rabo de animal`), 000580 (`Rajar madera`), 000581 (`Rala coſa`) and 000582 (`Rama de arbol`), plus multiple unselected OCR guide units. Selected 000577–000579 and 000583 also occur in the selected sequence before the Rastro region but their exact microplacement is not forced from the damaged OCR."}
+  ],
+  "structuralHypothesis": {
+    "classification": {"article": 23, "continuation": 1, "paratext": 0, "false_positive": 0, "unresolved": 0},
+    "continuities": [
+      {"from":"ALC1737-vcand-p171-L-007","to":"ALC1737-vcand-p171-R-001","continuationType":"from_previous_column","note":"R-001 is form-only `Ahaottua.` at the top of the right column and is not compatible with a fresh Spanish guide start; it is retained as continuation from the preceding cross-column material without assigning it to a selected article."}
+    ],
+    "knownMergedRegions": ["ALC1737-vcand-p171-L-007", "ALC1737-vcand-p171-R-003", "ALC1737-vcand-p171-R-017"],
+    "knownUndersegmentedOrReadingOrderLeakageRegions": ["ALC1737-vcand-p171-L-004", "ALC1737-vcand-p171-L-005"],
+    "ambiguousArticleBoundaries": ["ALC1737-vcand-p171-R-015"],
+    "knownSelectedMisses": [
+      {"articleId":"ALC1737-art-000576","visibleStartRaw":"Rabo de animal. Buaſiaota.","containingCandidateId":"ALC1737-vcand-p171-L-007","missType":"inside_candidate_group"},
+      {"articleId":"ALC1737-art-000577","visibleStartRaw":"Raer. Sibha.","containingCandidateId":null,"missType":"between_candidates"},
+      {"articleId":"ALC1737-art-000578","visibleStartRaw":"Rayar hazer raya. Abuitia.","containingCandidateId":null,"missType":"between_candidates"},
+      {"articleId":"ALC1737-art-000579","visibleStartRaw":"Raiz de arbol. Nahua.","containingCandidateId":null,"missType":"between_candidates"},
+      {"articleId":"ALC1737-art-000580","visibleStartRaw":"Rajar madera. Etatia.","containingCandidateId":"ALC1737-vcand-p171-L-007","missType":"inside_candidate_group"},
+      {"articleId":"ALC1737-art-000581","visibleStartRaw":"Rala coſa. Tapiolai.","containingCandidateId":"ALC1737-vcand-p171-L-007","missType":"inside_candidate_group"},
+      {"articleId":"ALC1737-art-000582","visibleStartRaw":"Rama de arbol. Ioteme.","containingCandidateId":"ALC1737-vcand-p171-L-007","missType":"inside_candidate_group"},
+      {"articleId":"ALC1737-art-000583","visibleStartRaw":"Rana. Batait.","containingCandidateId":null,"missType":"between_candidates"}
+    ],
+    "minimumVisibleStartsAccounting": {
+      "knownMinimum": 31,
+      "rationale": "There are 23 article-classified canonical rows and one continuation row. L-007 is itself a fresh selected start (000575), while eight further selected starts 000576–000583 lack independent canonical boundaries. Thus 23 + 8 = 31 known starts. OCR-only internal guide units in L-007/R-003/R-017 are not counted without independent selected/direct-collation anchors."
+    }
+  },
+  "pageEdges": {
+    "fromPrevious": {"status":"fresh_page_transition_after_edge_fragment","opening":"Querella. Natebo.","note":"p170 R-022 ends with `Que-` edge/catchword material; p171 L-001 opens fresh selected 000569 (`Querella`)."},
+    "toNext": {"status":"fresh_next_page_top_selected_start_missed","lastCandidate":"ALC1737-vcand-p171-R-017","nextPage":172,"nextPageCandidateInventory":{"total":55,"left":27,"right":28},"nextFirstSelectedArticle":"ALC1737-art-000584","nextFirstSelectedOpening":"Relampago. Beroitcme.","nextFirstCandidate":"ALC1737-vcand-p172-L-001","nextFirstCandidateOpening":"Redaño. Tona-aurta.","note":"P172 selected 000584 (`Relampago`) is a fresh top-of-page start before canonical L-001 (`Redaño`); no p171→p172 lexical continuation is asserted."}
+  },
+  "evidenceLimits": {
+    "directFacsimileInspectedThisPass": false,
+    "selectedLayerIsCoverageExpectation": false,
+    "ocrOnlyInternalUnitsPromotable": false,
+    "metricsAllowed": false,
+    "reasonMetricsWithheld": "The selected layer is non-exhaustive and several large merged/reading-order-leakage groups contain additional unanchored guide-like units; a complete visible-start denominator is not established."
+  },
+  "pageStatus": {
+    "candidateReconciliation": "preflight_complete_pending_materialization",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial_anchor_hypothesis",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
