@@ -1,0 +1,90 @@
+name: Sync p145 Phase II pilot A docs
+
+on:
+  push:
+    branches:
+      - work/p145-phase2-pilot-a
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Synchronize Phase II documentation
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('.')
+          summary=json.loads((root/'data/lexicon/reconciliation/phase2_open_work_summary.json').read_text(encoding='utf-8'))
+          s=summary['summary']
+          assert s['pendingPromotionTotal']==1047
+          assert s['unresolvedCandidateTotal']==1
+          assert s['currentCuratorialArticleCount']==1049
+
+          top=summary['pendingPromotionRanking'][:10]
+          lines=[
+            '# Fase II — promoción, enlace y censo visible','',
+            'Estado computacional regenerable para p.145–177.','',
+            f'- Páginas cubiertas: **{s["pages"]}**.',
+            f'- Candidatos `pending_promotion`: **{s["pendingPromotionTotal"]}**.',
+            f'- Candidatos estructuralmente `unresolved`: **{s["unresolvedCandidateTotal"]}**.',
+            f'- Páginas con censo visible exhaustivo: **{s["pagesWithExhaustiveVisibleStartCensus"]}**.',
+            f'- Corpus curatorial actual: **{s["currentCuratorialArticleCount"]:,} artículos**.','',
+            '## Avance de fase II','',
+            'El lote piloto **p.145-A** promovió cuatro artículos mediante colación facsimilar asistida del propio ALC1737. El total pendiente descendió de **1,051 a 1,047**; las lecturas con discrepancias materiales permanecieron sin promoción.','',
+            '## Excepción estructural conservada','',
+            'La única página con candidato estructural `unresolved` es **p.161**, donde R-016 permanece deliberadamente abierto por evidencia terminal no única. No debe forzarse su clasificación para producir un cero artificial.','',
+            '## Priorización por volumen de promoción pendiente','',
+            '| Página | `pending_promotion` |','|---:|---:|'
+          ]
+          lines += [f'| {x["page"]} | {x["pendingPromotion"]} |' for x in top]
+          lines += [
+            '', '## Regla de trabajo','',
+            'La fase II separa **promoción/enlace de artículos**, **registro de falsos negativos visibles** y **censo exhaustivo**. Un candidato no se promueve sólo porque el OCR sugiera una lectura: para texto cahíta incierto se exige evidencia suficientemente fuerte del testigo ALC1737. BUE1890 permanece como control secundario sin sustitución silenciosa.','',
+            'El archivo `phase2_open_work_summary.json` es la fuente computacional y puede regenerarse con `python scripts/summarize_open_lexicon_work.py --output data/lexicon/reconciliation/phase2_open_work_summary.json`.',''
+          ]
+          (root/'docs/PHASE2_LEXICON_WORK.md').write_text('\n'.join(lines),encoding='utf-8')
+
+          p=root/'docs/LEXICON_PROGRESS.md'
+          text=p.read_text(encoding='utf-8')
+          old_top='La capa curatorial contiene actualmente **1,045 artículos históricos estructurados**.'
+          new_top='La capa curatorial contiene actualmente **1,049 artículos históricos estructurados**.'
+          if old_top in text:
+              text=text.replace(old_top,new_top,1)
+          else:
+              assert new_top in text
+
+          old='Trece candidatos de artículo enlazan **14 objetos estructurados preexistentes** y **21 candidatos de artículo permanecen `pending_promotion`**. No hubo promociones nuevas en el pase estructural y el corpus permanece en **1,045 artículos**. `ALC1737-art-001045` (`Atormentar`) conserva su continuidad p.144→145 y la forma `chumtieſte` permanece de baja confianza.'
+          new='Tras el primer lote de fase II, **17 candidatos de artículo enlazan 18 objetos estructurados** y **17 candidatos de artículo permanecen `pending_promotion`**. El lote piloto p.145-A añadió cuatro promociones (`ALC1737-art-001046`–`001049`) y elevó el corpus curatorial actual a **1,049 artículos**. `ALC1737-art-001045` (`Atormentar`) conserva su continuidad p.144→145 y la forma `chumtieſte` permanece de baja confianza.'
+          if old in text:
+              text=text.replace(old,new,1)
+          else:
+              assert new in text
+
+          pilot='El **lote piloto p.145-A** utilizó la página 145 del PDF de ALC1737 verificada por SHA-256 y tres lecturas independientes de un render a 420 dpi. Sólo se promovieron `Ave. Saperac.`, `Ave. Baecuberi.`, `A vno. Cae.` y `Aunque. Elapo.`; formas con divergencias como `Huchai/Hucbai`, `Tenbie/Tenbile`, `Tucabuiro/Tucabuire` o `Putre/Huite/Hutte` permanecen pendientes. La evidencia completa se conserva en `p145_phase2_pilot_a_evidence_2026-08-17.json`.'
+          marker='La reconciliación candidate-level de p.145 está completa con **0 límites `unresolved`**'
+          if pilot not in text:
+              assert marker in text
+              text=text.replace(marker,pilot+'\n\n'+marker,1)
+          p.write_text(text,encoding='utf-8')
+          PY
+      - name: Sanity check
+        run: |
+          grep -F 'Corpus curatorial actual: **1,049 artículos**' docs/PHASE2_LEXICON_WORK.md
+          grep -F 'Candidatos `pending_promotion`: **1047**' docs/PHASE2_LEXICON_WORK.md
+          grep -F '17 candidatos de artículo enlazan 18 objetos estructurados' docs/LEXICON_PROGRESS.md
+          grep -F 'p145_phase2_pilot_a_evidence_2026-08-17.json' docs/LEXICON_PROGRESS.md
+      - name: Commit documentation sync
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/PHASE2_LEXICON_WORK.md docs/LEXICON_PROGRESS.md
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "docs: sincronizar piloto p145-A de fase II"
+          git push
