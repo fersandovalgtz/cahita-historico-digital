@@ -1,0 +1,58 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 175,
+  "stage": "preflight_complete",
+  "candidateInventory": {
+    "total": 35,
+    "left": 20,
+    "right": 15
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000629",
+      "ALC1737-art-000643"
+    ],
+    "nonExhaustive": true,
+    "humanVerified": false
+  },
+  "openingEdge": {
+    "previousPage": 174,
+    "interpretation": "fresh_page_transition",
+    "firstCanonicalCandidate": "ALC1737-vcand-p175-L-001",
+    "firstSelectedArticle": "ALC1737-art-000629"
+  },
+  "workingHypothesis": {
+    "article": 35,
+    "continuation": 0,
+    "knownMissedSelectedStarts": [
+      "ALC1737-art-000637",
+      "ALC1737-art-000640",
+      "ALC1737-art-000643"
+    ],
+    "mergedCandidateRegions": [
+      "ALC1737-vcand-p175-L-012",
+      "ALC1737-vcand-p175-L-014",
+      "ALC1737-vcand-p175-L-020",
+      "ALC1737-vcand-p175-R-007",
+      "ALC1737-vcand-p175-R-015"
+    ]
+  },
+  "nextPage": {
+    "sourcePageDigital": 176,
+    "candidateInventoryTotal": 49,
+    "left": 26,
+    "right": 23,
+    "firstCandidate": "ALC1737-vcand-p176-L-001",
+    "firstSelectedArticle": "ALC1737-art-000644",
+    "firstSelectedOpening": "Tortuga. Mochic.",
+    "edgeInterpretation": "fresh_page_transition_after_catchword"
+  },
+  "evidenceLimits": {
+    "directFacsimileInspectedThisPass": false,
+    "selectedLayerNotCoverageExpectation": true,
+    "metricsAllowed": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
