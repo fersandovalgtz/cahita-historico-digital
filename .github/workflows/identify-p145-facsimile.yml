@@ -34,6 +34,7 @@ jobs:
           )
           curl --fail --location --max-time 180 --retry 2 "https://archive.org/download/artedelalenguaca00gonz/${PDF_NAME}" -o /tmp/alc1737.pdf
           : > /tmp/page_hits.txt
+          : > /tmp/atole_hits.txt
           for p in $(seq 130 160); do
             pdftotext -f "$p" -l "$p" -layout /tmp/alc1737.pdf "/tmp/p${p}.txt"
             if grep -Eiq 'Atole|Aves grand|Aventajar|Aunque' "/tmp/p${p}.txt"; then
@@ -41,11 +42,15 @@ jobs:
               grep -Eio 'Atole[^[:cntrl:]]*|Aves grand[^[:cntrl:]]*|Aventajar[^[:cntrl:]]*|Aunque[^[:cntrl:]]*' "/tmp/p${p}.txt" | head -n 5 | tr '\n' ' ' >> /tmp/page_hits.txt
               printf '\n' >> /tmp/page_hits.txt
             fi
+            if grep -Eiq 'Atole' "/tmp/p${p}.txt"; then
+              printf '%s\n' "$p" >> /tmp/atole_hits.txt
+            fi
           done
           cat /tmp/page_hits.txt
-          TARGET=$(awk 'NR==1 {print $1}' /tmp/page_hits.txt)
+          TARGET=$(head -n 1 /tmp/atole_hits.txt)
           test -n "$TARGET"
           mkdir -p .tmp_facsimile/p145_target
+          rm -f .tmp_facsimile/p145_target/p145-target.pdf .tmp_facsimile/p145_target/p145-target-layout-ocr.txt .tmp_facsimile/p145_target/MANIFEST.txt
           pdfseparate -f "$TARGET" -l "$TARGET" /tmp/alc1737.pdf .tmp_facsimile/p145_target/page-%d.pdf
           mv ".tmp_facsimile/p145_target/page-${TARGET}.pdf" .tmp_facsimile/p145_target/p145-target.pdf
           cp "/tmp/p${TARGET}.txt" .tmp_facsimile/p145_target/p145-target-layout-ocr.txt
@@ -53,6 +58,7 @@ jobs:
             echo "Internet Archive identifier: artedelalenguaca00gonz"
             echo "PDF derivative: ${PDF_NAME}"
             echo "PDF page selected: ${TARGET}"
+            echo "Selection rule: first page in 130–160 containing Atole"
             echo "Search hits in window:"
             cat /tmp/page_hits.txt
             sha256sum .tmp_facsimile/p145_target/p145-target.pdf
@@ -65,5 +71,5 @@ jobs:
           if git diff --cached --quiet; then
             exit 0
           fi
-          git commit -m "chore: añadir facsímil temporal exacto para p145"
+          git commit -m "chore: corregir facsímil temporal exacto para p145"
           git push
