@@ -1,4 +1,4 @@
-name: CHD p158 edge export
+name: CHD p157 candidate export
 
 on:
   push:
@@ -18,8 +18,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Export canonical p158 candidates
+      - name: Export canonical p157 candidates
         run: |
-          echo '---P158-BEGIN---'
-          python scripts/export_candidate_page.py --page 158
-          echo '---P158-END---'
+          echo '---P157-BEGIN---'
+          python scripts/export_candidate_page.py --page 157
+          echo '---P157-END---'
