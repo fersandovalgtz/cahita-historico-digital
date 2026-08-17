@@ -3,96 +3,76 @@
   "sourcePageDigital": 145,
   "pageStatus": {
     "candidateReconciliation": "complete",
-    "visibleStartCensus": "incomplete_machine_evidence",
-    "structuralClosure": false,
+    "visibleStartCensus": "exhaustive_direct_local_facsimile",
+    "promotionLinkage": "complete",
+    "structuralClosure": true,
+    "technicalClosure": true,
     "humanVerificationPlanned": false
   },
   "candidateInventory": {
     "total": 39,
     "left": 22,
     "right": 17,
-    "classification": {
-      "article": 34,
-      "continuation": 5,
-      "paratext": 0,
-      "false_positive": 0,
-      "unresolved": 0
-    },
-    "boundaryAssessment": {
-      "exact": 27,
-      "merged_articles": 3,
-      "undersegmented": 5,
-      "oversegmented": 0,
-      "ambiguous": 1,
-      "not_applicable": 3
-    }
+    "classification": {"article": 34, "continuation": 5, "paratext": 0, "false_positive": 0, "unresolved": 0},
+    "boundaryAssessment": {"exact": 28, "merged_articles": 3, "undersegmented": 5, "oversegmented": 0, "ambiguous": 0, "not_applicable": 3}
   },
   "linkage": {
-    "articleCandidateRecordsLinked": 17,
-    "preExistingStructuredArticlesLinked": 18,
-    "articleCandidatesPendingPromotion": 17,
+    "articleCandidateRecordsLinked": 34,
+    "structuredArticlesLinkedFromCandidateRecords": 35,
+    "missedStartRecordsLinked": 9,
+    "articleCandidatesPendingPromotion": 0,
     "unresolvedCandidateBoundaries": 0
   },
   "curation": {
-    "preExistingSelectedArticlesOnPage": 14,
-    "newPromotionsThisPass": 4,
-    "corpusTotalAfterPass": 1049,
+    "preExistingStructuredArticlesOnPage": 18,
+    "newPromotionsThisPass": 25,
+    "structuredVisibleStartsAfterPass": 43,
+    "newArticleIdRange": "ALC1737-art-001050--ALC1737-art-001074",
+    "corpusTotalAfterPass": 1074,
     "crossPageArticleFromP144": "ALC1737-art-001045",
-    "crossPageArticleStatus": "unresolved_low_confidence_form"
+    "crossPageArticleStatus": "machine_unverified_continuation_not_counted_as_p145_start"
   },
-  "visibleStartCensus": {
-    "exhaustive": false,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "Recovered primary OCR and a later secondary control improve individual boundary identification, but they still do not provide a defensible facsimile-level exhaustive visible-start denominator. TP/FP/FN metrics therefore remain intentionally withheld."
+  "visibleStartEvidence": {
+    "exhaustive": true,
+    "visibleHistoricalArticleStarts": 43,
+    "knownVisibleStartsMinimum": 43,
+    "truePositiveCandidateStarts": 34,
+    "falsePositiveCandidateStarts": 0,
+    "falseNegativeVisibleStarts": 9,
+    "knownMissedStartRecords": 9,
+    "knownMissedStartFile": "p145_missed_visible_starts.jsonl",
+    "precision": 1.0,
+    "recall": 0.790698,
+    "f1": 0.883117,
+    "countingNote": "Nine detector false negatives are recorded. Eight required new lexical objects; one (`Axi, ò pimienton`) was already present in the selected layer despite lacking its own canonical boundary candidate."
   },
-  "machineEvidence": {
-    "canonicalCandidateInventoryVerified": true,
-    "candidateInventoryCount": 2072,
-    "p146OpeningInspectedFromCanonicalInventory": true,
-    "p146OpeningInterpretation": "Digital p.146 begins with fresh B entries in both columns; no long p.145-to-p.146 continuation is asserted from the preserved geometry.",
-    "selectedP145LayerUsedAsAnchor": true,
-    "previousDirectFacsimileRetrievalResult": "temporarily_unavailable_http_503",
-    "recoveredPrimaryOcr": {
-      "available": true,
-      "provider": "Internet Archive",
+  "physicalContinuities": [
+    {"from": "ALC1737-art-001045", "to": "p145:left:top", "type": "article_form_continuation", "note": "`Atormentar` begins on p.144 and continues with visible `chumtieſte.` at the top of p.145; this continuation is excluded from the p.145 visible-start denominator."},
+    {"from": "p145:right:bottom", "to": "p146:opening", "type": "catchword_to_next_page", "note": "Bottom catchword `B:ho` is paratext, not a p.145 lexical start."}
+  ],
+  "evidence": {
+    "directLocalFacsimileAvailableThisPass": true,
+    "primaryWitness": {
       "identifier": "artedelalenguaca00gonz",
-      "use": "guide and segmentation evidence only where OCR is sufficiently legible; damaged Cahita forms are not silently regularized"
+      "localFile": "Cahíta.pdf",
+      "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+      "pdfPageCount": 182,
+      "pageRenderSha256": "cd2ea02a95c142becfd66bc233faa1b25c592f064f7d2f94a5f96bb4f83ffcf1"
     },
-    "bue1890SecondaryControl": {
-      "available": true,
-      "use": "explicit secondary corroboration only; never substitutes silently for ALC1737"
-    },
-    "evidenceRecord": "p145_control_evidence_2026-08-17.json",
-    "reproducibilitySupplement": "p145_reproducibility_supplement_2026-08-17.json",
-    "structuralResolutionRecord": "p145_structural_resolution_2026-08-17.json",
-    "phase2PilotAEvidence": "p145_phase2_pilot_a_evidence_2026-08-17.json",
-    "phase2PilotAFacsimile": {
-      "provider": "Internet Archive",
-      "identifier": "artedelalenguaca00gonz",
-      "pdfPage": 145,
-      "pageSha256": "4dcc4abacefa94396e5dd2255184080b868cdca3f73ef5093b1c752611713959",
-      "renderDpi": 420,
-      "passes": 3,
-      "use": "promotion only where guide and Cahita form converge strongly across same-witness readings"
-    }
+    "localFacsimileClosureRecord": "p145_local_facsimile_closure_2026-08-17.json",
+    "missedStartRecord": "p145_missed_visible_starts.jsonl",
+    "promotionBatch": "data/lexicon/articles/p145_promotions_phase2_b.jsonl",
+    "previousPilotEvidence": "p145_phase2_pilot_a_evidence_2026-08-17.json",
+    "secondaryControlPolicy": "BUE1890 remains secondary-only and supplies no ALC1737 reading in this pass."
   },
   "resolvedThisPass": [
-    "R-011 is now classified as an article boundary: recovered ALC1737 OCR preserves `Ardilla que ſuele bajar al Rio`, and BUE1890 independently corroborates the segmentation. Its ALC1737 Cahita form remains too noisy for promotion.",
-    "R-012 remains an ambiguous article boundary but its guide is identified as `Atomo` from recovered ALC1737 OCR (`Atpmo`) with BUE1890 secondary corroboration; its exact ALC1737 form remains unpromoted.",
-    "L-014 through L-022 now have guide-level identifications where recovered ALC1737 OCR and BUE1890 agree sufficiently; these identifications remain non-diplomatic and unpromoted.",
-    "R-017 remains `merged_articles`; the supplementary evidence records strong secondary sequence corroboration for `Babear` as the guide hypothesis of the damaged start absorbed after `Bagre`, without transferring the BUE1890 Cahita form or creating a new ALC1737 article.",
-    "L-002 is resolved as continuation of L-001. The apparent trailing `Asi, o` is treated as cross-column OCR bleed because it aligns with the independently collated right-column guide `Axi, ò pimienta`; no left-column article is created.",
-    "L-005 is resolved as continuation with `undersegmented` boundary quality: it begins with the tail of `Atravesar y pasar toda la flecha` and absorbs an Atrepellar-like start. The embedded start remains unpromoted because its exact ALC1737 reading/form is not secure enough.",
-    "Phase II pilot A promotes L-011→ALC1737-art-001046 (`Ave. Saperac.`), L-013→001047 (`Ave. Baecuberi.`), L-018→001048 (`A vno. Cae.`), and L-019→001049 (`Aunque. Elapo.`) after strong same-witness facsimile convergence; divergent candidates remain pending."
+    "All 17 previously pending candidate-level promotions are linked to ALC1737 lexical objects from direct same-witness facsimile evidence.",
+    "The page now has an exhaustive 43-start visual census with 9 detector false negatives explicitly registered.",
+    "Eight previously unstructured missed starts are promoted, while the ninth missed start (`Axi, ò pimienton`) is linked to its pre-existing selected article.",
+    "R-012 is no longer structurally ambiguous: the facsimile directly resolves `Atomo. Tibua chichitiame.`",
+    "Six selected-layer readings/relations are recollated or clarified from the local primary witness."
   ],
-  "unresolvedNotes": [
-    "R-012 is accepted as an article boundary and its guide is now identified as `Atomo`, but its exact ALC1737 form remains too damaged for promotion.",
-    "R-017 has a strong secondary guide hypothesis (`Babear`) for the damaged start absorbed after `Bagre`, but the exact ALC1737 reading/form remains unresolved and no article is promoted from the later reprint alone.",
-    "ALC1737-art-001045 (Atormentar) continues from p.144 and retains low-confidence `chumtieſte`; no human recollation is planned under the current workflow."
-  ],
+  "authorityNote": "P.145 is technically closed through exhaustive AI-assisted direct collation of the locally supplied ALC1737 facsimile. Closure is structural/editorial at machine_corrected_unverified authority: humanVerified remains false, and the p.144→145 `Atormentar` continuation is not counted as a new p.145 start.",
   "reviewStatus": "machine_corrected_unverified",
-  "humanVerified": false,
-  "authorityNote": "P.145 has complete candidate-level structural reconciliation and a first conservative Phase II facsimile-assisted promotion batch. Four candidates were promoted only after strong same-witness convergence on verified ALC1737 PDF page 145. Seventeen article candidates remain pending_promotion; the visible-start census remains non-exhaustive and humanVerified remains false."
+  "humanVerified": false
 }
