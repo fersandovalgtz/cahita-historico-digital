@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Summarize open Phase II lexicon work from machine reconciliation status files."""
+"""Summarize open lexicon curation work for digital pages 145–177.
+
+The script is intentionally read-only with respect to canonical and curatorial data.
+It derives a compact, machine-readable Phase II baseline from each page's
+`pNNN_machine_reconciliation_status.json` record and independently counts the
+current set of unique curatorial article IDs from `data/lexicon/articles/*.jsonl`.
+"""
 
 from __future__ import annotations
 
@@ -10,129 +16,107 @@ from typing import Any
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RECON_DIR = ROOT / "data" / "lexicon" / "reconciliation"
-ARTICLES_DIR = ROOT / "data" / "lexicon" / "articles"
+RECON = ROOT / "data" / "lexicon" / "reconciliation"
+ARTICLES = ROOT / "data" / "lexicon" / "articles"
 
 
-def load_json(path: Path) -> dict[str, Any]:
-    return json.loads(path.read_text(encoding="utf-8"))
+def _get(d: dict[str, Any], *paths: tuple[str, ...], default: Any = None) -> Any:
+    for path in paths:
+        cur: Any = d
+        ok = True
+        for key in path:
+            if not isinstance(cur, dict) or key not in cur:
+                ok = False
+                break
+            cur = cur[key]
+        if ok:
+            return cur
+    return default
 
 
-def current_article_ids() -> set[str]:
+def current_curatorial_article_ids() -> set[str]:
     ids: set[str] = set()
-    for path in sorted(ARTICLES_DIR.glob("*.jsonl")):
-        for raw_line in path.read_text(encoding="utf-8").splitlines():
-            line = raw_line.strip()
-            if not line:
+    for path in sorted(ARTICLES.glob("*.jsonl")):
+        for lineno, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+            if not line.strip():
                 continue
             obj = json.loads(line)
             article_id = obj.get("articleId")
-            if isinstance(article_id, str):
-                ids.add(article_id)
+            if not article_id:
+                raise ValueError(f"missing articleId in {path}:{lineno}")
+            if article_id in ids:
+                raise ValueError(f"duplicate articleId across curatorial files: {article_id}")
+            ids.add(article_id)
     return ids
 
 
-def _first_int(*values: Any) -> int | None:
-    for value in values:
-        if isinstance(value, int) and not isinstance(value, bool):
-            return value
-    return None
+def page_record(page: int) -> dict[str, Any]:
+    path = RECON / f"p{page}_machine_reconciliation_status.json"
+    status = json.loads(path.read_text(encoding="utf-8"))
+
+    classes = status.get("candidateInventory", {}).get("classification", {})
+    boundaries = status.get("candidateInventory", {}).get("boundaryAssessment", {})
+
+    pending = _get(
+        status,
+        ("promotion", "articleCandidatesPendingPromotion"),
+        ("linkage", "articleCandidatesPendingPromotion"),
+        default=0,
+    )
+    corpus = _get(
+        status,
+        ("promotion", "corpusTotalAfterPass"),
+        ("curation", "corpusTotalAfterPass"),
+        default=None,
+    )
+    exhaustive = _get(
+        status,
+        ("visibleStartEvidence", "exhaustive"),
+        ("visibleStartCensus", "exhaustive"),
+        default=False,
+    )
+    known_starts = _get(
+        status,
+        ("visibleStartEvidence", "knownVisibleStartsMinimum"),
+        default=None,
+    )
+    known_misses = _get(
+        status,
+        ("visibleStartEvidence", "knownMissedStartRecords"),
+        default=None,
+    )
+
+    evidence = status.get("evidence", {})
+    terminal_decision = evidence.get("terminalDecision")
+    unresolved = int(classes.get("unresolved", 0) or 0)
+
+    return {
+        "page": page,
+        "candidateCount": status.get("candidateInventory", {}).get("total"),
+        "articleCandidates": int(classes.get("article", 0) or 0),
+        "continuations": int(classes.get("continuation", 0) or 0),
+        "falsePositives": int(classes.get("false_positive", 0) or 0),
+        "unresolvedCandidates": unresolved,
+        "ambiguousBoundaries": int(boundaries.get("ambiguous", 0) or 0),
+        "pendingPromotion": int(pending or 0),
+        "knownVisibleStartsMinimum": known_starts,
+        "knownMissedStartRecords": known_misses,
+        "visibleStartCensusExhaustive": bool(exhaustive),
+        "technicalClosure": bool(status.get("pageStatus", {}).get("technicalClosure", False)),
+        "humanVerified": bool(status.get("humanVerified", False)),
+        "corpusTotalAfterPass": corpus,
+        "terminalDecision": terminal_decision,
+        "statusPath": str(path.relative_to(ROOT)),
+    }
 
 
-def build_summary(start_page: int, end_page: int) -> dict[str, Any]:
-    article_ids = current_article_ids()
-    pages: list[dict[str, Any]] = []
-    historical_corpus_totals: set[int] = set()
-
-    for page in range(start_page, end_page + 1):
-        status_path = RECON_DIR / f"p{page}_machine_reconciliation_status.json"
-        if not status_path.exists():
-            raise FileNotFoundError(status_path.relative_to(ROOT))
-
-        status = load_json(status_path)
-        inventory = status.get("candidateInventory", {})
-        classification = inventory.get("classification", {})
-        boundary = inventory.get("boundaryAssessment", {})
-        linkage = status.get("linkage", {})
-        promotion = status.get("promotion", {})
-        page_status = status.get("pageStatus", {})
-        visible = status.get("visibleStartEvidence", status.get("visibleStartCensus", {}))
-        curation = status.get("curation", {})
-        terminal = status.get("terminalDecision", {})
-
-        candidate_count = _first_int(inventory.get("total"), status.get("canonicalCandidates")) or 0
-        article_candidates = _first_int(classification.get("article"), status.get("articleCandidates")) or 0
-        continuations = _first_int(classification.get("continuation"), status.get("continuationCandidates")) or 0
-        false_positives = _first_int(classification.get("false_positive"), status.get("falsePositiveCandidates")) or 0
-        unresolved_candidates = _first_int(classification.get("unresolved"), status.get("unresolvedCandidates")) or 0
-        ambiguous_boundaries = _first_int(boundary.get("ambiguous"), status.get("ambiguousBoundaries")) or 0
-        pending_promotion = _first_int(
-            linkage.get("articleCandidatesPendingPromotion"),
-            promotion.get("pendingPromotion"),
-            status.get("pendingPromotion"),
-        ) or 0
-
-        visible_minimum = _first_int(
-            visible.get("knownVisibleStartsMinimum"),
-            visible.get("visibleHistoricalArticleStarts"),
-            status.get("knownVisibleStartsMinimum"),
-        )
-        known_missed = _first_int(
-            visible.get("knownMissedStartRecords"),
-            visible.get("knownMissedStarts"),
-            status.get("knownMissedStartRecords"),
-        )
-        exhaustive = bool(
-            visible.get("exhaustive") is True
-            or page_status.get("visibleStartCensus") in {
-                "complete_exhaustive",
-                "exhaustive_direct_local_facsimile",
-            }
-        )
-        technical_closure = bool(page_status.get("technicalClosure") is True)
-        human_verified = bool(status.get("humanVerified") is True)
-        corpus_total = _first_int(curation.get("corpusTotalAfterPass"), status.get("corpusTotalAfterPass"))
-        if corpus_total is not None:
-            historical_corpus_totals.add(corpus_total)
-
-        terminal_decision: str | None = None
-        if isinstance(terminal, dict):
-            value = terminal.get("decision")
-            if isinstance(value, str):
-                terminal_decision = value
-        elif isinstance(terminal, str):
-            terminal_decision = terminal
-
-        pages.append(
-            {
-                "page": page,
-                "candidateCount": candidate_count,
-                "articleCandidates": article_candidates,
-                "continuations": continuations,
-                "falsePositives": false_positives,
-                "unresolvedCandidates": unresolved_candidates,
-                "ambiguousBoundaries": ambiguous_boundaries,
-                "pendingPromotion": pending_promotion,
-                "knownVisibleStartsMinimum": visible_minimum,
-                "knownMissedStartRecords": known_missed,
-                "visibleStartCensusExhaustive": exhaustive,
-                "technicalClosure": technical_closure,
-                "humanVerified": human_verified,
-                "corpusTotalAfterPass": corpus_total,
-                "terminalDecision": terminal_decision,
-                "statusPath": str(status_path.relative_to(ROOT)),
-            }
-        )
-
+def build_summary(start: int = 145, end: int = 177) -> dict[str, Any]:
+    pages = [page_record(page) for page in range(start, end + 1)]
     pending_total = sum(p["pendingPromotion"] for p in pages)
     unresolved_total = sum(p["unresolvedCandidates"] for p in pages)
     ambiguous_total = sum(p["ambiguousBoundaries"] for p in pages)
+    article_ids = current_curatorial_article_ids()
 
-    pending_rank = [
-        {"page": p["page"], "pendingPromotion": p["pendingPromotion"]}
-        for p in sorted(pages, key=lambda p: (-p["pendingPromotion"], p["page"]))
-        if p["pendingPromotion"] > 0
-    ]
     unresolved_pages = [
         {
             "page": p["page"],
@@ -140,15 +124,24 @@ def build_summary(start_page: int, end_page: int) -> dict[str, Any]:
             "terminalDecision": p["terminalDecision"],
         }
         for p in pages
-        if p["unresolvedCandidates"] > 0
+        if p["unresolvedCandidates"]
     ]
+    pending_rank = sorted(
+        (
+            {"page": p["page"], "pendingPromotion": p["pendingPromotion"]}
+            for p in pages
+            if p["pendingPromotion"]
+        ),
+        key=lambda x: (-x["pendingPromotion"], x["page"]),
+    )
+
+    historical_corpus_totals = {
+        p["corpusTotalAfterPass"] for p in pages if p["corpusTotalAfterPass"] is not None
+    }
 
     return {
         "sourceId": "ALC1737",
-        "scope": {
-            "startDigitalPage": start_page,
-            "endDigitalPage": end_page,
-        },
+        "scope": {"startDigitalPage": start, "endDigitalPage": end},
         "phase": "phase_ii_promotion_linkage_and_visible_start_census",
         "generatedFrom": [
             "pNNN_machine_reconciliation_status.json",
