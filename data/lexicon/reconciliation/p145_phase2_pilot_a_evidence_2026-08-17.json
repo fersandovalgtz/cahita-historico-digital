@@ -1,0 +1,110 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 145,
+  "recordType": "phase_ii_promotion_evidence",
+  "recordedAt": "2026-08-17",
+  "batchId": "p145-phase2-pilot-a",
+  "primaryWitness": {
+    "provider": "Internet Archive",
+    "identifier": "artedelalenguaca00gonz",
+    "pdfDerivative": "artedelalenguaca00gonz.pdf",
+    "pdfPage": 145,
+    "targetPageSha256": "4dcc4abacefa94396e5dd2255184080b868cdca3f73ef5093b1c752611713959",
+    "renderDpi": 420,
+    "collationMode": "facsimile_assisted_multi_pass_machine_collation",
+    "independentPasses": [
+      "Tesseract spa psm4 on contrast-enhanced grayscale left column",
+      "Tesseract spa psm6 on contrast-enhanced grayscale left column",
+      "Tesseract spa psm4 on binarized left column"
+    ],
+    "additionalSameWitnessEvidence": [
+      "canonical hybrid_margin_mode_v0.2 candidate OCR",
+      "Internet Archive layout/full-text OCR derivative"
+    ]
+  },
+  "promotionThreshold": {
+    "rule": "Promote only candidates with clean article boundary and stable Spanish guide + Cahita form across multiple independent readings of the same ALC1737 facsimile. Secondary witnesses may corroborate but are not required and may not overwrite ALC1737.",
+    "humanVerificationRequired": false,
+    "reviewStatus": "machine_corrected_unverified"
+  },
+  "promotions": [
+    {
+      "candidateId": "ALC1737-vcand-p145-L-011",
+      "articleId": "ALC1737-art-001046",
+      "spanishGuideRaw": "Ave",
+      "cahitaFormsRaw": ["Saperac"],
+      "transcriptionRaw": "Ave. Saperac.",
+      "evidence": {
+        "canonicalCandidateRaw": "Ave. S^er#S",
+        "facsimilePasses": ["Ave. Saperac.", "Ave. Saperac.", "Ave. Saperac."],
+        "assessment": "strong_same_witness_convergence"
+      }
+    },
+    {
+      "candidateId": "ALC1737-vcand-p145-L-013",
+      "articleId": "ALC1737-art-001047",
+      "spanishGuideRaw": "Ave",
+      "cahitaFormsRaw": ["Baecuberi"],
+      "transcriptionRaw": "Ave. Baecuberi.",
+      "evidence": {
+        "canonicalCandidateRaw": "Ave. Baecuberi.",
+        "facsimilePasses": ["Ave. Baecuberi.", "Ave. Baecuberi.", "Ave. Baecuberi."],
+        "assessment": "strong_same_witness_convergence"
+      }
+    },
+    {
+      "candidateId": "ALC1737-vcand-p145-L-018",
+      "articleId": "ALC1737-art-001048",
+      "spanishGuideRaw": "A vno",
+      "cahitaFormsRaw": ["Cae"],
+      "transcriptionRaw": "A vno. Cae.",
+      "evidence": {
+        "canonicalCandidateRaw": "A vno. C¿e.",
+        "facsimilePasses": ["A vno. Cae.", "A vno. Cae.", "A vno. Cae."],
+        "assessment": "strong_same_witness_convergence"
+      }
+    },
+    {
+      "candidateId": "ALC1737-vcand-p145-L-019",
+      "articleId": "ALC1737-art-001049",
+      "spanishGuideRaw": "Aunque",
+      "cahitaFormsRaw": ["Elapo"],
+      "transcriptionRaw": "Aunque. Elapo.",
+      "evidence": {
+        "canonicalCandidateRaw": "Aunque. E/¿pa.",
+        "facsimilePasses": ["Aunque. Elapo.", "Aunque. Elapo.", "Aunque. Elapo."],
+        "assessment": "strong_same_witness_convergence"
+      }
+    }
+  ],
+  "explicitExclusionsThisPilot": [
+    {
+      "candidateId": "ALC1737-vcand-p145-L-008",
+      "reason": "same-witness readings disagree materially (`Huchai`/`Hucbai`)"
+    },
+    {
+      "candidateId": "ALC1737-vcand-p145-L-010",
+      "reason": "same-witness readings disagree (`Tenbie`/`Tenbile`)"
+    },
+    {
+      "candidateId": "ALC1737-vcand-p145-L-012",
+      "reason": "same-witness readings disagree (`Tucabuiro`/`Tucabuire`)"
+    },
+    {
+      "candidateId": "ALC1737-vcand-p145-L-016",
+      "reason": "form for `Aventar como trigo` is unstable across readings (`Putre`/`Huite`/`Hutte`)"
+    }
+  ],
+  "epistemicGuards": [
+    "No BUE1890 form is used to create any of these four transcriptions.",
+    "The batch does not claim human verification or diplomatic authority beyond machine-assisted collation of the ALC1737 facsimile.",
+    "Candidates with materially divergent same-witness readings remain pending_promotion.",
+    "The visible-start census remains non-exhaustive and no precision/recall/F1 metric is claimed."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "method": "AI-assisted facsimile collation of verified ALC1737 PDF page 145 using three independent OCR passes on a 420 dpi render, compared against canonical and Internet Archive same-witness OCR; conservative promotion threshold applied."
+  }
+}
