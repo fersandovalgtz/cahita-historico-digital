@@ -1,0 +1,41 @@
+from pathlib import Path
+
+p=Path('README.md')
+s=p.read_text(encoding='utf-8')
+old='- las páginas **169–177** ya poseen representación lexicográfica estructurada, pero su reconciliación exhaustiva página por página sigue pendiente;'
+new='- la página **169** tiene sus **35 candidatos canónicos reconciliados**: 34 `article` y 1 `continuation`, sin candidatos estructuralmente `unresolved`; L-001 queda como megagrupo `merged_articles`, comienza en la cola de `000539` (`Piedra de que ſe ſacan navajas`) y contiene los comienzos seleccionados `000540`–`000542`, por lo que se documentan 4 falsos negativos seleccionados (`000539`–`000542`); L-002→L-003 modela la única continuidad, L-010 queda `undersegmented`, R-005 `ambiguous`, R-009/R-016 `merged_articles`, los 15 artículos seleccionados `ALC1737-art-000539`–`000553` quedaron enlazados a evidencia estructural, permanecen 22 fronteras `pending_promotion` y el censo visible sigue no exhaustivo; `000548` (`Plato. Lo miſmo.`) conserva incertidumbre semántica sin volver irresuelta su frontera física; p.170 tiene 48 candidatos y el seleccionado superior `000554` (`Por donde?`) carece de frontera canónica propia antes de L-001 (`Porqué?`);\n- las páginas **170–177** ya poseen representación lexicográfica estructurada, pero su reconciliación exhaustiva página por página sigue pendiente;'
+assert old in s
+s=s.replace(old,new,1)
+old='en **p.162** quedan 25 `pending_promotion`; en **p.163** quedan 28 `pending_promotion`; en **p.164** quedan 36 `pending_promotion`; en **p.165** quedan 38 `pending_promotion`; en **p.166** quedan 36 `pending_promotion`; en **p.167** quedan 40 `pending_promotion`; y en **p.168** quedan 21 `pending_promotion`. Las páginas 145–168 tienen reconciliación de candidatos completa, pero sus censos visibles aún no se consideran exhaustivos. El siguiente frente geométrico es la **página 169**, con 35 candidatos canónicos —19 izquierda y 16 derecha—; la capa seleccionada `ALC1737-art-000539`–`000553` comienza con `Piedra de que ſe ſacan navajas. Buſca pedernal prieto.`, cuyo candidato L-001 arranca ya en la cola `...bajas`.'
+new='en **p.162** quedan 25 `pending_promotion`; en **p.163** quedan 28 `pending_promotion`; en **p.164** quedan 36 `pending_promotion`; en **p.165** quedan 38 `pending_promotion`; en **p.166** quedan 36 `pending_promotion`; en **p.167** quedan 40 `pending_promotion`; en **p.168** quedan 21 `pending_promotion`; y en **p.169** quedan 22 `pending_promotion`. Las páginas 145–169 tienen reconciliación de candidatos completa, pero sus censos visibles aún no se consideran exhaustivos. El siguiente frente geométrico es la **página 170**, con 48 candidatos canónicos —26 izquierda y 22 derecha—; la capa seleccionada `ALC1737-art-000554`–`000568` comienza con `Por donde? Hacumbichaca?`, comienzo que no tiene frontera canónica propia antes de L-001 (`Porqué? Hita bechibuo?`).'
+assert old in s
+s=s.replace(old,new,1)
+p.write_text(s,encoding='utf-8')
+
+p=Path('docs/LEXICON_PROGRESS.md')
+s=p.read_text(encoding='utf-8')
+marker='## Próximo frente\n'
+assert marker in s
+section='''## Página 169 — reconciliación conservadora de candidatos completada
+
+La página digital **169** contiene **35 candidatos canónicos: 19 izquierda y 16 derecha**. La reconciliación machine-only clasifica **34 `article`** y **1 `continuation`**, sin candidatos `unresolved`, `paratext` o `false_positive`. La calidad de frontera se distribuye en **28 `exact`**, **2 `undersegmented`**, **3 `merged_articles`**, **1 `ambiguous`** y **1 `not_applicable`**.
+
+El arranque de página requiere contabilidad explícita para no inflar el censo. El seleccionado **`000539` (`Piedra de que ſe ſacan navajas. Buſca pedernal prieto.`)** comienza antes de la frontera canónica: L-001 arranca ya en su cola `...bajas. Buſca pedernal prieto.`. Dentro del mismo megagrupo aparecen además los comienzos seleccionados **`000540` (`Piel`)**, **`000541` (`Pino`)** y **`000542` (`Pinal`)**, seguidos por varias voces OCR no seleccionadas. L-001 queda `merged_articles` y se documentan cuatro missed-starts seleccionados `000539`–`000542`: uno de borde superior y tres internos.
+
+Los cuatro missed-starts no se suman mecánicamente a los 34 candidatos de artículo. L-001 no representa una frontera fresca independiente, sino una región que abre en la cola de `000539`; por ello el mínimo conservador se calcula como **33 regiones de artículo restantes + 4 comienzos seleccionados = 37 comienzos visibles conocidos**. Las voces OCR internas no seleccionadas de L-001 no se añaden a ese mínimo sin ancla de cotejo directo.
+
+La única continuidad canónica es **L-002→L-003**: L-002 contiene una cola previa y abre una voz `Piſar alguna coſa`-like no seleccionada cuyo material cahíta continúa en L-003 (`huotle.`). L-002 queda `undersegmented` y L-003 `continuation/not_applicable`. L-010 también queda `undersegmented` por material `huefo.` adyacente. **R-005** conserva una frontera geométrica compatible con artículo, pero su guía es irrecuperable responsablemente desde OCR y se mantiene `article/ambiguous` sin promoción.
+
+En la derecha, **R-009** contiene `Pocas vezes` y una segunda unidad `poco`-like; **R-016** agrupa numerosas voces (`Polilla`, `Polvos`, `Pollo`, `Poner`, varios `Por...`, etc.). Ambos quedan `merged_articles`, pero sus comienzos internos OCR-only no se promocionan ni se cuentan como falsos negativos sin anclas independientes. Los quince artículos seleccionados `ALC1737-art-000539`–`000553` quedan enlazados a evidencia estructural. El seleccionado **`000548` (`Plato. Lo miſmo.`)** conserva su anáfora semántica como `unresolved`, mientras la frontera física L-018 permanece `exact`.
+
+El borde inferior es fresco. P.170 contiene **48 candidatos: 26 izquierda y 22 derecha**. Su primer seleccionado **`000554` (`Por donde? Hacumbichaca?`)** es un comienzo de borde superior sin candidato propio; el primer candidato canónico p.170 L-001 comienza ya con **`000555` (`Porqué? Hita bechibuo?`)**. No se afirma continuidad larga desde el megagrupo R-016 de p.169.
+
+Quedan **22 candidatos de artículo `pending_promotion`**. No hubo promociones nuevas y el corpus permanece en **1,045 artículos**. El censo visible sigue no exhaustivo; por tanto no se calculan TP/FP/FN, precisión, recall ni F1.
+
+'''
+s=s.replace(marker,section+marker,1)
+old='y en p.162, **25 `pending_promotion`**; en p.163, **28 `pending_promotion`**; en p.164, **36 `pending_promotion`**; en p.165, **38 `pending_promotion`**; en p.166, **36 `pending_promotion`**; en p.167, **40 `pending_promotion`**; y en p.168, **21 `pending_promotion`**. Las páginas 145–168 tienen reconciliación de candidatos completa, pero no un censo visible exhaustivo.\n\nEl siguiente frente geométrico es la **página digital 169**, con **35 candidatos canónicos: 19 izquierda y 16 derecha**. La capa seleccionada contiene `ALC1737-art-000539`–`000553` y comienza con `Piedra de que ſe ſacan navajas. Buſca pedernal prieto.`; el candidato L-001 comienza ya en la cola de esa voz y contiene además varias voces siguientes. Hasta que p.145 complete censo visible y promoción, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo técnicamente cerrado.'
+new='y en p.162, **25 `pending_promotion`**; en p.163, **28 `pending_promotion`**; en p.164, **36 `pending_promotion`**; en p.165, **38 `pending_promotion`**; en p.166, **36 `pending_promotion`**; en p.167, **40 `pending_promotion`**; en p.168, **21 `pending_promotion`**; y en p.169, **22 `pending_promotion`**. Las páginas 145–169 tienen reconciliación de candidatos completa, pero no un censo visible exhaustivo.\n\nEl siguiente frente geométrico es la **página digital 170**, con **48 candidatos canónicos: 26 izquierda y 22 derecha**. La capa seleccionada contiene `ALC1737-art-000554`–`000568` y comienza con `Por donde? Hacumbichaca?`; ese comienzo superior carece de frontera canónica propia y L-001 comienza con `Porqué? Hita bechibuo?`. Hasta que p.145 complete censo visible y promoción, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo técnicamente cerrado.'
+assert old in s
+s=s.replace(old,new,1)
+p.write_text(s,encoding='utf-8')
