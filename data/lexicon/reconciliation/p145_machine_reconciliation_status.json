@@ -2,7 +2,7 @@
   "sourceId": "ALC1737",
   "sourcePageDigital": 145,
   "pageStatus": {
-    "candidateReconciliation": "complete_with_explicit_unresolved",
+    "candidateReconciliation": "complete",
     "visibleStartCensus": "incomplete_machine_evidence",
     "structuralClosure": false,
     "humanVerificationPlanned": false
@@ -13,25 +13,25 @@
     "right": 17,
     "classification": {
       "article": 34,
-      "continuation": 3,
+      "continuation": 5,
       "paratext": 0,
       "false_positive": 0,
-      "unresolved": 2
+      "unresolved": 0
     },
     "boundaryAssessment": {
       "exact": 27,
       "merged_articles": 3,
-      "undersegmented": 4,
+      "undersegmented": 5,
       "oversegmented": 0,
-      "ambiguous": 3,
-      "not_applicable": 2
+      "ambiguous": 1,
+      "not_applicable": 3
     }
   },
   "linkage": {
     "articleCandidateRecordsLinked": 13,
     "preExistingStructuredArticlesLinked": 14,
     "articleCandidatesPendingPromotion": 21,
-    "unresolvedCandidateBoundaries": 2
+    "unresolvedCandidateBoundaries": 0
   },
   "curation": {
     "preExistingSelectedArticlesOnPage": 14,
@@ -65,22 +65,23 @@
       "use": "explicit secondary corroboration only; never substitutes silently for ALC1737"
     },
     "evidenceRecord": "p145_control_evidence_2026-08-17.json",
-    "reproducibilitySupplement": "p145_reproducibility_supplement_2026-08-17.json"
+    "reproducibilitySupplement": "p145_reproducibility_supplement_2026-08-17.json",
+    "structuralResolutionRecord": "p145_structural_resolution_2026-08-17.json"
   },
   "resolvedThisPass": [
     "R-011 is now classified as an article boundary: recovered ALC1737 OCR preserves `Ardilla que ſuele bajar al Rio`, and BUE1890 independently corroborates the segmentation. Its ALC1737 Cahita form remains too noisy for promotion.",
     "R-012 remains an ambiguous article boundary but its guide is identified as `Atomo` from recovered ALC1737 OCR (`Atpmo`) with BUE1890 secondary corroboration; its exact ALC1737 form remains unpromoted.",
     "L-014 through L-022 now have guide-level identifications where recovered ALC1737 OCR and BUE1890 agree sufficiently; these identifications remain non-diplomatic and unpromoted.",
-    "R-017 remains `merged_articles`; the supplementary evidence records strong secondary sequence corroboration for `Babear` as the guide hypothesis of the damaged start absorbed after `Bagre`, without transferring the BUE1890 Cahita form or creating a new ALC1737 article."
+    "R-017 remains `merged_articles`; the supplementary evidence records strong secondary sequence corroboration for `Babear` as the guide hypothesis of the damaged start absorbed after `Bagre`, without transferring the BUE1890 Cahita form or creating a new ALC1737 article.",
+    "L-002 is resolved as continuation of L-001. The apparent trailing `Asi, o` is treated as cross-column OCR bleed because it aligns with the independently collated right-column guide `Axi, ò pimienta`; no left-column article is created.",
+    "L-005 is resolved as continuation with `undersegmented` boundary quality: it begins with the tail of `Atravesar y pasar toda la flecha` and absorbs an Atrepellar-like start. The embedded start remains unpromoted because its exact ALC1737 reading/form is not secure enough."
   ],
   "unresolvedNotes": [
-    "L-002 begins with apparent carry-over material and contains a probable internal A-entry start; the unique boundary assignment remains unresolved.",
-    "L-005 mixes continuation-like and article-like fragments and remains unresolved.",
     "R-012 is accepted as an article boundary and its guide is now identified as `Atomo`, but its exact ALC1737 form remains too damaged for promotion.",
     "R-017 has a strong secondary guide hypothesis (`Babear`) for the damaged start absorbed after `Bagre`, but the exact ALC1737 reading/form remains unresolved and no article is promoted from the later reprint alone.",
     "ALC1737-art-001045 (Atormentar) continues from p.144 and retains low-confidence `chumtieſte`; no human recollation is planned under the current workflow."
   ],
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false,
-  "authorityNote": "P.145 has complete candidate-level machine reconciliation, now strengthened by recovered primary OCR, explicit BUE1890 secondary control and a reproducibility supplement, but not an exhaustive facsimile-level visible-start census. The project does not silently replace ALC1737 readings with the later reprint. Technical decisions remain machine_corrected_unverified or unresolved, and no uncertainty is upgraded to philological fact."
+  "authorityNote": "P.145 now has complete candidate-level machine structural reconciliation with zero unresolved candidate boundaries. Recovered primary OCR, explicit BUE1890 secondary control, selected right-column collation and the reproducibility/structural-resolution records support the decisions. The facsimile-level visible-start census remains non-exhaustive, promotions remain partial, humanVerified remains false, and no uncertainty is upgraded to philological fact."
 }
