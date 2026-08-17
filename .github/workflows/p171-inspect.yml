@@ -1,0 +1,34 @@
+name: CHD p171 inspection
+
+on:
+  push:
+    branches: [work/p171-reconciliation]
+    paths:
+      - '.github/workflows/p171-inspect.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Export p171 and p172 edge
+        run: |
+          echo '---P171-BEGIN---'
+          python scripts/export_candidate_page.py --page 171
+          echo '---P171-END---'
+          echo 'P172 TOTAL'
+          python scripts/export_candidate_page.py --page 172 --count-only
+          echo 'P172 LEFT'
+          python scripts/export_candidate_page.py --page 172 --column left --count-only
+          echo 'P172 RIGHT'
+          python scripts/export_candidate_page.py --page 172 --column right --count-only
+          echo '---P172-BEGIN---'
+          python scripts/export_candidate_page.py --page 172
+          echo '---P172-END---'
