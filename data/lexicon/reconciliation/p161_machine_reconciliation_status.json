@@ -83,8 +83,16 @@
     "p160ReconciliationUsedForOpeningEdge": true,
     "p162CanonicalOpeningUsedForLowerEdge": true,
     "directFacsimileAvailableThisPass": false,
-    "policy": "Selected direct collations support demonstrated starts and known misses. Fragmentary bottom material and anaphoric selected entries remain explicitly unresolved; metrics stay withheld without exhaustive census."
+    "policy": "R-016 remains unresolved because same-witness OCR and secondary sequence control establish regional lower-L material but do not uniquely map the tiny fragment to article, continuation or layout residue. No closure is forced from non-unique evidence.",
+    "materializedCandidateView": "data/lexicon/candidates/p161_candidates.jsonl",
+    "terminalEvidenceRecord": "p161_terminal_evidence_2026-08-17.json",
+    "primaryOcrTerminalReviewUsed": true,
+    "bue1890LowerLSequenceControlUsed": true,
+    "terminalDecision": "explicit_conservative_nonresolution"
   },
   "reviewStatus": "machine_corrected_unverified",
-  "humanVerified": false
+  "humanVerified": false,
+  "unresolvedNotes": [
+    "R-016 remains explicitly unresolved after terminal-region review. Materialized geometry shows only `t-` / `'i`; same-witness OCR is severely interleaved, while BUE1890 confirms several lower-L entries before M but cannot uniquely assign this fragment. See p161_terminal_evidence_2026-08-17.json."
+  ]
 }
