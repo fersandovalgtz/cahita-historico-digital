@@ -1,0 +1,81 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 162,
+  "stage": "preflight",
+  "candidateInventory": {
+    "total": 39,
+    "left": 20,
+    "right": 19,
+    "canonicalInventoryTotal": 2072,
+    "boundaryMethod": "hybrid_margin_mode_v0.2"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p162_selected_articles.jsonl",
+    "preExistingArticles": 15,
+    "articleIdRange": ["ALC1737-art-000434", "ALC1737-art-000448"],
+    "nonExhaustive": true,
+    "humanVerified": false
+  },
+  "selectedCandidateAlignment": {
+    "L-001": "ALC1737-art-000434",
+    "L-003": "ALC1737-art-000435",
+    "L-004": "ALC1737-art-000436",
+    "L-005": "ALC1737-art-000437",
+    "L-006": "ALC1737-art-000438",
+    "L-007": "ALC1737-art-000440",
+    "L-008": "ALC1737-art-000441",
+    "L-009": "ALC1737-art-000442",
+    "L-010": "ALC1737-art-000443",
+    "L-011": "ALC1737-art-000444",
+    "L-012": "ALC1737-art-000445",
+    "L-013": "ALC1737-art-000446",
+    "R-009": "ALC1737-art-000447",
+    "R-014": "ALC1737-art-000448"
+  },
+  "edgeContext": {
+    "fromPreviousPage": "p162 L-001 begins fresh selected `Media coſa la mitad. Najucu.`; p161 R-016 is unresolved fragmentary material and no transpage continuation is asserted.",
+    "toNextPage": "p162 R-019 ends with a distinct `Moverſe` article candidate. p163 L-001 begins fresh `Mucho. Hibua.`; no long continuation is asserted."
+  },
+  "knownStructuralFeatures": [
+    {
+      "candidateId": "ALC1737-vcand-p162-L-006",
+      "assessment": "merged_articles",
+      "linkedArticleIds": ["ALC1737-art-000438", "ALC1737-art-000439"],
+      "note": "Begins selected `Melon. Manari.` and absorbs the distinct selected start `Memoria. Aubuate.`."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p162-L-020",
+      "assessment": "ambiguous_article_start",
+      "note": "Canonical geometry supports a new boundary, but OCR is too degraded to recover a reliable guide; retain as article/ambiguous without promotion."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p162-R-011",
+      "assessment": "unresolved_form_only_fragment",
+      "note": "Candidate contains only `Mahahuene.` without a recoverable guide. It may belong to a lost or omitted Miedo-related guide, but available evidence does not justify assigning it to R-010 or inventing a missing article."
+    }
+  ],
+  "knownMissedStarts": [
+    {
+      "visibleStartRaw": "Memoria. Aubuate.",
+      "linkedArticleId": "ALC1737-art-000439",
+      "missType": "inside_candidate_group",
+      "containingCandidateId": "ALC1737-vcand-p162-L-006"
+    }
+  ],
+  "evidenceLimits": {
+    "selectedLayerIsCoverageExpectation": false,
+    "directFacsimileInspectedThisPass": false,
+    "visibleStartCensusExhaustive": false,
+    "metricsAllowed": false,
+    "reason": "One selected internal missed start is demonstrated, R-011 remains structurally unresolved, and other damaged OCR groups lack independent anchors. No complete denominator is asserted."
+  },
+  "pageStatus": {
+    "candidateReconciliation": "ready_for_conservative_full_page_materialization",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial_anchor_layer",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
