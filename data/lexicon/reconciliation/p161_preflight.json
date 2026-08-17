@@ -1,0 +1,97 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 161,
+  "stage": "preflight",
+  "candidateInventory": {
+    "total": 33,
+    "left": 17,
+    "right": 16,
+    "canonicalInventoryTotal": 2072,
+    "boundaryMethod": "hybrid_margin_mode_v0.2"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p161_selected_articles.jsonl",
+    "preExistingArticles": 15,
+    "articleIdRange": ["ALC1737-art-000419", "ALC1737-art-000433"],
+    "nonExhaustive": true,
+    "humanVerified": false
+  },
+  "selectedCandidateAlignment": {
+    "L-002": "ALC1737-art-000419",
+    "L-004": "ALC1737-art-000420",
+    "L-005": "ALC1737-art-000421",
+    "L-006": "ALC1737-art-000422",
+    "L-008": "ALC1737-art-000423",
+    "L-009": "ALC1737-art-000424",
+    "L-010": "ALC1737-art-000425",
+    "L-011": "ALC1737-art-000426",
+    "L-012": "ALC1737-art-000427",
+    "L-013": "ALC1737-art-000428",
+    "R-004": "ALC1737-art-000432",
+    "R-008": "ALC1737-art-000433"
+  },
+  "edgeContext": {
+    "fromPreviousPage": "p161 L-001 (`Qobobohftanhuante`) is the form-only continuation of p160 R-026 (`Latir la vena, ò el corazón`). p161 L-002 begins fresh `Lavar`.",
+    "toNextPage": "p162 L-001 begins fresh `Media coſa la mitad. Najucu.`. The fragmentary bottom-right p161 material does not justify a long continuation into p162."
+  },
+  "knownStructuralFeatures": [
+    {
+      "candidateId": "ALC1737-vcand-p161-L-001",
+      "assessment": "continuation_from_previous_page",
+      "note": "Form-only continuation of p160 R-026; not a fresh p161 lexical start."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p161-L-014",
+      "assessment": "merged_articles",
+      "note": "Begins a fresh `Levantar algo del suelo` article and absorbs selected `Lengua de buey. Buabuaſo.` (000429)."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p161-R-015",
+      "assessment": "ambiguous_article_start",
+      "note": "Geometry supports a new boundary, but OCR does not preserve a recoverable guide; retain as article with ambiguous boundary and no promotion."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p161-R-016",
+      "assessment": "unresolved_fragment",
+      "note": "Tiny bottom fragment cannot be responsibly classified as article, continuation, paratext, or false positive. p162 opens fresh in M, so no transpage continuation is asserted."
+    }
+  ],
+  "knownMissedStarts": [
+    {
+      "visibleStartRaw": "Lengua de buey. Buabuaſo.",
+      "linkedArticleId": "ALC1737-art-000429",
+      "missType": "inside_candidate_group",
+      "containingCandidateId": "ALC1737-vcand-p161-L-014"
+    },
+    {
+      "visibleStartRaw": "Libro. Lo miſmo.",
+      "linkedArticleId": "ALC1737-art-000430",
+      "missType": "page_or_column_edge",
+      "containingCandidateId": null,
+      "position": "after L-017 (`Liar`) and before right-column R-001"
+    },
+    {
+      "visibleStartRaw": "Limon. Lo miſmo.",
+      "linkedArticleId": "ALC1737-art-000431",
+      "missType": "page_or_column_edge",
+      "containingCandidateId": null,
+      "position": "after L-017 (`Liar`) and before right-column R-001"
+    }
+  ],
+  "evidenceLimits": {
+    "selectedLayerIsCoverageExpectation": false,
+    "directFacsimileInspectedThisPass": false,
+    "visibleStartCensusExhaustive": false,
+    "metricsAllowed": false,
+    "reason": "Three selected starts are known misses, R-016 remains structurally unresolved, and the selected layer is not exhaustive. No complete performance denominator is available."
+  },
+  "pageStatus": {
+    "candidateReconciliation": "ready_for_conservative_full_page_materialization",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial_anchor_layer",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
