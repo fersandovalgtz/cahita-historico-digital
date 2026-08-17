@@ -1,0 +1,60 @@
+name: OCR ensemble p145
+
+on:
+  push:
+    branches:
+      - work/p145-crops-verified
+
+permissions:
+  contents: write
+
+jobs:
+  ocr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify source and run independent OCR passes
+        run: |
+          grep -F 'PDF page selected: 145' .tmp_facsimile/p145_target/MANIFEST.txt
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils python3-pil tesseract-ocr tesseract-ocr-spa >/dev/null
+          rm -rf .tmp_facsimile/p145_ocr_ensemble
+          mkdir -p .tmp_facsimile/p145_ocr_ensemble
+          pdftoppm -f 1 -l 1 -singlefile -png -r 420 .tmp_facsimile/p145_target/p145-target.pdf /tmp/p145
+          python - <<'PY'
+          from PIL import Image, ImageOps, ImageEnhance
+          img=Image.open('/tmp/p145.png').convert('L')
+          w,h=img.size
+          # Avoid column overlap in OCR passes.
+          left=img.crop((0,0,int(w*0.50),h))
+          right=img.crop((int(w*0.50),0,w,h))
+          for name,im in [('left',left),('right',right)]:
+              # Pass A: grayscale contrast-enhanced.
+              a=ImageEnhance.Contrast(im).enhance(1.7)
+              a.save(f'/tmp/{name}_gray.png')
+              # Pass B: autocontrast + conservative binary threshold.
+              b=ImageOps.autocontrast(im)
+              b=b.point(lambda x: 255 if x>178 else 0)
+              b.save(f'/tmp/{name}_bin.png')
+          PY
+          for col in left right; do
+            tesseract "/tmp/${col}_gray.png" ".tmp_facsimile/p145_ocr_ensemble/${col}_gray_psm4" -l spa --psm 4 preserve_interword_spaces=1 2>/dev/null
+            tesseract "/tmp/${col}_gray.png" ".tmp_facsimile/p145_ocr_ensemble/${col}_gray_psm6" -l spa --psm 6 preserve_interword_spaces=1 2>/dev/null
+            tesseract "/tmp/${col}_bin.png" ".tmp_facsimile/p145_ocr_ensemble/${col}_bin_psm4" -l spa --psm 4 preserve_interword_spaces=1 2>/dev/null
+          done
+          {
+            echo 'sourcePdf=.tmp_facsimile/p145_target/p145-target.pdf'
+            echo 'verifiedPdfPage=145'
+            echo 'renderDpi=420'
+            echo 'ocrEngine=tesseract'
+            tesseract --version | head -n 1
+            sha256sum .tmp_facsimile/p145_target/p145-target.pdf
+            sha256sum .tmp_facsimile/p145_ocr_ensemble/*.txt
+          } > .tmp_facsimile/p145_ocr_ensemble/MANIFEST.txt
+      - name: Commit OCR ensemble
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A .tmp_facsimile/p145_ocr_ensemble
+          git commit -m "chore: añadir ensemble OCR facsimilar temporal p145"
+          git push
