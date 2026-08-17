@@ -33,7 +33,8 @@ A 2026-08-16:
 - la página **149** tiene sus **61 candidatos canónicos reconciliados**: 55 `article`, 5 `continuation` y 1 `unresolved`; conserva 40 fronteras `pending_promotion`. El candidato L-019 permanece irresuelto por intercalación OCR en el bloque `Calentura`;
 - la página **150** tiene sus **56 candidatos canónicos reconciliados**: 55 `article` y 1 `unresolved`; los 15 artículos seleccionados `ALC1737-art-000254`–`000268` quedaron enlazados, permanecen 40 fronteras `pending_promotion` y el censo visible todavía no es exhaustivo;
 - la página **151** tiene sus **50 candidatos canónicos reconciliados**: 47 `article` y 3 `continuation`; los 15 artículos seleccionados `ALC1737-art-000269`–`000283` quedaron enlazados mediante 13 candidatos, con L-002 modelado como `merged_articles`; permanecen 34 fronteras `pending_promotion` y el censo visible sigue no exhaustivo;
-- las páginas **152–177** ya poseen representación lexicográfica estructurada, pero su reconciliación exhaustiva página por página sigue pendiente;
+- la página **152** tiene sus **52 candidatos canónicos reconciliados**: 52 `article`, sin continuaciones ni candidatos estructuralmente irresueltos; los 15 artículos seleccionados `ALC1737-art-000284`–`000298` quedaron enlazados, permanecen 37 fronteras `pending_promotion` y el censo visible sigue no exhaustivo;
+- las páginas **153–177** ya poseen representación lexicográfica estructurada, pero su reconciliación exhaustiva página por página sigue pendiente;
 - no existen objetos `human_verified` y la política vigente no contempla intervención humana independiente;
 - las lecturas inciertas se conservan como tales y no se completan por inferencia silenciosa.
 
@@ -74,7 +75,7 @@ La ausencia de una capa humana no autoriza a fortalecer estas lecturas. Cuando l
 
 ## Próximo frente científico
 
-En **p.145** quedan 20 fronteras `pending_promotion` y 3 candidatos `unresolved`; en **p.146** quedan 22 `pending_promotion`; en **p.147** quedan 36 `pending_promotion`; en **p.148** quedan 29 `pending_promotion`; en **p.149** quedan 40 `pending_promotion` y 1 candidato `unresolved`; en **p.150** quedan 40 `pending_promotion` y 1 candidato estructural `unresolved`; y en **p.151** quedan 34 `pending_promotion`. Las páginas 145–151 tienen reconciliación de candidatos completa, pero sus censos visibles aún no se consideran exhaustivos. El siguiente frente geométrico es la **página 152**, con 52 candidatos canónicos —28 izquierda y 24 derecha—; se mantendrá la misma separación entre frontera estructural confirmada, promoción curatorial e incertidumbre textual.
+En **p.145** quedan 20 fronteras `pending_promotion` y 3 candidatos `unresolved`; en **p.146** quedan 22 `pending_promotion`; en **p.147** quedan 36 `pending_promotion`; en **p.148** quedan 29 `pending_promotion`; en **p.149** quedan 40 `pending_promotion` y 1 candidato `unresolved`; en **p.150** quedan 40 `pending_promotion` y 1 candidato estructural `unresolved`; en **p.151** quedan 34 `pending_promotion`; y en **p.152** quedan 37 `pending_promotion`. Las páginas 145–152 tienen reconciliación de candidatos completa, pero sus censos visibles aún no se consideran exhaustivos. El siguiente frente geométrico es la **página 153**, con 51 candidatos canónicos —25 izquierda y 26 derecha—; se mantendrá la misma separación entre frontera estructural confirmada, promoción curatorial e incertidumbre textual.
 
 ## Cita
 
