@@ -1,0 +1,88 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 161,
+  "recordType": "terminal_region_evidence",
+  "recordedAt": "2026-08-17",
+  "candidateSource": "data/lexicon/candidates/p161_candidates.jsonl",
+  "region": {
+    "candidateIds": [
+      "ALC1737-vcand-p161-R-014",
+      "ALC1737-vcand-p161-R-015",
+      "ALC1737-vcand-p161-R-016"
+    ],
+    "canonicalRows": [
+      {
+        "candidateId": "ALC1737-vcand-p161-R-014",
+        "startY": 224.791,
+        "rawLines": ["Lachar", "Bjg^J"]
+      },
+      {
+        "candidateId": "ALC1737-vcand-p161-R-015",
+        "startY": 262.781,
+        "rawLines": ["P™ \"\"oteóla $$*Í", "M ha em U."]
+      },
+      {
+        "candidateId": "ALC1737-vcand-p161-R-016",
+        "startY": 282.597,
+        "rawLines": ["t-", "'i"]
+      }
+    ]
+  },
+  "primaryWitnessOcrEvidence": {
+    "provider": "Internet Archive",
+    "identifier": "artedelalenguaca00gonz",
+    "fullTextDerivativeUri": "https://archive.org/stream/artedelalenguaca00gonz/artedelalenguaca00gonz_djvu.txt",
+    "observedSequenceSummary": [
+      "Loro grande",
+      "Loro otro de cabeza amarilla-like guide",
+      "Loro pequeño por su especie-like guide",
+      "severely interleaved/garbled lower-L material",
+      "fresh `Media coſa la mitad` opening on the following digital page"
+    ],
+    "layoutAssessment": "The OCR linearization visibly interleaves two-column material in the terminal L region. It confirms that lexical material continues below the better-preserved Loro entries, but does not recover a trustworthy guide/form assignment for R-016.",
+    "authority": "same_witness_machine_ocr_for_structure_only"
+  },
+  "secondaryControlEvidence": {
+    "sourceId": "BUE1890",
+    "authority": "secondary_only",
+    "orderedLowerLSequence": [
+      "Loro grande",
+      "Loro otro de cabeza amarilla",
+      "Loro pequeño por su especie",
+      "Loro más pequeño",
+      "Loro huacamaya",
+      "Lucerna que anda de noche",
+      "Lucero",
+      "Lucir",
+      "Luchar",
+      "Lugar haber"
+    ],
+    "use": "Demonstrates that additional lexical material belongs to the lower-L region before the transition to M. It is not sufficient to map the tiny ALC1737 R-016 fragment to a unique article, and no BUE1890 form is transferred into ALC1737."
+  },
+  "decision": {
+    "candidateId": "ALC1737-vcand-p161-R-016",
+    "classification": "unresolved",
+    "boundaryAssessment": "ambiguous",
+    "articleLinkStatus": "not_applicable",
+    "decisionType": "explicit_conservative_nonresolution",
+    "rationale": "R-016 is a tiny same-margin fragment with no recoverable guide or form. Primary OCR confirms severe two-column interleaving and secondary control confirms several lower-L entries in the region, but the available evidence does not uniquely establish whether R-016 is continuation text, a damaged lexical start, or layout residue. Reclassification would therefore be speculative."
+  },
+  "neighborState": {
+    "R015": "article / ambiguous / pending_promotion",
+    "R016": "unresolved / ambiguous / not_applicable",
+    "p162Opening": "fresh M-section start; no transpage continuation asserted"
+  },
+  "epistemicGuards": [
+    "This record intentionally preserves an unresolved candidate rather than forcing structural closure.",
+    "BUE1890 is used only to establish regional sequence; no 1890 guide/form is substituted into ALC1737.",
+    "No lexical article is created or promoted by this evidence record.",
+    "The primary OCR derivative is not treated as diplomatic transcription authority.",
+    "humanVerified remains false."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "method": "Conservative terminal-region review using materialized canonical geometry, same-witness OCR sequence and explicit BUE1890 secondary sequence control; unresolved state retained because evidence is non-unique."
+  }
+}
