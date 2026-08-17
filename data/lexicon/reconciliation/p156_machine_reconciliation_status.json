@@ -1,0 +1,89 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 156,
+  "pageStatus": {
+    "candidateReconciliation": "complete",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 52,
+    "left": 26,
+    "right": 26,
+    "classification": {
+      "article": 52,
+      "continuation": 0,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 51,
+      "oversegmented": 0,
+      "undersegmented": 0,
+      "merged_articles": 1,
+      "ambiguous": 0,
+      "not_applicable": 0
+    }
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000344",
+      "ALC1737-art-000358"
+    ],
+    "articleCandidateRecordsLinked": 14,
+    "structuredArticlesLinked": 15,
+    "selectedArticlesUnlinked": 0,
+    "mergedCandidateId": "ALC1737-vcand-p156-L-001",
+    "mergedSelectedArticleIds": [
+      "ALC1737-art-000344",
+      "ALC1737-art-000345"
+    ]
+  },
+  "promotion": {
+    "articleCandidatesPendingPromotion": 38,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045
+  },
+  "visibleStartEvidence": {
+    "exhaustive": false,
+    "knownVisibleStartsMinimum": 53,
+    "knownMissedStartRecords": 1,
+    "knownMergedInternalStarts": 1,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "The 52 article candidates plus one distinct selected start absorbed inside L-001 establish at least 53 starts. The selected layer is non-exhaustive, so no complete denominator or performance metric is asserted."
+  },
+  "physicalContinuities": [
+    {
+      "from": "ALC1737-vcand-p155-R-026",
+      "to": "ALC1737-vcand-p156-L-001",
+      "type": "catchword_to_article",
+      "note": "Damaged p155 edge material anticipates fresh p156 `Enſeñar`; L-001 is not classified as a continuation."
+    },
+    {
+      "from": "ALC1737-vcand-p156-R-026",
+      "to": "ALC1737-vcand-p157-L-001",
+      "type": "fresh_page_transition",
+      "note": "p156 `Eſquina` is structurally distinct and p157 opens with fresh Eſt- material; no article continuation is asserted."
+    }
+  ],
+  "structuralNotes": [
+    "L-001 is a merged-start region containing selected 000344 and 000345.",
+    "L-025 has truncated OCR but remains a structurally distinct article start; no inferred continuation is created."
+  ],
+  "evidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "canonicalCandidateInventoryCount": 2072,
+    "selectedP156LayerUsedAsAnchor": true,
+    "p155AndP157CandidateLayersUsedForPageEdges": true,
+    "directFacsimileAvailableThisPass": false,
+    "policy": "Known internal misses are separated from candidate reconciliation; OCR damage does not by itself alter structurally supported boundaries; metrics remain withheld without exhaustive census."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
