@@ -1,0 +1,68 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 172,
+  "stage": "preflight",
+  "candidateInventory": {
+    "total": 55,
+    "left": 27,
+    "right": 28,
+    "canonicalInventoryTotal": 2072,
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p172_selected_articles.jsonl",
+    "articleIdRange": ["ALC1737-art-000584", "ALC1737-art-000598"],
+    "count": 15,
+    "exhaustive": false,
+    "humanVerified": false
+  },
+  "selectedAnchorAlignmentHypothesis": [
+    {"candidateId":null,"articleIds":["ALC1737-art-000584"],"assessment":"selected_start_missing_at_page_edge","note":"`Relampago. Beroitcme.` is a fresh top-of-page selected start before canonical L-001 (`Redaño`)."},
+    {"candidateId":"ALC1737-vcand-p172-L-001","articleIds":["ALC1737-art-000585"]},
+    {"candidateId":"ALC1737-vcand-p172-L-002","articleIds":["ALC1737-art-000586"]},
+    {"candidateId":"ALC1737-vcand-p172-L-003","articleIds":["ALC1737-art-000587"]},
+    {"candidateId":"ALC1737-vcand-p172-L-004","articleIds":["ALC1737-art-000588"]},
+    {"candidateId":"ALC1737-vcand-p172-L-005","articleIds":["ALC1737-art-000589"]},
+    {"candidateId":"ALC1737-vcand-p172-L-006","articleIds":["ALC1737-art-000590"]},
+    {"candidateId":"ALC1737-vcand-p172-L-007","articleIds":["ALC1737-art-000591"]},
+    {"candidateId":"ALC1737-vcand-p172-L-009","articleIds":["ALC1737-art-000592"]},
+    {"candidateId":"ALC1737-vcand-p172-L-010","articleIds":["ALC1737-art-000593"]},
+    {"candidateId":"ALC1737-vcand-p172-L-011","articleIds":["ALC1737-art-000594"]},
+    {"candidateId":"ALC1737-vcand-p172-L-012","articleIds":["ALC1737-art-000595"]},
+    {"candidateId":"ALC1737-vcand-p172-L-014","articleIds":["ALC1737-art-000596"]},
+    {"candidateId":"ALC1737-vcand-p172-L-016","articleIds":["ALC1737-art-000597"]},
+    {"candidateId":"ALC1737-vcand-p172-L-017","articleIds":["ALC1737-art-000598"]}
+  ],
+  "structuralHypothesis": {
+    "classification": {"article": 55, "continuation": 0, "paratext": 0, "false_positive": 0, "unresolved": 0},
+    "knownMergedRegions": ["ALC1737-vcand-p172-R-028"],
+    "knownSelectedMisses": [
+      {"articleId":"ALC1737-art-000584","visibleStartRaw":"Relampago. Beroitcme.","containingCandidateId":null,"missType":"page_or_column_edge"}
+    ],
+    "minimumVisibleStartsAccounting": {
+      "knownMinimum": 56,
+      "rationale": "All 55 canonical rows are compatible with fresh article starts. Selected 000584 adds one page-top start outside the inventory: 55 + 1 = 56. The second Rubio-like unit inside R-028 is OCR-only and is not added to the missed-start census without an independent selected/direct-collation anchor."
+    },
+    "note": "R-028 begins a distinct `Ruido hazer el agua` article and ends with a separate `Rubio`-like guide unit before the alphabet transitions to Rueda/S on p173; retained `merged_articles` without synthesizing or promoting the internal article."
+  },
+  "pageEdges": {
+    "fromPrevious": {"status":"fresh_top_selected_start_missed","note":"P171 does not continue lexically into p172. Selected 000584 (`Relampago`) is a fresh top-of-page start without its own canonical boundary; L-001 begins selected 000585 (`Redaño`)."},
+    "toNext": {"status":"fresh_next_page_top_selected_start_missed","lastCandidate":"ALC1737-vcand-p172-R-028","nextPage":173,"nextPageCandidateInventory":{"total":42,"left":20,"right":22},"nextFirstSelectedArticle":"ALC1737-art-000599","nextFirstSelectedOpening":"Rueda. Buſca redonda coſa.","nextFirstCandidate":"ALC1737-vcand-p173-L-001","nextFirstCandidateOpening":"Sabio, ò ſabidor...","note":"R-028 remains within the R sequence on p172. P173 selected 000599 (`Rueda`) is a fresh top-of-page start before canonical L-001 (`Sabio`); no p172→p173 lexical continuation is asserted."}
+  },
+  "evidenceLimits": {
+    "directFacsimileInspectedThisPass": false,
+    "selectedLayerIsCoverageExpectation": false,
+    "ocrOnlyInternalUnitsPromotable": false,
+    "metricsAllowed": false,
+    "reasonMetricsWithheld": "The selected layer is non-exhaustive and R-028 contains an additional unanchored internal guide-like unit; a complete visible-start denominator is not established."
+  },
+  "pageStatus": {
+    "candidateReconciliation": "preflight_complete_pending_materialization",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial_anchor_hypothesis",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
