@@ -1,0 +1,125 @@
+name: P148 Generate Reconciliation
+
+on:
+  push:
+    branches:
+      - p148-machine-reconciliation
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: p148-machine-reconciliation
+      - name: Generate reconciliation artifacts and correct selected column metadata
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          recdir = Path('data/lexicon/reconciliation')
+          provdir = Path('data/lexicon/provenance')
+          provdir.mkdir(parents=True, exist_ok=True)
+
+          left_links = {1:['ALC1737-art-000224'],2:['ALC1737-art-000225'],3:['ALC1737-art-000226'],5:['ALC1737-art-000227'],6:['ALC1737-art-000228'],7:['ALC1737-art-000229'],10:['ALC1737-art-000230'],14:['ALC1737-art-000231'],15:['ALC1737-art-000232'],16:['ALC1737-art-000233'],17:['ALC1737-art-000234'],18:['ALC1737-art-000235']}
+          right_links = {5:['ALC1737-art-000236'],8:['ALC1737-art-000237'],20:['ALC1737-art-000238']}
+
+          def record(col, i, links, assessment='exact', note=None):
+              linked = links.get(i, [])
+              if note is None:
+                  if linked:
+                      note = f'Aligned to pre-existing selected article {linked[0]}.'
+                  else:
+                      note = 'Distinct lexical start; retained pending because raw OCR alone is not a sufficient transcription anchor for promotion.'
+              return {
+                  'candidateId': f'ALC1737-vcand-p148-{col}-{i:03d}',
+                  'sourceId': 'ALC1737',
+                  'sourcePageDigital': 148,
+                  'column': 'left' if col == 'L' else 'right',
+                  'classification': 'article',
+                  'boundaryAssessment': assessment,
+                  'linkedArticleIds': linked,
+                  'articleLinkStatus': 'linked' if linked else 'pending_promotion',
+                  'editorialNote': note,
+                  'reviewStatus': 'machine_corrected_unverified',
+                  'humanVerified': False,
+                  'provenance': {
+                      'derivedFrom': 'canonical-v0.2 candidate inventory; corrected p148 selected article layer where linked; p149 opening for page-edge context',
+                      'agent': 'GPT-5.6 Sol machine reconciliation',
+                      'method': 'AI-assisted structural reconciliation from canonical geometry/OCR and pre-existing selected anchors; no independent human verification',
+                      'processedAt': None
+                  }
+              }
+
+          left = [record('L', i, left_links) for i in range(1,24)]
+          right = []
+          for i in range(1,22):
+              assessment = 'undersegmented' if i in (7,8,21) else 'exact'
+              note = None
+              if i == 7:
+                  note = 'Starts the `Caerſe las ojas del árbol` entry; grouping contains stray OCR fragments (`Muu`, `Hue`) not promoted or reassigned without stronger evidence.'
+              elif i == 8:
+                  note = 'Starts selected `Caer generalmente`; grouping also contains trailing `Hicatana`-like material associated with adjacent fall-entry microstructure.'
+              elif i == 21:
+                  note = 'Starts `Calabaza generalmente`; trailing `Cala-` is treated as damaged catchword material anticipating the fresh p149 L-001 article `Calabaza pequeña tierna`, not as a second p148 start.'
+              right.append(record('R', i, right_links, assessment, note))
+
+          for name, rows in [('p148_left_reconciliation.jsonl', left), ('p148_right_reconciliation.jsonl', right)]:
+              (recdir/name).write_text(''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in rows), encoding='utf-8')
+
+          # Correct selected-layer column metadata for 000231–000235. Canonical geometry
+          # places Cabar→Cabeza in the left column; their prior right-column labels were metadata errors.
+          selected_path = Path('data/lexicon/articles/p148_selected_articles.jsonl')
+          rows = [json.loads(line) for line in selected_path.read_text(encoding='utf-8').splitlines() if line.strip()]
+          corrections = []
+          target_ids = {f'ALC1737-art-{n:06d}' for n in range(231,236)}
+          for row in rows:
+              if row['articleId'] in target_ids:
+                  old_column = row.get('column')
+                  row['column'] = 'left'
+                  prov = row.setdefault('provenance', {})
+                  old_derived = prov.get('derivedFrom')
+                  if isinstance(old_derived, str):
+                      prov['derivedFrom'] = old_derived.replace(':right', ':left')
+                  method = prov.get('method') or 'AI-assisted direct visual collation against facsimile'
+                  prov['method'] = method + '; column metadata corrected by alignment to canonical-v0.2 page geometry'
+                  note = row.get('editorialNote') or ''
+                  row['editorialNote'] = (note + ' Column metadata corrected from right to left by canonical page-geometry alignment; lexical transcription unchanged.').strip()
+                  corrections.append({
+                      'articleId': row['articleId'], 'sourcePageDigital': 148,
+                      'field': 'column', 'oldValue': old_column, 'newValue': 'left',
+                      'oldDerivedFrom': old_derived, 'newDerivedFrom': prov.get('derivedFrom'),
+                      'reason': 'Canonical-v0.2 candidate geometry places the matching Cabar→Cabeza starts at the p148 left-column modal margin; no competing right-column occurrence exists.',
+                      'reviewStatus': 'machine_corrected_unverified', 'humanVerified': False
+                  })
+          selected_path.write_text(''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in rows), encoding='utf-8')
+          (provdir/'p148_column_metadata_corrections.jsonl').write_text(''.join(json.dumps(r, ensure_ascii=False) + '\n' for r in corrections), encoding='utf-8')
+
+          status = {
+              'sourceId':'ALC1737','sourcePageDigital':148,
+              'pageStatus':{'candidateReconciliation':'complete','visibleStartCensus':'not_exhaustive','promotionLinkage':'partial','technicalClosure':False,'humanVerificationPlanned':False},
+              'candidateInventory':{'total':44,'left':23,'right':21,'classification':{'article':44,'continuation':0,'paratext':0,'false_positive':0,'unresolved':0},'boundaryAssessment':{'exact':41,'undersegmented':3,'merged_articles':0,'oversegmented':0,'ambiguous':0,'not_applicable':0}},
+              'selectedLayer':{'preExistingArticles':15,'articleIdRange':['ALC1737-art-000224','ALC1737-art-000238'],'candidateRecordsLinked':15,'structuredArticlesLinkedFromCandidates':15,'selectedArticlesUnlinked':0,'correctedColumnMetadataArticleIds':sorted(target_ids),'columnCountsAfterCorrection':{'left':12,'right':3}},
+              'promotion':{'articleCandidatesPendingPromotion':29,'newPromotionsThisPass':0,'corpusTotalAfterPass':1045},
+              'visibleStartEvidence':{'exhaustive':False,'knownVisibleStartsMinimum':44,'knownMissedStartRecords':0,'precision':None,'recall':None,'f1':None,'reasonMetricsWithheld':'All 44 candidates are classified and all 15 selected anchors align, but the selected layer cannot establish that no additional visible starts were missed. Metrics are withheld without a full-page visible-start census.'},
+              'physicalContinuities':[{'from':'ALC1737-vcand-p147-R-025','to':'ALC1737-vcand-p148-L-001','type':'catchword_to_article','note':'The damaged p147 catchword anticipates selected p148 L-001 `Bruñidor`; L-001 is a fresh article.'},{'from':'ALC1737-vcand-p148-R-021','to':'ALC1737-vcand-p149-L-001','type':'article_with_trailing_catchword','note':'R-021 starts `Calabaza generalmente`; trailing `Cala-` anticipates the fresh p149 article `Calabaza pequeña tierna` (selected 000239), whose form is split across p149 L-001/L-002 candidate geometry.'}],
+              'metadataCorrections':{'count':5,'path':'data/lexicon/provenance/p148_column_metadata_corrections.jsonl','scope':'column/provenance only; lexical transcription unchanged'},
+              'evidence':{'canonicalCandidateInventoryVerified':True,'canonicalCandidateInventoryCount':2072,'selectedP148LayerUsedAsAnchor':True,'p149OpeningAndSelectedLayerUsedForPageEdge':True,'directFacsimileAvailableThisPass':False,'policy':'Structural and spatial metadata decisions may be corrected from convergent machine evidence; uncertain lexical text remains unstrengthened.'},
+              'reviewStatus':'machine_corrected_unverified','humanVerified':False
+          }
+          (recdir/'p148_machine_reconciliation_status.json').write_text(json.dumps(status, ensure_ascii=False, indent=2)+'\n', encoding='utf-8')
+          PY
+      - name: Remove temporary workflows
+        run: |
+          rm -f .github/workflows/p148-candidate-inspect.yml .github/workflows/p148-generate-reconciliation.yml
+      - name: Commit generated artifacts
+        run: |
+          git config user.name 'Fernando Sandoval'
+          git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
+          git add data/lexicon .github/workflows
+          git commit -m 'data: reconcile p148 and correct selected column metadata'
+          git push origin HEAD:p148-machine-reconciliation
