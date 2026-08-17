@@ -2,7 +2,7 @@
   "sourceId": "ALC1737",
   "sourcePageDigital": 150,
   "pageStatus": {
-    "candidateReconciliation": "complete_with_explicit_unresolved",
+    "candidateReconciliation": "complete",
     "visibleStartCensus": "not_exhaustive",
     "promotionLinkage": "partial",
     "technicalClosure": false,
@@ -16,16 +16,16 @@
       "article": 55,
       "continuation": 0,
       "paratext": 0,
-      "false_positive": 0,
-      "unresolved": 1
+      "false_positive": 1,
+      "unresolved": 0
     },
     "boundaryAssessment": {
       "exact": 54,
       "oversegmented": 0,
       "undersegmented": 1,
       "merged_articles": 0,
-      "ambiguous": 1,
-      "not_applicable": 0
+      "ambiguous": 0,
+      "not_applicable": 1
     }
   },
   "selectedLayer": {
@@ -50,7 +50,7 @@
     "precision": null,
     "recall": null,
     "f1": null,
-    "reasonMetricsWithheld": "Candidate reconciliation identifies 55 article starts and one unresolved candidate. The selected anchor layer is not exhaustive and cannot prove absence of additional missed starts, including within damaged OCR; no performance denominator is asserted."
+    "reasonMetricsWithheld": "Candidate reconciliation now contains 55 article starts and one demonstrated cross-column/layout false positive with zero unresolved candidate boundaries. The selected anchor layer remains non-exhaustive and cannot prove absence of additional missed starts; no performance denominator is asserted."
   },
   "physicalContinuities": [
     {
@@ -72,17 +72,22 @@
       "note": "R-030 contains a complete `Como...` start plus trailing `Com-` catchword/page-edge material. p151 L-001 begins a fresh `Compadecerſe` candidate; no long article continuation is asserted."
     }
   ],
-  "unresolvedNotes": [
-    "R-023 remains unresolved because OCR interleaves damaged material between the `Colgar algo` and `Colmar` region; the evidence does not establish continuation, layout noise, or an additional lexical start."
-  ],
+  "unresolvedNotes": [],
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
     "selectedP150LayerUsedAsAnchor": true,
     "p149AndP151CandidateLayersUsedForPageEdges": true,
     "directFacsimileAvailableThisPass": false,
-    "policy": "Structural decisions may be closed from convergent machine evidence; ambiguous boundary microstructure remains unresolved and uncertain lexical text is not strengthened."
+    "policy": "Candidate-level structure may be resolved from convergent canonical geometry, duplicated cross-column OCR fragments and explicit secondary sequence control. Uncertain lexical text is not strengthened or promoted, and the visible-start census remains non-exhaustive.",
+    "structuralResolutionRecord": "p150_structural_resolution_2026-08-17.json",
+    "materializedCandidateView": "data/lexicon/candidates/p150_candidates.jsonl",
+    "crossColumnBleedResolved": true,
+    "bue1890SecondarySequenceControlUsed": true
   },
   "reviewStatus": "machine_corrected_unverified",
-  "humanVerified": false
+  "humanVerified": false,
+  "resolvedThisPass": [
+    "R-023 is resolved as a false_positive layout/OCR artifact. Its `Bu...` and `Cunam...` fragments duplicate left-column L-020 material at the same vertical region, while `apuna` associates with the neighboring `Colmar` region represented by R-024 and corroborated only at sequence level by BUE1890. No ALC1737 lexical article or form is promoted from this decision."
+  ]
 }
