@@ -1,0 +1,102 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 153,
+  "pageStatus": {
+    "candidateReconciliation": "complete_with_explicit_unresolved",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 51,
+    "left": 25,
+    "right": 26,
+    "classification": {
+      "article": 46,
+      "continuation": 1,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 4
+    },
+    "boundaryAssessment": {
+      "exact": 40,
+      "oversegmented": 1,
+      "undersegmented": 4,
+      "merged_articles": 1,
+      "ambiguous": 4,
+      "not_applicable": 1
+    }
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000299",
+      "ALC1737-art-000313"
+    ],
+    "articleCandidateRecordsLinked": 12,
+    "structuredArticlesLinked": 15,
+    "continuationCandidateRecordsLinked": 1,
+    "selectedStartsOutsideCandidateInventory": 2,
+    "selectedArticlesUnlinked": 0,
+    "mergedCandidateId": "ALC1737-vcand-p153-L-005",
+    "mergedSelectedArticleIds": [
+      "ALC1737-art-000302",
+      "ALC1737-art-000303"
+    ]
+  },
+  "promotion": {
+    "articleCandidatesPendingPromotion": 34,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045
+  },
+  "visibleStartEvidence": {
+    "exhaustive": false,
+    "knownVisibleStartsMinimum": 49,
+    "knownMissedStartRecords": 2,
+    "knownMergedInternalStarts": 1,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "The 46 confirmed article candidates, one additional selected start absorbed inside merged L-005, and two demonstrated top-right false negatives establish at least 49 starts. R-003–R-006 remain structurally unresolved and the selected layer is non-exhaustive, so no complete denominator or performance metric is asserted."
+  },
+  "physicalContinuities": [
+    {
+      "from": "ALC1737-vcand-p152-R-024",
+      "to": "ALC1737-vcand-p153-L-001",
+      "type": "page_edge_context",
+      "note": "p152 begins `Cuñado de muger...`; p153 L-001 is fresh selected `Cuñado de hombre. Mocari.` No long continuation is asserted."
+    },
+    {
+      "from": "ALC1737-miss-p153-R-002",
+      "to": "ALC1737-vcand-p153-R-001",
+      "type": "missed_start_to_continuation",
+      "note": "Selected `Dar coſas largas como palo` starts above R-001; R-001 preserves its form `Tebec. amaca.`."
+    },
+    {
+      "from": "ALC1737-vcand-p153-R-002",
+      "to": "ALC1737-vcand-p153-R-003",
+      "type": "article_text_spills_into_unresolved_region",
+      "note": "Selected `Dar coſas redondas, y mazizas` begins R-002; its completion occupies the opening of R-003, which also contains additional damaged guide material."
+    },
+    {
+      "from": "ALC1737-vcand-p153-R-026",
+      "to": "ALC1737-vcand-p154-L-001",
+      "type": "catchword_to_article",
+      "note": "Trailing `Desbat-` in R-026 anticipates fresh p154 `Desbaſtar madera. Atapetia.`; it is not a long article continuation."
+    }
+  ],
+  "unresolvedNotes": [
+    "R-003–R-006 form an interleaved damaged Dar-region. R-003 begins with completion of selected article 000311 and then introduces additional guide-like material; R-004–R-006 cannot be separated confidently into article starts versus continuations from OCR alone."
+  ],
+  "evidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "canonicalCandidateInventoryCount": 2072,
+    "selectedP153LayerUsedAsAnchor": true,
+    "p152AndP154LayersUsedForPageEdges": true,
+    "directFacsimileAvailableThisPass": false,
+    "policy": "Demonstrated selected starts outside the candidate inventory are recorded explicitly as known misses; ambiguous OCR microstructure remains unresolved and metrics are withheld without an exhaustive visible-start census."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
