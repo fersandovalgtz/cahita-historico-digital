@@ -1,0 +1,73 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 173,
+  "stage": "preflight",
+  "candidateInventory": {
+    "total": 42,
+    "left": 20,
+    "right": 22,
+    "canonicalInventoryTotal": 2072,
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p173_selected_articles.jsonl",
+    "articleIdRange": ["ALC1737-art-000599", "ALC1737-art-000613"],
+    "count": 15,
+    "exhaustive": false,
+    "humanVerified": false
+  },
+  "selectedAnchorAlignmentHypothesis": [
+    {"candidateId":null,"articleIds":["ALC1737-art-000599"],"assessment":"selected_start_missing_at_page_edge","note":"`Rueda. Buſca redonda coſa.` is a fresh top-of-page selected start before canonical L-001 (`Sabio`)."},
+    {"candidateId":null,"articleIds":["ALC1737-art-000600"],"assessment":"selected_start_missing_at_page_edge","note":"`Saber generalmente. Hunace.` occurs in the selected top sequence before canonical L-001 (`Sabio`) and has no independent canonical boundary."},
+    {"candidateId":"ALC1737-vcand-p173-L-003","articleIds":["ALC1737-art-000601"]},
+    {"candidateId":"ALC1737-vcand-p173-L-004","articleIds":["ALC1737-art-000602"]},
+    {"candidateId":"ALC1737-vcand-p173-L-009","articleIds":["ALC1737-art-000603"]},
+    {"candidateId":"ALC1737-vcand-p173-L-010","articleIds":["ALC1737-art-000604","ALC1737-art-000605"],"assessment":"merged_articles","note":"L-010 contains selected `Saeta. Huihua.` followed by selected `Sahumar. Toporo-hua-utia.`; 000605 lacks an independent canonical boundary."},
+    {"candidateId":"ALC1737-vcand-p173-L-011","articleIds":["ALC1737-art-000606","ALC1737-art-000607"],"assessment":"merged_articles","note":"L-011 contains selected `Sahumerio. Toporo.` followed by selected `Salitral. Ompare.`; 000607 lacks an independent canonical boundary."},
+    {"candidateId":"ALC1737-vcand-p173-L-012","articleIds":["ALC1737-art-000608"]},
+    {"candidateId":"ALC1737-vcand-p173-L-013","articleIds":["ALC1737-art-000609"]},
+    {"candidateId":"ALC1737-vcand-p173-L-017","articleIds":["ALC1737-art-000610"]},
+    {"candidateId":"ALC1737-vcand-p173-L-018","articleIds":["ALC1737-art-000611"]},
+    {"candidateId":"ALC1737-vcand-p173-L-020","articleIds":["ALC1737-art-000612"]},
+    {"candidateId":"ALC1737-vcand-p173-R-017","articleIds":["ALC1737-art-000613"]}
+  ],
+  "structuralHypothesis": {
+    "classification": {"article": 40, "continuation": 2, "paratext": 0, "false_positive": 0, "unresolved": 0},
+    "continuities": [
+      {"from":"ALC1737-vcand-p173-L-001","to":"ALC1737-vcand-p173-L-002","note":"`Sabio, ò ſabidor` begins in L-001 and its Cahita form continues in form-only L-002 (`tne.`)."},
+      {"from":"ALC1737-vcand-p173-R-002","to":"ALC1737-vcand-p173-R-003","note":"The `Sazonar la fruta`-like article/cross-reference begun in R-002 continues in R-003 (`dura eſtar. Abnacha.`)."}
+    ],
+    "knownMergedRegions": ["ALC1737-vcand-p173-L-010", "ALC1737-vcand-p173-L-011", "ALC1737-vcand-p173-R-015"],
+    "knownUndersegmentedOrReadingOrderLeakageRegions": ["ALC1737-vcand-p173-R-018"],
+    "knownSelectedMisses": [
+      {"articleId":"ALC1737-art-000599","visibleStartRaw":"Rueda. Buſca redonda coſa.","containingCandidateId":null,"missType":"page_or_column_edge"},
+      {"articleId":"ALC1737-art-000600","visibleStartRaw":"Saber generalmente. Hunace.","containingCandidateId":null,"missType":"page_or_column_edge"},
+      {"articleId":"ALC1737-art-000605","visibleStartRaw":"Sahumar. Toporo-hua-utia.","containingCandidateId":"ALC1737-vcand-p173-L-010","missType":"inside_candidate_group"},
+      {"articleId":"ALC1737-art-000607","visibleStartRaw":"Salitral. Ompare.","containingCandidateId":"ALC1737-vcand-p173-L-011","missType":"inside_candidate_group"}
+    ],
+    "minimumVisibleStartsAccounting": {
+      "knownMinimum": 44,
+      "rationale": "There are 40 article-classified canonical regions plus four selected starts without independent canonical boundaries. L-010 and L-011 remain fresh starts for 000604 and 000606 respectively, so their internal selected starts add two rather than replace those regions; the two top misses add two more: 40 + 4 = 44."
+    }
+  },
+  "pageEdges": {
+    "fromPrevious": {"status":"fresh_top_selected_starts_missed","note":"P172 does not continue lexically into p173. Selected 000599 (`Rueda`) and 000600 (`Saber generalmente`) occur before canonical L-001 (`Sabio`)."},
+    "toNext": {"status":"fresh_next_page_top_selected_start_missed","lastCandidate":"ALC1737-vcand-p173-R-022","nextPage":174,"nextPageCandidateInventory":{"total":48,"left":26,"right":22},"nextFirstSelectedArticle":"ALC1737-art-000614","nextFirstSelectedOpening":"Si, adv. para afirmar. Hebui.","nextFirstCandidate":"ALC1737-vcand-p174-L-001","nextFirstCandidateOpening":"Si, conj. Soc.","note":"P174 selected 000614 is a fresh top-of-page start before canonical L-001, which represents selected 000615 (`Si, conj.`). No p173→p174 lexical continuation is asserted."}
+  },
+  "evidenceLimits": {
+    "directFacsimileInspectedThisPass": false,
+    "selectedLayerIsCoverageExpectation": false,
+    "ocrOnlyInternalUnitsPromotable": false,
+    "metricsAllowed": false,
+    "reasonMetricsWithheld": "The selected layer is non-exhaustive and several merged/undersegmented OCR groups contain additional unanchored guide-like units; a complete visible-start denominator is not established."
+  },
+  "pageStatus": {
+    "candidateReconciliation": "preflight_complete_pending_materialization",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial_anchor_hypothesis",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
