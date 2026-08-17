@@ -1,0 +1,122 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 164,
+  "stage": "preflight",
+  "candidateInventory": {
+    "total": 51,
+    "left": 29,
+    "right": 22,
+    "boundaryMethod": "hybrid_margin_mode_v0.2",
+    "canonicalInventoryTotal": 2072,
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p164_selected_articles.jsonl",
+    "preExistingArticles": 15,
+    "articleIdRange": ["ALC1737-art-000464", "ALC1737-art-000478"],
+    "nonExhaustive": true,
+    "humanVerified": false,
+    "selectedCandidateRecordsLinkedExpected": 15,
+    "selectedStartsOutsideCandidateInventory": 0
+  },
+  "selectedCandidateAlignment": {
+    "L-001": "ALC1737-art-000464",
+    "L-003": "ALC1737-art-000465",
+    "L-004": "ALC1737-art-000466",
+    "L-005": "ALC1737-art-000467",
+    "L-007": "ALC1737-art-000468",
+    "L-009": "ALC1737-art-000469",
+    "L-010": "ALC1737-art-000470",
+    "L-011": "ALC1737-art-000471",
+    "L-012": "ALC1737-art-000472",
+    "L-013": "ALC1737-art-000473",
+    "L-014": "ALC1737-art-000474",
+    "L-016": "ALC1737-art-000475",
+    "L-023": "ALC1737-art-000476",
+    "R-001": "ALC1737-art-000477",
+    "R-002": "ALC1737-art-000478"
+  },
+  "pageEdges": {
+    "fromPreviousPage": {
+      "previousCandidate": "ALC1737-vcand-p163-R-023",
+      "firstCandidate": "ALC1737-vcand-p164-L-001",
+      "firstSelectedArticle": "ALC1737-art-000464",
+      "opening": "Nacimiento. Ioleria.",
+      "interpretation": "fresh_page_transition",
+      "note": "p163 R-023 ends in a Murmuyo-like article plus damaged page-bottom material; p164 L-001 opens fresh Nacimiento. No transpage lexical continuation is asserted."
+    },
+    "toNextPage": {
+      "lastCandidate": "ALC1737-vcand-p164-R-022",
+      "lastCandidateRaw": "Obligación... Obrar algo... Obr...",
+      "nextCandidate": "ALC1737-vcand-p165-L-001",
+      "nextSelectedArticle": "ALC1737-art-000479",
+      "nextOpening": "Obra aſſi, hechura. Chupari.",
+      "interpretation": "catchword_or_edge_fragment_to_fresh_page_article",
+      "note": "R-022 begins Obligación and also contains a fresh Obrar algo-like guide plus trailing `Obr...` edge/catchword material. p165 L-001 opens fresh selected Obra aſſi, hechura; no long p164→p165 article continuation is asserted."
+    }
+  },
+  "knownStructuralFeatures": [
+    {
+      "candidateId": "ALC1737-vcand-p164-R-018",
+      "assessment": "merged_articles",
+      "note": "The canonical OCR group begins `Nudo` and contains an additional `O. adv. para llamar`-like guide. The internal start is not promoted or entered into the visible-start census without an independent direct-collation anchor."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p164-R-020",
+      "assessment": "merged_articles",
+      "note": "The canonical OCR group contains distinct guide-like units `Obediente` and `Obediencia`. No internal article object is synthesized in this pass."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p164-R-022",
+      "assessment": "merged_articles",
+      "note": "The group begins `Obligación`, contains a distinct `Obrar algo`-like guide, and ends with `Obr...` edge/catchword material anticipating the O/Obr sequence. The p165 selected opening remains a fresh article."
+    }
+  ],
+  "workingHypothesis": {
+    "classification": {
+      "article": 51,
+      "continuation": 0,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 48,
+      "oversegmented": 0,
+      "undersegmented": 0,
+      "merged_articles": 3,
+      "ambiguous": 0,
+      "not_applicable": 0
+    },
+    "articleCandidatesPendingPromotionExpected": 36,
+    "knownVisibleStartsMinimum": 51,
+    "metricsAllowed": false,
+    "reasonMetricsWithheld": "All 51 canonical candidates are structurally compatible with article starts, but three OCR groups contain additional guide-like material without independent selected/direct-collation anchors. The selected layer is non-exhaustive, so no exhaustive visible-start denominator is asserted."
+  },
+  "nextPage": {
+    "sourcePageDigital": 165,
+    "candidateInventoryTotal": 56,
+    "left": 29,
+    "right": 27,
+    "firstCandidate": "ALC1737-vcand-p165-L-001",
+    "firstSelectedArticle": "ALC1737-art-000479",
+    "opening": "Obra aſſi, hechura. Chupari."
+  },
+  "evidenceLimits": {
+    "directFacsimileInspectedThisPass": false,
+    "selectedLayerIsCoverageExpectation": false,
+    "unanchoredInternalStartsPromoted": false,
+    "unanchoredInternalStartsCountedAsMissedVisibleStarts": false,
+    "visibleStartCensusExhaustive": false,
+    "humanVerification": false
+  },
+  "pageStatus": {
+    "preflight": "complete",
+    "candidateReconciliation": "ready_for_full_page_materialization",
+    "visibleStartCensus": "non_exhaustive_selected_anchor_only",
+    "promotionLinkage": "selected_anchors_identified",
+    "technicalClosure": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
