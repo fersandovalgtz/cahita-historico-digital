@@ -1,0 +1,83 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 154,
+  "pageStatus": {
+    "candidateReconciliation": "complete",
+    "visibleStartCensus": "not_exhaustive",
+    "promotionLinkage": "partial",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 56,
+    "left": 27,
+    "right": 29,
+    "classification": {
+      "article": 56,
+      "continuation": 0,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 54,
+      "oversegmented": 1,
+      "undersegmented": 1,
+      "merged_articles": 0,
+      "ambiguous": 0,
+      "not_applicable": 0
+    }
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000314",
+      "ALC1737-art-000328"
+    ],
+    "articleCandidateRecordsLinked": 15,
+    "structuredArticlesLinked": 15,
+    "selectedArticlesUnlinked": 0
+  },
+  "promotion": {
+    "articleCandidatesPendingPromotion": 41,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045
+  },
+  "visibleStartEvidence": {
+    "exhaustive": false,
+    "knownVisibleStartsMinimum": 56,
+    "knownMissedStartRecords": 0,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "All 56 canonical candidates are structurally consistent with lexical starts, but the selected anchor layer is non-exhaustive and cannot prove absence of additional missed starts. No performance denominator is asserted."
+  },
+  "physicalContinuities": [
+    {
+      "from": "ALC1737-vcand-p153-R-026",
+      "to": "ALC1737-vcand-p154-L-001",
+      "type": "catchword_to_article",
+      "note": "p153 trailing `Desbat-` anticipates fresh p154 `Desbaſtar madera. Atapetia.`."
+    },
+    {
+      "from": "ALC1737-vcand-p154-R-029",
+      "to": "ALC1737-vcand-p155-L-001",
+      "type": "article_continuation",
+      "note": "`Durar mucho tiempo` begins on p154 R-029 and continues as form-only text `nuc. bibuatua.` on p155 L-001."
+    }
+  ],
+  "structuralNotes": [
+    "R-008 has severely degraded OCR but independent geometry supports an article start; it remains pending promotion.",
+    "R-024 absorbs trailing unexplained material and is marked undersegmented without creating an additional start."
+  ],
+  "evidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "canonicalCandidateInventoryCount": 2072,
+    "selectedP154LayerUsedAsAnchor": true,
+    "p153AndP155CandidateLayersUsedForPageEdges": true,
+    "directFacsimileAvailableThisPass": false,
+    "policy": "Boundary structure is kept separate from lexical transcription quality. Textually damaged candidates may remain structural article starts while their lexical content stays unpromoted."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}

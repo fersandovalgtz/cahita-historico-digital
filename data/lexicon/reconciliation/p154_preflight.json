@@ -1,0 +1,76 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 154,
+  "stage": "preflight",
+  "candidateInventory": {
+    "method": "hybrid_margin_mode_v0.2",
+    "total": 56,
+    "left": 27,
+    "right": 29,
+    "canonicalInventoryTotal": 2072,
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p154_selected_articles.jsonl",
+    "articleCount": 15,
+    "articleIdRange": ["ALC1737-art-000314", "ALC1737-art-000328"],
+    "columnCounts": {"left": 13, "right": 2},
+    "exhaustive": false,
+    "reviewStatus": "machine_corrected_unverified",
+    "humanVerified": false
+  },
+  "crossPageContext": {
+    "fromPage153": "p153 R-026 carries trailing `Desbat-` catchword/page-edge material; p154 L-001 begins the fresh selected article `Desbaſtar madera. Atapetia.`",
+    "firstArticleCandidate": "ALC1737-vcand-p154-L-001",
+    "firstSelectedArticle": "ALC1737-art-000314",
+    "toPage155": "p154 R-029 begins `Durar mucho tiempo...` and is textually incomplete at the page edge. p155 L-001 contains form-only continuation `nuc. bibuatua.` before the next lexical starts; therefore R-029 is a cross-page article whose continuation is represented by p155 L-001."
+  },
+  "selectedAnchors": [
+    {"candidateId":"ALC1737-vcand-p154-L-001","linkedArticleIds":["ALC1737-art-000314"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p154-L-002","linkedArticleIds":["ALC1737-art-000315"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p154-L-003","linkedArticleIds":["ALC1737-art-000316"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p154-L-005","linkedArticleIds":["ALC1737-art-000317"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p154-L-006","linkedArticleIds":["ALC1737-art-000318"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p154-L-007","linkedArticleIds":["ALC1737-art-000319"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p154-L-008","linkedArticleIds":["ALC1737-art-000320"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p154-L-012","linkedArticleIds":["ALC1737-art-000321"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p154-L-015","linkedArticleIds":["ALC1737-art-000322"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p154-L-016","linkedArticleIds":["ALC1737-art-000323"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p154-L-017","linkedArticleIds":["ALC1737-art-000324"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p154-L-018","linkedArticleIds":["ALC1737-art-000325"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p154-L-019","linkedArticleIds":["ALC1737-art-000326"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p154-R-016","linkedArticleIds":["ALC1737-art-000327"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p154-R-020","linkedArticleIds":["ALC1737-art-000328"],"assessment":"probable_exact_anchor"}
+  ],
+  "structuralSignals": {
+    "probableArticleCandidates": 56,
+    "probableContinuationsWithinPage": [],
+    "damagedButStructurallyDistinctCandidate": {
+      "candidateId": "ALC1737-vcand-p154-R-008",
+      "note": "The OCR is severely degraded (`D e v rg a ...`), but the candidate has independent margin geometry and occupies its own D-entry position between R-007 and R-009. It may be treated structurally as an article start while remaining unpromoted and textually weak."
+    },
+    "minorTrailingNoiseCandidates": ["ALC1737-vcand-p154-L-021", "ALC1737-vcand-p154-R-024"],
+    "crossPageArticleCandidate": "ALC1737-vcand-p154-R-029"
+  },
+  "evidenceLimits": {
+    "fullCandidateRecordsInspectedInThisPass": true,
+    "directFacsimileInspectedInThisPass": false,
+    "selectedLayerTreatedAsCoverageExpectation": false,
+    "metricsAllowed": false,
+    "reason": "All 56 canonical candidates have independent structural start evidence, but the selected layer is non-exhaustive and several OCR strings are damaged. The page can be reconciled structurally without promoting uncertain lexical text; no exhaustive visible-start denominator or performance metric is asserted."
+  },
+  "policy": {
+    "independentHumanVerificationPlanned": false,
+    "humanVerified": false,
+    "operationalReviewStates": ["machine_corrected_unverified", "unresolved"],
+    "rule": "Boundary classification is separated from lexical transcription quality. A geometrically stable article start may remain pending promotion when its OCR is too damaged for a defensible structured transcription."
+  },
+  "pageStatus": {
+    "preflight": "complete",
+    "candidateReconciliation": "ready_for_full_page",
+    "visibleStartCensus": "not_started_full_page",
+    "promotionLinkage": "partial_anchor_layer_only",
+    "technicalClosure": false
+  },
+  "nextAction": "Classify all 56 p154 candidates as structural starts unless contrary evidence emerges, link all 15 selected anchors, document R-008 as textually damaged but structurally distinct, model trailing noise without inventing additional starts, represent R-029 as a cross-page article continuing into p155 L-001, and withhold metrics until an exhaustive visible-start census exists."
+}
