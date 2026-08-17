@@ -74,7 +74,19 @@ jobs:
             data/lexicon/reconciliation/p143_left_reconciliation.jsonl \
             data/lexicon/reconciliation/p143_right_reconciliation.jsonl \
             data/lexicon/reconciliation/p144_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p144_right_reconciliation.jsonl; do
+            data/lexicon/reconciliation/p144_right_reconciliation.jsonl \
+            data/lexicon/reconciliation/p145_left_reconciliation.jsonl \
+            data/lexicon/reconciliation/p145_right_reconciliation.jsonl \
+            data/lexicon/reconciliation/p146_left_reconciliation.jsonl \
+            data/lexicon/reconciliation/p146_right_reconciliation.jsonl \
+            data/lexicon/reconciliation/p147_left_reconciliation.jsonl \
+            data/lexicon/reconciliation/p147_right_reconciliation.jsonl \
+            data/lexicon/reconciliation/p148_left_reconciliation.jsonl \
+            data/lexicon/reconciliation/p148_right_reconciliation.jsonl \
+            data/lexicon/reconciliation/p149_left_reconciliation.jsonl \
+            data/lexicon/reconciliation/p149_right_reconciliation.jsonl \
+            data/lexicon/reconciliation/p150_left_reconciliation.jsonl \
+            data/lexicon/reconciliation/p150_right_reconciliation.jsonl; do
             python scripts/validate_jsonl.py \
               --schema schemas/lexicon-candidate-review.schema.json \
               --jsonl "$file"
@@ -96,7 +108,8 @@ jobs:
             data/lexicon/reconciliation/p141_missed_visible_starts.jsonl \
             data/lexicon/reconciliation/p142_missed_visible_starts.jsonl \
             data/lexicon/reconciliation/p143_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p144_missed_visible_starts.jsonl; do
+            data/lexicon/reconciliation/p144_missed_visible_starts.jsonl \
+            data/lexicon/reconciliation/p146_missed_visible_starts.jsonl; do
             python scripts/validate_jsonl.py \
               --schema schemas/lexicon-missed-start.schema.json \
               --jsonl "$file"
@@ -121,6 +134,13 @@ jobs:
           python -m json.tool data/lexicon/reconciliation/p142_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p143_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p144_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p145_machine_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p146_machine_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p147_machine_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p148_machine_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p149_machine_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p150_machine_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p150_preflight.json >/dev/null
           python -m json.tool data/lexicon/provenance/p135_art000704_correction.json >/dev/null
           python -m json.tool data/lexicon/provenance/p137_art000729_correction.json >/dev/null
           python -m json.tool data/lexicon/provenance/p137_art000731_correction.json >/dev/null
