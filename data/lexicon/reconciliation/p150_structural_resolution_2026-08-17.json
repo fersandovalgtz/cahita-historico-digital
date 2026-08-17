@@ -1,0 +1,99 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 150,
+  "recordType": "structural_boundary_resolution",
+  "recordedAt": "2026-08-17",
+  "candidateSource": "data/lexicon/candidates/p150_candidates.jsonl",
+  "resolution": {
+    "candidateId": "ALC1737-vcand-p150-R-023",
+    "canonicalGeometry": {
+      "candidateOrderInColumn": 23,
+      "column": "right",
+      "estimatedStartMarginX": 203.946,
+      "startY": 288.295,
+      "rawLines": [
+        "rv.1™** Bwi",
+        "»,„• apuna*",
+        "Cúname"
+      ],
+      "rawText": "rv.1™** Bwi »,„• apuna* Cúname"
+    },
+    "adjacentRightContext": {
+      "previousCandidate": {
+        "candidateId": "ALC1737-vcand-p150-R-022",
+        "startY": 282.089,
+        "rawText": "Colgar algo. Hitarte chafa",
+        "existingAssessment": "article / exact"
+      },
+      "nextCandidate": {
+        "candidateId": "ALC1737-vcand-p150-R-024",
+        "startY": 291.448,
+        "rawText": "Colmafr.",
+        "existingAssessment": "article / exact"
+      }
+    },
+    "crossColumnEvidence": {
+      "leftCandidateId": "ALC1737-vcand-p150-L-020",
+      "leftStartY": 279.229,
+      "leftRawLines": [
+        "Caíamiemo de hombre. Bu-",
+        "rnuper. Cunam?.",
+        "beme. % la muger.",
+        "beme"
+      ],
+      "assessment": "strong_cross_column_ocr_bleed",
+      "note": "The R-023 fragments resembling `Bu...` and `Cunam...` align with material already grouped in L-020 at the same vertical region, demonstrating two-column contamination rather than an independent right-column lexical start."
+    },
+    "secondaryControlEvidence": {
+      "sourceId": "BUE1890",
+      "orderedSequence": [
+        "Colar",
+        "Colgar algo",
+        "Colmar",
+        "Comenzar"
+      ],
+      "colmarControlForm": "Buei apuna",
+      "authority": "secondary_only",
+      "use": "The `apuna` fragment inside R-023 is compatible with the historical control form for `Colmar`; this supports association with the neighboring R-024 article but does not authorize transfer of BUE1890 orthography or form into ALC1737."
+    },
+    "decision": {
+      "classification": "false_positive",
+      "boundaryAssessment": "not_applicable",
+      "articleLinkStatus": "not_applicable"
+    },
+    "rationale": "R-023 does not constitute a defensible lexical start. Its text is a composite OCR/layout artifact: two fragments are demonstrable bleed from left-column L-020, while the remaining `apuna` fragment belongs structurally with the neighboring `Colmar` region represented by R-024. Therefore the most conservative candidate-level classification is false_positive rather than article or continuation."
+  },
+  "expectedPageStateAfterResolution": {
+    "candidateCount": 56,
+    "classification": {
+      "article": 55,
+      "continuation": 0,
+      "false_positive": 1,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 54,
+      "undersegmented": 1,
+      "not_applicable": 1,
+      "ambiguous": 0
+    },
+    "articleCandidatesPendingPromotion": 40,
+    "newPromotions": 0,
+    "corpusTotal": 1045,
+    "knownVisibleStartsMinimum": 55,
+    "visibleStartCensusExhaustive": false
+  },
+  "epistemicGuards": [
+    "This decision resolves only the machine candidate boundary and does not create or modify a lexical article object.",
+    "No BUE1890 form is copied into ALC1737.",
+    "The exact ALC1737 form associated with `Colmar` remains unpromoted unless supported by same-witness evidence sufficient for transcription.",
+    "The visible-start census remains non-exhaustive and no precision, recall or F1 metric is claimed.",
+    "humanVerified remains false."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "method": "Convergent structural reconciliation from materialized canonical candidate geometry/OCR, demonstrable cross-column overlap with L-020, adjacent right-column sequence, and explicit BUE1890 secondary control; conservative non-promotion rule applied."
+  }
+}
