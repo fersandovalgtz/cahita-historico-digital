@@ -1,0 +1,59 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 148,
+  "recordType": "phase_ii_local_primary_facsimile_closure",
+  "recordedAt": "2026-08-17",
+  "primaryWitness": {
+    "localFileName": "Cahíta.pdf",
+    "internetArchiveIdentifier": "artedelalenguaca00gonz",
+    "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "pdfPageCount": 182,
+    "pageRenderSha256": "fc1ec528471d2baa6f2cef223858d31a7199a69fe0e2cb09548cbb5e3c648d37",
+    "authority": "primary_same_witness"
+  },
+  "census": {
+    "visibleHistoricalArticleStarts": 44,
+    "candidateArticleStarts": 44,
+    "truePositiveCandidateStarts": 44,
+    "falsePositiveCandidateStarts": 0,
+    "detectorFalseNegatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "exhaustive": true
+  },
+  "closure": {
+    "preExistingStructuredArticles": 15,
+    "newCandidatePromotions": 29,
+    "newPromotionsTotal": 29,
+    "articleIdRange": "ALC1737-art-001137--ALC1737-art-001165",
+    "candidatePendingAfterPass": 0,
+    "structuredVisibleStartsAfterPass": 44,
+    "corpusTotalAfterPass": 1165,
+    "technicalClosure": true
+  },
+  "structuralDecisions": [
+    "All 44 canonical article-class candidates correspond to visible historical starts; no additional visible start is missed by the detector on p.148.",
+    "R-007 and R-008 remain structurally undersegmented machine groups although their lexical starts and article texts are represented.",
+    "R-021 remains structurally undersegmented because the machine group includes trailing `Cala-`; direct comparison with the p.149 opening confirms that `Cala-` is a catchword and not a second p.148 lexical start.",
+    "The damaged L-004 guide is represented exactly as visible `uche de las Aves`; the absent initial glyph is not conjecturally restored.",
+    "R-019 is represented exactly as visible `Ca man. Camaa.` without lexical normalization."
+  ],
+  "authorityGuards": [
+    "All new ALC1737 readings in this pass derive from direct visual collation of the locally supplied 1737 witness.",
+    "BUE1890 is not used to supply or silently normalize any ALC1737 reading.",
+    "Direct AI-assisted collation is not human verification; humanVerified remains false.",
+    "Source damage or opaque visible text is preserved as unresolved rather than silently emended."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol visual collation",
+    "derivedFrom": [
+      "p148_left_reconciliation.jsonl",
+      "p148_right_reconciliation.jsonl",
+      "p148_primary_ocr_triage_2026-08-17.json"
+    ],
+    "method": "Exhaustive direct same-witness visual census followed by candidate promotion and page-level closure; no independent human verification."
+  }
+}
