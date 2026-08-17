@@ -108,7 +108,9 @@ jobs:
             data/lexicon/reconciliation/p161_left_reconciliation.jsonl \
             data/lexicon/reconciliation/p161_right_reconciliation.jsonl \
             data/lexicon/reconciliation/p162_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p162_right_reconciliation.jsonl; do
+            data/lexicon/reconciliation/p162_right_reconciliation.jsonl \
+            data/lexicon/reconciliation/p163_left_reconciliation.jsonl \
+            data/lexicon/reconciliation/p163_right_reconciliation.jsonl; do
             python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl "$file"
           done
 
@@ -137,7 +139,8 @@ jobs:
             data/lexicon/reconciliation/p158_missed_visible_starts.jsonl \
             data/lexicon/reconciliation/p160_missed_visible_starts.jsonl \
             data/lexicon/reconciliation/p161_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p162_missed_visible_starts.jsonl; do
+            data/lexicon/reconciliation/p162_missed_visible_starts.jsonl \
+            data/lexicon/reconciliation/p163_missed_visible_starts.jsonl; do
             python scripts/validate_jsonl.py --schema schemas/lexicon-missed-start.schema.json --jsonl "$file"
           done
 
@@ -165,7 +168,7 @@ jobs:
           python -m json.tool data/lexicon/reconciliation/p147_machine_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p148_machine_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p149_machine_reconciliation_status.json >/dev/null
-          for page in 150 151 152 153 154 155 156 157 158 159 160 161 162; do
+          for page in 150 151 152 153 154 155 156 157 158 159 160 161 162 163; do
             python -m json.tool "data/lexicon/reconciliation/p${page}_machine_reconciliation_status.json" >/dev/null
             python -m json.tool "data/lexicon/reconciliation/p${page}_preflight.json" >/dev/null
           done

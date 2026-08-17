@@ -1,0 +1,142 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 163,
+  "stage": "preflight",
+  "candidateInventory": {
+    "total": 49,
+    "left": 26,
+    "right": 23,
+    "boundaryMethod": "hybrid_margin_mode_v0.2",
+    "canonicalInventoryTotal": 2072,
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p163_selected_articles.jsonl",
+    "preExistingArticles": 15,
+    "articleIdRange": ["ALC1737-art-000449", "ALC1737-art-000463"],
+    "nonExhaustive": true,
+    "humanVerified": false
+  },
+  "selectedCandidateAlignment": {
+    "page_top_miss": "ALC1737-art-000449",
+    "L-001": "ALC1737-art-000450",
+    "L-005": "ALC1737-art-000451",
+    "L-007": "ALC1737-art-000452",
+    "L-008": "ALC1737-art-000453",
+    "L-009": "ALC1737-art-000454",
+    "L-010": "ALC1737-art-000455",
+    "L-014": "ALC1737-art-000456",
+    "L-015": "ALC1737-art-000457",
+    "L-016": "ALC1737-art-000458",
+    "L-017": "ALC1737-art-000459",
+    "L-019": "ALC1737-art-000460",
+    "L-020": "ALC1737-art-000461",
+    "R-020": "ALC1737-art-000462",
+    "R-021": "ALC1737-art-000463"
+  },
+  "pageEdges": {
+    "fromPreviousPage": {
+      "previousCandidate": "ALC1737-vcand-p162-R-019",
+      "previousCatchwordRaw": "Mozo",
+      "missedSelectedArticle": "ALC1737-art-000449",
+      "missedOpening": "Mozo de edad. Buſca mancebo.",
+      "firstCandidate": "ALC1737-vcand-p163-L-001",
+      "firstCandidateRaw": "cebo. Mofar, eſcarnecer.",
+      "firstCandidateSelectedArticle": "ALC1737-art-000450",
+      "interpretation": "fresh_page_opening_selected_start_missed_before_first_candidate",
+      "note": "The p162 catchword anticipates fresh selected 000449. Canonical p163 L-001 begins in the tail `...cebo.` of 000449 and then contains fresh 000450; no p162→p163 lexical continuation is asserted."
+    },
+    "toNextPage": {
+      "lastCandidate": "ALC1737-vcand-p163-R-023",
+      "lastGuideLikeRaw": "Murmuyo",
+      "nextCandidate": "ALC1737-vcand-p164-L-001",
+      "nextSelectedArticle": "ALC1737-art-000464",
+      "nextOpening": "Nacimiento. Ioleria.",
+      "interpretation": "fresh_page_transition",
+      "note": "R-023 contains damaged page-bottom material/catchword-like noise; p164 begins fresh `Nacimiento`, so no long continuation is asserted."
+    }
+  },
+  "knownContinuities": [
+    ["ALC1737-vcand-p163-L-003", "ALC1737-vcand-p163-L-004"],
+    ["ALC1737-vcand-p163-L-010", "ALC1737-vcand-p163-L-011"],
+    ["ALC1737-vcand-p163-L-012", "ALC1737-vcand-p163-L-013"],
+    ["ALC1737-vcand-p163-L-022", "ALC1737-vcand-p163-L-023"],
+    ["ALC1737-vcand-p163-L-026", "ALC1737-vcand-p163-R-001"],
+    ["ALC1737-vcand-p163-R-004", "ALC1737-vcand-p163-R-005"],
+    ["ALC1737-vcand-p163-R-006", "ALC1737-vcand-p163-R-007"]
+  ],
+  "knownStructuralFeatures": [
+    {
+      "candidateId": "ALC1737-vcand-p163-L-001",
+      "assessment": "undersegmented",
+      "note": "Contains the tail of missed selected 000449 and the fresh selected start 000450 (`Mofar, eſcarnecer`)."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p163-L-002",
+      "assessment": "undersegmented",
+      "note": "Begins with the continuation/cross-reference target of selected 000450 (`menoſpreciar`) and then opens a fresh unselected `Moho como de pan` article."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p163-L-003",
+      "assessment": "undersegmented",
+      "note": "Begins with the tail of the preceding `Moho como de pan` article and then opens fresh `Moho como de hierro`; L-004 is its continuation."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p163-L-007",
+      "assessment": "undersegmented",
+      "note": "Begins with continuation material from L-006 and then opens selected 000452 (`Moler`)."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p163-R-023",
+      "assessment": "undersegmented",
+      "note": "Begins a `Murmuyo`-like article and absorbs damaged page-bottom/catchword-like material; p164 nevertheless opens fresh `Nacimiento`."
+    }
+  ],
+  "knownMissedStarts": [
+    {
+      "visibleStartRaw": "Mozo de edad. Buſca mancebo.",
+      "linkedArticleId": "ALC1737-art-000449",
+      "missType": "page_or_column_edge",
+      "containingCandidateId": null,
+      "note": "Fresh selected article starts at the page top before canonical L-001; L-001 begins already in its tail `...cebo.`."
+    }
+  ],
+  "workingHypothesis": {
+    "classification": {
+      "article": 42,
+      "continuation": 7,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "articleCandidatesPendingPromotionExpected": 28,
+    "knownVisibleStartsMinimum": 43,
+    "metricsAllowed": false,
+    "reasonMetricsWithheld": "The 42 article candidates plus the selected page-top miss establish at least 43 starts, but the selected layer is non-exhaustive and several undersegmented OCR groups may contain additional unanchored starts."
+  },
+  "nextPage": {
+    "sourcePageDigital": 164,
+    "candidateInventoryTotal": 51,
+    "left": 29,
+    "right": 22,
+    "firstCandidate": "ALC1737-vcand-p164-L-001",
+    "firstSelectedArticle": "ALC1737-art-000464",
+    "opening": "Nacimiento. Ioleria."
+  },
+  "evidenceLimits": {
+    "directFacsimileInspectedThisPass": false,
+    "selectedLayerIsCoverageExpectation": false,
+    "unanchoredInternalStartsPromoted": false,
+    "visibleStartCensusExhaustive": false,
+    "humanVerification": false
+  },
+  "pageStatus": {
+    "preflight": "complete",
+    "candidateReconciliation": "ready_for_full_page_materialization",
+    "visibleStartCensus": "known_selected_misses_only_not_exhaustive",
+    "promotionLinkage": "selected_anchors_identified",
+    "technicalClosure": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
