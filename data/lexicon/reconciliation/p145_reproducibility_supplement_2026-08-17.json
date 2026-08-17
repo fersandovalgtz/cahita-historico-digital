@@ -1,0 +1,71 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 145,
+  "recordType": "reproducibility_evidence_supplement",
+  "supplements": "data/lexicon/reconciliation/p145_control_evidence_2026-08-17.json",
+  "recordedAt": "2026-08-17",
+  "primaryWitnessDerivative": {
+    "provider": "Internet Archive",
+    "identifier": "artedelalenguaca00gonz",
+    "itemUri": "https://archive.org/details/artedelalenguaca00gonz",
+    "fullTextDerivativeUri": "https://archive.org/stream/artedelalenguaca00gonz/artedelalenguaca00gonz_djvu.txt",
+    "retrievalCheckedAt": "2026-08-17",
+    "retrievalStatus": "available",
+    "authority": "machine_ocr_derivative_of_primary_witness",
+    "useRule": "May support guide identification, sequence and segmentation hypotheses; it does not authorize uncertain Cahita forms, diplomatic transcription, or a facsimile-level exhaustive visible-start census.",
+    "layoutCaution": "The OCR linearization does not preserve a trustworthy reading order for the two printed columns."
+  },
+  "secondaryControlDerivative": {
+    "sourceId": "BUE1890",
+    "provider": "Internet Archive/Open Library",
+    "identifier": "artedelalenguac00jesgoog",
+    "openLibraryEditionId": "OL4298666M",
+    "fullTextDerivativeUri": "https://archive.org/download/artedelalenguac00jesgoog/artedelalenguac00jesgoog_djvu.txt",
+    "retrievalCheckedAt": "2026-08-17",
+    "retrievalStatus": "available",
+    "sha256AtRetrieval": "a481173a0ee671672e2883e52f90fb8dafe1d8d35db2436090363ace0201d663",
+    "byteLengthAtRetrieval": 549299,
+    "authority": "secondary_historical_reprint_control",
+    "useRule": "May corroborate guide identity, order or segmentation only. BUE1890 orthography and Cahita forms must never be silently substituted into ALC1737."
+  },
+  "candidateEvidence": [
+    {
+      "candidateId": "ALC1737-vcand-p145-R-017",
+      "existingAssessment": "merged_articles",
+      "existingLinkedGuide": "Bagre",
+      "primarySequenceEvidence": {
+        "beforeDamagedStart": "Bagre",
+        "damagedStartPresent": true,
+        "afterDamagedStart": "Baho",
+        "rawOcrNote": "ALC1737 OCR preserves a separate damaged line between `Bagre. Mufa*` and the next legible `Baho` entry."
+      },
+      "secondarySequenceEvidence": {
+        "normalizedGuideSequence": [
+          "Baba",
+          "Babear",
+          "Bagre",
+          "Babear",
+          "Baho"
+        ],
+        "guideHypothesisForDamagedStart": "Babear",
+        "confidence": "strong_sequence_corroboration_secondary_only",
+        "formStatus": "not_transferable_to_ALC1737"
+      },
+      "decision": "Retain R-017 as merged_articles and keep it linked only to the existing Bagre article. Record `Babear` as a guide-level hypothesis for the absorbed damaged start, but do not create or promote a new ALC1737 article until same-witness evidence supports the exact form."
+    }
+  ],
+  "epistemicGuards": [
+    "This supplement does not change the 1,045-article corpus.",
+    "No candidate is promoted by this supplement.",
+    "No BUE1890 Cahita form is substituted into ALC1737.",
+    "visibleStartCensus.exhaustive remains false for p.145.",
+    "No precision, recall or F1 metric is claimable from this evidence pass.",
+    "humanVerified remains false."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "method": "Recovery and cross-check of public OCR derivatives for ALC1737 and BUE1890; sequence-level comparison only; conservative non-promotion rule applied."
+  }
+}
