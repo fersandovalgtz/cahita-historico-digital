@@ -1,1 +1,21 @@
-placeholder
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 145,
+  "validationTarget": "control_evidence_pass_2026-08-17",
+  "expectedCandidateInventory": {
+    "total": 39,
+    "classification": {"article": 34, "continuation": 3, "unresolved": 2},
+    "boundaryAssessment": {"exact": 27, "merged_articles": 3, "undersegmented": 4, "ambiguous": 3, "not_applicable": 2}
+  },
+  "expectedLinkage": {"preExistingStructuredArticlesLinked": 14, "articleCandidatesPendingPromotion": 21, "unresolvedCandidateBoundaries": 2},
+  "requiredDecisions": {
+    "ALC1737-vcand-p145-R-011": {"classification": "article", "boundaryAssessment": "exact", "articleLinkStatus": "pending_promotion", "humanVerified": false},
+    "ALC1737-vcand-p145-R-012": {"classification": "article", "boundaryAssessment": "ambiguous", "articleLinkStatus": "pending_promotion", "humanVerified": false}
+  },
+  "epistemicGuards": [
+    "visibleStartCensus.exhaustive must remain false",
+    "no BUE1890 form may be silently substituted into an ALC1737 article",
+    "R-011 and R-012 must remain unpromoted until the ALC1737 Cahita forms are sufficiently supported",
+    "humanVerified remains false"
+  ]
+}
