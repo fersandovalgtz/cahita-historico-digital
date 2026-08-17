@@ -205,6 +205,6 @@ Antes de ampliar productos, CHD debe:
 1. mantener sincronizados README, ROADMAP, `phase2_open_work_summary.json`, Issues, métricas y metadatos;
 2. continuar fase II con promociones conservadoras desde p.145–177, sin convertir OCR divergente ni control secundario en transcripción de `ALC1737`;
 3. completar progresivamente el censo exhaustivo de inicios visibles y falsos negativos de p.145–177;
-4. cerrar la incertidumbre estructural restante y mantener separadas las incertidumbres semánticas/anaphóricas;
+4. cerrar la incertidumbre estructural restante y mantener separadas las incertidumbres semánticas/anafóricas;
 5. consolidar variación y concordancias gramaticales;
 6. ampliar CI, control textual independiente e interoperabilidad antes de una release científica estable.
