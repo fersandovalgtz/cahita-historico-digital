@@ -40,11 +40,17 @@ El tramo conserva incertidumbres textuales explícitas cuando la evidencia prima
 
 El flujo vigente de Cahíta Histórico Digital **no contempla intervención humana independiente**. `humanVerified` permanece en `false`; `human_verified` se conserva únicamente como estado reservado del esquema. El criterio de cierre es técnico: reconciliación computacional completa, incertidumbre localizada, continuidades físicas modeladas y QA satisfactorio. Ese cierre no debe describirse como autoridad diplomática o filológica humana.
 
-## Página 145 — reconciliación de candidatos completada
+## Página 145 — reconciliación estructural completada
 
-La página digital **145** tiene **39 candidatos canónicos: 22 izquierda y 17 derecha**. La clasificación actual es **33 `article`**, **3 `continuation`** y **3 `unresolved`**. Las fronteras se distribuyen en 26 `exact`, 3 `merged_articles`, 4 `undersegmented`, 4 `ambiguous` y 2 `not_applicable`.
+La página digital **145** tiene **39 candidatos canónicos: 22 izquierda y 17 derecha**. La clasificación actual es **34 `article` y 5 `continuation`**, sin candidatos `unresolved`, `paratext` o `false_positive`. Las fronteras se distribuyen en **27 `exact`**, **3 `merged_articles`**, **5 `undersegmented`**, **1 `ambiguous`** y **3 `not_applicable`**.
 
-Trece candidatos de artículo enlazan 14 objetos estructurados preexistentes y **20 candidatos de artículo permanecen `pending_promotion`**. `ALC1737-art-001045` (`Atormentar`) conserva su continuidad p.144→145 y la forma `chumtieſte` permanece de baja confianza. El censo visible no se declara exhaustivo y por ello no se calculan métricas de rendimiento para esta página.
+Trece candidatos de artículo enlazan **14 objetos estructurados preexistentes** y **21 candidatos de artículo permanecen `pending_promotion`**. No hubo promociones nuevas en el pase estructural y el corpus permanece en **1,045 artículos**. `ALC1737-art-001045` (`Atormentar`) conserva su continuidad p.144→145 y la forma `chumtieſte` permanece de baja confianza.
+
+Los dos límites que permanecían estructuralmente abiertos quedaron resueltos sin reconstrucción textual especulativa. **L-002** se clasifica como continuación de L-001 (`Atravesar la flecha al blanco`); el fragmento OCR final `Asi, o` se interpreta como contaminación entre columnas porque coincide con el artículo de la derecha ya colacionado `Axi, ò pimienta`. **L-005** se clasifica como continuación `undersegmented`: comienza con la cola del artículo anterior y absorbe un inicio de tipo `Atrepellar`, cuya lectura exacta en ALC1737 no se promueve desde OCR y control secundario.
+
+La evidencia suplementaria de **R-017** conserva `Babear` únicamente como hipótesis fuerte de guía para el comienzo dañado absorbido después de `Bagre`, apoyada por la secuencia del control histórico BUE1890; ninguna forma cahíta de la reimpresión se transfiere al testigo de 1737. R-012 mantiene la guía `Atomo`, pero su forma ALC1737 sigue demasiado dañada para promoción.
+
+La reconciliación candidate-level de p.145 está completa con **0 límites `unresolved`**, pero la página **no se declara cerrada filológicamente**: `visibleStartCensus.exhaustive=false`, continúan pendientes promociones/enlaces y no existe un denominador facsimilar exhaustivo que permita calcular precisión, recall o F1. Todos estos objetos permanecen `machine_corrected_unverified` y `humanVerified=false`.
 
 ## Página 146 — reconciliación de candidatos completada
 
