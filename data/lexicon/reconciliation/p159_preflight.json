@@ -1,0 +1,71 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 159,
+  "stage": "preflight",
+  "candidateInventory": {
+    "total": 52,
+    "left": 26,
+    "right": 26,
+    "canonicalInventoryTotal": 2072,
+    "boundaryMethod": "hybrid_margin_mode_v0.2"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p159_selected_articles.jsonl",
+    "preExistingArticles": 15,
+    "articleIdRange": ["ALC1737-art-000389", "ALC1737-art-000403"],
+    "nonExhaustive": true,
+    "humanVerified": false
+  },
+  "selectedCandidateAlignment": {
+    "L-001": "ALC1737-art-000389",
+    "L-002": "ALC1737-art-000390",
+    "L-003": "ALC1737-art-000391",
+    "L-004": "ALC1737-art-000392",
+    "L-006": "ALC1737-art-000393",
+    "L-008": "ALC1737-art-000394",
+    "L-009": "ALC1737-art-000395",
+    "L-011": "ALC1737-art-000396",
+    "L-015": "ALC1737-art-000397",
+    "L-017": "ALC1737-art-000398",
+    "L-023": "ALC1737-art-000399",
+    "L-024": "ALC1737-art-000400",
+    "R-003": "ALC1737-art-000401",
+    "R-021": "ALC1737-art-000402",
+    "R-023": "ALC1737-art-000403"
+  },
+  "edgeContext": {
+    "fromPreviousPage": "p159 L-001 starts fresh selected `Huevo. Totolichaba.`. It is not a continuation of p158 R-025 (`Hueva...` plus damaged edge material).",
+    "toNextPage": "p159 R-026 starts an `Yſlabon` cross-reference-like article and carries a short `I*`/`Y*` edge fragment. p160 L-001 begins fresh `Yr derecho à alguna parte`; no long article continuation is asserted."
+  },
+  "knownStructuralFeatures": [
+    {"candidateId":"ALC1737-vcand-p159-L-001","assessment":"undersegmented","note":"Selected Huevo start is valid but candidate also absorbs `Aebole`, the form selected for following Huerfano L-002."},
+    {"candidateId":"ALC1737-vcand-p159-L-003","assessment":"undersegmented","note":"Selected Huir de los contrarios is valid but candidate also absorbs `Butte`, the form selected for following Huirſe L-004."},
+    {"candidateId":"ALC1737-vcand-p159-L-017","assessment":"undersegmented","note":"Selected Yerva/Huia start is followed inside the same OCR group by an additional guide-like `Yerva ... comestible` fragment that is not promoted or counted as an exhaustive miss without an independent anchor."},
+    {"candidateId":"ALC1737-vcand-p159-L-025","assessment":"oversegmented","note":"Yerva para quelite begins here and likely continues into form-only/damaged L-026."},
+    {"candidateId":"ALC1737-vcand-p159-L-026","assessment":"continuation_from_L025"},
+    {"candidateId":"ALC1737-vcand-p159-R-001","assessment":"oversegmented","note":"Yerva de la golondrina begins here and continues into form-only R-002."},
+    {"candidateId":"ALC1737-vcand-p159-R-002","assessment":"continuation_from_R001"},
+    {"candidateId":"ALC1737-vcand-p159-R-003","assessment":"oversegmented","linkedArticleId":"ALC1737-art-000401","note":"Selected Yerva que ſe cria en los arboles begins here and continues in R-004."},
+    {"candidateId":"ALC1737-vcand-p159-R-004","assessment":"continuation_from_R003"},
+    {"candidateId":"ALC1737-vcand-p159-R-012","assessment":"undersegmented","note":"Candidate contains more than one Yerva-like guide/form fragment; internal segmentation remains unstrengthened."},
+    {"candidateId":"ALC1737-vcand-p159-R-022","assessment":"undersegmented","note":"Ympedir begins here but the group also contains damaged `...nclmarſe...`-like guide material; no additional article is promoted without stronger evidence."},
+    {"candidateId":"ALC1737-vcand-p159-R-026","assessment":"undersegmented_page_edge","note":"Distinct Yſlabon/Buſca eſlabon-like start plus a short edge/catchword fragment anticipating the fresh Yr-sequence on p160."}
+  ],
+  "knownSelectedMissedStarts": [],
+  "evidenceLimits": {
+    "selectedLayerIsCoverageExpectation": false,
+    "directFacsimileInspectedThisPass": false,
+    "visibleStartCensusExhaustive": false,
+    "metricsAllowed": false,
+    "reason": "All 15 selected anchors align to canonical candidate starts, but several candidates contain additional damaged guide-like material without independent selected/facsimile anchors. No exhaustive missed-start denominator is asserted."
+  },
+  "pageStatus": {
+    "candidateReconciliation": "ready_for_conservative_full_page_materialization",
+    "visibleStartCensus": "not_exhaustive",
+    "promotionLinkage": "partial_anchor_layer",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
