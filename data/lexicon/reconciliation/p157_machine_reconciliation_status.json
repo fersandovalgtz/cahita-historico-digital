@@ -14,18 +14,18 @@
     "right": 23,
     "classification": {
       "article": 38,
-      "continuation": 2,
+      "continuation": 4,
       "paratext": 0,
       "false_positive": 0,
-      "unresolved": 2
+      "unresolved": 0
     },
     "boundaryAssessment": {
       "exact": 31,
       "oversegmented": 2,
-      "undersegmented": 1,
+      "undersegmented": 2,
       "merged_articles": 4,
-      "ambiguous": 2,
-      "not_applicable": 2
+      "ambiguous": 0,
+      "not_applicable": 3
     }
   },
   "selectedLayer": {
@@ -47,14 +47,14 @@
   },
   "visibleStartEvidence": {
     "exhaustive": false,
-    "knownVisibleStartsMinimum": 42,
-    "knownMissedStartRecords": 4,
+    "knownVisibleStartsMinimum": 44,
+    "knownMissedStartRecords": 6,
     "knownMergedInternalStarts": 4,
-    "unresolvedCandidateRecords": 2,
+    "unresolvedCandidateRecords": 0,
     "precision": null,
     "recall": null,
     "f1": null,
-    "reasonMetricsWithheld": "The 38 article candidates plus four selected starts absorbed inside merged candidates establish at least 42 starts, but two cropped candidate regions remain unresolved and the selected layer is non-exhaustive."
+    "reasonMetricsWithheld": "The 38 article candidates, four previously documented selected starts absorbed inside merged candidates, and two additional same-witness OCR starts (`Eſtender, ò tender` and `Eſteril ſer la muger`) establish at least 44 visible starts. The cropped edge and non-exhaustive selected layer prevent a complete denominator; no performance metric is asserted."
   },
   "physicalContinuities": [
     {
@@ -64,16 +64,28 @@
       "note": "p156 `Eſquina` is distinct; p157 opens with fresh cropped Eſt- material."
     },
     {
-      "from": "ALC1737-vcand-p157-L-004",
-      "to": "ALC1737-vcand-p157-L-005",
-      "type": "article_continuation",
-      "note": "The Eſtera-like article crosses the candidate boundary."
-    },
-    {
       "from": "ALC1737-vcand-p157-L-012",
       "to": "ALC1737-vcand-p157-L-013",
       "type": "article_continuation",
       "note": "Selected `Eſtrella las tres Marias. Himuim.` continues into L-013."
+    },
+    {
+      "from": "ALC1737-vcand-p157-L-002",
+      "to": "ALC1737-vcand-p157-L-003",
+      "type": "missed_start_to_continuation",
+      "note": "L-002 absorbs the start `Eſtender, ò tender`; L-003 preserves its `deſenvolver` continuation."
+    },
+    {
+      "from": "ALC1737-vcand-p157-L-004",
+      "to": "ALC1737-vcand-p157-L-005",
+      "type": "article_continuation",
+      "note": "The Eſtera article continues across L-004→L-005."
+    },
+    {
+      "from": "ALC1737-vcand-p157-L-005",
+      "to": "ALC1737-vcand-p157-L-006",
+      "type": "article_continuation_then_internal_start",
+      "note": "L-006 first completes Eſtera (`...de tule, Tobare`) and then absorbs the distinct `Eſteril ſer la muger` start."
     }
   ],
   "sourceGap": {
@@ -88,10 +100,11 @@
     "editorialPolicy": "Do not synthesize or reconstruct missing F/G entries from modern dictionaries or other editions; recovery requires an independently identified witness and separate provenance layer."
   },
   "structuralNotes": [
-    "The left scan edge is cropped, producing systematic loss of initial glyphs and reading-order leakage across several candidate groups.",
-    "L-003 and L-006 remain unresolved rather than being forced into article/continuation classes.",
-    "Four selected internal starts are recorded separately as known false negatives inside merged candidates.",
-    "The p157→158 discontinuity is a source gap, not a normal page continuation."
+    "The left scan edge remains cropped, producing systematic loss of initial glyphs and some reading-order leakage; structural decisions therefore do not strengthen uncertain lexical forms.",
+    "L-003 is resolved as continuation of an `Eſtender, ò tender` start absorbed inside L-002; the start is recorded as ALC1737-miss-p157-L-005.",
+    "L-006 is resolved as continuation/undersegmented: it closes Eſtera and absorbs the `Eſteril ſer la muger` start recorded as ALC1737-miss-p157-L-006.",
+    "Four selected internal starts remain recorded as known false negatives inside merged candidates; the two new records add non-selected but same-witness-supported internal starts.",
+    "The p157→158 discontinuity remains ALC1737-gap-0001, a source gap rather than a normal page continuation; no missing F/G material is reconstructed."
   ],
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
@@ -100,8 +113,21 @@
     "sourceGapRecordUsed": true,
     "p156AndP158CandidateLayersUsedForPageEdges": true,
     "directFacsimileAvailableThisPass": false,
-    "policy": "Cropped-edge uncertainty and source loss are preserved explicitly. Selected direct collations anchor only demonstrated starts; missing F/G material is never reconstructed by inference."
+    "policy": "Cropped-edge candidate structure may be resolved when canonical geometry and same-witness OCR sequence converge. OCR remains non-diplomatic; uncertain Cahita forms are not promoted, and ALC1737-gap-0001 is isolated from candidate reconciliation.",
+    "materializedCandidateView": "data/lexicon/candidates/p157_candidates.jsonl",
+    "structuralResolutionRecord": "p157_structural_resolution_2026-08-17.json",
+    "recoveredPrimaryOcrSequenceUsed": true,
+    "newInternalMissedStartsRecorded": [
+      "ALC1737-miss-p157-L-005",
+      "ALC1737-miss-p157-L-006"
+    ],
+    "sourceGapPreserved": true
   },
   "reviewStatus": "machine_corrected_unverified",
-  "humanVerified": false
+  "humanVerified": false,
+  "resolvedThisPass": [
+    "L-003 is continuation/not_applicable of the extractor-missed `Eſtender, ò tender. Buſca deſenvolver` article whose start is absorbed inside L-002.",
+    "L-006 is continuation/undersegmented: it completes Eſtera and absorbs a distinct `Eſteril ſer la muger` start; terminal `Ahinque` is treated as reading-order leakage toward the following Eſtirar region rather than an Eſteril form.",
+    "Two additional internal extractor misses are recorded without lexical promotion: ALC1737-miss-p157-L-005 and ALC1737-miss-p157-L-006."
+  ]
 }

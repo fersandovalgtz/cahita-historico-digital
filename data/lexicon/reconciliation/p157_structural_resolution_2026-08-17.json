@@ -1,0 +1,138 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 157,
+  "recordType": "structural_boundary_resolution",
+  "recordedAt": "2026-08-17",
+  "candidateSource": "data/lexicon/candidates/p157_candidates.jsonl",
+  "scope": "Resolve only cropped-edge candidates L-003 and L-006; preserve ALC1737-gap-0001 unchanged.",
+  "primaryWitnessEvidence": {
+    "provider": "Internet Archive",
+    "identifier": "artedelalenguaca00gonz",
+    "sequence": [
+      "Eſtar. Cacec.",
+      "Eſte, ò eſta, ò eſto ...",
+      "Eſtender, ò tender. Buſca deſenvolver.",
+      "Eſtera. ... de palma ... de carrizo ... de tule, Tobare.",
+      "Eſteril ſer la muger ...",
+      "Eſtirar. Ahinque.",
+      "Eſtomago. Cochopoi."
+    ],
+    "authority": "same_witness_machine_ocr_for_structure_only",
+    "caution": "The left scan edge is cropped and OCR loses initial glyphs. Sequence and boundary identity may be used when geometry converges, but uncertain Cahita forms are not promoted as diplomatic readings."
+  },
+  "resolutions": [
+    {
+      "candidateId": "ALC1737-vcand-p157-L-003",
+      "canonicalEvidence": {
+        "candidateOrderInColumn": 3,
+        "startY": 105.85,
+        "rawText": "defemhíver .",
+        "precedingCandidateId": "ALC1737-vcand-p157-L-002",
+        "precedingRelevantRaw": ".{tender, 6 tender."
+      },
+      "decision": {
+        "classification": "continuation",
+        "boundaryAssessment": "not_applicable",
+        "articleLinkStatus": "not_applicable",
+        "continuationType": "from_previous_line"
+      },
+      "absorbedStart": {
+        "missedStartId": "ALC1737-miss-p157-L-005",
+        "containingCandidateId": "ALC1737-vcand-p157-L-002",
+        "guideHypothesis": "Eſtender, ò tender",
+        "status": "structurally_supported_noncanonical"
+      },
+      "rationale": "Same-witness OCR preserves `Eſtender, ò tender. Buſca deſenvolver.` across the end of L-002 and the one-line L-003 fragment. L-003 therefore continues an article start absorbed inside L-002 and is not an independent lexical start."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p157-L-006",
+      "canonicalEvidence": {
+        "candidateOrderInColumn": 6,
+        "startY": 132.163,
+        "rawLines": [
+          "le, Tobare;",
+          "mügér¿ T¿Ji/¿.",
+          ";fteril fer la",
+          "Ahinque."
+        ],
+        "precedingCandidates": [
+          "ALC1737-vcand-p157-L-004",
+          "ALC1737-vcand-p157-L-005"
+        ],
+        "followingCandidateId": "ALC1737-vcand-p157-L-007"
+      },
+      "decision": {
+        "classification": "continuation",
+        "boundaryAssessment": "undersegmented",
+        "articleLinkStatus": "not_applicable",
+        "continuationType": "from_previous_line"
+      },
+      "absorbedStart": {
+        "missedStartId": "ALC1737-miss-p157-L-006",
+        "containingCandidateId": "ALC1737-vcand-p157-L-006",
+        "guideHypothesis": "Eſteril ſer la muger",
+        "status": "structurally_supported_noncanonical"
+      },
+      "rationale": "L-006 opens with `le, Tobare;`, completing the Eſtera article that began at L-004 and continued through L-005. Same-witness OCR then preserves a fresh `Eſteril ſer la muger` start before the next `Eſtirar` region. The candidate therefore begins as continuation but is undersegmented because it absorbs a distinct article start. The terminal `Ahinque` is treated as reading-order leakage associated with the following Eſtirar region, not as authority for an Eſteril form."
+    }
+  ],
+  "newKnownMissedStarts": [
+    {
+      "missedStartId": "ALC1737-miss-p157-L-005",
+      "containingCandidateId": "ALC1737-vcand-p157-L-002",
+      "guideHypothesis": "Eſtender, ò tender",
+      "linkedArticleIds": []
+    },
+    {
+      "missedStartId": "ALC1737-miss-p157-L-006",
+      "containingCandidateId": "ALC1737-vcand-p157-L-006",
+      "guideHypothesis": "Eſteril ſer la muger",
+      "linkedArticleIds": []
+    }
+  ],
+  "expectedPageStateAfterResolution": {
+    "candidateCount": 42,
+    "classification": {
+      "article": 38,
+      "continuation": 4,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 31,
+      "oversegmented": 2,
+      "undersegmented": 2,
+      "merged_articles": 4,
+      "ambiguous": 0,
+      "not_applicable": 3
+    },
+    "articleCandidatesPendingPromotion": 27,
+    "newPromotions": 0,
+    "corpusTotal": 1045,
+    "knownVisibleStartsMinimum": 44,
+    "knownMissedStartRecords": 6,
+    "knownMergedInternalStarts": 4,
+    "visibleStartCensusExhaustive": false
+  },
+  "sourceGapGuard": {
+    "gapId": "ALC1737-gap-0001",
+    "afterDigitalPage": 157,
+    "beforeDigitalPage": 158,
+    "preservedUnchanged": true,
+    "policy": "No F/G material is synthesized, inferred, normalized from later dictionaries, or reconstructed from BUE1890. Recovery requires an independently identified witness and separate provenance."
+  },
+  "epistemicGuards": [
+    "The two new missed-start records document extractor false negatives; they do not create lexical article objects.",
+    "The same-witness OCR is used to establish sequence and structural identity only; uncertain Cahita forms are not promoted.",
+    "The p157→158 source gap remains independent of candidate reconciliation and is not reduced by these decisions.",
+    "No precision, recall or F1 metric is claimed because the visible-start census remains non-exhaustive.",
+    "humanVerified remains false."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "method": "Convergent structural reconciliation from materialized canonical p157 geometry/OCR, selected direct-collation anchors, recovered same-witness ALC1737 OCR sequence, and explicit missed-start modeling; source-gap isolation preserved."
+  }
+}
