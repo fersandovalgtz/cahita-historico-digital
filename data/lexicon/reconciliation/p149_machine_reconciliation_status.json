@@ -1,0 +1,116 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 149,
+  "pageStatus": {
+    "candidateReconciliation": "complete_with_explicit_unresolved",
+    "visibleStartCensus": "not_exhaustive",
+    "promotionLinkage": "partial",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 61,
+    "left": 31,
+    "right": 30,
+    "classification": {
+      "article": 55,
+      "continuation": 5,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 1
+    },
+    "boundaryAssessment": {
+      "exact": 47,
+      "oversegmented": 5,
+      "undersegmented": 3,
+      "merged_articles": 0,
+      "ambiguous": 1,
+      "not_applicable": 5
+    }
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000239",
+      "ALC1737-art-000253"
+    ],
+    "articleCandidateRecordsLinked": 15,
+    "structuredArticlesLinked": 15,
+    "continuationCandidateRecordsLinked": 1,
+    "selectedArticlesUnlinked": 0,
+    "crossColumnArticleId": "ALC1737-art-000247"
+  },
+  "promotion": {
+    "articleCandidatesPendingPromotion": 40,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045
+  },
+  "visibleStartEvidence": {
+    "exhaustive": false,
+    "knownVisibleStartsMinimum": 55,
+    "knownMissedStartRecords": 0,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "Candidate reconciliation identifies 55 article starts, five continuations and one unresolved boundary. The selected anchor layer is not exhaustive and cannot prove absence of additional missed starts; no performance denominator is asserted."
+  },
+  "physicalContinuities": [
+    {
+      "from": "ALC1737-vcand-p148-R-021",
+      "to": "ALC1737-vcand-p149-L-001",
+      "type": "catchword_to_article",
+      "note": "The p148 `Cala-` fragment anticipates the fresh selected p149 article ALC1737-art-000239."
+    },
+    {
+      "from": "ALC1737-vcand-p149-L-001",
+      "to": "ALC1737-vcand-p149-L-002",
+      "type": "article_continuation",
+      "note": "Selected article 000239 is split across two candidates; L-002 is continuation."
+    },
+    {
+      "from": "ALC1737-vcand-p149-L-005",
+      "to": "ALC1737-vcand-p149-L-006",
+      "type": "article_continuation"
+    },
+    {
+      "from": "ALC1737-vcand-p149-L-007",
+      "to": "ALC1737-vcand-p149-L-008",
+      "type": "article_continuation"
+    },
+    {
+      "from": "ALC1737-vcand-p149-L-009",
+      "to": "ALC1737-vcand-p149-L-010",
+      "type": "article_continuation"
+    },
+    {
+      "from": "ALC1737-vcand-p149-L-014",
+      "to": "ALC1737-vcand-p149-L-015",
+      "type": "article_continuation"
+    },
+    {
+      "from": "ALC1737-vcand-p149-L-031",
+      "to": "p149:right-top-unrepresented",
+      "type": "cross_column_article_continuation",
+      "note": "ALC1737-art-000247 (`Camarón`) continues into the top of the right column before candidate R-001."
+    },
+    {
+      "from": "ALC1737-vcand-p149-R-030",
+      "to": "ALC1737-vcand-p150-L-001",
+      "type": "page_edge_context",
+      "note": "R-030 contains damaged bottom material; p150 L-001 is the fresh selected article `Carcel`, so no long article continuation is asserted."
+    }
+  ],
+  "unresolvedNotes": [
+    "L-019 remains unresolved because OCR interleaves `Calentura` guide/form fragments with adjacent L-018 material."
+  ],
+  "evidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "canonicalCandidateInventoryCount": 2072,
+    "selectedP149LayerUsedAsAnchor": true,
+    "p150OpeningAndSelectedLayerUsedForPageEdge": true,
+    "directFacsimileAvailableThisPass": false,
+    "policy": "Structural decisions may be closed from convergent machine evidence; ambiguous boundary microstructure remains unresolved and uncertain lexical text is not strengthened."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
