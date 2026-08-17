@@ -1,0 +1,127 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 159,
+  "pageStatus": {
+    "candidateReconciliation": "complete",
+    "visibleStartCensus": "not_exhaustive",
+    "promotionLinkage": "partial",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 52,
+    "left": 26,
+    "right": 26,
+    "classification": {
+      "article": 49,
+      "continuation": 3,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 40,
+      "oversegmented": 3,
+      "undersegmented": 6,
+      "merged_articles": 0,
+      "ambiguous": 0,
+      "not_applicable": 3
+    }
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000389",
+      "ALC1737-art-000403"
+    ],
+    "articleCandidateRecordsLinked": 15,
+    "structuredArticlesLinked": 15,
+    "continuationCandidateRecordsLinked": 1,
+    "selectedArticlesUnlinked": 0,
+    "selectedColumnMetadataMismatches": [],
+    "columnMetadataCorrectionAppliedThisPass": true,
+    "columnMetadataCorrections": [
+      {
+        "articleId": "ALC1737-art-000398",
+        "oldColumn": "right",
+        "newColumn": "left",
+        "candidateId": "ALC1737-vcand-p159-L-017"
+      },
+      {
+        "articleId": "ALC1737-art-000399",
+        "oldColumn": "right",
+        "newColumn": "left",
+        "candidateId": "ALC1737-vcand-p159-L-023"
+      },
+      {
+        "articleId": "ALC1737-art-000400",
+        "oldColumn": "right",
+        "newColumn": "left",
+        "candidateId": "ALC1737-vcand-p159-L-024"
+      }
+    ]
+  },
+  "promotion": {
+    "articleCandidatesPendingPromotion": 34,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045
+  },
+  "visibleStartEvidence": {
+    "exhaustive": false,
+    "knownVisibleStartsMinimum": 49,
+    "knownMissedStartRecords": 0,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "All 15 selected starts align to candidate starts, but several candidates contain additional damaged guide-like material without independent selected/facsimile anchors. The selected layer is non-exhaustive, so no complete denominator is asserted."
+  },
+  "physicalContinuities": [
+    {
+      "from": "ALC1737-vcand-p158-R-025",
+      "to": "ALC1737-vcand-p159-L-001",
+      "type": "fresh_page_transition",
+      "note": "p158 `Hueva` plus damaged edge material does not continue into fresh selected p159 `Huevo. Totolichaba.`."
+    },
+    {
+      "from": "ALC1737-vcand-p159-L-025",
+      "to": "ALC1737-vcand-p159-L-026",
+      "type": "article_continuation",
+      "note": "`Yerva para quelite` region continues into damaged/form-only L-026."
+    },
+    {
+      "from": "ALC1737-vcand-p159-R-001",
+      "to": "ALC1737-vcand-p159-R-002",
+      "type": "article_continuation",
+      "note": "`Yerva de la golondrina` continues into form-only R-002."
+    },
+    {
+      "from": "ALC1737-vcand-p159-R-003",
+      "to": "ALC1737-vcand-p159-R-004",
+      "type": "article_continuation",
+      "note": "Selected 000401 continues into R-004."
+    },
+    {
+      "from": "ALC1737-vcand-p159-R-026",
+      "to": "ALC1737-vcand-p160-L-001",
+      "type": "fresh_page_transition",
+      "note": "R-026 carries a short page-edge/catchword fragment; p160 opens fresh `Yr derecho à alguna parte`, not a continuation of Yſlabon."
+    }
+  ],
+  "structuralNotes": [
+    "L-001 and L-003 absorb forms belonging to the immediately following selected articles but do not erase those fresh candidate starts.",
+    "L-017, R-012 and R-022 contain additional guide-like material that remains unpromoted and is not counted as an exhaustive missed-start layer.",
+    "R-026 is a distinct article/cross-reference-like start with edge material; p160 begins a fresh Yr sequence.",
+    "Selected article column metadata for 000398–000400 was corrected right→left with a dedicated provenance layer; lexical transcription was not changed."
+  ],
+  "evidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "canonicalCandidateInventoryCount": 2072,
+    "selectedP159LayerUsedAsAnchor": true,
+    "p158ReconciliationUsedForOpeningEdge": true,
+    "p160CanonicalOpeningUsedForLowerEdge": true,
+    "directFacsimileAvailableThisPass": false,
+    "policy": "Candidate geometry and selected direct collations are used only to support demonstrated starts and continuations. The demonstrated 000398–000400 column drift is corrected with explicit provenance; unanchored internal guide-like material remains unpromoted."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}

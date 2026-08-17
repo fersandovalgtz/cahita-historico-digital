@@ -39,9 +39,7 @@ jobs:
         run: |
           set -euo pipefail
           for file in data/lexicon/articles/*.jsonl; do
-            python scripts/validate_jsonl.py \
-              --schema schemas/lexical-article.schema.json \
-              --jsonl "$file"
+            python scripts/validate_jsonl.py --schema schemas/lexical-article.schema.json --jsonl "$file"
           done
 
       - name: Validate candidate reconciliation batches
@@ -102,10 +100,10 @@ jobs:
             data/lexicon/reconciliation/p157_left_reconciliation.jsonl \
             data/lexicon/reconciliation/p157_right_reconciliation.jsonl \
             data/lexicon/reconciliation/p158_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p158_right_reconciliation.jsonl; do
-            python scripts/validate_jsonl.py \
-              --schema schemas/lexicon-candidate-review.schema.json \
-              --jsonl "$file"
+            data/lexicon/reconciliation/p158_right_reconciliation.jsonl \
+            data/lexicon/reconciliation/p159_left_reconciliation.jsonl \
+            data/lexicon/reconciliation/p159_right_reconciliation.jsonl; do
+            python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl "$file"
           done
 
       - name: Validate missed-start layers
@@ -131,9 +129,7 @@ jobs:
             data/lexicon/reconciliation/p156_missed_visible_starts.jsonl \
             data/lexicon/reconciliation/p157_missed_visible_starts.jsonl \
             data/lexicon/reconciliation/p158_missed_visible_starts.jsonl; do
-            python scripts/validate_jsonl.py \
-              --schema schemas/lexicon-missed-start.schema.json \
-              --jsonl "$file"
+            python scripts/validate_jsonl.py --schema schemas/lexicon-missed-start.schema.json --jsonl "$file"
           done
 
       - name: Validate core JSON metadata syntax
@@ -160,24 +156,10 @@ jobs:
           python -m json.tool data/lexicon/reconciliation/p147_machine_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p148_machine_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p149_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p150_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p150_preflight.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p151_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p151_preflight.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p152_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p152_preflight.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p153_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p153_preflight.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p154_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p154_preflight.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p155_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p155_preflight.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p156_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p156_preflight.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p157_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p157_preflight.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p158_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p158_preflight.json >/dev/null
+          for page in 150 151 152 153 154 155 156 157 158 159; do
+            python -m json.tool "data/lexicon/reconciliation/p${page}_machine_reconciliation_status.json" >/dev/null
+            python -m json.tool "data/lexicon/reconciliation/p${page}_preflight.json" >/dev/null
+          done
           python -m json.tool data/lexicon/provenance/p135_art000704_correction.json >/dev/null
           python -m json.tool data/lexicon/provenance/p137_art000729_correction.json >/dev/null
           python -m json.tool data/lexicon/provenance/p137_art000731_correction.json >/dev/null
@@ -188,3 +170,10 @@ jobs:
           python -m json.tool data/lexicon/review/boundary_algorithm_comparison.json >/dev/null
           python -m json.tool data/source/control/bue1890.json >/dev/null
           python -m json.tool data/source/control/bnf1737_reported_witness.json >/dev/null
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for line in Path('data/lexicon/provenance/p159_column_metadata_corrections.jsonl').read_text(encoding='utf-8').splitlines():
+              if line.strip():
+                  json.loads(line)
+          PY
