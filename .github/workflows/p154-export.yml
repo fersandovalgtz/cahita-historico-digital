@@ -1,0 +1,25 @@
+name: CHD p155 edge export
+
+on:
+  push:
+    branches: [work/p154-reconciliation]
+    paths:
+      - '.github/workflows/p154-export.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Export canonical p155 candidates
+        run: |
+          echo '---P155-BEGIN---'
+          python scripts/export_candidate_page.py --page 155
+          echo '---P155-END---'
