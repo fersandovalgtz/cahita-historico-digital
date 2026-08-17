@@ -1,0 +1,55 @@
+name: Link p161 terminal evidence
+
+on:
+  push:
+    branches:
+      - work/p161-terminal-evidence
+
+permissions:
+  contents: write
+
+jobs:
+  link:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Link conservative terminal evidence
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('data/lexicon/reconciliation/p161_machine_reconciliation_status.json')
+          status = json.loads(path.read_text(encoding='utf-8'))
+          status.setdefault('evidence', {})['materializedCandidateView'] = 'data/lexicon/candidates/p161_candidates.jsonl'
+          status['evidence']['terminalEvidenceRecord'] = 'p161_terminal_evidence_2026-08-17.json'
+          status['evidence']['primaryOcrTerminalReviewUsed'] = True
+          status['evidence']['bue1890LowerLSequenceControlUsed'] = True
+          status['evidence']['terminalDecision'] = 'explicit_conservative_nonresolution'
+          status['evidence']['policy'] = 'R-016 remains unresolved because same-witness OCR and secondary sequence control establish regional lower-L material but do not uniquely map the tiny fragment to article, continuation or layout residue. No closure is forced from non-unique evidence.'
+          status['unresolvedNotes'] = [
+              x for x in status.get('unresolvedNotes', [])
+              if not x.startswith('R-016')
+          ] + [
+              'R-016 remains explicitly unresolved after terminal-region review. Materialized geometry shows only `t-` / `\'i`; same-witness OCR is severely interleaved, while BUE1890 confirms several lower-L entries before M but cannot uniquely assign this fragment. See p161_terminal_evidence_2026-08-17.json.'
+          ]
+          status['reviewStatus'] = 'machine_corrected_unverified'
+          status['humanVerified'] = False
+          assert status['candidateInventory']['classification']['unresolved'] == 1
+          assert status['candidateInventory']['classification']['article'] == 32
+          assert status['promotion']['corpusTotalAfterPass'] == 1045
+          assert status['humanVerified'] is False
+          path.write_text(json.dumps(status, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+          python -m json.tool data/lexicon/reconciliation/p161_terminal_evidence_2026-08-17.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p161_machine_reconciliation_status.json >/dev/null
+          python scripts/reconstruct_candidate_inventory.py
+      - name: Commit evidence link
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/lexicon/reconciliation/p161_machine_reconciliation_status.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "data: enlazar evidencia terminal conservadora de p.161"
+          git push
