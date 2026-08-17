@@ -1,4 +1,4 @@
-name: CHD p164 materialize reconciliation
+name: CHD p164 synchronize docs
 
 on:
   push:
@@ -11,16 +11,16 @@ permissions:
   contents: write
 
 jobs:
-  materialize:
+  synchronize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Materialize p164 reconciliation
-        run: python scripts/_tmp_materialize_p164.py
-      - name: Validate p164 evidence
+      - name: Synchronize p164 docs
+        run: python scripts/_tmp_sync_p164.py
+      - name: Validate p164 package and synchronized docs
         run: |
           python -m pip install -r requirements-dev.txt
           python scripts/reconstruct_candidate_inventory.py
@@ -29,32 +29,16 @@ jobs:
           python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p164_right_reconciliation.jsonl
           python -m json.tool data/lexicon/reconciliation/p164_machine_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p164_preflight.json >/dev/null
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          rows=[]
-          for name in ['p164_left_reconciliation.jsonl','p164_right_reconciliation.jsonl']:
-              rows += [json.loads(x) for x in Path('data/lexicon/reconciliation',name).read_text(encoding='utf-8').splitlines() if x.strip()]
-          assert len(rows)==51
-          assert all(r['classification']=='article' for r in rows)
-          by={r['candidateId']:r for r in rows}
-          for cid in ['ALC1737-vcand-p164-R-018','ALC1737-vcand-p164-R-020','ALC1737-vcand-p164-R-022']:
-              assert by[cid]['boundaryAssessment']=='merged_articles'
-          assert by['ALC1737-vcand-p164-R-001']['linkedArticleIds']==['ALC1737-art-000477']
-          assert by['ALC1737-vcand-p164-R-002']['linkedArticleIds']==['ALC1737-art-000478']
-          linked={aid for r in rows for aid in r.get('linkedArticleIds',[])}
-          assert linked=={f'ALC1737-art-{n:06d}' for n in range(464,479)}
-          status=json.loads(Path('data/lexicon/reconciliation/p164_machine_reconciliation_status.json').read_text(encoding='utf-8'))
-          assert status['candidateInventory']['classification']['article']==51
-          assert status['candidateInventory']['classification']['unresolved']==0
-          assert status['promotion']['articleCandidatesPendingPromotion']==36
-          assert status['visibleStartEvidence']['knownVisibleStartsMinimum']==51
-          assert status['promotion']['corpusTotalAfterPass']==1045
-          PY
-      - name: Commit generated p164 evidence
+          grep -F '51 `article`, sin continuaciones ni candidatos estructuralmente `unresolved`' README.md
+          grep -F '36 fronteras `pending_promotion`' README.md
+          grep -F 'página 165**, con 56 candidatos canónicos —29 izquierda y 27 derecha—' README.md
+          grep -F '51 `article`' docs/LEXICON_PROGRESS.md
+          grep -F '36 candidatos de artículo `pending_promotion`' docs/LEXICON_PROGRESS.md
+          grep -F '56 candidatos canónicos: 29 izquierda y 27 derecha' docs/LEXICON_PROGRESS.md
+      - name: Commit synchronized documentation
         run: |
           git config user.name 'Fernando Sandoval'
           git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
-          git add data/lexicon/reconciliation/p164_left_reconciliation.jsonl data/lexicon/reconciliation/p164_right_reconciliation.jsonl data/lexicon/reconciliation/p164_machine_reconciliation_status.json
-          git commit -m 'data: reconciliar conservadoramente p.164' -m '51 article; R-018/R-020/R-022 merged_articles, 15 seleccionados enlazados, 36 pending_promotion y borde p165 fresco.'
+          git add README.md docs/LEXICON_PROGRESS.md
+          git commit -m 'docs: cerrar reconciliación conservadora de p.164' -m 'Registra 51 article, tres merged_articles, 36 pending_promotion y fija p.165=56 candidatos como siguiente frente.'
           git push origin HEAD:work/p164-reconciliation
