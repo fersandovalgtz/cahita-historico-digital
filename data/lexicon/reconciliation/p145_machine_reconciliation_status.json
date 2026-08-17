@@ -12,26 +12,26 @@
     "left": 22,
     "right": 17,
     "classification": {
-      "article": 33,
+      "article": 34,
       "continuation": 3,
       "paratext": 0,
       "false_positive": 0,
-      "unresolved": 3
+      "unresolved": 2
     },
     "boundaryAssessment": {
-      "exact": 26,
+      "exact": 27,
       "merged_articles": 3,
       "undersegmented": 4,
       "oversegmented": 0,
-      "ambiguous": 4,
+      "ambiguous": 3,
       "not_applicable": 2
     }
   },
   "linkage": {
     "articleCandidateRecordsLinked": 13,
     "preExistingStructuredArticlesLinked": 14,
-    "articleCandidatesPendingPromotion": 20,
-    "unresolvedCandidateBoundaries": 3
+    "articleCandidatesPendingPromotion": 21,
+    "unresolvedCandidateBoundaries": 2
   },
   "curation": {
     "preExistingSelectedArticlesOnPage": 14,
@@ -45,7 +45,7 @@
     "precision": null,
     "recall": null,
     "f1": null,
-    "reasonMetricsWithheld": "The preserved machine evidence demonstrates absorbed and missed starts, but without the page image it does not support a defensible exhaustive visible-start denominator. TP/FP/FN metrics are therefore intentionally withheld rather than inferred."
+    "reasonMetricsWithheld": "Recovered primary OCR and a later secondary control improve individual boundary identification, but they still do not provide a defensible facsimile-level exhaustive visible-start denominator. TP/FP/FN metrics therefore remain intentionally withheld."
   },
   "machineEvidence": {
     "canonicalCandidateInventoryVerified": true,
@@ -53,20 +53,31 @@
     "p146OpeningInspectedFromCanonicalInventory": true,
     "p146OpeningInterpretation": "Digital p.146 begins with fresh B entries in both columns; no long p.145-to-p.146 continuation is asserted from the preserved geometry.",
     "selectedP145LayerUsedAsAnchor": true,
-    "directFacsimileRetrievalAttempted": true,
-    "directFacsimileRetrievalResult": "temporarily_unavailable_http_503",
-    "bue1890SecondaryControlRetrievalAttempted": true,
-    "bue1890SecondaryControlRetrievalResult": "temporarily_unavailable_http_503"
+    "previousDirectFacsimileRetrievalResult": "temporarily_unavailable_http_503",
+    "recoveredPrimaryOcr": {
+      "available": true,
+      "provider": "Internet Archive",
+      "identifier": "artedelalenguaca00gonz",
+      "use": "guide and segmentation evidence only where OCR is sufficiently legible; damaged Cahita forms are not silently regularized"
+    },
+    "bue1890SecondaryControl": {
+      "available": true,
+      "use": "explicit secondary corroboration only; never substitutes silently for ALC1737"
+    },
+    "evidenceRecord": "p145_control_evidence_2026-08-17.json"
   },
+  "resolvedThisPass": [
+    "R-011 is now classified as an article boundary: recovered ALC1737 OCR preserves `Ardilla que ſuele bajar al Rio`, and BUE1890 independently corroborates the segmentation. Its ALC1737 Cahita form remains too noisy for promotion.",
+    "R-012 remains an ambiguous article boundary but its guide is identified as `Atomo` from recovered ALC1737 OCR (`Atpmo`) with BUE1890 secondary corroboration; its exact ALC1737 form remains unpromoted."
+  ],
   "unresolvedNotes": [
     "L-002 begins with apparent carry-over material and contains a probable internal A-entry start; the unique boundary assignment remains unresolved.",
     "L-005 mixes continuation-like and article-like fragments and remains unresolved.",
-    "R-011 contains Ardilla/Rio material whose start-versus-continuation relationship to the article absorbed by R-010 remains unresolved.",
-    "R-012 is accepted as an article boundary but its exact guide/form reading is too damaged for promotion.",
+    "R-012 is accepted as an article boundary and its guide is now identified as `Atomo`, but its exact ALC1737 form remains too damaged for promotion.",
     "R-017 begins at the selected Bagre article and appears to absorb a later bottom-right start; that extra start is not promoted without a reliable reading.",
     "ALC1737-art-001045 (Atormentar) continues from p.144 and retains low-confidence `chumtieſte`; no human recollation is planned under the current workflow."
   ],
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false,
-  "authorityNote": "P.145 has complete candidate-level machine reconciliation, but not an exhaustive visible-start census. The current project policy intentionally does not include independent human verification. Technical decisions are retained as machine_corrected_unverified or unresolved, and no uncertainty is silently upgraded to philological fact."
+  "authorityNote": "P.145 has complete candidate-level machine reconciliation, now strengthened by recovered primary OCR and explicit BUE1890 secondary control, but not an exhaustive facsimile-level visible-start census. The project does not silently replace ALC1737 readings with the later reprint. Technical decisions remain machine_corrected_unverified or unresolved, and no uncertainty is upgraded to philological fact."
 }
