@@ -92,7 +92,9 @@ jobs:
             data/lexicon/reconciliation/p152_left_reconciliation.jsonl \
             data/lexicon/reconciliation/p152_right_reconciliation.jsonl \
             data/lexicon/reconciliation/p153_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p153_right_reconciliation.jsonl; do
+            data/lexicon/reconciliation/p153_right_reconciliation.jsonl \
+            data/lexicon/reconciliation/p154_left_reconciliation.jsonl \
+            data/lexicon/reconciliation/p154_right_reconciliation.jsonl; do
             python scripts/validate_jsonl.py \
               --schema schemas/lexicon-candidate-review.schema.json \
               --jsonl "$file"
@@ -154,6 +156,8 @@ jobs:
           python -m json.tool data/lexicon/reconciliation/p152_preflight.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p153_machine_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p153_preflight.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p154_machine_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p154_preflight.json >/dev/null
           python -m json.tool data/lexicon/provenance/p135_art000704_correction.json >/dev/null
           python -m json.tool data/lexicon/provenance/p137_art000729_correction.json >/dev/null
           python -m json.tool data/lexicon/provenance/p137_art000731_correction.json >/dev/null
