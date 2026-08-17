@@ -129,6 +129,9 @@ jobs:
                   json.loads(line)
           PY
 
+      - name: Validate Phase II promotion queue invariants
+        run: python scripts/validate_phase2_promotion_queues.py
+
       - name: Verify Phase II open-work summary is current
         shell: bash
         run: |
