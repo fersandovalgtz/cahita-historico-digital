@@ -1,0 +1,104 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 151,
+  "pageStatus": {
+    "candidateReconciliation": "complete",
+    "visibleStartCensus": "not_exhaustive",
+    "promotionLinkage": "partial",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 50,
+    "left": 23,
+    "right": 27,
+    "classification": {
+      "article": 47,
+      "continuation": 3,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 43,
+      "oversegmented": 3,
+      "undersegmented": 0,
+      "merged_articles": 1,
+      "ambiguous": 0,
+      "not_applicable": 3
+    }
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000269",
+      "ALC1737-art-000283"
+    ],
+    "articleCandidateRecordsLinked": 13,
+    "structuredArticlesLinked": 15,
+    "selectedArticlesUnlinked": 0,
+    "mergedCandidateId": "ALC1737-vcand-p151-L-002",
+    "mergedSelectedArticleIds": [
+      "ALC1737-art-000269",
+      "ALC1737-art-000270",
+      "ALC1737-art-000271"
+    ]
+  },
+  "promotion": {
+    "articleCandidatesPendingPromotion": 34,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045
+  },
+  "visibleStartEvidence": {
+    "exhaustive": false,
+    "knownVisibleStartsMinimum": 49,
+    "knownMergedInternalStarts": 2,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "The 47 article candidates plus two additional selected starts absorbed inside merged candidate L-002 establish at least 49 article starts. The selected layer is not exhaustive and cannot prove absence of further missed starts; no performance denominator is asserted."
+  },
+  "physicalContinuities": [
+    {
+      "from": "ALC1737-vcand-p150-R-030",
+      "to": "ALC1737-vcand-p151-L-001",
+      "type": "page_edge_context",
+      "note": "p150 R-030 carries trailing `Com-` page-edge material; p151 L-001 is a fresh `Compadecerſe` article start."
+    },
+    {
+      "from": "ALC1737-vcand-p151-R-002",
+      "to": "ALC1737-vcand-p151-R-003",
+      "type": "article_continuation"
+    },
+    {
+      "from": "ALC1737-vcand-p151-R-005",
+      "to": "ALC1737-vcand-p151-R-006",
+      "type": "article_continuation"
+    },
+    {
+      "from": "ALC1737-vcand-p151-R-008",
+      "to": "ALC1737-vcand-p151-R-009",
+      "type": "article_continuation"
+    },
+    {
+      "from": "ALC1737-vcand-p151-R-027",
+      "to": "p152:left-top-unrepresented",
+      "type": "page_edge_article_continuation",
+      "note": "`Coronilla...` ends at the p151 bottom; p152 L-001 begins fresh `Crecer el hombre`, so any remaining continuation belongs to unrepresented page-top context before L-001."
+    }
+  ],
+  "structuralNotes": [
+    "L-002 is a merged-start region supported by the ordering of selected direct-collation articles 000269–000271 and damaged OCR fragments within the candidate.",
+    "R-003, R-006 and R-009 are continuation candidates and not lexical starts."
+  ],
+  "evidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "canonicalCandidateInventoryCount": 2072,
+    "selectedP151LayerUsedAsAnchor": true,
+    "p150AndP152CandidateLayersUsedForPageEdges": true,
+    "directFacsimileAvailableThisPass": false,
+    "policy": "Structural decisions may be closed from convergent machine evidence and pre-existing direct-collation anchors; uncertain lexical text is not strengthened and visible-start metrics remain withheld without an exhaustive census."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
