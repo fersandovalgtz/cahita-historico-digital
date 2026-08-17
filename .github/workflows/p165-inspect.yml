@@ -1,4 +1,4 @@
-name: CHD p165 materialize reconciliation
+name: CHD p165 synchronize docs
 
 on:
   push:
@@ -11,16 +11,16 @@ permissions:
   contents: write
 
 jobs:
-  materialize:
+  synchronize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Materialize p165 reconciliation
-        run: python scripts/_tmp_materialize_p165.py
-      - name: Validate p165 evidence
+      - name: Synchronize p165 docs
+        run: python scripts/_tmp_sync_p165.py
+      - name: Validate p165 package and synchronized docs
         run: |
           python -m pip install -r requirements-dev.txt
           python scripts/reconstruct_candidate_inventory.py
@@ -30,33 +30,15 @@ jobs:
           python scripts/validate_jsonl.py --schema schemas/lexicon-missed-start.schema.json --jsonl data/lexicon/reconciliation/p165_missed_visible_starts.jsonl
           python -m json.tool data/lexicon/reconciliation/p165_machine_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p165_preflight.json >/dev/null
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          rows=[]
-          for name in ['p165_left_reconciliation.jsonl','p165_right_reconciliation.jsonl']:
-              rows += [json.loads(x) for x in Path('data/lexicon/reconciliation',name).read_text(encoding='utf-8').splitlines() if x.strip()]
-          assert len(rows)==56
-          cls={k:sum(r['classification']==k for r in rows) for k in ['article','continuation','unresolved','paratext','false_positive']}
-          assert cls=={'article':52,'continuation':4,'unresolved':0,'paratext':0,'false_positive':0}, cls
-          by={r['candidateId']:r for r in rows}
-          assert by['ALC1737-vcand-p165-L-016']['boundaryAssessment']=='merged_articles'
-          assert by['ALC1737-vcand-p165-L-016']['linkedArticleIds']==['ALC1737-art-000487','ALC1737-art-000488']
-          assert by['ALC1737-vcand-p165-R-014']['boundaryAssessment']=='undersegmented'
-          assert by['ALC1737-vcand-p165-R-016']['boundaryAssessment']=='ambiguous'
-          for cid in ['ALC1737-vcand-p165-L-004','ALC1737-vcand-p165-L-015','ALC1737-vcand-p165-R-003','ALC1737-vcand-p165-R-008']:
-              assert by[cid]['classification']=='continuation'
-          miss=[json.loads(x) for x in Path('data/lexicon/reconciliation/p165_missed_visible_starts.jsonl').read_text(encoding='utf-8').splitlines() if x.strip()]
-          assert len(miss)==1 and miss[0]['linkedArticleIds']==['ALC1737-art-000488']
-          status=json.loads(Path('data/lexicon/reconciliation/p165_machine_reconciliation_status.json').read_text(encoding='utf-8'))
-          assert status['promotion']['articleCandidatesPendingPromotion']==38
-          assert status['visibleStartEvidence']['knownVisibleStartsMinimum']==53
-          assert status['promotion']['corpusTotalAfterPass']==1045
-          PY
-      - name: Commit generated p165 evidence
+          grep -F '52 `article` y **4 `continuation`**' docs/LEXICON_PROGRESS.md
+          grep -F '38 candidatos de artículo `pending_promotion`' docs/LEXICON_PROGRESS.md
+          grep -F '50 candidatos canónicos: 28 izquierda y 22 derecha' docs/LEXICON_PROGRESS.md
+          grep -F 'la página **165** tiene sus **56 candidatos canónicos reconciliados**' README.md
+          grep -F 'página 166**, con 50 candidatos canónicos —28 izquierda y 22 derecha—' README.md
+      - name: Commit synchronized documentation
         run: |
           git config user.name 'Fernando Sandoval'
           git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
-          git add data/lexicon/reconciliation/p165_left_reconciliation.jsonl data/lexicon/reconciliation/p165_right_reconciliation.jsonl data/lexicon/reconciliation/p165_missed_visible_starts.jsonl data/lexicon/reconciliation/p165_machine_reconciliation_status.json
-          git commit -m 'data: reconciliar conservadoramente p.165' -m '56 candidatos: 52 article y 4 continuation; L-016 Oydor+Oyr merged, 000488 como falso negativo interno, 38 pending_promotion y borde p166 fresco.'
+          git add README.md docs/LEXICON_PROGRESS.md
+          git commit -m 'docs: cerrar reconciliación conservadora de p.165' -m 'Registra 52 article, 4 continuation, Oyr como falso negativo interno, 38 pending_promotion y fija p.166=50 candidatos.'
           git push origin HEAD:work/p165-reconciliation
