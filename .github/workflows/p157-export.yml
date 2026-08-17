@@ -1,4 +1,4 @@
-name: CHD p157 materialize reconciliation
+name: CHD p157 synchronize docs
 
 on:
   push:
@@ -11,188 +11,29 @@ permissions:
   contents: write
 
 jobs:
-  materialize:
+  synchronize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Generate p157 reconciliation layers
-        shell: bash
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          links = {
-            'L-002':['ALC1737-art-000359'],
-            'L-007':['ALC1737-art-000360','ALC1737-art-000361'],
-            'L-009':['ALC1737-art-000362'],
-            'L-010':['ALC1737-art-000363','ALC1737-art-000364'],
-            'L-011':['ALC1737-art-000365'],
-            'L-012':['ALC1737-art-000366'],
-            'L-014':['ALC1737-art-000367','ALC1737-art-000368'],
-            'L-015':['ALC1737-art-000369'],
-            'L-016':['ALC1737-art-000370'],
-            'L-019':['ALC1737-art-000371','ALC1737-art-000372'],
-            'R-011':['ALC1737-art-000373']
-          }
-          continuations = {'L-005','L-013'}
-          unresolved = {'L-003','L-006'}
-          assessments = {
-            'L-002':'undersegmented','L-004':'oversegmented','L-007':'merged_articles',
-            'L-010':'merged_articles','L-012':'oversegmented','L-014':'merged_articles',
-            'L-019':'merged_articles'
-          }
-          provenance = {
-            'derivedFrom':'canonical-v0.2 candidate inventory; p157 selected article layer; ALC1737-gap-0001; p156 and p158 edge context',
-            'agent':'GPT-5.6 Sol machine reconciliation',
-            'method':'AI-assisted conservative structural reconciliation from canonical geometry/OCR, pre-existing selected direct-collation anchors, and documented source-gap evidence; no independent human verification',
-            'processedAt':None
-          }
-
-          def note_for(key, linked):
-            notes = {
-              'L-001':'Fresh cropped-edge Eſt- article after p156 `Eſquina`; no cross-page continuation is asserted. Raw OCR loses initial glyphs and remains unpromoted.',
-              'L-002':'Starts selected 000359 (`Eſtar. Cacec.`) and retains additional heavily cropped Eſtar-related material. The extra microstructure is not silently split.',
-              'L-003':'Cropped one-line fragment `defemhíver .`; available evidence does not establish whether this boundary is a fresh article or continuation.',
-              'L-004':'Distinct Eſtera-like article start whose text continues into L-005 and reaches damaged material at the start of L-006.',
-              'L-005':'Continuation of the Eſtera-like article begun at L-004; not a fresh lexical start.',
-              'L-006':'Begins with the tail of the L-004/L-005 article and appears also to contain a fresh Eſteril-related start, but the cropped scan/OCR does not support a safe split.',
-              'L-007':'Merged selected starts 000360 (`Eſtirar. Ahuinque.`) and 000361 (`Eſtomago. Cochopoi.`).',
-              'L-008':'Distinct Eſto- lexical start supported by geometry, but OCR is too degraded for promotion.',
-              'L-009':'Aligned to selected 000362 (`Eſtornudo. Hachite.`).',
-              'L-010':'Merged selected starts 000363 (`Eſtrecha coſa. Naulae.`) and 000364 (`Eſtrella. Choqui.`); OCR also leaks `Bueruchoqui` associated with the following selected article.',
-              'L-011':'Fresh selected start 000365 (`Eſtrella lucero. Bueruchoqui.`); its form is partially displaced into the previous OCR group.',
-              'L-012':'Fresh selected start 000366 (`Eſtrella las tres Marias. Himuim.`) split across the following candidate.',
-              'L-013':'Continuation `...rnuim.` of selected 000366; the same OCR group also captures `Choquim`, a form associated with the following selected start 000367 because of reading-order drift.',
-              'L-014':'Merged selected starts 000367 (`Eſtrellas. Choquim.`) and 000368 (`Eſtremecerſe. Sebeſihotec.`); OCR also leaks the form `Amota` associated with following selected 000369.',
-              'L-015':'Fresh selected start 000369 (`Eſtrujar. Amota.`); neighboring OCR groups show reading-order leakage, so selected direct collation remains the transcription authority.',
-              'L-016':'Fresh selected start 000370 (`Eſtudiar. Aumaſtia.`); neighboring OCR groups show form/guide leakage and are not silently normalized.',
-              'L-017':'Distinct `Eſtudio aſſi`-like start supported by geometry; retained pending because its form is displaced/damaged in OCR.',
-              'L-018':'Distinct `Exhalacion que ſe vee de noche`-like article start; OCR is cropped but the boundary is structurally separate.',
-              'L-019':'Merged selected starts 000371 (`Fabricar caſa. Cateme.`) and 000372 (`Facil coſa. Catua obiachi.`); trailing F-material is preserved as reading-order/column leakage rather than promoted.',
-              'R-001':'Distinct F-entry at the top of the right column. Some F-material leaks into the final left OCR group, but the right-column boundary is structurally valid.',
-              'R-011':'Aligned to selected 000373 (`Fee, ò creencia. Buſca creer.`); trailing damaged text is retained without inventing another start.',
-              'R-023':'Visible final lexical start `Flecha. Huihua.`. The source then has catchword `Fle...` and documented gap ALC1737-gap-0001 before p158 begins with H; no missing F/G entries are reconstructed.'
-            }
-            if key in notes:
-              return notes[key]
-            if linked:
-              return 'Aligned to selected direct-collation article anchor.'
-            return 'Distinct lexical start supported by canonical geometry; retained pending because raw OCR alone is not a sufficient transcription anchor for promotion.'
-
-          def rec(side,n):
-            key=f'{side}-{n:03d}'
-            cid=f'ALC1737-vcand-p157-{key}'
-            col='left' if side=='L' else 'right'
-            linked=links.get(key,[])
-            if key in unresolved:
-              return {
-                'candidateId':cid,'sourceId':'ALC1737','sourcePageDigital':157,'column':col,
-                'classification':'unresolved','boundaryAssessment':'ambiguous','linkedArticleIds':[],
-                'articleLinkStatus':'not_applicable','editorialNote':note_for(key,linked),
-                'reviewStatus':'unresolved','humanVerified':False,'provenance':provenance
-              }
-            if key in continuations:
-              continuation_links=['ALC1737-art-000366'] if key=='L-013' else []
-              return {
-                'candidateId':cid,'sourceId':'ALC1737','sourcePageDigital':157,'column':col,
-                'classification':'continuation','boundaryAssessment':'not_applicable','linkedArticleIds':continuation_links,
-                'articleLinkStatus':'not_applicable','continuationType':'from_previous_line',
-                'editorialNote':note_for(key,continuation_links),'reviewStatus':'machine_corrected_unverified',
-                'humanVerified':False,'provenance':provenance
-              }
-            assessment=assessments.get(key,'exact')
-            return {
-              'candidateId':cid,'sourceId':'ALC1737','sourcePageDigital':157,'column':col,
-              'classification':'article','boundaryAssessment':assessment,'linkedArticleIds':linked,
-              'articleLinkStatus':'linked' if linked else 'pending_promotion','editorialNote':note_for(key,linked),
-              'reviewStatus':'machine_corrected_unverified','humanVerified':False,'provenance':provenance
-            }
-
-          out=Path('data/lexicon/reconciliation')
-          for side,count,filename in [('L',19,'p157_left_reconciliation.jsonl'),('R',23,'p157_right_reconciliation.jsonl')]:
-            rows=[rec(side,i) for i in range(1,count+1)]
-            (out/filename).write_text('\n'.join(json.dumps(r,ensure_ascii=False) for r in rows)+'\n',encoding='utf-8')
-
-          misses=[
-            ('ALC1737-miss-p157-L-001','Eſtomago. Cochopoi.','ALC1737-art-000361','ALC1737-vcand-p157-L-007'),
-            ('ALC1737-miss-p157-L-002','Eſtrella. Choqui.','ALC1737-art-000364','ALC1737-vcand-p157-L-010'),
-            ('ALC1737-miss-p157-L-003','Eſtremecerſe. Sebeſihotec.','ALC1737-art-000368','ALC1737-vcand-p157-L-014'),
-            ('ALC1737-miss-p157-L-004','Facil coſa. Catua obiachi.','ALC1737-art-000372','ALC1737-vcand-p157-L-019')
-          ]
-          miss_rows=[]
-          for mid,visible,aid,cid in misses:
-            miss_rows.append({
-              'missedStartId':mid,'sourceId':'ALC1737','sourcePageDigital':157,'column':'left',
-              'visibleStartRaw':visible,'missType':'inside_candidate_group','containingCandidateId':cid,
-              'linkedArticleIds':[aid],
-              'editorialNote':'Distinct selected historical start absorbed inside a canonical p157 candidate. Recorded as a known internal false negative without claiming exhaustive visible-start coverage.',
-              'reviewStatus':'machine_corrected_unverified','humanVerified':False,
-              'provenance':{'agent':'GPT-5.6 Sol machine reconciliation','method':'AI-assisted alignment of cropped p157 candidate geometry with pre-existing selected direct-collation anchors; no independent human verification','processedAt':None}
-            })
-          (out/'p157_missed_visible_starts.jsonl').write_text('\n'.join(json.dumps(r,ensure_ascii=False) for r in miss_rows)+'\n',encoding='utf-8')
-
-          status={
-            'sourceId':'ALC1737','sourcePageDigital':157,
-            'pageStatus':{'candidateReconciliation':'complete','visibleStartCensus':'known_misses_only_not_exhaustive','promotionLinkage':'partial','technicalClosure':False,'humanVerificationPlanned':False},
-            'candidateInventory':{
-              'total':42,'left':19,'right':23,
-              'classification':{'article':38,'continuation':2,'paratext':0,'false_positive':0,'unresolved':2},
-              'boundaryAssessment':{'exact':31,'oversegmented':2,'undersegmented':1,'merged_articles':4,'ambiguous':2,'not_applicable':2}
-            },
-            'selectedLayer':{
-              'preExistingArticles':15,'articleIdRange':['ALC1737-art-000359','ALC1737-art-000373'],
-              'articleCandidateRecordsLinked':11,'structuredArticlesLinked':15,'continuationCandidateRecordsLinked':1,
-              'selectedArticlesUnlinked':0,'mergedCandidateCount':4
-            },
-            'promotion':{'articleCandidatesPendingPromotion':27,'newPromotionsThisPass':0,'corpusTotalAfterPass':1045},
-            'visibleStartEvidence':{
-              'exhaustive':False,'knownVisibleStartsMinimum':42,'knownMissedStartRecords':4,'knownMergedInternalStarts':4,
-              'unresolvedCandidateRecords':2,'precision':None,'recall':None,'f1':None,
-              'reasonMetricsWithheld':'The 38 article candidates plus four selected starts absorbed inside merged candidates establish at least 42 starts, but two cropped candidate regions remain unresolved and the selected layer is non-exhaustive.'
-            },
-            'physicalContinuities':[
-              {'from':'ALC1737-vcand-p156-R-026','to':'ALC1737-vcand-p157-L-001','type':'fresh_page_transition','note':'p156 `Eſquina` is distinct; p157 opens with fresh cropped Eſt- material.'},
-              {'from':'ALC1737-vcand-p157-L-004','to':'ALC1737-vcand-p157-L-005','type':'article_continuation','note':'The Eſtera-like article crosses the candidate boundary.'},
-              {'from':'ALC1737-vcand-p157-L-012','to':'ALC1737-vcand-p157-L-013','type':'article_continuation','note':'Selected `Eſtrella las tres Marias. Himuim.` continues into L-013.'}
-            ],
-            'sourceGap':{
-              'gapId':'ALC1737-gap-0001','afterDigitalPage':157,'beforeDigitalPage':158,
-              'status':'suspected_missing_source_material','extent':'unresolved',
-              'visibleEnd':'Flecha. Huihua.','catchword':'Fle...','nextDigitalPageOpening':'Hallarſe bien en vn lugar',
-              'editorialPolicy':'Do not synthesize or reconstruct missing F/G entries from modern dictionaries or other editions; recovery requires an independently identified witness and separate provenance layer.'
-            },
-            'structuralNotes':[
-              'The left scan edge is cropped, producing systematic loss of initial glyphs and reading-order leakage across several candidate groups.',
-              'L-003 and L-006 remain unresolved rather than being forced into article/continuation classes.',
-              'Four selected internal starts are recorded separately as known false negatives inside merged candidates.',
-              'The p157→158 discontinuity is a source gap, not a normal page continuation.'
-            ],
-            'evidence':{
-              'canonicalCandidateInventoryVerified':True,'canonicalCandidateInventoryCount':2072,
-              'selectedP157LayerUsedAsAnchor':True,'sourceGapRecordUsed':True,'p156AndP158CandidateLayersUsedForPageEdges':True,
-              'directFacsimileAvailableThisPass':False,
-              'policy':'Cropped-edge uncertainty and source loss are preserved explicitly. Selected direct collations anchor only demonstrated starts; missing F/G material is never reconstructed by inference.'
-            },
-            'reviewStatus':'machine_corrected_unverified','humanVerified':False
-          }
-          (out/'p157_machine_reconciliation_status.json').write_text(json.dumps(status,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-          PY
-      - name: Validate generated reconciliation
+      - name: Synchronize p157 docs
+        run: python scripts/_tmp_sync_p157.py
+      - name: Validate p157 evidence
         run: |
           python -m pip install -r requirements-dev.txt
+          python scripts/reconstruct_candidate_inventory.py
+          python scripts/validate_lexicon_ids.py
           python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p157_left_reconciliation.jsonl
           python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p157_right_reconciliation.jsonl
           python scripts/validate_jsonl.py --schema schemas/lexicon-missed-start.schema.json --jsonl data/lexicon/reconciliation/p157_missed_visible_starts.jsonl
           python -m json.tool data/lexicon/reconciliation/p157_machine_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p157_preflight.json >/dev/null
-      - name: Commit generated evidence
+      - name: Commit synchronized documentation
         run: |
           git config user.name 'Fernando Sandoval'
           git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
-          git add data/lexicon/reconciliation/p157_left_reconciliation.jsonl data/lexicon/reconciliation/p157_right_reconciliation.jsonl data/lexicon/reconciliation/p157_missed_visible_starts.jsonl data/lexicon/reconciliation/p157_machine_reconciliation_status.json
-          git commit -m 'data: reconciliar conservadoramente p.157' -m '42 candidatos: 38 article, 2 continuation, 2 unresolved; cuatro falsos negativos internos, 27 pending_promotion y gap F→H preservado sin reconstrucción.'
+          git add README.md docs/LEXICON_PROGRESS.md
+          git commit -m 'docs: cerrar reconciliación conservadora de p.157' -m 'Registra 38 article, 2 continuation, 2 unresolved, cuatro falsos negativos internos, 27 pending_promotion y el gap F→H; fija p.158 como siguiente frente.'
           git push origin HEAD:work/p157-reconciliation
