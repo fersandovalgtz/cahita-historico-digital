@@ -99,6 +99,18 @@ jobs:
             python -m json.tool "$file" >/dev/null
           done
 
+          phase2_evidence_files=(
+            data/lexicon/reconciliation/p*_phase2_*.json
+            data/lexicon/reconciliation/p*_control_evidence_*.json
+          )
+          if (( ${#phase2_evidence_files[@]} == 0 )); then
+            echo 'No phase-II evidence/triage JSON files found' >&2
+            exit 1
+          fi
+          for file in "${phase2_evidence_files[@]}"; do
+            python -m json.tool "$file" >/dev/null
+          done
+
           python -m json.tool data/lexicon/provenance/p135_art000704_correction.json >/dev/null
           python -m json.tool data/lexicon/provenance/p137_art000729_correction.json >/dev/null
           python -m json.tool data/lexicon/provenance/p137_art000731_correction.json >/dev/null
