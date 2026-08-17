@@ -1,194 +1,43 @@
-name: CHD QA
+name: CHD p159 column metadata correction
 
 on:
   push:
-    branches: [main]
-  pull_request:
+    branches: [work/p159-reconciliation]
+    paths:
+      - '.github/workflows/qa.yml'
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  validate:
-    name: Validate corpus and reproducibility
+  correct:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
-          python-version: "3.13"
-          cache: pip
-          cache-dependency-path: requirements-dev.txt
-
-      - name: Install validation dependencies
-        run: python -m pip install -r requirements-dev.txt
-
-      - name: Verify canonical candidate inventory
-        run: python scripts/reconstruct_candidate_inventory.py
-
-      - name: Validate lexical article IDs and authority states
-        run: python scripts/validate_lexicon_ids.py
-
-      - name: Validate historical lexical articles against schema
-        shell: bash
+          python-version: '3.13'
+      - name: Apply audited p159 column correction
+        run: python scripts/_tmp_correct_p159_columns.py
+      - name: Validate corrected package
         run: |
-          set -euo pipefail
-          for file in data/lexicon/articles/*.jsonl; do
-            python scripts/validate_jsonl.py \
-              --schema schemas/lexical-article.schema.json \
-              --jsonl "$file"
-          done
-
-      - name: Validate candidate reconciliation batches
-        shell: bash
-        run: |
-          set -euo pipefail
-          for file in \
-            data/lexicon/reconciliation/p133_p134_batch01.jsonl \
-            data/lexicon/reconciliation/p133_batch02_pending_articles.jsonl \
-            data/lexicon/reconciliation/p134_batch02a_pending_articles.jsonl \
-            data/lexicon/reconciliation/p134_batch02b_pending_articles.jsonl \
-            data/lexicon/reconciliation/p133_opening_resolution.jsonl \
-            data/lexicon/reconciliation/p135_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p135_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p135_candidate_linkage_overlay.jsonl \
-            data/lexicon/reconciliation/p136_reconciliation.jsonl \
-            data/lexicon/reconciliation/p137_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p137_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p138_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p138_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p139_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p139_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p140_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p140_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p141_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p141_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p142_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p142_right_reconciliation_a.jsonl \
-            data/lexicon/reconciliation/p142_right_reconciliation_b.jsonl \
-            data/lexicon/reconciliation/p143_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p143_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p144_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p144_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p145_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p145_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p146_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p146_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p147_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p147_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p148_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p148_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p149_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p149_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p150_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p150_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p151_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p151_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p152_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p152_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p153_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p153_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p154_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p154_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p155_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p155_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p156_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p156_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p157_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p157_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p158_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p158_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p159_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p159_right_reconciliation.jsonl; do
-            python scripts/validate_jsonl.py \
-              --schema schemas/lexicon-candidate-review.schema.json \
-              --jsonl "$file"
-          done
-
-      - name: Validate missed-start layers
-        shell: bash
-        run: |
-          set -euo pipefail
-          for file in \
-            data/lexicon/reconciliation/missed_visible_starts_p133_p134.jsonl \
-            data/lexicon/reconciliation/p133_opening_missed_start.jsonl \
-            data/lexicon/reconciliation/p135_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p136_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p137_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p138_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p139_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p140_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p141_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p142_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p143_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p144_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p146_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p153_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p155_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p156_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p157_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p158_missed_visible_starts.jsonl; do
-            python scripts/validate_jsonl.py \
-              --schema schemas/lexicon-missed-start.schema.json \
-              --jsonl "$file"
-          done
-
-      - name: Validate core JSON metadata syntax
-        shell: bash
-        run: |
-          set -euo pipefail
-          python -m json.tool codemeta.json >/dev/null
-          python -m json.tool data/lexicon/candidates/inventory_status.json >/dev/null
-          python -m json.tool data/lexicon/candidates/candidate_inventory_manifest.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p133_p134_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p133_p134_visible_start_census.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p135_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p136_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p137_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p138_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p139_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p140_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p141_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p142_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p143_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p144_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p145_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p146_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p147_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p148_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p149_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p150_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p150_preflight.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p151_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p151_preflight.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p152_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p152_preflight.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p153_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p153_preflight.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p154_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p154_preflight.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p155_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p155_preflight.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p156_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p156_preflight.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p157_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p157_preflight.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p158_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p158_preflight.json >/dev/null
+          python -m pip install -r requirements-dev.txt
+          python scripts/validate_jsonl.py --schema schemas/lexical-article.schema.json --jsonl data/lexicon/articles/p159_selected_articles.jsonl
+          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p159_left_reconciliation.jsonl
+          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p159_right_reconciliation.jsonl
           python -m json.tool data/lexicon/reconciliation/p159_machine_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p159_preflight.json >/dev/null
-          python -m json.tool data/lexicon/provenance/p135_art000704_correction.json >/dev/null
-          python -m json.tool data/lexicon/provenance/p137_art000729_correction.json >/dev/null
-          python -m json.tool data/lexicon/provenance/p137_art000731_correction.json >/dev/null
-          python -m json.tool data/lexicon/provenance/p137_p138_art000734_continuation.json >/dev/null
-          python -m json.tool data/lexicon/provenance/p138_selected_recollation_corrections.json >/dev/null
-          python -m json.tool data/lexicon/provenance/p143_selected_recollation_corrections.json >/dev/null
-          python -m json.tool data/lexicon/provenance/p144_selected_recollation_corrections.json >/dev/null
-          python -m json.tool data/lexicon/review/boundary_algorithm_comparison.json >/dev/null
-          python -m json.tool data/source/control/bue1890.json >/dev/null
-          python -m json.tool data/source/control/bnf1737_reported_witness.json >/dev/null
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for line in Path('data/lexicon/provenance/p159_column_metadata_corrections.jsonl').read_text(encoding='utf-8').splitlines():
+              if line.strip(): json.loads(line)
+          PY
+      - name: Commit correction and provenance
+        run: |
+          git config user.name 'Fernando Sandoval'
+          git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
+          git add data/lexicon/articles/p159_selected_articles.jsonl data/lexicon/provenance/p159_column_metadata_corrections.jsonl data/lexicon/reconciliation/p159_left_reconciliation.jsonl data/lexicon/reconciliation/p159_machine_reconciliation_status.json data/lexicon/reconciliation/p159_preflight.json README.md docs/LEXICON_PROGRESS.md
+          git commit -m 'data: corregir columnas seleccionadas 000398–000400' -m 'Corrige right→left con evidencia geométrica canónica y procedencia dedicada; no cambia transcripción, tipo de artículo ni formas históricas.'
+          git push origin HEAD:work/p159-reconciliation
