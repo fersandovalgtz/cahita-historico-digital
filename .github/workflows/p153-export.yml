@@ -1,4 +1,4 @@
-name: CHD p153 materialize reconciliation
+name: CHD p153 synchronize docs
 
 on:
   push:
@@ -11,184 +11,29 @@ permissions:
   contents: write
 
 jobs:
-  materialize:
+  synchronize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Generate p153 reconciliation layers
-        shell: bash
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          links = {
-            'L-001':['ALC1737-art-000299'],
-            'L-002':['ALC1737-art-000300'],
-            'L-004':['ALC1737-art-000301'],
-            'L-005':['ALC1737-art-000302','ALC1737-art-000303'],
-            'L-008':['ALC1737-art-000304'],
-            'L-009':['ALC1737-art-000305'],
-            'L-015':['ALC1737-art-000306'],
-            'L-020':['ALC1737-art-000307'],
-            'L-021':['ALC1737-art-000308'],
-            'R-001':['ALC1737-art-000310'],
-            'R-002':['ALC1737-art-000311'],
-            'R-007':['ALC1737-art-000312'],
-            'R-017':['ALC1737-art-000313']
-          }
-          unresolved = {'R-003','R-004','R-005','R-006'}
-          provenance = {
-            'derivedFrom':'canonical-v0.2 candidate inventory; p153 selected article layer where linked; p152 and p154 layers for page-edge context',
-            'agent':'GPT-5.6 Sol machine reconciliation',
-            'method':'AI-assisted structural reconciliation from canonical geometry/OCR and pre-existing selected direct-collation anchors; no independent human verification',
-            'processedAt':None
-          }
-
-          def record(side, n):
-            key = f'{side}-{n:03d}'
-            cid = f'ALC1737-vcand-p153-{key}'
-            column = 'left' if side == 'L' else 'right'
-            linked = links.get(key, [])
-
-            if key == 'R-001':
-              return {
-                'candidateId':cid,'sourceId':'ALC1737','sourcePageDigital':153,'column':column,
-                'classification':'continuation','boundaryAssessment':'not_applicable','linkedArticleIds':linked,
-                'articleLinkStatus':'not_applicable','continuationType':'from_previous_line',
-                'editorialNote':'Form-only continuation `Tebec. amaca.` of selected article 000310 (`Dar coſas largas como palo`). The article start itself is a demonstrated top-right false negative outside the canonical candidate inventory.',
-                'reviewStatus':'machine_corrected_unverified','humanVerified':False,'provenance':provenance
-              }
-
-            if key in unresolved:
-              notes = {
-                'R-003':'Candidate begins with completion of R-002 (`...zas. Lobda ...`) and then includes damaged guide material `cofas eílendidas como`; continuation and next-start microstructure cannot be separated responsibly.',
-                'R-004':'Damaged `Dar Huecac am acá.` region follows the interleaved R-003 material. The evidence does not securely distinguish a fresh guide start from continuation of the preceding damaged entry.',
-                'R-005':'Damaged `libro. honda, ...` material belongs to the same unstable top-right Dar-region; a reliable article boundary cannot be asserted from OCR alone.',
-                'R-006':'Form-only `Hchoroiamaca.` follows damaged R-005 material; no independent guide start is visible in the candidate and its attachment remains unresolved.'
-              }
-              return {
-                'candidateId':cid,'sourceId':'ALC1737','sourcePageDigital':153,'column':column,
-                'classification':'unresolved','boundaryAssessment':'ambiguous','linkedArticleIds':[],
-                'articleLinkStatus':'not_applicable','editorialNote':notes[key],
-                'reviewStatus':'unresolved','humanVerified':False,'provenance':provenance
-              }
-
-            assessment = 'exact'
-            if key == 'L-001':
-              assessment = 'undersegmented'
-              note = 'Selected article 000299 (`Cuñado de hombre. Mocari.`) is the lexical anchor. Trailing OCR `Dar.` is treated as cross-column bleed from the demonstrated top-right Dar region, not as part of the article.'
-            elif key == 'L-005':
-              assessment = 'merged_articles'
-              note = 'Candidate absorbs two selected articles: 000302 (`Zambullir à otro. Aroptitua.`) and 000303 (`Zarcillo. Erepa.`). The direct-collation selected objects remain the stronger transcription anchors.'
-            elif key == 'L-023':
-              assessment = 'undersegmented'
-              note = 'Distinct lexical start with trailing `D.` alphabet/section material absorbed by OCR/layout; the paratext is not treated as an additional lexical article.'
-            elif key == 'R-002':
-              assessment = 'oversegmented'
-              note = 'Selected article 000311 (`Dar coſas redondas, y mazizas. Lobola amaca.`) starts here and its textual completion spills into R-003; R-003 also contains additional damaged material and is therefore left unresolved rather than treated as a pure continuation.'
-            elif key == 'R-022':
-              assessment = 'undersegmented'
-              note = 'Distinct `Derretir` article start with trailing damaged `pio-` material. R-023 begins fresh `Derribar`; no speculative lexical completion is imposed.'
-            elif key == 'R-026':
-              assessment = 'undersegmented'
-              note = 'Distinct `Delatar` article start with trailing `Desbat-` page-edge/catchword material. p154 L-001 begins fresh `Desbaſtar madera. Atapetia.`; no long p153→p154 continuation is asserted.'
-            elif linked:
-              note = 'Aligned to selected direct-collation article anchor.'
-            else:
-              note = 'Distinct lexical start; retained pending because raw OCR alone is not a sufficient transcription anchor for promotion.'
-
-            return {
-              'candidateId':cid,'sourceId':'ALC1737','sourcePageDigital':153,'column':column,
-              'classification':'article','boundaryAssessment':assessment,'linkedArticleIds':linked,
-              'articleLinkStatus':'linked' if linked else 'pending_promotion',
-              'editorialNote':note,'reviewStatus':'machine_corrected_unverified','humanVerified':False,
-              'provenance':provenance
-            }
-
-          out = Path('data/lexicon/reconciliation')
-          for side, count, filename in [('L',25,'p153_left_reconciliation.jsonl'),('R',26,'p153_right_reconciliation.jsonl')]:
-            rows = [record(side, i) for i in range(1, count + 1)]
-            (out / filename).write_text('\n'.join(json.dumps(r, ensure_ascii=False) for r in rows) + '\n', encoding='utf-8')
-
-          misses = [
-            {
-              'missedStartId':'ALC1737-miss-p153-R-001','sourceId':'ALC1737','sourcePageDigital':153,'column':'right',
-              'visibleStartRaw':'Dar. Amaca.','missType':'page_or_column_edge','containingCandidateId':None,
-              'linkedArticleIds':['ALC1737-art-000309'],
-              'editorialNote':'Selected direct-collation article 000309 occurs before canonical right-column candidate R-001 and is therefore a demonstrated top-edge false negative. This layer is a set of known misses, not an exhaustive visible-start census.',
-              'reviewStatus':'machine_corrected_unverified','humanVerified':False,
-              'provenance':{'agent':'GPT-5.6 Sol machine reconciliation','method':'AI-assisted alignment of canonical p153 geometry with pre-existing selected article layer; no independent human verification','processedAt':None}
-            },
-            {
-              'missedStartId':'ALC1737-miss-p153-R-002','sourceId':'ALC1737','sourcePageDigital':153,'column':'right',
-              'visibleStartRaw':'Dar coſas largas como palo. Tebec amaca.','missType':'page_or_column_edge','containingCandidateId':None,
-              'linkedArticleIds':['ALC1737-art-000310'],
-              'editorialNote':'Selected direct-collation article 000310 begins before canonical R-001; R-001 preserves only its form `Tebec. amaca.`. The article start is therefore a demonstrated top-edge false negative. This layer is not asserted to be an exhaustive census.',
-              'reviewStatus':'machine_corrected_unverified','humanVerified':False,
-              'provenance':{'agent':'GPT-5.6 Sol machine reconciliation','method':'AI-assisted alignment of canonical p153 geometry with pre-existing selected article layer; no independent human verification','processedAt':None}
-            }
-          ]
-          (out / 'p153_missed_visible_starts.jsonl').write_text('\n'.join(json.dumps(r, ensure_ascii=False) for r in misses) + '\n', encoding='utf-8')
-
-          status = {
-            'sourceId':'ALC1737','sourcePageDigital':153,
-            'pageStatus':{
-              'candidateReconciliation':'complete_with_explicit_unresolved',
-              'visibleStartCensus':'known_misses_only_not_exhaustive',
-              'promotionLinkage':'partial','technicalClosure':False,'humanVerificationPlanned':False
-            },
-            'candidateInventory':{
-              'total':51,'left':25,'right':26,
-              'classification':{'article':46,'continuation':1,'paratext':0,'false_positive':0,'unresolved':4},
-              'boundaryAssessment':{'exact':40,'oversegmented':1,'undersegmented':4,'merged_articles':1,'ambiguous':4,'not_applicable':1}
-            },
-            'selectedLayer':{
-              'preExistingArticles':15,'articleIdRange':['ALC1737-art-000299','ALC1737-art-000313'],
-              'articleCandidateRecordsLinked':12,'structuredArticlesLinked':15,'continuationCandidateRecordsLinked':1,
-              'selectedStartsOutsideCandidateInventory':2,'selectedArticlesUnlinked':0,
-              'mergedCandidateId':'ALC1737-vcand-p153-L-005',
-              'mergedSelectedArticleIds':['ALC1737-art-000302','ALC1737-art-000303']
-            },
-            'promotion':{'articleCandidatesPendingPromotion':34,'newPromotionsThisPass':0,'corpusTotalAfterPass':1045},
-            'visibleStartEvidence':{
-              'exhaustive':False,'knownVisibleStartsMinimum':49,'knownMissedStartRecords':2,'knownMergedInternalStarts':1,
-              'precision':None,'recall':None,'f1':None,
-              'reasonMetricsWithheld':'The 46 confirmed article candidates, one additional selected start absorbed inside merged L-005, and two demonstrated top-right false negatives establish at least 49 starts. R-003–R-006 remain structurally unresolved and the selected layer is non-exhaustive, so no complete denominator or performance metric is asserted.'
-            },
-            'physicalContinuities':[
-              {'from':'ALC1737-vcand-p152-R-024','to':'ALC1737-vcand-p153-L-001','type':'page_edge_context','note':'p152 begins `Cuñado de muger...`; p153 L-001 is fresh selected `Cuñado de hombre. Mocari.` No long continuation is asserted.'},
-              {'from':'ALC1737-miss-p153-R-002','to':'ALC1737-vcand-p153-R-001','type':'missed_start_to_continuation','note':'Selected `Dar coſas largas como palo` starts above R-001; R-001 preserves its form `Tebec. amaca.`.'},
-              {'from':'ALC1737-vcand-p153-R-002','to':'ALC1737-vcand-p153-R-003','type':'article_text_spills_into_unresolved_region','note':'Selected `Dar coſas redondas, y mazizas` begins R-002; its completion occupies the opening of R-003, which also contains additional damaged guide material.'},
-              {'from':'ALC1737-vcand-p153-R-026','to':'ALC1737-vcand-p154-L-001','type':'catchword_to_article','note':'Trailing `Desbat-` in R-026 anticipates fresh p154 `Desbaſtar madera. Atapetia.`; it is not a long article continuation.'}
-            ],
-            'unresolvedNotes':[
-              'R-003–R-006 form an interleaved damaged Dar-region. R-003 begins with completion of selected article 000311 and then introduces additional guide-like material; R-004–R-006 cannot be separated confidently into article starts versus continuations from OCR alone.'
-            ],
-            'evidence':{
-              'canonicalCandidateInventoryVerified':True,'canonicalCandidateInventoryCount':2072,
-              'selectedP153LayerUsedAsAnchor':True,'p152AndP154LayersUsedForPageEdges':True,
-              'directFacsimileAvailableThisPass':False,
-              'policy':'Demonstrated selected starts outside the candidate inventory are recorded explicitly as known misses; ambiguous OCR microstructure remains unresolved and metrics are withheld without an exhaustive visible-start census.'
-            },
-            'reviewStatus':'machine_corrected_unverified','humanVerified':False
-          }
-          (out / 'p153_machine_reconciliation_status.json').write_text(json.dumps(status, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-          PY
-      - name: Validate generated reconciliation
+      - name: Synchronize p153 docs
+        run: python scripts/_tmp_sync_p153.py
+      - name: Validate p153 evidence
         run: |
           python -m pip install -r requirements-dev.txt
+          python scripts/reconstruct_candidate_inventory.py
+          python scripts/validate_lexicon_ids.py
           python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p153_left_reconciliation.jsonl
           python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p153_right_reconciliation.jsonl
           python scripts/validate_jsonl.py --schema schemas/lexicon-missed-start.schema.json --jsonl data/lexicon/reconciliation/p153_missed_visible_starts.jsonl
           python -m json.tool data/lexicon/reconciliation/p153_machine_reconciliation_status.json >/dev/null
-      - name: Commit generated evidence
+          python -m json.tool data/lexicon/reconciliation/p153_preflight.json >/dev/null
+      - name: Commit synchronized documentation
         run: |
           git config user.name 'Fernando Sandoval'
           git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
-          git add data/lexicon/reconciliation/p153_left_reconciliation.jsonl data/lexicon/reconciliation/p153_right_reconciliation.jsonl data/lexicon/reconciliation/p153_missed_visible_starts.jsonl data/lexicon/reconciliation/p153_machine_reconciliation_status.json
-          git commit -m 'data: reconciliar estructuralmente p.153' -m '51/51 candidatos: 46 article, 1 continuation y 4 unresolved; dos falsos negativos superiores derechos documentados, L-005 merged_articles, 34 pending_promotion y métricas retenidas por censo no exhaustivo.'
+          git add README.md docs/LEXICON_PROGRESS.md
+          git commit -m 'docs: cerrar reconciliación de p.153' -m 'Registra 46 article, 1 continuation, 4 unresolved, dos falsos negativos conocidos y fija p.154 como siguiente frente.'
           git push origin HEAD:work/p153-reconciliation
