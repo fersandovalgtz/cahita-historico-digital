@@ -1,0 +1,69 @@
+name: Identify p145 facsimile
+
+on:
+  push:
+    branches:
+      - work/p145-facsimile-collation
+
+permissions:
+  contents: write
+
+jobs:
+  identify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Resolve PDF and identify Atole page
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils >/dev/null
+          curl --fail --location --max-time 45 --retry 2 https://archive.org/metadata/artedelalenguaca00gonz -o /tmp/ia-metadata.json
+          PDF_NAME=$(python - <<'PY'
+          import json
+          data=json.load(open('/tmp/ia-metadata.json'))
+          pdfs=[]
+          for f in data.get('files',[]):
+              name=f.get('name',''); fmt=f.get('format','')
+              if name.lower().endswith('.pdf'):
+                  score=30 if fmt=='Text PDF' else 20 if fmt=='B/W PDF' else 10
+                  if name.endswith('_text.pdf'): score += 3
+                  pdfs.append((score,name))
+          pdfs.sort(reverse=True)
+          print(pdfs[0][1])
+          PY
+          )
+          curl --fail --location --max-time 180 --retry 2 "https://archive.org/download/artedelalenguaca00gonz/${PDF_NAME}" -o /tmp/alc1737.pdf
+          : > /tmp/page_hits.txt
+          for p in $(seq 130 160); do
+            pdftotext -f "$p" -l "$p" -layout /tmp/alc1737.pdf "/tmp/p${p}.txt"
+            if grep -Eiq 'Atole|Aves grand|Aventajar|Aunque' "/tmp/p${p}.txt"; then
+              printf '%s\t' "$p" >> /tmp/page_hits.txt
+              grep -Eio 'Atole[^[:cntrl:]]*|Aves grand[^[:cntrl:]]*|Aventajar[^[:cntrl:]]*|Aunque[^[:cntrl:]]*' "/tmp/p${p}.txt" | head -n 5 | tr '\n' ' ' >> /tmp/page_hits.txt
+              printf '\n' >> /tmp/page_hits.txt
+            fi
+          done
+          cat /tmp/page_hits.txt
+          TARGET=$(awk 'NR==1 {print $1}' /tmp/page_hits.txt)
+          test -n "$TARGET"
+          mkdir -p .tmp_facsimile/p145_target
+          pdfseparate -f "$TARGET" -l "$TARGET" /tmp/alc1737.pdf .tmp_facsimile/p145_target/page-%d.pdf
+          mv ".tmp_facsimile/p145_target/page-${TARGET}.pdf" .tmp_facsimile/p145_target/p145-target.pdf
+          cp "/tmp/p${TARGET}.txt" .tmp_facsimile/p145_target/p145-target-layout-ocr.txt
+          {
+            echo "Internet Archive identifier: artedelalenguaca00gonz"
+            echo "PDF derivative: ${PDF_NAME}"
+            echo "PDF page selected: ${TARGET}"
+            echo "Search hits in window:"
+            cat /tmp/page_hits.txt
+            sha256sum .tmp_facsimile/p145_target/p145-target.pdf
+          } > .tmp_facsimile/p145_target/MANIFEST.txt
+      - name: Commit temporary target PDF
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .tmp_facsimile/p145_target
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "chore: añadir facsímil temporal exacto para p145"
+          git push
