@@ -1,4 +1,4 @@
-name: CHD p163 count audit
+name: CHD p162 cleanup
 
 on:
   push:
@@ -8,20 +8,40 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  count:
+  cleanup:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.13'
-      - name: Count canonical p163 candidates
+      - name: Restore permanent QA through p162 and remove auxiliaries
+        shell: bash
         run: |
-          python scripts/export_candidate_page.py --page 163 --count-only
-          echo LEFT
-          python scripts/export_candidate_page.py --page 163 --column left --count-only
-          echo RIGHT
-          python scripts/export_candidate_page.py --page 163 --column right --count-only
+          set -euo pipefail
+          git config user.name 'Fernando Sandoval'
+          git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
+          git fetch origin main --depth=1
+          git show origin/main:.github/workflows/qa.yml > .github/workflows/qa.yml
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('.github/workflows/qa.yml')
+          s=p.read_text(encoding='utf-8')
+          old='            data/lexicon/reconciliation/p161_right_reconciliation.jsonl; do'
+          new='            data/lexicon/reconciliation/p161_right_reconciliation.jsonl \\\n            data/lexicon/reconciliation/p162_left_reconciliation.jsonl \\\n            data/lexicon/reconciliation/p162_right_reconciliation.jsonl; do'
+          assert old in s
+          s=s.replace(old,new,1)
+          old='            data/lexicon/reconciliation/p161_missed_visible_starts.jsonl; do'
+          new='            data/lexicon/reconciliation/p161_missed_visible_starts.jsonl \\\n            data/lexicon/reconciliation/p162_missed_visible_starts.jsonl; do'
+          assert old in s
+          s=s.replace(old,new,1)
+          old='for page in 150 151 152 153 154 155 156 157 158 159 160 161; do'
+          new='for page in 150 151 152 153 154 155 156 157 158 159 160 161 162; do'
+          assert old in s
+          s=s.replace(old,new,1)
+          p.write_text(s,encoding='utf-8')
+          PY
+          git rm -f scripts/_tmp_materialize_p162.py scripts/_tmp_sync_p162.py
+          git add .github/workflows/qa.yml
+          git commit -m 'chore: restaurar QA permanente tras p.162' -m 'Amplía validación permanente a p.162 y retira materializador/sincronizador temporales.'
+          git push origin HEAD:work/p162-reconciliation
