@@ -1,0 +1,98 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 157,
+  "stage": "preflight",
+  "candidateInventory": {
+    "total": 42,
+    "left": 19,
+    "right": 23,
+    "canonicalInventoryTotal": 2072,
+    "boundaryMethod": "hybrid_margin_mode_v0.2"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p157_selected_articles.jsonl",
+    "preExistingArticles": 15,
+    "articleIdRange": ["ALC1737-art-000359", "ALC1737-art-000373"],
+    "nonExhaustive": true,
+    "humanVerified": false,
+    "note": "Selected left-column collations explicitly use facsimile plus parsed text where the scan edge is cropped."
+  },
+  "edgeContext": {
+    "fromPreviousPage": "p156 R-026 (`Eſquina`) is structurally distinct; p157 opens with fresh Eſt- material rather than a continuation.",
+    "toNextPage": "Source gap ALC1737-gap-0001 begins after p157. The visible lexical sequence ends with `Flecha. Huihua.` plus a catchword beginning `Fle...`; p158 jumps directly to H-headwords beginning `Hallarſe bien en vn lugar`. No F/G material is reconstructed."
+  },
+  "knownStructuralFeatures": [
+    {
+      "candidateId": "ALC1737-vcand-p157-L-002",
+      "assessment": "undersegmented",
+      "linkedArticleIds": ["ALC1737-art-000359"],
+      "note": "Starts selected `Eſtar. Cacec.` but retains additional heavily cropped Eſtar-related material whose microsegmentation is not strengthened."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p157-L-007",
+      "assessment": "merged_articles",
+      "linkedArticleIds": ["ALC1737-art-000360", "ALC1737-art-000361"]
+    },
+    {
+      "candidateId": "ALC1737-vcand-p157-L-010",
+      "assessment": "merged_articles",
+      "linkedArticleIds": ["ALC1737-art-000363", "ALC1737-art-000364"]
+    },
+    {
+      "candidateId": "ALC1737-vcand-p157-L-014",
+      "assessment": "merged_articles",
+      "linkedArticleIds": ["ALC1737-art-000367", "ALC1737-art-000368"]
+    },
+    {
+      "candidateId": "ALC1737-vcand-p157-L-019",
+      "assessment": "merged_articles",
+      "linkedArticleIds": ["ALC1737-art-000371", "ALC1737-art-000372"]
+    },
+    {
+      "candidateId": "ALC1737-vcand-p157-L-005",
+      "assessment": "continuation_from_L004"
+    },
+    {
+      "candidateId": "ALC1737-vcand-p157-L-013",
+      "assessment": "continuation_from_L012_with_reading_order_leakage"
+    },
+    {
+      "candidateId": "ALC1737-vcand-p157-L-003",
+      "assessment": "unresolved_cropped_microstructure"
+    },
+    {
+      "candidateId": "ALC1737-vcand-p157-L-006",
+      "assessment": "unresolved_mixed_continuation_and_probable_fresh_start"
+    }
+  ],
+  "knownMissedStarts": [
+    {"visibleStartRaw": "Eſtomago. Cochopoi.", "linkedArticleId": "ALC1737-art-000361", "missType": "inside_candidate_group", "containingCandidateId": "ALC1737-vcand-p157-L-007"},
+    {"visibleStartRaw": "Eſtrella. Choqui.", "linkedArticleId": "ALC1737-art-000364", "missType": "inside_candidate_group", "containingCandidateId": "ALC1737-vcand-p157-L-010"},
+    {"visibleStartRaw": "Eſtremecerſe. Sebeſihotec.", "linkedArticleId": "ALC1737-art-000368", "missType": "inside_candidate_group", "containingCandidateId": "ALC1737-vcand-p157-L-014"},
+    {"visibleStartRaw": "Facil coſa. Catua obiachi.", "linkedArticleId": "ALC1737-art-000372", "missType": "inside_candidate_group", "containingCandidateId": "ALC1737-vcand-p157-L-019"}
+  ],
+  "sourceGap": {
+    "gapId": "ALC1737-gap-0001",
+    "afterDigitalPage": 157,
+    "beforeDigitalPage": 158,
+    "status": "suspected_missing_source_material",
+    "extent": "unresolved",
+    "policy": "Do not synthesize or reconstruct missing F/G entries without an independently identified witness."
+  },
+  "evidenceLimits": {
+    "selectedLayerIsCoverageExpectation": false,
+    "directFacsimileInspectedThisPass": false,
+    "visibleStartCensusExhaustive": false,
+    "metricsAllowed": false,
+    "reason": "The left scan edge is cropped, two candidate regions remain structurally unresolved, and the selected layer is non-exhaustive. The p157→158 source discontinuity also forbids treating the next digital page as a normal continuation."
+  },
+  "pageStatus": {
+    "candidateReconciliation": "ready_for_conservative_full_page_materialization",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial_anchor_layer",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
