@@ -2,7 +2,7 @@
 
 ## Estado — 2026-08-16
 
-El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El inventario canónico `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera. La capa curatorial contiene actualmente **1,045 artículos históricos estructurados**. Las páginas **133–144** están cerradas en reconciliación de candidatos, censo de inicios visibles, promoción/enlace y control computacional IA-asistido. Las páginas **145–147 tienen reconciliación completa de sus candidatos canónicos**, pero permanecen abiertas para censo exhaustivo de inicios visibles y promoción de fronteras sin transcripción suficientemente sustentada. **Ningún objeto es `human_verified` y la política vigente no contempla intervención humana independiente.**
+El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El inventario canónico `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera. La capa curatorial contiene actualmente **1,045 artículos históricos estructurados**. Las páginas **133–144** están cerradas en reconciliación de candidatos, censo de inicios visibles, promoción/enlace y control computacional IA-asistido. Las páginas **145–148 tienen reconciliación completa de sus candidatos canónicos**, pero permanecen abiertas para censo exhaustivo de inicios visibles y promoción de fronteras sin transcripción suficientemente sustentada. **Ningún objeto es `human_verified` y la política vigente no contempla intervención humana independiente.**
 
 ## Inventario canónico
 
@@ -56,20 +56,28 @@ Quedan **22 candidatos `pending_promotion`**. El censo visible sigue siendo un m
 
 ## Página 147 — reconciliación de candidatos completada
 
-La página digital **147** contiene **51 candidatos canónicos: 26 izquierda y 25 derecha**. Los 51 quedaron clasificados en `p147_left_reconciliation.jsonl` y `p147_right_reconciliation.jsonl`.
+La página digital **147** contiene **51 candidatos canónicos: 26 izquierda y 25 derecha**. La clasificación estructural es **51 `article`**, sin candidatos `continuation`, `unresolved`, `paratext` o `false_positive`. La calidad de frontera se distribuye en **49 `exact`** y **2 `undersegmented`**.
 
-La clasificación estructural es **51 `article`**, sin candidatos `continuation`, `unresolved`, `paratext` o `false_positive`. La calidad de frontera se distribuye en **49 `exact`** y **2 `undersegmented`**. R-002 inicia el artículo seleccionado `Borracho. Buſca beodo.` pero contiene material OCR adicional; R-020 inicia `Brincar de alto abajo` y su agrupamiento arrastra material asociado con el siguiente candidato R-021, `Brincar por el suelo`.
+La capa seleccionada preexistente contiene **15 artículos, `ALC1737-art-000209`–`ALC1737-art-000223`**. Los quince quedaron enlazados a candidatos. R-002 inicia el artículo seleccionado `Borracho. Buſca beodo.` pero contiene material OCR adicional; R-020 inicia `Brincar de alto abajo` y su agrupamiento arrastra material asociado con R-021, `Brincar por el suelo`.
 
-La capa seleccionada preexistente contiene **15 artículos, `ALC1737-art-000209`–`ALC1737-art-000223`**. Los quince quedaron enlazados a candidatos: 14 en la columna izquierda y uno en la derecha. No se observó un falso negativo demostrable dentro de esta capa de anclaje, pero su cobertura —en especial un solo artículo seleccionado en la columna derecha— es demasiado escasa para afirmar que no existan otros inicios omitidos.
+Quedan **36 candidatos de artículo `pending_promotion`**. El censo visible no se declara exhaustivo. El `Bebida` final de p.146 anticipa p.147 L-001; el material `Brum*` al final de p.147 R-025 se trata como reclamo dañado que anticipa p.148 L-001 `Bruñidor`.
 
-Quedan **36 candidatos de artículo `pending_promotion`**. Sus fronteras son suficientemente claras para reconciliación estructural, pero no se promueven desde OCR sin una transcripción más fuerte. No hubo promociones nuevas y el corpus permanece en **1,045 artículos**.
+## Página 148 — reconciliación de candidatos completada
 
-El borde entre páginas también quedó modelado. El `Bebida` final de p.146 anticipa p.147 L-001, `Bebida de chía, y maíz toſtado`, que es una entrada nueva. En el borde p.147→148, el material `Brum*` al final de R-025 se trata como reclamo dañado que anticipa p.148 L-001, `Bruñidor`, y no como un segundo artículo de p.147.
+La página digital **148** contiene **44 candidatos canónicos: 23 izquierda y 21 derecha**. La clasificación estructural es **44 `article`**, sin candidatos `continuation`, `unresolved`, `paratext` o `false_positive`. La calidad de frontera se distribuye en **41 `exact`** y **3 `undersegmented`**: R-007, R-008 y R-021.
 
-El censo visible **no se declara exhaustivo**. Se conocen al menos 51 inicios, pero la ausencia de un censo facsimilar completo impide demostrar que ese mínimo sea el denominador real. Por ello TP/FP/FN, precisión, recobrado y F1 permanecen sin calcular. `p147_machine_reconciliation_status.json` registra esta distinción.
+La capa seleccionada preexistente contiene **15 artículos, `ALC1737-art-000224`–`ALC1737-art-000238`**. Los quince quedaron enlazados a candidatos. Durante la alineación se detectó y corrigió un error de metadatos espaciales en cinco objetos: `ALC1737-art-000231`–`000235` (`Cabar`, `Cabello`, `Cabellera`, `Caber`, `Cabeza`) estaban marcados como columna derecha, pero la geometría canónica los sitúa en la **columna izquierda**. La corrección afecta únicamente `column` y la procedencia espacial; **la transcripción léxica no fue modificada**. El cambio está auditado en `data/lexicon/provenance/p148_column_metadata_corrections.jsonl`.
+
+Tras la corrección, la capa seleccionada de p.148 se distribuye en **12 artículos izquierdos y 3 derechos**. `ALC1737-art-000225` (`Bronce. Lo miſmo.`) conserva su anáfora histórica como `unresolved`; la reconciliación de frontera de su candidato sigue siendo estructuralmente válida.
+
+Quedan **29 candidatos de artículo `pending_promotion`**. No hubo promociones nuevas y el corpus permanece en **1,045 artículos**. El censo visible no se declara exhaustivo: se conocen al menos 44 inicios, pero la capa seleccionada no permite demostrar ausencia de falsos negativos adicionales; las métricas permanecen sin calcular.
+
+El borde p.147→148 queda modelado por el reclamo dañado hacia `Bruñidor`. En el borde p.148→149, R-021 inicia `Calabaza generalmente`; su fragmento final `Cala-` se trata como reclamo que anticipa la entrada nueva `Calabaza pequeña tierna` de p.149 (`ALC1737-art-000239`), cuya forma aparece dividida en la geometría de los primeros candidatos de p.149.
+
+`p148_machine_reconciliation_status.json` registra el estado completo de este pase.
 
 ## Próximo frente
 
-En p.145 continúa la reducción de **20 `pending_promotion`** y 3 `unresolved`; en p.146 quedan **22 `pending_promotion`**; y en p.147 quedan **36 `pending_promotion`**. Las tres páginas tienen reconciliación de candidatos completa, pero no un censo visible exhaustivo.
+En p.145 continúa la reducción de **20 `pending_promotion`** y 3 `unresolved`; en p.146 quedan **22 `pending_promotion`**; en p.147 quedan **36 `pending_promotion`**; y en p.148 quedan **29 `pending_promotion`**. Las cuatro páginas tienen reconciliación de candidatos completa, pero no un censo visible exhaustivo.
 
-El siguiente frente geométrico es la **página digital 148**, con **44 candidatos canónicos**. Hasta que p.145 complete censo visible y promoción, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo técnicamente cerrado.
+El siguiente frente geométrico es la **página digital 149**, con **61 candidatos canónicos**. Hasta que p.145 complete censo visible y promoción, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo técnicamente cerrado.
