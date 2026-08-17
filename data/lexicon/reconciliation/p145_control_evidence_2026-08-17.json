@@ -1,0 +1,48 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 145,
+  "evidencePass": "secondary_control_and_recovered_primary_ocr",
+  "date": "2026-08-17",
+  "primaryEvidence": {
+    "source": "Internet Archive OCR derivative of ALC1737",
+    "identifier": "artedelalenguaca00gonz",
+    "observations": [
+      {
+        "candidateId": "ALC1737-vcand-p145-R-011",
+        "guideReading": "Ardilla que ſuele bajar al Rio",
+        "formReadingStatus": "too_noisy_for_promotion",
+        "evidence": "OCR preserves the guide across lines and a damaged Cahita form."
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-R-012",
+        "guideReading": "Atomo",
+        "formReadingStatus": "too_noisy_for_promotion",
+        "evidence": "OCR preserves `Atpmo` followed by a damaged form immediately before the B section marker; guide is reconciled as Atomo with secondary control."
+      }
+    ]
+  },
+  "secondaryControl": {
+    "sourceId": "BUE1890",
+    "authority": "secondary_only",
+    "observations": [
+      {
+        "candidateId": "ALC1737-vcand-p145-R-011",
+        "controlReading": "Ardilla que suele bajar al río. Bamaoatecu.",
+        "use": "supports article segmentation and guide identification only; form is not substituted into ALC1737"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-R-012",
+        "controlReading": "Atomo. Tohuachichitiame.",
+        "use": "supports guide identification only; later reprint spelling/form is not substituted into ALC1737"
+      }
+    ]
+  },
+  "decisions": [
+    "R-011 is reclassified from unresolved to article because the primary OCR preserves the guide start and BUE1890 independently corroborates the segmentation.",
+    "R-011 remains pending_promotion because the exact ALC1737 Cahita form is not sufficiently reliable from OCR alone.",
+    "R-012 remains an article with ambiguous boundary assessment and pending_promotion; its guide is identified as Atomo, but its exact ALC1737 Cahita form remains too uncertain for promotion.",
+    "No BUE1890 form is silently substituted for ALC1737."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
