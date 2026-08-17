@@ -1,0 +1,52 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 147,
+  "recordType": "phase_ii_local_primary_facsimile_closure",
+  "recordedAt": "2026-08-17",
+  "primaryWitness": {
+    "localFileName": "Cahíta.pdf",
+    "internetArchiveIdentifier": "artedelalenguaca00gonz",
+    "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "pdfPageCount": 182,
+    "pageRenderSha256": "8757c7ad99b5ce69e882fc4e1bb431790c5516421d3221c10a79c4985843cfdb",
+    "authority": "primary_same_witness"
+  },
+  "closure": {
+    "visibleHistoricalArticleStarts": 55,
+    "candidateArticleStarts": 51,
+    "detectorFalseNegatives": 4,
+    "preExistingStructuredArticles": 15,
+    "newCandidatePromotions": 36,
+    "newMissedStartPromotions": 4,
+    "newPromotionsTotal": 40,
+    "articleIdRange": "ALC1737-art-001097--ALC1737-art-001136",
+    "candidatePendingAfterPass": 0,
+    "structuredVisibleStartsAfterPass": 55,
+    "corpusTotalAfterPass": 1136,
+    "technicalClosure": true
+  },
+  "structuralDecisions": [
+    "`Aropetua.` at the top of the right column is continuation of `Bolver lo de dentro à fuera`, not a new start.",
+    "`Bruñi-` at the bottom of p.147 is the catchword anticipating p.148 `Bruñidor`, not a lexical start.",
+    "R-002 is recollated as an exact `Borracho. Buſca beodo.` article; the previous OCR-tail undersegmentation suspicion is rejected.",
+    "R-020 remains a structurally undersegmented machine candidate even though direct facsimile evidence resolves its lexical article as `Brincar de alto abajo. Hica-tana. conchepte.`."
+  ],
+  "authorityGuards": [
+    "All new ALC1737 readings in this pass derive from direct visual collation of the locally supplied 1737 witness.",
+    "BUE1890 is not used to supply or silently normalize any ALC1737 reading.",
+    "Direct AI-assisted collation is recorded as machine_corrected_unverified; humanVerified remains false.",
+    "The four detector false negatives remain separately documented in p147_missed_visible_starts.jsonl even after promotion."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol visual collation",
+    "derivedFrom": [
+      "p147_local_facsimile_census_2026-08-17.json",
+      "p147_left_reconciliation.jsonl",
+      "p147_right_reconciliation.jsonl",
+      "p147_missed_visible_starts.jsonl"
+    ],
+    "method": "Exhaustive direct same-witness visual collation followed by candidate/missed-start promotion and page-level closure; no independent human verification."
+  }
+}

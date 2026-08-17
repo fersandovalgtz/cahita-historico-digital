@@ -4,9 +4,9 @@
   "pageStatus": {
     "candidateReconciliation": "complete",
     "visibleStartCensus": "exhaustive_direct_local_facsimile",
-    "promotionLinkage": "partial",
+    "promotionLinkage": "complete",
     "structuralClosure": true,
-    "technicalClosure": false,
+    "technicalClosure": true,
     "humanVerificationPlanned": false
   },
   "candidateInventory": {
@@ -21,30 +21,27 @@
       "unresolved": 0
     },
     "boundaryAssessment": {
-      "exact": 49,
-      "undersegmented": 2,
+      "exact": 50,
+      "undersegmented": 1,
       "merged_articles": 0,
       "oversegmented": 0,
       "ambiguous": 0,
       "not_applicable": 0
     }
   },
-  "selectedLayer": {
-    "preExistingArticles": 15,
-    "articleIdRange": [
-      "ALC1737-art-000209",
-      "ALC1737-art-000223"
-    ],
-    "candidateRecordsLinked": 15,
-    "structuredArticlesLinkedFromCandidates": 15,
-    "selectedArticlesUnlinked": 0
+  "linkage": {
+    "articleCandidateRecordsLinked": 51,
+    "structuredArticlesLinkedFromCandidateRecords": 51,
+    "missedStartRecordsLinked": 4,
+    "articleCandidatesPendingPromotion": 0,
+    "unresolvedCandidateBoundaries": 0
   },
-  "promotion": {
-    "articleCandidatesPendingPromotion": 36,
-    "missedVisibleStartsPendingPromotion": 4,
-    "knownUnstructuredVisibleStarts": 40,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1096
+  "curation": {
+    "preExistingStructuredArticlesOnPage": 15,
+    "newPromotionsThisPass": 40,
+    "structuredVisibleStartsAfterPass": 55,
+    "newArticleIdRange": "ALC1737-art-001097--ALC1737-art-001136",
+    "corpusTotalAfterPass": 1136
   },
   "visibleStartEvidence": {
     "exhaustive": true,
@@ -58,20 +55,21 @@
     "precision": 1.0,
     "recall": 0.927273,
     "f1": 0.962264,
-    "countingNote": "Direct full-page facsimile census establishes 55 visible historical starts: all 51 article-class canonical candidates are true starts, and four additional starts were missed by the detector."
+    "countingNote": "Direct full-page facsimile census establishes 55 visible historical starts: all 51 article-class canonical candidates are true starts, plus four detector false negatives. All 55 are now represented by structured lexical objects."
   },
   "physicalContinuities": [
-    {
-      "from": "p147:left:bottom",
-      "to": "p147:right:top",
-      "type": "cross_column_article_continuation",
-      "note": "`Bolver lo de dentro à fuera` continues with visible `Aropetua.` at the top of the right column; `Aropetua.` is not a new article start."
-    },
     {
       "from": "ALC1737-vcand-p146-R-026",
       "to": "ALC1737-vcand-p147-L-001",
       "type": "catchword_to_article",
       "note": "The p.146 catchword `Bebida` anticipates p.147 L-001; L-001 is a fresh article start."
+    },
+    {
+      "from": "ALC1737-vcand-p147-L-026",
+      "to": "p147:right:top",
+      "articleId": "ALC1737-art-001110",
+      "type": "cross_column_article_continuation",
+      "note": "`Bolver lo de dentro à fuera` continues with `Aropetua.` at the top of the right column."
     },
     {
       "from": "p147:right:bottom-catchword",
@@ -83,7 +81,6 @@
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
-    "selectedP147LayerUsedAsAnchor": true,
     "directLocalFacsimileAvailableThisPass": true,
     "primaryWitness": {
       "identifier": "artedelalenguaca00gonz",
@@ -93,18 +90,24 @@
       "pageRenderSha256": "8757c7ad99b5ce69e882fc4e1bb431790c5516421d3221c10a79c4985843cfdb"
     },
     "localFacsimileCensusRecord": "p147_local_facsimile_census_2026-08-17.json",
+    "localFacsimileClosureRecord": "p147_local_facsimile_closure_2026-08-17.json",
     "missedStartRecord": "p147_missed_visible_starts.jsonl",
-    "primaryOcrTriageRecord": "p147_primary_ocr_triage_2026-08-17.json",
-    "phase2PromotionQueue": "p147_phase2_promotion_queue_2026-08-17.json",
-    "secondaryControlPolicy": "BUE1890 remains secondary-only and supplies no ALC1737 reading in this census pass."
+    "secondaryControlPolicy": "BUE1890 remains secondary-only and supplies no ALC1737 reading in this pass.",
+    "promotionBatches": [
+      "data/lexicon/articles/p147_promotions_phase2_a.jsonl",
+      "data/lexicon/articles/p147_promotions_phase2_b.jsonl",
+      "data/lexicon/articles/p147_promotions_phase2_c.jsonl",
+      "data/lexicon/articles/p147_promotions_phase2_d.jsonl"
+    ]
   },
   "resolvedThisPass": [
-    "The visible-start census is now exhaustive from direct local same-witness facsimile inspection.",
-    "Four detector false negatives are explicitly registered: `Bledos otros tardios`, `Bledos colorados`, `Braza. Buſca aſqua`, and `Braſil. Huebaco`.",
-    "The page-level detector metrics are now defensible: precision 1.0, recall 0.927273, F1 0.962264.",
-    "Top-right `Aropetua.` is classified as cross-column continuation of the final left-column article, while bottom `Bruñi-` is classified as a catchword to p.148."
+    "All 36 formerly pending candidate-level starts are promoted and linked from direct same-witness facsimile evidence.",
+    "All four detector false negatives are promoted and linked while remaining explicitly documented in the missed-start layer.",
+    "All 55 visible historical starts on p.147 are now structurally represented.",
+    "R-002 is recollated as exact; R-020 remains the sole undersegmented canonical candidate but its article text is resolved.",
+    "The page is technically closed at machine_corrected_unverified authority."
   ],
-  "authorityNote": "P.147 now has complete candidate-level structural reconciliation and an exhaustive direct-facsimile visible-start census. It is not technically closed because 36 candidate-level starts plus four detector misses remain unpromoted. All authority remains machine_corrected_unverified and humanVerified=false.",
+  "authorityNote": "P.147 is technically closed through exhaustive AI-assisted direct collation of the locally supplied ALC1737 facsimile. Closure is structural/editorial at machine_corrected_unverified authority: humanVerified remains false, and BUE1890 supplies no ALC1737 reading.",
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
 }
