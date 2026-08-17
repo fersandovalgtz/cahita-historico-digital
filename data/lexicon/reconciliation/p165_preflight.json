@@ -1,0 +1,136 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 165,
+  "stage": "preflight",
+  "candidateInventory": {
+    "total": 56,
+    "left": 29,
+    "right": 27,
+    "boundaryMethod": "hybrid_margin_mode_v0.2",
+    "canonicalInventoryTotal": 2072,
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p165_selected_articles.jsonl",
+    "preExistingArticles": 15,
+    "articleIdRange": ["ALC1737-art-000479", "ALC1737-art-000493"],
+    "nonExhaustive": true,
+    "humanVerified": false
+  },
+  "selectedCandidateAlignment": {
+    "L-001": "ALC1737-art-000479",
+    "L-002": "ALC1737-art-000480",
+    "L-007": "ALC1737-art-000481",
+    "L-008": "ALC1737-art-000482",
+    "L-009": "ALC1737-art-000483",
+    "L-010": "ALC1737-art-000484",
+    "L-012": "ALC1737-art-000485",
+    "L-013": "ALC1737-art-000486",
+    "L-016": ["ALC1737-art-000487", "ALC1737-art-000488"],
+    "L-017": "ALC1737-art-000489",
+    "R-007": "ALC1737-art-000490",
+    "R-011": "ALC1737-art-000491",
+    "R-012": "ALC1737-art-000492",
+    "R-014": "ALC1737-art-000493"
+  },
+  "pageEdges": {
+    "fromPreviousPage": {
+      "previousCandidate": "ALC1737-vcand-p164-R-022",
+      "previousEdgeRaw": "Obr...",
+      "firstCandidate": "ALC1737-vcand-p165-L-001",
+      "firstSelectedArticle": "ALC1737-art-000479",
+      "opening": "Obra aſſi, hechura. Chupari.",
+      "interpretation": "fresh_page_transition",
+      "note": "The `Obr...` material at p164 is treated as edge/catchword-like material; p165 opens a fresh selected article rather than a long continuation."
+    },
+    "toNextPage": {
+      "lastCandidate": "ALC1737-vcand-p165-R-027",
+      "lastGuideLikeRaw": "Padrino",
+      "nextCandidate": "ALC1737-vcand-p166-L-001",
+      "nextSelectedArticle": "ALC1737-art-000494",
+      "nextOpening": "Paga tal. Bebeti.",
+      "interpretation": "fresh_page_transition"
+    }
+  },
+  "knownContinuities": [
+    ["ALC1737-vcand-p165-L-003", "ALC1737-vcand-p165-L-004"],
+    ["ALC1737-vcand-p165-L-014", "ALC1737-vcand-p165-L-015"],
+    ["ALC1737-vcand-p165-R-002", "ALC1737-vcand-p165-R-003"],
+    ["ALC1737-vcand-p165-R-007", "ALC1737-vcand-p165-R-008"]
+  ],
+  "knownStructuralFeatures": [
+    {
+      "candidateId": "ALC1737-vcand-p165-L-016",
+      "assessment": "merged_articles",
+      "linkedArticleIds": ["ALC1737-art-000487", "ALC1737-art-000488"],
+      "note": "The canonical group contains selected `Oydor el que oye. Hicahame.` followed by selected `Oyr. Hicaha.`; the second start is a demonstrated internal miss."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p165-R-014",
+      "assessment": "undersegmented",
+      "linkedArticleIds": ["ALC1737-art-000493"],
+      "note": "Selected `Oſado ſer. Buſca atrevido.` begins here and the same OCR group carries additional damaged adjacent material. The additional material is not promoted without an independent anchor."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p165-R-016",
+      "assessment": "ambiguous",
+      "note": "Canonical geometry supports a distinct start, but raw OCR does not preserve a responsibly recoverable Spanish guide. The boundary is retained as article/pending rather than assigned an invented lemma."
+    }
+  ],
+  "knownMissedStarts": [
+    {
+      "visibleStartRaw": "Oyr. Hicaha.",
+      "linkedArticleId": "ALC1737-art-000488",
+      "missType": "inside_candidate_group",
+      "containingCandidateId": "ALC1737-vcand-p165-L-016"
+    }
+  ],
+  "workingHypothesis": {
+    "classification": {
+      "article": 52,
+      "continuation": 4,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 45,
+      "oversegmented": 4,
+      "undersegmented": 1,
+      "merged_articles": 1,
+      "ambiguous": 1,
+      "not_applicable": 4
+    },
+    "articleCandidateRecordsLinkedExpected": 14,
+    "structuredSelectedArticlesLinkedExpected": 15,
+    "articleCandidatesPendingPromotionExpected": 38,
+    "knownVisibleStartsMinimum": 53,
+    "metricsAllowed": false,
+    "reasonMetricsWithheld": "The 52 article candidates plus selected internal miss 000488 establish at least 53 starts, but the selected layer is non-exhaustive and damaged/undersegmented groups may contain additional unanchored starts."
+  },
+  "nextPage": {
+    "sourcePageDigital": 166,
+    "candidateInventoryTotal": 50,
+    "left": 28,
+    "right": 22,
+    "firstCandidate": "ALC1737-vcand-p166-L-001",
+    "firstSelectedArticle": "ALC1737-art-000494",
+    "opening": "Paga tal. Bebeti."
+  },
+  "evidenceLimits": {
+    "directFacsimileInspectedThisPass": false,
+    "selectedLayerIsCoverageExpectation": false,
+    "unanchoredInternalStartsPromoted": false,
+    "visibleStartCensusExhaustive": false,
+    "humanVerification": false
+  },
+  "pageStatus": {
+    "preflight": "complete",
+    "candidateReconciliation": "ready_for_full_page_materialization",
+    "visibleStartCensus": "known_selected_misses_only_not_exhaustive",
+    "promotionLinkage": "selected_anchors_identified",
+    "technicalClosure": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
