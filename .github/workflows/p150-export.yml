@@ -1,4 +1,4 @@
-name: CHD p150 export
+name: CHD page export
 
 on:
   push:
@@ -18,8 +18,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Export canonical p150 candidates
+      - name: Export canonical p151 candidates
         run: |
-          echo '---P150-BEGIN---'
-          python scripts/export_candidate_page.py --page 150
-          echo '---P150-END---'
+          echo '---P151-BEGIN---'
+          python scripts/export_candidate_page.py --page 151
+          echo '---P151-END---'
