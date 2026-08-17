@@ -90,7 +90,9 @@ jobs:
             data/lexicon/reconciliation/p151_left_reconciliation.jsonl \
             data/lexicon/reconciliation/p151_right_reconciliation.jsonl \
             data/lexicon/reconciliation/p152_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p152_right_reconciliation.jsonl; do
+            data/lexicon/reconciliation/p152_right_reconciliation.jsonl \
+            data/lexicon/reconciliation/p153_left_reconciliation.jsonl \
+            data/lexicon/reconciliation/p153_right_reconciliation.jsonl; do
             python scripts/validate_jsonl.py \
               --schema schemas/lexicon-candidate-review.schema.json \
               --jsonl "$file"
@@ -113,7 +115,8 @@ jobs:
             data/lexicon/reconciliation/p142_missed_visible_starts.jsonl \
             data/lexicon/reconciliation/p143_missed_visible_starts.jsonl \
             data/lexicon/reconciliation/p144_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p146_missed_visible_starts.jsonl; do
+            data/lexicon/reconciliation/p146_missed_visible_starts.jsonl \
+            data/lexicon/reconciliation/p153_missed_visible_starts.jsonl; do
             python scripts/validate_jsonl.py \
               --schema schemas/lexicon-missed-start.schema.json \
               --jsonl "$file"
@@ -149,6 +152,8 @@ jobs:
           python -m json.tool data/lexicon/reconciliation/p151_preflight.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p152_machine_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p152_preflight.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p153_machine_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p153_preflight.json >/dev/null
           python -m json.tool data/lexicon/provenance/p135_art000704_correction.json >/dev/null
           python -m json.tool data/lexicon/provenance/p137_art000729_correction.json >/dev/null
           python -m json.tool data/lexicon/provenance/p137_art000731_correction.json >/dev/null
