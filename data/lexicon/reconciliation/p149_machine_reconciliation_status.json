@@ -2,7 +2,7 @@
   "sourceId": "ALC1737",
   "sourcePageDigital": 149,
   "pageStatus": {
-    "candidateReconciliation": "complete_with_explicit_unresolved",
+    "candidateReconciliation": "complete",
     "visibleStartCensus": "not_exhaustive",
     "promotionLinkage": "partial",
     "technicalClosure": false,
@@ -13,18 +13,18 @@
     "left": 31,
     "right": 30,
     "classification": {
-      "article": 55,
+      "article": 56,
       "continuation": 5,
       "paratext": 0,
       "false_positive": 0,
-      "unresolved": 1
+      "unresolved": 0
     },
     "boundaryAssessment": {
-      "exact": 47,
+      "exact": 48,
       "oversegmented": 5,
       "undersegmented": 3,
       "merged_articles": 0,
-      "ambiguous": 1,
+      "ambiguous": 0,
       "not_applicable": 5
     }
   },
@@ -41,18 +41,18 @@
     "crossColumnArticleId": "ALC1737-art-000247"
   },
   "promotion": {
-    "articleCandidatesPendingPromotion": 40,
+    "articleCandidatesPendingPromotion": 41,
     "newPromotionsThisPass": 0,
     "corpusTotalAfterPass": 1045
   },
   "visibleStartEvidence": {
     "exhaustive": false,
-    "knownVisibleStartsMinimum": 55,
+    "knownVisibleStartsMinimum": 56,
     "knownMissedStartRecords": 0,
     "precision": null,
     "recall": null,
     "f1": null,
-    "reasonMetricsWithheld": "Candidate reconciliation identifies 55 article starts, five continuations and one unresolved boundary. The selected anchor layer is not exhaustive and cannot prove absence of additional missed starts; no performance denominator is asserted."
+    "reasonMetricsWithheld": "Candidate reconciliation now identifies 56 article starts and five continuations with zero unresolved candidate boundaries. The selected anchor layer remains non-exhaustive and cannot prove absence of additional missed starts; no performance denominator is asserted."
   },
   "physicalContinuities": [
     {
@@ -100,17 +100,22 @@
       "note": "R-030 contains damaged bottom material; p150 L-001 is the fresh selected article `Carcel`, so no long article continuation is asserted."
     }
   ],
-  "unresolvedNotes": [
-    "L-019 remains unresolved because OCR interleaves `Calentura` guide/form fragments with adjacent L-018 material."
-  ],
+  "unresolvedNotes": [],
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
     "selectedP149LayerUsedAsAnchor": true,
     "p150OpeningAndSelectedLayerUsedForPageEdge": true,
     "directFacsimileAvailableThisPass": false,
-    "policy": "Structural decisions may be closed from convergent machine evidence; ambiguous boundary microstructure remains unresolved and uncertain lexical text is not strengthened."
+    "policy": "Candidate-level structure may be closed from convergent canonical geometry, same-witness OCR sequence and explicit secondary control. Uncertain lexical text is not strengthened or promoted, and the visible-start census remains non-exhaustive.",
+    "structuralResolutionRecord": "p149_structural_resolution_2026-08-17.json",
+    "materializedCandidateView": "data/lexicon/candidates/p149_candidates.jsonl",
+    "recoveredPrimaryOcrSequenceUsed": true,
+    "bue1890SecondarySequenceControlUsed": true
   },
   "reviewStatus": "machine_corrected_unverified",
-  "humanVerified": false
+  "humanVerified": false,
+  "resolvedThisPass": [
+    "L-019 is resolved as a real article boundary for the second Calentura entry (`Calentura tener`). Its independent canonical start at y=219.926, recovered ALC1737 OCR sequence and BUE1890 secondary sequence control converge on the same article order. L-018 retains undersegmented because OCR grouping absorbs the `tener*` fragment there. No ALC1737 Cahita form is promoted from this structural decision."
+  ]
 }
