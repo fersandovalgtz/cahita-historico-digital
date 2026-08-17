@@ -1,0 +1,61 @@
+name: Encode p145 crops isolated
+
+on:
+  push:
+    branches:
+      - work/p145-crops-verified
+
+permissions:
+  contents: write
+
+jobs:
+  encode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify and encode exact p145 crops
+        run: |
+          grep -F 'PDF page selected: 145' .tmp_facsimile/p145_target/MANIFEST.txt
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils python3-pil >/dev/null
+          rm -rf .tmp_facsimile/p145_crops_b64
+          mkdir -p .tmp_facsimile/p145_crops_b64
+          pdftoppm -f 1 -l 1 -singlefile -jpeg -jpegopt quality=94 -r 360 .tmp_facsimile/p145_target/p145-target.pdf /tmp/p145-full
+          python - <<'PY'
+          from PIL import Image
+          from pathlib import Path
+          import base64, hashlib, json
+
+          img=Image.open('/tmp/p145-full.jpg').convert('RGB')
+          w,h=img.size
+          boxes={
+            'left_top': (0, 0, int(w*0.53), int(h*0.40)),
+            'left_mid': (0, int(h*0.28), int(w*0.53), int(h*0.70)),
+            'left_bottom': (0, int(h*0.58), int(w*0.53), h),
+            'right_top': (int(w*0.47), 0, w, int(h*0.40)),
+            'right_mid': (int(w*0.47), int(h*0.28), w, int(h*0.70)),
+            'right_bottom': (int(w*0.47), int(h*0.58), w, h),
+          }
+          out=Path('.tmp_facsimile/p145_crops_b64')
+          manifest={'source':'p145-target.pdf','verifiedPdfPage':145,'renderDpi':360,'fullSize':[w,h],'crops':{}}
+          for name,box in boxes.items():
+              crop=img.crop(box)
+              jpg=Path(f'/tmp/{name}.jpg')
+              crop.save(jpg,'JPEG',quality=92,optimize=True)
+              data=jpg.read_bytes()
+              enc=base64.b64encode(data).decode('ascii')
+              lines=[enc[i:i+1000] for i in range(0,len(enc),1000)]
+              (out/f'{name}.b64.txt').write_text('\n'.join(lines)+'\n',encoding='ascii')
+              manifest['crops'][name]={
+                'box':list(box),'pixelSize':list(crop.size),'jpegBytes':len(data),
+                'base64Lines':len(lines),'sha256':hashlib.sha256(data).hexdigest()
+              }
+          (out/'MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
+          PY
+      - name: Commit isolated crops
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A .tmp_facsimile/p145_crops_b64
+          git commit -m "chore: regenerar recortes facsimilares verificados p145"
+          git push
