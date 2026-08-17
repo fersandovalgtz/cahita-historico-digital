@@ -88,3 +88,19 @@ preflight['selectedLayer']['columnMetadataCorrection'] = {
 }
 preflight['nextAction'] = 'Validate the full p159 package, synchronize documentation with the applied column-metadata correction, restore permanent QA through p159, remove temporary scripts/workflows, and integrate only after green PR and post-merge runs.'
 preflight_path.write_text(json.dumps(preflight, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+readme = Path('README.md')
+text = readme.read_text(encoding='utf-8')
+text = text.replace(
+    'las discrepancias de columna de `000398`–`000400` quedan documentadas sin corrección silenciosa;',
+    'la columna de `000398`–`000400` se corrigió de forma trazable de derecha a izquierda, con procedencia dedicada y sin cambiar la transcripción;'
+)
+readme.write_text(text, encoding='utf-8')
+
+progress = Path('docs/LEXICON_PROGRESS.md')
+text = progress.read_text(encoding='utf-8')
+text = text.replace(
+    'La alineación detecta además una discrepancia de metadatos que se preserva para auditoría: `ALC1737-art-000398`, `000399` y `000400` están marcados como columna derecha en la capa seleccionada, mientras los textos coinciden con los candidatos geométricos izquierdos L-017, L-023 y L-024. **No se aplicó corrección silenciosa de columna en esta pasada estructural.**',
+    'La alineación detectó además una discrepancia de metadatos: `ALC1737-art-000398`, `000399` y `000400` estaban marcados como columna derecha, mientras sus textos coinciden con los candidatos geométricos izquierdos L-017, L-023 y L-024. Se corrigió **right→left** de forma auditada en `data/lexicon/provenance/p159_column_metadata_corrections.jsonl`; la transcripción, el tipo de artículo y las formas históricas no cambiaron.'
+)
+progress.write_text(text, encoding='utf-8')
