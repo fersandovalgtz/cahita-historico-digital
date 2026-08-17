@@ -1,0 +1,92 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 158,
+  "stage": "preflight",
+  "candidateInventory": {
+    "total": 53,
+    "left": 28,
+    "right": 25,
+    "canonicalInventoryTotal": 2072,
+    "boundaryMethod": "hybrid_margin_mode_v0.2"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p158_selected_articles.jsonl",
+    "preExistingArticles": 15,
+    "articleIdRange": ["ALC1737-art-000374", "ALC1737-art-000388"],
+    "nonExhaustive": true,
+    "humanVerified": false
+  },
+  "edgeContext": {
+    "fromPreviousPage": "p158 L-001 (`Hallarſe bien en vn lugar`) is a fresh H-entry after documented source gap ALC1737-gap-0001; it is not a continuation of p157 F-material.",
+    "toNextPage": "p158 R-025 begins a distinct `Hueva...` article and carries trailing `Huey...` edge material. The p159 selected layer opens with fresh `Huevo. Totolichaba.`; no long article continuation is asserted from p158 to p159."
+  },
+  "knownStructuralFeatures": [
+    {
+      "candidateId": "ALC1737-vcand-p158-L-014",
+      "assessment": "merged_articles",
+      "linkedArticleIds": ["ALC1737-art-000384", "ALC1737-art-000385"],
+      "note": "Starts selected `Henchir. Atapunia.` and absorbs the distinct selected start `Henchimiento. Buſca llenar.` plus additional damaged H-material."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p158-L-019",
+      "assessment": "oversegmented",
+      "note": "Starts a `Herrar poner el hierro` article whose form continues in L-020."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p158-L-020",
+      "assessment": "continuation_from_L019"
+    },
+    {
+      "candidateId": "ALC1737-vcand-p158-L-026",
+      "assessment": "undersegmented",
+      "note": "Contains `Hilado` followed by multiple additional guide-like fragments (`Hilo de la tierra`, `Hijo, o hija...`) and continues into L-027/L-028; no unanchored internal articles are promoted or counted as exhaustive misses."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p158-L-027",
+      "assessment": "continuation_from_L026"
+    },
+    {
+      "candidateId": "ALC1737-vcand-p158-L-028",
+      "assessment": "continuation_from_L026"
+    },
+    {
+      "candidateId": "ALC1737-vcand-p158-R-004",
+      "assessment": "undersegmented",
+      "note": "Begins a clear `Hinchazón`-like article but absorbs several damaged guide/form fragments; microsegmentation is not strengthened without selected or facsimile anchors."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p158-R-025",
+      "assessment": "undersegmented_page_edge",
+      "note": "Begins `Hueva...` and carries trailing `Huey...` edge material. Fresh p159 selected `Huevo` prevents treating the page edge as a demonstrated long continuation."
+    }
+  ],
+  "knownMissedStarts": [
+    {
+      "visibleStartRaw": "Henchimiento. Buſca llenar.",
+      "linkedArticleId": "ALC1737-art-000385",
+      "missType": "inside_candidate_group",
+      "containingCandidateId": "ALC1737-vcand-p158-L-014"
+    }
+  ],
+  "sourceGapContext": {
+    "gapId": "ALC1737-gap-0001",
+    "position": "immediately_before_page_158",
+    "policy": "Page 158 starts a fresh H-sequence. Missing F/G material is not reconstructed and is not folded into p158 coverage."
+  },
+  "evidenceLimits": {
+    "selectedLayerIsCoverageExpectation": false,
+    "directFacsimileInspectedThisPass": false,
+    "visibleStartCensusExhaustive": false,
+    "metricsAllowed": false,
+    "reason": "The selected layer demonstrates one internal missed start, while L-026 and R-004 contain additional damaged guide-like material without independent anchors. Metrics and exhaustive missed-start claims remain withheld."
+  },
+  "pageStatus": {
+    "candidateReconciliation": "ready_for_conservative_full_page_materialization",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial_anchor_layer",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
