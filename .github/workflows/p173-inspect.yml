@@ -1,4 +1,4 @@
-name: CHD p173 inspection
+name: CHD p173 concise inspection
 
 on:
   push:
@@ -18,17 +18,20 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Export p173 and p174 edge
+      - name: Summarize p173 and p174 edge
         run: |
-          echo '---P173-BEGIN---'
-          python scripts/export_candidate_page.py --page 173
-          echo '---P173-END---'
-          echo 'P174 TOTAL'
-          python scripts/export_candidate_page.py --page 174 --count-only
-          echo 'P174 LEFT'
-          python scripts/export_candidate_page.py --page 174 --column left --count-only
-          echo 'P174 RIGHT'
-          python scripts/export_candidate_page.py --page 174 --column right --count-only
-          echo '---P174-BEGIN---'
-          python scripts/export_candidate_page.py --page 174
-          echo '---P174-END---'
+          python scripts/export_candidate_page.py --page 173 > /tmp/p173.jsonl
+          python scripts/export_candidate_page.py --page 174 > /tmp/p174.jsonl
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          def rows(path): return [json.loads(x) for x in Path(path).read_text().splitlines() if x.strip()]
+          a=rows('/tmp/p173.jsonl'); b=rows('/tmp/p174.jsonl')
+          print('P173', len(a), 'L', sum(x['column']=='left' for x in a), 'R', sum(x['column']=='right' for x in a))
+          for x in a: print(x['candidateId'], '::', x['rawText'])
+          print('P174', len(b), 'L', sum(x['column']=='left' for x in b), 'R', sum(x['column']=='right' for x in b))
+          print('P174-FIRST')
+          for x in b[:6]: print(x['candidateId'], '::', x['rawText'])
+          print('P174-LAST')
+          for x in b[-6:]: print(x['candidateId'], '::', x['rawText'])
+          PY
