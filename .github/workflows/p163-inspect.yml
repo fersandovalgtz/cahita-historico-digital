@@ -1,4 +1,4 @@
-name: CHD p163 edge inspection
+name: CHD p163 materialize reconciliation
 
 on:
   push:
@@ -8,23 +8,55 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  inspect:
+  materialize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Inspect canonical p164 edge and counts
+      - name: Materialize p163 reconciliation
+        run: python scripts/_tmp_materialize_p163.py
+      - name: Validate p163 evidence
         run: |
-          echo 'P164 TOTAL'
-          python scripts/export_candidate_page.py --page 164 --count-only
-          echo 'P164 LEFT'
-          python scripts/export_candidate_page.py --page 164 --column left --count-only
-          echo 'P164 RIGHT'
-          python scripts/export_candidate_page.py --page 164 --column right --count-only
-          echo 'P164 FULL'
-          python scripts/export_candidate_page.py --page 164
+          python -m pip install -r requirements-dev.txt
+          python scripts/reconstruct_candidate_inventory.py
+          python scripts/validate_lexicon_ids.py
+          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p163_left_reconciliation.jsonl
+          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p163_right_reconciliation.jsonl
+          python scripts/validate_jsonl.py --schema schemas/lexicon-missed-start.schema.json --jsonl data/lexicon/reconciliation/p163_missed_visible_starts.jsonl
+          python -m json.tool data/lexicon/reconciliation/p163_machine_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p163_preflight.json >/dev/null
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          left=[json.loads(x) for x in Path('data/lexicon/reconciliation/p163_left_reconciliation.jsonl').read_text(encoding='utf-8').splitlines() if x.strip()]
+          right=[json.loads(x) for x in Path('data/lexicon/reconciliation/p163_right_reconciliation.jsonl').read_text(encoding='utf-8').splitlines() if x.strip()]
+          rows=left+right
+          assert len(rows)==49
+          cls={k:sum(r['classification']==k for r in rows) for k in ['article','continuation','unresolved','paratext','false_positive']}
+          assert cls=={'article':42,'continuation':7,'unresolved':0,'paratext':0,'false_positive':0}, cls
+          by={r['candidateId']:r for r in rows}
+          assert by['ALC1737-vcand-p163-L-001']['linkedArticleIds']==['ALC1737-art-000450']
+          assert by['ALC1737-vcand-p163-L-001']['boundaryAssessment']=='undersegmented'
+          assert by['ALC1737-vcand-p163-L-004']['classification']=='continuation'
+          assert by['ALC1737-vcand-p163-R-001']['classification']=='continuation'
+          assert by['ALC1737-vcand-p163-R-023']['classification']=='article'
+          assert by['ALC1737-vcand-p163-R-023']['boundaryAssessment']=='undersegmented'
+          miss=[json.loads(x) for x in Path('data/lexicon/reconciliation/p163_missed_visible_starts.jsonl').read_text(encoding='utf-8').splitlines() if x.strip()]
+          assert len(miss)==1 and miss[0]['linkedArticleIds']==['ALC1737-art-000449']
+          status=json.loads(Path('data/lexicon/reconciliation/p163_machine_reconciliation_status.json').read_text(encoding='utf-8'))
+          assert status['promotion']['articleCandidatesPendingPromotion']==28
+          assert status['visibleStartEvidence']['knownVisibleStartsMinimum']==43
+          assert status['promotion']['corpusTotalAfterPass']==1045
+          PY
+      - name: Commit generated p163 evidence
+        run: |
+          git config user.name 'Fernando Sandoval'
+          git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
+          git add data/lexicon/reconciliation/p163_left_reconciliation.jsonl data/lexicon/reconciliation/p163_right_reconciliation.jsonl data/lexicon/reconciliation/p163_missed_visible_starts.jsonl data/lexicon/reconciliation/p163_machine_reconciliation_status.json
+          git commit -m 'data: reconciliar conservadoramente p.163' -m '49 candidatos: 42 article, 7 continuation; 000449 como falso negativo de borde superior, 28 pending_promotion y bordes p162/p164 preservados.'
+          git push origin HEAD:work/p163-reconciliation
