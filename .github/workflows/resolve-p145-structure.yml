@@ -1,0 +1,121 @@
+name: Resolve p145 structure
+
+on:
+  push:
+    branches:
+      - work/p145-structural-resolution
+
+permissions:
+  contents: write
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply conservative structural resolutions
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          left_path = Path('data/lexicon/reconciliation/p145_left_reconciliation.jsonl')
+          rows = [json.loads(line) for line in left_path.read_text(encoding='utf-8').splitlines() if line.strip()]
+          by_id = {r['candidateId']: r for r in rows}
+
+          l2 = by_id['ALC1737-vcand-p145-L-002']
+          l2.update({
+              'classification': 'continuation',
+              'boundaryAssessment': 'not_applicable',
+              'articleLinkStatus': 'not_applicable',
+              'editorialNote': 'Continuation of L-001 (`Atravesar la flecha al blanco`): the canonical row begins with wrapped continuation/form material. Trailing OCR `Asi, o` is treated as two-column bleed, corroborated by the independently collated right-column guide `Axi, ò pimienta`; no independent left-column start is asserted.',
+              'reviewStatus': 'machine_corrected_unverified',
+              'humanVerified': False,
+              'continuationType': 'from_previous_line',
+          })
+          l2['provenance'] = {
+              'derivedFrom': 'materialized canonical p145 candidate inventory; recovered ALC1737 OCR; p145 selected right-column collation; BUE1890 secondary sequence control; p145 structural resolution record',
+              'agent': 'GPT-5.6 Sol machine reconciliation',
+              'method': 'Convergent structural reconciliation; cross-column OCR bleed separated using selected right-column evidence; no human verification and no form promotion',
+              'processedAt': None,
+          }
+
+          l5 = by_id['ALC1737-vcand-p145-L-005']
+          l5.update({
+              'classification': 'continuation',
+              'boundaryAssessment': 'undersegmented',
+              'articleLinkStatus': 'not_applicable',
+              'editorialNote': 'Begins with the tail `aet\'-fica.` of the preceding `Atravesar y pasar toda la flecha` entry, then absorbs a distinct Atrepellar-like start (`/UropelUr. Atará -hW.`). Structural undersegmentation is accepted, but the embedded ALC1737 article/form remains unpromoted because the exact historical reading is machine-only.',
+              'reviewStatus': 'machine_corrected_unverified',
+              'humanVerified': False,
+              'continuationType': 'from_previous_line',
+          })
+          l5['provenance'] = {
+              'derivedFrom': 'materialized canonical p145 candidate inventory; recovered ALC1737 OCR; BUE1890 secondary sequence control; p145 structural resolution record',
+              'agent': 'GPT-5.6 Sol machine reconciliation',
+              'method': 'Convergent structural reconciliation of continuation plus absorbed article start; no human verification and no OCR-only promotion',
+              'processedAt': None,
+          }
+
+          left_path.write_text('\n'.join(json.dumps(r, ensure_ascii=False, separators=(',', ':')) for r in rows) + '\n', encoding='utf-8')
+
+          status_path = Path('data/lexicon/reconciliation/p145_machine_reconciliation_status.json')
+          status = json.loads(status_path.read_text(encoding='utf-8'))
+          status['pageStatus']['candidateReconciliation'] = 'complete'
+          status['pageStatus']['structuralClosure'] = False
+          status['candidateInventory']['classification'].update({'article': 34, 'continuation': 5, 'unresolved': 0})
+          status['candidateInventory']['boundaryAssessment'].update({'exact': 27, 'merged_articles': 3, 'undersegmented': 5, 'ambiguous': 1, 'not_applicable': 3})
+          status['linkage']['unresolvedCandidateBoundaries'] = 0
+          status['machineEvidence']['structuralResolutionRecord'] = 'p145_structural_resolution_2026-08-17.json'
+          status['resolvedThisPass'] = [
+              x for x in status.get('resolvedThisPass', [])
+              if not x.startswith('L-002') and not x.startswith('L-005')
+          ] + [
+              'L-002 is resolved as continuation of L-001. The apparent trailing `Asi, o` is treated as cross-column OCR bleed because it aligns with the independently collated right-column guide `Axi, ò pimienta`; no left-column article is created.',
+              'L-005 is resolved as continuation with `undersegmented` boundary quality: it begins with the tail of `Atravesar y pasar toda la flecha` and absorbs an Atrepellar-like start. The embedded start remains unpromoted because its exact ALC1737 reading/form is not secure enough.'
+          ]
+          status['unresolvedNotes'] = [
+              x for x in status.get('unresolvedNotes', [])
+              if not x.startswith('L-002') and not x.startswith('L-005')
+          ]
+          status['authorityNote'] = 'P.145 now has complete candidate-level machine structural reconciliation with zero unresolved candidate boundaries. Recovered primary OCR, explicit BUE1890 secondary control, selected right-column collation and the reproducibility/structural-resolution records support the decisions. The facsimile-level visible-start census remains non-exhaustive, promotions remain partial, humanVerified remains false, and no uncertainty is upgraded to philological fact.'
+          status_path.write_text(json.dumps(status, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          # Independent invariant check across both columns.
+          right_path = Path('data/lexicon/reconciliation/p145_right_reconciliation.jsonl')
+          all_rows = rows + [json.loads(line) for line in right_path.read_text(encoding='utf-8').splitlines() if line.strip()]
+          assert len(all_rows) == 39, len(all_rows)
+          classes = {}
+          boundaries = {}
+          for r in all_rows:
+              classes[r['classification']] = classes.get(r['classification'], 0) + 1
+              boundaries[r['boundaryAssessment']] = boundaries.get(r['boundaryAssessment'], 0) + 1
+          assert classes.get('article', 0) == 34, classes
+          assert classes.get('continuation', 0) == 5, classes
+          assert classes.get('unresolved', 0) == 0, classes
+          assert boundaries.get('exact', 0) == 27, boundaries
+          assert boundaries.get('merged_articles', 0) == 3, boundaries
+          assert boundaries.get('undersegmented', 0) == 5, boundaries
+          assert boundaries.get('ambiguous', 0) == 1, boundaries
+          assert boundaries.get('not_applicable', 0) == 3, boundaries
+          assert status['curation']['corpusTotalAfterPass'] == 1045
+          assert status['curation']['newPromotionsThisPass'] == 0
+          assert status['visibleStartCensus']['exhaustive'] is False
+          assert status['humanVerified'] is False
+          PY
+      - name: Run repository consistency checks
+        run: |
+          python scripts/check_jsonl.py
+          python scripts/check_ids.py
+          python scripts/check_lexicon_candidates.py
+          python scripts/check_repo_consistency.py
+      - name: Commit structural reconciliation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/lexicon/reconciliation/p145_left_reconciliation.jsonl data/lexicon/reconciliation/p145_machine_reconciliation_status.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "data: resolver límites estructurales L-002 y L-005 en p.145"
+          git push
