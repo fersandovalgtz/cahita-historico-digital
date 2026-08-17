@@ -1,100 +1,101 @@
 {
   "source": "p145-target.pdf",
-  "renderDpi": 320,
+  "verifiedPdfPage": 145,
+  "renderDpi": 360,
   "fullSize": [
-    1374,
-    1925
+    1545,
+    2165
   ],
   "crops": {
     "left_top": {
       "box": [
         0,
         0,
-        728,
-        808
+        818,
+        866
       ],
       "pixelSize": [
-        728,
-        808
+        818,
+        866
       ],
-      "jpegBytes": 163930,
-      "base64Lines": 219,
-      "sha256": "f40f3cd4ef6da3e4423f2f1668051fee7c031de223a7ff66cdc332504424dbdc"
+      "jpegBytes": 204092,
+      "base64Lines": 273,
+      "sha256": "ba879f02a67365a31084b516656d4357e65e9bc2643f959cd1b32131f45469e0"
     },
     "left_mid": {
       "box": [
         0,
-        577,
-        728,
-        1386
+        606,
+        818,
+        1515
       ],
       "pixelSize": [
-        728,
-        809
+        818,
+        909
       ],
-      "jpegBytes": 176940,
-      "base64Lines": 236,
-      "sha256": "5fff24b40b9d8d87940826ea70276d7e78905a2766dca2a76e616776977ff880"
+      "jpegBytes": 230058,
+      "base64Lines": 307,
+      "sha256": "0a840e8582d8028e73409e06614036ff57196dc5409f2f9fdb13d87c974ea9fa"
     },
     "left_bottom": {
       "box": [
         0,
-        1155,
-        728,
-        1925
+        1255,
+        818,
+        2165
       ],
       "pixelSize": [
-        728,
-        770
+        818,
+        910
       ],
-      "jpegBytes": 121794,
-      "base64Lines": 163,
-      "sha256": "980177f0dde7fb08af8a690bc2815c9bec23804870b3f5905f0d055e440c5046"
+      "jpegBytes": 167817,
+      "base64Lines": 224,
+      "sha256": "0131e740b8dbc54671f9171008b39c65299439e46df13f5746a9f301fb968db2"
     },
     "right_top": {
       "box": [
-        645,
+        726,
         0,
-        1374,
-        808
+        1545,
+        866
       ],
       "pixelSize": [
-        729,
-        808
+        819,
+        866
       ],
-      "jpegBytes": 96651,
-      "base64Lines": 129,
-      "sha256": "c1982dc07a3c30b88f58d8a350e0931b898e0a3fb5f276e03a29cac1e9a41eab"
+      "jpegBytes": 118794,
+      "base64Lines": 159,
+      "sha256": "efa4c32b03291495d7d744c6c671efbba85fd831a1f5f69bd7ff02b7f12514f4"
     },
     "right_mid": {
       "box": [
-        645,
-        577,
-        1374,
-        1386
+        726,
+        606,
+        1545,
+        1515
       ],
       "pixelSize": [
-        729,
-        809
+        819,
+        909
       ],
-      "jpegBytes": 110278,
-      "base64Lines": 148,
-      "sha256": "7ee20b1dfdb8be6ea97b4db6cda611b89d0b13d38125e9a0e6fa9bd43653f457"
+      "jpegBytes": 141275,
+      "base64Lines": 189,
+      "sha256": "217c1d86fac55115e3f01b7ba289c79c87048f8b7605a6c44e611079f0d44637"
     },
     "right_bottom": {
       "box": [
-        645,
-        1155,
-        1374,
-        1925
+        726,
+        1255,
+        1545,
+        2165
       ],
       "pixelSize": [
-        729,
-        770
+        819,
+        910
       ],
-      "jpegBytes": 73923,
-      "base64Lines": 99,
-      "sha256": "5c7b5de339497e1fcaf702e6b1c59beeab2f711173738450751844ac88ee782a"
+      "jpegBytes": 99871,
+      "base64Lines": 134,
+      "sha256": "08e08449e658313d26b3ed956908629ad1c7f7c49d85b4ab8f3fafd4a8703cae"
     }
   }
 }
