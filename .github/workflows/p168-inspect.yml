@@ -1,4 +1,4 @@
-name: CHD p168 materialize reconciliation
+name: CHD p168 synchronize docs
 
 on:
   push:
@@ -11,16 +11,16 @@ permissions:
   contents: write
 
 jobs:
-  materialize:
+  synchronize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Materialize p168 reconciliation
-        run: python scripts/_tmp_materialize_p168.py
-      - name: Validate p168 evidence
+      - name: Synchronize p168 docs
+        run: python scripts/_tmp_sync_p168.py
+      - name: Validate p168 package and synchronized docs
         run: |
           python -m pip install -r requirements-dev.txt
           python scripts/reconstruct_candidate_inventory.py
@@ -30,37 +30,15 @@ jobs:
           python scripts/validate_jsonl.py --schema schemas/lexicon-missed-start.schema.json --jsonl data/lexicon/reconciliation/p168_missed_visible_starts.jsonl
           python -m json.tool data/lexicon/reconciliation/p168_machine_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p168_preflight.json >/dev/null
-          python - <<'PY'
-          import json
-          from pathlib import Path
-          rows=[]
-          for name in ['p168_left_reconciliation.jsonl','p168_right_reconciliation.jsonl']:
-              rows += [json.loads(x) for x in Path('data/lexicon/reconciliation',name).read_text(encoding='utf-8').splitlines() if x.strip()]
-          assert len(rows)==32
-          assert all(r['classification']=='article' for r in rows)
-          by={r['candidateId']:r for r in rows}
-          assert by['ALC1737-vcand-p168-L-007']['boundaryAssessment']=='merged_articles'
-          assert by['ALC1737-vcand-p168-L-007']['linkedArticleIds']==['ALC1737-art-000532','ALC1737-art-000533']
-          for cid in ['ALC1737-vcand-p168-L-013','ALC1737-vcand-p168-R-009']:
-              assert by[cid]['boundaryAssessment']=='merged_articles'
-          for cid in ['ALC1737-vcand-p168-L-006','ALC1737-vcand-p168-L-012','ALC1737-vcand-p168-L-014','ALC1737-vcand-p168-R-011','ALC1737-vcand-p168-R-018']:
-              assert by[cid]['boundaryAssessment']=='undersegmented'
-          linked={aid for r in rows for aid in r.get('linkedArticleIds',[])}
-          assert linked=={f'ALC1737-art-{n:06d}' for n in [524,525,526,527,529,532,533,534,535,536,537,538]}
-          miss=[json.loads(x) for x in Path('data/lexicon/reconciliation/p168_missed_visible_starts.jsonl').read_text(encoding='utf-8').splitlines() if x.strip()]
-          assert len(miss)==4
-          assert {a for m in miss for a in m['linkedArticleIds']}=={f'ALC1737-art-{n:06d}' for n in [528,530,531,533]}
-          status=json.loads(Path('data/lexicon/reconciliation/p168_machine_reconciliation_status.json').read_text(encoding='utf-8'))
-          assert status['candidateInventory']['classification']['article']==32
-          assert status['promotion']['articleCandidatesPendingPromotion']==21
-          assert status['visibleStartEvidence']['knownVisibleStartsMinimum']==36
-          assert status['nextPage']['candidateInventoryTotal']==35
-          assert status['promotion']['corpusTotalAfterPass']==1045
-          PY
-      - name: Commit generated p168 evidence
+          grep -F '**32 `article`**' docs/LEXICON_PROGRESS.md
+          grep -F '21 candidatos de artículo `pending_promotion`' docs/LEXICON_PROGRESS.md
+          grep -F '35 candidatos: 19 izquierda y 16 derecha' docs/LEXICON_PROGRESS.md
+          grep -F 'la página **168** tiene sus **32 candidatos canónicos reconciliados**' README.md
+          grep -F 'página 169**, con 35 candidatos canónicos —19 izquierda y 16 derecha—' README.md
+      - name: Commit synchronized documentation
         run: |
           git config user.name 'Fernando Sandoval'
           git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
-          git add data/lexicon/reconciliation/p168_left_reconciliation.jsonl data/lexicon/reconciliation/p168_right_reconciliation.jsonl data/lexicon/reconciliation/p168_missed_visible_starts.jsonl data/lexicon/reconciliation/p168_machine_reconciliation_status.json
-          git commit -m 'data: reconciliar conservadoramente p.168' -m '32 article; cuatro missed-starts seleccionados, tres merged_articles, cinco undersegmented, 21 pending_promotion y borde p169 fresco.'
+          git add README.md docs/LEXICON_PROGRESS.md
+          git commit -m 'docs: cerrar reconciliación conservadora de p.168' -m 'Registra 32 article, cuatro missed-starts seleccionados, 21 pending_promotion y fija p.169=35 candidatos.'
           git push origin HEAD:work/p168-reconciliation
