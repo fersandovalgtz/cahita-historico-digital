@@ -1,0 +1,61 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 145,
+  "date": "2026-08-17",
+  "evidencePass": "local_primary_facsimile_exhaustive_closure",
+  "primaryWitness": {
+    "localFileName": "Cahíta.pdf",
+    "internetArchiveIdentifier": "artedelalenguaca00gonz",
+    "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "pdfPageCount": 182,
+    "pageRenderSha256": "cd2ea02a95c142becfd66bc233faa1b25c592f064f7d2f94a5f96bb4f83ffcf1",
+    "authority": "primary_same_witness",
+    "use": "direct visual collation, exhaustive visible-start census, candidate promotion, and correction of prior machine readings"
+  },
+  "visibleStartCensus": {
+    "exhaustive": true,
+    "visibleHistoricalArticleStarts": 43,
+    "canonicalArticleCandidateStarts": 34,
+    "falsePositiveCandidateStarts": 0,
+    "falseNegativeVisibleStarts": 9,
+    "newlyUnstructuredFalseNegativeStartsRecovered": 8,
+    "alreadyStructuredFalseNegativeStarts": 1,
+    "precision": 1.0,
+    "recall": 0.790698,
+    "f1": 0.883117,
+    "missedStartFile": "data/lexicon/reconciliation/p145_missed_visible_starts.jsonl",
+    "note": "The distinction between 9 detector false negatives and 8 newly unstructured starts matters: `Axi, ò pimienton` was already represented in the selected article layer even though its start is internal to merged candidate R-001."
+  },
+  "promotion": {
+    "queuedCandidatePromotionsResolved": 17,
+    "missedStartPromotionsNew": 8,
+    "newArticlesThisPass": 25,
+    "newArticleIdRange": "ALC1737-art-001050--ALC1737-art-001074",
+    "pendingCandidatePromotionsAfterPass": 0,
+    "curatorialArticleCountAfterPass": 1074
+  },
+  "correctionsToSelectedLayer": [
+    {"articleId": "ALC1737-art-000171", "from": "Axi, ò pimienta. Buerutacori.", "to": "Axi, ò pimienton. Bueruca-cori."},
+    {"articleId": "ALC1737-art-000172", "from": "Hutia cocori", "to": "Huia cocori"},
+    {"articleId": "ALC1737-art-000174", "from": "unresolved `Azero. Lo miſmo.`", "to": "cross_reference same_as immediately preceding `Azedo tener el eſtomago`"},
+    {"articleId": "ALC1737-art-000177", "from": "Hetecu", "to": "Ile tecu"},
+    {"articleId": "ALC1737-art-000178", "from": "Buerutecu", "to": "Buer utecu"},
+    {"articleId": "ALC1737-art-000181", "from": "Huacori", "to": "Huaciri"}
+  ],
+  "crossPageContinuity": {
+    "articleId": "ALC1737-art-001045",
+    "roleOnPage145": "continuation_only",
+    "visibleContinuation": "chumtieſte.",
+    "countedAsPage145VisibleStart": false,
+    "note": "The p.145 opening continuation of `Atormentar` is not a new article start. The existing cross-page object remains machine-unverified; this does not change the 43-start census."
+  },
+  "authorityGuards": [
+    "No BUE1890 form is used to supply an ALC1737 reading in this closure pass.",
+    "The local PDF is the same Internet Archive witness identified by `artedelalenguaca00gonz`; the SHA-256 pins the exact working copy.",
+    "All promoted/corrected objects remain machine_corrected_unverified; humanVerified remains false.",
+    "Section/group headings `Aves grandes.` and `B.` and the bottom catchword `B:ho` are excluded from lexical-start counts.",
+    "Candidate-level pending counts are not treated as article-level completeness denominators; missed-start records are counted separately."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
