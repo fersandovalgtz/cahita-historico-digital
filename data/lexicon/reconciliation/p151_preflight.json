@@ -1,0 +1,105 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 151,
+  "stage": "preflight",
+  "candidateInventory": {
+    "method": "hybrid_margin_mode_v0.2",
+    "total": 50,
+    "left": 23,
+    "right": 27,
+    "canonicalInventoryTotal": 2072,
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p151_selected_articles.jsonl",
+    "articleCount": 15,
+    "articleIdRange": [
+      "ALC1737-art-000269",
+      "ALC1737-art-000283"
+    ],
+    "columnCounts": {
+      "left": 12,
+      "right": 3
+    },
+    "articleTypeCounts": {
+      "equivalence": 13,
+      "cross_reference": 2
+    },
+    "exhaustive": false,
+    "reviewStatus": "machine_corrected_unverified",
+    "humanVerified": false
+  },
+  "crossPageContext": {
+    "fromPage150": "p150 R-030 contains a complete `Como...` start plus trailing `Com-` page-edge material; p151 L-001 begins a fresh `Compadecerſe` candidate, so no long p150→p151 continuation is asserted.",
+    "firstArticleCandidate": "ALC1737-vcand-p151-L-001",
+    "firstSelectedArticle": "ALC1737-art-000269",
+    "firstSelectedGuide": "Compañón, ó cojon",
+    "toPage152": "p151 R-027 begins `Coronilla...` at the page bottom. p152 L-001 begins a fresh `Crecer el hombre` candidate; any remaining `Coronilla` material therefore belongs, if present, to unrepresented page-top context before p152 L-001 rather than to the `Crecer` article."
+  },
+  "initialAlignment": [
+    {
+      "candidateId": "ALC1737-vcand-p151-L-002",
+      "linkedArticleIds": [
+        "ALC1737-art-000269",
+        "ALC1737-art-000270",
+        "ALC1737-art-000271"
+      ],
+      "assessment": "probable_merged_articles",
+      "note": "The selected direct-collation layer places three successive articles between fresh L-001 (`Compadecerſe`) and L-003 (`Componer`). Candidate L-002 preserves damaged fragments including `compás. Atama chia.` and terminal material compatible with the cross-reference to `compadecerſe`, indicating multiple starts absorbed into one candidate."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p151-L-003",
+      "linkedArticleIds": ["ALC1737-art-000272"],
+      "assessment": "probable_exact_anchor"
+    },
+    {
+      "candidateId": "ALC1737-vcand-p151-R-002",
+      "linkedArticleIds": ["ALC1737-art-000281"],
+      "assessment": "probable_article_split_by_continuation_candidate",
+      "note": "R-003 contains lexical-form continuation text and is not a fresh article start."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p151-R-007",
+      "linkedArticleIds": ["ALC1737-art-000282"],
+      "assessment": "probable_exact_anchor"
+    },
+    {
+      "candidateId": "ALC1737-vcand-p151-R-010",
+      "linkedArticleIds": ["ALC1737-art-000283"],
+      "assessment": "probable_exact_anchor"
+    }
+  ],
+  "structuralSignals": {
+    "probableContinuations": [
+      "ALC1737-vcand-p151-R-003",
+      "ALC1737-vcand-p151-R-006",
+      "ALC1737-vcand-p151-R-009"
+    ],
+    "probableMergedArticleCandidate": "ALC1737-vcand-p151-L-002",
+    "pageBottomArticle": "ALC1737-vcand-p151-R-027"
+  },
+  "evidenceLimits": {
+    "fullCandidateRecordsInspectedInThisPass": true,
+    "directFacsimileInspectedInThisPass": false,
+    "selectedLayerTreatedAsCoverageExpectation": false,
+    "metricsAllowed": false,
+    "reason": "The canonical candidate inventory and selected direct-collation anchors support structural reconciliation, but the selected layer is not exhaustive and direct facsimile inspection is not available in this pass. No exhaustive visible-start denominator or performance metric is asserted."
+  },
+  "policy": {
+    "independentHumanVerificationPlanned": false,
+    "humanVerified": false,
+    "operationalReviewStates": [
+      "machine_corrected_unverified",
+      "unresolved"
+    ],
+    "rule": "Candidate geometry may be reconciled from convergent machine and selected-anchor evidence; lexical transcription must not be strengthened when OCR is damaged or an article start is only indirectly represented."
+  },
+  "pageStatus": {
+    "preflight": "complete",
+    "candidateReconciliation": "ready_for_full_page",
+    "visibleStartCensus": "not_started_full_page",
+    "promotionLinkage": "partial_anchor_layer_only",
+    "technicalClosure": false
+  },
+  "nextAction": "Classify all 50 p151 candidates, link all 15 selected anchors, model L-002 as a merged-start region only to the extent supported by selected ordering and OCR fragments, preserve R-003/R-006/R-009 as continuations, model the p151→p152 page edge, and withhold metrics until an exhaustive visible-start census exists."
+}
