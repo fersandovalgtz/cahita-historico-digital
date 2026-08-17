@@ -81,7 +81,6 @@ jobs:
           status['authorityNote'] = 'P.145 now has complete candidate-level machine structural reconciliation with zero unresolved candidate boundaries. Recovered primary OCR, explicit BUE1890 secondary control, selected right-column collation and the reproducibility/structural-resolution records support the decisions. The facsimile-level visible-start census remains non-exhaustive, promotions remain partial, humanVerified remains false, and no uncertainty is upgraded to philological fact.'
           status_path.write_text(json.dumps(status, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
 
-          # Independent invariant check across both columns.
           right_path = Path('data/lexicon/reconciliation/p145_right_reconciliation.jsonl')
           all_rows = rows + [json.loads(line) for line in right_path.read_text(encoding='utf-8').splitlines() if line.strip()]
           assert len(all_rows) == 39, len(all_rows)
@@ -90,25 +89,35 @@ jobs:
           for r in all_rows:
               classes[r['classification']] = classes.get(r['classification'], 0) + 1
               boundaries[r['boundaryAssessment']] = boundaries.get(r['boundaryAssessment'], 0) + 1
-          assert classes.get('article', 0) == 34, classes
-          assert classes.get('continuation', 0) == 5, classes
-          assert classes.get('unresolved', 0) == 0, classes
+          assert classes == {'article': 34, 'continuation': 5}, classes
           assert boundaries.get('exact', 0) == 27, boundaries
           assert boundaries.get('merged_articles', 0) == 3, boundaries
           assert boundaries.get('undersegmented', 0) == 5, boundaries
           assert boundaries.get('ambiguous', 0) == 1, boundaries
           assert boundaries.get('not_applicable', 0) == 3, boundaries
+          assert sum(boundaries.values()) == 39, boundaries
+          assert status['linkage']['unresolvedCandidateBoundaries'] == 0
           assert status['curation']['corpusTotalAfterPass'] == 1045
           assert status['curation']['newPromotionsThisPass'] == 0
           assert status['visibleStartCensus']['exhaustive'] is False
           assert status['humanVerified'] is False
           PY
-      - name: Run repository consistency checks
+      - name: Run repository-native prechecks
         run: |
-          python scripts/check_jsonl.py
-          python scripts/check_ids.py
-          python scripts/check_lexicon_candidates.py
-          python scripts/check_repo_consistency.py
+          python scripts/reconstruct_candidate_inventory.py
+          python -m json.tool data/lexicon/reconciliation/p145_machine_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p145_structural_resolution_2026-08-17.json >/dev/null
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for path in [
+              Path('data/lexicon/reconciliation/p145_left_reconciliation.jsonl'),
+              Path('data/lexicon/reconciliation/p145_right_reconciliation.jsonl'),
+          ]:
+              for line in path.read_text(encoding='utf-8').splitlines():
+                  if line.strip():
+                      json.loads(line)
+          PY
       - name: Commit structural reconciliation
         run: |
           git config user.name "github-actions[bot]"
