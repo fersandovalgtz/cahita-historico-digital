@@ -1,4 +1,4 @@
-name: CHD p152 materialize reconciliation
+name: CHD p152 synchronize docs and QA
 
 on:
   push:
@@ -11,88 +11,86 @@ permissions:
   contents: write
 
 jobs:
-  materialize:
+  synchronize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Generate p152 reconciliation layers
+      - name: Synchronize p152 state
         shell: bash
         run: |
           python - <<'PY'
-          import json
           from pathlib import Path
 
-          links = {
-            'L-001':'ALC1737-art-000284','L-002':'ALC1737-art-000285','L-003':'ALC1737-art-000286',
-            'L-004':'ALC1737-art-000287','L-005':'ALC1737-art-000288','L-007':'ALC1737-art-000289',
-            'L-009':'ALC1737-art-000290','L-010':'ALC1737-art-000291','L-011':'ALC1737-art-000292',
-            'L-015':'ALC1737-art-000293','L-016':'ALC1737-art-000294','L-019':'ALC1737-art-000295',
-            'L-020':'ALC1737-art-000296','R-004':'ALC1737-art-000297','R-021':'ALC1737-art-000298'
-          }
-          provenance = {
-            'derivedFrom':'canonical-v0.2 candidate inventory; p152 selected article layer where linked; p151 and p153 candidate/selected layers for page-edge context',
-            'agent':'GPT-5.6 Sol machine reconciliation',
-            'method':'AI-assisted structural reconciliation from canonical geometry/OCR and pre-existing selected direct-collation anchors; no independent human verification',
-            'processedAt':None
-          }
+          def replace_once(text, old, new, label):
+              if text.count(old) != 1:
+                  raise SystemExit(f'{label}: expected exactly one match, found {text.count(old)}')
+              return text.replace(old, new, 1)
 
-          def rec(side,n):
-            key=f'{side}-{n:03d}'
-            cid=f'ALC1737-vcand-p152-{key}'
-            linked=links.get(key)
-            note='Aligned to selected direct-collation article anchor.' if linked else 'Distinct lexical start; retained pending because raw OCR alone is not a sufficient transcription anchor for promotion.'
-            if key=='L-006':
-              note='Distinct article start `Criador Dios...`; the OCR candidate ends hyphenated. The next candidate L-007 begins fresh `Crucificar`, so no separate continuation candidate is invented and textual incompleteness remains explicit.'
-            elif key=='R-002':
-              note='Distinct `Cuyo?` article start. Trailing `Iotuc*` matches the selected Cahíta form of left-column article L-001 (`Crecer el hombre`) and is retained as probable cross-column OCR/layout contamination, not as another article start.'
-            elif key=='R-024':
-              note='Distinct page-bottom `Cuñado de muger...` article start with damaged trailing OCR. p153 L-001 begins fresh `Cuñado de hombre. Mocari.`; no long p152→p153 continuation is asserted.'
-            return {
-              'candidateId':cid,'sourceId':'ALC1737','sourcePageDigital':152,
-              'column':'left' if side=='L' else 'right','classification':'article',
-              'boundaryAssessment':'exact','linkedArticleIds':[linked] if linked else [],
-              'articleLinkStatus':'linked' if linked else 'pending_promotion','editorialNote':note,
-              'reviewStatus':'machine_corrected_unverified','humanVerified':False,'provenance':provenance
-            }
+          # README
+          path = Path('README.md')
+          text = path.read_text(encoding='utf-8')
+          old = '- las páginas **152–177** ya poseen representación lexicográfica estructurada, pero su reconciliación exhaustiva página por página sigue pendiente;'
+          new = '- la página **152** tiene sus **52 candidatos canónicos reconciliados**: 52 `article`, sin continuaciones ni candidatos estructuralmente irresueltos; los 15 artículos seleccionados `ALC1737-art-000284`–`000298` quedaron enlazados, permanecen 37 fronteras `pending_promotion` y el censo visible sigue no exhaustivo;\n- las páginas **153–177** ya poseen representación lexicográfica estructurada, pero su reconciliación exhaustiva página por página sigue pendiente;'
+          text = replace_once(text, old, new, 'README coverage')
+          old = 'En **p.145** quedan 20 fronteras `pending_promotion` y 3 candidatos `unresolved`; en **p.146** quedan 22 `pending_promotion`; en **p.147** quedan 36 `pending_promotion`; en **p.148** quedan 29 `pending_promotion`; en **p.149** quedan 40 `pending_promotion` y 1 candidato `unresolved`; en **p.150** quedan 40 `pending_promotion` y 1 candidato estructural `unresolved`; y en **p.151** quedan 34 `pending_promotion`. Las páginas 145–151 tienen reconciliación de candidatos completa, pero sus censos visibles aún no se consideran exhaustivos. El siguiente frente geométrico es la **página 152**, con 52 candidatos canónicos —28 izquierda y 24 derecha—; se mantendrá la misma separación entre frontera estructural confirmada, promoción curatorial e incertidumbre textual.'
+          new = 'En **p.145** quedan 20 fronteras `pending_promotion` y 3 candidatos `unresolved`; en **p.146** quedan 22 `pending_promotion`; en **p.147** quedan 36 `pending_promotion`; en **p.148** quedan 29 `pending_promotion`; en **p.149** quedan 40 `pending_promotion` y 1 candidato `unresolved`; en **p.150** quedan 40 `pending_promotion` y 1 candidato estructural `unresolved`; en **p.151** quedan 34 `pending_promotion`; y en **p.152** quedan 37 `pending_promotion`. Las páginas 145–152 tienen reconciliación de candidatos completa, pero sus censos visibles aún no se consideran exhaustivos. El siguiente frente geométrico es la **página 153**, con 51 candidatos canónicos —25 izquierda y 26 derecha—; se mantendrá la misma separación entre frontera estructural confirmada, promoción curatorial e incertidumbre textual.'
+          text = replace_once(text, old, new, 'README next front')
+          path.write_text(text, encoding='utf-8')
 
-          out=Path('data/lexicon/reconciliation')
-          for side,count,filename in [('L',28,'p152_left_reconciliation.jsonl'),('R',24,'p152_right_reconciliation.jsonl')]:
-            rows=[rec(side,i) for i in range(1,count+1)]
-            (out/filename).write_text('\n'.join(json.dumps(r,ensure_ascii=False) for r in rows)+'\n',encoding='utf-8')
+          # Lexicon progress
+          path = Path('docs/LEXICON_PROGRESS.md')
+          text = path.read_text(encoding='utf-8')
+          text = replace_once(text,
+              'Las páginas **145–151 tienen reconciliación completa de sus candidatos canónicos**',
+              'Las páginas **145–152 tienen reconciliación completa de sus candidatos canónicos**',
+              'LEXICON top coverage')
+          marker = '## Próximo frente\n'
+          if text.count(marker) != 1:
+              raise SystemExit(f'LEXICON next-front marker count={text.count(marker)}')
+          section = '''## Página 152 — reconciliación de candidatos completada
 
-          status={
-            'sourceId':'ALC1737','sourcePageDigital':152,
-            'pageStatus':{'candidateReconciliation':'complete','visibleStartCensus':'not_exhaustive','promotionLinkage':'partial','technicalClosure':False,'humanVerificationPlanned':False},
-            'candidateInventory':{'total':52,'left':28,'right':24,'classification':{'article':52,'continuation':0,'paratext':0,'false_positive':0,'unresolved':0},'boundaryAssessment':{'exact':52,'oversegmented':0,'undersegmented':0,'merged_articles':0,'ambiguous':0,'not_applicable':0}},
-            'selectedLayer':{'preExistingArticles':15,'articleIdRange':['ALC1737-art-000284','ALC1737-art-000298'],'articleCandidateRecordsLinked':15,'structuredArticlesLinked':15,'selectedArticlesUnlinked':0},
-            'promotion':{'articleCandidatesPendingPromotion':37,'newPromotionsThisPass':0,'corpusTotalAfterPass':1045},
-            'visibleStartEvidence':{'exhaustive':False,'knownVisibleStartsMinimum':52,'precision':None,'recall':None,'f1':None,'reasonMetricsWithheld':'All 52 canonical candidates are structurally consistent with lexical starts, but the selected anchor layer is not exhaustive and cannot prove absence of additional missed starts. No performance denominator is asserted.'},
-            'physicalContinuities':[
-              {'from':'ALC1737-vcand-p151-R-027','to':'p152:left-top-unrepresented','type':'page_edge_article_continuation','note':'p151 `Coronilla...` may continue into page-top material before p152 L-001; p152 L-001 is fresh `Crecer el hombre`.'},
-              {'from':'ALC1737-vcand-p152-R-024','to':'ALC1737-vcand-p153-L-001','type':'page_edge_context','note':'R-024 begins `Cuñado de muger...`; p153 L-001 begins fresh `Cuñado de hombre. Mocari.` No long article continuation is asserted.'}
-            ],
-            'structuralNotes':[
-              'R-002 contains probable cross-column OCR/layout contamination: trailing `Iotuc*` matches the selected form of p152 L-001 and is not counted as another start.',
-              'L-006 ends hyphenated in OCR, but L-007 begins a fresh `Crucificar` article; no continuation candidate is invented.'
-            ],
-            'evidence':{'canonicalCandidateInventoryVerified':True,'canonicalCandidateInventoryCount':2072,'selectedP152LayerUsedAsAnchor':True,'p151AndP153LayersUsedForPageEdges':True,'directFacsimileAvailableThisPass':False,'policy':'Structural starts may be classified from convergent candidate geometry, OCR context and selected anchors; OCR contamination and textual incompleteness remain explicit, and metrics are withheld without an exhaustive visible-start census.'},
-            'reviewStatus':'machine_corrected_unverified','humanVerified':False
-          }
-          (out/'p152_machine_reconciliation_status.json').write_text(json.dumps(status,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+La página digital **152** contiene **52 candidatos canónicos: 28 izquierda y 24 derecha**. La reconciliación machine-only clasifica los **52 como `article`**, sin candidatos `continuation`, `unresolved`, `paratext` o `false_positive`; las **52 fronteras** se conservan como `exact` en el plano estructural.
+
+La capa seleccionada preexistente contiene **15 artículos `ALC1737-art-000284`–`ALC1737-art-000298`** y los quince quedaron enlazados directamente a candidatos canónicos. El OCR conserva dos incidencias sin convertirlas en hechos lexicográficos nuevos. **R-002** (`Cuyo ? Abcatea. Iotuc*`) arrastra `Iotuc`, forma que pertenece al artículo izquierdo seleccionado `Crecer el hombre`; se registra como probable contaminación OCR/layout entre columnas y no como un inicio adicional. **L-006** (`Criador Dios. Itotq tehuaca-`) termina truncado por guion, pero L-007 inicia el artículo fresco `Crucificar`; no se inventa una continuación inexistente en el inventario canónico.
+
+Los bordes de página también quedan modelados conservadoramente. El `Coronilla...` final de p.151 puede continuar en material superior no representado antes de p.152 L-001, mientras L-001 abre de forma fresca `Crecer el hombre`. En el extremo opuesto, p.152 R-024 comienza `Cuñado de muger...`, pero p.153 L-001 abre el artículo fresco `Cuñado de hombre. Mocari.`; no se afirma una continuidad larga p.152→153.
+
+Quedan **37 candidatos de artículo `pending_promotion`**. No hubo promociones nuevas y el corpus permanece en **1,045 artículos**. Los 52 candidatos establecen al menos 52 comienzos estructurales conocidos, pero la capa seleccionada no es exhaustiva y no permite demostrar ausencia de falsos negativos; por ello no se calculan TP/FP/FN, precisión, recall ni F1. `p152_machine_reconciliation_status.json` conserva el detalle y los límites de autoridad.
+
+'''
+          text = text.replace(marker, section + marker, 1)
+          old = 'En p.145 quedan **20 `pending_promotion`** y 3 `unresolved`; en p.146, **22 `pending_promotion`**; en p.147, **36 `pending_promotion`**; en p.148, **29 `pending_promotion`**; en p.149, **40 `pending_promotion`** y 1 `unresolved`; en p.150, **40 `pending_promotion`** y 1 candidato estructural `unresolved`; y en p.151, **34 `pending_promotion`**. Las páginas 145–151 tienen reconciliación de candidatos completa, pero no un censo visible exhaustivo.\n\nEl siguiente frente geométrico es la **página digital 152**, con **52 candidatos canónicos: 28 izquierda y 24 derecha**. Hasta que p.145 complete censo visible y promoción, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo técnicamente cerrado.'
+          new = 'En p.145 quedan **20 `pending_promotion`** y 3 `unresolved`; en p.146, **22 `pending_promotion`**; en p.147, **36 `pending_promotion`**; en p.148, **29 `pending_promotion`**; en p.149, **40 `pending_promotion`** y 1 `unresolved`; en p.150, **40 `pending_promotion`** y 1 candidato estructural `unresolved`; en p.151, **34 `pending_promotion`**; y en p.152, **37 `pending_promotion`**. Las páginas 145–152 tienen reconciliación de candidatos completa, pero no un censo visible exhaustivo.\n\nEl siguiente frente geométrico es la **página digital 153**, con **51 candidatos canónicos: 25 izquierda y 26 derecha**. Hasta que p.145 complete censo visible y promoción, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo técnicamente cerrado.'
+          text = replace_once(text, old, new, 'LEXICON next front')
+          path.write_text(text, encoding='utf-8')
+
+          # QA: include p152 reconciliation and status files permanently.
+          path = Path('.github/workflows/qa.yml')
+          text = path.read_text(encoding='utf-8')
+          old = '            data/lexicon/reconciliation/p151_right_reconciliation.jsonl; do'
+          new = '            data/lexicon/reconciliation/p151_right_reconciliation.jsonl \\\n            data/lexicon/reconciliation/p152_left_reconciliation.jsonl \\\n            data/lexicon/reconciliation/p152_right_reconciliation.jsonl; do'
+          text = replace_once(text, old, new, 'QA reconciliation list')
+          old = '          python -m json.tool data/lexicon/reconciliation/p151_preflight.json >/dev/null'
+          new = '          python -m json.tool data/lexicon/reconciliation/p151_preflight.json >/dev/null\n          python -m json.tool data/lexicon/reconciliation/p152_machine_reconciliation_status.json >/dev/null\n          python -m json.tool data/lexicon/reconciliation/p152_preflight.json >/dev/null'
+          text = replace_once(text, old, new, 'QA JSON list')
+          path.write_text(text, encoding='utf-8')
           PY
-      - name: Validate generated reconciliation
+      - name: Validate synchronized state
         run: |
           python -m pip install -r requirements-dev.txt
+          python scripts/reconstruct_candidate_inventory.py
+          python scripts/validate_lexicon_ids.py
           python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p152_left_reconciliation.jsonl
           python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p152_right_reconciliation.jsonl
           python -m json.tool data/lexicon/reconciliation/p152_machine_reconciliation_status.json >/dev/null
-      - name: Commit generated evidence
+          python -m json.tool data/lexicon/reconciliation/p152_preflight.json >/dev/null
+      - name: Commit synchronized state
         run: |
           git config user.name 'Fernando Sandoval'
           git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
-          git add data/lexicon/reconciliation/p152_left_reconciliation.jsonl data/lexicon/reconciliation/p152_right_reconciliation.jsonl data/lexicon/reconciliation/p152_machine_reconciliation_status.json
-          git commit -m 'data: reconciliar estructuralmente p.152' -m '52/52 candidatos clasificados article; 15 anclas enlazadas, 37 pending_promotion, contaminación OCR intercolumna documentada y métricas retenidas por censo no exhaustivo.'
+          git add README.md docs/LEXICON_PROGRESS.md .github/workflows/qa.yml
+          git commit -m 'docs: cerrar reconciliación de p.152 y ampliar QA' -m 'Sincroniza el estado público a 52 article en p.152, conserva contaminación OCR y truncamiento textual explícitos, fija p.153 como siguiente frente y extiende CHD QA hasta p.152.'
           git push origin HEAD:work/p152-reconciliation
