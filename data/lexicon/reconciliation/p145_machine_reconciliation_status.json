@@ -28,15 +28,15 @@
     }
   },
   "linkage": {
-    "articleCandidateRecordsLinked": 13,
-    "preExistingStructuredArticlesLinked": 14,
-    "articleCandidatesPendingPromotion": 21,
+    "articleCandidateRecordsLinked": 17,
+    "preExistingStructuredArticlesLinked": 18,
+    "articleCandidatesPendingPromotion": 17,
     "unresolvedCandidateBoundaries": 0
   },
   "curation": {
     "preExistingSelectedArticlesOnPage": 14,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045,
+    "newPromotionsThisPass": 4,
+    "corpusTotalAfterPass": 1049,
     "crossPageArticleFromP144": "ALC1737-art-001045",
     "crossPageArticleStatus": "unresolved_low_confidence_form"
   },
@@ -66,7 +66,17 @@
     },
     "evidenceRecord": "p145_control_evidence_2026-08-17.json",
     "reproducibilitySupplement": "p145_reproducibility_supplement_2026-08-17.json",
-    "structuralResolutionRecord": "p145_structural_resolution_2026-08-17.json"
+    "structuralResolutionRecord": "p145_structural_resolution_2026-08-17.json",
+    "phase2PilotAEvidence": "p145_phase2_pilot_a_evidence_2026-08-17.json",
+    "phase2PilotAFacsimile": {
+      "provider": "Internet Archive",
+      "identifier": "artedelalenguaca00gonz",
+      "pdfPage": 145,
+      "pageSha256": "4dcc4abacefa94396e5dd2255184080b868cdca3f73ef5093b1c752611713959",
+      "renderDpi": 420,
+      "passes": 3,
+      "use": "promotion only where guide and Cahita form converge strongly across same-witness readings"
+    }
   },
   "resolvedThisPass": [
     "R-011 is now classified as an article boundary: recovered ALC1737 OCR preserves `Ardilla que ſuele bajar al Rio`, and BUE1890 independently corroborates the segmentation. Its ALC1737 Cahita form remains too noisy for promotion.",
@@ -74,7 +84,8 @@
     "L-014 through L-022 now have guide-level identifications where recovered ALC1737 OCR and BUE1890 agree sufficiently; these identifications remain non-diplomatic and unpromoted.",
     "R-017 remains `merged_articles`; the supplementary evidence records strong secondary sequence corroboration for `Babear` as the guide hypothesis of the damaged start absorbed after `Bagre`, without transferring the BUE1890 Cahita form or creating a new ALC1737 article.",
     "L-002 is resolved as continuation of L-001. The apparent trailing `Asi, o` is treated as cross-column OCR bleed because it aligns with the independently collated right-column guide `Axi, ò pimienta`; no left-column article is created.",
-    "L-005 is resolved as continuation with `undersegmented` boundary quality: it begins with the tail of `Atravesar y pasar toda la flecha` and absorbs an Atrepellar-like start. The embedded start remains unpromoted because its exact ALC1737 reading/form is not secure enough."
+    "L-005 is resolved as continuation with `undersegmented` boundary quality: it begins with the tail of `Atravesar y pasar toda la flecha` and absorbs an Atrepellar-like start. The embedded start remains unpromoted because its exact ALC1737 reading/form is not secure enough.",
+    "Phase II pilot A promotes L-011→ALC1737-art-001046 (`Ave. Saperac.`), L-013→001047 (`Ave. Baecuberi.`), L-018→001048 (`A vno. Cae.`), and L-019→001049 (`Aunque. Elapo.`) after strong same-witness facsimile convergence; divergent candidates remain pending."
   ],
   "unresolvedNotes": [
     "R-012 is accepted as an article boundary and its guide is now identified as `Atomo`, but its exact ALC1737 form remains too damaged for promotion.",
@@ -83,5 +94,5 @@
   ],
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false,
-  "authorityNote": "P.145 now has complete candidate-level machine structural reconciliation with zero unresolved candidate boundaries. Recovered primary OCR, explicit BUE1890 secondary control, selected right-column collation and the reproducibility/structural-resolution records support the decisions. The facsimile-level visible-start census remains non-exhaustive, promotions remain partial, humanVerified remains false, and no uncertainty is upgraded to philological fact."
+  "authorityNote": "P.145 has complete candidate-level structural reconciliation and a first conservative Phase II facsimile-assisted promotion batch. Four candidates were promoted only after strong same-witness convergence on verified ALC1737 PDF page 145. Seventeen article candidates remain pending_promotion; the visible-start census remains non-exhaustive and humanVerified remains false."
 }

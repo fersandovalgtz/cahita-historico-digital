@@ -5,17 +5,22 @@
     "endDigitalPage": 177
   },
   "phase": "phase_ii_promotion_linkage_and_visible_start_census",
-  "generatedFrom": "pNNN_machine_reconciliation_status.json",
+  "generatedFrom": [
+    "pNNN_machine_reconciliation_status.json",
+    "data/lexicon/articles/*.jsonl"
+  ],
   "summary": {
     "pages": 33,
-    "pendingPromotionTotal": 1051,
+    "pendingPromotionTotal": 1047,
     "unresolvedCandidateTotal": 1,
     "ambiguousBoundaryTotal": 9,
     "pagesWithExhaustiveVisibleStartCensus": 0,
     "pagesWithTechnicalClosure": 0,
     "humanVerifiedPages": 0,
-    "corpusTotalsObserved": [
-      1045
+    "currentCuratorialArticleCount": 1049,
+    "historicalCorpusTotalsRecordedInPageStatuses": [
+      1045,
+      1049
     ]
   },
   "unresolvedPages": [
@@ -139,10 +144,6 @@
       "pendingPromotion": 22
     },
     {
-      "page": 145,
-      "pendingPromotion": 21
-    },
-    {
       "page": 168,
       "pendingPromotion": 21
     },
@@ -153,6 +154,10 @@
     {
       "page": 161,
       "pendingPromotion": 19
+    },
+    {
+      "page": 145,
+      "pendingPromotion": 17
     },
     {
       "page": 171,
@@ -168,13 +173,13 @@
       "falsePositives": 0,
       "unresolvedCandidates": 0,
       "ambiguousBoundaries": 1,
-      "pendingPromotion": 21,
+      "pendingPromotion": 17,
       "knownVisibleStartsMinimum": null,
       "knownMissedStartRecords": null,
       "visibleStartCensusExhaustive": false,
       "technicalClosure": false,
       "humanVerified": false,
-      "corpusTotalAfterPass": 1045,
+      "corpusTotalAfterPass": 1049,
       "terminalDecision": null,
       "statusPath": "data/lexicon/reconciliation/p145_machine_reconciliation_status.json"
     },
@@ -757,6 +762,8 @@
   ],
   "interpretiveGuards": [
     "pendingPromotion counts candidate-level article starts not yet promoted to curatorial lexical objects; it is not equivalent to missing articles without further collation.",
+    "currentCuratorialArticleCount is computed from unique articleId values across data/lexicon/articles/*.jsonl and represents the current repository state.",
+    "historicalCorpusTotalsRecordedInPageStatuses are pass-time snapshots and may legitimately differ from the current curatorial count after later promotions.",
     "unresolved candidate structure is distinct from unresolved semantic/anaphoric content inside already structured articles.",
     "visible-start metrics remain withheld where exhaustive=false.",
     "humanVerified=false is preserved as the current project policy and must not be restated as human philological verification."
