@@ -46,75 +46,18 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          for file in \
-            data/lexicon/reconciliation/p133_p134_batch01.jsonl \
-            data/lexicon/reconciliation/p133_batch02_pending_articles.jsonl \
-            data/lexicon/reconciliation/p134_batch02a_pending_articles.jsonl \
-            data/lexicon/reconciliation/p134_batch02b_pending_articles.jsonl \
-            data/lexicon/reconciliation/p133_opening_resolution.jsonl \
-            data/lexicon/reconciliation/p135_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p135_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p135_candidate_linkage_overlay.jsonl \
-            data/lexicon/reconciliation/p136_reconciliation.jsonl \
-            data/lexicon/reconciliation/p137_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p137_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p138_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p138_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p139_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p139_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p140_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p140_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p141_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p141_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p142_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p142_right_reconciliation_a.jsonl \
-            data/lexicon/reconciliation/p142_right_reconciliation_b.jsonl \
-            data/lexicon/reconciliation/p143_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p143_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p144_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p144_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p145_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p145_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p146_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p146_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p147_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p147_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p148_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p148_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p149_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p149_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p150_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p150_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p151_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p151_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p152_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p152_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p153_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p153_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p154_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p154_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p155_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p155_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p156_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p156_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p157_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p157_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p158_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p158_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p159_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p159_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p160_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p160_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p161_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p161_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p162_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p162_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p163_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p163_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p164_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p164_right_reconciliation.jsonl \
-            data/lexicon/reconciliation/p165_left_reconciliation.jsonl \
-            data/lexicon/reconciliation/p165_right_reconciliation.jsonl; do
+          files=(
+            data/lexicon/reconciliation/p133_p134_batch01.jsonl
+            data/lexicon/reconciliation/p133_batch02_pending_articles.jsonl
+            data/lexicon/reconciliation/p134_batch02a_pending_articles.jsonl
+            data/lexicon/reconciliation/p134_batch02b_pending_articles.jsonl
+            data/lexicon/reconciliation/p133_opening_resolution.jsonl
+            data/lexicon/reconciliation/p135_candidate_linkage_overlay.jsonl
+            data/lexicon/reconciliation/p136_reconciliation.jsonl
+            data/lexicon/reconciliation/p*_left_reconciliation*.jsonl
+            data/lexicon/reconciliation/p*_right_reconciliation*.jsonl
+          )
+          for file in "${files[@]}"; do
             python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl "$file"
           done
 
@@ -122,30 +65,13 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          for file in \
-            data/lexicon/reconciliation/missed_visible_starts_p133_p134.jsonl \
-            data/lexicon/reconciliation/p133_opening_missed_start.jsonl \
-            data/lexicon/reconciliation/p135_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p136_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p137_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p138_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p139_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p140_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p141_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p142_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p143_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p144_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p146_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p153_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p155_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p156_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p157_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p158_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p160_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p161_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p162_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p163_missed_visible_starts.jsonl \
-            data/lexicon/reconciliation/p165_missed_visible_starts.jsonl; do
+          shopt -s nullglob
+          files=(data/lexicon/reconciliation/*missed*start*.jsonl)
+          if (( ${#files[@]} == 0 )); then
+            echo 'No missed-start layers found' >&2
+            exit 1
+          fi
+          for file in "${files[@]}"; do
             python scripts/validate_jsonl.py --schema schemas/lexicon-missed-start.schema.json --jsonl "$file"
           done
 
@@ -156,27 +82,22 @@ jobs:
           python -m json.tool codemeta.json >/dev/null
           python -m json.tool data/lexicon/candidates/inventory_status.json >/dev/null
           python -m json.tool data/lexicon/candidates/candidate_inventory_manifest.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p133_p134_reconciliation_status.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p133_p134_visible_start_census.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p135_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p136_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p137_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p138_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p139_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p140_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p141_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p142_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p143_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p144_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p145_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p146_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p147_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p148_machine_reconciliation_status.json >/dev/null
-          python -m json.tool data/lexicon/reconciliation/p149_machine_reconciliation_status.json >/dev/null
-          for page in 150 151 152 153 154 155 156 157 158 159 160 161 162 163 164 165; do
-            python -m json.tool "data/lexicon/reconciliation/p${page}_machine_reconciliation_status.json" >/dev/null
-            python -m json.tool "data/lexicon/reconciliation/p${page}_preflight.json" >/dev/null
+
+          shopt -s nullglob
+          status_files=(
+            data/lexicon/reconciliation/*_reconciliation_status.json
+            data/lexicon/reconciliation/p*_machine_reconciliation_status.json
+            data/lexicon/reconciliation/p*_preflight.json
+          )
+          if (( ${#status_files[@]} == 0 )); then
+            echo 'No reconciliation status/preflight JSON files found' >&2
+            exit 1
+          fi
+          for file in "${status_files[@]}"; do
+            python -m json.tool "$file" >/dev/null
           done
+
           python -m json.tool data/lexicon/provenance/p135_art000704_correction.json >/dev/null
           python -m json.tool data/lexicon/provenance/p137_art000729_correction.json >/dev/null
           python -m json.tool data/lexicon/provenance/p137_art000731_correction.json >/dev/null
