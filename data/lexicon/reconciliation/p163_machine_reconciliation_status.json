@@ -1,0 +1,149 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 163,
+  "pageStatus": {
+    "candidateReconciliation": "complete",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 49,
+    "left": 26,
+    "right": 23,
+    "classification": {
+      "article": 42,
+      "continuation": 7,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 31,
+      "oversegmented": 6,
+      "undersegmented": 5,
+      "merged_articles": 0,
+      "ambiguous": 0,
+      "not_applicable": 7
+    }
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000449",
+      "ALC1737-art-000463"
+    ],
+    "articleCandidateRecordsLinked": 14,
+    "structuredArticlesLinked": 15,
+    "continuationCandidateRecordsLinked": 1,
+    "selectedStartsOutsideCandidateInventory": 1,
+    "selectedArticlesUnlinked": 0,
+    "knownMissedSelectedArticleIds": [
+      "ALC1737-art-000449"
+    ]
+  },
+  "promotion": {
+    "articleCandidatesPendingPromotion": 28,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045
+  },
+  "visibleStartEvidence": {
+    "exhaustive": false,
+    "knownVisibleStartsMinimum": 43,
+    "knownMissedStartRecords": 1,
+    "unresolvedCandidateRecords": 0,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "The 42 article candidates plus selected page-top miss 000449 establish at least 43 starts, but the selected layer is non-exhaustive and undersegmented OCR groups may contain additional unanchored starts."
+  },
+  "physicalContinuities": [
+    {
+      "from": "ALC1737-vcand-p162-R-019",
+      "to": "ALC1737-art-000449",
+      "type": "catchword_to_fresh_next_page_article",
+      "note": "p162 catchword `Mozo` anticipates fresh p163 selected 000449; it is not a lexical continuation."
+    },
+    {
+      "from": "ALC1737-art-000449",
+      "to": "ALC1737-vcand-p163-L-001",
+      "type": "missed_page_top_start_then_tail",
+      "note": "Canonical L-001 begins in the tail `...cebo.` of selected 000449 and then opens selected 000450."
+    },
+    {
+      "from": "ALC1737-vcand-p163-L-003",
+      "to": "ALC1737-vcand-p163-L-004",
+      "type": "article_continuation",
+      "note": "`Moho como de hierro` continues into L-004."
+    },
+    {
+      "from": "ALC1737-vcand-p163-L-010",
+      "to": "ALC1737-vcand-p163-L-011",
+      "type": "article_continuation",
+      "note": "Selected 000455 `Molendero el que muele. Tuſeme.` continues into L-011."
+    },
+    {
+      "from": "ALC1737-vcand-p163-L-012",
+      "to": "ALC1737-vcand-p163-L-013",
+      "type": "article_continuation",
+      "note": "`Mondar algo...` continues into L-013."
+    },
+    {
+      "from": "ALC1737-vcand-p163-L-022",
+      "to": "ALC1737-vcand-p163-L-023",
+      "type": "article_continuation",
+      "note": "`Morirſe de frío`-like article continues into L-023."
+    },
+    {
+      "from": "ALC1737-vcand-p163-L-026",
+      "to": "ALC1737-vcand-p163-R-001",
+      "type": "article_continuation_across_columns",
+      "note": "`Mosquito, que llaman gegen` continues across the column boundary."
+    },
+    {
+      "from": "ALC1737-vcand-p163-R-004",
+      "to": "ALC1737-vcand-p163-R-005",
+      "type": "article_continuation",
+      "note": "`Mostrar con el dedo. Buſca apuntar` continues into R-005."
+    },
+    {
+      "from": "ALC1737-vcand-p163-R-006",
+      "to": "ALC1737-vcand-p163-R-007",
+      "type": "article_continuation",
+      "note": "`Moverſe, menearſe` continues into R-007."
+    },
+    {
+      "from": "ALC1737-vcand-p163-R-023",
+      "to": "ALC1737-vcand-p164-L-001",
+      "type": "fresh_page_transition",
+      "note": "p164 opens fresh selected 000464 `Nacimiento. Ioleria.`; no p163→p164 lexical continuation is asserted."
+    }
+  ],
+  "structuralNotes": [
+    "The canonical extractor misses selected 000449 at the page top; L-001 begins in its tail and then opens selected 000450.",
+    "L-002, L-003 and L-007 are undersegmented because each starts with continuation material before a fresh lexical start.",
+    "Seven canonical rows are continuations rather than fresh starts, including the L-026→R-001 cross-column continuation.",
+    "R-023 remains an article boundary with undersegmented page-bottom noise/catchword-like material; p164 opens fresh `Nacimiento`."
+  ],
+  "nextPage": {
+    "sourcePageDigital": 164,
+    "candidateInventoryTotal": 51,
+    "left": 29,
+    "right": 22,
+    "firstCandidate": "ALC1737-vcand-p164-L-001",
+    "firstSelectedArticle": "ALC1737-art-000464",
+    "opening": "Nacimiento. Ioleria."
+  },
+  "evidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "canonicalCandidateInventoryCount": 2072,
+    "selectedP163LayerUsedAsAnchor": true,
+    "p162ReconciliationUsedForOpeningEdge": true,
+    "p164CanonicalCandidatesAndSelectedLayerUsedForLowerEdge": true,
+    "directFacsimileAvailableThisPass": false,
+    "policy": "Selected direct collations support demonstrated starts and the known page-top miss. OCR-only internal ambiguity is preserved without promotion; metrics remain withheld without an exhaustive visible-start census."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
