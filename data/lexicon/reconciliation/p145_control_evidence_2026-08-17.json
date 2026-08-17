@@ -51,6 +51,13 @@
         "guideReading": "Atomo",
         "formReadingStatus": "too_noisy_for_promotion",
         "evidence": "OCR preserves `Atpmo` followed by a damaged form immediately before the B section marker; guide is reconciled as Atomo with secondary control."
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-R-017",
+        "linkedGuideReading": "Bagre",
+        "absorbedStartStatus": "visible_but_ocr_damaged_after_bagre",
+        "formReadingStatus": "unresolved",
+        "evidence": "The primary OCR preserves `Bagre. Mufa*` followed by a separate damaged line before the next legible `Baho` entry. This supports the existing merged_articles assessment but does not identify the damaged ALC1737 form responsibly."
       }
     ]
   },
@@ -58,6 +65,14 @@
     "sourceId": "BUE1890",
     "authority": "secondary_only",
     "controlRecord": "data/source/control/bue1890.json",
+    "plainTextDerivative": {
+      "identifier": "artedelalenguac00jesgoog",
+      "uri": "https://archive.org/download/artedelalenguac00jesgoog/artedelalenguac00jesgoog_djvu.txt",
+      "retrievalCheckedAt": "2026-08-17",
+      "retrievalStatus": "available",
+      "sha256AtRetrieval": "a481173a0ee671672e2883e52f90fb8dafe1d8d35db2436090363ace0201d663",
+      "byteLengthAtRetrieval": 549299
+    },
     "observations": [
       {
         "candidateId": "ALC1737-vcand-p145-R-011",
@@ -68,6 +83,19 @@
         "candidateId": "ALC1737-vcand-p145-R-012",
         "controlReading": "Atomo. Tohuachichitiame.",
         "use": "supports guide identification only; later reprint spelling/form is not substituted into ALC1737"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-R-017",
+        "controlSequence": [
+          "Baba",
+          "Babear",
+          "Bagre",
+          "Babear",
+          "Baho"
+        ],
+        "guideHypothesisForAbsorbedStart": "Babear",
+        "confidence": "strong_sequence_corroboration_secondary_only",
+        "use": "supports a guide-level hypothesis for the damaged start immediately after Bagre; the BUE1890 Cahita form and orthography are not substituted into ALC1737 and no article is promoted from this control alone"
       }
     ]
   },
@@ -75,14 +103,16 @@
     "Internet Archive full-text OCR is a machine derivative and does not preserve a trustworthy reading order for the two-column page.",
     "The OCR may establish that a guide string is present, but it is not sufficient authority for uncertain Cahita forms or for an exhaustive visible-start denominator.",
     "BUE1890 is a later reprint/control witness and is never silently substituted for ALC1737.",
+    "Sequential agreement between ALC1737 and BUE1890 can support a guide-level hypothesis, but cannot promote an ALC1737 form without same-witness evidence.",
     "No precision, recall or F1 value is claimable until a facsimile-level exhaustive visible-start census exists."
   ],
   "decisions": [
     "R-011 is reclassified from unresolved to article because the primary OCR preserves the guide start and BUE1890 independently corroborates the segmentation.",
     "R-011 remains pending_promotion because the exact ALC1737 Cahita form is not sufficiently reliable from OCR alone.",
     "R-012 remains an article with ambiguous boundary assessment and pending_promotion; its guide is identified as Atomo, but its exact ALC1737 Cahita form remains too uncertain for promotion.",
+    "R-017 remains merged_articles and linked only to the existing Bagre article; BUE1890 provides strong secondary sequence evidence that the damaged absorbed start may be a second Babear entry, but no ALC1737 form or new article is promoted from that evidence alone.",
     "No BUE1890 form is silently substituted for ALC1737.",
-    "The recovered full-text derivative strengthens reproducibility but does not by itself close the facsimile-level visible-start census."
+    "The recovered full-text derivatives strengthen reproducibility but do not by themselves close the facsimile-level visible-start census."
   ],
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
