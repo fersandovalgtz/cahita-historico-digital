@@ -1,0 +1,98 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 145,
+  "recordType": "structural_boundary_resolution",
+  "recordedAt": "2026-08-17",
+  "candidateSource": "data/lexicon/candidates/p145_candidates.jsonl",
+  "resolutions": [
+    {
+      "candidateId": "ALC1737-vcand-p145-L-002",
+      "canonicalEvidence": {
+        "candidateOrderInColumn": 2,
+        "startY": 94.076,
+        "rawText": "Xo.tittarimubctec-ana- Asi, o",
+        "precedingCandidateId": "ALC1737-vcand-p145-L-001",
+        "precedingRawText": "A?»veí.r la flecha al Wan-"
+      },
+      "primaryOcrSequence": "`A?»veí.r la flecha al Wan-` is followed by `Xo.tittarimubctec-ana-`; the apparent trailing `Asi, o` occurs in the same OCR horizontal band as two-column material.",
+      "secondaryControl": {
+        "sourceId": "BUE1890",
+        "sequence": "Atravesar la flecha al blanco. Hitari muhetec anaburutianaque. → Atravesar y pasar toda la flecha.",
+        "authority": "secondary_only"
+      },
+      "crossColumnEvidence": {
+        "selectedRightArticleId": "ALC1737-art-000171",
+        "selectedRightGuide": "Axi, ò pimienta",
+        "assessment": "strong_ocr_cross_column_bleed",
+        "note": "The OCR fragment `Asi, o` aligns with the independently collated right-column guide `Axi, ò pimienta`; it is therefore not treated as a new left-column lexical start."
+      },
+      "decision": {
+        "classification": "continuation",
+        "boundaryAssessment": "not_applicable",
+        "continuationType": "from_previous_line",
+        "articleLinkStatus": "not_applicable"
+      },
+      "epistemicLimit": "This resolves the structural role of the candidate only. No uncertain ALC1737 Cahita glyph sequence is normalized or promoted."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p145-L-005",
+      "canonicalEvidence": {
+        "candidateOrderInColumn": 5,
+        "startY": 134.497,
+        "rawLines": [
+          "aet'-fica.",
+          "/UropelUr. Atará -hW."
+        ],
+        "precedingCandidateIds": [
+          "ALC1737-vcand-p145-L-003",
+          "ALC1737-vcand-p145-L-004"
+        ]
+      },
+      "primaryOcrSequence": "The candidate begins with the tail of the preceding `Atravesar ... toda la flecha` entry and then contains a distinct `/UropelUr. Atará -hW.` start.",
+      "secondaryControl": {
+        "sourceId": "BUE1890",
+        "sequence": "Atravesar y pasar toda la flecha. Tiia naburiitia aet sica. → Atrepellar. Atara tiac.",
+        "authority": "secondary_only"
+      },
+      "decision": {
+        "classification": "continuation",
+        "boundaryAssessment": "undersegmented",
+        "continuationType": "from_previous_line",
+        "articleLinkStatus": "not_applicable",
+        "absorbedGuideHypothesis": "Atrepellar"
+      },
+      "epistemicLimit": "The embedded article start is structurally recognized, but no new ALC1737 article or exact Cahita form is promoted from OCR plus a later reprint alone."
+    }
+  ],
+  "expectedPageStateAfterResolution": {
+    "candidateCount": 39,
+    "classification": {
+      "article": 34,
+      "continuation": 5,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 27,
+      "merged_articles": 3,
+      "undersegmented": 5,
+      "ambiguous": 1,
+      "not_applicable": 3
+    },
+    "unresolvedCandidateBoundaries": 0,
+    "newPromotions": 0,
+    "corpusTotal": 1045,
+    "visibleStartCensusExhaustive": false
+  },
+  "epistemicGuards": [
+    "BUE1890 is used only as a secondary sequence control and never silently substitutes its forms or orthography into ALC1737.",
+    "OCR cross-column contamination is explicitly separated from left-column structure where independently collated right-column evidence exists.",
+    "Structural resolution does not imply diplomatic transcription or human verification.",
+    "No precision, recall or F1 metric is claimed because the facsimile-level visible-start census remains non-exhaustive."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "method": "Convergent structural reconciliation using materialized canonical candidate geometry/OCR, recovered ALC1737 OCR sequence, pre-existing selected right-column collation, and explicit BUE1890 secondary sequence control."
+  }
+}
