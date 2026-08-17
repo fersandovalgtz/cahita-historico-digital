@@ -1,0 +1,64 @@
+name: Encode p145 facsimile crops
+
+on:
+  push:
+    branches:
+      - work/p145-facsimile-collation
+
+permissions:
+  contents: write
+
+jobs:
+  encode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Render and encode visual crops
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq poppler-utils python3-pil >/dev/null
+          mkdir -p .tmp_facsimile/p145_crops_b64
+          rm -f .tmp_facsimile/p145_crops_b64/*
+          pdftoppm -f 1 -l 1 -singlefile -jpeg -jpegopt quality=92 -r 320 .tmp_facsimile/p145_target/p145-target.pdf /tmp/p145-full
+          python - <<'PY'
+          from PIL import Image
+          from pathlib import Path
+          import base64, hashlib, json
+
+          img=Image.open('/tmp/p145-full.jpg').convert('RGB')
+          w,h=img.size
+          # Split each column into overlapping thirds so small historical type remains legible.
+          boxes={
+            'left_top': (0, 0, int(w*0.53), int(h*0.42)),
+            'left_mid': (0, int(h*0.30), int(w*0.53), int(h*0.72)),
+            'left_bottom': (0, int(h*0.60), int(w*0.53), h),
+            'right_top': (int(w*0.47), 0, w, int(h*0.42)),
+            'right_mid': (int(w*0.47), int(h*0.30), w, int(h*0.72)),
+            'right_bottom': (int(w*0.47), int(h*0.60), w, h),
+          }
+          out=Path('.tmp_facsimile/p145_crops_b64')
+          manifest={'source':'p145-target.pdf','renderDpi':320,'fullSize':[w,h],'crops':{}}
+          for name,box in boxes.items():
+              crop=img.crop(box)
+              jpg=Path(f'/tmp/{name}.jpg')
+              crop.save(jpg,'JPEG',quality=90,optimize=True)
+              data=jpg.read_bytes()
+              encoded=base64.b64encode(data).decode('ascii')
+              lines=[encoded[i:i+1000] for i in range(0,len(encoded),1000)]
+              (out/f'{name}.b64.txt').write_text('\n'.join(lines)+'\n',encoding='ascii')
+              manifest['crops'][name]={
+                'box':list(box),'pixelSize':list(crop.size),'jpegBytes':len(data),
+                'base64Lines':len(lines),'sha256':hashlib.sha256(data).hexdigest()
+              }
+          (out/'MANIFEST.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf-8')
+          PY
+      - name: Commit temporary encoded crops
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .tmp_facsimile/p145_crops_b64
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "chore: añadir recortes facsimilares temporales codificados p145"
+          git push
