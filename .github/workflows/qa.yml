@@ -1,4 +1,4 @@
-name: CHD p161 candidate inspection
+name: CHD p161 materialize reconciliation
 
 on:
   push:
@@ -8,21 +8,32 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  inspect:
+  materialize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Export canonical p161 and p162 candidates
+      - name: Materialize p161 reconciliation
+        run: python scripts/_tmp_materialize_p161.py
+      - name: Validate generated p161 evidence
         run: |
-          echo '---P161-BEGIN---'
-          python scripts/export_candidate_page.py --page 161
-          echo '---P161-END---'
-          echo '---P162-BEGIN---'
-          python scripts/export_candidate_page.py --page 162
-          echo '---P162-END---'
+          python -m pip install -r requirements-dev.txt
+          python scripts/reconstruct_candidate_inventory.py
+          python scripts/validate_lexicon_ids.py
+          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p161_left_reconciliation.jsonl
+          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p161_right_reconciliation.jsonl
+          python scripts/validate_jsonl.py --schema schemas/lexicon-missed-start.schema.json --jsonl data/lexicon/reconciliation/p161_missed_visible_starts.jsonl
+          python -m json.tool data/lexicon/reconciliation/p161_machine_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p161_preflight.json >/dev/null
+      - name: Commit generated evidence
+        run: |
+          git config user.name 'Fernando Sandoval'
+          git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
+          git add data/lexicon/reconciliation/p161_left_reconciliation.jsonl data/lexicon/reconciliation/p161_right_reconciliation.jsonl data/lexicon/reconciliation/p161_missed_visible_starts.jsonl data/lexicon/reconciliation/p161_machine_reconciliation_status.json
+          git commit -m 'data: reconciliar conservadoramente p.161' -m '33 candidatos: 31 article, 1 continuation y 1 unresolved; tres falsos negativos seleccionados, 19 pending_promotion y borde p162 fresco.'
+          git push origin HEAD:work/p161-reconciliation
