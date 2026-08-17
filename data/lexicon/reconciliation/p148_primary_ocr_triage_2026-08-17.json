@@ -1,0 +1,92 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 148,
+  "recordType": "phase_ii_primary_ocr_triage",
+  "recordedAt": "2026-08-17",
+  "primaryWitnessEvidence": {
+    "provider": "Internet Archive",
+    "identifier": "artedelalenguaca00gonz",
+    "derivative": "artedelalenguaca00gonz_djvu.txt",
+    "relevantTextRange": "digital p.148 lexical sequence, public full-text OCR around lines 6475-6574",
+    "authority": "same_witness_ocr_only",
+    "limitation": "This pass ranks pending candidates by OCR legibility, wrapping, and known structural complexity. It is not direct facsimile collation and promotes no lexical article."
+  },
+  "scope": {
+    "pendingPromotionCandidates": 29,
+    "candidateIds": [
+      "ALC1737-vcand-p148-L-004","ALC1737-vcand-p148-L-008","ALC1737-vcand-p148-L-009","ALC1737-vcand-p148-L-011","ALC1737-vcand-p148-L-012","ALC1737-vcand-p148-L-013","ALC1737-vcand-p148-L-019","ALC1737-vcand-p148-L-020","ALC1737-vcand-p148-L-021","ALC1737-vcand-p148-L-022","ALC1737-vcand-p148-L-023",
+      "ALC1737-vcand-p148-R-001","ALC1737-vcand-p148-R-002","ALC1737-vcand-p148-R-003","ALC1737-vcand-p148-R-004","ALC1737-vcand-p148-R-006","ALC1737-vcand-p148-R-007","ALC1737-vcand-p148-R-009","ALC1737-vcand-p148-R-010","ALC1737-vcand-p148-R-011","ALC1737-vcand-p148-R-012","ALC1737-vcand-p148-R-013","ALC1737-vcand-p148-R-014","ALC1737-vcand-p148-R-015","ALC1737-vcand-p148-R-016","ALC1737-vcand-p148-R-017","ALC1737-vcand-p148-R-018","ALC1737-vcand-p148-R-019","ALC1737-vcand-p148-R-021"
+    ]
+  },
+  "categories": {
+    "compact_primary_ocr_high_yield": {
+      "count": 7,
+      "candidateIds": [
+        "ALC1737-vcand-p148-L-009","ALC1737-vcand-p148-L-020","ALC1737-vcand-p148-L-022","ALC1737-vcand-p148-L-023","ALC1737-vcand-p148-R-003","ALC1737-vcand-p148-R-006","ALC1737-vcand-p148-R-018"
+      ],
+      "reason": "The primary OCR preserves a compact, locally coherent guide/form unit. These are high-yield targets for direct facsimile recollation, not automatic promotions."
+    },
+    "wrapped_but_locally_legible": {
+      "count": 16,
+      "candidateIds": [
+        "ALC1737-vcand-p148-L-008","ALC1737-vcand-p148-L-013","ALC1737-vcand-p148-L-019","ALC1737-vcand-p148-L-021",
+        "ALC1737-vcand-p148-R-001","ALC1737-vcand-p148-R-002","ALC1737-vcand-p148-R-004","ALC1737-vcand-p148-R-009","ALC1737-vcand-p148-R-010","ALC1737-vcand-p148-R-011","ALC1737-vcand-p148-R-012","ALC1737-vcand-p148-R-013","ALC1737-vcand-p148-R-014","ALC1737-vcand-p148-R-015","ALC1737-vcand-p148-R-016","ALC1737-vcand-p148-R-017"
+      ],
+      "reason": "Guide/form material is broadly identifiable but crosses OCR line breaks or hyphenation; direct visual recollation should reconstruct the historical line sequence before promotion."
+    },
+    "guide_or_form_materially_ocr_damaged": {
+      "count": 4,
+      "candidateIds": ["ALC1737-vcand-p148-L-004","ALC1737-vcand-p148-L-011","ALC1737-vcand-p148-L-012","ALC1737-vcand-p148-R-019"],
+      "reason": "Primary OCR damages the guide, form, or both strongly enough that silent normalization would risk inventing a 1737 reading."
+    },
+    "structural_undersegmentation": {
+      "count": 2,
+      "candidateIds": ["ALC1737-vcand-p148-R-007","ALC1737-vcand-p148-R-021"],
+      "reason": "These pending candidates have boundaryAssessment=undersegmented. R-007 contains stray OCR fragments around `Caerſe las ojas del árbol`; R-021 starts `Calabaza generalmente` and carries the page-edge catchword anticipating p.149. Structural and textual recollation should be resolved jointly."
+    }
+  },
+  "selectedPrimaryOcrObservations": [
+    {"candidateId":"ALC1737-vcand-p148-L-004","guideOcr":"uchede las Aves","assessment":"guide_or_form_materially_ocr_damaged"},
+    {"candidateId":"ALC1737-vcand-p148-L-008","guideOcr":"Burlar hazer burla","formOcr":"Munat-ria","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p148-L-009","guideOcr":"Bullirfe algo","formOcr":"Wuavhuante","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p148-L-011","guideOcr":"Buicar por r afir o","formOcr":"¿kuotua","assessment":"guide_or_form_materially_ocr_damaged"},
+    {"candidateId":"ALC1737-vcand-p148-L-012","guideOcr":"CaoUdo","formOcr":"Nmkuech?","assessment":"guide_or_form_materially_ocr_damaged"},
+    {"candidateId":"ALC1737-vcand-p148-L-013","guideOcr":"Cabo, ó cabos","formOcr":"Jet-l¿k","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p148-L-019","guideOcr":"Cabezear el que tiene fuefio","formOcr":"Mufumufut","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p148-L-020","guideOcr":"Cabeitro","formOcr":"Hutteri","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p148-L-021","guideOcr":"Cabra, ó cabrón","formOcr":"Cabala / chtbato","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p148-L-022","guideOcr":"Caítrado","formOcr":"Mafo.-capn","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p148-L-023","guideOcr":"Cazar falir a waza","formOcr":"Amu","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p148-R-001","guideOcr":"Cazar con ratonera","formOcr":"Chicar-lím amu","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p148-R-002","guideOcr":"Cacarear ia gúWnzX","formOcr":"aba-bua&na","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p148-R-003","guideOcr":"Cada inflante","formOcr":"Hubuahuneru","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p148-R-004","guideOcr":"Cada vno fer dos","formOcr":"Huehu9* pitla icaria","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p148-R-006","guideOcr":"Caer fiefta","formOcr":"Pajeo huechec","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p148-R-007","guideOcr":"Caerfe las ojasdei árbol","formOcr":"Sá-huahuateC","assessment":"structural_undersegmentation"},
+    {"candidateId":"ALC1737-vcand-p148-R-009","guideOcr":"Caerle de arriba","formOcr":"Htcatana ¡meche","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p148-R-010","guideOcr":"Caer de canfado","formOcr":"Lotecca--huechje","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p148-R-011","guideOcr":"Caer juntamente","formOcr":"Nauthuai-tec","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p148-R-012","guideOcr":"Caer de improvifo","formOcr":"Cukpi huechec","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p148-R-013","guideOcr":"Caer arremetiendo","formOcr":"Auchep-tecahueche","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p148-R-014","guideOcr":"Caerle resbalando","formOcr":"Chitóte-ca huechec","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p148-R-015","guideOcr":"Caer en hoyo","formOcr":"Yíuohocubue-chec","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p148-R-016","guideOcr":"Caerte muerto","formOcr":"Sechuctimu-cue","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p148-R-017","guideOcr":"Caer tropezando","formOcr":"TeitecA--huechec","assessment":"wrapped_but_locally_legible"},
+    {"candidateId":"ALC1737-vcand-p148-R-018","guideOcr":"Cagar","formOcr":"Buita","assessment":"compact_primary_ocr_high_yield"},
+    {"candidateId":"ALC1737-vcand-p148-R-019","guideOcr":"Ca wan","formOcr":"Camaa","assessment":"guide_or_form_materially_ocr_damaged"},
+    {"candidateId":"ALC1737-vcand-p148-R-021","guideOcr":"Calabaza generalmente","assessment":"structural_undersegmentation"}
+  ],
+  "decisions": [
+    "All 29 current p.148 pending_promotion candidates receive an explicit same-witness OCR triage category.",
+    "Seven compact entries are prioritized for direct facsimile recollation, followed by sixteen locally legible wrapped entries.",
+    "Four candidates remain blocked by material OCR damage and two pending candidates require joint structural/textual recollation.",
+    "No candidate is promoted from public OCR alone and the visible-start census remains non-exhaustive."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "derivedFrom": ["p148_left_reconciliation.jsonl","p148_right_reconciliation.jsonl","p148_machine_reconciliation_status.json"],
+    "method": "Conservative classification of every p.148 pending candidate by same-witness OCR legibility, wrapping, and known structural complexity; no direct facsimile promotion."
+  }
+}
