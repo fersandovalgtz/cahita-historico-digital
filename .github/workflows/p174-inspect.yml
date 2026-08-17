@@ -1,4 +1,4 @@
-name: CHD p174 concise inspection
+name: CHD p174 anchor matching
 
 on:
   push:
@@ -18,20 +18,31 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Summarize p174 and p175 edge
+      - name: Match selected anchors to canonical candidates
         run: |
           python scripts/export_candidate_page.py --page 174 > /tmp/p174.jsonl
           python scripts/export_candidate_page.py --page 175 > /tmp/p175.jsonl
           python - <<'PY'
-          import json
+          import json,re,unicodedata
           from pathlib import Path
-          def rows(p): return [json.loads(x) for x in Path(p).read_text().splitlines() if x.strip()]
-          a=rows('/tmp/p174.jsonl'); b=rows('/tmp/p175.jsonl')
-          print('P174',len(a),'L',sum(x['column']=='left' for x in a),'R',sum(x['column']=='right' for x in a))
-          for x in a: print(x['candidateId'],'::',x['rawText'])
-          print('P175',len(b),'L',sum(x['column']=='left' for x in b),'R',sum(x['column']=='right' for x in b))
-          print('P175-FIRST')
-          for x in b[:8]: print(x['candidateId'],'::',x['rawText'])
-          print('P175-LAST')
-          for x in b[-8:]: print(x['candidateId'],'::',x['rawText'])
+          from difflib import SequenceMatcher
+          def norm(s):
+              s=unicodedata.normalize('NFKD',s.lower().replace('ſ','s'))
+              s=''.join(c for c in s if not unicodedata.combining(c))
+              return re.sub(r'[^a-z0-9]+',' ',s).strip()
+          cands=[json.loads(x) for x in Path('/tmp/p174.jsonl').read_text().splitlines() if x.strip()]
+          arts=[json.loads(x) for x in Path('data/lexicon/articles/p174_selected_articles.jsonl').read_text().splitlines() if x.strip()]
+          for a in arts:
+              q=norm(a['spanishGuideRaw'])
+              scored=[]
+              for c in cands:
+                  t=norm(c['rawText'])
+                  score=SequenceMatcher(None,q,t[:max(len(q)*2,30)]).ratio()
+                  if q and q.split()[0] in t: score+=0.25
+                  scored.append((score,c['candidateId'],c['rawText']))
+              print('ANCHOR',a['articleId'],a['spanishGuideRaw'])
+              for score,cid,raw in sorted(scored,reverse=True)[:3]: print(f'  {score:.3f} {cid} :: {raw}')
+          p175=[json.loads(x) for x in Path('/tmp/p175.jsonl').read_text().splitlines() if x.strip()]
+          print('P175COUNT',len(p175),sum(x['column']=='left' for x in p175),sum(x['column']=='right' for x in p175))
+          for x in p175[:5]: print('P175FIRST',x['candidateId'],'::',x['rawText'])
           PY
