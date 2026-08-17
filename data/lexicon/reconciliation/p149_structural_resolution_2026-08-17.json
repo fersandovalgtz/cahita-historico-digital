@@ -1,0 +1,107 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 149,
+  "recordType": "structural_boundary_resolution",
+  "recordedAt": "2026-08-17",
+  "candidateSource": "data/lexicon/candidates/p149_candidates.jsonl",
+  "resolution": {
+    "candidateId": "ALC1737-vcand-p149-L-019",
+    "canonicalGeometry": {
+      "candidateOrderInColumn": 19,
+      "column": "left",
+      "estimatedStartMarginX": 5.634,
+      "startY": 219.926,
+      "rawLines": [
+        "Calentura",
+        "bits che"
+      ],
+      "rawText": "Calentura bits che"
+    },
+    "adjacentCanonicalContext": {
+      "previousCandidate": {
+        "candidateId": "ALC1737-vcand-p149-L-018",
+        "startY": 210.438,
+        "rawLines": [
+          "Calentura. Tahihuecbe.",
+          "tener*"
+        ],
+        "existingAssessment": "article / undersegmented"
+      },
+      "nextCandidate": {
+        "candidateId": "ALC1737-vcand-p149-L-020",
+        "startY": 237.059,
+        "rawLines": [
+          "Caliente. Suca.",
+          "Noc ¡até."
+        ],
+        "existingAssessment": "article / exact"
+      }
+    },
+    "primaryWitnessOcrEvidence": {
+      "provider": "Internet Archive",
+      "identifier": "artedelalenguaca00gonz",
+      "sequenceInterpretation": [
+        "Calentarse",
+        "Calentura",
+        "Calentura tener",
+        "Caliente"
+      ],
+      "use": "same-witness machine OCR supports sequence and boundary identity only; damaged Cahita forms are not promoted from OCR"
+    },
+    "secondaryControlEvidence": {
+      "sourceId": "BUE1890",
+      "sequenceInterpretation": [
+        "Calentarse",
+        "Calentura",
+        "Calentura tener",
+        "Caliente"
+      ],
+      "authority": "secondary_only",
+      "use": "corroborates the existence and order of a separate `Calentura tener` entry; BUE1890 orthography and Cahita forms are not transferred into ALC1737"
+    },
+    "decision": {
+      "classification": "article",
+      "boundaryAssessment": "exact",
+      "articleLinkStatus": "pending_promotion",
+      "guideHypothesis": "Calentura tener",
+      "guideHypothesisStatus": "structurally_supported_noncanonical",
+      "cahitaFormStatus": "unpromoted_uncertain"
+    },
+    "rationale": "L-019 begins at the canonical left-column margin as an independent candidate. L-018 already contains the first `Calentura` article and an OCR fragment `tener*`; L-019 begins with a second `Calentura` and damaged form material, while both the recovered ALC1737 OCR sequence and BUE1890 preserve the ordered pair `Calentura` / `Calentura tener` before `Caliente`. The most conservative structural interpretation is therefore a real second article boundary whose complete guide is fragmented by OCR grouping across L-018/L-019."
+  },
+  "expectedPageStateAfterResolution": {
+    "candidateCount": 61,
+    "classification": {
+      "article": 56,
+      "continuation": 5,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 48,
+      "oversegmented": 5,
+      "undersegmented": 3,
+      "merged_articles": 0,
+      "ambiguous": 0,
+      "not_applicable": 5
+    },
+    "articleCandidatesPendingPromotion": 41,
+    "newPromotions": 0,
+    "corpusTotal": 1045,
+    "knownVisibleStartsMinimum": 56,
+    "visibleStartCensusExhaustive": false
+  },
+  "epistemicGuards": [
+    "This resolution changes only candidate-level structure; it does not create a new lexical article object.",
+    "No uncertain ALC1737 Cahita form is normalized or promoted.",
+    "BUE1890 is a secondary sequence control and never silently substitutes for the 1737 witness.",
+    "The selected article layer remains non-exhaustive and the visible-start census remains non-exhaustive.",
+    "No precision, recall or F1 metric is claimed.",
+    "humanVerified remains false."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "method": "Convergent structural reconciliation from materialized canonical geometry/OCR, recovered same-witness OCR sequence, and explicit BUE1890 secondary sequence control; conservative non-promotion rule applied."
+  }
+}
