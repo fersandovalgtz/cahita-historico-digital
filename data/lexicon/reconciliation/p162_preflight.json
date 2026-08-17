@@ -7,7 +7,8 @@
     "left": 20,
     "right": 19,
     "canonicalInventoryTotal": 2072,
-    "boundaryMethod": "hybrid_margin_mode_v0.2"
+    "boundaryMethod": "hybrid_margin_mode_v0.2",
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
   },
   "selectedLayer": {
     "path": "data/lexicon/articles/p162_selected_articles.jsonl",
@@ -30,11 +31,11 @@
     "L-012": "ALC1737-art-000445",
     "L-013": "ALC1737-art-000446",
     "R-009": "ALC1737-art-000447",
-    "R-014": "ALC1737-art-000448"
+    "R-016": "ALC1737-art-000448"
   },
   "edgeContext": {
     "fromPreviousPage": "p162 L-001 begins fresh selected `Media coſa la mitad. Najucu.`; p161 R-016 is unresolved fragmentary material and no transpage continuation is asserted.",
-    "toNextPage": "p162 R-019 ends with a distinct `Moverſe` article candidate. p163 L-001 begins fresh `Mucho. Hibua.`; no long continuation is asserted."
+    "toNextPage": "p162 R-019 begins a `Mirar saliendo de lo obscuro`-like article and absorbs the bottom catchword `Mozo`. p163 selected 000449 opens fresh `Mozo de edad. Buſca mancebo.`; the first canonical p163 candidate starts in its tail `...cebo.` and then contains fresh `Mofar, eſcarnecer`. The catchword does not create a p162→p163 article continuation."
   },
   "knownStructuralFeatures": [
     {
@@ -44,14 +45,14 @@
       "note": "Begins selected `Melon. Manari.` and absorbs the distinct selected start `Memoria. Aubuate.`."
     },
     {
-      "candidateId": "ALC1737-vcand-p162-L-020",
-      "assessment": "ambiguous_article_start",
-      "note": "Canonical geometry supports a new boundary, but OCR is too degraded to recover a reliable guide; retain as article/ambiguous without promotion."
+      "candidateId": "ALC1737-vcand-p162-R-006",
+      "assessment": "undersegmented",
+      "note": "Begins a `Meter como en la caxa`-like article and absorbs additional guide/form-like OCR material without independent selected anchors."
     },
     {
-      "candidateId": "ALC1737-vcand-p162-R-011",
-      "assessment": "unresolved_form_only_fragment",
-      "note": "Candidate contains only `Mahahuene.` without a recoverable guide. It may belong to a lost or omitted Miedo-related guide, but available evidence does not justify assigning it to R-010 or inventing a missing article."
+      "candidateId": "ALC1737-vcand-p162-R-019",
+      "assessment": "undersegmented",
+      "note": "Begins `Mirar saliendo de lo obscuro`-like material and absorbs the catchword `Mozo` that anticipates fresh p163 selected 000449."
     }
   ],
   "knownMissedStarts": [
@@ -62,15 +63,27 @@
       "containingCandidateId": "ALC1737-vcand-p162-L-006"
     }
   ],
+  "correctedAuditFindings": [
+    "R-011 is canonical `Miedo tener. Mahabuené`, so it is an article boundary rather than an unresolved form-only fragment.",
+    "L-020 is canonical `Merecer. Hkamabare`, so its guide is recoverable and its boundary is exact.",
+    "Selected 000448 `Mirar. Abicha.` aligns to R-016, not R-014; R-014 is `Miembro del hombre` and remains unselected/pending.",
+    "The p162→p163 edge is a catchword-to-fresh-article transition, not a long lexical continuation."
+  ],
+  "workingHypothesis": {
+    "classification": {"article": 39, "continuation": 0, "paratext": 0, "false_positive": 0, "unresolved": 0},
+    "boundaryAssessment": {"exact": 36, "oversegmented": 0, "undersegmented": 2, "merged_articles": 1, "ambiguous": 0, "not_applicable": 0},
+    "articleCandidatesPendingPromotionExpected": 25,
+    "knownVisibleStartsMinimum": 40
+  },
   "evidenceLimits": {
     "selectedLayerIsCoverageExpectation": false,
     "directFacsimileInspectedThisPass": false,
     "visibleStartCensusExhaustive": false,
     "metricsAllowed": false,
-    "reason": "One selected internal missed start is demonstrated, R-011 remains structurally unresolved, and other damaged OCR groups lack independent anchors. No complete denominator is asserted."
+    "reason": "One selected internal missed start is demonstrated, while damaged undersegmented groups may contain additional unanchored starts and the selected layer is non-exhaustive. No complete denominator is asserted."
   },
   "pageStatus": {
-    "candidateReconciliation": "ready_for_conservative_full_page_materialization",
+    "candidateReconciliation": "ready_for_corrected_full_page_materialization",
     "visibleStartCensus": "known_misses_only_not_exhaustive",
     "promotionLinkage": "partial_anchor_layer",
     "technicalClosure": false,
