@@ -1,0 +1,72 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 146,
+  "recordType": "phase_ii_promotion_triage_queue",
+  "recordedAt": "2026-08-17",
+  "scope": {
+    "pendingPromotionCandidates": 22,
+    "candidateIds": [
+      "ALC1737-vcand-p146-L-009","ALC1737-vcand-p146-L-014","ALC1737-vcand-p146-L-020",
+      "ALC1737-vcand-p146-R-002","ALC1737-vcand-p146-R-004","ALC1737-vcand-p146-R-005","ALC1737-vcand-p146-R-006","ALC1737-vcand-p146-R-009","ALC1737-vcand-p146-R-011","ALC1737-vcand-p146-R-012","ALC1737-vcand-p146-R-013","ALC1737-vcand-p146-R-014","ALC1737-vcand-p146-R-015","ALC1737-vcand-p146-R-016","ALC1737-vcand-p146-R-017","ALC1737-vcand-p146-R-018","ALC1737-vcand-p146-R-019","ALC1737-vcand-p146-R-020","ALC1737-vcand-p146-R-021","ALC1737-vcand-p146-R-022","ALC1737-vcand-p146-R-023","ALC1737-vcand-p146-R-025"
+    ]
+  },
+  "triagePolicy": {
+    "automaticPromotionAllowed": false,
+    "rule": "A pending candidate may be promoted only when the ALC1737 witness itself supports a stable guide and Cahita form strongly enough for machine_corrected_unverified transcription. BUE1890 and web OCR mirrors are secondary controls only and may not supply an ALC1737 form.",
+    "visibleStartCensusExhaustive": false,
+    "humanVerified": false
+  },
+  "categories": {
+    "high_yield_primary_secondary_near_convergence": {
+      "count": 7,
+      "candidateIds": ["ALC1737-vcand-p146-L-014","ALC1737-vcand-p146-L-020","ALC1737-vcand-p146-R-002","ALC1737-vcand-p146-R-005","ALC1737-vcand-p146-R-006","ALC1737-vcand-p146-R-009","ALC1737-vcand-p146-R-020"],
+      "reason": "Primary ALC1737 OCR and BUE1890 secondary control are close enough that a direct same-witness facsimile pass is likely to resolve the exact form efficiently, but current policy forbids promotion from OCR/control agreement alone.",
+      "evidence": "p146_control_evidence_2026-08-17.json"
+    },
+    "form_too_noisy_or_glyph_uncertain": {
+      "count": 8,
+      "candidateIds": ["ALC1737-vcand-p146-L-009","ALC1737-vcand-p146-R-004","ALC1737-vcand-p146-R-011","ALC1737-vcand-p146-R-012","ALC1737-vcand-p146-R-014","ALC1737-vcand-p146-R-015","ALC1737-vcand-p146-R-016","ALC1737-vcand-p146-R-019"],
+      "reason": "Guide identity is structurally secure, but the exact ALC1737 form remains too OCR-damaged or glyph-ambiguous for promotion.",
+      "evidence": "p146_control_evidence_2026-08-17.json"
+    },
+    "historical_orthography_or_normalization": {
+      "count": 3,
+      "candidateIds": ["ALC1737-vcand-p146-R-013","ALC1737-vcand-p146-R-017","ALC1737-vcand-p146-R-018"],
+      "reason": "The later control reorganizes or normalizes the guide/form, so the 1737 spelling and exact form must be recovered directly from the primary facsimile rather than back-projected.",
+      "evidence": "p146_control_evidence_2026-08-17.json"
+    },
+    "primary_secondary_form_divergence": {
+      "count": 2,
+      "candidateIds": ["ALC1737-vcand-p146-R-021","ALC1737-vcand-p146-R-023"],
+      "reason": "The primary OCR and later control disagree materially at form level; retain pending until stronger primary evidence resolves the divergence.",
+      "evidence": "p146_control_evidence_2026-08-17.json"
+    },
+    "wrapped_or_split_microstructure": {
+      "count": 2,
+      "candidateIds": ["ALC1737-vcand-p146-R-022","ALC1737-vcand-p146-R-025"],
+      "reason": "The article spans multiple OCR/candidate segments or has wrapped form microstructure; promotion requires direct reconstruction from the ALC1737 facsimile.",
+      "evidence": "p146_control_evidence_2026-08-17.json"
+    }
+  },
+  "nextPassOrder": [
+    {"priority":1,"category":"high_yield_primary_secondary_near_convergence","rationale":"Highest expected return from a fresh same-witness facsimile pass; most cases differ only by OCR-level glyph noise."},
+    {"priority":2,"category":"form_too_noisy_or_glyph_uncertain","rationale":"Guide boundaries are already secure, so work can focus narrowly on the ALC1737 forms."},
+    {"priority":3,"category":"wrapped_or_split_microstructure","rationale":"Requires reconstructing line/candidate continuity before a stable article transcription can be asserted."},
+    {"priority":4,"category":"historical_orthography_or_normalization","rationale":"Requires distinguishing 1737 witness spelling from later editorial normalization."},
+    {"priority":5,"category":"primary_secondary_form_divergence","rationale":"Known disagreement makes these poor candidates for automatic strengthening without better primary visual evidence."}
+  ],
+  "epistemicGuards": [
+    "This queue changes no transcription and promotes no article.",
+    "BUE1890 remains a later secondary control and is never silently copied into ALC1737.",
+    "Primary OCR from ALC1737 is not treated as equivalent to direct facsimile recollation.",
+    "The 22 pending candidates are candidate-level article starts, not a claim of 22 missing historical articles.",
+    "No precision, recall, or F1 value is claimed while the p.146 visible-start census remains non-exhaustive."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "derivedFrom": ["p146_left_reconciliation.jsonl","p146_right_reconciliation.jsonl","p146_machine_reconciliation_status.json","p146_control_evidence_2026-08-17.json"],
+    "method": "Conservative Phase II triage of all 22 current p.146 pending_promotion candidates using same-witness OCR plus explicit secondary control, without strengthening transcription."
+  }
+}
