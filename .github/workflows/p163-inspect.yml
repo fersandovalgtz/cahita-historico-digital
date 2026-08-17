@@ -1,0 +1,30 @@
+name: CHD p163 edge inspection
+
+on:
+  push:
+    branches: [work/p163-reconciliation]
+    paths:
+      - '.github/workflows/p163-inspect.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Inspect canonical p164 edge and counts
+        run: |
+          echo 'P164 TOTAL'
+          python scripts/export_candidate_page.py --page 164 --count-only
+          echo 'P164 LEFT'
+          python scripts/export_candidate_page.py --page 164 --column left --count-only
+          echo 'P164 RIGHT'
+          python scripts/export_candidate_page.py --page 164 --column right --count-only
+          echo 'P164 FULL'
+          python scripts/export_candidate_page.py --page 164
