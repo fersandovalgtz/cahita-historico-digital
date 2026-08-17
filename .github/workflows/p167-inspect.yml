@@ -1,4 +1,4 @@
-name: CHD p167 inspection
+name: CHD p167 materialize reconciliation
 
 on:
   push:
@@ -8,27 +8,61 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  inspect:
+  materialize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Export p167 and p168 edge
+      - name: Materialize p167 reconciliation
+        run: python scripts/_tmp_materialize_p167.py
+      - name: Validate p167 evidence
         run: |
-          echo '---P167-BEGIN---'
-          python scripts/export_candidate_page.py --page 167
-          echo '---P167-END---'
-          echo 'P168 TOTAL'
-          python scripts/export_candidate_page.py --page 168 --count-only
-          echo 'P168 LEFT'
-          python scripts/export_candidate_page.py --page 168 --column left --count-only
-          echo 'P168 RIGHT'
-          python scripts/export_candidate_page.py --page 168 --column right --count-only
-          echo '---P168-BEGIN---'
-          python scripts/export_candidate_page.py --page 168
-          echo '---P168-END---'
+          python -m pip install -r requirements-dev.txt
+          python scripts/reconstruct_candidate_inventory.py
+          python scripts/validate_lexicon_ids.py
+          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p167_left_reconciliation.jsonl
+          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p167_right_reconciliation.jsonl
+          python scripts/validate_jsonl.py --schema schemas/lexicon-missed-start.schema.json --jsonl data/lexicon/reconciliation/p167_missed_visible_starts.jsonl
+          python -m json.tool data/lexicon/reconciliation/p167_machine_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p167_preflight.json >/dev/null
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          rows=[]
+          for name in ['p167_left_reconciliation.jsonl','p167_right_reconciliation.jsonl']:
+              rows += [json.loads(x) for x in Path('data/lexicon/reconciliation',name).read_text(encoding='utf-8').splitlines() if x.strip()]
+          assert len(rows)==55
+          cls={k:sum(r['classification']==k for r in rows) for k in ['article','continuation','unresolved','paratext','false_positive']}
+          assert cls=={'article':54,'continuation':1,'unresolved':0,'paratext':0,'false_positive':0}, cls
+          by={r['candidateId']:r for r in rows}
+          assert by['ALC1737-vcand-p167-L-010']['boundaryAssessment']=='merged_articles'
+          assert by['ALC1737-vcand-p167-L-010']['linkedArticleIds']==['ALC1737-art-000518','ALC1737-art-000519']
+          assert by['ALC1737-vcand-p167-L-030']['boundaryAssessment']=='ambiguous'
+          assert by['ALC1737-vcand-p167-R-002']['boundaryAssessment']=='oversegmented'
+          assert by['ALC1737-vcand-p167-R-003']['classification']=='continuation'
+          assert by['ALC1737-vcand-p167-R-003']['boundaryAssessment']=='not_applicable'
+          for cid in ['ALC1737-vcand-p167-R-011','ALC1737-vcand-p167-R-013','ALC1737-vcand-p167-R-025']:
+              assert by[cid]['boundaryAssessment']=='undersegmented'
+          assert by['ALC1737-vcand-p167-R-020']['boundaryAssessment']=='merged_articles'
+          linked={aid for r in rows for aid in r.get('linkedArticleIds',[])}
+          assert linked=={f'ALC1737-art-{n:06d}' for n in range(509,524)}
+          miss=[json.loads(x) for x in Path('data/lexicon/reconciliation/p167_missed_visible_starts.jsonl').read_text(encoding='utf-8').splitlines() if x.strip()]
+          assert len(miss)==1 and miss[0]['linkedArticleIds']==['ALC1737-art-000519']
+          status=json.loads(Path('data/lexicon/reconciliation/p167_machine_reconciliation_status.json').read_text(encoding='utf-8'))
+          assert status['promotion']['articleCandidatesPendingPromotion']==40
+          assert status['visibleStartEvidence']['knownVisibleStartsMinimum']==55
+          assert status['nextPage']['candidateInventoryTotal']==32
+          assert status['promotion']['corpusTotalAfterPass']==1045
+          PY
+      - name: Commit generated p167 evidence
+        run: |
+          git config user.name 'Fernando Sandoval'
+          git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
+          git add data/lexicon/reconciliation/p167_left_reconciliation.jsonl data/lexicon/reconciliation/p167_right_reconciliation.jsonl data/lexicon/reconciliation/p167_missed_visible_starts.jsonl data/lexicon/reconciliation/p167_machine_reconciliation_status.json
+          git commit -m 'data: reconciliar conservadoramente p.167' -m '55 candidatos: 54 article y 1 continuation; L-010 Pato+Paxaro generalmente merged, 000519 como falso negativo interno, 40 pending_promotion y borde p168 fresco.'
+          git push origin HEAD:work/p167-reconciliation
