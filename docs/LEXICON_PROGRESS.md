@@ -2,7 +2,7 @@
 
 ## Estado — 2026-08-16
 
-El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El inventario canónico `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera. La capa curatorial contiene actualmente **1,045 artículos históricos estructurados**. Las páginas **133–144** están cerradas en reconciliación de candidatos, censo de inicios visibles, promoción/enlace y control computacional IA-asistido. Las páginas **145–150 tienen reconciliación completa de sus candidatos canónicos**, pero permanecen abiertas para censo exhaustivo de inicios visibles y promoción de fronteras sin transcripción suficientemente sustentada. **Ningún objeto es `human_verified` y la política vigente no contempla intervención humana independiente.**
+El Vocabulario de `ALC1737` ocupa las páginas digitales **133–177**. El inventario canónico `hybrid_margin_mode_v0.2` conserva **2,072 candidatos** de frontera. La capa curatorial contiene actualmente **1,045 artículos históricos estructurados**. Las páginas **133–144** están cerradas en reconciliación de candidatos, censo de inicios visibles, promoción/enlace y control computacional IA-asistido. Las páginas **145–151 tienen reconciliación completa de sus candidatos canónicos**, pero permanecen abiertas para censo exhaustivo de inicios visibles y promoción de fronteras sin transcripción suficientemente sustentada. **Ningún objeto es `human_verified` y la política vigente no contempla intervención humana independiente.**
 
 ## Inventario canónico
 
@@ -92,8 +92,18 @@ El único candidato estructuralmente irresuelto es **R-023**, en la región `Col
 
 Quedan **40 candidatos de artículo `pending_promotion`**. No hubo promociones nuevas y el corpus permanece en **1,045 artículos**. El censo visible no se declara exhaustivo: se conocen al menos 55 inicios candidatos de artículo, pero R-023 y la ausencia de un denominador facsimilar exhaustivo impiden calcular TP/FP/FN, precisión, recall o F1. `p150_machine_reconciliation_status.json` conserva estas decisiones y sus límites de evidencia.
 
+## Página 151 — reconciliación de candidatos completada
+
+La página digital **151** contiene **50 candidatos canónicos: 23 izquierda y 27 derecha**. La reconciliación machine-only clasifica **47 `article`** y **3 `continuation`**, sin candidatos `unresolved`, `paratext` o `false_positive`. La calidad de frontera se distribuye en **43 `exact`**, **3 `oversegmented`**, **1 `merged_articles`** y **3 `not_applicable`**.
+
+La capa seleccionada preexistente contiene **15 artículos `ALC1737-art-000269`–`ALC1737-art-000283`**. Los quince quedaron enlazados mediante 13 candidatos canónicos. El caso central es **L-002**, región OCR dañada que absorbe tres artículos ya cotejados directamente: `000269` (`Compañón, ó cojon`), `000270` (`Compaſſar, ó medir con compás`) y `000271` (`Compaſſion. Buſca compadecerſe`). La reconciliación conserva esa frontera como `merged_articles` y no reemplaza las transcripciones seleccionadas por el OCR degradado.
+
+En la columna derecha, **R-003, R-006 y R-009 son continuaciones físicas** de R-002, R-005 y R-008 respectivamente; por ello los tres candidatos precedentes se marcan `oversegmented`. El borde inferior también queda modelado: R-027 inicia `Coronilla...` al pie de p.151 y puede continuar en material superior no representado de p.152; como p.152 L-001 abre el artículo fresco `Crecer el hombre`, no se afirma continuidad hacia ese candidato.
+
+Quedan **34 candidatos de artículo `pending_promotion`**. No hubo promociones nuevas y el corpus permanece en **1,045 artículos**. Se conocen al menos **49 inicios de artículo**: los 47 candidatos clasificados como `article` más dos inicios adicionales absorbidos dentro de L-002. El censo visible sigue siendo no exhaustivo y, por tanto, no se calculan TP/FP/FN, precisión, recall o F1. `p151_machine_reconciliation_status.json` conserva el detalle de estas decisiones.
+
 ## Próximo frente
 
-En p.145 quedan **20 `pending_promotion`** y 3 `unresolved`; en p.146, **22 `pending_promotion`**; en p.147, **36 `pending_promotion`**; en p.148, **29 `pending_promotion`**; en p.149, **40 `pending_promotion`** y 1 `unresolved`; y en p.150, **40 `pending_promotion`** y 1 candidato estructural `unresolved`. Las páginas 145–150 tienen reconciliación de candidatos completa, pero no un censo visible exhaustivo.
+En p.145 quedan **20 `pending_promotion`** y 3 `unresolved`; en p.146, **22 `pending_promotion`**; en p.147, **36 `pending_promotion`**; en p.148, **29 `pending_promotion`**; en p.149, **40 `pending_promotion`** y 1 `unresolved`; en p.150, **40 `pending_promotion`** y 1 candidato estructural `unresolved`; y en p.151, **34 `pending_promotion`**. Las páginas 145–151 tienen reconciliación de candidatos completa, pero no un censo visible exhaustivo.
 
-El siguiente frente geométrico es la **página digital 151**, con **50 candidatos canónicos: 23 izquierda y 27 derecha**. Hasta que p.145 complete censo visible y promoción, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo técnicamente cerrado.
+El siguiente frente geométrico es la **página digital 152**, con **52 candidatos canónicos: 28 izquierda y 24 derecha**. Hasta que p.145 complete censo visible y promoción, el corpus sigue publicando **1,045 artículos estructurados** y **pp.133–144** como último tramo técnicamente cerrado.
