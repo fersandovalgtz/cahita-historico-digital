@@ -58,7 +58,7 @@ jobs:
               return {
                 'candidateId':cid,'sourceId':'ALC1737','sourcePageDigital':151,'column':column,
                 'classification':'continuation','boundaryAssessment':'not_applicable','linkedArticleIds':[],
-                'articleLinkStatus':'not_applicable',
+                'articleLinkStatus':'not_applicable','continuationType':'from_previous_line',
                 'editorialNote':f'Physical continuation of candidate {parent}; not a fresh lexical start.',
                 'reviewStatus':'machine_corrected_unverified','humanVerified':False,'provenance':provenance
               }
