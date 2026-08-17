@@ -18,6 +18,60 @@
         "guideReading": "Atomo",
         "formReadingStatus": "too_noisy_for_promotion",
         "evidence": "OCR preserves `Atpmo` followed by a damaged form immediately before the B section marker; guide is reconciled as Atomo with secondary control."
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-L-014",
+        "guideIdentification": "Avecindarse",
+        "diplomaticStatus": "guide_identification_only",
+        "formReadingStatus": "too_noisy_for_promotion"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-L-015",
+        "guideIdentification": "Aventajar",
+        "diplomaticStatus": "guide_identification_only",
+        "formReadingStatus": "too_noisy_for_promotion"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-L-016",
+        "guideIdentification": "Aventar como trigo",
+        "diplomaticStatus": "guide_identification_only",
+        "formReadingStatus": "too_noisy_for_promotion"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-L-017",
+        "guideIdentification": "Aullar el adive",
+        "diplomaticStatus": "guide_identification_only",
+        "formReadingStatus": "cross_reference_reading_not_promoted"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-L-018",
+        "guideIdentification": "A vno",
+        "diplomaticStatus": "guide_identification_only",
+        "formReadingStatus": "primary_ocr_middle_glyph_uncertain"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-L-019",
+        "guideIdentification": "Aunque",
+        "diplomaticStatus": "guide_identification_only",
+        "formReadingStatus": "too_noisy_for_promotion"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-L-020",
+        "guideIdentification": "Avenir, o salir de madre el Rio",
+        "diplomaticStatus": "guide_identification_only",
+        "formReadingStatus": "too_noisy_for_promotion"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-L-021",
+        "guideIdentification": "Aventar hazer ayre",
+        "diplomaticStatus": "guide_identification_only",
+        "formReadingStatus": "wrapped_and_too_noisy_for_promotion"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-L-022",
+        "guideIdentification": "Aventador assi",
+        "diplomaticStatus": "guide_identification_only",
+        "formReadingStatus": "too_noisy_for_promotion"
       }
     ]
   },
@@ -34,6 +88,51 @@
         "candidateId": "ALC1737-vcand-p145-R-012",
         "controlReading": "Atomo. Tohuachichitiame.",
         "use": "supports guide identification only; later reprint spelling/form is not substituted into ALC1737"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-L-014",
+        "controlReading": "Avecindarse. Itou lioatec.",
+        "use": "corroborates guide identity only"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-L-015",
+        "controlReading": "Aventajar. Chictia hita huanao turi.",
+        "use": "corroborates guide identity only"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-L-016",
+        "controlReading": "Aventar como trigo. Iluite.",
+        "use": "corroborates guide identity only"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-L-017",
+        "controlReading": "Aullar el adive. Busca adive.",
+        "use": "corroborates guide identity and cross-reference character only"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-L-018",
+        "controlReading": "A uno. Cae.",
+        "use": "corroborates guide identity; later spelling is not substituted"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-L-019",
+        "controlReading": "Aunque. Elapo.",
+        "use": "corroborates guide identity only"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-L-020",
+        "controlReading": "Avenir o salir de madre el río. Bucle.",
+        "use": "corroborates guide identity only"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-L-021",
+        "controlReading": "Aventar, hacer aire. Ahiliaria.",
+        "use": "corroborates guide identity only"
+      },
+      {
+        "candidateId": "ALC1737-vcand-p145-L-022",
+        "controlReading": "Aventador así. Hihusia.",
+        "use": "corroborates guide identity only"
       }
     ]
   },
@@ -41,6 +140,8 @@
     "R-011 is reclassified from unresolved to article because the primary OCR preserves the guide start and BUE1890 independently corroborates the segmentation.",
     "R-011 remains pending_promotion because the exact ALC1737 Cahita form is not sufficiently reliable from OCR alone.",
     "R-012 remains an article with ambiguous boundary assessment and pending_promotion; its guide is identified as Atomo, but its exact ALC1737 Cahita form remains too uncertain for promotion.",
+    "L-014 through L-022 now have guide-level identifications where recovered ALC1737 OCR and BUE1890 agree sufficiently; these are identification evidence, not diplomatic transcriptions.",
+    "No L-014–L-022 article is promoted in this pass because exact ALC1737 Cahita forms are not sufficiently supported without direct facsimile recollation.",
     "No BUE1890 form is silently substituted for ALC1737."
   ],
   "reviewStatus": "machine_corrected_unverified",
