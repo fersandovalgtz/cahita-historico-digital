@@ -1,0 +1,31 @@
+name: Export p161 candidates
+
+on:
+  push:
+    branches:
+      - work/p161-candidate-export
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Export canonical p161 candidate rows
+        run: |
+          mkdir -p data/lexicon/candidates
+          python scripts/export_candidate_page.py --page 161 > data/lexicon/candidates/p161_candidates.jsonl
+          test "$(wc -l < data/lexicon/candidates/p161_candidates.jsonl | tr -d ' ')" = "33"
+          test "$(python scripts/export_candidate_page.py --page 161 --count-only)" = "33"
+      - name: Commit materialized export
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/lexicon/candidates/p161_candidates.jsonl
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "data: materializar candidatos canónicos de p.161"
+          git push
