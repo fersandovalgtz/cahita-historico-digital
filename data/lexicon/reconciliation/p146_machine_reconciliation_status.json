@@ -3,9 +3,10 @@
   "sourcePageDigital": 146,
   "pageStatus": {
     "candidateReconciliation": "complete",
-    "visibleStartCensus": "known_minimum_not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
+    "visibleStartCensus": "exhaustive_direct_local_facsimile",
+    "promotionLinkage": "complete",
+    "structuralClosure": true,
+    "technicalClosure": true,
     "humanVerificationPlanned": false
   },
   "candidateInventory": {
@@ -28,77 +29,83 @@
       "not_applicable": 2
     }
   },
-  "selectedLayer": {
-    "preExistingArticles": 25,
-    "articleIdRange": ["ALC1737-art-000184", "ALC1737-art-000208"],
-    "candidateRecordsLinked": 23,
-    "structuredArticlesLinkedFromCandidates": 24,
-    "selectedArticlesRepresentedAsKnownMissedStarts": 2,
-    "note": "ALC1737-art-000193 is both linked through merged candidate L-008 and registered as a missed internal start; ALC1737-art-000184 is a top-edge miss without a containing candidate."
+  "linkage": {
+    "articleCandidateRecordsLinked": 45,
+    "structuredArticlesLinkedFromCandidateRecords": 46,
+    "missedStartRecordsLinked": 2,
+    "articleCandidatesPendingPromotion": 0,
+    "unresolvedCandidateBoundaries": 0
   },
-  "promotion": {
-    "articleCandidatesPendingPromotion": 22,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
+  "curation": {
+    "preExistingStructuredArticlesOnPage": 25,
+    "newPromotionsThisPass": 22,
+    "structuredVisibleStartsAfterPass": 47,
+    "newArticleIdRange": "ALC1737-art-001075--ALC1737-art-001096",
+    "corpusTotalAfterPass": 1096
   },
   "visibleStartEvidence": {
-    "exhaustive": false,
+    "exhaustive": true,
+    "visibleHistoricalArticleStarts": 47,
     "knownVisibleStartsMinimum": 47,
+    "truePositiveCandidateStarts": 45,
+    "falsePositiveCandidateStarts": 0,
+    "falseNegativeVisibleStarts": 2,
     "knownMissedStartRecords": 2,
-    "knownMissedStartIds": ["ALC1737-miss-p146-L-001", "ALC1737-miss-p146-L-002"],
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "All 47 canonical candidates are structurally classified, but without a direct full-page facsimile census this pass cannot prove that the two demonstrated missed starts are the only false negatives. Metrics are therefore withheld rather than treating a known minimum as an exhaustive denominator."
+    "knownMissedStartIds": [
+      "ALC1737-miss-p146-L-001",
+      "ALC1737-miss-p146-L-002"
+    ],
+    "precision": 1.0,
+    "recall": 0.957447,
+    "f1": 0.978261,
+    "countingNote": "Direct full-page facsimile census demonstrates exactly 47 lexical starts: 45 represented by article-class canonical candidate starts plus two detector false negatives already present in the selected layer."
   },
   "physicalContinuities": [
     {
       "from": "ALC1737-vcand-p146-R-023",
       "to": "ALC1737-vcand-p146-R-024",
+      "articleId": "ALC1737-art-001095",
       "type": "article_form_continuation",
       "note": "R-024 continues the article begun at R-023."
     },
     {
       "from": "ALC1737-vcand-p146-R-025",
       "to": "ALC1737-vcand-p146-R-026",
+      "articleId": "ALC1737-art-001096",
       "type": "article_microstructure_continuation",
       "note": "R-026 begins with continuation material from R-025."
     },
     {
-      "from": "ALC1737-vcand-p146-R-026",
-      "to": "ALC1737-vcand-p147-L-001",
-      "type": "catchword_to_next_page",
-      "note": "Final `Bebida` on p.146 anticipates p.147 L-001 `Bebida de chía, y maíz toſtado`; it is not counted as a new p.146 article."
+      "from": "p146:right:bottom-catchword",
+      "to": "p147:left:opening",
+      "type": "catchword_to_distinct_next_article",
+      "note": "Final `Bebida` anticipates the distinct p.147 opening `Bebida de chia, y maíz toſtado`; the catchword is paratext, not a p.146 lexical start."
     }
   ],
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
-    "selectedP146LayerUsedAsAnchor": true,
-    "p147OpeningInspectedFromCanonicalInventory": true,
-    "directFacsimileAvailableThisPass": false,
-    "recoveredPrimaryOcr": {
-      "available": true,
-      "provider": "Internet Archive",
+    "directLocalFacsimileAvailableThisPass": true,
+    "primaryWitness": {
       "identifier": "artedelalenguaca00gonz",
-      "derivative": "artedelalenguaca00gonz_djvu.txt",
-      "use": "same-witness guide/form triage only; not treated as facsimile-level transcription authority"
+      "localFile": "Cahíta.pdf",
+      "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+      "pdfPageCount": 182,
+      "pageRenderSha256": "670cc07acae1acf45b49f0b82e68b241483d5b17b6606ca4942368de0cec7361"
     },
-    "bue1890SecondaryControl": {
-      "available": true,
-      "sourceMetadata": "data/source/control/bue1890.json",
-      "use": "secondary corroboration and divergence detection only; never substitutes for ALC1737"
-    },
-    "controlEvidenceRecord": "p146_control_evidence_2026-08-17.json",
-    "phase2PromotionQueue": "p146_phase2_promotion_queue_2026-08-17.json",
-    "policy": "Structural decisions may be closed from convergent machine evidence; textual promotions remain pending where direct ALC1737 facsimile recollation is unavailable."
+    "localFacsimileClosureRecord": "p146_local_facsimile_closure_2026-08-17.json",
+    "missedStartRecord": "p146_missed_visible_starts.jsonl",
+    "promotionBatch": "data/lexicon/articles/p146_promotions_phase2_a.jsonl",
+    "p147OpeningCheckedDirectly": true,
+    "secondaryControlPolicy": "BUE1890 remains secondary-only and supplies no ALC1737 reading in this pass."
   },
   "resolvedThisPass": [
-    "All 22 pending_promotion candidates on p.146 now have explicit primary-OCR/secondary-control triage.",
-    "Seven candidates are prioritized as high-yield direct-facsimile targets because primary OCR and BUE1890 control nearly converge.",
-    "No lexical article is promoted from OCR/control agreement alone; all 22 remain pending until the ALC1737 witness supports a sufficiently stable direct reading."
+    "All 22 formerly pending candidate-level promotions are now linked to ALC1737 lexical objects from direct same-witness facsimile evidence.",
+    "The two previously known detector misses are confirmed exhaustive through a full-page 47-start visual census.",
+    "R-023/R-024 and R-025/R-026 are reconstructed as two single historical articles spanning candidate segmentation boundaries.",
+    "The final p.146 `Bebida` is confirmed as a catchword by direct comparison with the distinct p.147 opening article."
   ],
-  "authorityNote": "P.146 retains complete candidate-level structural reconciliation and now has a complete Phase II promotion triage for all 22 pending candidates. The triage improves prioritization but does not strengthen any transcription: direct facsimile recollation remains required for promotion, the visible-start census remains non-exhaustive, and humanVerified remains false.",
+  "authorityNote": "P.146 is technically closed through exhaustive AI-assisted direct collation of the locally supplied ALC1737 facsimile. Closure is structural/editorial at machine_corrected_unverified authority: humanVerified remains false, and existing selected-layer objects are not silently upgraded to human authority.",
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
 }
