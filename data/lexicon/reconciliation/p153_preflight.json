@@ -1,0 +1,88 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 153,
+  "stage": "preflight",
+  "candidateInventory": {
+    "method": "hybrid_margin_mode_v0.2",
+    "total": 51,
+    "left": 25,
+    "right": 26,
+    "canonicalInventoryTotal": 2072,
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p153_selected_articles.jsonl",
+    "articleCount": 15,
+    "articleIdRange": ["ALC1737-art-000299", "ALC1737-art-000313"],
+    "columnCounts": {"left": 10, "right": 5},
+    "exhaustive": false,
+    "reviewStatus": "machine_corrected_unverified",
+    "humanVerified": false
+  },
+  "crossPageContext": {
+    "fromPage152": "p152 R-024 begins `Cuñado de muger...`; p153 L-001 begins the fresh selected article `Cuñado de hombre. Mocari.` No long p152→p153 continuation is asserted.",
+    "firstArticleCandidate": "ALC1737-vcand-p153-L-001",
+    "firstSelectedArticle": "ALC1737-art-000299",
+    "toPage154": "p153 R-026 begins `Delatar...` and carries trailing `Desbat-` page-edge/catchword material. p154 L-001 begins fresh `Desbaſtar madera. Atapetia.`; no long p153→p154 continuation is asserted."
+  },
+  "selectedAnchors": [
+    {"candidateId":"ALC1737-vcand-p153-L-001","linkedArticleIds":["ALC1737-art-000299"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p153-L-002","linkedArticleIds":["ALC1737-art-000300"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p153-L-004","linkedArticleIds":["ALC1737-art-000301"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p153-L-005","linkedArticleIds":["ALC1737-art-000302","ALC1737-art-000303"],"assessment":"probable_merged_articles","note":"Candidate L-005 absorbs selected `Zambullir à otro. Aroptitua.` and `Zarcillo. Erepa.`."},
+    {"candidateId":"ALC1737-vcand-p153-L-008","linkedArticleIds":["ALC1737-art-000304"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p153-L-009","linkedArticleIds":["ALC1737-art-000305"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p153-L-015","linkedArticleIds":["ALC1737-art-000306"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p153-L-020","linkedArticleIds":["ALC1737-art-000307"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p153-L-021","linkedArticleIds":["ALC1737-art-000308"],"assessment":"probable_exact_anchor"},
+    {"candidateId":null,"linkedArticleIds":["ALC1737-art-000309"],"assessment":"demonstrated_top_right_false_negative","note":"Selected start `Dar. Amaca.` occurs before the first canonical right-column candidate."},
+    {"candidateId":"ALC1737-vcand-p153-R-001","linkedArticleIds":["ALC1737-art-000310"],"assessment":"continuation_of_demonstrated_false_negative","note":"R-001 preserves only `Tebec. amaca.`, the Cahíta form of selected `Dar coſas largas como palo`; the article start itself is absent from the candidate inventory."},
+    {"candidateId":"ALC1737-vcand-p153-R-002","linkedArticleIds":["ALC1737-art-000311"],"assessment":"probable_article_split_by_damaged_following_candidate"},
+    {"candidateId":"ALC1737-vcand-p153-R-007","linkedArticleIds":["ALC1737-art-000312"],"assessment":"probable_exact_anchor"},
+    {"candidateId":"ALC1737-vcand-p153-R-017","linkedArticleIds":["ALC1737-art-000313"],"assessment":"probable_exact_anchor"}
+  ],
+  "knownMissedStarts": [
+    {
+      "linkedArticleId": "ALC1737-art-000309",
+      "visibleStartRaw": "Dar. Amaca.",
+      "missType": "page_or_column_edge"
+    },
+    {
+      "linkedArticleId": "ALC1737-art-000310",
+      "visibleStartRaw": "Dar coſas largas como palo. Tebec amaca.",
+      "missType": "page_or_column_edge"
+    }
+  ],
+  "structuralSignals": {
+    "mergedCandidateId": "ALC1737-vcand-p153-L-005",
+    "topRightContinuationCandidate": "ALC1737-vcand-p153-R-001",
+    "ambiguousRightRegion": [
+      "ALC1737-vcand-p153-R-003",
+      "ALC1737-vcand-p153-R-004",
+      "ALC1737-vcand-p153-R-005",
+      "ALC1737-vcand-p153-R-006"
+    ],
+    "pageEdgeCatchwordCandidate": "ALC1737-vcand-p153-R-026"
+  },
+  "evidenceLimits": {
+    "fullCandidateRecordsInspectedInThisPass": true,
+    "directFacsimileInspectedInThisPass": false,
+    "selectedLayerTreatedAsCoverageExpectation": false,
+    "metricsAllowed": false,
+    "reason": "Two selected starts are demonstrated false negatives at the top of the right column, while R-003–R-006 contain damaged/interleaved OCR that does not support confident microsegmentation. The selected layer remains non-exhaustive; no full visible-start denominator or performance metric is asserted."
+  },
+  "policy": {
+    "independentHumanVerificationPlanned": false,
+    "humanVerified": false,
+    "operationalReviewStates": ["machine_corrected_unverified", "unresolved"],
+    "rule": "Demonstrated selected starts outside the candidate inventory are recorded explicitly as misses; ambiguous OCR regions remain unresolved rather than being normalized into speculative articles or continuations."
+  },
+  "pageStatus": {
+    "preflight": "complete",
+    "candidateReconciliation": "ready_for_full_page",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial_anchor_layer_only",
+    "technicalClosure": false
+  },
+  "nextAction": "Classify all 51 candidates, create a known-missed-start layer for selected articles 000309 and 000310, preserve R-001 as continuation of 000310, keep R-003–R-006 unresolved where evidence is interleaved, model L-005 as merged_articles and R-026 as an article with trailing `Desbat-` catchword/page-edge material, and withhold metrics until an exhaustive visible-start census exists."
+}
