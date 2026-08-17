@@ -1,0 +1,95 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 148,
+  "pageStatus": {
+    "candidateReconciliation": "complete",
+    "visibleStartCensus": "not_exhaustive",
+    "promotionLinkage": "partial",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "candidateInventory": {
+    "total": 44,
+    "left": 23,
+    "right": 21,
+    "classification": {
+      "article": 44,
+      "continuation": 0,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 41,
+      "undersegmented": 3,
+      "merged_articles": 0,
+      "oversegmented": 0,
+      "ambiguous": 0,
+      "not_applicable": 0
+    }
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000224",
+      "ALC1737-art-000238"
+    ],
+    "candidateRecordsLinked": 15,
+    "structuredArticlesLinkedFromCandidates": 15,
+    "selectedArticlesUnlinked": 0,
+    "correctedColumnMetadataArticleIds": [
+      "ALC1737-art-000231",
+      "ALC1737-art-000232",
+      "ALC1737-art-000233",
+      "ALC1737-art-000234",
+      "ALC1737-art-000235"
+    ],
+    "columnCountsAfterCorrection": {
+      "left": 12,
+      "right": 3
+    }
+  },
+  "promotion": {
+    "articleCandidatesPendingPromotion": 29,
+    "newPromotionsThisPass": 0,
+    "corpusTotalAfterPass": 1045
+  },
+  "visibleStartEvidence": {
+    "exhaustive": false,
+    "knownVisibleStartsMinimum": 44,
+    "knownMissedStartRecords": 0,
+    "precision": null,
+    "recall": null,
+    "f1": null,
+    "reasonMetricsWithheld": "All 44 candidates are classified and all 15 selected anchors align, but the selected layer cannot establish that no additional visible starts were missed. Metrics are withheld without a full-page visible-start census."
+  },
+  "physicalContinuities": [
+    {
+      "from": "ALC1737-vcand-p147-R-025",
+      "to": "ALC1737-vcand-p148-L-001",
+      "type": "catchword_to_article",
+      "note": "The damaged p147 catchword anticipates selected p148 L-001 `Bruñidor`; L-001 is a fresh article."
+    },
+    {
+      "from": "ALC1737-vcand-p148-R-021",
+      "to": "ALC1737-vcand-p149-L-001",
+      "type": "article_with_trailing_catchword",
+      "note": "R-021 starts `Calabaza generalmente`; trailing `Cala-` anticipates the fresh p149 article `Calabaza pequeña tierna` (selected 000239), whose form is split across p149 L-001/L-002 candidate geometry."
+    }
+  ],
+  "metadataCorrections": {
+    "count": 5,
+    "path": "data/lexicon/provenance/p148_column_metadata_corrections.jsonl",
+    "scope": "column/provenance only; lexical transcription unchanged"
+  },
+  "evidence": {
+    "canonicalCandidateInventoryVerified": true,
+    "canonicalCandidateInventoryCount": 2072,
+    "selectedP148LayerUsedAsAnchor": true,
+    "p149OpeningAndSelectedLayerUsedForPageEdge": true,
+    "directFacsimileAvailableThisPass": false,
+    "policy": "Structural and spatial metadata decisions may be corrected from convergent machine evidence; uncertain lexical text remains unstrengthened."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
