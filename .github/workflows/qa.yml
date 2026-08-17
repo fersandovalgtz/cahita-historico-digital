@@ -1,4 +1,4 @@
-name: CHD p160 count
+name: CHD p159 synchronize docs
 
 on:
   push:
@@ -8,20 +8,31 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  count:
+  synchronize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Count canonical p160 candidates
+      - name: Synchronize p159 docs
+        run: python scripts/_tmp_sync_p159.py
+      - name: Validate p159 evidence
         run: |
-          python scripts/export_candidate_page.py --page 160 --count-only
-          echo LEFT
-          python scripts/export_candidate_page.py --page 160 --column left --count-only
-          echo RIGHT
-          python scripts/export_candidate_page.py --page 160 --column right --count-only
+          python -m pip install -r requirements-dev.txt
+          python scripts/reconstruct_candidate_inventory.py
+          python scripts/validate_lexicon_ids.py
+          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p159_left_reconciliation.jsonl
+          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p159_right_reconciliation.jsonl
+          python -m json.tool data/lexicon/reconciliation/p159_machine_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p159_preflight.json >/dev/null
+      - name: Commit synchronized documentation
+        run: |
+          git config user.name 'Fernando Sandoval'
+          git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
+          git add README.md docs/LEXICON_PROGRESS.md
+          git commit -m 'docs: cerrar reconciliación conservadora de p.159' -m 'Registra 49 article, 3 continuation, 34 pending_promotion y tres discrepancias de columna; fija p.160 (45 candidatos) como siguiente frente.'
+          git push origin HEAD:work/p159-reconciliation
