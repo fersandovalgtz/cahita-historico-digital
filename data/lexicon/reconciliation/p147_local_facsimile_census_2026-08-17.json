@@ -1,0 +1,63 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 147,
+  "date": "2026-08-17",
+  "evidencePass": "local_primary_facsimile_exhaustive_visible_start_census",
+  "primaryWitness": {
+    "localFileName": "Cahíta.pdf",
+    "internetArchiveIdentifier": "artedelalenguaca00gonz",
+    "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "pdfPageCount": 182,
+    "pageRenderSha256": "8757c7ad99b5ce69e882fc4e1bb431790c5516421d3221c10a79c4985843cfdb",
+    "authority": "primary_same_witness",
+    "use": "direct full-page visual census of lexical starts and page-edge materiality"
+  },
+  "visibleStartCensus": {
+    "exhaustive": true,
+    "visibleHistoricalArticleStarts": 55,
+    "canonicalArticleCandidateStarts": 51,
+    "falsePositiveCandidateStarts": 0,
+    "falseNegativeVisibleStarts": 4,
+    "precision": 1.0,
+    "recall": 0.927273,
+    "f1": 0.962264,
+    "missedStartFile": "data/lexicon/reconciliation/p147_missed_visible_starts.jsonl",
+    "missedStartIds": [
+      "ALC1737-miss-p147-L-001",
+      "ALC1737-miss-p147-L-002",
+      "ALC1737-miss-p147-R-001",
+      "ALC1737-miss-p147-R-002"
+    ],
+    "note": "The four false negatives are two left-column starts (`Bledos otros tardios`, `Bledos colorados`) and two right-column starts (`Braza. Buſca aſqua`, `Braſil. Huebaco`). They are recorded separately from the 36 candidate-level pending promotions."
+  },
+  "pageEdges": [
+    {
+      "location": "right_column_top",
+      "reading": "Aropetua.",
+      "classification": "continuation_of_left_column_final_article",
+      "articleGuide": "Bolver lo de dentro à fuera",
+      "countedAsVisibleStart": false
+    },
+    {
+      "location": "right_column_bottom",
+      "reading": "Bruñi-",
+      "classification": "catchword_to_next_page",
+      "countedAsVisibleStart": false,
+      "note": "Direct p.148 context identifies the catchword as anticipating `Bruñidor`; it is not a second p.147 article."
+    }
+  ],
+  "openTextualWorkAfterCensus": {
+    "candidateLevelPendingPromotion": 36,
+    "missedVisibleStartsPendingPromotion": 4,
+    "knownUnstructuredVisibleStarts": 40,
+    "technicalClosure": false
+  },
+  "authorityGuards": [
+    "This pass strengthens the page-level denominator and detector metrics but does not promote the 40 currently unstructured visible starts.",
+    "No BUE1890 reading is substituted for ALC1737.",
+    "humanVerified remains false; direct AI-assisted visual collation is recorded as machine_corrected_unverified authority.",
+    "The 36 candidate-level pending promotions and 4 missed starts are distinct work classes and are not conflated."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
