@@ -14,7 +14,7 @@
     "observedRegionAnchors": {
       "openingContext": "Atormentar continuation at the p.144→145 transition",
       "closingContext": "Bagre followed by a damaged lower-right continuation/start region",
-      "representativeGuideReadings": [
+      "normalizedEvidenceLabels": [
         "Atole bebida de indias",
         "Aves/Ave sequence",
         "Avecindarse",
@@ -36,7 +36,8 @@
         "Bazo parte interior",
         "Bagre"
       ],
-      "caution": "These readings are anchors for structural reconciliation. Historical spelling and Cahita forms must come from direct witness collation or remain unresolved; modernized wording in this evidence summary is not canonical transcription."
+      "labelStatus": "normalized_noncanonical_navigation_only",
+      "caution": "These labels are navigation anchors for structural reconciliation, not diplomatic transcription. Historical spelling and Cahita forms must come from direct witness collation or remain unresolved."
     },
     "observations": [
       {
