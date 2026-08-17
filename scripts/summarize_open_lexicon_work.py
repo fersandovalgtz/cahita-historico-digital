@@ -180,7 +180,7 @@ def main() -> None:
     args = parser.parse_args()
 
     summary = build_summary(args.start, args.end)
-    payload = json.dumps(summary, ensure_ascii=False, indent=2) + "\n"
+    payload = json.dumps(summary, ensure_ascii=False, separators=(",", ":")) + "\n"
     if args.output:
         output = args.output if args.output.is_absolute() else ROOT / args.output
         output.parent.mkdir(parents=True, exist_ok=True)
