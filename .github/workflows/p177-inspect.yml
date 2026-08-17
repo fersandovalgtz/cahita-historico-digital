@@ -1,4 +1,4 @@
-name: CHD p177 inspection
+name: CHD p177 targeted inspection
 
 on:
   push:
@@ -18,37 +18,21 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Inspect p177 and terminal edge
+      - name: Inspect terminal p177 regions
         run: |
           python scripts/export_candidate_page.py --page 177 > /tmp/p177.jsonl
           python - <<'PY'
-          import json,re,unicodedata,subprocess
+          import json
           from pathlib import Path
-          from difflib import SequenceMatcher
-          def norm(s):
-              s=unicodedata.normalize('NFKD',s.lower().replace('ſ','s'))
-              s=''.join(c for c in s if not unicodedata.combining(c))
-              return re.sub(r'[^a-z0-9]+',' ',s).strip()
           rows=[json.loads(x) for x in Path('/tmp/p177.jsonl').read_text().splitlines() if x.strip()]
-          print('P177',len(rows),'L',sum(x['column']=='left' for x in rows),'R',sum(x['column']=='right' for x in rows))
-          for x in rows: print(x['candidateId'],'::',x['rawText'])
+          by={r['candidateId']:r for r in rows}
+          ids=[f'ALC1737-vcand-p177-{x}' for x in ['L-008','L-014','L-015','L-029','R-008','R-018','R-019','R-028']]
+          for cid in ids:
+              r=by[cid]
+              print('CAND',cid,'startY=',r.get('startY'),'flags=',r.get('flags'))
+              for i,line in enumerate(r.get('rawLines',[]),1): print(' ',i,repr(line))
           arts=[json.loads(x) for x in Path('data/lexicon/articles/p177_selected_articles.jsonl').read_text().splitlines() if x.strip()]
+          print('SELECTED-667')
           for a in arts:
-              q=norm(a['spanishGuideRaw']); scored=[]
-              for c in rows:
-                  t=norm(c['rawText']); score=SequenceMatcher(None,q,t[:max(30,len(q)*2)]).ratio()
-                  if q and q.split()[0] in t: score+=0.25
-                  scored.append((score,c['candidateId'],c['rawText']))
-              print('ANCHOR',a['articleId'],a['spanishGuideRaw'])
-              for sc,cid,raw in sorted(scored,reverse=True)[:3]: print(f'  {sc:.3f} {cid} :: {raw}')
-          p=subprocess.run(['python','scripts/export_candidate_page.py','--page','178','--count-only'],text=True,capture_output=True)
-          print('P178-CANDIDATE-COUNT rc=',p.returncode,'stdout=',repr(p.stdout),'stderr=',repr(p.stderr))
-          print('SOURCE-METADATA-HITS')
-          for path in ['data/source/pagination.json','data/source/source_manifest.json','data/source/ALC1737.json','SOURCES.md','COVERAGE.md','README.md']:
-              q=Path(path)
-              if q.exists():
-                  for i,line in enumerate(q.read_text(encoding='utf-8',errors='replace').splitlines(),1):
-                      low=line.lower()
-                      if '178' in line or 'numer' in low or 'vocabulario' in low:
-                          print(path,i,'::',line[:500])
+              if a['articleId']=='ALC1737-art-000667': print(a['articleId'],'::',a['transcriptionRaw'])
           PY
