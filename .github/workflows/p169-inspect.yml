@@ -19,7 +19,9 @@ jobs:
         with:
           python-version: '3.13'
       - name: Materialize p169 reconciliation
-        run: python scripts/_tmp_materialize_p169.py
+        run: |
+          sed -i "s/'nextPageTopSelectedMissExpected':true/'nextPageTopSelectedMissExpected':True/" scripts/_tmp_materialize_p169.py
+          python scripts/_tmp_materialize_p169.py
       - name: Validate p169 evidence
         run: |
           python -m pip install -r requirements-dev.txt
