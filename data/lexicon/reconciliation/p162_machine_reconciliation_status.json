@@ -13,18 +13,18 @@
     "left": 20,
     "right": 19,
     "classification": {
-      "article": 38,
+      "article": 39,
       "continuation": 0,
       "paratext": 0,
       "false_positive": 0,
-      "unresolved": 1
+      "unresolved": 0
     },
     "boundaryAssessment": {
       "exact": 36,
       "oversegmented": 0,
-      "undersegmented": 0,
+      "undersegmented": 2,
       "merged_articles": 1,
-      "ambiguous": 2,
+      "ambiguous": 0,
       "not_applicable": 0
     }
   },
@@ -42,19 +42,19 @@
     "selectedArticlesUnlinked": 0
   },
   "promotion": {
-    "articleCandidatesPendingPromotion": 24,
+    "articleCandidatesPendingPromotion": 25,
     "newPromotionsThisPass": 0,
     "corpusTotalAfterPass": 1045
   },
   "visibleStartEvidence": {
     "exhaustive": false,
-    "knownVisibleStartsMinimum": 39,
+    "knownVisibleStartsMinimum": 40,
     "knownMissedStartRecords": 1,
-    "unresolvedCandidateRecords": 1,
+    "unresolvedCandidateRecords": 0,
     "precision": null,
     "recall": null,
     "f1": null,
-    "reasonMetricsWithheld": "The 38 article candidates plus selected 000439 absorbed inside L-006 establish at least 39 starts. R-011 remains structurally unresolved and the selected layer is non-exhaustive; no complete denominator is asserted."
+    "reasonMetricsWithheld": "The 39 article candidates plus selected 000439 absorbed inside L-006 establish at least 40 starts, but the selected layer is non-exhaustive and damaged undersegmented groups may contain additional unanchored starts; no complete denominator is asserted."
   },
   "physicalContinuities": [
     {
@@ -65,24 +65,34 @@
     },
     {
       "from": "ALC1737-vcand-p162-R-019",
-      "to": "ALC1737-vcand-p163-L-001",
-      "type": "fresh_page_transition",
-      "note": "p162 bottom `Moverſe` is structurally distinct; p163 opens fresh `Mucho. Hibua.`."
+      "to": "ALC1737-art-000449",
+      "type": "catchword_to_fresh_next_page_article",
+      "note": "R-019 absorbs bottom catchword `Mozo`; p163 selected 000449 is fresh `Mozo de edad. Buſca mancebo.`. The first canonical p163 candidate begins in the tail `...cebo.` and then contains fresh selected 000450 `Mofar, eſcarnecer`; no p162→p163 article continuation is asserted."
     }
   ],
   "structuralNotes": [
     "L-006 is a merged region containing selected 000438 (`Melon`) and 000439 (`Memoria`).",
-    "L-020 is retained as article/ambiguous because geometry supports a start while OCR loses the guide.",
-    "R-011 remains unresolved rather than being forced into a `Miedo tener` reconstruction from its form-only `Mahahuene.` fragment."
+    "R-006 is retained undersegmented because its OCR group contains additional guide/form-like material without independent selected anchors.",
+    "R-011 is a distinct `Miedo tener. Mahabuené` article boundary, not an unresolved form-only fragment.",
+    "R-016 links selected 000448 (`Mirar. Abicha.`); R-014 is a separate `Miembro del hombre` candidate and remains pending promotion.",
+    "R-019 begins `Mirar saliendo de lo obscuro`-like material and absorbs catchword `Mozo`; the catchword anticipates a fresh p163 article rather than creating a transpage continuation."
   ],
+  "nextPage": {
+    "sourcePageDigital": 163,
+    "firstSelectedArticle": "ALC1737-art-000449",
+    "firstSelectedOpening": "Mozo de edad. Buſca mancebo.",
+    "firstCanonicalCandidate": "ALC1737-vcand-p163-L-001",
+    "firstCanonicalCandidateRaw": "cebo. Mofar, eſcarnecer.",
+    "edgeInterpretation": "fresh selected page-opening article partly missed by canonical boundary extraction"
+  },
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
     "selectedP162LayerUsedAsAnchor": true,
     "p161ReconciliationUsedForOpeningEdge": true,
-    "p163CanonicalOpeningUsedForLowerEdge": true,
+    "p163CanonicalCandidatesAndSelectedLayerUsedForLowerEdge": true,
     "directFacsimileAvailableThisPass": false,
-    "policy": "Selected direct collations support demonstrated starts and the one known missed start. Form-only unresolved material is not assigned to a hypothetical guide; metrics stay withheld without exhaustive census."
+    "policy": "Selected direct collations support demonstrated starts and the one known missed start. Damaged undersegmented groups are not split without independent anchors; metrics stay withheld without exhaustive census."
   },
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
