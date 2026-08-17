@@ -1,0 +1,34 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 149,
+  "recordType": "phase_ii_local_primary_facsimile_preflight",
+  "recordedAt": "2026-08-17",
+  "primaryWitness": {
+    "localFileName": "Cahíta.pdf",
+    "internetArchiveIdentifier": "artedelalenguaca00gonz",
+    "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "pdfPageCount": 182,
+    "pageRenderSha256": "c853bbeebe721f828980da24900a376388f4d0adb0ea456063140023aad17970",
+    "renderPixels": [3863, 5413],
+    "authority": "primary_same_witness"
+  },
+  "openWork": {
+    "candidatePendingPromotions": 41,
+    "leftPending": 17,
+    "rightPending": 24,
+    "visibleStartCensusExhaustive": false,
+    "technicalClosure": false
+  },
+  "decisions": [
+    "The local ALC1737 facsimile is now available for direct p.149 collation, eliminating the previous OCR-only evidence constraint.",
+    "No p.149 lexical reading is strengthened in this preflight record; the 41 existing pending candidates remain pending until direct article-level collation.",
+    "The next pass will combine exhaustive visible-start census with promotion/linkage, preserving damaged or opaque source surface as unresolved rather than conjecturally emending it."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "derivedFrom": ["p149_left_reconciliation.jsonl", "p149_right_reconciliation.jsonl", "p149_machine_reconciliation_status.json"],
+    "method": "Direct local same-witness facsimile availability preflight and exact pending-scope inventory; no lexical promotion and no human verification."
+  }
+}
