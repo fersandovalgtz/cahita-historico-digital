@@ -1,0 +1,60 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 177,
+  "stage": "preflight_complete",
+  "candidateInventory": {
+    "total": 57,
+    "left": 29,
+    "right": 28
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000659",
+      "ALC1737-art-000673"
+    ],
+    "nonExhaustive": true,
+    "humanVerified": false
+  },
+  "openingEdge": {
+    "previousPage": 176,
+    "interpretation": "fresh_page_transition_after_catchword",
+    "firstCanonicalCandidate": "ALC1737-vcand-p177-L-001",
+    "firstSelectedArticle": "ALC1737-art-000659"
+  },
+  "workingHypothesis": {
+    "article": 57,
+    "continuation": 0,
+    "knownMissedSelectedStarts": [],
+    "mergedCandidateRegions": [
+      "ALC1737-vcand-p177-L-008",
+      "ALC1737-vcand-p177-L-029"
+    ],
+    "ambiguousCandidateRegions": [
+      "ALC1737-vcand-p177-L-014",
+      "ALC1737-vcand-p177-R-019"
+    ],
+    "undersegmentedRegions": [
+      "ALC1737-vcand-p177-R-008",
+      "ALC1737-vcand-p177-R-028"
+    ]
+  },
+  "terminalEdge": {
+    "nextDigitalPage": 178,
+    "lexiconCandidateCount": 0,
+    "nextSection": "historical numeral system",
+    "nextSectionPages": [
+      178,
+      179,
+      180
+    ],
+    "interpretation": "section_boundary_no_lexical_continuation"
+  },
+  "evidenceLimits": {
+    "directFacsimileInspectedThisPass": false,
+    "selectedLayerNotCoverageExpectation": true,
+    "metricsAllowed": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
