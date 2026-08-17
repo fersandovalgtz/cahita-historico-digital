@@ -3,7 +3,8 @@
 
 The script is intentionally read-only with respect to canonical and curatorial data.
 It derives a compact, machine-readable Phase II baseline from each page's
-`pNNN_machine_reconciliation_status.json` record.
+`pNNN_machine_reconciliation_status.json` record and independently counts the
+current set of unique curatorial article IDs from `data/lexicon/articles/*.jsonl`.
 """
 
 from __future__ import annotations
@@ -16,6 +17,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 RECON = ROOT / "data" / "lexicon" / "reconciliation"
+ARTICLES = ROOT / "data" / "lexicon" / "articles"
 
 
 def _get(d: dict[str, Any], *paths: tuple[str, ...], default: Any = None) -> Any:
@@ -30,6 +32,22 @@ def _get(d: dict[str, Any], *paths: tuple[str, ...], default: Any = None) -> Any
         if ok:
             return cur
     return default
+
+
+def current_curatorial_article_ids() -> set[str]:
+    ids: set[str] = set()
+    for path in sorted(ARTICLES.glob("*.jsonl")):
+        for lineno, line in enumerate(path.read_text(encoding="utf-8").splitlines(), start=1):
+            if not line.strip():
+                continue
+            obj = json.loads(line)
+            article_id = obj.get("articleId")
+            if not article_id:
+                raise ValueError(f"missing articleId in {path}:{lineno}")
+            if article_id in ids:
+                raise ValueError(f"duplicate articleId across curatorial files: {article_id}")
+            ids.add(article_id)
+    return ids
 
 
 def page_record(page: int) -> dict[str, Any]:
@@ -97,6 +115,7 @@ def build_summary(start: int = 145, end: int = 177) -> dict[str, Any]:
     pending_total = sum(p["pendingPromotion"] for p in pages)
     unresolved_total = sum(p["unresolvedCandidates"] for p in pages)
     ambiguous_total = sum(p["ambiguousBoundaries"] for p in pages)
+    article_ids = current_curatorial_article_ids()
 
     unresolved_pages = [
         {
@@ -116,13 +135,18 @@ def build_summary(start: int = 145, end: int = 177) -> dict[str, Any]:
         key=lambda x: (-x["pendingPromotion"], x["page"]),
     )
 
-    corpus_totals = {p["corpusTotalAfterPass"] for p in pages if p["corpusTotalAfterPass"] is not None}
+    historical_corpus_totals = {
+        p["corpusTotalAfterPass"] for p in pages if p["corpusTotalAfterPass"] is not None
+    }
 
     return {
         "sourceId": "ALC1737",
         "scope": {"startDigitalPage": start, "endDigitalPage": end},
         "phase": "phase_ii_promotion_linkage_and_visible_start_census",
-        "generatedFrom": "pNNN_machine_reconciliation_status.json",
+        "generatedFrom": [
+            "pNNN_machine_reconciliation_status.json",
+            "data/lexicon/articles/*.jsonl",
+        ],
         "summary": {
             "pages": len(pages),
             "pendingPromotionTotal": pending_total,
@@ -131,13 +155,16 @@ def build_summary(start: int = 145, end: int = 177) -> dict[str, Any]:
             "pagesWithExhaustiveVisibleStartCensus": sum(1 for p in pages if p["visibleStartCensusExhaustive"]),
             "pagesWithTechnicalClosure": sum(1 for p in pages if p["technicalClosure"]),
             "humanVerifiedPages": sum(1 for p in pages if p["humanVerified"]),
-            "corpusTotalsObserved": sorted(corpus_totals),
+            "currentCuratorialArticleCount": len(article_ids),
+            "historicalCorpusTotalsRecordedInPageStatuses": sorted(historical_corpus_totals),
         },
         "unresolvedPages": unresolved_pages,
         "pendingPromotionRanking": pending_rank,
         "pages": pages,
         "interpretiveGuards": [
             "pendingPromotion counts candidate-level article starts not yet promoted to curatorial lexical objects; it is not equivalent to missing articles without further collation.",
+            "currentCuratorialArticleCount is computed from unique articleId values across data/lexicon/articles/*.jsonl and represents the current repository state.",
+            "historicalCorpusTotalsRecordedInPageStatuses are pass-time snapshots and may legitimately differ from the current curatorial count after later promotions.",
             "unresolved candidate structure is distinct from unresolved semantic/anaphoric content inside already structured articles.",
             "visible-start metrics remain withheld where exhaustive=false.",
             "humanVerified=false is preserved as the current project policy and must not be restated as human philological verification.",
