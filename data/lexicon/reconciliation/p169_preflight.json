@@ -1,0 +1,73 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 169,
+  "stage": "preflight",
+  "candidateInventory": {
+    "total": 35,
+    "left": 19,
+    "right": 16,
+    "canonicalInventoryTotal": 2072,
+    "canonicalJsonlSha256": "f2a5b0e0319e57cc8d13c4a0eed79505d69941bf48ee993559f97b64bec8e6b3"
+  },
+  "selectedLayer": {
+    "path": "data/lexicon/articles/p169_selected_articles.jsonl",
+    "articleIdRange": ["ALC1737-art-000539", "ALC1737-art-000553"],
+    "count": 15,
+    "columnDistribution": {"left": 11, "right": 4},
+    "exhaustive": false,
+    "humanVerified": false
+  },
+  "selectedAnchorAlignmentHypothesis": [
+    {"candidateId":"ALC1737-vcand-p169-L-001","articleIds":["ALC1737-art-000539","ALC1737-art-000540","ALC1737-art-000541","ALC1737-art-000542"],"assessment":"merged_articles","note":"L-001 starts in the tail `...bajas. Buſca pedernal prieto.` of selected 000539, then visibly contains selected starts 000540 (`Piel`), 000541 (`Pino`) and 000542 (`Pinal`), plus additional unselected OCR guide units. The guide start of 000539 is above/before the canonical boundary."},
+    {"candidateId":"ALC1737-vcand-p169-L-013","articleIds":["ALC1737-art-000543"]},
+    {"candidateId":"ALC1737-vcand-p169-L-014","articleIds":["ALC1737-art-000544"]},
+    {"candidateId":"ALC1737-vcand-p169-L-015","articleIds":["ALC1737-art-000545"]},
+    {"candidateId":"ALC1737-vcand-p169-L-016","articleIds":["ALC1737-art-000546"]},
+    {"candidateId":"ALC1737-vcand-p169-L-017","articleIds":["ALC1737-art-000547"]},
+    {"candidateId":"ALC1737-vcand-p169-L-018","articleIds":["ALC1737-art-000548"],"note":"Selected 000548 (`Plato. Lo miſmo.`) remains semantically unresolved at the article layer; the physical boundary is not structurally unresolved."},
+    {"candidateId":"ALC1737-vcand-p169-L-019","articleIds":["ALC1737-art-000549"]},
+    {"candidateId":"ALC1737-vcand-p169-R-001","articleIds":["ALC1737-art-000550"]},
+    {"candidateId":"ALC1737-vcand-p169-R-002","articleIds":["ALC1737-art-000551"]},
+    {"candidateId":"ALC1737-vcand-p169-R-003","articleIds":["ALC1737-art-000552"]},
+    {"candidateId":"ALC1737-vcand-p169-R-004","articleIds":["ALC1737-art-000553"]}
+  ],
+  "structuralHypothesis": {
+    "classification": {"article": 34, "continuation": 1, "paratext": 0, "false_positive": 0, "unresolved": 0},
+    "continuities": [
+      {"from":"ALC1737-vcand-p169-L-002","to":"ALC1737-vcand-p169-L-003","note":"L-002 begins an unselected `Piſar alguna coſa`-like article whose Cahita form continues into form-only L-003 (`huotle.`)."}
+    ],
+    "knownMergedRegions": ["ALC1737-vcand-p169-L-001", "ALC1737-vcand-p169-R-009", "ALC1737-vcand-p169-R-016"],
+    "knownUndersegmentedOrReadingOrderLeakageRegions": ["ALC1737-vcand-p169-L-002", "ALC1737-vcand-p169-L-010"],
+    "ambiguousArticleBoundaries": ["ALC1737-vcand-p169-R-005"],
+    "knownSelectedMisses": [
+      {"articleId":"ALC1737-art-000539","visibleStartRaw":"Piedra de que ſe ſacan navajas. Buſca pedernal prieto.","containingCandidateId":null,"missType":"page_or_column_edge"},
+      {"articleId":"ALC1737-art-000540","visibleStartRaw":"Piel. Buſca pelo.","containingCandidateId":"ALC1737-vcand-p169-L-001","missType":"inside_candidate_group"},
+      {"articleId":"ALC1737-art-000541","visibleStartRaw":"Pino. Huoco.","containingCandidateId":"ALC1737-vcand-p169-L-001","missType":"inside_candidate_group"},
+      {"articleId":"ALC1737-art-000542","visibleStartRaw":"Pinal. Huocoburii.","containingCandidateId":"ALC1737-vcand-p169-L-001","missType":"inside_candidate_group"}
+    ],
+    "minimumVisibleStartsAccounting": {
+      "knownMinimum": 37,
+      "rationale": "There are 34 article-classified candidate regions. L-001 is not an independent fresh boundary: it opens in the tail of 000539 and contains three additional selected starts. The four selected starts 000539–000542 replace, rather than simply add to, the single L-001 region for minimum-start accounting: 33 other article regions + 4 selected starts = 37. OCR-only additional starts inside L-001/R-009/R-016 are not counted without independent selected/direct-collation anchors."
+    }
+  },
+  "pageEdges": {
+    "fromPrevious": {"status":"fresh_article_start_missed_at_page_edge","note":"p168 R-018 ends with `Pie-` catchword-like material. P169 selected 000539 is a fresh `Piedra...` article whose guide start is missed; canonical L-001 begins only in its tail. No p168→p169 lexical continuation is asserted."},
+    "toNext": {"status":"fresh_page_transition_with_next_page_top_miss","lastCandidate":"ALC1737-vcand-p169-R-016","nextPage":170,"nextPageCandidateInventory":{"total":48,"left":26,"right":22},"nextFirstSelectedArticle":"ALC1737-art-000554","nextFirstSelectedOpening":"Por donde? Hacumbichaca?","nextFirstCandidate":"ALC1737-vcand-p170-L-001","nextFirstCandidateOpening":"Porqué? Hita bechibuo?","note":"P169 R-016 ends with several `Por...` entries including `Por ventura`; p170 selected 000554 (`Por donde?`) is a fresh top-of-page article without its own canonical candidate, while p170 L-001 begins selected 000555 (`Porqué?`). No long continuation from p169 is asserted."}
+  },
+  "evidenceLimits": {
+    "directFacsimileInspectedThisPass": false,
+    "selectedLayerIsCoverageExpectation": false,
+    "ocrOnlyInternalUnitsPromotable": false,
+    "metricsAllowed": false,
+    "reasonMetricsWithheld": "The selected layer is non-exhaustive and several large merged OCR groups contain additional unanchored guide-like units; a complete visible-start denominator is not established."
+  },
+  "pageStatus": {
+    "candidateReconciliation": "preflight_complete_pending_materialization",
+    "visibleStartCensus": "known_misses_only_not_exhaustive",
+    "promotionLinkage": "partial_anchor_hypothesis",
+    "technicalClosure": false,
+    "humanVerificationPlanned": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
