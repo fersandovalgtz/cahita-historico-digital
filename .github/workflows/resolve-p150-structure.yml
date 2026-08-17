@@ -1,0 +1,124 @@
+name: Resolve p150 structure
+
+on:
+  push:
+    branches:
+      - work/p150-structural-resolution
+
+permissions:
+  contents: write
+
+jobs:
+  resolve:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply conservative structural resolution
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          right_path = Path('data/lexicon/reconciliation/p150_right_reconciliation.jsonl')
+          rows = [json.loads(line) for line in right_path.read_text(encoding='utf-8').splitlines() if line.strip()]
+          by_id = {r['candidateId']: r for r in rows}
+          r23 = by_id['ALC1737-vcand-p150-R-023']
+          r23.update({
+              'classification': 'false_positive',
+              'boundaryAssessment': 'not_applicable',
+              'linkedArticleIds': [],
+              'articleLinkStatus': 'not_applicable',
+              'editorialNote': 'Resolved as a layout/OCR false positive. R-023 is a composite candidate: fragments resembling `Bu...` and `Cunam...` duplicate left-column L-020 material in the same vertical region, while the remaining `apuna` fragment belongs structurally with the neighboring `Colmar` region represented by R-024. No independent lexical start is asserted.',
+              'reviewStatus': 'machine_corrected_unverified',
+              'humanVerified': False,
+          })
+          r23.pop('continuationType', None)
+          r23['provenance'] = {
+              'derivedFrom': 'materialized canonical p150 candidate inventory; p150 left/right reconciliation context; BUE1890 secondary sequence control; p150 structural resolution record',
+              'agent': 'GPT-5.6 Sol machine reconciliation',
+              'method': 'Convergent structural reconciliation of cross-column OCR bleed and neighboring Colmar material; no human verification and no lexical-form promotion',
+              'processedAt': None,
+          }
+          right_path.write_text('\n'.join(json.dumps(r, ensure_ascii=False, separators=(',', ':')) for r in rows) + '\n', encoding='utf-8')
+
+          status_path = Path('data/lexicon/reconciliation/p150_machine_reconciliation_status.json')
+          status = json.loads(status_path.read_text(encoding='utf-8'))
+          status['pageStatus']['candidateReconciliation'] = 'complete'
+          status['pageStatus']['technicalClosure'] = False
+          status['candidateInventory']['classification'].update({'article': 55, 'continuation': 0, 'false_positive': 1, 'unresolved': 0})
+          if 'paratext' not in status['candidateInventory']['classification']:
+              status['candidateInventory']['classification']['paratext'] = 0
+          status['candidateInventory']['boundaryAssessment'].update({'exact': 54, 'undersegmented': 1, 'not_applicable': 1, 'ambiguous': 0})
+          status['promotion']['articleCandidatesPendingPromotion'] = 40
+          status['promotion']['newPromotionsThisPass'] = 0
+          status['promotion']['corpusTotalAfterPass'] = 1045
+          status['visibleStartEvidence']['knownVisibleStartsMinimum'] = 55
+          status['visibleStartEvidence']['reasonMetricsWithheld'] = 'Candidate reconciliation now contains 55 article starts and one demonstrated cross-column/layout false positive with zero unresolved candidate boundaries. The selected anchor layer remains non-exhaustive and cannot prove absence of additional missed starts; no performance denominator is asserted.'
+          status['unresolvedNotes'] = [
+              x for x in status.get('unresolvedNotes', []) if not x.startswith('R-023')
+          ]
+          status['evidence']['structuralResolutionRecord'] = 'p150_structural_resolution_2026-08-17.json'
+          status['evidence']['materializedCandidateView'] = 'data/lexicon/candidates/p150_candidates.jsonl'
+          status['evidence']['crossColumnBleedResolved'] = True
+          status['evidence']['bue1890SecondarySequenceControlUsed'] = True
+          status['evidence']['policy'] = 'Candidate-level structure may be resolved from convergent canonical geometry, duplicated cross-column OCR fragments and explicit secondary sequence control. Uncertain lexical text is not strengthened or promoted, and the visible-start census remains non-exhaustive.'
+          status['resolvedThisPass'] = [
+              'R-023 is resolved as a false_positive layout/OCR artifact. Its `Bu...` and `Cunam...` fragments duplicate left-column L-020 material at the same vertical region, while `apuna` associates with the neighboring `Colmar` region represented by R-024 and corroborated only at sequence level by BUE1890. No ALC1737 lexical article or form is promoted from this decision.'
+          ]
+          status['reviewStatus'] = 'machine_corrected_unverified'
+          status['humanVerified'] = False
+          status_path.write_text(json.dumps(status, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          left_path = Path('data/lexicon/reconciliation/p150_left_reconciliation.jsonl')
+          all_rows = [json.loads(line) for line in left_path.read_text(encoding='utf-8').splitlines() if line.strip()] + rows
+          assert len(all_rows) == 56, len(all_rows)
+          classes = {}
+          boundaries = {}
+          for r in all_rows:
+              classes[r['classification']] = classes.get(r['classification'], 0) + 1
+              boundaries[r['boundaryAssessment']] = boundaries.get(r['boundaryAssessment'], 0) + 1
+          assert classes.get('article', 0) == 55, classes
+          assert classes.get('false_positive', 0) == 1, classes
+          assert classes.get('unresolved', 0) == 0, classes
+          assert sum(classes.values()) == 56, classes
+          assert boundaries.get('exact', 0) == 54, boundaries
+          assert boundaries.get('undersegmented', 0) == 1, boundaries
+          assert boundaries.get('not_applicable', 0) == 1, boundaries
+          assert boundaries.get('ambiguous', 0) == 0, boundaries
+          assert sum(boundaries.values()) == 56, boundaries
+          assert status['promotion']['articleCandidatesPendingPromotion'] == 40
+          assert status['promotion']['newPromotionsThisPass'] == 0
+          assert status['promotion']['corpusTotalAfterPass'] == 1045
+          assert status['visibleStartEvidence']['knownVisibleStartsMinimum'] == 55
+          assert status['visibleStartEvidence']['exhaustive'] is False
+          assert status['visibleStartEvidence']['precision'] is None
+          assert status['visibleStartEvidence']['recall'] is None
+          assert status['visibleStartEvidence']['f1'] is None
+          assert status['humanVerified'] is False
+          PY
+      - name: Run repository-native prechecks
+        run: |
+          python scripts/reconstruct_candidate_inventory.py
+          python -m json.tool data/lexicon/reconciliation/p150_machine_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p150_structural_resolution_2026-08-17.json >/dev/null
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          for path in [
+              Path('data/lexicon/reconciliation/p150_left_reconciliation.jsonl'),
+              Path('data/lexicon/reconciliation/p150_right_reconciliation.jsonl'),
+          ]:
+              for line in path.read_text(encoding='utf-8').splitlines():
+                  if line.strip():
+                      json.loads(line)
+          PY
+      - name: Commit structural reconciliation
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/lexicon/reconciliation/p150_right_reconciliation.jsonl data/lexicon/reconciliation/p150_machine_reconciliation_status.json
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "data: resolver R-023 como falso positivo de layout en p.150"
+          git push
