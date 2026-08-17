@@ -1,0 +1,55 @@
+name: Sync p150 progress
+
+on:
+  push:
+    branches:
+      - docs/p150-progress-sync
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Replace stale p150 progress section
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('docs/LEXICON_PROGRESS.md')
+          text = path.read_text(encoding='utf-8')
+          start = text.index('## Página 150 —')
+          end = text.index('## Página 151 —', start)
+          lines = [
+              '## Página 150 — reconciliación estructural completada',
+              '',
+              'La página digital **150** contiene **56 candidatos canónicos: 26 izquierda y 30 derecha**. La reconciliación machine-only queda en **55 `article` y 1 `false_positive`**, sin candidatos `continuation`, `unresolved` o `paratext`. La calidad de frontera se distribuye en **54 `exact`**, **1 `undersegmented`** y **1 `not_applicable`**; ya no queda ninguna frontera `ambiguous`.',
+              '',
+              'La capa seleccionada preexistente contiene **15 artículos `ALC1737-art-000254`–`ALC1737-art-000268`**, todos enlazados a candidatos canónicos. Las anáforas históricas `ALC1737-art-000266` (`Cobrar lo que ſe debe. Lo miſmo.`) y `ALC1737-art-000267` (`Cobre metal. Lo miſmo.`) conservan su microestructura semántica `unresolved`, aunque sus fronteras físicas estén alineadas.',
+              '',
+              'El antiguo límite estructural **R-023** quedó resuelto como **`false_positive` de OCR/layout**. La fila canónica mezcla material de ambas columnas: fragmentos `Bu...` y `Cunam...` duplican L-020 en la misma región vertical, mientras `apuna` se asocia con la región vecina `Colmar`, cuyo comienzo real está representado por R-024. BUE1890 conserva la secuencia `Colgar algo` → `Colmar` → `Comenzar` y la forma de control `Buei apuna`; esa evidencia se usa sólo para corroboración estructural y no se transfiere como lectura de ALC1737.',
+              '',
+              'Quedan **40 candidatos de artículo `pending_promotion`**. No hubo promociones nuevas y el corpus permanece en **1,045 artículos**. Se conocen al menos **55 inicios de artículo**, pero `visibleStartEvidence.exhaustive=false`: la capa seleccionada sigue sin demostrar ausencia de falsos negativos adicionales y no se calculan precisión, recall ni F1.',
+              '',
+              'L-026 inicia un artículo al pie de la columna izquierda y continúa físicamente en material no representado de la parte superior derecha antes de R-001; permanece sin promoción. R-030 inicia un artículo `Como...` pero absorbe además un `Com-` de borde/reclamo; p.151 L-001 abre un candidato fresco `Compadecerſe`, por lo que no se afirma una continuidad larga p.150→151. `p150_structural_resolution_2026-08-17.json` y `p150_machine_reconciliation_status.json` conservan el detalle, trazabilidad y guardas epistemológicas. La reconciliación candidate-level de p.150 está completa, pero `technicalClosure=false` y `humanVerified=false` porque siguen pendientes promoción/enlace y un censo visible exhaustivo.',
+              '',
+          ]
+          path.write_text(text[:start] + '\n'.join(lines) + '\n' + text[end:], encoding='utf-8')
+          PY
+      - name: Sanity check
+        run: |
+          grep -F '55 `article` y 1 `false_positive`' docs/LEXICON_PROGRESS.md
+          grep -F '40 candidatos de artículo `pending_promotion`' docs/LEXICON_PROGRESS.md
+          grep -F 'R-023' docs/LEXICON_PROGRESS.md
+          python scripts/reconstruct_candidate_inventory.py
+      - name: Commit documentation sync
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/LEXICON_PROGRESS.md
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git commit -m "docs: sincronizar estado de p.150"
+          git push
