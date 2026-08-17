@@ -77,8 +77,28 @@
     "selectedP146LayerUsedAsAnchor": true,
     "p147OpeningInspectedFromCanonicalInventory": true,
     "directFacsimileAvailableThisPass": false,
-    "policy": "Structural decisions may be closed from convergent machine evidence; textual promotions remain pending where raw OCR is not a sufficient transcription anchor."
+    "recoveredPrimaryOcr": {
+      "available": true,
+      "provider": "Internet Archive",
+      "identifier": "artedelalenguaca00gonz",
+      "derivative": "artedelalenguaca00gonz_djvu.txt",
+      "use": "same-witness guide/form triage only; not treated as facsimile-level transcription authority"
+    },
+    "bue1890SecondaryControl": {
+      "available": true,
+      "sourceMetadata": "data/source/control/bue1890.json",
+      "use": "secondary corroboration and divergence detection only; never substitutes for ALC1737"
+    },
+    "controlEvidenceRecord": "p146_control_evidence_2026-08-17.json",
+    "phase2PromotionQueue": "p146_phase2_promotion_queue_2026-08-17.json",
+    "policy": "Structural decisions may be closed from convergent machine evidence; textual promotions remain pending where direct ALC1737 facsimile recollation is unavailable."
   },
+  "resolvedThisPass": [
+    "All 22 pending_promotion candidates on p.146 now have explicit primary-OCR/secondary-control triage.",
+    "Seven candidates are prioritized as high-yield direct-facsimile targets because primary OCR and BUE1890 control nearly converge.",
+    "No lexical article is promoted from OCR/control agreement alone; all 22 remain pending until the ALC1737 witness supports a sufficiently stable direct reading."
+  ],
+  "authorityNote": "P.146 retains complete candidate-level structural reconciliation and now has a complete Phase II promotion triage for all 22 pending candidates. The triage improves prioritization but does not strengthen any transcription: direct facsimile recollation remains required for promotion, the visible-start census remains non-exhaustive, and humanVerified remains false.",
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
 }
