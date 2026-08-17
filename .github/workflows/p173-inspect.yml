@@ -1,4 +1,4 @@
-name: CHD p173 concise inspection
+name: CHD p173 materialize reconciliation
 
 on:
   push:
@@ -8,30 +8,61 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  inspect:
+  materialize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Summarize p173 and p174 edge
+      - name: Materialize p173 reconciliation
+        run: python scripts/_tmp_materialize_p173.py
+      - name: Validate p173 evidence
         run: |
-          python scripts/export_candidate_page.py --page 173 > /tmp/p173.jsonl
-          python scripts/export_candidate_page.py --page 174 > /tmp/p174.jsonl
+          python -m pip install -r requirements-dev.txt
+          python scripts/reconstruct_candidate_inventory.py
+          python scripts/validate_lexicon_ids.py
+          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p173_left_reconciliation.jsonl
+          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p173_right_reconciliation.jsonl
+          python scripts/validate_jsonl.py --schema schemas/lexicon-missed-start.schema.json --jsonl data/lexicon/reconciliation/p173_missed_visible_starts.jsonl
+          python -m json.tool data/lexicon/reconciliation/p173_machine_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p173_preflight.json >/dev/null
           python - <<'PY'
           import json
           from pathlib import Path
-          def rows(path): return [json.loads(x) for x in Path(path).read_text().splitlines() if x.strip()]
-          a=rows('/tmp/p173.jsonl'); b=rows('/tmp/p174.jsonl')
-          print('P173', len(a), 'L', sum(x['column']=='left' for x in a), 'R', sum(x['column']=='right' for x in a))
-          for x in a: print(x['candidateId'], '::', x['rawText'])
-          print('P174', len(b), 'L', sum(x['column']=='left' for x in b), 'R', sum(x['column']=='right' for x in b))
-          print('P174-FIRST')
-          for x in b[:6]: print(x['candidateId'], '::', x['rawText'])
-          print('P174-LAST')
-          for x in b[-6:]: print(x['candidateId'], '::', x['rawText'])
+          rows=[]
+          for name in ['p173_left_reconciliation.jsonl','p173_right_reconciliation.jsonl']:
+              rows += [json.loads(x) for x in Path('data/lexicon/reconciliation',name).read_text(encoding='utf-8').splitlines() if x.strip()]
+          assert len(rows)==42
+          cls={k:sum(r['classification']==k for r in rows) for k in ['article','continuation','unresolved','paratext','false_positive']}
+          assert cls=={'article':40,'continuation':2,'unresolved':0,'paratext':0,'false_positive':0}, cls
+          by={r['candidateId']:r for r in rows}
+          for cid in ['ALC1737-vcand-p173-L-001','ALC1737-vcand-p173-R-002']:
+              assert by[cid]['boundaryAssessment']=='oversegmented'
+          for cid in ['ALC1737-vcand-p173-L-002','ALC1737-vcand-p173-R-003']:
+              assert by[cid]['classification']=='continuation' and by[cid]['boundaryAssessment']=='not_applicable'
+          for cid in ['ALC1737-vcand-p173-L-010','ALC1737-vcand-p173-L-011','ALC1737-vcand-p173-R-015']:
+              assert by[cid]['boundaryAssessment']=='merged_articles'
+          assert by['ALC1737-vcand-p173-R-018']['boundaryAssessment']=='undersegmented'
+          linked={aid for r in rows for aid in r.get('linkedArticleIds',[])}
+          expected={f'ALC1737-art-{n:06d}' for n in [601,602,603,604,605,606,607,608,609,610,611,612,613]}
+          assert linked==expected, (linked, expected)
+          miss=[json.loads(x) for x in Path('data/lexicon/reconciliation/p173_missed_visible_starts.jsonl').read_text(encoding='utf-8').splitlines() if x.strip()]
+          assert len(miss)==4
+          assert {a for m in miss for a in m['linkedArticleIds']}=={f'ALC1737-art-{n:06d}' for n in [599,600,605,607]}
+          status=json.loads(Path('data/lexicon/reconciliation/p173_machine_reconciliation_status.json').read_text(encoding='utf-8'))
+          assert status['promotion']['articleCandidatesPendingPromotion']==29
+          assert status['visibleStartEvidence']['knownVisibleStartsMinimum']==44
+          assert status['nextPage']['candidateInventoryTotal']==48
+          assert status['promotion']['corpusTotalAfterPass']==1045
           PY
+      - name: Commit generated p173 evidence
+        run: |
+          git config user.name 'Fernando Sandoval'
+          git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
+          git add data/lexicon/reconciliation/p173_left_reconciliation.jsonl data/lexicon/reconciliation/p173_right_reconciliation.jsonl data/lexicon/reconciliation/p173_missed_visible_starts.jsonl data/lexicon/reconciliation/p173_machine_reconciliation_status.json
+          git commit -m 'data: reconciliar conservadoramente p.173' -m '42 candidatos: 40 article y 2 continuation; cuatro missed-starts seleccionados, 29 pending_promotion y borde p174 fresco.'
+          git push origin HEAD:work/p173-reconciliation
