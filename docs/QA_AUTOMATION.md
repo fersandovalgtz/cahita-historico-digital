@@ -18,10 +18,13 @@ La ejecución automatizada:
 6. valida los lotes de reconciliación históricos y las capas izquierda/derecha de las páginas del vocabulario contra `schemas/lexicon-candidate-review.schema.json`;
 7. valida las capas de inicios visibles omitidos contra `schemas/lexicon-missed-start.schema.json`;
 8. comprueba sintaxis JSON de CodeMeta, manifiestos, estados de reconciliación, preflights, archivos de procedencia y controles seleccionados;
-9. valida la sintaxis de `data/lexicon/reconciliation/phase2_open_work_summary.json`;
-10. regenera el resumen de trabajo abierto de fase II mediante `scripts/summarize_open_lexicon_work.py` y exige coincidencia exacta con el archivo versionado.
+9. valida la sintaxis de `data/lexicon/reconciliation/phase2_open_work_summary.json` y de los artefactos de evidencia/triage de fase II;
+10. valida semánticamente las colas de promoción de fase II mediante `scripts/validate_phase2_promotion_queues.py`: conteos, unicidad y partición de candidatos, prioridades, evidencia/procedencia referenciada, coherencia con el estado de página y coincidencia exacta con los registros `articleLinkStatus=pending_promotion` de las reconciliaciones izquierda/derecha;
+11. regenera el resumen de trabajo abierto de fase II mediante `scripts/summarize_open_lexicon_work.py` y exige coincidencia exacta con el archivo versionado.
 
-El paso 10 constituye una **puerta de frescura**: si cambian artículos curatoriales o estados de página y el resumen de fase II no se regenera, CI falla. Así se impide que `pending_promotion`, el conteo curatorial y los indicadores de cierre queden silenciosamente desfasados respecto de sus fuentes computables.
+El paso 11 constituye una **puerta de frescura**: si cambian artículos curatoriales o estados de página y el resumen de fase II no se regenera, CI falla. Así se impide que `pending_promotion`, el conteo curatorial y los indicadores de cierre queden silenciosamente desfasados respecto de sus fuentes computables.
+
+El paso 10 añade una **puerta de coherencia semántica para las colas de promoción**. Una cola no pasa sólo por ser JSON válido: debe contener exactamente los candidatos que siguen pendientes en las capas de reconciliación, cada candidato debe pertenecer a una sola categoría de bloqueo, los conteos deben concordar con el estado computacional de la página y toda evidencia citada debe existir. El validador conserva además los guardas `automaticPromotionAllowed=false` y `humanVerified=false`, por lo que QA no puede convertir inadvertidamente una clasificación de trabajo en una promoción automática o en una declaración de revisión humana.
 
 ## Primera ejecución verde y evolución del QA
 
@@ -65,13 +68,15 @@ Un fallo de CI debe tratarse como una señal de inconsistencia que requiere diag
 
 La puerta de frescura de fase II sigue el mismo principio: ante una discrepancia, debe determinarse si cambió legítimamente el corpus, si un estado de página quedó obsoleto o si falta regenerar el resumen. No se debe editar manualmente el resultado sólo para igualar una cifra esperada.
 
+La puerta de coherencia de colas sigue una regla análoga: si un candidato cambia de estado, se promueve, deja de estar pendiente o cambia de categoría de evidencia, deben actualizarse conjuntamente la reconciliación, la cola y, cuando corresponda, los artefactos de evidencia. No se debe relajar el validador para conservar una cola obsoleta.
+
 ## Próximas ampliaciones
 
 La siguiente generación de QA debería incorporar progresivamente:
 
 - consistencia de `data/transcription/status.csv` frente a los JSON de página y lotes;
 - referencias cruzadas a `articleId` existentes más allá de las capas actualmente validadas;
-- conteos canónicos de reconciliación por página con invariantes explícitos;
+- ampliar los invariantes de reconciliación por página más allá de las colas de promoción de fase II;
 - validación de las capas gramaticales contra sus respectivos schemas;
 - comprobación de exportaciones derivadas reproducibles;
 - validación de `CITATION.cff` y metadatos de release;
