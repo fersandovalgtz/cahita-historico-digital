@@ -1,0 +1,139 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 153,
+  "recordType": "structural_boundary_resolution",
+  "recordedAt": "2026-08-17",
+  "candidateSource": "data/lexicon/candidates/p153_candidates.jsonl",
+  "region": {
+    "candidateIds": [
+      "ALC1737-vcand-p153-R-003",
+      "ALC1737-vcand-p153-R-004",
+      "ALC1737-vcand-p153-R-005",
+      "ALC1737-vcand-p153-R-006"
+    ],
+    "primaryWitnessSequence": [
+      "completion of `Dar coſas redondas, y mazizas`",
+      "Dar coſas eſtendidas como libro",
+      "Dar coſas hondas como olla",
+      "Dardo"
+    ],
+    "primaryOcrAuthority": "Internet Archive OCR derivative of ALC1737; used for sequence/structure only, not as diplomatic authority for uncertain Cahita forms"
+  },
+  "resolutions": [
+    {
+      "candidateId": "ALC1737-vcand-p153-R-003",
+      "canonicalEvidence": {
+        "startY": 87.102,
+        "rawLines": [
+          "zas. Lobda ¿maca.",
+          "cofas eílendidas como"
+        ]
+      },
+      "decision": {
+        "classification": "continuation",
+        "boundaryAssessment": "undersegmented",
+        "articleLinkStatus": "not_applicable",
+        "continuationType": "from_previous_line"
+      },
+      "rationale": "The candidate opens with the completion of selected article ALC1737-art-000311 (`Dar coſas redondas, y mazizas`) and then absorbs guide material belonging to the following `Dar coſas eſtendidas como libro` article. It is therefore not an independent start, but its grouping crosses a real subsequent boundary."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p153-R-004",
+      "canonicalEvidence": {
+        "startY": 96.839,
+        "rawLines": [
+          "Dar",
+          "Huecac am acá."
+        ]
+      },
+      "decision": {
+        "classification": "article",
+        "boundaryAssessment": "exact",
+        "articleLinkStatus": "pending_promotion",
+        "guideHypothesis": "Dar coſas eſtendidas como libro",
+        "guideHypothesisStatus": "structurally_supported_noncanonical",
+        "cahitaFormStatus": "unpromoted_machine_reading"
+      },
+      "rationale": "R-004 carries the independent margin start `Dar`; the remainder of its guide is fragmented across R-003/R-005 by OCR grouping, while same-witness OCR preserves the full ordered guide and associates the historical form region with `Huecac amaca`. The boundary start itself is real, but no lexical article object is promoted from OCR alone."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p153-R-005",
+      "canonicalEvidence": {
+        "startY": 106.761,
+        "rawLines": [
+          "libro.",
+          "honda, cp^ooll^"
+        ]
+      },
+      "decision": {
+        "classification": "continuation",
+        "boundaryAssessment": "undersegmented",
+        "articleLinkStatus": "not_applicable",
+        "continuationType": "from_previous_line",
+        "absorbedMissedStartId": "ALC1737-miss-p153-R-003",
+        "absorbedGuideHypothesis": "Dar coſas hondas como olla"
+      },
+      "rationale": "R-005 begins with `libro.`, the completion of the preceding `Dar coſas eſtendidas como libro` guide, and then contains the damaged guide region for the next article. The primary ALC1737 OCR preserves a separate `Dar coſas hondas como olla` start in this sequence, so the candidate is a continuation whose grouping absorbs a false-negative article start."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p153-R-006",
+      "canonicalEvidence": {
+        "startY": 123.106,
+        "rawLines": [
+          "Hchoroiamaca."
+        ]
+      },
+      "decision": {
+        "classification": "continuation",
+        "boundaryAssessment": "not_applicable",
+        "articleLinkStatus": "not_applicable",
+        "continuationType": "from_previous_line"
+      },
+      "rationale": "R-006 contains only the Cahita-form region belonging to the preceding `Dar coſas hondas como olla` article and is followed by the fresh R-007 `Dardo` start. It is therefore continuation material, not a lexical start."
+    }
+  ],
+  "newKnownMissedStart": {
+    "missedStartId": "ALC1737-miss-p153-R-003",
+    "containingCandidateId": "ALC1737-vcand-p153-R-005",
+    "guideHypothesis": "Dar coſas hondas como olla",
+    "sourceBasis": "same-witness ALC1737 OCR sequence; exact diplomatic spelling/form remains unverified",
+    "linkedArticleIds": []
+  },
+  "expectedPageStateAfterResolution": {
+    "candidateCount": 51,
+    "classification": {
+      "article": 47,
+      "continuation": 4,
+      "paratext": 0,
+      "false_positive": 0,
+      "unresolved": 0
+    },
+    "boundaryAssessment": {
+      "exact": 41,
+      "oversegmented": 1,
+      "undersegmented": 6,
+      "merged_articles": 1,
+      "ambiguous": 0,
+      "not_applicable": 2
+    },
+    "articleCandidatesPendingPromotion": 35,
+    "newPromotions": 0,
+    "corpusTotal": 1045,
+    "knownVisibleStartsMinimum": 51,
+    "knownMissedStartRecords": 3,
+    "visibleStartCensusExhaustive": false
+  },
+  "epistemicGuards": [
+    "The structural sequence is supported by the primary ALC1737 OCR derivative; uncertain Cahita forms are not promoted as diplomatic readings.",
+    "BUE1890 may corroborate order but is not required to substitute any 1890 form into ALC1737.",
+    "The new missed-start record documents an extractor false negative but does not create a lexical article object.",
+    "No precision, recall or F1 metric is claimed because the visible-start census remains non-exhaustive.",
+    "humanVerified remains false."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "method": "Convergent structural reconciliation from materialized canonical p153 geometry/OCR, pre-existing selected anchors, recovered same-witness ALC1737 OCR sequence, and explicit missed-start modeling; conservative non-promotion rule applied."
+  }
+}
