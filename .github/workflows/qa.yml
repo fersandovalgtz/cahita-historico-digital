@@ -1,4 +1,4 @@
-name: CHD p159 candidate inspection
+name: CHD p159 materialize reconciliation
 
 on:
   push:
@@ -8,22 +8,31 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
-  inspect:
+  materialize:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.13'
-      - name: Export canonical p159 candidates and p160 opening
-        shell: bash
+      - name: Materialize p159 reconciliation
+        run: python scripts/_tmp_materialize_p159.py
+      - name: Validate generated p159 evidence
         run: |
-          echo '---P159-BEGIN---'
-          python scripts/export_candidate_page.py --page 159
-          echo '---P159-END---'
-          echo '---P160-OPENING-BEGIN---'
-          python scripts/export_candidate_page.py --page 160 | head -n 4
-          echo '---P160-OPENING-END---'
+          python -m pip install -r requirements-dev.txt
+          python scripts/reconstruct_candidate_inventory.py
+          python scripts/validate_lexicon_ids.py
+          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p159_left_reconciliation.jsonl
+          python scripts/validate_jsonl.py --schema schemas/lexicon-candidate-review.schema.json --jsonl data/lexicon/reconciliation/p159_right_reconciliation.jsonl
+          python -m json.tool data/lexicon/reconciliation/p159_machine_reconciliation_status.json >/dev/null
+          python -m json.tool data/lexicon/reconciliation/p159_preflight.json >/dev/null
+      - name: Commit generated evidence
+        run: |
+          git config user.name 'Fernando Sandoval'
+          git config user.email '167011474+fersandovalgtz@users.noreply.github.com'
+          git add data/lexicon/reconciliation/p159_left_reconciliation.jsonl data/lexicon/reconciliation/p159_right_reconciliation.jsonl data/lexicon/reconciliation/p159_machine_reconciliation_status.json
+          git commit -m 'data: reconciliar conservadoramente p.159' -m '52 candidatos: 49 article y 3 continuation; 34 pending_promotion, tres discrepancias de columna seleccionada documentadas y censo visible no exhaustivo.'
+          git push origin HEAD:work/p159-reconciliation
