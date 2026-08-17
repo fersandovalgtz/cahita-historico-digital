@@ -1,0 +1,59 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 174,
+  "stage": "preflight_complete",
+  "candidateInventory": {
+    "total": 48,
+    "left": 26,
+    "right": 22
+  },
+  "selectedLayer": {
+    "preExistingArticles": 15,
+    "articleIdRange": [
+      "ALC1737-art-000614",
+      "ALC1737-art-000628"
+    ],
+    "nonExhaustive": true,
+    "humanVerified": false
+  },
+  "openingEdge": {
+    "previousPage": 173,
+    "interpretation": "fresh_page_transition",
+    "knownTopMissedStart": "ALC1737-art-000614",
+    "firstCanonicalCandidate": "ALC1737-vcand-p174-L-001"
+  },
+  "workingHypothesis": {
+    "article": 48,
+    "continuation": 0,
+    "knownMissedSelectedStarts": [
+      "ALC1737-art-000614",
+      "ALC1737-art-000623",
+      "ALC1737-art-000628"
+    ],
+    "mergedCandidateRegions": [
+      "ALC1737-vcand-p174-L-013",
+      "ALC1737-vcand-p174-L-024",
+      "ALC1737-vcand-p174-R-001",
+      "ALC1737-vcand-p174-R-006",
+      "ALC1737-vcand-p174-R-011",
+      "ALC1737-vcand-p174-R-012"
+    ]
+  },
+  "nextPage": {
+    "sourcePageDigital": 175,
+    "candidateInventoryTotal": 35,
+    "left": 20,
+    "right": 15,
+    "firstCandidate": "ALC1737-vcand-p175-L-001",
+    "firstSelectedArticle": "ALC1737-art-000629",
+    "firstSelectedOpening": "Tarde. Cuſte.",
+    "edgeInterpretation": "fresh_page_transition"
+  },
+  "evidenceLimits": {
+    "directFacsimileInspectedThisPass": false,
+    "selectedLayerNotCoverageExpectation": true,
+    "metricsAllowed": false
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
