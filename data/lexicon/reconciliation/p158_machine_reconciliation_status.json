@@ -3,9 +3,9 @@
   "sourcePageDigital": 158,
   "pageStatus": {
     "candidateReconciliation": "complete",
-    "visibleStartCensus": "known_misses_only_not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
+    "visibleStartCensus": "exhaustive",
+    "promotionLinkage": "complete",
+    "technicalClosure": true,
     "humanVerificationPlanned": false
   },
   "candidateInventory": {
@@ -20,87 +20,83 @@
       "unresolved": 0
     },
     "boundaryAssessment": {
-      "exact": 45,
+      "exact": 44,
       "oversegmented": 1,
-      "undersegmented": 3,
-      "merged_articles": 1,
+      "undersegmented": 1,
+      "merged_articles": 4,
       "ambiguous": 0,
       "not_applicable": 3
     }
   },
   "selectedLayer": {
     "preExistingArticles": 15,
-    "articleIdRange": [
-      "ALC1737-art-000374",
-      "ALC1737-art-000388"
-    ],
-    "articleCandidateRecordsLinked": 14,
+    "articleIdRange": ["ALC1737-art-000374", "ALC1737-art-000388"],
     "structuredArticlesLinked": 15,
-    "continuationCandidateRecordsLinked": 0,
     "selectedArticlesUnlinked": 0,
     "mergedCandidateId": "ALC1737-vcand-p158-L-014",
-    "mergedSelectedArticleIds": [
-      "ALC1737-art-000384",
-      "ALC1737-art-000385"
-    ]
+    "mergedSelectedArticleIds": ["ALC1737-art-000384", "ALC1737-art-000385"]
   },
   "promotion": {
-    "articleCandidatesPendingPromotion": 36,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
+    "articleCandidatesPendingPromotion": 0,
+    "newPromotionsThisPass": 42,
+    "candidatePromotionsThisPass": 36,
+    "missedStartsPromotedThisPass": 6,
+    "corpusTotalBeforePass": 1517,
+    "corpusTotalAfterPass": 1559
   },
   "visibleStartEvidence": {
-    "exhaustive": false,
-    "knownVisibleStartsMinimum": 51,
-    "knownMissedStartRecords": 1,
-    "knownMergedInternalStarts": 1,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "The 50 article candidates plus selected 000385 absorbed inside L-014 establish at least 51 starts. L-026 and R-004 contain additional damaged guide-like material without independent anchors, and the selected layer is non-exhaustive; no complete denominator is asserted."
+    "exhaustive": true,
+    "visibleStarts": 57,
+    "knownVisibleStartsMinimum": 57,
+    "knownMissedStartRecords": 7,
+    "falseNegatives": 7,
+    "falsePositives": 0,
+    "precision": 1.0,
+    "recall": 0.8771929824561403,
+    "f1": 0.9345794392523364,
+    "methodNote": "Direct high-resolution same-witness census. All 50 candidate article starts are true; seven visible starts were missed by the detector. Three candidate records are continuations rather than new starts."
   },
   "physicalContinuities": [
     {
       "from": "ALC1737-gap-0001",
       "to": "ALC1737-vcand-p158-L-001",
       "type": "fresh_sequence_after_source_gap",
-      "note": "p158 begins fresh H material after unresolved F/G source loss; L-001 is not a continuation."
+      "note": "p158 begins fresh H material after unresolved F/G source loss; no missing entries are synthesized."
     },
     {
       "from": "ALC1737-vcand-p158-L-019",
       "to": "ALC1737-vcand-p158-L-020",
       "type": "article_continuation",
-      "note": "`Herrar poner el hierro` continues into form-only L-020."
+      "note": "`Herrar poner el hierro` continues into its Cahíta form in L-020."
     },
     {
       "from": "ALC1737-vcand-p158-L-026",
-      "to": "ALC1737-vcand-p158-L-027",
-      "type": "mixed_region_continuation",
-      "note": "Lower-left mixed H-material continues beyond L-026."
-    },
-    {
-      "from": "ALC1737-vcand-p158-L-027",
       "to": "ALC1737-vcand-p158-L-028",
-      "type": "mixed_region_continuation",
-      "note": "The same lower-left mixed region continues through L-028 before fresh right-column R-001 `Hilar`."
+      "type": "merged_lower_left_sequence",
+      "note": "Direct facsimile resolves `Higado`, `Higo de la tierra`, `Hijo, ò hija del varon`, and `Hija, ò hijo de la hembra` within the former mixed lower-left region."
     },
     {
       "from": "ALC1737-vcand-p158-R-025",
       "to": "ALC1737-art-000389",
-      "type": "fresh_page_transition",
-      "note": "R-025 begins `Hueva` and carries damaged edge material; the p159 selected layer opens fresh `Huevo. Totolichaba.`. No long article continuation is asserted."
+      "type": "catchword_to_fresh_next_page_article",
+      "note": "p158 `Hueva. Cuchucaba.` is complete; bottom catchword `Huevo` anticipates fresh p159 `Huevo. Totolichaba.` and is not a p158 article continuation."
     }
   ],
   "sourceGapContext": {
     "gapId": "ALC1737-gap-0001",
     "position": "immediately_before_page_158",
-    "policy": "The F/G loss remains outside p158 reconstructed coverage; no missing entries are synthesized."
+    "status": "preserved_as_source_gap_no_reconstruction",
+    "policy": "The F/G loss remains outside p158 reconstructed coverage; no missing entries are synthesized from modern dictionaries or other editions."
   },
   "structuralNotes": [
-    "L-014 is a merged region containing selected 000384 and 000385; only the selected internal start is recorded as a known missed start.",
-    "L-026 absorbs multiple guide-like fragments and continues through L-027/L-028, but unanchored internal starts are not promoted or counted exhaustively.",
-    "R-004 is structurally an article start but undersegmented because it absorbs damaged guide/form material.",
-    "R-025 retains damaged page-edge material without converting p159 `Huevo` into a continuation."
+    "L-014 is a merged region containing selected `Henchir` and `Henchimiento`; the internal selected start remains a documented false negative.",
+    "L-016 is now resolved as a merged region containing `Hermano mayor` and detector-missed `Hermano, ò hermana menor`.",
+    "L-026 is resolved directly from the facsimile: its first guide is `Higado`, not the OCR-derived `Hilado`, and it contains three additional detector-missed Higo/Hijo/Hija starts.",
+    "R-004 is resolved as a merged region containing `Hinchazon` and detector-missed `Hipar el eſtomago`.",
+    "`Horca de palos` is a visible detector false negative absent from the OCR text/candidate layer.",
+    "`Hipo aſſi` retains an unresolved medial Cahíta glyph rather than a silent normalization.",
+    "`Hincarſe de rodillas` and `Horca de palos` retain non-hyphenated physical line wraps without silent concatenation.",
+    "R-025 retains the p158 article `Hueva` plus the `Huevo` catchword; the catchword is not counted as a historical start on p158."
   ],
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
@@ -108,8 +104,9 @@
     "selectedP158LayerUsedAsAnchor": true,
     "sourceGapRecordUsed": true,
     "p159SelectedOpeningUsedForPageEdge": true,
-    "directFacsimileAvailableThisPass": false,
-    "policy": "Source-gap context, selected direct collations, and structural geometry are kept separate from lexical transcription authority. Damaged unanchored internal material remains unpromoted; metrics remain withheld without exhaustive census."
+    "directFacsimileAvailableThisPass": true,
+    "localSourcePdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "policy": "ALC1737 same-witness facsimile controls transcription and boundaries; BUE1890 does not supply ALC1737 text; uncertain surfaces remain explicitly unresolved rather than silently emended."
   },
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
