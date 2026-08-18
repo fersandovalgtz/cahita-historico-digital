@@ -1,0 +1,63 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 149,
+  "recordType": "phase_ii_local_primary_facsimile_closure",
+  "recordedAt": "2026-08-17",
+  "primaryWitness": {
+    "localFileName": "Cahíta.pdf",
+    "internetArchiveIdentifier": "artedelalenguaca00gonz",
+    "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "pdfPageCount": 182,
+    "pageRenderSha256": "c853bbeebe721f828980da24900a376388f4d0adb0ea456063140023aad17970",
+    "authority": "primary_same_witness"
+  },
+  "census": {
+    "visibleHistoricalArticleStarts": 57,
+    "candidateArticleStarts": 56,
+    "truePositiveCandidateStarts": 56,
+    "falsePositiveCandidateStarts": 0,
+    "detectorFalseNegatives": 1,
+    "precision": 1.0,
+    "recall": 0.982456,
+    "f1": 0.99115,
+    "exhaustive": true
+  },
+  "closure": {
+    "preExistingStructuredArticles": 15,
+    "newCandidatePromotions": 41,
+    "newMissedStartPromotions": 1,
+    "newPromotionsTotal": 42,
+    "articleIdRange": "ALC1737-art-001166--ALC1737-art-001207",
+    "candidatePendingAfterPass": 0,
+    "structuredVisibleStartsAfterPass": 57,
+    "corpusTotalAfterPass": 1207,
+    "technicalClosure": true
+  },
+  "structuralDecisions": [
+    "All five continuation-class left-column candidates are linked to their preceding lexical article rather than counted as fresh starts.",
+    "The selected `Camarón` article starts at the bottom of the left column and continues with `Rio. Bacauri.` at the top of the right column before fresh R-001 `Camino vereda`.",
+    "Direct facsimile resolves L-018 `Calentura. Tabihueche.` and R-012 `Canto. Buica.` as exact visible articles; prior OCR tails are rejected as structural evidence.",
+    "Canonical R-030 contains two visible historical starts: `Carcoma de madera. Cuta-eumelam.` and detector-missed `Carbon. Matu.`; R-030 is therefore modeled as merged_articles and links both lexical objects.",
+    "Bottom `Car-` is confirmed as a catchword by direct comparison with p.150 opening `Carcel`; it is not a p.149 lexical start.",
+    "L-013 `Calcañar` retains one unresolved internal Cahita glyph rather than receiving a conjectural normalized form."
+  ],
+  "authorityGuards": [
+    "All new ALC1737 readings in this pass derive from direct visual collation of the locally supplied 1737 witness.",
+    "BUE1890 is not used to supply or silently normalize any ALC1737 reading.",
+    "Direct AI-assisted collation is recorded as machine_corrected_unverified; humanVerified remains false.",
+    "The detector false negative `Carbon. Matu.` remains separately documented in p149_missed_visible_starts.jsonl after promotion.",
+    "An unresolved source glyph is preserved as explicit uncertainty rather than silently emended."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol visual collation",
+    "derivedFrom": [
+      "p149_left_reconciliation.jsonl",
+      "p149_right_reconciliation.jsonl",
+      "p149_missed_visible_starts.jsonl",
+      "p149_local_facsimile_preflight_2026-08-17.json"
+    ],
+    "method": "Exhaustive direct same-witness visual census followed by candidate/missed-start promotion and page-level closure; no independent human verification."
+  }
+}
