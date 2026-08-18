@@ -3,9 +3,9 @@
   "sourcePageDigital": 157,
   "pageStatus": {
     "candidateReconciliation": "complete",
-    "visibleStartCensus": "known_misses_only_not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
+    "visibleStartCensus": "exhaustive",
+    "promotionLinkage": "complete",
+    "technicalClosure": true,
     "humanVerificationPlanned": false
   },
   "candidateInventory": {
@@ -20,72 +20,64 @@
       "unresolved": 0
     },
     "boundaryAssessment": {
-      "exact": 31,
+      "exact": 30,
       "oversegmented": 2,
-      "undersegmented": 2,
-      "merged_articles": 4,
+      "undersegmented": 1,
+      "merged_articles": 6,
       "ambiguous": 0,
       "not_applicable": 3
     }
   },
   "selectedLayer": {
     "preExistingArticles": 15,
-    "articleIdRange": [
-      "ALC1737-art-000359",
-      "ALC1737-art-000373"
-    ],
-    "articleCandidateRecordsLinked": 11,
+    "articleIdRange": ["ALC1737-art-000359", "ALC1737-art-000373"],
     "structuredArticlesLinked": 15,
-    "continuationCandidateRecordsLinked": 1,
-    "selectedArticlesUnlinked": 0,
-    "mergedCandidateCount": 4
+    "selectedArticlesUnlinked": 0
   },
   "promotion": {
-    "articleCandidatesPendingPromotion": 27,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
+    "articleCandidatesPendingPromotion": 0,
+    "newPromotionsThisPass": 32,
+    "candidatePromotionsThisPass": 27,
+    "missedStartsPromotedThisPass": 5,
+    "corpusTotalBeforePass": 1485,
+    "corpusTotalAfterPass": 1517
   },
   "visibleStartEvidence": {
-    "exhaustive": false,
-    "knownVisibleStartsMinimum": 44,
-    "knownMissedStartRecords": 6,
-    "knownMergedInternalStarts": 4,
-    "unresolvedCandidateRecords": 0,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "The 38 article candidates, four previously documented selected starts absorbed inside merged candidates, and two additional same-witness OCR starts (`Eſtender, ò tender` and `Eſteril ſer la muger`) establish at least 44 visible starts. The cropped edge and non-exhaustive selected layer prevent a complete denominator; no performance metric is asserted."
+    "exhaustive": true,
+    "visibleStarts": 47,
+    "knownVisibleStartsMinimum": 47,
+    "knownMissedStartRecords": 9,
+    "falseNegatives": 9,
+    "falsePositives": 0,
+    "precision": 1.0,
+    "recall": 0.8085106382978723,
+    "f1": 0.8941176470588236,
+    "methodNote": "Direct high-resolution same-witness census. All 38 candidate article starts are true; nine visible starts were missed by the detector. Four candidate records are continuations rather than new starts."
   },
   "physicalContinuities": [
     {
       "from": "ALC1737-vcand-p156-R-026",
       "to": "ALC1737-vcand-p157-L-001",
       "type": "fresh_page_transition",
-      "note": "p156 `Eſquina` is distinct; p157 opens with fresh cropped Eſt- material."
-    },
-    {
-      "from": "ALC1737-vcand-p157-L-012",
-      "to": "ALC1737-vcand-p157-L-013",
-      "type": "article_continuation",
-      "note": "Selected `Eſtrella las tres Marias. Himuim.` continues into L-013."
+      "note": "p156 `Eſquina. Chimucuu.` is complete; p157 opens fresh cropped Eſt- material."
     },
     {
       "from": "ALC1737-vcand-p157-L-002",
       "to": "ALC1737-vcand-p157-L-003",
       "type": "missed_start_to_continuation",
-      "note": "L-002 absorbs the start `Eſtender, ò tender`; L-003 preserves its `deſenvolver` continuation."
+      "note": "Internal `Eſtender, ò tender` continues with `deſenvolver` in L-003."
     },
     {
       "from": "ALC1737-vcand-p157-L-004",
-      "to": "ALC1737-vcand-p157-L-005",
-      "type": "article_continuation",
-      "note": "The Eſtera article continues across L-004→L-005."
-    },
-    {
-      "from": "ALC1737-vcand-p157-L-005",
       "to": "ALC1737-vcand-p157-L-006",
       "type": "article_continuation_then_internal_start",
-      "note": "L-006 first completes Eſtera (`...de tule, Tobare`) and then absorbs the distinct `Eſteril ſer la muger` start."
+      "note": "`Eſtera` spans L-004→L-006; L-006 then contains fresh `Eſteril ſer la muger. Teſila.`."
+    },
+    {
+      "from": "ALC1737-vcand-p157-L-019",
+      "to": "top_of_right_column_before_R-001",
+      "type": "cross_column_article_continuation",
+      "note": "Bottom-left `Faiſan de eſpecie grande` continues with its form `Buerutatu` at the top of the right column before R-001."
     }
   ],
   "sourceGap": {
@@ -100,34 +92,22 @@
     "editorialPolicy": "Do not synthesize or reconstruct missing F/G entries from modern dictionaries or other editions; recovery requires an independently identified witness and separate provenance layer."
   },
   "structuralNotes": [
-    "The left scan edge remains cropped, producing systematic loss of initial glyphs and some reading-order leakage; structural decisions therefore do not strengthen uncertain lexical forms.",
-    "L-003 is resolved as continuation of an `Eſtender, ò tender` start absorbed inside L-002; the start is recorded as ALC1737-miss-p157-L-005.",
-    "L-006 is resolved as continuation/undersegmented: it closes Eſtera and absorbs the `Eſteril ſer la muger` start recorded as ALC1737-miss-p157-L-006.",
-    "Four selected internal starts remain recorded as known false negatives inside merged candidates; the two new records add non-selected but same-witness-supported internal starts.",
-    "The p157→158 discontinuity remains ALC1737-gap-0001, a source gap rather than a normal page continuation; no missing F/G material is reconstructed."
+    "The left scan edge is cropped. Initial Eſ- is supplied only where the surviving same-witness surface and lexicographic sequence make the headword structurally secure, and each supply is documented explicitly.",
+    "Nine false negatives are recorded; five required new structured articles and four were already represented in the selected layer.",
+    "`Febrero` retains an unresolved damaged Cahíta glyph group; no secondary witness supplies the reading.",
+    "`Feriar vna coſa por otra` preserves `Ná- / culia` unjoined because the short first segment is not expanded conjecturally.",
+    "`Filo de cuchillo` preserves `Cuchiriba / hua` as two visible segments because no hyphen is clearly visible at the line break.",
+    "The p157→p158 discontinuity remains ALC1737-gap-0001 and is not converted into a normal page continuation."
   ],
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
     "selectedP157LayerUsedAsAnchor": true,
     "sourceGapRecordUsed": true,
-    "p156AndP158CandidateLayersUsedForPageEdges": true,
-    "directFacsimileAvailableThisPass": false,
-    "policy": "Cropped-edge candidate structure may be resolved when canonical geometry and same-witness OCR sequence converge. OCR remains non-diplomatic; uncertain Cahita forms are not promoted, and ALC1737-gap-0001 is isolated from candidate reconciliation.",
-    "materializedCandidateView": "data/lexicon/candidates/p157_candidates.jsonl",
-    "structuralResolutionRecord": "p157_structural_resolution_2026-08-17.json",
-    "recoveredPrimaryOcrSequenceUsed": true,
-    "newInternalMissedStartsRecorded": [
-      "ALC1737-miss-p157-L-005",
-      "ALC1737-miss-p157-L-006"
-    ],
-    "sourceGapPreserved": true
+    "directFacsimileAvailableThisPass": true,
+    "localSourcePdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "policy": "ALC1737 same-witness facsimile controls transcription and boundaries; BUE1890 does not supply ALC1737 text; uncertain surfaces remain explicitly unresolved rather than silently emended."
   },
   "reviewStatus": "machine_corrected_unverified",
-  "humanVerified": false,
-  "resolvedThisPass": [
-    "L-003 is continuation/not_applicable of the extractor-missed `Eſtender, ò tender. Buſca deſenvolver` article whose start is absorbed inside L-002.",
-    "L-006 is continuation/undersegmented: it completes Eſtera and absorbs a distinct `Eſteril ſer la muger` start; terminal `Ahinque` is treated as reading-order leakage toward the following Eſtirar region rather than an Eſteril form.",
-    "Two additional internal extractor misses are recorded without lexical promotion: ALC1737-miss-p157-L-005 and ALC1737-miss-p157-L-006."
-  ]
+  "humanVerified": false
 }
