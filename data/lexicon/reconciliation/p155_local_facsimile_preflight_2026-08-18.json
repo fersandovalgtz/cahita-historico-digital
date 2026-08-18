@@ -1,0 +1,13 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":155,
+  "recordType":"phase_ii_local_primary_facsimile_preflight",
+  "recordedAt":"2026-08-18",
+  "primaryWitness":{"localFileName":"Cahíta.pdf","internetArchiveIdentifier":"artedelalenguaca00gonz","pdfSha256":"69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37","pdfPageCount":182,"pageRenderSha256":"870bd463b6e9ad2cc4c3cee5d674665104294973753181f4c60cd7fd0230461a","renderDpi":240,"authority":"primary_same_witness"},
+  "openWork":{"candidatePendingPromotions":32,"leftPending":21,"rightPending":11,"visibleStartCensusExhaustive":false,"technicalClosure":false},
+  "knownStructure":["p.154 terminal `Dar` is directly confirmed as a catchword to fresh p.155 `Dar de comer à otro`.","The exact current pending set comprises 21 left-column and 11 right-column article candidates.","Direct local facsimile is available for exhaustive visible-start census and article-level promotion."],
+  "decisions":["No p.155 lexical reading is strengthened in this preflight record; all 32 current pending candidate starts remain pending.","The next p.155 pass will collate left then right columns in printed order and will verify the p.155→p.156 page edge directly.","Any source damage or ambiguous Cahita surface will remain explicit rather than being normalized from OCR or a secondary witness."],
+  "reviewStatus":"machine_corrected_unverified",
+  "humanVerified":false,
+  "provenance":{"agent":"GPT-5.6 Sol","derivedFrom":["p155_left_reconciliation.jsonl","p155_right_reconciliation.jsonl","p155_machine_reconciliation_status.json"],"method":"Exact current p.155 pending-scope inventory plus direct local same-witness facsimile availability preflight; no lexical promotion and no human verification."}
+}
