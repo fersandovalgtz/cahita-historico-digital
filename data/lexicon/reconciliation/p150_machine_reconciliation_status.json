@@ -1,93 +1,15 @@
 {
-  "sourceId": "ALC1737",
-  "sourcePageDigital": 150,
-  "pageStatus": {
-    "candidateReconciliation": "complete",
-    "visibleStartCensus": "not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
-    "humanVerificationPlanned": false
-  },
-  "candidateInventory": {
-    "total": 56,
-    "left": 26,
-    "right": 30,
-    "classification": {
-      "article": 55,
-      "continuation": 0,
-      "paratext": 0,
-      "false_positive": 1,
-      "unresolved": 0
-    },
-    "boundaryAssessment": {
-      "exact": 54,
-      "oversegmented": 0,
-      "undersegmented": 1,
-      "merged_articles": 0,
-      "ambiguous": 0,
-      "not_applicable": 1
-    }
-  },
-  "selectedLayer": {
-    "preExistingArticles": 15,
-    "articleIdRange": [
-      "ALC1737-art-000254",
-      "ALC1737-art-000268"
-    ],
-    "articleCandidateRecordsLinked": 15,
-    "structuredArticlesLinked": 15,
-    "selectedArticlesUnlinked": 0
-  },
-  "promotion": {
-    "articleCandidatesPendingPromotion": 40,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
-  },
-  "visibleStartEvidence": {
-    "exhaustive": false,
-    "knownVisibleStartsMinimum": 55,
-    "knownMissedStartRecords": 0,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "Candidate reconciliation now contains 55 article starts and one demonstrated cross-column/layout false positive with zero unresolved candidate boundaries. The selected anchor layer remains non-exhaustive and cannot prove absence of additional missed starts; no performance denominator is asserted."
-  },
-  "physicalContinuities": [
-    {
-      "from": "ALC1737-vcand-p149-R-030",
-      "to": "ALC1737-vcand-p150-L-001",
-      "type": "page_edge_context",
-      "note": "p149 R-030 absorbs damaged bottom material; p150 L-001 is the fresh selected `Carcel` article, so no long p149→p150 article continuation is asserted."
-    },
-    {
-      "from": "ALC1737-vcand-p150-L-026",
-      "to": "p150:right-top-unrepresented",
-      "type": "cross_column_article_continuation",
-      "note": "L-026 ends hyphenated at the left-column bottom and continues physically into unrepresented top-right material before R-001; the exact lexical transcription remains unpromoted."
-    },
-    {
-      "from": "ALC1737-vcand-p150-R-030",
-      "to": "ALC1737-vcand-p151-L-001",
-      "type": "page_edge_context",
-      "note": "R-030 contains a complete `Como...` start plus trailing `Com-` catchword/page-edge material. p151 L-001 begins a fresh `Compadecerſe` candidate; no long article continuation is asserted."
-    }
-  ],
-  "unresolvedNotes": [],
-  "evidence": {
-    "canonicalCandidateInventoryVerified": true,
-    "canonicalCandidateInventoryCount": 2072,
-    "selectedP150LayerUsedAsAnchor": true,
-    "p149AndP151CandidateLayersUsedForPageEdges": true,
-    "directFacsimileAvailableThisPass": false,
-    "policy": "Candidate-level structure may be resolved from convergent canonical geometry, duplicated cross-column OCR fragments and explicit secondary sequence control. Uncertain lexical text is not strengthened or promoted, and the visible-start census remains non-exhaustive.",
-    "structuralResolutionRecord": "p150_structural_resolution_2026-08-17.json",
-    "materializedCandidateView": "data/lexicon/candidates/p150_candidates.jsonl",
-    "crossColumnBleedResolved": true,
-    "bue1890SecondarySequenceControlUsed": true
-  },
-  "reviewStatus": "machine_corrected_unverified",
-  "humanVerified": false,
-  "resolvedThisPass": [
-    "R-023 is resolved as a false_positive layout/OCR artifact. Its `Bu...` and `Cunam...` fragments duplicate left-column L-020 material at the same vertical region, while `apuna` associates with the neighboring `Colmar` region represented by R-024 and corroborated only at sequence level by BUE1890. No ALC1737 lexical article or form is promoted from this decision."
-  ]
+  "sourceId":"ALC1737",
+  "sourcePageDigital":150,
+  "pageStatus":{"candidateReconciliation":"complete","visibleStartCensus":"exhaustive_direct_local_facsimile","promotionLinkage":"complete","structuralClosure":true,"technicalClosure":true,"humanVerificationPlanned":false},
+  "candidateInventory":{"total":56,"left":26,"right":30,"classification":{"article":55,"continuation":0,"paratext":0,"false_positive":1,"unresolved":0},"boundaryAssessment":{"exact":53,"oversegmented":0,"undersegmented":1,"merged_articles":1,"ambiguous":0,"not_applicable":1}},
+  "linkage":{"articleCandidateRecordsLinked":55,"continuationCandidateRecordsLinked":0,"structuredArticlesLinkedFromCandidateRecords":56,"missedStartRecordsLinked":1,"articleCandidatesPendingPromotion":0,"unresolvedCandidateBoundaries":0},
+  "curation":{"preExistingStructuredArticlesOnPage":15,"newPromotionsThisPass":41,"structuredVisibleStartsAfterPass":56,"newArticleIdRange":"ALC1737-art-001208--ALC1737-art-001248","corpusTotalAfterPass":1248,"sourceSurfaceUnresolvedArticles":[]},
+  "visibleStartEvidence":{"exhaustive":true,"visibleHistoricalArticleStarts":56,"knownVisibleStartsMinimum":56,"truePositiveCandidateStarts":55,"falsePositiveCandidateStarts":0,"falseNegativeVisibleStarts":1,"knownMissedStartRecords":1,"knownMissedStartFile":"p150_missed_visible_starts.jsonl","precision":1.0,"recall":0.982143,"f1":0.990991,"countingNote":"Direct full-page facsimile census establishes 56 historical starts: all 55 article-class canonical candidate starts are true, plus detector-missed `Comer. hibua.` inside R-026. R-023 remains a demonstrated false-positive candidate and is not counted as an article start."},
+  "physicalContinuities":[{"from":"ALC1737-vcand-p149-R-030","to":"ALC1737-vcand-p150-L-001","type":"catchword_to_article","note":"p.149 `Car-` anticipates p.150 `Carcel`."},{"from":"ALC1737-vcand-p150-L-026","to":"p150:right-top","type":"cross_column_article_continuation","articleId":"ALC1737-art-001223","note":"`Cauſa, ò el porqué de la coſa` continues with `Hilabechibo.` before R-001."},{"from":"ALC1737-vcand-p150-R-026","to":"ALC1737-miss-p150-R-001","type":"candidate_contains_two_article_starts","articleIds":["ALC1737-art-001244","ALC1737-art-001245"],"note":"The canonical candidate contains `Comegen animal` and fresh embedded `Comer`."},{"from":"ALC1737-vcand-p150-R-030","to":"ALC1737-vcand-p151-L-001","type":"article_plus_catchword","articleId":"ALC1737-art-001248","note":"R-030 contains `Como. Hibuame.` plus catchword `Com-`; p.151 opens with `Compadecerſe`."}],
+  "evidence":{"canonicalCandidateInventoryVerified":true,"canonicalCandidateInventoryCount":2072,"directLocalFacsimileAvailableThisPass":true,"primaryWitness":{"identifier":"artedelalenguaca00gonz","localFile":"Cahíta.pdf","pdfSha256":"69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37","pdfPageCount":182,"pageRenderSha256":"b1c0b20eef7e7081f97b7700568efdfb60ad669315550ed07f624fdb64850852"},"localFacsimilePreflightRecord":"p150_local_facsimile_preflight_2026-08-18.json","localFacsimileClosureRecord":"p150_local_facsimile_closure_2026-08-18.json","missedStartRecord":"p150_missed_visible_starts.jsonl","promotionBatches":["data/lexicon/articles/p150_promotions_phase2_a.jsonl","data/lexicon/articles/p150_promotions_phase2_b.jsonl"],"p151OpeningCheckedDirectly":true,"secondaryControlPolicy":"BUE1890 may corroborate sequence only; it supplies no ALC1737 reading."},
+  "resolvedThisPass":["All 40 formerly pending candidate-level starts are promoted and linked from direct same-witness facsimile evidence.","R-023 is preserved as a false positive.","The exhaustive census identifies and promotes detector-missed `Comer. hibua.`; R-026 is recollated as merged_articles.","L-026 is reconstructed across the column boundary.","R-030 is separated into the article `Como. Hibuame.` plus catchword `Com-`, confirmed against p.151.","The page is technically closed at machine_corrected_unverified authority."],
+  "authorityNote":"P.150 is technically closed through exhaustive AI-assisted direct collation of the locally supplied ALC1737 facsimile. Human verification remains false and secondary witnesses do not supply transcription readings.",
+  "reviewStatus":"machine_corrected_unverified",
+  "humanVerified":false
 }
