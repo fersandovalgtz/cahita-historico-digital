@@ -1,0 +1,13 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":152,
+  "recordType":"phase_ii_local_primary_facsimile_preflight",
+  "recordedAt":"2026-08-18",
+  "primaryWitness":{"localFileName":"Cahíta.pdf","internetArchiveIdentifier":"artedelalenguaca00gonz","pdfSha256":"69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37","pdfPageCount":182,"pageRenderSha256":"597e62e624e569ea6611ec464ff7bc6095de80ecef7e58e0b485f87a8f7e8097","renderDpi":240,"authority":"primary_same_witness"},
+  "openWork":{"candidatePendingPromotions":37,"leftPending":15,"rightPending":22,"visibleStartCensusExhaustive":false,"technicalClosure":false},
+  "knownStructure":["All 52 canonical candidates are currently classified as article starts.","Top-of-page material `za. Hicapari.` is direct continuation of p.151 `Coronilla lo alto de la cabe-` and occurs before fresh p.152 L-001.","R-002 contains probable cross-column OCR/layout contamination after its own article start; this contamination is not an additional article start.","R-024 begins a page-bottom `Cuñado de muger...` article; p.153 L-001 begins fresh `Cuñado de hombre. Mocari.`."],
+  "decisions":["The local ALC1737 facsimile is available at 240 dpi for direct p.152 article-level collation.","No p.152 lexical reading is strengthened in this preflight record; all 37 current pending candidate starts remain pending.","The next p.152 pass will combine exhaustive visible-start census with direct promotion/linkage and explicit page-edge control."],
+  "reviewStatus":"machine_corrected_unverified",
+  "humanVerified":false,
+  "provenance":{"agent":"GPT-5.6 Sol","derivedFrom":["p152_left_reconciliation.jsonl","p152_right_reconciliation.jsonl","p152_machine_reconciliation_status.json"],"method":"Exact current p.152 pending-scope inventory plus direct local same-witness facsimile availability preflight; no lexical promotion and no human verification."}
+}
