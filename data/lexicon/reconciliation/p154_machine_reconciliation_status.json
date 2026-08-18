@@ -3,81 +3,84 @@
   "sourcePageDigital": 154,
   "pageStatus": {
     "candidateReconciliation": "complete",
-    "visibleStartCensus": "not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
+    "visibleStartCensus": "exhaustive_direct_local_facsimile",
+    "promotionLinkage": "complete",
+    "structuralClosure": true,
+    "technicalClosure": true,
     "humanVerificationPlanned": false
   },
   "candidateInventory": {
     "total": 56,
     "left": 27,
     "right": 29,
-    "classification": {
-      "article": 56,
-      "continuation": 0,
-      "paratext": 0,
-      "false_positive": 0,
-      "unresolved": 0
-    },
-    "boundaryAssessment": {
-      "exact": 54,
-      "oversegmented": 1,
-      "undersegmented": 1,
-      "merged_articles": 0,
-      "ambiguous": 0,
-      "not_applicable": 0
-    }
+    "classification": {"article": 56, "continuation": 0, "paratext": 0, "false_positive": 0, "unresolved": 0},
+    "boundaryAssessment": {"exact": 56, "oversegmented": 0, "undersegmented": 0, "merged_articles": 0, "ambiguous": 0, "not_applicable": 0}
   },
-  "selectedLayer": {
-    "preExistingArticles": 15,
-    "articleIdRange": [
-      "ALC1737-art-000314",
-      "ALC1737-art-000328"
-    ],
-    "articleCandidateRecordsLinked": 15,
-    "structuredArticlesLinked": 15,
-    "selectedArticlesUnlinked": 0
+  "linkage": {
+    "articleCandidateRecordsLinked": 56,
+    "structuredArticlesLinkedFromCandidateRecords": 56,
+    "missedStartRecordsLinked": 0,
+    "articleCandidatesPendingPromotion": 0,
+    "unresolvedCandidateBoundaries": 0
   },
-  "promotion": {
-    "articleCandidatesPendingPromotion": 41,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
+  "curation": {
+    "preExistingStructuredArticlesOnPage": 15,
+    "newPromotionsThisPass": 41,
+    "structuredVisibleStartsAfterPass": 56,
+    "newArticleIdRange": "ALC1737-art-001364--ALC1737-art-001404",
+    "corpusTotalAfterPass": 1404,
+    "sourceSurfaceUnresolvedArticles": ["ALC1737-art-001364"]
   },
   "visibleStartEvidence": {
-    "exhaustive": false,
+    "exhaustive": true,
+    "visibleHistoricalArticleStarts": 56,
     "knownVisibleStartsMinimum": 56,
+    "truePositiveCandidateStarts": 56,
+    "falsePositiveCandidateStarts": 0,
+    "falseNegativeVisibleStarts": 0,
     "knownMissedStartRecords": 0,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "All 56 canonical candidates are structurally consistent with lexical starts, but the selected anchor layer is non-exhaustive and cannot prove absence of additional missed starts. No performance denominator is asserted."
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "countingNote": "Direct full-page facsimile census establishes 56 historical starts, exactly matching all 56 canonical article candidates. No detector false positive or false negative is observed on p154."
   },
   "physicalContinuities": [
-    {
-      "from": "ALC1737-vcand-p153-R-026",
-      "to": "ALC1737-vcand-p154-L-001",
-      "type": "catchword_to_article",
-      "note": "p153 trailing `Desbat-` anticipates fresh p154 `Desbaſtar madera. Atapetia.`."
-    },
-    {
-      "from": "ALC1737-vcand-p154-R-029",
-      "to": "ALC1737-vcand-p155-L-001",
-      "type": "article_continuation",
-      "note": "`Durar mucho tiempo` begins on p154 R-029 and continues as form-only text `nuc. bibuatua.` on p155 L-001."
-    }
+    {"from":"p153:right-bottom-catchword","to":"ALC1737-vcand-p154-L-001","type":"catchword_to_article","articleId":"ALC1737-art-000314","note":"p153 terminal `Desbaſ-` anticipates fresh p154 `Desbaſtar madera. Atapetia.` and is not a long continuation."},
+    {"from":"ALC1737-vcand-p154-L-027","to":"p154:right-top-unrepresented","type":"cross_column_form_continuation","articleId":"ALC1737-art-001377","note":"`Deſpegar` begins at the bottom of the left column and its Cahita-form sequence continues at top right before fresh R-001."},
+    {"from":"ALC1737-vcand-p154-R-029","to":"p154:right-bottom","type":"same_page_line_continuation","articleId":"ALC1737-art-001404","note":"`Durar mucho tiempo. Tua- / binuatu.` completes on p154; it does not continue lexically onto p155."},
+    {"from":"p154:right-bottom-catchword","to":"p155:left-top","type":"catchword_to_article","note":"Terminal `Dar` anticipates fresh p155 `Dar de comer à otro. Se- / nuc. bibuatua.` and is not counted as a p154 lexical start."}
   ],
   "structuralNotes": [
-    "R-008 has severely degraded OCR but independent geometry supports an article start; it remains pending promotion.",
-    "R-024 absorbs trailing unexplained material and is marked undersegmented without creating an additional start."
+    "R-024 is recollated from machine `undersegmented` to exact: `Doler la llaga. Sabuatahuihua.` is complete and the following `Bemela...` material belongs to fresh R-025 `Doncella`.",
+    "R-029 is recollated from machine `oversegmented` to exact: the Cahita form completes on p154 and direct p155 comparison establishes a fresh next-page article.",
+    "R-008, previously OCR-degraded, is directly collated from the high-resolution primary witness as `Deſvirgar. Bemela taca naſontu.`.",
+    "L-004 has an exact article boundary but retains one unresolved internal source mark in its Cahita form; lexical uncertainty is preserved explicitly in ALC1737-art-001364 rather than normalized."
   ],
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
-    "selectedP154LayerUsedAsAnchor": true,
-    "p153AndP155CandidateLayersUsedForPageEdges": true,
-    "directFacsimileAvailableThisPass": false,
-    "policy": "Boundary structure is kept separate from lexical transcription quality. Textually damaged candidates may remain structural article starts while their lexical content stays unpromoted."
+    "directLocalFacsimileAvailableThisPass": true,
+    "primaryWitness": {
+      "identifier": "artedelalenguaca00gonz",
+      "localFile": "Cahíta.pdf",
+      "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+      "pdfPageCount": 182,
+      "pageRenderSha256": "06b810d2c10688658a22425bf991656012d3988641b7f806a5d044a68e05d8ac"
+    },
+    "localFacsimilePreflightRecord": "p154_local_facsimile_preflight_2026-08-18.json",
+    "localFacsimileClosureRecord": "p154_local_facsimile_closure_2026-08-18.json",
+    "promotionBatches": ["data/lexicon/articles/p154_promotions_phase2_a.jsonl","data/lexicon/articles/p154_promotions_phase2_b.jsonl"],
+    "p153AndP155PageEdgesCheckedDirectly": true,
+    "secondaryControlPolicy": "BUE1890 remains secondary-only and supplies no ALC1737 reading in this pass."
   },
+  "resolvedThisPass": [
+    "All 41 formerly pending candidate-level starts are promoted and linked from direct same-witness facsimile evidence.",
+    "The exhaustive census establishes perfect candidate-start coverage on p154: 56 true positives, zero false positives and zero false negatives.",
+    "R-008 is resolved from direct high-resolution primary evidence without secondary completion.",
+    "R-024 and R-029 are recollated as exact after direct structural inspection and page-edge control.",
+    "One internal source-form uncertainty in `Deſcargar` remains explicitly unresolved while the page is structurally and technically closed."
+  ],
+  "authorityNote": "P.154 is technically closed through exhaustive AI-assisted direct collation of the locally supplied ALC1737 facsimile. Closure is structural/editorial: humanVerified remains false, BUE1890 supplies no reading, and one internal source mark in `Deſcargar` remains explicitly unresolved rather than conjecturally normalized.",
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
 }
