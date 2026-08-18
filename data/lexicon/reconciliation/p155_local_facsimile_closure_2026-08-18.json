@@ -1,0 +1,64 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 155,
+  "recordType": "phase_ii_local_primary_facsimile_closure",
+  "recordedAt": "2026-08-18",
+  "primaryWitness": {
+    "localFileName": "Cahíta.pdf",
+    "internetArchiveIdentifier": "artedelalenguaca00gonz",
+    "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "pdfPageCount": 182,
+    "pageRenderSha256": "6572f99f27b99c1bca4d1e78d2ec03bbcd80f62b3aa4db2ee529ca34a460b68f",
+    "renderDpi": 240,
+    "authority": "primary_same_witness"
+  },
+  "census": {
+    "visibleHistoricalArticleStarts": 50,
+    "candidateArticleStarts": 45,
+    "truePositiveCandidateStarts": 45,
+    "falsePositiveCandidateStarts": 0,
+    "detectorFalseNegatives": 5,
+    "precision": 1.0,
+    "recall": 0.9,
+    "f1": 0.947368,
+    "exhaustive": true
+  },
+  "closure": {
+    "preExistingStructuredArticles": 15,
+    "newCandidatePromotions": 32,
+    "newMissedStartPromotions": 3,
+    "newPromotionsTotal": 35,
+    "articleIdRange": "ALC1737-art-001405--ALC1737-art-001439",
+    "candidatePendingAfterPass": 0,
+    "structuredVisibleStartsAfterPass": 50,
+    "corpusTotalAfterPass": 1439,
+    "technicalClosure": true
+  },
+  "structuralDecisions": [
+    "All 45 canonical article candidates are confirmed as true historical starts; four canonical records are continuation-class regions and are linked to their parent articles.",
+    "Direct p154/p155 comparison corrects the page edge: p154 `Durar mucho tiempo. Tua- / binuatu.` completes on p154, while detector-missed fresh p155 `Dar de comer à otro. Se- / nuc. bibuatua.` begins at the new page and uses L-001 only as form continuation.",
+    "Selected detector-missed `Dar de beber à otro. Abitua.` is confirmed at the left-page edge, and L-002 remains merged_articles because it contains selected `Dar de veſtir à otro` plus selected detector-missed `Echar, ò vaciar`.",
+    "A detector-missed top-right start `Encarnecer el hueſſo. Tec- / buatuc.` precedes canonical R-001.",
+    "R-024 is modeled as merged_articles because direct facsimile establishes `Enojarſe. Omtec.` followed by detector-missed `Enojo. Ompti.` before R-025.",
+    "R-026 `Enroſcarſe la bibora. Nati- / teca.` completes on p155; bottom `Enſar-` is the catchword to fresh p156 `Enſartar cuentas. Coſcam ſoa.`."
+  ],
+  "authorityGuards": [
+    "All new ALC1737 readings in this pass derive from direct visual collation of the locally supplied 1737 witness.",
+    "BUE1890 is not used to supply or silently normalize any ALC1737 reading.",
+    "Direct AI-assisted collation is recorded as machine_corrected_unverified; humanVerified remains false.",
+    "All five detector false negatives remain explicitly documented in p155_missed_visible_starts.jsonl after closure."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol visual collation",
+    "derivedFrom": [
+      "p155_left_reconciliation.jsonl",
+      "p155_right_reconciliation.jsonl",
+      "p155_missed_visible_starts.jsonl",
+      "p155_local_facsimile_preflight_2026-08-18.json",
+      "p154_local_facsimile_closure_2026-08-18.json"
+    ],
+    "method": "Exhaustive direct same-witness visual census followed by candidate/missed-start promotion, continuation linkage, corrected page-edge control and page-level closure; no independent human verification."
+  }
+}
