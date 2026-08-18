@@ -1,122 +1,16 @@
 {
-  "sourceId": "ALC1737",
-  "sourcePageDigital": 153,
-  "pageStatus": {
-    "candidateReconciliation": "complete",
-    "visibleStartCensus": "known_misses_only_not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
-    "humanVerificationPlanned": false
-  },
-  "candidateInventory": {
-    "total": 51,
-    "left": 25,
-    "right": 26,
-    "classification": {
-      "article": 47,
-      "continuation": 4,
-      "paratext": 0,
-      "false_positive": 0,
-      "unresolved": 0
-    },
-    "boundaryAssessment": {
-      "exact": 41,
-      "oversegmented": 1,
-      "undersegmented": 6,
-      "merged_articles": 1,
-      "ambiguous": 0,
-      "not_applicable": 2
-    }
-  },
-  "selectedLayer": {
-    "preExistingArticles": 15,
-    "articleIdRange": [
-      "ALC1737-art-000299",
-      "ALC1737-art-000313"
-    ],
-    "articleCandidateRecordsLinked": 12,
-    "structuredArticlesLinked": 15,
-    "continuationCandidateRecordsLinked": 1,
-    "selectedStartsOutsideCandidateInventory": 2,
-    "selectedArticlesUnlinked": 0,
-    "mergedCandidateId": "ALC1737-vcand-p153-L-005",
-    "mergedSelectedArticleIds": [
-      "ALC1737-art-000302",
-      "ALC1737-art-000303"
-    ]
-  },
-  "promotion": {
-    "articleCandidatesPendingPromotion": 35,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
-  },
-  "visibleStartEvidence": {
-    "exhaustive": false,
-    "knownVisibleStartsMinimum": 51,
-    "knownMissedStartRecords": 3,
-    "knownMergedInternalStarts": 1,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "Candidate reconciliation now identifies 47 article candidates plus one known internal start absorbed by merged L-005 and three demonstrated extractor misses, establishing at least 51 visible starts. The census remains non-exhaustive and no complete denominator or performance metric is asserted."
-  },
-  "physicalContinuities": [
-    {
-      "from": "ALC1737-vcand-p152-R-024",
-      "to": "ALC1737-vcand-p153-L-001",
-      "type": "page_edge_context",
-      "note": "p152 begins `Cuñado de muger...`; p153 L-001 is fresh selected `Cuñado de hombre. Mocari.` No long continuation is asserted."
-    },
-    {
-      "from": "ALC1737-miss-p153-R-002",
-      "to": "ALC1737-vcand-p153-R-001",
-      "type": "missed_start_to_continuation",
-      "note": "Selected `Dar coſas largas como palo` starts above R-001; R-001 preserves its form `Tebec. amaca.`."
-    },
-    {
-      "from": "ALC1737-vcand-p153-R-026",
-      "to": "ALC1737-vcand-p154-L-001",
-      "type": "catchword_to_article",
-      "note": "Trailing `Desbat-` in R-026 anticipates fresh p154 `Desbaſtar madera. Atapetia.`; it is not a long article continuation."
-    },
-    {
-      "from": "ALC1737-vcand-p153-R-002",
-      "to": "ALC1737-vcand-p153-R-003",
-      "type": "article_to_continuation",
-      "note": "Selected `Dar coſas redondas, y mazizas` begins R-002 and completes at the opening of R-003."
-    },
-    {
-      "from": "ALC1737-vcand-p153-R-003",
-      "to": "ALC1737-vcand-p153-R-004",
-      "type": "mixed_group_to_article_start",
-      "note": "R-003 absorbs guide material associated with the fresh R-004 start `Dar coſas eſtendidas como libro`."
-    },
-    {
-      "from": "ALC1737-vcand-p153-R-005",
-      "to": "ALC1737-vcand-p153-R-006",
-      "type": "missed_start_to_form_continuation",
-      "note": "R-005 contains the extractor-missed `Dar coſas hondas como olla` start; R-006 preserves its form-region continuation."
-    }
-  ],
-  "unresolvedNotes": [],
-  "evidence": {
-    "canonicalCandidateInventoryVerified": true,
-    "canonicalCandidateInventoryCount": 2072,
-    "selectedP153LayerUsedAsAnchor": true,
-    "p152AndP154LayersUsedForPageEdges": true,
-    "directFacsimileAvailableThisPass": false,
-    "policy": "The R-003–R-006 Dar-region is resolved structurally from canonical geometry, selected anchors and same-witness ALC1737 OCR sequence. OCR is used to establish order and boundary identity only; uncertain Cahita forms are not promoted and visible-start coverage remains non-exhaustive.",
-    "materializedCandidateView": "data/lexicon/candidates/p153_candidates.jsonl",
-    "structuralResolutionRecord": "p153_structural_resolution_2026-08-17.json",
-    "recoveredPrimaryOcrSequenceUsed": true,
-    "newInternalMissedStartRecorded": "ALC1737-miss-p153-R-003"
-  },
-  "reviewStatus": "machine_corrected_unverified",
-  "humanVerified": false,
-  "resolvedThisPass": [
-    "R-003 is continuation/undersegmented: it closes selected article 000311 and absorbs guide material from the next article.",
-    "R-004 is an exact article start for structurally identified `Dar coſas eſtendidas como libro`; it remains pending_promotion and no OCR-derived Cahita form is promoted.",
-    "R-005 is continuation/undersegmented and contains a newly documented extractor false negative, ALC1737-miss-p153-R-003, for `Dar coſas hondas como olla`.",
-    "R-006 is continuation/not_applicable containing only the damaged form region of the preceding article before fresh R-007 `Dardo`."
-  ]
+  "sourceId":"ALC1737",
+  "sourcePageDigital":153,
+  "pageStatus":{"candidateReconciliation":"complete","visibleStartCensus":"exhaustive_direct_local_facsimile","promotionLinkage":"complete","structuralClosure":true,"technicalClosure":true,"humanVerificationPlanned":false},
+  "candidateInventory":{"total":51,"left":25,"right":26,"classification":{"article":47,"continuation":4,"paratext":0,"false_positive":0,"unresolved":0},"boundaryAssessment":{"exact":38,"oversegmented":1,"undersegmented":8,"merged_articles":2,"ambiguous":0,"not_applicable":2}},
+  "linkage":{"articleCandidateRecordsLinked":47,"continuationCandidateRecordsLinked":4,"structuredArticlesLinkedFromCandidateRecords":49,"missedStartRecordsLinked":8,"articleCandidatesPendingPromotion":0,"unresolvedCandidateBoundaries":0},
+  "curation":{"preExistingStructuredArticlesOnPage":15,"newPromotionsThisPass":40,"structuredVisibleStartsAfterPass":55,"newArticleIdRange":"ALC1737-art-001324--ALC1737-art-001363","corpusTotalAfterPass":1363,"sourceSurfaceUnresolvedArticles":[]},
+  "visibleStartEvidence":{"exhaustive":true,"visibleHistoricalArticleStarts":55,"knownVisibleStartsMinimum":55,"truePositiveCandidateStarts":47,"falsePositiveCandidateStarts":0,"falseNegativeVisibleStarts":8,"knownMissedStartRecords":8,"knownMissedStartFile":"p153_missed_visible_starts.jsonl","precision":1.0,"recall":0.854545,"f1":0.921569,"countingNote":"Direct full-page facsimile census establishes 55 historical starts: all 47 article-class canonical candidates are true starts, plus eight detector false negatives: `Zarcillo`, `Cirhuela amarilla`, `Dar`, `Dar coſas largas como palo`, `Dar coſas hondas como olla`, `Deber`, `Defenſion` and `Desbaratar`."},
+  "physicalContinuities":[{"from":"p152:right-bottom-catchword","to":"ALC1737-vcand-p153-L-001","type":"catchword_to_article","articleId":"ALC1737-art-000299","note":"The p152 catchword anticipates fresh p153 `Cuñado de hombre. Mocari.`; no long continuation is asserted."},{"from":"ALC1737-miss-p153-R-002","to":"ALC1737-vcand-p153-R-001","type":"missed_start_to_continuation","articleId":"ALC1737-art-000310","note":"Selected `Dar coſas largas como palo` starts above the canonical right-column inventory; R-001 preserves its form-region continuation."},{"from":"ALC1737-vcand-p153-R-002","to":"ALC1737-vcand-p153-R-003","type":"article_continuation","articleId":"ALC1737-art-000311","note":"`Dar coſas redondas, y mazizas` completes in R-003 before material leading to fresh R-004."},{"from":"ALC1737-vcand-p153-R-004","to":"ALC1737-vcand-p153-R-005","type":"fragmented_ocr_article_region","articleId":"ALC1737-art-001341","note":"Direct facsimile reconstructs `Dar coſas eſtendidas como libro. Buecac amaca.` across OCR fragments without treating R-005 as a fresh canonical start."},{"from":"ALC1737-vcand-p153-R-005","to":"ALC1737-vcand-p153-R-006","type":"missed_start_to_form_continuation","articleId":"ALC1737-art-001342","note":"Detector-missed `Dar coſas hondas como olla. Hoboroi amaca.` occupies the R-005/R-006 region."},{"from":"p153:right-bottom-catchword","to":"ALC1737-vcand-p154-L-001","type":"catchword_to_article","note":"Terminal `Desbaſ-` anticipates fresh p154 `Desbaſtar madera. Atapetia.` and is not a p153 lexical start."}],
+  "structuralNotes":["L-005 remains merged_articles because it contains selected `Zambullir à otro` and `Zarcillo` starts.","L-016 is undersegmented because its OCR region absorbs material from detector-missed `Cirhuela amarilla`.","R-009 is undersegmented because its OCR region absorbs detector-missed `Deber. Huiquilia.`.","R-013 is merged_articles because direct facsimile establishes `Defender. Ahineu.` and detector-missed `Defenſion. Ania.` as separate starts.","R-026 contains `Delatar. Abuoiſi.`; detector-missed fresh `Desbaratar. Amibaſtia.` follows before terminal `Desbaſ-`, which is only the catchword."],
+  "evidence":{"canonicalCandidateInventoryVerified":true,"canonicalCandidateInventoryCount":2072,"directLocalFacsimileAvailableThisPass":true,"primaryWitness":{"identifier":"artedelalenguaca00gonz","localFile":"Cahíta.pdf","pdfSha256":"69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37","pdfPageCount":182,"pageRenderSha256":"386fdf732b9750271e93b4c4a326ed40b6e526f0c698e2b2516311c41dbdfb0b"},"nextPageControl":{"pageDigital":154,"pageRenderSha256":"6facc07dcf2b1881d10e288387baf8e267f5bcd1801e8959ffc8c06b0a627414","opening":"Desbaſtar madera. Atapetia."},"localFacsimilePreflightRecord":"p153_local_facsimile_preflight_2026-08-18.json","localFacsimileClosureRecord":"p153_local_facsimile_closure_2026-08-18.json","missedStartRecord":"p153_missed_visible_starts.jsonl","promotionBatches":["data/lexicon/articles/p153_promotions_phase2_a.jsonl","data/lexicon/articles/p153_promotions_phase2_b.jsonl"],"p152AndP154PageEdgesCheckedDirectly":true,"secondaryControlPolicy":"BUE1890 remains secondary-only and supplies no ALC1737 reading in this pass."},
+  "resolvedThisPass":["All 35 formerly pending candidate-level starts are promoted and linked from direct same-witness facsimile evidence.","The exhaustive census establishes eight detector false negatives; five required new article objects while three were already represented in the selected layer.","The damaged Dar region is recollated directly and its continuation structure is linked without OCR-only lexical completion.","New missed starts `Cirhuela amarilla`, `Deber`, `Defenſion` and `Desbaratar` are documented explicitly rather than inferred from secondary evidence.","The p153→p154 catchword boundary is controlled directly and the page is technically closed at machine_corrected_unverified authority."],
+  "authorityNote":"P.153 is technically closed through exhaustive AI-assisted direct collation of the locally supplied ALC1737 facsimile. Closure is structural/editorial: humanVerified remains false and BUE1890 supplies no reading.",
+  "reviewStatus":"machine_corrected_unverified",
+  "humanVerified":false
 }
