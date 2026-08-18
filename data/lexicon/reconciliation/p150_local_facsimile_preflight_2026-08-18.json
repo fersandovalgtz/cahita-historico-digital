@@ -1,0 +1,40 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 150,
+  "recordType": "phase_ii_local_primary_facsimile_preflight",
+  "recordedAt": "2026-08-18",
+  "primaryWitness": {
+    "localFileName": "Cahíta.pdf",
+    "internetArchiveIdentifier": "artedelalenguaca00gonz",
+    "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "pdfPageCount": 182,
+    "pageRenderSha256": "b1c0b20eef7e7081f97b7700568efdfb60ad669315550ed07f624fdb64850852",
+    "renderDpi": 240,
+    "authority": "primary_same_witness"
+  },
+  "openWork": {
+    "candidatePendingPromotions": 40,
+    "leftPending": 16,
+    "rightPending": 24,
+    "falsePositiveCandidates": 1,
+    "visibleStartCensusExhaustive": false,
+    "technicalClosure": false
+  },
+  "knownStructure": [
+    "R-023 is already classified as a layout/OCR false positive and is excluded from the promotion queue.",
+    "L-026 begins an article at the bottom of the left column and continues physically into top-right material before candidate R-001.",
+    "R-030 contains a complete `Como...` article plus trailing `Com-` page-edge/catchword material; p.151 opens with a fresh `Compadecerſe` start."
+  ],
+  "decisions": [
+    "The local ALC1737 facsimile is available at 240 dpi for direct p.150 article-level collation.",
+    "No p.150 lexical reading is strengthened in this preflight record; all 40 current pending candidate starts remain pending.",
+    "The next p.150 pass will combine exhaustive visible-start census with direct promotion/linkage and will retain any source damage as explicit uncertainty rather than conjectural normalization."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "derivedFrom": ["p150_left_reconciliation.jsonl","p150_right_reconciliation.jsonl","p150_machine_reconciliation_status.json"],
+    "method": "Exact current p.150 pending-scope inventory plus direct local same-witness facsimile availability preflight; no lexical promotion and no human verification."
+  }
+}
