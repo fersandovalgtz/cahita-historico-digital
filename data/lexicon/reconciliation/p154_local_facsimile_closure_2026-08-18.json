@@ -1,0 +1,15 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":154,
+  "recordType":"phase_ii_local_primary_facsimile_closure",
+  "recordedAt":"2026-08-18",
+  "primaryWitness":{"localFileName":"Cahíta.pdf","internetArchiveIdentifier":"artedelalenguaca00gonz","pdfSha256":"69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37","pdfPageCount":182,"pageRenderSha256":"6facc07dcf2b1881d10e288387baf8e267f5bcd1801e8959ffc8c06b0a627414","renderDpi":240,"authority":"primary_same_witness"},
+  "pageEdgeControl":{"previousPageDigital":153,"previousDecision":"p.153 terminal `Desbaſ-` is a catchword to p.154 `Desbaſtar madera. Atapetia.`.","nextPageDigital":155,"nextPageRenderSha256":"870bd463b6e9ad2cc4c3cee5d674665104294973753181f4c60cd7fd0230461a","nextDecision":"p.154 terminal `Dar` is a catchword to fresh p.155 `Dar de comer à otro`; `Durar mucho tiempo. Tua-bimuatu.` is complete on p.154."},
+  "census":{"visibleHistoricalArticleStarts":56,"candidateArticleStarts":56,"candidateFalsePositives":0,"falseNegativeVisibleStarts":0,"precision":1.0,"recall":1.0,"f1":1.0},
+  "curation":{"preExistingArticles":15,"newStructuredArticles":41,"newArticleIdRange":"ALC1737-art-001364--ALC1737-art-001404","corpusTotalAfterPass":1404,"pendingPromotionAfterPass":0},
+  "decisions":["All 41 formerly pending candidate starts are promoted and linked from direct same-witness visual evidence.","The exhaustive visible-start census confirms exactly 56 historical starts and no detector false negatives or false-positive starts.","R-024 remains undersegmented only at candidate OCR geometry level; `Doler la llaga` is fully structured and fresh R-025 begins `Doncella`.","The p.153→p.154 and p.154→p.155 page edges are controlled directly against the local facsimile."],
+  "epistemicGuards":["humanVerified remains false.","BUE1890 supplies no ALC1737 transcription.","Historical spelling and printed alternation markers are preserved rather than silently normalized."],
+  "reviewStatus":"machine_corrected_unverified",
+  "humanVerified":false,
+  "provenance":{"agent":"GPT-5.6 Sol","derivedFrom":["p154_left_reconciliation.jsonl","p154_right_reconciliation.jsonl","p154_local_facsimile_preflight_2026-08-18.json"],"method":"Exhaustive AI-assisted direct collation of the local ALC1737 facsimile plus direct adjacent-page control; no human verification."}
+}
