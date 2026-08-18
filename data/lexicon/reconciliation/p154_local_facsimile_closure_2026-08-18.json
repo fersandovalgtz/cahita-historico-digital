@@ -1,0 +1,62 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 154,
+  "recordType": "phase_ii_local_primary_facsimile_closure",
+  "recordedAt": "2026-08-18",
+  "primaryWitness": {
+    "localFileName": "Cahíta.pdf",
+    "internetArchiveIdentifier": "artedelalenguaca00gonz",
+    "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "pdfPageCount": 182,
+    "pageRenderSha256": "06b810d2c10688658a22425bf991656012d3988641b7f806a5d044a68e05d8ac",
+    "renderDpi": 240,
+    "authority": "primary_same_witness"
+  },
+  "census": {
+    "visibleHistoricalArticleStarts": 56,
+    "candidateArticleStarts": 56,
+    "truePositiveCandidateStarts": 56,
+    "falsePositiveCandidateStarts": 0,
+    "detectorFalseNegatives": 0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "exhaustive": true
+  },
+  "closure": {
+    "preExistingStructuredArticles": 15,
+    "newCandidatePromotions": 41,
+    "newMissedStartPromotions": 0,
+    "newPromotionsTotal": 41,
+    "articleIdRange": "ALC1737-art-001364--ALC1737-art-001404",
+    "candidatePendingAfterPass": 0,
+    "structuredVisibleStartsAfterPass": 56,
+    "corpusTotalAfterPass": 1404,
+    "technicalClosure": true
+  },
+  "structuralDecisions": [
+    "All 56 canonical article candidates are confirmed as true historical starts; exhaustive direct census finds no false positive and no detector false negative on p154.",
+    "L-027 `Deſpegar` continues its Cahita-form sequence across the column break into top-right material before fresh R-001; this physical continuation does not create an additional lexical start.",
+    "R-008 is resolved directly from the high-resolution primary witness as `Deſvirgar. Bemela taca naſontu.` without secondary-witness completion.",
+    "R-024 is recollated as exact: `Doler la llaga. Sabuatahuihua.` is complete and following `Bemela...` material belongs to fresh R-025 `Doncella`.",
+    "R-029 is recollated as exact: `Durar mucho tiempo. Tua- / binuatu.` completes on p154. Terminal `Dar` is the catchword to fresh p155 `Dar de comer à otro`, not a p154→p155 article continuation.",
+    "L-004 retains one unresolved internal source mark in the Cahita form of `Deſcargar`; the uncertainty is explicit and does not prevent structural closure."
+  ],
+  "authorityGuards": [
+    "All new ALC1737 readings in this pass derive from direct visual collation of the locally supplied 1737 witness.",
+    "BUE1890 is not used to supply or silently normalize any ALC1737 reading.",
+    "Direct AI-assisted collation is recorded as machine_corrected_unverified; humanVerified remains false.",
+    "The unresolved internal mark in `Deſcargar` is preserved explicitly rather than emended."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol visual collation",
+    "derivedFrom": [
+      "p154_left_reconciliation.jsonl",
+      "p154_right_reconciliation.jsonl",
+      "p154_local_facsimile_preflight_2026-08-18.json"
+    ],
+    "method": "Exhaustive direct same-witness visual census followed by candidate promotion, cross-column/page-edge control and page-level closure; no independent human verification."
+  }
+}
