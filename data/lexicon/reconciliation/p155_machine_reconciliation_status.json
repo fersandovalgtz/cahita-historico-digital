@@ -3,106 +3,91 @@
   "sourcePageDigital": 155,
   "pageStatus": {
     "candidateReconciliation": "complete",
-    "visibleStartCensus": "known_misses_only_not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
+    "visibleStartCensus": "exhaustive_direct_local_facsimile",
+    "promotionLinkage": "complete",
+    "structuralClosure": true,
+    "technicalClosure": true,
     "humanVerificationPlanned": false
   },
   "candidateInventory": {
     "total": 49,
     "left": 23,
     "right": 26,
-    "classification": {
-      "article": 45,
-      "continuation": 4,
-      "paratext": 0,
-      "false_positive": 0,
-      "unresolved": 0
-    },
-    "boundaryAssessment": {
-      "exact": 39,
-      "oversegmented": 3,
-      "undersegmented": 2,
-      "merged_articles": 1,
-      "ambiguous": 0,
-      "not_applicable": 4
-    }
+    "classification": {"article": 45, "continuation": 4, "paratext": 0, "false_positive": 0, "unresolved": 0},
+    "boundaryAssessment": {"exact": 40, "oversegmented": 3, "undersegmented": 0, "merged_articles": 2, "ambiguous": 0, "not_applicable": 4}
   },
-  "selectedLayer": {
-    "preExistingArticles": 15,
-    "articleIdRange": [
-      "ALC1737-art-000329",
-      "ALC1737-art-000343"
-    ],
-    "articleCandidateRecordsLinked": 13,
-    "structuredArticlesLinked": 15,
-    "continuationCandidateRecordsLinked": 1,
-    "selectedStartsOutsideCandidateInventory": 1,
-    "selectedArticlesUnlinked": 0,
-    "mergedCandidateId": "ALC1737-vcand-p155-L-002",
-    "mergedSelectedArticleIds": [
-      "ALC1737-art-000330",
-      "ALC1737-art-000331"
-    ]
+  "linkage": {
+    "articleCandidateRecordsLinked": 45,
+    "continuationCandidateRecordsLinked": 4,
+    "structuredArticlesLinkedFromCandidateRecords": 47,
+    "missedStartRecordsLinked": 5,
+    "articleCandidatesPendingPromotion": 0,
+    "unresolvedCandidateBoundaries": 0
   },
-  "promotion": {
-    "articleCandidatesPendingPromotion": 32,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
+  "curation": {
+    "preExistingStructuredArticlesOnPage": 15,
+    "newPromotionsThisPass": 35,
+    "structuredVisibleStartsAfterPass": 50,
+    "newArticleIdRange": "ALC1737-art-001405--ALC1737-art-001439",
+    "corpusTotalAfterPass": 1439,
+    "sourceSurfaceUnresolvedArticles": []
   },
   "visibleStartEvidence": {
-    "exhaustive": false,
-    "knownVisibleStartsMinimum": 47,
-    "knownMissedStartRecords": 2,
-    "knownMergedInternalStarts": 1,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "The 45 article candidates, one additional selected start absorbed inside L-002, and selected 000329 outside the candidate inventory establish at least 47 starts. The selected layer is non-exhaustive, so no complete denominator or performance metric is asserted."
+    "exhaustive": true,
+    "visibleHistoricalArticleStarts": 50,
+    "knownVisibleStartsMinimum": 50,
+    "truePositiveCandidateStarts": 45,
+    "falsePositiveCandidateStarts": 0,
+    "falseNegativeVisibleStarts": 5,
+    "knownMissedStartRecords": 5,
+    "knownMissedStartFile": "p155_missed_visible_starts.jsonl",
+    "precision": 1.0,
+    "recall": 0.9,
+    "f1": 0.947368,
+    "countingNote": "Direct full-page facsimile census establishes 50 historical starts: all 45 article-class canonical candidates are true starts, plus five detector false negatives: `Dar de comer à otro`, `Dar de beber à otro`, `Echar, ò vaciar`, `Encarnecer el hueſſo` and `Enojo`."
   },
   "physicalContinuities": [
-    {
-      "from": "ALC1737-vcand-p154-R-029",
-      "to": "ALC1737-vcand-p155-L-001",
-      "type": "article_continuation",
-      "note": "`Durar mucho tiempo` continues as form-only `nuc. bibuatua.`."
-    },
-    {
-      "from": "ALC1737-vcand-p155-R-001",
-      "to": "ALC1737-vcand-p155-R-002",
-      "type": "article_continuation",
-      "note": "Selected `Encender candela, ò tea` spans OCR-damaged R-001 and form-only R-002 `Abetia.`."
-    },
-    {
-      "from": "ALC1737-vcand-p155-R-003",
-      "to": "ALC1737-vcand-p155-R-004",
-      "type": "article_continuation"
-    },
-    {
-      "from": "ALC1737-vcand-p155-R-006",
-      "to": "ALC1737-vcand-p155-R-007",
-      "type": "article_continuation"
-    },
-    {
-      "from": "ALC1737-vcand-p155-R-026",
-      "to": "ALC1737-vcand-p156-L-001",
-      "type": "catchword_to_article",
-      "note": "Trailing damaged `Eafar-...` is treated as page-edge/catchword material anticipating fresh p156 `Enſeñar`, not as a long p155 article continuation."
-    }
+    {"from":"p154:right-bottom-catchword","to":"ALC1737-miss-p155-L-001","type":"catchword_to_missed_start","articleId":"ALC1737-art-001405","note":"p154 terminal `Dar` anticipates fresh p155 `Dar de comer à otro. Se-`; it is not continuation of p154 R-029."},
+    {"from":"ALC1737-miss-p155-L-001","to":"ALC1737-vcand-p155-L-001","type":"article_start_to_form_continuation","articleId":"ALC1737-art-001405","note":"The top-edge article form continues as canonical L-001 `nuc. bibuatua.`."},
+    {"from":"ALC1737-vcand-p155-L-002","to":"ALC1737-miss-p155-L-003","type":"merged_articles","note":"Canonical L-002 contains selected `Dar de veſtir à otro` and detector-missed selected `Echar, ò vaciar`."},
+    {"from":"ALC1737-vcand-p155-R-001","to":"ALC1737-vcand-p155-R-002","type":"article_continuation","articleId":"ALC1737-art-000343"},
+    {"from":"ALC1737-vcand-p155-R-003","to":"ALC1737-vcand-p155-R-004","type":"article_continuation","articleId":"ALC1737-art-001417"},
+    {"from":"ALC1737-vcand-p155-R-006","to":"ALC1737-vcand-p155-R-007","type":"article_continuation","articleId":"ALC1737-art-001419"},
+    {"from":"ALC1737-vcand-p155-R-024","to":"ALC1737-miss-p155-R-002","type":"merged_articles","note":"Direct facsimile resolves `Enojarſe. Omtec.` and detector-missed `Enojo. Ompti.` as separate historical starts in the R-024 region."},
+    {"from":"p155:right-bottom-catchword","to":"p156:left-top","type":"catchword_to_article","note":"Terminal `Enſar-` anticipates fresh p156 `Enſartar cuentas. Coſcam ſoa.` and is not a p155 lexical start."}
   ],
   "structuralNotes": [
-    "L-002 is a merged-start region containing selected 000330 and 000331.",
-    "Selected 000329 is a demonstrated left-edge false negative between the inherited continuation L-001 and fresh candidate L-002.",
-    "R-001 provides the structural boundary for selected 000343 despite severe guide loss in OCR; R-002 is its continuation."
+    "L-001 is recollated as form-region continuation of detector-missed fresh p155 `Dar de comer à otro`, correcting the older machine assertion of continuation from p154 `Durar mucho tiempo`.",
+    "L-002 remains merged_articles because it contains `Dar de veſtir à otro` plus detector-missed `Echar, ò vaciar`.",
+    "R-024 is recollated as merged_articles because direct facsimile establishes both `Enojarſe` and detector-missed `Enojo` in the canonical region.",
+    "R-026 is recollated as exact: `Enroſcarſe la bibora. Natiteca.` completes on p155 and the following `Enſar-` is a catchword to p156."
   ],
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
-    "selectedP155LayerUsedAsAnchor": true,
-    "p154AndP156CandidateLayersUsedForPageEdges": true,
-    "directFacsimileAvailableThisPass": false,
-    "policy": "Known misses are separated from candidate reconciliation; OCR guide loss does not erase a geometrically supported boundary when selected collation and continuation evidence converge; metrics remain withheld without exhaustive census."
+    "directLocalFacsimileAvailableThisPass": true,
+    "primaryWitness": {
+      "identifier": "artedelalenguaca00gonz",
+      "localFile": "Cahíta.pdf",
+      "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+      "pdfPageCount": 182,
+      "pageRenderSha256": "6572f99f27b99c1bca4d1e78d2ec03bbcd80f62b3aa4db2ee529ca34a460b68f"
+    },
+    "localFacsimilePreflightRecord": "p155_local_facsimile_preflight_2026-08-18.json",
+    "localFacsimileClosureRecord": "p155_local_facsimile_closure_2026-08-18.json",
+    "missedStartRecord": "p155_missed_visible_starts.jsonl",
+    "promotionBatches": ["data/lexicon/articles/p155_promotions_phase2_a.jsonl","data/lexicon/articles/p155_promotions_phase2_b.jsonl"],
+    "p154AndP156PageEdgesCheckedDirectly": true,
+    "secondaryControlPolicy": "BUE1890 remains secondary-only and supplies no ALC1737 reading in this pass."
   },
+  "resolvedThisPass": [
+    "All 32 formerly pending candidate-level starts are promoted and linked from direct same-witness facsimile evidence.",
+    "The exhaustive census establishes five detector false negatives; two were already represented in the selected layer and three required new article objects.",
+    "The p154→p155 edge is corrected: `Durar mucho tiempo` closes on p154 and p155 opens fresh with `Dar de comer à otro`.",
+    "A new top-right miss `Encarnecer el hueſſo. Tecbuatuc.` and internal miss `Enojo. Ompti.` are explicitly promoted.",
+    "The p155→p156 catchword boundary is controlled directly and the page is technically closed at machine_corrected_unverified authority."
+  ],
+  "authorityNote": "P.155 is technically closed through exhaustive AI-assisted direct collation of the locally supplied ALC1737 facsimile. Closure is structural/editorial: humanVerified remains false and BUE1890 supplies no reading.",
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
 }
