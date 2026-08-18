@@ -1,0 +1,15 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":151,
+  "recordType":"phase_ii_local_primary_facsimile_closure",
+  "recordedAt":"2026-08-18",
+  "primaryWitness":{"localFileName":"Cahíta.pdf","internetArchiveIdentifier":"artedelalenguaca00gonz","pdfSha256":"69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37","pdfPageCount":182,"pageRenderSha256":"caa5a514fff496dddbd865783619d06430eac011b17cea9d974a75418ce40b8f","renderDpi":240,"authority":"primary_same_witness"},
+  "pageEdgeControl":{"nextPageDigital":152,"pageRenderSha256":"597e62e624e569ea6611ec464ff7bc6095de80ecef7e58e0b485f87a8f7e8097","decision":"Direct p.152 top confirms `za. Hicapari.` as continuation of p.151 bottom `Coronilla lo alto de la cabe-`."},
+  "census":{"visibleHistoricalArticleStarts":52,"candidateArticleStarts":47,"candidateFalsePositives":0,"falseNegativeVisibleStarts":5,"precision":1.0,"recall":0.903846,"f1":0.949495},
+  "curation":{"preExistingArticles":15,"newStructuredArticles":37,"newArticleIdRange":"ALC1737-art-001249--ALC1737-art-001285","corpusTotalAfterPass":1285,"pendingPromotionAfterPass":0,"explicitlyUnresolvedNewArticles":["ALC1737-art-001253","ALC1737-art-001258","ALC1737-art-001267"]},
+  "decisions":["All 34 formerly pending candidate starts are promoted and linked from direct same-witness visual evidence.","Merged candidate L-002 is confirmed to contain three historical starts; two internal starts are represented in the missed-start layer.","Three additional detector false negatives are identified between R-006 and R-007: `Corcobado. Cotomi.`, `Cordel. Huicri.`, and `Corregir.`.","Continuation candidates R-003, R-006 and R-009 are linked to their parent articles rather than promoted as fresh starts.","R-027 is closed across the p.151→p.152 page boundary as `Coronilla lo alto de la cabeza. Hicapari.`."],
+  "epistemicGuards":["humanVerified remains false.","BUE1890 supplies no ALC1737 transcription.","Three new articles retain unresolved source surfaces rather than receiving conjectural Cahita forms."],
+  "reviewStatus":"machine_corrected_unverified",
+  "humanVerified":false,
+  "provenance":{"agent":"GPT-5.6 Sol","derivedFrom":["p151_left_reconciliation.jsonl","p151_right_reconciliation.jsonl","p151_missed_visible_starts.jsonl","p151_local_facsimile_preflight_2026-08-18.json"],"method":"Exhaustive AI-assisted direct collation of the local ALC1737 facsimile plus direct p.152 page-edge control; no human verification."}
+}
