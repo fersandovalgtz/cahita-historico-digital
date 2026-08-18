@@ -1,0 +1,13 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":155,
+  "recordType":"phase_ii_local_primary_facsimile_preflight",
+  "recordedAt":"2026-08-18",
+  "primaryWitness":{"localFileName":"Cahíta.pdf","internetArchiveIdentifier":"artedelalenguaca00gonz","pdfSha256":"69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37","pdfPageCount":182,"pageRenderSha256":"6572f99f27b99c1bca4d1e78d2ec03bbcd80f62b3aa4db2ee529ca34a460b68f","renderDpi":240,"authority":"primary_same_witness"},
+  "openWork":{"candidatePendingPromotions":32,"leftPending":10,"rightPending":22,"knownMissedStartRecords":2,"visibleStartCensusExhaustive":false,"technicalClosure":false},
+  "knownStructure":["Direct p154 closure supersedes the older machine page-edge model: p154 `Durar mucho tiempo. Tua- / binuatu.` completes on p154, and terminal `Dar` is a catchword to fresh p155 `Dar de comer à otro`; p155 L-001 must therefore be re-evaluated as form-region continuation of a p155 top-edge start rather than continuation from p154.","L-002 is a merged region already linked to selected `Dar de veſtir à otro` and detector-missed `Echar, ò vaciar`.","Selected `Dar de beber à otro. Abitua.` is already documented as a left-edge detector miss.","R-002, R-004 and R-007 are continuation-class candidates associated with R-001, R-003 and R-006 respectively.","R-024 and R-026 retain machine undersegmentation flags pending direct facsimile recollation; the p155→p156 page edge must be checked directly."],
+  "decisions":["The local ALC1737 facsimile is available at 240 dpi for direct p155 article-level collation and exhaustive visible-start census.","No p155 lexical object is promoted in this preflight record; all 32 current pending candidate starts remain pending.","The next p155 pass will recollate the top-left page edge from the primary witness, census both columns exhaustively, verify the existing missed-start layer, inspect R-024/R-026 directly and control the p155→p156 edge without secondary-witness completion."],
+  "reviewStatus":"machine_corrected_unverified",
+  "humanVerified":false,
+  "provenance":{"agent":"GPT-5.6 Sol","derivedFrom":["p155_left_reconciliation.jsonl","p155_right_reconciliation.jsonl","p155_machine_reconciliation_status.json","p155_missed_visible_starts.jsonl","p154_local_facsimile_closure_2026-08-18.json","Cahíta.pdf local 240 dpi render"],"method":"Exact current p155 pending-scope inventory plus direct local same-witness facsimile availability preflight and corrected upstream page-edge context; no p155 lexical promotion and no human verification."}
+}
