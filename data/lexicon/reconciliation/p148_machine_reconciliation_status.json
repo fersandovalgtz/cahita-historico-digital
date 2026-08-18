@@ -3,9 +3,10 @@
   "sourcePageDigital": 148,
   "pageStatus": {
     "candidateReconciliation": "complete",
-    "visibleStartCensus": "not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
+    "visibleStartCensus": "exhaustive_direct_local_facsimile",
+    "promotionLinkage": "complete",
+    "structuralClosure": true,
+    "technicalClosure": true,
     "humanVerificationPlanned": false
   },
   "candidateInventory": {
@@ -28,53 +29,46 @@
       "not_applicable": 0
     }
   },
-  "selectedLayer": {
-    "preExistingArticles": 15,
-    "articleIdRange": [
-      "ALC1737-art-000224",
-      "ALC1737-art-000238"
-    ],
-    "candidateRecordsLinked": 15,
-    "structuredArticlesLinkedFromCandidates": 15,
-    "selectedArticlesUnlinked": 0,
-    "correctedColumnMetadataArticleIds": [
-      "ALC1737-art-000231",
-      "ALC1737-art-000232",
-      "ALC1737-art-000233",
-      "ALC1737-art-000234",
-      "ALC1737-art-000235"
-    ],
-    "columnCountsAfterCorrection": {
-      "left": 12,
-      "right": 3
-    }
+  "linkage": {
+    "articleCandidateRecordsLinked": 44,
+    "structuredArticlesLinkedFromCandidateRecords": 44,
+    "missedStartRecordsLinked": 0,
+    "articleCandidatesPendingPromotion": 0,
+    "unresolvedCandidateBoundaries": 0
   },
-  "promotion": {
-    "articleCandidatesPendingPromotion": 29,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
+  "curation": {
+    "preExistingStructuredArticlesOnPage": 15,
+    "newPromotionsThisPass": 29,
+    "structuredVisibleStartsAfterPass": 44,
+    "newArticleIdRange": "ALC1737-art-001137--ALC1737-art-001165",
+    "corpusTotalAfterPass": 1165,
+    "sourceSurfaceUnresolvedArticles": ["ALC1737-art-001137", "ALC1737-art-001164"]
   },
   "visibleStartEvidence": {
-    "exhaustive": false,
+    "exhaustive": true,
+    "visibleHistoricalArticleStarts": 44,
     "knownVisibleStartsMinimum": 44,
+    "truePositiveCandidateStarts": 44,
+    "falsePositiveCandidateStarts": 0,
+    "falseNegativeVisibleStarts": 0,
     "knownMissedStartRecords": 0,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "All 44 candidates are classified and all 15 selected anchors align, but the selected layer cannot establish that no additional visible starts were missed. Metrics are withheld without a full-page visible-start census."
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "countingNote": "Direct full-page facsimile census establishes exactly 44 visible historical starts, all represented by the 44 article-class canonical candidates; no detector false negative is observed on p.148."
   },
   "physicalContinuities": [
     {
       "from": "ALC1737-vcand-p147-R-025",
       "to": "ALC1737-vcand-p148-L-001",
       "type": "catchword_to_article",
-      "note": "The damaged p147 catchword anticipates selected p148 L-001 `Bruñidor`; L-001 is a fresh article."
+      "note": "The p.147 catchword `Bruñi-` anticipates p.148 L-001 `Bruñidor`; L-001 is a fresh article start."
     },
     {
       "from": "ALC1737-vcand-p148-R-021",
       "to": "ALC1737-vcand-p149-L-001",
       "type": "article_with_trailing_catchword",
-      "note": "R-021 starts `Calabaza generalmente`; trailing `Cala-` anticipates the fresh p149 article `Calabaza pequeña tierna` (selected 000239), whose form is split across p149 L-001/L-002 candidate geometry."
+      "note": "R-021 is `Calabaza generalmente. Camam.`; trailing `Cala-` anticipates the fresh p.149 article and is not a second p.148 lexical start."
     }
   ],
   "metadataCorrections": {
@@ -85,27 +79,31 @@
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
-    "selectedP148LayerUsedAsAnchor": true,
-    "p149OpeningAndSelectedLayerUsedForPageEdge": true,
-    "directFacsimileAvailableThisPass": false,
-    "recoveredPrimaryOcr": {
-      "available": true,
-      "provider": "Internet Archive",
+    "directLocalFacsimileAvailableThisPass": true,
+    "primaryWitness": {
       "identifier": "artedelalenguaca00gonz",
-      "derivative": "artedelalenguaca00gonz_djvu.txt",
-      "use": "same-witness legibility and priority triage only; not treated as direct facsimile transcription authority"
+      "localFile": "Cahíta.pdf",
+      "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+      "pdfPageCount": 182,
+      "pageRenderSha256": "fc1ec528471d2baa6f2cef223858d31a7199a69fe0e2cb09548cbb5e3c648d37"
     },
+    "localFacsimileClosureRecord": "p148_local_facsimile_closure_2026-08-17.json",
     "primaryOcrTriageRecord": "p148_primary_ocr_triage_2026-08-17.json",
-    "phase2PromotionQueue": "p148_phase2_promotion_queue_2026-08-17.json",
-    "policy": "Structural and spatial metadata decisions may be corrected from convergent machine evidence; uncertain lexical text remains unstrengthened and direct ALC1737 facsimile recollation is required for promotion."
+    "promotionBatches": [
+      "data/lexicon/articles/p148_promotions_phase2_a.jsonl",
+      "data/lexicon/articles/p148_promotions_phase2_b.jsonl",
+      "data/lexicon/articles/p148_promotions_phase2_c.jsonl"
+    ],
+    "secondaryControlPolicy": "BUE1890 remains secondary-only and supplies no ALC1737 reading in this pass."
   },
   "resolvedThisPass": [
-    "All 29 current pending_promotion candidates now have an explicit same-witness OCR triage category.",
-    "Seven compact entries are prioritized as the highest-yield direct-facsimile targets and sixteen wrapped entries form the second-priority group.",
-    "Four candidates are explicitly blocked by material OCR damage; pending undersegmented R-007 and R-021 require joint structural/textual recollation.",
-    "No lexical article is promoted from public OCR alone."
+    "All 29 formerly pending candidate-level starts are promoted and linked from direct same-witness facsimile evidence.",
+    "The visible-start census is exhaustive: 44 candidate starts, 44 visible historical starts, and no detector false negatives.",
+    "R-007, R-008, and R-021 retain structural undersegmentation annotations while their lexical articles are fully represented.",
+    "The source-damaged L-004 initial guide glyph and opaque R-019 guide are preserved as unresolved source surface rather than normalized.",
+    "The page is technically closed at machine_corrected_unverified authority."
   ],
-  "authorityNote": "P.148 retains complete candidate-level structural reconciliation and now has complete Phase II primary-OCR prioritization for all 29 pending candidates. This improves work ordering but does not strengthen any transcription: direct facsimile recollation remains required for promotion, the visible-start census remains non-exhaustive, and humanVerified remains false.",
+  "authorityNote": "P.148 is technically closed through exhaustive AI-assisted direct collation of the locally supplied ALC1737 facsimile. Closure is structural/editorial: humanVerified remains false, BUE1890 supplies no reading, and two source-surface readings remain explicitly unresolved rather than conjecturally emended.",
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
 }
