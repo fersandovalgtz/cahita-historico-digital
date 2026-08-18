@@ -1,0 +1,13 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":153,
+  "recordType":"phase_ii_local_primary_facsimile_preflight",
+  "recordedAt":"2026-08-18",
+  "primaryWitness":{"localFileName":"Cahíta.pdf","internetArchiveIdentifier":"artedelalenguaca00gonz","pdfSha256":"69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37","pdfPageCount":182,"pageRenderSha256":"386fdf732b9750271e93b4c4a326ed40b6e526f0c698e2b2516311c41dbdfb0b","renderDpi":240,"authority":"primary_same_witness"},
+  "openWork":{"candidatePendingPromotions":35,"leftPending":16,"rightPending":19,"knownMissedStartRecords":3,"visibleStartCensusExhaustive":false,"technicalClosure":false},
+  "knownStructure":["L-005 is a merged region already linked to two selected direct-collation articles.","R-001, R-003, R-005 and R-006 are continuation-class regions rather than fresh canonical starts.","Three detector misses are already documented on p153, including two top-right starts and one internal `Dar coſas hondas como olla` start.","R-026 ends with `Desbat-` as a catchword; p154 L-001 begins fresh `Desbaſtar madera. Atapetia.`.","Direct p152/p153 edge control confirms p153 opens fresh with `Cuñado de hombre. Mocari.` after the p152 catchword."],
+  "decisions":["The local ALC1737 facsimile is available at 240 dpi for direct p153 article-level collation.","No p153 lexical reading is strengthened in this preflight record; all 35 current pending candidate starts remain pending.","The next p153 pass will combine exhaustive visible-start census with direct promotion/linkage, recollation of the damaged Dar region, and explicit p153→p154 page-edge control."],
+  "reviewStatus":"machine_corrected_unverified",
+  "humanVerified":false,
+  "provenance":{"agent":"GPT-5.6 Sol","derivedFrom":["p153_left_reconciliation.jsonl","p153_right_reconciliation.jsonl","p153_machine_reconciliation_status.json","p153_missed_visible_starts.jsonl"],"method":"Exact current p153 pending-scope inventory plus direct local same-witness facsimile availability preflight; no lexical promotion and no human verification."}
+}
