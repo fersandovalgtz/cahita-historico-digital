@@ -1,94 +1,13 @@
 {
-  "sourceId": "ALC1737",
-  "sourcePageDigital": 160,
-  "pageStatus": {
-    "candidateReconciliation": "complete",
-    "visibleStartCensus": "known_misses_only_not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
-    "humanVerificationPlanned": false
-  },
-  "candidateInventory": {
-    "total": 45,
-    "left": 19,
-    "right": 26,
-    "classification": {
-      "article": 44,
-      "continuation": 1,
-      "paratext": 0,
-      "false_positive": 0,
-      "unresolved": 0
-    },
-    "boundaryAssessment": {
-      "exact": 40,
-      "oversegmented": 2,
-      "undersegmented": 2,
-      "merged_articles": 0,
-      "ambiguous": 0,
-      "not_applicable": 1
-    }
-  },
-  "selectedLayer": {
-    "preExistingArticles": 15,
-    "articleIdRange": [
-      "ALC1737-art-000404",
-      "ALC1737-art-000418"
-    ],
-    "articleCandidateRecordsLinked": 14,
-    "structuredArticlesLinked": 15,
-    "continuationCandidateRecordsLinked": 1,
-    "selectedStartsOutsideCandidateInventory": 1,
-    "selectedArticlesUnlinked": 0,
-    "knownMissedSelectedArticleId": "ALC1737-art-000416"
-  },
-  "promotion": {
-    "articleCandidatesPendingPromotion": 30,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
-  },
-  "visibleStartEvidence": {
-    "exhaustive": false,
-    "knownVisibleStartsMinimum": 45,
-    "knownMissedStartRecords": 1,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "The 44 article candidates plus selected 000416 outside the candidate inventory establish at least 45 starts. L-003 and R-010 contain additional guide-like material without independent anchors, and the selected layer is non-exhaustive; no complete denominator is asserted."
-  },
-  "physicalContinuities": [
-    {
-      "from": "ALC1737-vcand-p159-R-026",
-      "to": "ALC1737-vcand-p160-L-001",
-      "type": "fresh_page_transition",
-      "note": "p160 begins fresh selected `Yr derecho à alguna parte`; it is not a continuation of p159 `Yſlabon` edge material."
-    },
-    {
-      "from": "ALC1737-vcand-p160-L-001",
-      "to": "ALC1737-vcand-p160-L-002",
-      "type": "article_continuation",
-      "note": "Selected 000404 continues into form-only L-002 `Tutula hueye`."
-    },
-    {
-      "from": "ALC1737-vcand-p160-R-026",
-      "to": "ALC1737-vcand-p161-L-001",
-      "type": "article_continuation",
-      "note": "`Latir la vena, ò el corazón` continues into p161 form-only `Qobobohftanhuante`; p161 L-002 begins fresh `Lavar`."
-    }
-  ],
-  "structuralNotes": [
-    "Selected 000416 (`Ladrona. Eet buame.`) is a demonstrated between-candidate false negative between R-005 and R-006.",
-    "L-003 and R-010 contain additional guide-like material but no unanchored internal article is promoted or counted as an exhaustive miss.",
-    "R-026 is a p160 article start despite its form being physically continued on p161."
-  ],
-  "evidence": {
-    "canonicalCandidateInventoryVerified": true,
-    "canonicalCandidateInventoryCount": 2072,
-    "selectedP160LayerUsedAsAnchor": true,
-    "p159ReconciliationUsedForOpeningEdge": true,
-    "p161CandidatesAndSelectedLayerUsedForLowerEdge": true,
-    "directFacsimileAvailableThisPass": false,
-    "policy": "Selected direct collations support demonstrated starts and the one known missed start. OCR-only internal guide-like material remains unpromoted; cross-page form continuation is modeled separately from article-start classification; metrics remain withheld without exhaustive census."
-  },
-  "reviewStatus": "machine_corrected_unverified",
-  "humanVerified": false
+  "sourceId":"ALC1737",
+  "sourcePageDigital":160,
+  "pageStatus":{"candidateReconciliation":"complete","visibleStartCensus":"exhaustive","promotionLinkage":"complete","technicalClosure":true,"humanVerificationPlanned":false},
+  "candidateInventory":{"total":45,"left":19,"right":26,"classification":{"article":44,"continuation":1,"paratext":0,"false_positive":0,"unresolved":0},"boundaryAssessment":{"exact":40,"oversegmented":2,"undersegmented":0,"merged_articles":2,"ambiguous":0,"not_applicable":1}},
+  "selectedLayer":{"preExistingArticles":15,"articleIdRange":["ALC1737-art-000404","ALC1737-art-000418"],"structuredArticlesLinked":15,"selectedArticlesUnlinked":0,"correctedSelectedReadings":[{"articleId":"ALC1737-art-000412","old":"Ladera. Itero.","new":"Ladera. Benei.","authority":"direct ALC1737 facsimile"}]},
+  "promotion":{"articleCandidatesPendingPromotion":0,"newPromotionsThisPass":34,"candidatePromotionsThisPass":30,"newMissedStartArticles":4,"corpusTotalBeforePass":1599,"corpusTotalAfterPass":1633},
+  "visibleStartEvidence":{"exhaustive":true,"visibleStarts":49,"knownVisibleStartsMinimum":49,"knownMissedStartRecords":5,"falseNegatives":5,"falsePositives":0,"precision":1.0,"recall":0.8979591836734694,"f1":0.946236559139785},
+  "physicalContinuities":[{"from":"p159_catchword_Yr","to":"ALC1737-art-000404","type":"catchword_to_fresh_article","note":"Centered p159 `Yr` anticipates fresh p160 `Yr derecho à alguna parte`."},{"from":"ALC1737-vcand-p160-L-001","to":"ALC1737-vcand-p160-L-002","type":"article_continuation","note":"`Yr derecho à alguna parte` continues with form-only `Tutula hueye`."},{"from":"ALC1737-vcand-p160-R-026","to":"ALC1737-vcand-p161-L-001","type":"cross_page_article_continuation","note":"`Latir la vena, ò el corazon` starts at p160 bottom and its Cahíta form continues at p161 top before fresh `Lavar`."}],
+  "structuralNotes":["Detector false negatives: `Yr delante. Buſca guiar.`, `Yvierno. Nahilamtuco -- tua / ſebe.`, selected `Ladrona. Eet buame.`, `Lagartija. Huaſitopichim.`, and `Lamer. Aberoa.`.","R-010 is a merged region containing `Lagrima. Opoa.` plus detector-missed `Lamer. Aberoa.`.","Selected 000412 is corrected from erroneous machine reading `Itero` to directly visible `Benei`.","The final Langoſta form remains explicitly unresolved at damaged glyphs; no secondary witness supplies it.","The p160→p161 Latir article is closed from direct same-witness page-edge collation."],
+  "evidence":{"canonicalCandidateInventoryVerified":true,"canonicalCandidateInventoryCount":2072,"selectedP160LayerUsedAsAnchor":true,"p159AndP161LayersUsedForPageEdges":true,"directFacsimileAvailableThisPass":true,"localSourcePdfSha256":"69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37","policy":"ALC1737 same-witness facsimile controls transcription and boundaries; BUE1890 does not supply ALC1737 text; uncertain surfaces remain explicitly unresolved rather than silently emended."},
+  "reviewStatus":"machine_corrected_unverified","humanVerified":false
 }
