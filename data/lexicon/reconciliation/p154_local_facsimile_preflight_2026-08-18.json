@@ -1,0 +1,13 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":154,
+  "recordType":"phase_ii_local_primary_facsimile_preflight",
+  "recordedAt":"2026-08-18",
+  "primaryWitness":{"localFileName":"Cahíta.pdf","internetArchiveIdentifier":"artedelalenguaca00gonz","pdfSha256":"69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37","pdfPageCount":182,"pageRenderSha256":"06b810d2c10688658a22425bf991656012d3988641b7f806a5d044a68e05d8ac","renderDpi":240,"authority":"primary_same_witness"},
+  "openWork":{"candidatePendingPromotions":41,"leftPending":14,"rightPending":27,"knownMissedStartRecords":0,"visibleStartCensusExhaustive":false,"technicalClosure":false},
+  "knownStructure":["All 56 canonical candidates are currently classified as article starts; no continuation-class candidate is present on p154.","R-008 has severely degraded OCR but direct local facsimile is now available to resolve or preserve the lexical surface conservatively.","R-024 is structurally undersegmented in the machine layer and absorbs trailing material before fresh R-025 `Doncella`; the direct pass must determine whether that material represents a missed start or nonlexical contamination.","R-029 begins `Durar mucho tiempo` and crosses the page edge; p155 L-001 contains form-only continuation before the next fresh lexical starts.","The p153 bottom catchword anticipates fresh p154 L-001 `Desbaſtar madera. Atapetia.` and is not a p154 continuation."],
+  "decisions":["The local ALC1737 facsimile is available at 240 dpi for direct p154 article-level collation and exhaustive visible-start census.","No p154 lexical reading is strengthened in this preflight record; all 41 current pending candidate starts remain pending.","The next p154 pass will collate all pending starts in printed order, inspect R-008 and R-024 at high resolution, and control the p154→p155 `Durar mucho tiempo` continuation directly."],
+  "reviewStatus":"machine_corrected_unverified",
+  "humanVerified":false,
+  "provenance":{"agent":"GPT-5.6 Sol","derivedFrom":["p154_left_reconciliation.jsonl","p154_right_reconciliation.jsonl","p154_machine_reconciliation_status.json","Cahíta.pdf local 240 dpi render"],"method":"Exact current p154 pending-scope inventory plus direct local same-witness facsimile availability preflight; no lexical promotion and no human verification."}
+}
