@@ -1,0 +1,51 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 150,
+  "recordType": "phase_ii_promotion_triage_queue",
+  "recordedAt": "2026-08-18",
+  "scope": {
+    "pendingPromotionCandidates": 40,
+    "candidateIds": [
+      "ALC1737-vcand-p150-L-004","ALC1737-vcand-p150-L-006","ALC1737-vcand-p150-L-008","ALC1737-vcand-p150-L-009","ALC1737-vcand-p150-L-012","ALC1737-vcand-p150-L-013","ALC1737-vcand-p150-L-014","ALC1737-vcand-p150-L-016","ALC1737-vcand-p150-L-017","ALC1737-vcand-p150-L-019","ALC1737-vcand-p150-L-021","ALC1737-vcand-p150-L-022","ALC1737-vcand-p150-L-023","ALC1737-vcand-p150-L-024","ALC1737-vcand-p150-L-025","ALC1737-vcand-p150-L-026",
+      "ALC1737-vcand-p150-R-002","ALC1737-vcand-p150-R-003","ALC1737-vcand-p150-R-005","ALC1737-vcand-p150-R-006","ALC1737-vcand-p150-R-007","ALC1737-vcand-p150-R-008","ALC1737-vcand-p150-R-009","ALC1737-vcand-p150-R-010","ALC1737-vcand-p150-R-013","ALC1737-vcand-p150-R-014","ALC1737-vcand-p150-R-015","ALC1737-vcand-p150-R-016","ALC1737-vcand-p150-R-017","ALC1737-vcand-p150-R-018","ALC1737-vcand-p150-R-019","ALC1737-vcand-p150-R-020","ALC1737-vcand-p150-R-021","ALC1737-vcand-p150-R-022","ALC1737-vcand-p150-R-024","ALC1737-vcand-p150-R-025","ALC1737-vcand-p150-R-026","ALC1737-vcand-p150-R-027","ALC1737-vcand-p150-R-028","ALC1737-vcand-p150-R-030"
+    ]
+  },
+  "triagePolicy": {
+    "automaticPromotionAllowed": false,
+    "rule": "The direct local ALC1737 facsimile is available. Promotion requires article-level same-witness visual collation. R-023 is excluded as a demonstrated false positive, and source damage or opaque text must remain unresolved rather than normalized.",
+    "visibleStartCensusExhaustive": false,
+    "humanVerified": false
+  },
+  "categories": {
+    "left_column_direct_facsimile_pending": {
+      "count": 16,
+      "candidateIds": ["ALC1737-vcand-p150-L-004","ALC1737-vcand-p150-L-006","ALC1737-vcand-p150-L-008","ALC1737-vcand-p150-L-009","ALC1737-vcand-p150-L-012","ALC1737-vcand-p150-L-013","ALC1737-vcand-p150-L-014","ALC1737-vcand-p150-L-016","ALC1737-vcand-p150-L-017","ALC1737-vcand-p150-L-019","ALC1737-vcand-p150-L-021","ALC1737-vcand-p150-L-022","ALC1737-vcand-p150-L-023","ALC1737-vcand-p150-L-024","ALC1737-vcand-p150-L-025","ALC1737-vcand-p150-L-026"],
+      "reason": "Exact current pending set in the left reconciliation, including the cross-column article start L-026.",
+      "evidence": "p150_local_facsimile_preflight_2026-08-18.json"
+    },
+    "right_column_direct_facsimile_pending": {
+      "count": 24,
+      "candidateIds": ["ALC1737-vcand-p150-R-002","ALC1737-vcand-p150-R-003","ALC1737-vcand-p150-R-005","ALC1737-vcand-p150-R-006","ALC1737-vcand-p150-R-007","ALC1737-vcand-p150-R-008","ALC1737-vcand-p150-R-009","ALC1737-vcand-p150-R-010","ALC1737-vcand-p150-R-013","ALC1737-vcand-p150-R-014","ALC1737-vcand-p150-R-015","ALC1737-vcand-p150-R-016","ALC1737-vcand-p150-R-017","ALC1737-vcand-p150-R-018","ALC1737-vcand-p150-R-019","ALC1737-vcand-p150-R-020","ALC1737-vcand-p150-R-021","ALC1737-vcand-p150-R-022","ALC1737-vcand-p150-R-024","ALC1737-vcand-p150-R-025","ALC1737-vcand-p150-R-026","ALC1737-vcand-p150-R-027","ALC1737-vcand-p150-R-028","ALC1737-vcand-p150-R-030"],
+      "reason": "Exact current pending set in the right reconciliation; R-023 is intentionally absent because it is a false-positive layout/OCR artifact.",
+      "evidence": "p150_local_facsimile_preflight_2026-08-18.json"
+    }
+  },
+  "nextPassOrder": [
+    {"priority":1,"category":"left_column_direct_facsimile_pending","rationale":"Proceed in printed order and reconstruct L-026 across the column boundary before interpreting top-right fresh starts."},
+    {"priority":2,"category":"right_column_direct_facsimile_pending","rationale":"Continue the exhaustive census through the right column, preserving R-023 as false positive and resolving R-030 against the p.151 page edge."}
+  ],
+  "epistemicGuards": [
+    "This queue itself changes no p.150 transcription and promotes no p.150 article.",
+    "The 40 pending candidate starts exactly match current pending_promotion records in p150 left/right reconciliations.",
+    "R-023 is not in scope because it is structurally classified false_positive/not_applicable.",
+    "Direct same-witness visual evidence will control the next pass; BUE1890 cannot supply ALC1737 text.",
+    "No precision, recall, or F1 value is claimed until the p.150 visible-start census is exhaustive."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "derivedFrom": ["p150_left_reconciliation.jsonl","p150_right_reconciliation.jsonl","p150_machine_reconciliation_status.json","p150_local_facsimile_preflight_2026-08-18.json"],
+    "method": "Exact current p.150 pending-promotion inventory partitioned by printed column after direct local ALC1737 facsimile became available; no lexical promotion and no human verification."
+  }
+}
