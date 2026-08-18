@@ -3,9 +3,10 @@
   "sourcePageDigital": 149,
   "pageStatus": {
     "candidateReconciliation": "complete",
-    "visibleStartCensus": "not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
+    "visibleStartCensus": "exhaustive_direct_local_facsimile",
+    "promotionLinkage": "complete",
+    "structuralClosure": true,
+    "technicalClosure": true,
     "humanVerificationPlanned": false
   },
   "candidateInventory": {
@@ -20,102 +21,86 @@
       "unresolved": 0
     },
     "boundaryAssessment": {
-      "exact": 48,
+      "exact": 50,
       "oversegmented": 5,
-      "undersegmented": 3,
-      "merged_articles": 0,
+      "undersegmented": 0,
+      "merged_articles": 1,
       "ambiguous": 0,
       "not_applicable": 5
     }
   },
-  "selectedLayer": {
-    "preExistingArticles": 15,
-    "articleIdRange": [
-      "ALC1737-art-000239",
-      "ALC1737-art-000253"
-    ],
-    "articleCandidateRecordsLinked": 15,
-    "structuredArticlesLinked": 15,
-    "continuationCandidateRecordsLinked": 1,
-    "selectedArticlesUnlinked": 0,
-    "crossColumnArticleId": "ALC1737-art-000247"
+  "linkage": {
+    "articleCandidateRecordsLinked": 56,
+    "continuationCandidateRecordsLinked": 5,
+    "structuredArticlesLinkedFromCandidateRecords": 57,
+    "missedStartRecordsLinked": 1,
+    "articleCandidatesPendingPromotion": 0,
+    "unresolvedCandidateBoundaries": 0
   },
-  "promotion": {
-    "articleCandidatesPendingPromotion": 41,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
+  "curation": {
+    "preExistingStructuredArticlesOnPage": 15,
+    "newPromotionsThisPass": 42,
+    "structuredVisibleStartsAfterPass": 57,
+    "newArticleIdRange": "ALC1737-art-001166--ALC1737-art-001207",
+    "corpusTotalAfterPass": 1207,
+    "sourceSurfaceUnresolvedArticles": ["ALC1737-art-001170"]
   },
   "visibleStartEvidence": {
-    "exhaustive": false,
-    "knownVisibleStartsMinimum": 56,
-    "knownMissedStartRecords": 0,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "Candidate reconciliation now identifies 56 article starts and five continuations with zero unresolved candidate boundaries. The selected anchor layer remains non-exhaustive and cannot prove absence of additional missed starts; no performance denominator is asserted."
+    "exhaustive": true,
+    "visibleHistoricalArticleStarts": 57,
+    "knownVisibleStartsMinimum": 57,
+    "truePositiveCandidateStarts": 56,
+    "falsePositiveCandidateStarts": 0,
+    "falseNegativeVisibleStarts": 1,
+    "knownMissedStartRecords": 1,
+    "knownMissedStartFile": "p149_missed_visible_starts.jsonl",
+    "precision": 1.0,
+    "recall": 0.982456,
+    "f1": 0.99115,
+    "countingNote": "Direct full-page facsimile census establishes 57 historical starts: all 56 article-class canonical candidate starts are true, plus detector-missed `Carbon. Matu.` inside R-030."
   },
   "physicalContinuities": [
-    {
-      "from": "ALC1737-vcand-p148-R-021",
-      "to": "ALC1737-vcand-p149-L-001",
-      "type": "catchword_to_article",
-      "note": "The p148 `Cala-` fragment anticipates the fresh selected p149 article ALC1737-art-000239."
-    },
-    {
-      "from": "ALC1737-vcand-p149-L-001",
-      "to": "ALC1737-vcand-p149-L-002",
-      "type": "article_continuation",
-      "note": "Selected article 000239 is split across two candidates; L-002 is continuation."
-    },
-    {
-      "from": "ALC1737-vcand-p149-L-005",
-      "to": "ALC1737-vcand-p149-L-006",
-      "type": "article_continuation"
-    },
-    {
-      "from": "ALC1737-vcand-p149-L-007",
-      "to": "ALC1737-vcand-p149-L-008",
-      "type": "article_continuation"
-    },
-    {
-      "from": "ALC1737-vcand-p149-L-009",
-      "to": "ALC1737-vcand-p149-L-010",
-      "type": "article_continuation"
-    },
-    {
-      "from": "ALC1737-vcand-p149-L-014",
-      "to": "ALC1737-vcand-p149-L-015",
-      "type": "article_continuation"
-    },
-    {
-      "from": "ALC1737-vcand-p149-L-031",
-      "to": "p149:right-top-unrepresented",
-      "type": "cross_column_article_continuation",
-      "note": "ALC1737-art-000247 (`Camarón`) continues into the top of the right column before candidate R-001."
-    },
-    {
-      "from": "ALC1737-vcand-p149-R-030",
-      "to": "ALC1737-vcand-p150-L-001",
-      "type": "page_edge_context",
-      "note": "R-030 contains damaged bottom material; p150 L-001 is the fresh selected article `Carcel`, so no long article continuation is asserted."
-    }
+    {"from":"ALC1737-vcand-p148-R-021","to":"ALC1737-vcand-p149-L-001","type":"catchword_to_article","note":"The p148 `Cala-` catchword anticipates fresh p149 `Calabaza pequeña tierna`."},
+    {"from":"ALC1737-vcand-p149-L-001","to":"ALC1737-vcand-p149-L-002","type":"article_continuation","articleId":"ALC1737-art-000239"},
+    {"from":"ALC1737-vcand-p149-L-005","to":"ALC1737-vcand-p149-L-006","type":"article_continuation","articleId":"ALC1737-art-001166"},
+    {"from":"ALC1737-vcand-p149-L-007","to":"ALC1737-vcand-p149-L-008","type":"article_continuation","articleId":"ALC1737-art-001167"},
+    {"from":"ALC1737-vcand-p149-L-009","to":"ALC1737-vcand-p149-L-010","type":"article_continuation","articleId":"ALC1737-art-001168"},
+    {"from":"ALC1737-vcand-p149-L-014","to":"ALC1737-vcand-p149-L-015","type":"article_continuation","articleId":"ALC1737-art-001171"},
+    {"from":"ALC1737-vcand-p149-L-031","to":"p149:right-top","type":"cross_column_article_continuation","articleId":"ALC1737-art-000247","note":"`Camarón` continues with `Rio. Bacauri.` before fresh R-001 `Camino vereda`."},
+    {"from":"ALC1737-vcand-p149-R-030","to":"ALC1737-vcand-p150-L-001","type":"article_plus_missed_start_plus_catchword","note":"R-030 contains `Carcoma de madera`, missed start `Carbon`, and bottom catchword `Car-`; direct p150 comparison confirms fresh `Carcel`."}
   ],
-  "unresolvedNotes": [],
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
-    "selectedP149LayerUsedAsAnchor": true,
-    "p150OpeningAndSelectedLayerUsedForPageEdge": true,
-    "directFacsimileAvailableThisPass": false,
-    "policy": "Candidate-level structure may be closed from convergent canonical geometry, same-witness OCR sequence and explicit secondary control. Uncertain lexical text is not strengthened or promoted, and the visible-start census remains non-exhaustive.",
-    "structuralResolutionRecord": "p149_structural_resolution_2026-08-17.json",
-    "materializedCandidateView": "data/lexicon/candidates/p149_candidates.jsonl",
-    "recoveredPrimaryOcrSequenceUsed": true,
-    "bue1890SecondarySequenceControlUsed": true
+    "directLocalFacsimileAvailableThisPass": true,
+    "primaryWitness": {
+      "identifier": "artedelalenguaca00gonz",
+      "localFile": "Cahíta.pdf",
+      "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+      "pdfPageCount": 182,
+      "pageRenderSha256": "c853bbeebe721f828980da24900a376388f4d0adb0ea456063140023aad17970"
+    },
+    "localFacsimilePreflightRecord": "p149_local_facsimile_preflight_2026-08-17.json",
+    "localFacsimileClosureRecord": "p149_local_facsimile_closure_2026-08-17.json",
+    "missedStartRecord": "p149_missed_visible_starts.jsonl",
+    "promotionBatches": [
+      "data/lexicon/articles/p149_promotions_phase2_a.jsonl",
+      "data/lexicon/articles/p149_promotions_phase2_b.jsonl",
+      "data/lexicon/articles/p149_promotions_phase2_c.jsonl",
+      "data/lexicon/articles/p149_promotions_phase2_d.jsonl"
+    ],
+    "p150OpeningCheckedDirectly": true,
+    "secondaryControlPolicy": "BUE1890 remains secondary-only and supplies no ALC1737 reading in this pass."
   },
-  "reviewStatus": "machine_corrected_unverified",
-  "humanVerified": false,
   "resolvedThisPass": [
-    "L-019 is resolved as a real article boundary for the second Calentura entry (`Calentura tener`). Its independent canonical start at y=219.926, recovered ALC1737 OCR sequence and BUE1890 secondary sequence control converge on the same article order. L-018 retains undersegmented because OCR grouping absorbs the `tener*` fragment there. No ALC1737 Cahita form is promoted from this structural decision."
-  ]
+    "All 41 formerly pending candidate-level starts are promoted and linked from direct same-witness facsimile evidence.",
+    "All five continuation candidates are linked to their parent lexical article.",
+    "The exhaustive census identifies and promotes one detector false negative, `Carbon. Matu.`.",
+    "L-018 and R-012 are recollated as exact; R-030 is recollated as merged_articles and links both `Carcoma de madera` and `Carbon`.",
+    "Bottom `Car-` is confirmed as a catchword by direct comparison with p.150 `Carcel`.",
+    "The page is technically closed at machine_corrected_unverified authority while one internal glyph in `Calcañar` remains explicitly unresolved."
+  ],
+  "authorityNote": "P.149 is technically closed through exhaustive AI-assisted direct collation of the locally supplied ALC1737 facsimile. Closure is structural/editorial: humanVerified remains false, BUE1890 supplies no reading, and one internal source glyph remains explicitly unresolved rather than conjecturally normalized.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
 }
