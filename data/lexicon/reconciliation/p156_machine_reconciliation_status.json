@@ -3,9 +3,9 @@
   "sourcePageDigital": 156,
   "pageStatus": {
     "candidateReconciliation": "complete",
-    "visibleStartCensus": "known_misses_only_not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
+    "visibleStartCensus": "exhaustive",
+    "promotionLinkage": "complete",
+    "technicalClosure": true,
     "humanVerificationPlanned": false
   },
   "candidateInventory": {
@@ -30,59 +30,63 @@
   },
   "selectedLayer": {
     "preExistingArticles": 15,
-    "articleIdRange": [
-      "ALC1737-art-000344",
-      "ALC1737-art-000358"
-    ],
+    "articleIdRange": ["ALC1737-art-000344", "ALC1737-art-000358"],
     "articleCandidateRecordsLinked": 14,
     "structuredArticlesLinked": 15,
     "selectedArticlesUnlinked": 0,
     "mergedCandidateId": "ALC1737-vcand-p156-L-001",
-    "mergedSelectedArticleIds": [
-      "ALC1737-art-000344",
-      "ALC1737-art-000345"
-    ]
+    "mergedSelectedArticleIds": ["ALC1737-art-000344", "ALC1737-art-000345"]
   },
   "promotion": {
-    "articleCandidatesPendingPromotion": 38,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
+    "articleCandidatesPendingPromotion": 0,
+    "newPromotionsThisPass": 46,
+    "candidatePromotionsThisPass": 38,
+    "missedStartsPromotedThisPass": 8,
+    "corpusTotalBeforePass": 1439,
+    "corpusTotalAfterPass": 1485
   },
   "visibleStartEvidence": {
-    "exhaustive": false,
-    "knownVisibleStartsMinimum": 53,
-    "knownMissedStartRecords": 1,
+    "exhaustive": true,
+    "knownVisibleStartsMinimum": 61,
+    "visibleStarts": 61,
+    "knownMissedStartRecords": 9,
     "knownMergedInternalStarts": 1,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "The 52 article candidates plus one distinct selected start absorbed inside L-001 establish at least 53 starts. The selected layer is non-exhaustive, so no complete denominator or performance metric is asserted."
+    "falseNegatives": 9,
+    "falsePositives": 0,
+    "precision": 1.0,
+    "recall": 0.8524590163934426,
+    "f1": 0.9203539823008849,
+    "methodNote": "Direct high-resolution same-witness census. All 52 candidate starts are true; nine visible starts were missed, predominantly because OCR merged simultaneous lines across the two printed columns."
   },
   "physicalContinuities": [
     {
       "from": "ALC1737-vcand-p155-R-026",
-      "to": "ALC1737-vcand-p156-L-001",
+      "to": "ALC1737-art-001440",
       "type": "catchword_to_article",
-      "note": "Damaged p155 edge material anticipates fresh p156 `Enſeñar`; L-001 is not classified as a continuation."
+      "note": "p155 catchword `Enſar-` anticipates fresh p156 `Enſartar cuentas. Coſcam ſoa.`."
     },
     {
       "from": "ALC1737-vcand-p156-R-026",
       "to": "ALC1737-vcand-p157-L-001",
       "type": "fresh_page_transition",
-      "note": "p156 `Eſquina` is structurally distinct and p157 opens with fresh Eſt- material; no article continuation is asserted."
+      "note": "p156 `Eſquina. Chimucuu.` is complete; p157 opens fresh Eſt- material, so no article continuation is asserted."
     }
   ],
   "structuralNotes": [
-    "L-001 is a merged-start region containing selected 000344 and 000345.",
-    "L-025 has truncated OCR but remains a structurally distinct article start; no inferred continuation is created."
+    "L-001 remains a merged detector region containing distinct `Enſeñar` and `Enſeñanza` starts.",
+    "Nine detector false negatives are recorded; eight required new structured articles and the ninth is pre-existing `Enſeñanza` (000345).",
+    "Four cross-column OCR mergers account for paired left/right misses; a fifth merge hides `Eſpuma` beside the continuation of `Eſcobeta para peinarſe`.",
+    "L-025 `Eſcobeta para peinarſe` retains an unresolved printed separator glyph without semantic conjecture.",
+    "R-021 `Eſpinilla de la pierna` preserves the Cahíta surface `Huo- / ota` unjoined because the page edge obscures the first-line ending."
   ],
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
     "selectedP156LayerUsedAsAnchor": true,
-    "p155AndP157CandidateLayersUsedForPageEdges": true,
-    "directFacsimileAvailableThisPass": false,
-    "policy": "Known internal misses are separated from candidate reconciliation; OCR damage does not by itself alter structurally supported boundaries; metrics remain withheld without exhaustive census."
+    "p155AndP157LayersUsedForPageEdges": true,
+    "directFacsimileAvailableThisPass": true,
+    "localSourcePdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "policy": "ALC1737 same-witness facsimile controls transcription and boundaries; BUE1890 does not supply ALC1737 text; uncertain surfaces are retained explicitly unresolved rather than silently emended."
   },
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
