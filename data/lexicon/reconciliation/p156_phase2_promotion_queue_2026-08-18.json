@@ -1,0 +1,14 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":156,
+  "recordType":"phase_ii_promotion_triage_queue",
+  "recordedAt":"2026-08-18",
+  "scope":{"pendingPromotionCandidates":38,"leftPending":15,"rightPending":23},
+  "triagePolicy":{"automaticPromotionAllowed":false,"rule":"Promotion requires direct article-level collation against the local same-witness ALC1737 facsimile; uncertain readings remain unresolved and no secondary witness may supply ALC1737 text.","visibleStartCensusExhaustive":false,"humanVerified":false},
+  "categories":{"left_column_direct_facsimile_pending":{"count":15,"candidateIds":["ALC1737-vcand-p156-L-002","ALC1737-vcand-p156-L-010","ALC1737-vcand-p156-L-011","ALC1737-vcand-p156-L-015","ALC1737-vcand-p156-L-016","ALC1737-vcand-p156-L-017","ALC1737-vcand-p156-L-018","ALC1737-vcand-p156-L-019","ALC1737-vcand-p156-L-020","ALC1737-vcand-p156-L-021","ALC1737-vcand-p156-L-022","ALC1737-vcand-p156-L-023","ALC1737-vcand-p156-L-024","ALC1737-vcand-p156-L-025","ALC1737-vcand-p156-L-026"],"reason":"Exact current pending set in the left reconciliation; linked selected anchors are excluded.","evidence":"p156_local_facsimile_preflight_2026-08-18.json"},"right_column_direct_facsimile_pending":{"count":23,"reason":"Exact current pending_promotion population in the right reconciliation; three already-linked selected anchors are excluded. Candidate-level linkage will be rewritten from direct same-witness collation in the closure pass.","evidence":"p156_local_facsimile_preflight_2026-08-18.json"}},
+  "nextPassOrder":[{"priority":1,"category":"left_column_direct_facsimile_pending","rationale":"Proceed from the directly controlled p155 catchword into p156 in printed order while checking the merged opening region and detector-miss completeness."},{"priority":2,"category":"right_column_direct_facsimile_pending","rationale":"Continue through the right column, recollating every pending start and then control the p156→p157 page edge directly."}],
+  "epistemicGuards":["This queue promotes no p156 lexical object.","The pending total of 38 matches the current p156 machine status.","Direct same-witness visual evidence controls the next pass; BUE1890 cannot supply ALC1737 text.","No precision, recall or F1 is asserted until the p156 visible-start census is exhaustive."],
+  "reviewStatus":"machine_corrected_unverified",
+  "humanVerified":false,
+  "provenance":{"agent":"GPT-5.6 Sol","derivedFrom":["p156_left_reconciliation.jsonl","p156_right_reconciliation.jsonl","p156_machine_reconciliation_status.json","p156_local_facsimile_preflight_2026-08-18.json"],"method":"Current p156 pending-promotion inventory partitioned by printed column after direct local ALC1737 facsimile became available; no lexical promotion and no human verification."}
+}
