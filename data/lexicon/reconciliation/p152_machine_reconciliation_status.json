@@ -3,80 +3,84 @@
   "sourcePageDigital": 152,
   "pageStatus": {
     "candidateReconciliation": "complete",
-    "visibleStartCensus": "not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
+    "visibleStartCensus": "exhaustive_direct_local_facsimile",
+    "promotionLinkage": "complete",
+    "structuralClosure": true,
+    "technicalClosure": true,
     "humanVerificationPlanned": false
   },
   "candidateInventory": {
     "total": 52,
     "left": 28,
     "right": 24,
-    "classification": {
-      "article": 52,
-      "continuation": 0,
-      "paratext": 0,
-      "false_positive": 0,
-      "unresolved": 0
-    },
-    "boundaryAssessment": {
-      "exact": 52,
-      "oversegmented": 0,
-      "undersegmented": 0,
-      "merged_articles": 0,
-      "ambiguous": 0,
-      "not_applicable": 0
-    }
+    "classification": {"article": 52, "continuation": 0, "paratext": 0, "false_positive": 0, "unresolved": 0},
+    "boundaryAssessment": {"exact": 52, "oversegmented": 0, "undersegmented": 0, "merged_articles": 0, "ambiguous": 0, "not_applicable": 0}
   },
-  "selectedLayer": {
-    "preExistingArticles": 15,
-    "articleIdRange": [
-      "ALC1737-art-000284",
-      "ALC1737-art-000298"
-    ],
-    "articleCandidateRecordsLinked": 15,
-    "structuredArticlesLinked": 15,
-    "selectedArticlesUnlinked": 0
+  "linkage": {
+    "articleCandidateRecordsLinked": 52,
+    "structuredArticlesLinkedFromCandidateRecords": 52,
+    "missedStartRecordsLinked": 1,
+    "articleCandidatesPendingPromotion": 0,
+    "unresolvedCandidateBoundaries": 0
   },
-  "promotion": {
-    "articleCandidatesPendingPromotion": 37,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
+  "curation": {
+    "preExistingStructuredArticlesOnPage": 15,
+    "newPromotionsThisPass": 38,
+    "structuredVisibleStartsAfterPass": 53,
+    "newArticleIdRange": "ALC1737-art-001286--ALC1737-art-001323",
+    "corpusTotalAfterPass": 1323,
+    "sourceSurfaceUnresolvedArticles": []
   },
   "visibleStartEvidence": {
-    "exhaustive": false,
-    "knownVisibleStartsMinimum": 52,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "All 52 canonical candidates are structurally consistent with lexical starts, but the selected anchor layer is not exhaustive and cannot prove absence of additional missed starts. No performance denominator is asserted."
+    "exhaustive": true,
+    "visibleHistoricalArticleStarts": 53,
+    "knownVisibleStartsMinimum": 53,
+    "truePositiveCandidateStarts": 52,
+    "falsePositiveCandidateStarts": 0,
+    "falseNegativeVisibleStarts": 1,
+    "knownMissedStartRecords": 1,
+    "knownMissedStartFile": "p152_missed_visible_starts.jsonl",
+    "precision": 1.0,
+    "recall": 0.981132,
+    "f1": 0.990476,
+    "countingNote": "Direct full-page facsimile census establishes 53 historical starts: all 52 article-class canonical candidates are true starts, plus detector-missed `Cuñada de muger. Hacalae.` after R-024."
   },
   "physicalContinuities": [
-    {
-      "from": "ALC1737-vcand-p151-R-027",
-      "to": "p152:left-top-unrepresented",
-      "type": "page_edge_article_continuation",
-      "note": "p151 `Coronilla...` may continue into page-top material before p152 L-001; p152 L-001 is fresh `Crecer el hombre`."
-    },
-    {
-      "from": "ALC1737-vcand-p152-R-024",
-      "to": "ALC1737-vcand-p153-L-001",
-      "type": "page_edge_context",
-      "note": "R-024 begins `Cuñado de muger...`; p153 L-001 begins fresh `Cuñado de hombre. Mocari.` No long article continuation is asserted."
-    }
+    {"from":"ALC1737-vcand-p151-R-027","to":"p152:left-top","type":"page_edge_article_continuation","articleId":"ALC1737-art-001285","note":"p151 `Coronilla lo alto de la cabe-` closes at p152 top with `za. Hicapari.` before fresh p152 L-001."},
+    {"from":"ALC1737-vcand-p152-R-024","to":"ALC1737-miss-p152-R-001","type":"adjacent_fresh_start","note":"`Cuñado de muger. Aſuſamari.` is followed by separate fresh `Cuñada de muger. Hacalae.`; the latter is a detector false negative."},
+    {"from":"p152:right-bottom-catchword","to":"ALC1737-vcand-p153-L-001","type":"catchword_to_article","note":"The page-bottom catchword anticipates fresh p153 `Cuñado de hombre. Mocari.` and is not counted as a p152 lexical start."}
   ],
   "structuralNotes": [
-    "R-002 contains probable cross-column OCR/layout contamination: trailing `Iotuc*` matches the selected form of p152 L-001 and is not counted as another start.",
-    "L-006 ends hyphenated in OCR, but L-007 begins a fresh `Crucificar` article; no continuation candidate is invented."
+    "R-002 remains an exact article start; direct facsimile shows trailing OCR material to be cross-column layout contamination rather than another start.",
+    "All 52 canonical candidate starts are true historical lexical starts.",
+    "One additional visible start, `Cuñada de muger. Hacalae.`, is promoted from the exhaustive missed-start census."
   ],
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
-    "selectedP152LayerUsedAsAnchor": true,
-    "p151AndP153LayersUsedForPageEdges": true,
-    "directFacsimileAvailableThisPass": false,
-    "policy": "Structural starts may be classified from convergent candidate geometry, OCR context and selected anchors; OCR contamination and textual incompleteness remain explicit, and metrics are withheld without an exhaustive visible-start census."
+    "directLocalFacsimileAvailableThisPass": true,
+    "primaryWitness": {
+      "identifier": "artedelalenguaca00gonz",
+      "localFile": "Cahíta.pdf",
+      "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+      "pdfPageCount": 182,
+      "pageRenderSha256": "597e62e624e569ea6611ec464ff7bc6095de80ecef7e58e0b485f87a8f7e8097"
+    },
+    "localFacsimilePreflightRecord": "p152_local_facsimile_preflight_2026-08-18.json",
+    "localFacsimileClosureRecord": "p152_local_facsimile_closure_2026-08-18.json",
+    "missedStartRecord": "p152_missed_visible_starts.jsonl",
+    "promotionBatches": ["data/lexicon/articles/p152_promotions_phase2_a.jsonl","data/lexicon/articles/p152_promotions_phase2_b.jsonl"],
+    "p151AndP153PageEdgesCheckedDirectly": true,
+    "secondaryControlPolicy": "BUE1890 remains secondary-only and supplies no ALC1737 reading in this pass."
   },
+  "resolvedThisPass": [
+    "All 37 formerly pending candidate-level starts are promoted and linked from direct same-witness facsimile evidence.",
+    "The exhaustive census identifies and promotes one detector false negative, `Cuñada de muger. Hacalae.`.",
+    "R-002 cross-column OCR contamination is rejected as lexical evidence.",
+    "The p151→p152 Coronilla continuation and p152→p153 catchword boundary are controlled directly.",
+    "The page is technically closed at machine_corrected_unverified authority."
+  ],
+  "authorityNote": "P.152 is technically closed through exhaustive AI-assisted direct collation of the locally supplied ALC1737 facsimile. Closure is structural/editorial: humanVerified remains false and BUE1890 supplies no reading.",
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
 }

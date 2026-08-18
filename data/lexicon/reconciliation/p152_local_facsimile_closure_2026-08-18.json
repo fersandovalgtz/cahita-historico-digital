@@ -1,0 +1,62 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 152,
+  "recordType": "phase_ii_local_primary_facsimile_closure",
+  "recordedAt": "2026-08-18",
+  "primaryWitness": {
+    "localFileName": "Cahíta.pdf",
+    "internetArchiveIdentifier": "artedelalenguaca00gonz",
+    "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "pdfPageCount": 182,
+    "pageRenderSha256": "597e62e624e569ea6611ec464ff7bc6095de80ecef7e58e0b485f87a8f7e8097",
+    "renderDpi": 240,
+    "authority": "primary_same_witness"
+  },
+  "census": {
+    "visibleHistoricalArticleStarts": 53,
+    "candidateArticleStarts": 52,
+    "truePositiveCandidateStarts": 52,
+    "falsePositiveCandidateStarts": 0,
+    "detectorFalseNegatives": 1,
+    "precision": 1.0,
+    "recall": 0.981132,
+    "f1": 0.990476,
+    "exhaustive": true
+  },
+  "closure": {
+    "preExistingStructuredArticles": 15,
+    "newCandidatePromotions": 37,
+    "newMissedStartPromotions": 1,
+    "newPromotionsTotal": 38,
+    "articleIdRange": "ALC1737-art-001286--ALC1737-art-001323",
+    "candidatePendingAfterPass": 0,
+    "structuredVisibleStartsAfterPass": 53,
+    "corpusTotalAfterPass": 1323,
+    "technicalClosure": true
+  },
+  "structuralDecisions": [
+    "All 52 canonical article candidates are confirmed as true lexical starts by exhaustive direct facsimile census.",
+    "Top-of-page `za. Hicapari.` is continuation of p151 `Coronilla lo alto de la cabe-` and closes ALC1737-art-001285 before fresh L-001.",
+    "R-002 is an exact `Cuyo? Abcatea.` start; trailing OCR material is cross-column contamination and not a second start.",
+    "A detector false negative `Cuñada de muger. Hacalae.` is visible after R-024 and is promoted as ALC1737-art-001323.",
+    "The bottom catchword is not a p152 lexical start; direct comparison with p153 confirms a fresh `Cuñado de hombre. Mocari.` opening."
+  ],
+  "authorityGuards": [
+    "All new ALC1737 readings in this pass derive from direct visual collation of the locally supplied 1737 witness.",
+    "BUE1890 is not used to supply or silently normalize any ALC1737 reading.",
+    "Direct AI-assisted collation is recorded as machine_corrected_unverified; humanVerified remains false.",
+    "Detector-missed `Cuñada de muger. Hacalae.` remains separately documented in p152_missed_visible_starts.jsonl after promotion."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol visual collation",
+    "derivedFrom": [
+      "p152_left_reconciliation.jsonl",
+      "p152_right_reconciliation.jsonl",
+      "p152_missed_visible_starts.jsonl",
+      "p152_local_facsimile_preflight_2026-08-18.json"
+    ],
+    "method": "Exhaustive direct same-witness visual census followed by candidate/missed-start promotion, page-edge control and page-level closure; no independent human verification."
+  }
+}
