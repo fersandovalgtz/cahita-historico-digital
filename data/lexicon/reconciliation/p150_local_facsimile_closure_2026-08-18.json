@@ -1,0 +1,14 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":150,
+  "recordType":"phase_ii_local_primary_facsimile_closure",
+  "recordedAt":"2026-08-18",
+  "primaryWitness":{"localFileName":"Cahíta.pdf","internetArchiveIdentifier":"artedelalenguaca00gonz","pdfSha256":"69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37","pdfPageCount":182,"pageRenderSha256":"b1c0b20eef7e7081f97b7700568efdfb60ad669315550ed07f624fdb64850852","renderDpi":240,"authority":"primary_same_witness"},
+  "census":{"visibleHistoricalArticleStarts":56,"candidateArticleStarts":55,"candidateFalsePositives":1,"falseNegativeVisibleStarts":1,"precision":1.0,"recall":0.982143,"f1":0.990991},
+  "curation":{"preExistingArticles":15,"newStructuredArticles":41,"newArticleIdRange":"ALC1737-art-001208--ALC1737-art-001248","corpusTotalAfterPass":1248,"pendingPromotionAfterPass":0},
+  "decisions":["All 40 formerly pending article candidates are promoted and linked from direct same-witness visual evidence.","R-023 remains a demonstrated layout/OCR false positive.","R-026 contains two historical starts: `Comegen animal. Curu,` and detector-missed `Comer. hibua.`; the latter is recorded separately as a missed start.","L-026 is reconstructed across the column boundary as `Cauſa, ò el porqué de la coſa. Hilabechibo.`.","R-030 represents `Como. Hibuame.` plus the catchword `Com-`, confirmed against p.151 opening `Compadecerſe`."],
+  "epistemicGuards":["humanVerified remains false.","BUE1890 supplies no ALC1737 transcription; it is at most secondary sequence corroboration.","Historical typography and uncertain relations between multiple printed forms are preserved rather than silently normalized."],
+  "reviewStatus":"machine_corrected_unverified",
+  "humanVerified":false,
+  "provenance":{"agent":"GPT-5.6 Sol","derivedFrom":["p150_left_reconciliation.jsonl","p150_right_reconciliation.jsonl","p150_local_facsimile_preflight_2026-08-18.json","p150_missed_visible_starts.jsonl"],"method":"Exhaustive AI-assisted direct collation of the local ALC1737 facsimile and candidate/article reconciliation; no human verification."}
+}
