@@ -1,0 +1,73 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 164,
+  "recordType": "local_facsimile_technical_closure",
+  "recordedAt": "2026-08-19",
+  "sourceEvidence": {
+    "localPdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "witness": "ALC1737",
+    "authority": "same-witness facsimile; BUE1890 not used to supply ALC1737 readings"
+  },
+  "census": {
+    "visibleHistoricalStarts": 56,
+    "candidateArticleStarts": 51,
+    "trueCandidateStarts": 51,
+    "continuationCandidates": 0,
+    "falsePositives": 0,
+    "falseNegatives": 5,
+    "precision": 1.0,
+    "recall": 0.9107142857142857,
+    "f1": 0.9532710280373832
+  },
+  "promotion": {
+    "pendingCandidatePromotionsBefore": 36,
+    "pendingCandidatePromotionsAfter": 0,
+    "newStructuredArticles": 41,
+    "candidatePromotions": 36,
+    "newMissedStartArticles": 5,
+    "articleIdRange": ["ALC1737-art-001741", "ALC1737-art-001781"],
+    "corpusTotalBefore": 1740,
+    "corpusTotalAfter": 1781
+  },
+  "missedStarts": [
+    "Nacido, ò encordio. Chimu.",
+    "Noche. Tucabe.",
+    "O, adv. para llamar. Ot ai.",
+    "Obediencia. Aiore.",
+    "Obrar algo. Buſca hazer."
+  ],
+  "unresolvedSurfaces": [
+    {
+      "articleId": "ALC1737-art-001760",
+      "surface": "Nones aver. Huepulal, [ileg.], babi, l, 5. manmi, &c.",
+      "reason": "one internal printed marker remains illegible in the same-witness facsimile; no conjectural normalization is supplied"
+    },
+    {
+      "articleId": "ALC1737-art-000477",
+      "surface": "Noez, y nogal. Lo miſmo.",
+      "reason": "historical anaphora `Lo miſmo.` remains semantically unresolved although the physical article boundary is exact"
+    }
+  ],
+  "mergedCandidates": [
+    {"candidateId":"ALC1737-vcand-p164-R-018","linkedArticleIds":["ALC1737-art-001774","ALC1737-art-001775"],"paratext":"O."},
+    {"candidateId":"ALC1737-vcand-p164-R-020","linkedArticleIds":["ALC1737-art-001777","ALC1737-art-001778"]},
+    {"candidateId":"ALC1737-vcand-p164-R-022","linkedArticleIds":["ALC1737-art-001780","ALC1737-art-001781"],"followingCatchword":"Obra"}
+  ],
+  "pageEdges": {
+    "fromP163": "p163 ends lexically with `Nacer la planta. Sibue.` followed by catchword `Naci`; p164 opens fresh `Nacido, ò encordio. Chimu.` before canonical L-001 `Nacimiento. Ioleria.`",
+    "toP165": "p164 ends lexically with `Obrar algo. Buſca hazer.` followed by catchword `Obra`; p165 opens fresh `Obra aſſi, hechura. Chupari.`"
+  },
+  "qualityStatus": {
+    "candidateReconciliation": "complete",
+    "visibleStartCensus": "exhaustive",
+    "promotionLinkage": "complete",
+    "technicalClosure": true,
+    "reviewStatus": "machine_corrected_unverified",
+    "humanVerified": false
+  },
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "method": "AI-assisted direct high-resolution local-facsimile collation and structural reconciliation; no human verification",
+    "processedAt": null
+  }
+}
