@@ -1,0 +1,70 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 163,
+  "recordType": "phase_ii_primary_facsimile_reentry_preflight",
+  "recordedAt": "2026-08-19",
+  "primaryWitness": {
+    "internetArchiveIdentifier": "artedelalenguaca00gonz",
+    "pdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "pdfPageCount": 182,
+    "authority": "primary_same_witness",
+    "publicMirrorLocated": true,
+    "directPageImageInspectionThisPass": false
+  },
+  "baselineAfterPreviousPageClosure": {
+    "previousPage": 162,
+    "previousPageTechnicalClosure": true,
+    "corpusTotal": 1708,
+    "openingEdge": "p162 terminal catchword `Mozo` anticipates fresh p163 selected article ALC1737-art-000449 (`Mozo de edad. Buſca mancebo.`); no p162→p163 lexical continuation is asserted."
+  },
+  "openWork": {
+    "candidateInventory": 49,
+    "articleCandidates": 42,
+    "continuationCandidates": 7,
+    "candidatePendingPromotions": 28,
+    "leftPending": 10,
+    "rightPending": 18,
+    "knownMissedStartRecords": 1,
+    "knownVisibleStartsMinimum": 43,
+    "visibleStartCensusExhaustive": false,
+    "technicalClosure": false
+  },
+  "facsimilePriorityZones": [
+    "L-001: page-top tail of ALC1737-art-000449 plus fresh selected ALC1737-art-000450; verify full visible-start boundary.",
+    "L-002: continuation/cross-reference material followed by fresh `Moho como de pan`; direct image required before promotion.",
+    "L-003: tail of preceding article followed by fresh `Moho como de hierro`; verify start and continuation into L-004.",
+    "L-007: continuation material from L-006 followed by selected `Moler`; verify exact boundary.",
+    "R-023: `Murmuyo`-like start plus damaged page-bottom/catchword-like material; verify lower edge before fresh p164 `Nacimiento`."
+  ],
+  "knownContinuities": [
+    "L-003→L-004",
+    "L-010→L-011",
+    "L-012→L-013",
+    "L-022→L-023",
+    "L-026→R-001",
+    "R-004→R-005",
+    "R-006→R-007"
+  ],
+  "decisions": [
+    "The current p163 candidate reconciliation remains structurally usable after p162 closure, but its corpus baseline is updated from the historical 1045 to the current 1708 articles.",
+    "No p163 lexical object is promoted in this preflight record: the 28 pending candidate starts require direct same-witness facsimile collation, and additional detector false negatives cannot be excluded until both columns are censused exhaustively.",
+    "Public OCR may support navigation and structural reconnaissance only; it is not transcription authority and must not supply Cahíta forms or silent emendations.",
+    "The next closure pass must census every fresh visible start on p163, resolve the five undersegmented priority zones, verify all seven continuities, control both page edges, promote only directly supported articles, link every article candidate, and calculate detector metrics only after the denominator is exhaustive."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "derivedFrom": [
+      "p162_machine_reconciliation_status.json",
+      "p163_preflight.json",
+      "p163_left_reconciliation.jsonl",
+      "p163_right_reconciliation.jsonl",
+      "p163_machine_reconciliation_status.json",
+      "p163_missed_visible_starts.jsonl",
+      "p164 selected/candidate opening context",
+      "public same-witness locator for Internet Archive identifier artedelalenguaca00gonz"
+    ],
+    "method": "Re-entry preflight after exhaustive p162 closure: synchronize the current corpus baseline, preserve conservative p163 structural reconciliation, enumerate exact facsimile priorities and prohibit promotion from OCR-only evidence; no direct page-image collation and no human verification in this pass."
+  }
+}
