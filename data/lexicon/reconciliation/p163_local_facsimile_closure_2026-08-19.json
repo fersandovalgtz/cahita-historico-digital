@@ -29,11 +29,7 @@
     "newMissedStartArticles": 3,
     "articleIdRange": ["ALC1737-art-001709", "ALC1737-art-001740"],
     "corpusTotalBefore": 1708,
-    "corpusTotalAfter": 1740,
-    "globalPhase2PendingBeforeDirectReclassification": 473,
-    "globalPhase2ReclassificationDelta": 1,
-    "globalPhase2PendingBefore": 474,
-    "globalPhase2PendingAfter": 445
+    "corpusTotalAfter": 1740
   },
   "missedStarts": [
     "Mozo de edad. Buſca mancebo.",
