@@ -3,9 +3,9 @@
   "sourcePageDigital": 163,
   "pageStatus": {
     "candidateReconciliation": "complete",
-    "visibleStartCensus": "known_misses_only_not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
+    "visibleStartCensus": "exhaustive",
+    "promotionLinkage": "complete",
+    "technicalClosure": true,
     "humanVerificationPlanned": false
   },
   "candidateInventory": {
@@ -13,138 +13,142 @@
     "left": 26,
     "right": 23,
     "classification": {
-      "article": 42,
-      "continuation": 7,
+      "article": 43,
+      "continuation": 6,
       "paratext": 0,
       "false_positive": 0,
       "unresolved": 0
     },
     "boundaryAssessment": {
-      "exact": 31,
-      "oversegmented": 6,
-      "undersegmented": 5,
-      "merged_articles": 0,
+      "exact": 32,
+      "oversegmented": 5,
+      "undersegmented": 4,
+      "merged_articles": 2,
       "ambiguous": 0,
-      "not_applicable": 7
+      "not_applicable": 6
     }
   },
   "selectedLayer": {
     "preExistingArticles": 15,
-    "articleIdRange": [
-      "ALC1737-art-000449",
-      "ALC1737-art-000463"
-    ],
+    "articleIdRange": ["ALC1737-art-000449", "ALC1737-art-000463"],
     "articleCandidateRecordsLinked": 14,
     "structuredArticlesLinked": 15,
-    "continuationCandidateRecordsLinked": 1,
     "selectedStartsOutsideCandidateInventory": 1,
     "selectedArticlesUnlinked": 0,
-    "knownMissedSelectedArticleIds": [
-      "ALC1737-art-000449"
-    ]
+    "knownMissedSelectedArticleIds": ["ALC1737-art-000449"],
+    "correctedSelectedReadings": []
   },
   "promotion": {
-    "articleCandidatesPendingPromotion": 28,
-    "newPromotionsThisPass": 0,
+    "articleCandidatesPendingPromotion": 0,
+    "newPromotionsThisPass": 32,
+    "candidatePromotionsThisPass": 29,
+    "newMissedStartArticles": 3,
+    "articleIdRange": ["ALC1737-art-001709", "ALC1737-art-001740"],
     "corpusTotalBeforePass": 1708,
-    "corpusTotalAfterPass": 1708
+    "corpusTotalAfterPass": 1740
   },
   "visibleStartEvidence": {
-    "exhaustive": false,
-    "knownVisibleStartsMinimum": 43,
-    "knownMissedStartRecords": 1,
-    "unresolvedCandidateRecords": 0,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "The 42 article candidates plus selected page-top miss 000449 establish at least 43 starts, but the selected layer is non-exhaustive and undersegmented OCR groups may contain additional unanchored starts."
+    "exhaustive": true,
+    "visibleStarts": 47,
+    "knownVisibleStartsMinimum": 47,
+    "knownMissedStartRecords": 4,
+    "falseNegatives": 4,
+    "falsePositives": 0,
+    "precision": 1.0,
+    "recall": 0.9148936170212766,
+    "f1": 0.9555555555555556,
+    "methodNote": "Direct high-resolution same-witness census. R-001 is a fresh article rather than a continuation. L-026 contains two visible starts and R-023 contains three visible starts; page-top `Mozo de edad` is a fourth detector false negative outside the candidate inventory."
   },
-  "physicalContinuities": [
+  "paratext": [
     {
-      "from": "ALC1737-vcand-p162-R-019",
-      "to": "ALC1737-art-000449",
-      "type": "catchword_to_fresh_next_page_article",
-      "note": "p162 catchword `Mozo` anticipates fresh p163 selected 000449; it is not a lexical continuation."
+      "surface": "N.",
+      "column": "right",
+      "type": "letter_heading",
+      "countedAsLexicalStart": false
     },
     {
-      "from": "ALC1737-art-000449",
-      "to": "ALC1737-vcand-p163-L-001",
-      "type": "missed_page_top_start_then_tail",
-      "note": "Canonical L-001 begins in the tail `...cebo.` of selected 000449 and then opens selected 000450."
+      "surface": "Naci",
+      "column": "right",
+      "type": "catchword",
+      "countedAsLexicalStart": false,
+      "anticipates": "p164 fresh `Nacido, ò encordio. Chimu.`"
+    }
+  ],
+  "physicalContinuities": [
+    {
+      "from": "p162_catchword_Mozo",
+      "to": "ALC1737-art-000449",
+      "type": "catchword_to_fresh_article",
+      "note": "p162 terminal `Mozo` anticipates fresh p163 `Mozo de edad. Buſca mancebo.`"
     },
     {
       "from": "ALC1737-vcand-p163-L-003",
       "to": "ALC1737-vcand-p163-L-004",
       "type": "article_continuation",
-      "note": "`Moho como de hierro` continues into L-004."
+      "note": "`Moho como de hierro. Copo- / ſihuec.` continues into L-004."
     },
     {
       "from": "ALC1737-vcand-p163-L-010",
       "to": "ALC1737-vcand-p163-L-011",
       "type": "article_continuation",
-      "note": "Selected 000455 `Molendero el que muele. Tuſeme.` continues into L-011."
+      "note": "Selected `Molendero el que muele. Tuſeme.` continues into L-011."
     },
     {
       "from": "ALC1737-vcand-p163-L-012",
       "to": "ALC1737-vcand-p163-L-013",
       "type": "article_continuation",
-      "note": "`Mondar algo...` continues into L-013."
+      "note": "`Mondar algo, como habas, papas, &c. Hitahuſta.` continues into L-013."
     },
     {
       "from": "ALC1737-vcand-p163-L-022",
       "to": "ALC1737-vcand-p163-L-023",
       "type": "article_continuation",
-      "note": "`Morirſe de frío`-like article continues into L-023."
-    },
-    {
-      "from": "ALC1737-vcand-p163-L-026",
-      "to": "ALC1737-vcand-p163-R-001",
-      "type": "article_continuation_across_columns",
-      "note": "`Mosquito, que llaman gegen` continues across the column boundary."
+      "note": "`Morirſe de frío. Buſca frío tener.` continues into L-023."
     },
     {
       "from": "ALC1737-vcand-p163-R-004",
       "to": "ALC1737-vcand-p163-R-005",
       "type": "article_continuation",
-      "note": "`Mostrar con el dedo. Buſca apuntar` continues into R-005."
+      "note": "`Moſtrar con el dedo. Buſca apuntar.` continues into R-005."
     },
     {
       "from": "ALC1737-vcand-p163-R-006",
       "to": "ALC1737-vcand-p163-R-007",
       "type": "article_continuation",
-      "note": "`Moverſe, menearſe` continues into R-007."
+      "note": "`Moverſe, menearſe. Huan- / huante.` continues into R-007."
     },
     {
-      "from": "ALC1737-vcand-p163-R-023",
-      "to": "ALC1737-vcand-p164-L-001",
-      "type": "fresh_page_transition",
-      "note": "p164 opens fresh selected 000464 `Nacimiento. Ioleria.`; no p163→p164 lexical continuation is asserted."
+      "from": "ALC1737-art-001740",
+      "to": "p163_catchword_Naci",
+      "type": "article_then_catchword",
+      "note": "Final lexical article `Nacer la planta. Sibue.` is complete; bottom `Naci` is a catchword anticipating fresh p164 `Nacido, ò encordio. Chimu.`"
     }
   ],
   "structuralNotes": [
-    "The canonical extractor misses selected 000449 at the page top; L-001 begins in its tail and then opens selected 000450.",
-    "L-002, L-003 and L-007 are undersegmented because each starts with continuation material before a fresh lexical start.",
-    "Seven canonical rows are continuations rather than fresh starts, including the L-026→R-001 cross-column continuation.",
-    "R-023 remains an article boundary with undersegmented page-bottom noise/catchword-like material; p164 opens fresh `Nacimiento`."
+    "The canonical extractor misses selected ALC1737-art-000449 at the page top before L-001.",
+    "Direct facsimile disproves the former L-026→R-001 cross-column continuation: L-026 contains `Moſquito, que llaman gegen. Curu.` plus detector-missed `Moſquito otro, que haze ruido. Hua.`, and R-001 independently opens `Moſquito otro, que ſe mete en los ojos. Huotepoli.`",
+    "R-023 is a merged region containing `Murmuyo. Sobia, l, ſuatebia.`, the `N.` letter heading, detector-missed `Nacer. Iolec.`, detector-missed `Nacer la planta. Sibue.`, and bottom catchword `Naci`.",
+    "Direct p164 edge inspection supersedes the older selected-anchor-only model: the first fresh p164 article is `Nacido, ò encordio. Chimu.`, before selected `Nacimiento. Ioleria.`"
   ],
   "nextPage": {
     "sourcePageDigital": 164,
     "candidateInventoryTotal": 51,
     "left": 29,
     "right": 22,
-    "firstCandidate": "ALC1737-vcand-p164-L-001",
+    "actualOpening": "Nacido, ò encordio. Chimu.",
     "firstSelectedArticle": "ALC1737-art-000464",
-    "opening": "Nacimiento. Ioleria."
+    "firstSelectedOpening": "Nacimiento. Ioleria.",
+    "edgeAssessment": "fresh_page_transition_after_catchword"
   },
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
     "selectedP163LayerUsedAsAnchor": true,
-    "p162ReconciliationUsedForOpeningEdge": true,
-    "p162TechnicalClosureIntegrated": true,
-    "p164CanonicalCandidatesAndSelectedLayerUsedForLowerEdge": true,
-    "directFacsimileAvailableThisPass": false,
-    "policy": "Selected direct collations support demonstrated starts and the known page-top miss. OCR-only internal ambiguity is preserved without promotion; metrics remain withheld without an exhaustive visible-start census."
+    "p162TechnicalClosureUsedForOpeningEdge": true,
+    "p164DirectFacsimileUsedForLowerEdge": true,
+    "directFacsimileAvailableThisPass": true,
+    "localSourcePdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "policy": "ALC1737 same-witness facsimile controls transcription and boundaries; BUE1890 does not supply ALC1737 text; only explicit printed hyphenation is normalized across line breaks."
   },
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
