@@ -1,0 +1,83 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 163,
+  "recordType": "local_facsimile_technical_closure",
+  "recordedAt": "2026-08-19",
+  "sourceEvidence": {
+    "localPdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "witness": "ALC1737",
+    "authority": "same-witness facsimile; BUE1890 not used to supply ALC1737 readings"
+  },
+  "census": {
+    "visibleHistoricalStarts": 47,
+    "candidateArticleStarts": 43,
+    "trueCandidateStarts": 43,
+    "continuationCandidates": 6,
+    "falsePositives": 0,
+    "falseNegatives": 4,
+    "precision": 1.0,
+    "recall": 0.9148936170212766,
+    "f1": 0.9555555555555556
+  },
+  "promotion": {
+    "pendingCandidatePromotionsBeforeStructuralCorrection": 28,
+    "directFacsimileArticleReclassificationDelta": 1,
+    "pendingCandidatePromotionsBefore": 29,
+    "pendingCandidatePromotionsAfter": 0,
+    "newStructuredArticles": 32,
+    "candidatePromotions": 29,
+    "newMissedStartArticles": 3,
+    "articleIdRange": ["ALC1737-art-001709", "ALC1737-art-001740"],
+    "corpusTotalBefore": 1708,
+    "corpusTotalAfter": 1740,
+    "globalPhase2PendingBeforeDirectReclassification": 473,
+    "globalPhase2ReclassificationDelta": 1,
+    "globalPhase2PendingBefore": 474,
+    "globalPhase2PendingAfter": 445
+  },
+  "missedStarts": [
+    "Mozo de edad. Buſca mancebo.",
+    "Moſquito otro, que haze rui- / do. Hua.",
+    "Nacer. Iolec.",
+    "Nacer la planta. Sibue."
+  ],
+  "selectedCorrections": [],
+  "structuralCorrections": [
+    {
+      "candidateId": "ALC1737-vcand-p163-L-026",
+      "oldAssessment": "oversegmented / asserted continuation toward R-001",
+      "newAssessment": "merged_articles",
+      "finding": "Contains `Moſquito, que llaman gegen. Curu.` and detector-missed `Moſquito otro, que haze ruido. Hua.`; both are complete in the left column."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p163-R-001",
+      "oldClassification": "continuation",
+      "newClassification": "article",
+      "finding": "Fresh `Moſquito otro, que ſe mete en los ojos. Huotepoli.`; no L-026→R-001 article continuation exists."
+    },
+    {
+      "candidateId": "ALC1737-vcand-p163-R-023",
+      "oldAssessment": "undersegmented",
+      "newAssessment": "merged_articles",
+      "finding": "Contains `Murmuyo. Sobia, l, ſuatebia.`, paratext `N.`, detector-missed `Nacer. Iolec.`, detector-missed `Nacer la planta. Sibue.`, and catchword `Naci`."
+    }
+  ],
+  "pageEdges": {
+    "fromP162": "p162 ends lexically with `Moco de narizes. Choomi.` followed by catchword `Mozo`; p163 opens fresh `Mozo de edad. Buſca mancebo.` before canonical L-001.",
+    "withinP163": "The bottom-left mosquito sequence is complete before the column break; right-column R-001 is a fresh mosquito article. Six true candidate continuations remain internal line continuities only.",
+    "toP164": "p163 ends lexically with `Nacer la planta. Sibue.` followed by catchword `Naci`; direct p164 inspection shows fresh `Nacido, ò encordio. Chimu.` before selected `Nacimiento. Ioleria.`"
+  },
+  "qualityStatus": {
+    "candidateReconciliation": "complete",
+    "visibleStartCensus": "exhaustive",
+    "promotionLinkage": "complete",
+    "technicalClosure": true,
+    "reviewStatus": "machine_corrected_unverified",
+    "humanVerified": false
+  },
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "method": "AI-assisted direct high-resolution local-facsimile collation and structural reconciliation; no human verification",
+    "processedAt": null
+  }
+}
