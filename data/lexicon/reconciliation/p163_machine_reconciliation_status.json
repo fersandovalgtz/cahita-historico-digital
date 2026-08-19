@@ -46,7 +46,8 @@
   "promotion": {
     "articleCandidatesPendingPromotion": 28,
     "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
+    "corpusTotalBeforePass": 1708,
+    "corpusTotalAfterPass": 1708
   },
   "visibleStartEvidence": {
     "exhaustive": false,
@@ -140,6 +141,7 @@
     "canonicalCandidateInventoryCount": 2072,
     "selectedP163LayerUsedAsAnchor": true,
     "p162ReconciliationUsedForOpeningEdge": true,
+    "p162TechnicalClosureIntegrated": true,
     "p164CanonicalCandidatesAndSelectedLayerUsedForLowerEdge": true,
     "directFacsimileAvailableThisPass": false,
     "policy": "Selected direct collations support demonstrated starts and the known page-top miss. OCR-only internal ambiguity is preserved without promotion; metrics remain withheld without an exhaustive visible-start census."
