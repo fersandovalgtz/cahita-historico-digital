@@ -3,9 +3,9 @@
   "sourcePageDigital": 164,
   "pageStatus": {
     "candidateReconciliation": "complete",
-    "visibleStartCensus": "non_exhaustive_selected_anchor_only",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
+    "visibleStartCensus": "exhaustive",
+    "promotionLinkage": "complete",
+    "technicalClosure": true,
     "humanVerificationPlanned": false
   },
   "candidateInventory": {
@@ -30,59 +30,62 @@
   },
   "selectedLayer": {
     "preExistingArticles": 15,
-    "articleIdRange": [
-      "ALC1737-art-000464",
-      "ALC1737-art-000478"
-    ],
+    "articleIdRange": ["ALC1737-art-000464", "ALC1737-art-000478"],
     "articleCandidateRecordsLinked": 15,
     "structuredArticlesLinked": 15,
-    "continuationCandidateRecordsLinked": 0,
     "selectedStartsOutsideCandidateInventory": 0,
     "selectedArticlesUnlinked": 0,
-    "semanticUnresolvedArticleIds": [
-      "ALC1737-art-000477"
-    ],
+    "semanticUnresolvedArticleIds": ["ALC1737-art-000477"],
     "note": "Selected 000477 retains historical `Lo miſmo.` semantic anaphora as unresolved; this does not make its physical candidate boundary structurally unresolved."
   },
   "promotion": {
-    "articleCandidatesPendingPromotion": 36,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
+    "articleCandidatesPendingPromotion": 0,
+    "newPromotionsThisPass": 41,
+    "candidatePromotionsThisPass": 36,
+    "newMissedStartArticles": 5,
+    "articleIdRange": ["ALC1737-art-001741", "ALC1737-art-001781"],
+    "corpusTotalBeforePass": 1740,
+    "corpusTotalAfterPass": 1781
   },
   "visibleStartEvidence": {
-    "exhaustive": false,
-    "knownVisibleStartsMinimum": 51,
-    "knownMissedStartRecords": 0,
+    "exhaustive": true,
+    "visibleStarts": 56,
+    "knownVisibleStartsMinimum": 56,
+    "knownMissedStartRecords": 5,
+    "falseNegatives": 5,
+    "falsePositives": 0,
     "unresolvedCandidateRecords": 0,
-    "unanchoredInternalGuideLikeRegions": [
-      "ALC1737-vcand-p164-R-018",
-      "ALC1737-vcand-p164-R-020",
-      "ALC1737-vcand-p164-R-022"
-    ],
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "All 51 canonical candidates are compatible with article starts, but three merged OCR groups contain additional guide-like material without independent selected/direct-collation anchors. The selected layer is non-exhaustive, so no complete visible-start denominator is asserted."
+    "precision": 1.0,
+    "recall": 0.9107142857142857,
+    "f1": 0.9532710280373832,
+    "methodNote": "Direct high-resolution same-witness census: one missed page-top start (`Nacido`), one missed right-column top start (`Noche`), and three internal starts in merged candidates R-018, R-020 and R-022."
   },
+  "paratext": [
+    {"surface":"O.","column":"right","type":"letter_heading","countedAsLexicalStart":false},
+    {"surface":"Obra","column":"right","type":"catchword","countedAsLexicalStart":false,"anticipates":"p165 fresh `Obra aſſi, hechura. Chupari.`"}
+  ],
   "physicalContinuities": [
     {
-      "from": "ALC1737-vcand-p163-R-023",
-      "to": "ALC1737-vcand-p164-L-001",
-      "type": "fresh_page_transition",
-      "note": "p164 opens fresh selected `Nacimiento. Ioleria.`; no p163→p164 lexical continuation is asserted."
+      "from": "p163_catchword_Naci",
+      "to": "ALC1737-art-001741",
+      "type": "catchword_to_fresh_article",
+      "note": "p163 terminal `Naci` anticipates fresh p164 page-top `Nacido, ò encordio. Chimu.`; selected `Nacimiento. Ioleria.` follows separately."
     },
     {
-      "from": "ALC1737-vcand-p164-R-022",
-      "to": "ALC1737-vcand-p165-L-001",
-      "type": "catchword_or_edge_fragment_to_fresh_next_page_article",
-      "note": "R-022 ends with `Obr...` after `Obligación` and `Obrar algo`-like material; p165 opens fresh selected `Obra aſſi, hechura. Chupari.`."
+      "from": "ALC1737-art-001781",
+      "to": "p164_catchword_Obra",
+      "type": "article_then_catchword",
+      "note": "Final lexical article `Obrar algo. Buſca hazer.` is complete; bottom `Obra` is a catchword anticipating fresh p165 `Obra aſſi, hechura. Chupari.`"
     }
   ],
   "structuralNotes": [
-    "All 51 canonical p164 rows are retained as article boundaries; there are no continuation or structurally unresolved candidate rows.",
-    "R-018, R-020 and R-022 are `merged_articles` because each OCR group visibly contains more than one guide-like unit.",
-    "Those unselected internal units are not promoted and are not counted as missed visible starts without independent direct-collation anchors.",
-    "Selected 000477 (`Noez, y nogal. Lo miſmo.`) is semantically unresolved at the article level, while its physical boundary remains exact."
+    "All 51 canonical p164 candidates are true article starts; no candidate is a continuation or false positive.",
+    "Direct facsimile establishes 56 fresh historical starts: 51 candidate starts plus five detector false negatives.",
+    "R-018 contains `Nudo. Tecarai.`, paratext `O.`, and detector-missed `O, adv. para llamar. Ot ai.`.",
+    "R-020 contains `Obediente. Aioioreme.` plus detector-missed `Obediencia. Aiore.`.",
+    "R-022 contains `Obligacion. Buſca paga.` plus detector-missed `Obrar algo. Buſca hazer.`, followed by catchword `Obra`.",
+    "Selected 000477 (`Noez, y nogal. Lo miſmo.`) remains semantically unresolved while its physical article boundary is fully resolved.",
+    "`Nones aver` retains one illegible internal printed marker explicitly rather than receiving a conjectural normalization."
   ],
   "nextPage": {
     "sourcePageDigital": 165,
@@ -91,16 +94,18 @@
     "right": 27,
     "firstCandidate": "ALC1737-vcand-p165-L-001",
     "firstSelectedArticle": "ALC1737-art-000479",
-    "opening": "Obra aſſi, hechura. Chupari."
+    "opening": "Obra aſſi, hechura. Chupari.",
+    "edgeAssessment": "fresh_page_transition_after_catchword"
   },
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
     "selectedP164LayerUsedAsAnchor": true,
-    "p163ReconciliationUsedForOpeningEdge": true,
-    "p165CanonicalCandidatesAndSelectedLayerUsedForLowerEdge": true,
-    "directFacsimileAvailableThisPass": false,
-    "policy": "Selected direct collations support demonstrated article links. OCR-only internal guide-like units in merged candidates are preserved as structural notes without promotion or census inflation; metrics remain withheld without exhaustive visible-start coverage."
+    "p163DirectFacsimileClosureUsedForOpeningEdge": true,
+    "p165DirectFacsimileUsedForLowerEdge": true,
+    "directFacsimileAvailableThisPass": true,
+    "localSourcePdfSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+    "policy": "ALC1737 same-witness facsimile controls transcription and boundaries; BUE1890 does not supply ALC1737 text; uncertain internal surfaces remain explicitly unresolved rather than silently emended."
   },
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
