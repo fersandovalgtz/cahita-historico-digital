@@ -14,7 +14,7 @@
       "pattern": "^ALC1737-art-[0-9]{6}$"
     },
     "sourceId": {"const": "ALC1737"},
-    "sourcePageDigital": {"type": "integer", "minimum": 133, "maximum": 177},
+    "sourcePageDigital": {"type": "integer", "minimum": 133, "maximum": 178},
     "sourcePagePrinted": {"type": ["string", "null"]},
     "column": {"enum": ["left", "right"]},
     "sourceSpans": {
@@ -25,7 +25,7 @@
         "type": "object",
         "required": ["pageDigital", "column"],
         "properties": {
-          "pageDigital": {"type": "integer", "minimum": 133, "maximum": 177},
+          "pageDigital": {"type": "integer", "minimum": 133, "maximum": 178},
           "column": {"enum": ["left", "right"]},
           "role": {"type": "string", "enum": ["start", "continuation", "end", "single"]}
         },
