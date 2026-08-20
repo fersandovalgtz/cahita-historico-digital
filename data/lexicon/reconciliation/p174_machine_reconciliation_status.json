@@ -3,9 +3,9 @@
   "sourcePageDigital": 174,
   "pageStatus": {
     "candidateReconciliation": "complete",
-    "visibleStartCensus": "known_misses_only_not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
+    "visibleStartCensus": "exhaustive_direct_facsimile",
+    "promotionLinkage": "complete",
+    "technicalClosure": true,
     "humanVerificationPlanned": false
   },
   "candidateInventory": {
@@ -44,41 +44,52 @@
       "ALC1737-art-000614",
       "ALC1737-art-000623",
       "ALC1737-art-000628"
+    ],
+    "selectedCorrectionsThisPass": [
+      "ALC1737-art-000616"
     ]
   },
   "promotion": {
-    "articleCandidatesPendingPromotion": 34,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
+    "articleCandidatesPendingPromotion": 0,
+    "candidateBackedNewArticles": 36,
+    "newMissedStartArticles": 4,
+    "newPromotionsThisPass": 40,
+    "corpusTotalBeforePass": 2141,
+    "corpusTotalAfterPass": 2181
   },
   "visibleStartEvidence": {
-    "exhaustive": false,
-    "knownVisibleStartsMinimum": 51,
-    "knownMissedStartRecords": 3,
+    "exhaustive": true,
+    "visibleStarts": 55,
+    "truePositiveCandidateStarts": 48,
+    "falsePositiveCandidateBoundaries": 0,
+    "falseNegatives": 7,
+    "knownMissedStartRecords": 7,
     "unresolvedCandidateRecords": 0,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "The 48 article candidates plus three selected missed starts establish at least 51 starts, but the selected layer is non-exhaustive and merged groups may contain additional unanchored starts."
+    "precision": 1.0,
+    "recall": 0.8727272727272727,
+    "f1": 0.9320388349514563
   },
   "physicalContinuities": [
     {
-      "from": "ALC1737-vcand-p173-R-022",
+      "from": "digital-page-173",
       "to": "ALC1737-art-000614",
-      "type": "fresh_page_transition_with_top_selected_miss",
-      "note": "p174 opens with selected 000614 before canonical L-001; no p173→p174 lexical continuation is asserted."
+      "type": "catchword_to_fresh_next_page_article",
+      "note": "p173 bottom `S` is a catchword; p174 opens fresh `Si, adv. para afirmar. Hebui.`."
     },
     {
       "from": "ALC1737-vcand-p174-R-022",
-      "to": "ALC1737-vcand-p175-L-001",
-      "type": "fresh_page_transition",
-      "note": "p174 ends at `Tapón`; p175 opens with fresh `Tarde. Cuſte.` and no cross-page lexical continuation is asserted."
+      "to": "digital-page-175",
+      "type": "catchword_to_fresh_next_page_article",
+      "note": "p174 bottom `Tar-` is a catchword; p175 opens fresh `Tarde. Cuſte.`."
     }
   ],
   "structuralNotes": [
-    "L-013 and L-024 are `merged_articles` with selected internal starts 000623 and 000628 respectively.",
-    "R-001, R-006, R-011 and R-012 are `merged_articles` based on multiple visible OCR guide units; OCR-only internal units are not promoted or added to the visible-start minimum without an independent anchor.",
-    "No canonical p174 row is classified as a physical continuation."
+    "Direct census establishes 29 fresh starts in the left column and 26 in the right column: 55 total.",
+    "Seven detector misses are directly established: three left and four right.",
+    "L-013 merges `Sobrina, y ſobrino` with detector-missed selected `Socorrer`; L-024 merges `Soñar` with detector-missed selected `Soplar`.",
+    "R-001 merges `Sorber` with detector-missed `Sueño tal. Cocochire.`; R-006 merges `Subir algo` with `Sudar`; R-011 merges `Suelo` with `Sufrir`; R-012 merges the two `Sumirſe` articles.",
+    "Direct facsimile corrects selected 000616 `Achibhue-huneri` to `Achibhue--huneri`; prior reading remains in notesRaw.",
+    "Candidate boundaries L-013 and L-024 each require their own article in addition to the selected internal articles already linked there; this raises p174 new promotions from the earlier provisional 38 to 40."
   ],
   "nextPage": {
     "sourcePageDigital": 175,
@@ -94,11 +105,13 @@
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
-    "selectedP174LayerUsedAsAnchor": true,
-    "p173ReconciliationUsedForOpeningEdge": true,
-    "p175CanonicalCandidatesAndSelectedLayerUsedForLowerEdge": true,
-    "directFacsimileAvailableThisPass": false,
-    "policy": "Selected direct collations support demonstrated starts and known misses. OCR-only internal units are preserved structurally without invented lexical transcription or promotion; metrics remain withheld without an exhaustive visible-start census."
+    "directFacsimileAvailableThisPass": true,
+    "primaryWitness": {
+      "localFile": "Cahíta.pdf",
+      "sha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+      "sameWitnessDirectInspection": true
+    },
+    "policy": "Direct same-witness facsimile controls readings and structural boundaries; OCR is auxiliary; BUE1890 is not used as ALC1737 transcription authority."
   },
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
