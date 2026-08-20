@@ -3,100 +3,77 @@
   "sourcePageDigital": 172,
   "pageStatus": {
     "candidateReconciliation": "complete",
-    "visibleStartCensus": "known_misses_only_not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
+    "visibleStartCensus": "exhaustive_direct_facsimile",
+    "promotionLinkage": "complete",
+    "technicalClosure": true,
     "humanVerificationPlanned": false
   },
   "candidateInventory": {
     "total": 55,
     "left": 27,
     "right": 28,
-    "classification": {
-      "article": 55,
-      "continuation": 0,
-      "paratext": 0,
-      "false_positive": 0,
-      "unresolved": 0
-    },
-    "boundaryAssessment": {
-      "exact": 54,
-      "oversegmented": 0,
-      "undersegmented": 0,
-      "merged_articles": 1,
-      "ambiguous": 0,
-      "not_applicable": 0
-    }
+    "classification": {"article": 55, "continuation": 0, "paratext": 0, "false_positive": 0, "unresolved": 0},
+    "boundaryAssessment": {"exact": 54, "oversegmented": 0, "undersegmented": 0, "merged_articles": 1, "ambiguous": 0, "not_applicable": 0}
   },
   "selectedLayer": {
     "preExistingArticles": 15,
-    "articleIdRange": [
-      "ALC1737-art-000584",
-      "ALC1737-art-000598"
-    ],
-    "articleCandidateRecordsLinked": 14,
+    "articleIdRange": ["ALC1737-art-000584", "ALC1737-art-000598"],
+    "articleCandidateRecordsLinked": 13,
     "structuredArticlesLinked": 15,
     "continuationCandidateRecordsLinked": 0,
     "selectedStartsInsideMergedCandidate": 0,
-    "selectedStartsOutsideCandidateInventory": 1,
+    "selectedStartsOutsideCandidateInventory": 2,
     "selectedArticlesUnlinked": 0,
-    "knownMissedSelectedArticleIds": [
-      "ALC1737-art-000584"
-    ]
+    "knownMissedSelectedArticleIds": ["ALC1737-art-000584", "ALC1737-art-000590"]
   },
   "promotion": {
-    "articleCandidatesPendingPromotion": 41,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
+    "articleCandidatesPendingPromotion": 0,
+    "candidateBackedNewArticles": 42,
+    "newMissedStartArticles": 2,
+    "newPromotionsThisPass": 44,
+    "corpusTotalBeforePass": 2057,
+    "corpusTotalAfterPass": 2101
   },
   "visibleStartEvidence": {
-    "exhaustive": false,
-    "knownVisibleStartsMinimum": 56,
-    "knownMissedStartRecords": 1,
+    "exhaustive": true,
+    "visibleStarts": 59,
+    "truePositiveCandidateStarts": 55,
+    "falsePositiveCandidateBoundaries": 0,
+    "falseNegatives": 4,
+    "knownMissedStartRecords": 4,
     "unresolvedCandidateRecords": 0,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "The 55 article candidates plus selected top miss 000584 establish at least 56 starts, but the selected layer is non-exhaustive and R-028 contains an additional unanchored internal guide-like unit."
+    "precision": 1.0,
+    "recall": 0.9322033898305084,
+    "f1": 0.9649122807017544
   },
   "physicalContinuities": [
-    {
-      "from": "ALC1737-vcand-p171-R-017",
-      "to": "ALC1737-vcand-p172-L-001",
-      "type": "fresh_page_transition_with_top_selected_miss",
-      "note": "p172 selected 000584 (`Relampago`) is a fresh top-of-page start without its own candidate; L-001 begins selected 000585 (`Redaño`)."
-    },
-    {
-      "from": "ALC1737-vcand-p172-R-028",
-      "to": "ALC1737-vcand-p173-L-001",
-      "type": "fresh_next_page_top_selected_start_missed",
-      "note": "p173 selected 000599 (`Rueda`) is a fresh top-of-page start before canonical L-001 (`Sabio`); no p172→p173 lexical continuation is asserted."
-    }
+    {"from":"ALC1737-vcand-p171-R-017","to":"ALC1737-art-000584","type":"fresh_page_transition","note":"p171 ends with `Relam-` catchword; p172 opens fresh `Relampago. Beroitcme.`."},
+    {"from":"ALC1737-vcand-p172-R-028","to":"digital-page-173","type":"catchword_to_fresh_next_page_article","note":"Bottom `Rubio,` on p172 is a catchword; p173 opens fresh `Rubio, ò rubia coſa. Ciqui- / lim chonte.` before selected 000599 (`Rueda`)."}
   ],
   "structuralNotes": [
-    "All 55 canonical p172 rows are retained as article boundaries; no canonical continuation or structurally unresolved row is asserted.",
-    "Selected 000584 is the only demonstrated selected missed start on p172.",
-    "R-028 is `merged_articles` because it contains a second Rubio-like guide unit; that OCR-only internal unit is not promoted or counted as a false negative without an independent anchor."
+    "Direct census establishes 29 fresh starts in the left column and 30 in the right column: 59 total.",
+    "Four detector misses are established: p172 top `Relampago`, selected `Reglar con regla`, right-column top `Reverdecer`, and internal `Rio de qualquiera parte por donde paſſa` inside R-004.",
+    "The prior preflight alignment that linked selected 000590 (`Reglar con regla`) to L-006 is corrected: canonical L-006 begins `Regoldar`.",
+    "R-004 is the sole merged_articles region because it contains both `Rio. Batuhue.` and detector-missed `Rio de qualquiera parte por donde paſſa. Haquia.`.",
+    "R-028 is exact for `Ruido hazer el agua`; bottom `Rubio,` is paratextual catchword, not a p172 article start.",
+    "No canonical p172 row is a continuation, false positive, or unresolved boundary."
   ],
   "nextPage": {
     "sourcePageDigital": 173,
     "candidateInventoryTotal": 42,
     "left": 20,
     "right": 22,
-    "firstCandidate": "ALC1737-vcand-p173-L-001",
-    "firstCandidateOpening": "Sabio, ò ſabidor...",
-    "firstSelectedArticle": "ALC1737-art-000599",
-    "firstSelectedOpening": "Rueda. Buſca redonda coſa.",
-    "nextPageTopSelectedMissExpected": true
+    "freshStartBeforeCanonicalInventory": "Rubio, ò rubia coſa. Ciqui- / lim chonte.",
+    "nextSelectedArticle": "ALC1737-art-000599",
+    "nextSelectedOpening": "Rueda. Buſca redonda coſa.",
+    "note": "p173 contains a fresh `Rubio` article before selected 000599 and before the canonical p173 sequence; p172 `Rubio,` is only its catchword."
   },
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
-    "selectedP172LayerUsedAsAnchor": true,
-    "p171ReconciliationUsedForOpeningEdge": true,
-    "p173CanonicalCandidatesAndSelectedLayerUsedForLowerEdge": true,
-    "directFacsimileAvailableThisPass": false,
-    "policy": "Selected direct collations support demonstrated starts and known misses. OCR-only internal units are preserved structurally without invented lexical transcription or promotion; metrics remain withheld without an exhaustive visible-start census."
+    "directFacsimileAvailableThisPass": true,
+    "primaryWitness": {"localFile":"Cahíta.pdf","sha256":"69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37","sameWitnessDirectInspection":true},
+    "policy": "Direct same-witness facsimile controls readings and structural boundaries; OCR is auxiliary; BUE1890 is not used as ALC1737 transcription authority."
   },
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
