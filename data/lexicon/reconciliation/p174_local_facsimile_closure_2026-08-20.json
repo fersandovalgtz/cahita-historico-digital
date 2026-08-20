@@ -1,0 +1,27 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 174,
+  "closureDate": "2026-08-20",
+  "technicalClosure": true,
+  "humanVerified": false,
+  "reviewStatus": "machine_corrected_unverified",
+  "primaryWitness": {
+    "file": "Cahíta.pdf",
+    "sha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37"
+  },
+  "visibleStarts": 55,
+  "candidateStarts": 48,
+  "falseNegatives": 7,
+  "newArticles": 40,
+  "corpusAfter": 2181,
+  "detectorMetrics": {
+    "precision": 1.0,
+    "recall": 0.8727272727272727,
+    "f1": 0.9320388349514563
+  },
+  "notes": [
+    "Exhaustive direct same-witness facsimile census completed.",
+    "No human verification is claimed.",
+    "Two candidate regions previously treated as already covered by internal selected links (L-013 and L-024) required new articles for their own visible boundary starts."
+  ]
+}
