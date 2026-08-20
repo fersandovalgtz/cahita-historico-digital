@@ -3,9 +3,9 @@
   "sourcePageDigital": 173,
   "pageStatus": {
     "candidateReconciliation": "complete",
-    "visibleStartCensus": "known_misses_only_not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
+    "visibleStartCensus": "exhaustive_direct_facsimile",
+    "promotionLinkage": "complete",
+    "technicalClosure": true,
     "humanVerificationPlanned": false
   },
   "candidateInventory": {
@@ -21,9 +21,9 @@
     },
     "boundaryAssessment": {
       "exact": 34,
-      "oversegmented": 2,
-      "undersegmented": 1,
-      "merged_articles": 3,
+      "oversegmented": 0,
+      "undersegmented": 0,
+      "merged_articles": 4,
       "ambiguous": 0,
       "not_applicable": 2
     }
@@ -38,81 +38,72 @@
     "structuredArticlesLinked": 15,
     "continuationCandidateRecordsLinked": 0,
     "selectedStartsInsideMergedCandidate": 2,
-    "selectedStartsOutsideCandidateInventory": 2,
+    "selectedStartsOutsideCandidateInventory": 4,
     "selectedArticlesUnlinked": 0,
     "knownMissedSelectedArticleIds": [
       "ALC1737-art-000599",
       "ALC1737-art-000600",
       "ALC1737-art-000605",
       "ALC1737-art-000607"
+    ],
+    "selectedCorrectionsThisPass": [
+      "ALC1737-art-000600",
+      "ALC1737-art-000601",
+      "ALC1737-art-000605"
     ]
   },
   "promotion": {
-    "articleCandidatesPendingPromotion": 29,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
+    "articleCandidatesPendingPromotion": 0,
+    "candidateBackedNewArticles": 29,
+    "newMissedStartArticles": 11,
+    "newPromotionsThisPass": 40,
+    "corpusTotalBeforePass": 2101,
+    "corpusTotalAfterPass": 2141
   },
   "visibleStartEvidence": {
-    "exhaustive": false,
-    "knownVisibleStartsMinimum": 44,
-    "knownMissedStartRecords": 4,
+    "exhaustive": true,
+    "visibleStarts": 55,
+    "truePositiveCandidateStarts": 40,
+    "falsePositiveCandidateBoundaries": 0,
+    "falseNegatives": 15,
+    "knownMissedStartRecords": 15,
     "unresolvedCandidateRecords": 0,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "The 40 article candidates plus four selected missed starts establish at least 44 starts, but the selected layer is non-exhaustive and merged/undersegmented groups may contain additional unanchored starts."
+    "precision": 1.0,
+    "recall": 0.7272727272727273,
+    "f1": 0.8421052631578948
   },
   "physicalContinuities": [
     {
       "from": "ALC1737-vcand-p172-R-028",
-      "to": "ALC1737-vcand-p173-L-001",
-      "type": "fresh_page_transition_with_top_selected_misses",
-      "note": "p173 selected 000599 (`Rueda`) and 000600 (`Saber generalmente`) precede canonical L-001 (`Sabio`); no p172→p173 lexical continuation is asserted."
-    },
-    {
-      "from": "ALC1737-vcand-p173-L-001",
-      "to": "ALC1737-vcand-p173-L-002",
-      "type": "article_continuation",
-      "note": "`Sabio, ò ſabidor` continues into form-only L-002."
-    },
-    {
-      "from": "ALC1737-vcand-p173-R-002",
-      "to": "ALC1737-vcand-p173-R-003",
-      "type": "article_continuation",
-      "note": "`Sazonar la fruta`-like article continues into R-003."
+      "to": "ALC1737-art-002102",
+      "type": "catchword_to_fresh_next_page_article",
+      "note": "p172 bottom `Rubio,` is a catchword; p173 opens the complete fresh `Rubio, ò rubia coſa...` article."
     },
     {
       "from": "ALC1737-vcand-p173-R-022",
-      "to": "ALC1737-vcand-p174-L-001",
-      "type": "fresh_next_page_top_selected_start_missed",
-      "note": "p174 selected 000614 (`Si, adv. para afirmar`) is a fresh top-of-page start before canonical L-001 (`Si, conj.`); no p173→p174 lexical continuation is asserted."
+      "to": "digital-page-174",
+      "type": "fresh_next_page_transition_after_catchword",
+      "note": "Bottom `S` is a catchword; p174 opens fresh `Si, adv. para afirmar...`."
     }
   ],
   "structuralNotes": [
-    "L-010 and L-011 are `merged_articles` with selected internal starts 000605 and 000607 respectively.",
-    "R-015 is `merged_articles` based on a second visible Señal-like guide unit; the OCR-only internal unit is not promoted or counted without an independent anchor.",
-    "R-018 is `undersegmented` due trailing Ser-like adjacent material; no article is synthesized from that fragment.",
-    "Two canonical rows are continuations rather than fresh starts: L-002 and R-003."
+    "Direct census establishes 24 fresh starts in the left column and 31 in the right column: 55 total.",
+    "Canonical rows L-002 and R-003 are continuations, not fresh starts.",
+    "L-010 merges `Saeta` and detector-missed selected `Sahumar`; L-011 merges `Sahumerio` and detector-missed selected `Salitral`.",
+    "R-015 merges `Sentirſe apeſadumbrarſe` and detector-missed `Señal`; R-018 merges `Sequedad` and detector-missed `Ser. Buſca al fin.`.",
+    "Fifteen detector misses are directly established: five left and ten right.",
+    "Direct facsimile corrects selected 000600 `Hunace`→`Hunacea`, 000601 `Hita-taiame`→`Hita--taiame`, and 000605 `Toporo-hua-utia`→`Toporo--bui-utia`; prior readings must remain in notesRaw."
   ],
-  "nextPage": {
-    "sourcePageDigital": 174,
-    "candidateInventoryTotal": 48,
-    "left": 26,
-    "right": 22,
-    "firstCandidate": "ALC1737-vcand-p174-L-001",
-    "firstCandidateOpening": "Si, conj. Soc.",
-    "firstSelectedArticle": "ALC1737-art-000614",
-    "firstSelectedOpening": "Si, adv. para afirmar. Hebui.",
-    "nextPageTopSelectedMissExpected": true
-  },
   "evidence": {
     "canonicalCandidateInventoryVerified": true,
     "canonicalCandidateInventoryCount": 2072,
-    "selectedP173LayerUsedAsAnchor": true,
-    "p172ReconciliationUsedForOpeningEdge": true,
-    "p174CanonicalCandidatesAndSelectedLayerUsedForLowerEdge": true,
-    "directFacsimileAvailableThisPass": false,
-    "policy": "Selected direct collations support demonstrated starts and known misses. OCR-only internal/adjacent units are preserved structurally without invented lexical transcription or promotion; metrics remain withheld without an exhaustive visible-start census."
+    "directFacsimileAvailableThisPass": true,
+    "primaryWitness": {
+      "localFile": "Cahíta.pdf",
+      "sha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+      "sameWitnessDirectInspection": true
+    },
+    "policy": "Direct same-witness facsimile controls readings and structural boundaries; OCR is auxiliary; BUE1890 is not used as ALC1737 transcription authority."
   },
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
