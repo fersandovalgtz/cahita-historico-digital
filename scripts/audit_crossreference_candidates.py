@@ -22,8 +22,19 @@ from export_lexicon_crossreference_graph import (
 )
 
 
+def tokens(value: str) -> list[str]:
+    return [token for token in value.split() if token]
+
+
 def token_set(value: str) -> set[str]:
-    return {token for token in value.split() if token}
+    return set(tokens(value))
+
+
+def contains_token_sequence(shorter: list[str], longer: list[str]) -> bool:
+    if not shorter or len(shorter) > len(longer):
+        return False
+    width = len(shorter)
+    return any(longer[index : index + width] == shorter for index in range(len(longer) - width + 1))
 
 
 def candidate_score(target: str, guide: str) -> tuple[float, str]:
@@ -31,17 +42,27 @@ def candidate_score(target: str, guide: str) -> tuple[float, str]:
     if not target or not guide:
         return 0.0, "none"
 
-    target_tokens = token_set(target)
-    guide_tokens = token_set(guide)
-    overlap = len(target_tokens & guide_tokens)
-    union = len(target_tokens | guide_tokens)
+    target_tokens = tokens(target)
+    guide_tokens = tokens(guide)
+    target_set = set(target_tokens)
+    guide_set = set(guide_tokens)
+    overlap = len(target_set & guide_set)
+    union = len(target_set | guide_set)
     jaccard = overlap / union if union else 0.0
 
-    if len(target) >= 4 and (target in guide or guide in target):
-        shorter = min(len(target), len(guide))
-        longer = max(len(target), len(guide))
+    # Same complete tokens in another order: useful for historical guide inversions
+    # such as `ſed tener` vs `Tener ſed`. It remains a diagnostic candidate only.
+    if target_set and target_set == guide_set and target_tokens != guide_tokens:
+        return 1.0, "token_permutation_match"
+
+    # Containment is deliberately restricted to complete, contiguous token
+    # sequences. This excludes false positives such as ave∈caverna, rio∈frio,
+    # olor∈color and dar∈quedar.
+    if contains_token_sequence(target_tokens, guide_tokens) or contains_token_sequence(guide_tokens, target_tokens):
+        shorter = min(len(target_tokens), len(guide_tokens))
+        longer = max(len(target_tokens), len(guide_tokens))
         containment = shorter / longer if longer else 0.0
-        return max(0.90, containment), "normalized_containment"
+        return max(0.90, containment), "token_sequence_containment"
 
     ratio = difflib.SequenceMatcher(a=target, b=guide, autojunk=False).ratio()
     if jaccard >= 0.67:
@@ -108,6 +129,7 @@ def main() -> None:
                 )
             )
             candidates = candidates[: args.max_candidates]
+            strong = [candidate for candidate in candidates if candidate["diagnosticScore"] >= 0.90]
             unresolved.append(
                 {
                     "sourceArticleId": article["articleId"],
@@ -117,6 +139,7 @@ def main() -> None:
                     "targetRaw": target_raw,
                     "targetNormalized": target,
                     "candidateCountShown": len(candidates),
+                    "strongCandidateCountShown": len(strong),
                     "candidates": candidates,
                     "policy": "diagnostic_only_no_resolution",
                 }
@@ -130,6 +153,7 @@ def main() -> None:
         for row in unresolved
     )
     score_bands = Counter()
+    strong_cardinality = Counter()
     for row in unresolved:
         score = row["candidates"][0]["diagnosticScore"] if row["candidates"] else 0.0
         if score >= 0.90:
@@ -141,11 +165,20 @@ def main() -> None:
         else:
             score_bands["<0.72_or_none"] += 1
 
+        strong_count = row["strongCandidateCountShown"]
+        if strong_count == 0:
+            strong_cardinality["none"] += 1
+        elif strong_count == 1:
+            strong_cardinality["unique_shown"] += 1
+        else:
+            strong_cardinality["multiple_shown"] += 1
+
     print(
         "cross-reference diagnostic audit: "
         f"{len(unresolved)} strict-not-located Buſca references; "
         f"topClasses={dict(sorted(top_classes.items()))}; "
         f"scoreBands={dict(sorted(score_bands.items()))}; "
+        f"strongCardinality={dict(sorted(strong_cardinality.items()))}; "
         "canonical resolutions modified=0"
     )
     if args.print_rows:
