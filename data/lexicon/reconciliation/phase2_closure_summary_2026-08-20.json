@@ -1,0 +1,55 @@
+{
+  "sourceId": "ALC1737",
+  "recordType": "phase2_technical_closure_summary",
+  "scope": {
+    "canonicalCandidatePages": [145, 177],
+    "terminalVocabularyExtensionPage": 178,
+    "correctedVocabularyRange": [133, 178],
+    "numeralSectionRange": [178, 180]
+  },
+  "phase2": {
+    "pages": 33,
+    "pagesWithExhaustiveVisibleStartCensus": 33,
+    "pagesWithTechnicalClosure": 33,
+    "pendingPromotionTotal": 0,
+    "unresolvedCandidateTotal": 0,
+    "ambiguousBoundaryTotal": 0,
+    "humanVerifiedPages": 0
+  },
+  "terminalVocabularyExtension": {
+    "page": 178,
+    "mixedContentPage": true,
+    "visibleLexicalStarts": 18,
+    "articleIdRange": ["ALC1737-art-002303", "ALC1737-art-002320"],
+    "canonicalCandidateRecords": 0,
+    "detectorScoringPolicy": "out_of_scope_not_scored",
+    "lastVocabularyArticle": "Zumbar la abeja. Cuſineñe.",
+    "nextHeading": "NOMBRES NUMERALES"
+  },
+  "curatorialCorpus": {
+    "articleCountAfterTerminalExtension": 2320,
+    "lastArticleId": "ALC1737-art-002320",
+    "reviewStatus": "machine_corrected_unverified",
+    "humanVerified": false
+  },
+  "recentPageClosures": [
+    {"page":170,"visibleStarts":52,"candidateStarts":48,"falseNegatives":4,"precision":1.0,"recall":0.9230769230769231,"f1":0.96,"newArticles":37,"corpusTotalAfterPass":2017},
+    {"page":171,"visibleStarts":55,"candidateStarts":23,"falseNegatives":32,"precision":1.0,"recall":0.41818181818181815,"f1":0.5897435897435896,"newArticles":40,"corpusTotalAfterPass":2057},
+    {"page":172,"visibleStarts":59,"candidateStarts":55,"falseNegatives":4,"precision":1.0,"recall":0.9322033898305084,"f1":0.9649122807017544,"newArticles":44,"corpusTotalAfterPass":2101},
+    {"page":173,"visibleStarts":55,"candidateStarts":40,"falseNegatives":15,"precision":1.0,"recall":0.7272727272727273,"f1":0.8421052631578948,"newArticles":40,"corpusTotalAfterPass":2141},
+    {"page":174,"visibleStarts":55,"candidateStarts":48,"falseNegatives":7,"precision":1.0,"recall":0.8727272727272727,"f1":0.9320388349514563,"newArticles":40,"corpusTotalAfterPass":2181},
+    {"page":175,"visibleStarts":53,"candidateStarts":35,"falseNegatives":18,"precision":1.0,"recall":0.660377358490566,"f1":0.7954545454545454,"newArticles":38,"corpusTotalAfterPass":2219},
+    {"page":176,"visibleStarts":53,"candidateStarts":49,"falseNegatives":4,"precision":1.0,"recall":0.9245283018867925,"f1":0.9607843137254902,"newArticles":38,"corpusTotalAfterPass":2257},
+    {"page":177,"visibleStarts":60,"candidateStarts":57,"falseNegatives":3,"precision":1.0,"recall":0.95,"f1":0.9743589743589743,"newArticles":45,"corpusTotalAfterPass":2302},
+    {"page":178,"visibleStarts":18,"candidateStarts":null,"falseNegatives":null,"precision":null,"recall":null,"f1":null,"newArticles":18,"corpusTotalAfterPass":2320}
+  ],
+  "epistemicGuards": [
+    "Technical closure is not human philological verification.",
+    "The canonical v0.2 detector inventory ends at p177; p178 terminal vocabulary is an explicit direct-collation extension and is not included in detector precision/recall scoring.",
+    "Direct same-witness ALC1737 facsimile controls readings and boundaries; OCR is auxiliary.",
+    "Historical graphy, long-s, printed irregularities and uncertainty are preserved rather than silently normalized."
+  ],
+  "primaryWitnessSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
