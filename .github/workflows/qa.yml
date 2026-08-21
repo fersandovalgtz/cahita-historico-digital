@@ -148,3 +148,6 @@ jobs:
 
       - name: Validate deterministic grammar concordance
         run: python scripts/validate_grammar_exports.py
+
+      - name: Diagnostic cross-reference candidates (temporary)
+        run: python scripts/audit_crossreference_candidates.py --print-rows
