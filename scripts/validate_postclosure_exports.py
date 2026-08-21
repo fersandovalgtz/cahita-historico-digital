@@ -90,6 +90,33 @@ def validate_crossref_graph(manifest: dict) -> None:
         raise SystemExit("cross-reference graph manifest does not declare deterministic=true")
 
 
+def validate_crossref_diagnostics(manifest: dict) -> None:
+    if manifest["strictNotLocatedAudited"] <= 0:
+        raise SystemExit("cross-reference diagnostic queue is empty")
+    if manifest["candidatePairCount"] <= 0:
+        raise SystemExit("cross-reference diagnostic queue has no candidate pairs")
+    if manifest["strongThreshold"] != 0.9:
+        raise SystemExit("cross-reference diagnostic strong threshold drifted")
+    if manifest["diagnosticOnly"] is not True:
+        raise SystemExit("cross-reference diagnostics must remain explicitly non-binding")
+    for key in (
+        "destinationResolutionPerformed",
+        "canonicalResolutionsModified",
+        "canonicalArticlesModified",
+        "canonicalFuzzyMatchingUsed",
+        "linguisticSimilarityUsed",
+        "semanticEquivalenceInferred",
+        "philologicalCorrectionInferred",
+        "humanVerificationPerformed",
+    ):
+        if manifest[key] is not False:
+            raise SystemExit(f"cross-reference diagnostic guard must remain false: {key}")
+    if manifest["diagnosticGraphicSimilarityUsed"] is not True:
+        raise SystemExit("cross-reference diagnostics must disclose graphic similarity use")
+    if not manifest["deterministic"]:
+        raise SystemExit("cross-reference diagnostic manifest does not declare deterministic=true")
+
+
 def validate_lo_mismo(manifest: dict) -> None:
     if manifest["candidateArticleCount"] <= 0:
         raise SystemExit("Lo miſmo candidate queue is empty")
@@ -159,6 +186,11 @@ def main() -> None:
             "export_lexicon_crossreference_graph.py",
             validate_crossref_graph,
         ),
+        "crossreference_diagnostics": validate_pipeline(
+            "cross-reference candidate diagnostics",
+            "export_crossreference_candidate_diagnostics.py",
+            validate_crossref_diagnostics,
+        ),
         "lo_mismo": validate_pipeline(
             "Lo miſmo queue", "export_lexicon_lo_mismo.py", validate_lo_mismo
         ),
@@ -175,12 +207,19 @@ def main() -> None:
     }
     if results["crossreference_graph"]["crossReferenceCount"] != results["crossreferences"]["crossReferenceCount"]:
         raise SystemExit("cross-reference graph count disagrees with canonical cross-reference inventory")
+    if (
+        results["crossreference_diagnostics"]["strictNotLocatedAudited"]
+        != results["crossreference_graph"]["resolutionStatusCounts"].get("not_located", 0)
+    ):
+        raise SystemExit("cross-reference diagnostic queue count disagrees with strict graph not_located count")
     print(
         "post-closure export QA OK: "
         f"{results['lexicon']['articleCount']} articles; "
         f"{results['crossreferences']['crossReferenceCount']} cross-references; "
         f"{results['crossreference_graph']['exactUniqueEdgeCount']} strict exact cross-reference edges, "
         f"{results['crossreference_graph']['cycleCount']} exact cycle(s); "
+        f"{results['crossreference_diagnostics']['strictNotLocatedAudited']} cross-reference diagnostics, "
+        f"{results['crossreference_diagnostics']['candidatePairCount']} candidate pairs; "
         f"{results['lo_mismo']['candidateArticleCount']} Lo miſmo candidate articles; "
         f"{results['variety']['evidenceRecordCount']} variety-evidence records; "
         f"{results['physical_spans']['articleCountWithPhysicalMetadata']} articles with physical metadata, "
