@@ -1,0 +1,23 @@
+{
+  "sourceId": "ALC1737",
+  "nominalRuleNumberRange": [1, 373],
+  "nominalDistinctNumbers": 373,
+  "omittedPrintedNumbers": [127, 178, 294],
+  "duplicatedPrintedNumbers": [129],
+  "expectedDistinctPrintedNumbers": 370,
+  "expectedPrintedRuleUnits": 371,
+  "interpretation": "La secuencia nominal 1–373 presenta tres números omitidos materialmente (127, 178, 294) y una duplicación material del número 129. CHD no crea unidades ficticias para los números omitidos y mantiene dos objetos separados para las dos reglas impresas como 129.",
+  "evidenceFiles": [
+    "data/grammar/metadata/rule_numbering_anomalies_p052.json",
+    "data/grammar/metadata/rule_numbering_anomalies_p066.json",
+    "data/grammar/metadata/rule_numbering_anomalies_p107.json"
+  ],
+  "closureCriterion": "Cierre de cobertura estructural cuando los 370 números efectivamente impresos tengan reclamación estructurada y la duplicación 129 conserve dos unidades separadas.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "agent": "GPT-5.6 Sol",
+    "method": "Consolidation of rule-coverage audit with sequential numbering anomalies documented from ALC1737 page transcriptions/facsimile collation; no independent human verification",
+    "processedAt": null
+  }
+}
