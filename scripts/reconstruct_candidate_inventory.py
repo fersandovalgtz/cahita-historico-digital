@@ -83,11 +83,11 @@ def main() -> None:
             f"row-count mismatch: {len(rows)} != {manifest['candidateCount']}"
         )
 
-    parsed_rows = []
+    # Parse every row so syntactically damaged JSONL cannot pass hash/count checks
+    # unnoticed after a manifest update.
     for number, line in enumerate(rows, 1):
         try:
-            obj = json.loads(line)
-            parsed_rows.append(obj)
+            json.loads(line)
         except json.JSONDecodeError as exc:
             raise SystemExit(f"invalid JSON on reconstructed row {number}: {exc}")
 
@@ -99,9 +99,6 @@ def main() -> None:
         "verified canonical candidate inventory: "
         f"{len(rows)} rows; JSONL SHA-256 {jsonl_digest}"
     )
-    for obj in parsed_rows:
-        if obj.get("sourcePageDigital") == 174:
-            print("P174CAND " + json.dumps(obj, ensure_ascii=False, separators=(",", ":")))
 
 
 if __name__ == "__main__":
