@@ -76,10 +76,21 @@ def object_type(path: Path, obj: dict[str, Any]) -> str:
 def parse_rule_locator(obj: dict[str, Any]) -> tuple[list[int], str | None, str | None]:
     """Return explicit numbered rule claims plus raw locator and source field.
 
-    Priority is given to ruleNumberNumeric, then ruleNumberRaw, then the leading
-    numeric/range token of sourceRuleRange. We intentionally ignore page numbers
-    embedded later in free text such as `293; continuation to p.107`.
+    Priority is given to an explicit `sourceRuleNumbers` list (for documented
+    non-contiguous claims), then ruleNumberNumeric, ruleNumberRaw, and finally
+    the leading numeric/range token of sourceRuleRange. We intentionally ignore
+    page numbers embedded later in free text such as `293; continuation to p.107`.
     """
+    explicit_numbers = obj.get("sourceRuleNumbers")
+    if explicit_numbers is not None:
+        if not isinstance(explicit_numbers, list) or not explicit_numbers:
+            raise SystemExit("sourceRuleNumbers must be a non-empty list when present")
+        if not all(isinstance(value, int) and not isinstance(value, bool) for value in explicit_numbers):
+            raise SystemExit("sourceRuleNumbers must contain integers only")
+        if len(set(explicit_numbers)) != len(explicit_numbers):
+            raise SystemExit("sourceRuleNumbers must not contain duplicates")
+        return sorted(explicit_numbers), compact_json(explicit_numbers), "sourceRuleNumbers"
+
     numeric = obj.get("ruleNumberNumeric")
     if isinstance(numeric, int):
         return [numeric], str(numeric), "ruleNumberNumeric"
@@ -328,7 +339,11 @@ def main() -> None:
     }
     (args.out_dir / GAPS_NAME).write_bytes(gap_bytes)
 
-    source_files = sorted(path.relative_to(ROOT).as_posix() for path in GRAMMAR_DIR.iterdir() if path.is_file() and path.suffix in {".json", ".jsonl"})
+    source_files = sorted(
+        path.relative_to(ROOT).as_posix()
+        for path in GRAMMAR_DIR.iterdir()
+        if path.is_file() and path.suffix in {".json", ".jsonl"}
+    )
     manifest = {
         "sourceId": "ALC1737",
         "dataset": "grammar_numbered_rule_coverage_audit",
