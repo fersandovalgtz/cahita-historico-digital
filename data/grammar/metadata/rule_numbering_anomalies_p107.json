@@ -1,0 +1,21 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePagesDigital": [106, 107],
+  "sourcePagesPrinted": [92, 93],
+  "anomalyType": "omitted_printed_rule_number",
+  "omittedRuleNumber": 294,
+  "observedSequence": [293, 295],
+  "evidence": {
+    "rule293": "La regla 293 (UI) comienza en la página digital 106 y continúa en la 107 sin nueva regla intermedia.",
+    "nextVisibleRule": "Tras el remate de UI, el siguiente encabezado TZI lleva el número visible 295.",
+    "interpretation": "No se ha localizado una unidad impresa 294 entre ambas; CHD conserva el hueco como incidencia material y no inventa una regla 294."
+  },
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "derivedFrom": "data/transcription/pages/ALC1737_p106.json;data/transcription/pages/ALC1737_p107.json",
+    "agent": "GPT-5.6 Sol",
+    "method": "Sequential rule-number collation against existing diplomatic page transcriptions previously collated with ALC1737 facsimile; no independent human verification",
+    "processedAt": null
+  }
+}
