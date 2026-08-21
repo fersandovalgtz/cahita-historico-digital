@@ -1,0 +1,43 @@
+name: TEMP CHD Xref Batch03
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  inspect:
+    name: Print next unreviewed Tier-A cross-references
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Generate diagnostics
+        run: python scripts/export_crossreference_candidate_diagnostics.py --out-dir /tmp/xrefdiag
+      - name: Print next eight unreviewed Tier-A cases
+        shell: bash
+        run: |
+          python - <<'PY'
+          import glob, json
+          reviewed = set()
+          for path in glob.glob('data/lexicon/review/crossreference_source_review_batch*.jsonl'):
+              with open(path, encoding='utf-8') as fh:
+                  for line in fh:
+                      if line.strip():
+                          reviewed.add(json.loads(line)['sourceArticleId'])
+          rows = []
+          with open('/tmp/xrefdiag/chd_crossreference_candidate_diagnostics.jsonl', encoding='utf-8') as fh:
+              for line in fh:
+                  row = json.loads(line)
+                  if row.get('priorityTier') == 'A_unique_strong' and row['sourceArticleId'] not in reviewed:
+                      rows.append(row)
+          rows.sort(key=lambda r: (r['sourcePageDigital'], r['sourceColumn'], r['sourceArticleId']))
+          for row in rows[:8]:
+              print('BATCH03 ' + json.dumps(row, ensure_ascii=False, sort_keys=True, separators=(',', ':')))
+          print(f'BATCH03_REMAINING_A={len(rows)}')
+          PY
