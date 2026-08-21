@@ -1,0 +1,19 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":176,
+  "closureType":"exhaustive_facsimile_phase2_closure",
+  "technicalClosure":true,
+  "humanVerified":false,
+  "reviewStatus":"machine_corrected_unverified",
+  "candidateInventoryTotal":49,
+  "visibleStarts":53,
+  "falseNegatives":4,
+  "pendingPromotion":0,
+  "newArticles":38,
+  "newArticleIdRange":["ALC1737-art-002220","ALC1737-art-002257"],
+  "corpusBefore":2219,
+  "corpusAfter":2257,
+  "selectedCorrections":["ALC1737-art-000647","ALC1737-art-000649","ALC1737-art-000652","ALC1737-art-000658"],
+  "notes":["All 49 canonical p176 candidate boundaries reconcile to lexical starts.","Four additional lexical starts are detector misses; three required new articles and selected 000653 already existed.","`Tuna generalmente.` is a grouping label, not a lexical start.","Bottom `Vn par` is a catchword; p177 contains the fresh complete article."],
+  "primaryWitness":{"localFile":"Cahíta.pdf","sha256":"69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37"}
+}
