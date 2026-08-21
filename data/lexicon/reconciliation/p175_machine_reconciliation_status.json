@@ -1,108 +1,27 @@
 {
   "sourceId": "ALC1737",
   "sourcePageDigital": 175,
-  "pageStatus": {
-    "candidateReconciliation": "complete",
-    "visibleStartCensus": "known_misses_only_not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
-    "humanVerificationPlanned": false
-  },
-  "candidateInventory": {
-    "total": 35,
-    "left": 20,
-    "right": 15,
-    "classification": {
-      "article": 35,
-      "continuation": 0,
-      "paratext": 0,
-      "false_positive": 0,
-      "unresolved": 0
-    },
-    "boundaryAssessment": {
-      "exact": 30,
-      "oversegmented": 0,
-      "undersegmented": 0,
-      "merged_articles": 5,
-      "ambiguous": 0,
-      "not_applicable": 0
-    }
-  },
-  "selectedLayer": {
-    "preExistingArticles": 15,
-    "articleIdRange": [
-      "ALC1737-art-000629",
-      "ALC1737-art-000643"
-    ],
-    "articleCandidateRecordsLinked": 14,
-    "structuredArticlesLinked": 15,
-    "continuationCandidateRecordsLinked": 0,
-    "selectedStartsInsideMergedCandidate": 3,
-    "selectedStartsOutsideCandidateInventory": 0,
-    "selectedArticlesUnlinked": 0,
-    "knownMissedSelectedArticleIds": [
-      "ALC1737-art-000637",
-      "ALC1737-art-000640",
-      "ALC1737-art-000643"
-    ]
-  },
-  "promotion": {
-    "articleCandidatesPendingPromotion": 21,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
-  },
-  "visibleStartEvidence": {
-    "exhaustive": false,
-    "knownVisibleStartsMinimum": 38,
-    "knownMissedStartRecords": 3,
-    "unresolvedCandidateRecords": 0,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "The 35 article candidates plus three selected missed starts establish at least 38 starts, but the selected layer is non-exhaustive and merged groups contain additional unanchored OCR guide units."
-  },
+  "pageStatus": {"candidateReconciliation":"complete","visibleStartCensus":"exhaustive_direct_facsimile","promotionLinkage":"complete","technicalClosure":true,"humanVerificationPlanned":false},
+  "candidateInventory": {"total":35,"left":20,"right":15,"classification":{"article":35,"continuation":0,"paratext":0,"false_positive":0,"unresolved":0},"boundaryAssessment":{"exact":30,"oversegmented":0,"undersegmented":0,"merged_articles":5,"ambiguous":0,"not_applicable":0}},
+  "selectedLayer": {"preExistingArticles":15,"articleIdRange":["ALC1737-art-000629","ALC1737-art-000643"],"articleCandidateRecordsLinked":14,"structuredArticlesLinked":15,"continuationCandidateRecordsLinked":0,"selectedStartsInsideMergedCandidate":3,"selectedStartsOutsideCandidateInventory":0,"selectedArticlesUnlinked":0,"knownMissedSelectedArticleIds":["ALC1737-art-000637","ALC1737-art-000640","ALC1737-art-000643"],"selectedCorrectionsThisPass":["ALC1737-art-000633","ALC1737-art-000635","ALC1737-art-000642"]},
+  "promotion": {"articleCandidatesPendingPromotion":0,"candidateBackedNewArticles":23,"newMissedStartArticles":15,"newPromotionsThisPass":38,"corpusTotalBeforePass":2181,"corpusTotalAfterPass":2219},
+  "visibleStartEvidence": {"exhaustive":true,"visibleStarts":53,"leftVisibleStarts":29,"rightVisibleStarts":24,"truePositiveCandidateStarts":35,"falsePositiveCandidateBoundaries":0,"falseNegatives":18,"knownMissedStartRecords":18,"unresolvedCandidateRecords":0,"precision":1.0,"recall":0.660377358490566,"f1":0.7954545454545454},
   "physicalContinuities": [
-    {
-      "from": "ALC1737-vcand-p174-R-022",
-      "to": "ALC1737-vcand-p175-L-001",
-      "type": "fresh_page_transition",
-      "note": "p175 opens fresh with selected/canonical `Tarde`; no p174→p175 lexical continuation is asserted."
-    },
-    {
-      "from": "ALC1737-vcand-p175-R-015",
-      "to": "ALC1737-vcand-p176-L-001",
-      "type": "fresh_page_transition_after_catchword",
-      "note": "R-015 ends with a `Tor-` catchword after several Tortuga-like guide units; p176 opens a fresh selected/canonical `Tortuga. Mochic.` and no cross-page lexical continuation is asserted."
-    }
+    {"from":"ALC1737-vcand-p174-R-022","to":"ALC1737-vcand-p175-L-001","type":"fresh_page_transition","note":"p175 opens fresh `Tarde. Cuſte.`; no p174→p175 lexical continuation."},
+    {"from":"ALC1737-art-002196","to":"digital-page-175:right-column-top","type":"same_page_column_continuation","note":"`Tirar con piedra. Tetame / himma.` begins in the left column and its Cahíta form continues at the top of the right column before fresh R-001."},
+    {"from":"ALC1737-vcand-p175-R-015","to":"digital-page-176","type":"catchword_to_fresh_next_page_article","note":"Bottom `Tor-` is a catchword; p176 opens fresh `Tortuga. Mochic.`."}
   ],
   "structuralNotes": [
-    "L-012 absorbs selected 000637 after unselected `Tender al Sol`; L-014 begins selected 000639 and absorbs selected 000640 plus an unselected `Teñir`-like unit.",
-    "L-020 begins selected 000642 (`Tierra`) and visibly absorbs an unselected `Tirar con piedra` guide unit.",
-    "R-007 begins unselected `Tizón` and absorbs selected 000643 (`Tocar. Buſca palpar.`).",
-    "R-015 is a megagroup with multiple Tordo/Tortuga-like guide units and a final catchword; OCR-only internal starts are not promoted or added to the selected-start minimum.",
-    "No canonical p175 row is classified as a physical continuation."
+    "Direct census establishes 29 fresh starts in the left column and 24 in the right column: 53 total.",
+    "L-012 merges `Tender al Sol` with selected detector-missed `Tener con las manos`; `Temprano` and `Tender` are separate misses before L-012.",
+    "L-014 begins `Tener ſed` and contains detector-missed `Tener à la que quiere parir`, selected `Tentar con las manos`, and `Teñir`.",
+    "L-020 begins selected `Tierra` and contains detector-missed `Tinaja de barro`, `Tinta para eſcrebir`, and `Tirar con piedra`; the last form continues into the right-column top.",
+    "R-007 begins `Tizon` and absorbs selected detector-missed `Tocar`; `Tizne` is a separate miss before R-007.",
+    "R-015 is an eight-article megagroup: `Tortear`, `Tortilla`, four `Tordo` entries, and two `Tortuga` entries; bottom `Tor-` is only a catchword.",
+    "Direct facsimile corrects selected 000633 `Huitſoſaa`→`Huitoſaa`, 000635 `Buiahua-ntec`→`Buia hu- / antec`, and 000642 `Buta`→`Buia`; prior readings remain in notesRaw."
   ],
-  "nextPage": {
-    "sourcePageDigital": 176,
-    "candidateInventoryTotal": 49,
-    "left": 26,
-    "right": 23,
-    "firstCandidate": "ALC1737-vcand-p176-L-001",
-    "firstCandidateOpening": "Tortuga. Mochic.",
-    "firstSelectedArticle": "ALC1737-art-000644",
-    "firstSelectedOpening": "Tortuga. Mochic.",
-    "nextPageTopSelectedMissExpected": false
-  },
-  "evidence": {
-    "canonicalCandidateInventoryVerified": true,
-    "canonicalCandidateInventoryCount": 2072,
-    "selectedP175LayerUsedAsAnchor": true,
-    "p174ReconciliationUsedForOpeningEdge": true,
-    "p176CanonicalCandidatesAndSelectedLayerUsedForLowerEdge": true,
-    "targetedDamagedRegionInspectionPerformed": true,
-    "directFacsimileAvailableThisPass": false,
-    "policy": "Selected direct collations support demonstrated starts and known misses. OCR-only internal units are preserved structurally without invented lexical transcription or promotion; metrics remain withheld without an exhaustive visible-start census."
-  },
+  "nextPage": {"sourcePageDigital":176,"candidateInventoryTotal":49,"left":26,"right":23,"firstCandidate":"ALC1737-vcand-p176-L-001","firstSelectedArticle":"ALC1737-art-000644","firstSelectedOpening":"Tortuga. Mochic."},
+  "evidence": {"canonicalCandidateInventoryVerified":true,"canonicalCandidateInventoryCount":2072,"directFacsimileAvailableThisPass":true,"primaryWitness":{"localFile":"Cahíta.pdf","sha256":"69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37","sameWitnessDirectInspection":true},"policy":"Direct same-witness facsimile controls readings and structural boundaries; OCR is auxiliary; BUE1890 is not used as ALC1737 transcription authority."},
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false
 }
