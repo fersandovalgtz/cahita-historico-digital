@@ -90,6 +90,17 @@ def validate_variety(manifest: dict) -> None:
         raise SystemExit("variety evidence must not use linguistic similarity")
 
 
+def validate_physical_spans(manifest: dict) -> None:
+    if manifest["articleCountWithPhysicalMetadata"] <= 0:
+        raise SystemExit("physical-span audit is empty")
+    if manifest["automaticRepairPerformed"] is not False:
+        raise SystemExit("physical-span audit must not repair articles automatically")
+    if manifest["philologicalCorrectionInferred"] is not False:
+        raise SystemExit("physical-span audit must not infer philological corrections")
+    if not manifest["deterministic"]:
+        raise SystemExit("physical-span audit manifest does not declare deterministic=true")
+
+
 def validate_pipeline(
     label: str,
     script: str,
@@ -129,13 +140,20 @@ def main() -> None:
             "export_lexicon_variety_evidence.py",
             validate_variety,
         ),
+        "physical_spans": validate_pipeline(
+            "physical-span audit",
+            "export_lexicon_physical_spans.py",
+            validate_physical_spans,
+        ),
     }
     print(
         "post-closure export QA OK: "
         f"{results['lexicon']['articleCount']} articles; "
         f"{results['crossreferences']['crossReferenceCount']} cross-references; "
         f"{results['lo_mismo']['candidateArticleCount']} Lo miſmo candidate articles; "
-        f"{results['variety']['evidenceRecordCount']} variety-evidence records"
+        f"{results['variety']['evidenceRecordCount']} variety-evidence records; "
+        f"{results['physical_spans']['articleCountWithPhysicalMetadata']} articles with physical metadata, "
+        f"{results['physical_spans']['flaggedArticleCount']} flagged for structural review"
     )
 
 
