@@ -139,3 +139,6 @@ jobs:
           tmp="$(mktemp)"
           python scripts/summarize_open_lexicon_work.py --output "$tmp"
           diff -u data/lexicon/reconciliation/phase2_open_work_summary.json "$tmp"
+
+      - name: Validate documentation synchronization
+        run: python scripts/validate_documentation_sync.py
