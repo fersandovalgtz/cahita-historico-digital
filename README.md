@@ -21,29 +21,28 @@ Véanse [`docs/SOURCE_ALC1737.md`](docs/SOURCE_ALC1737.md), [`docs/AUTHORSHIP.md
 
 La fuente está representada de forma continua desde los preliminares y el cuerpo gramatical hasta el vocabulario y el sistema numeral. El vocabulario castellano–cahíta ocupa las páginas digitales **133–177** y el sistema numeral las páginas **178–180**.
 
-Estado computacional vigente al **17 de agosto de 2026**:
+Estado computacional vigente al **21 de agosto de 2026**:
 
-- **2,072 candidatos lexicográficos** `hybrid_margin_mode_v0.2` están persistidos canónicamente;
-- **1,049 artículos históricos estructurados** integran la capa curatorial actual;
+- **2,072 candidatos lexicográficos** `hybrid_margin_mode_v0.2` están persistidos canónicamente y son reconstruibles;
+- **2,302 artículos históricos estructurados** integran la capa curatorial actual;
 - las **45/45 páginas del Vocabulario (133–177)** tienen reconciliación candidate-level completa;
-- las páginas **133–144** constituyen el tramo técnicamente cerrado en reconciliación, censo visible y promoción/enlace IA-asistidos dentro del alcance declarado;
-- las páginas **145–177** forman la fase II de promoción/enlace y censo exhaustivo de inicios visibles;
-- en ese alcance permanecen **1,047 candidatos `pending_promotion`**, **1 candidato estructuralmente `unresolved`** y **9 fronteras `ambiguous`**;
-- **0/33 páginas** de p.145–177 tienen todavía censo visible exhaustivo y **0/33** cierre técnico;
-- el primer lote conservador de fase II en p.145 promovió **4 artículos**, reduciendo los pendientes de esa página a **17**;
-- no existen objetos `human_verified`; la autoridad de las capas IA-asistidas permanece explícitamente separada de cualquier revisión humana.
+- las **45/45 páginas** tienen censo exhaustivo de inicios visibles, promoción/enlace cerrado y cierre técnico IA-asistido dentro del alcance declarado;
+- la subfase de cierre de **p.145–177** terminó con **33/33 páginas** técnicamente cerradas;
+- quedan **0 candidatos `pending_promotion`**, **0 candidatos estructuralmente `unresolved`** y **0 fronteras `ambiguous`** en el resumen canónico de esa subfase;
+- el cierre de p.177 fija el final del Vocabulario; las digitales **178–180** pertenecen al sistema numeral histórico;
+- no existen objetos `human_verified`; la autoridad de las capas IA-asistidas permanece explícitamente separada de cualquier revisión humana independiente.
 
-Los totales de fase II no se mantienen manualmente como una segunda fuente de verdad. Se regeneran desde los estados de página y los `articleId` curatoriales mediante [`scripts/summarize_open_lexicon_work.py`](scripts/summarize_open_lexicon_work.py), cuyo resultado versionado es [`data/lexicon/reconciliation/phase2_open_work_summary.json`](data/lexicon/reconciliation/phase2_open_work_summary.json). Los snapshots históricos almacenados en estados de página conservan valor de procedencia, pero no sustituyen el conteo actual.
+Estos totales no se mantienen manualmente como una segunda fuente de verdad. Se regeneran desde los estados de página y los `articleId` curatoriales mediante [`scripts/summarize_open_lexicon_work.py`](scripts/summarize_open_lexicon_work.py), cuyo resultado versionado es [`data/lexicon/reconciliation/phase2_open_work_summary.json`](data/lexicon/reconciliation/phase2_open_work_summary.json). Los snapshots históricos almacenados en estados de página conservan valor de procedencia, pero no sustituyen el conteo actual.
 
-El detalle página por página y la cobertura científica se mantienen en [`docs/LEXICON_PROGRESS.md`](docs/LEXICON_PROGRESS.md), [`COVERAGE.md`](COVERAGE.md) y [`ROADMAP.md`](ROADMAP.md).
+El detalle de cobertura se mantiene en [`docs/LEXICON_PROGRESS.md`](docs/LEXICON_PROGRESS.md), [`COVERAGE.md`](COVERAGE.md) y [`ROADMAP.md`](ROADMAP.md).
 
 ## Modelo epistemológico
 
 CHD no equipara OCR con transcripción ni reconciliación computacional con edición crítica. La autoridad primaria permanece en `ALC1737`. Las capas derivadas registran su método, procedencia y estado de revisión. `BUE1890`, cuando se utiliza, funciona sólo como reimpresión histórica de control; nunca sustituye silenciosamente una lectura del ejemplar de 1737.
 
-Los estados `machine_corrected_unverified` y `unresolved` identifican explícitamente el carácter IA-asistido del trabajo. Bajo la política vigente, `humanVerified` permanece en `false`; `human_verified` se conserva únicamente como estado reservado del esquema, no como una etapa futura obligatoria.
+Los estados `machine_corrected_unverified` y `unresolved` identifican explícitamente el carácter IA-asistido del trabajo. Bajo la política vigente, `humanVerified` permanece en `false`; `human_verified` se conserva únicamente como estado reservado del esquema.
 
-Una página puede alcanzar **cierre técnico** cuando sus fronteras, continuidades, enlaces/promociones y zonas irresueltas quedan completamente modeladas y el QA computacional es satisfactorio. Ese cierre no debe confundirse con autoridad diplomática o filológica humana.
+Una página alcanza **cierre técnico** cuando sus fronteras, continuidades, inicios visibles, falsos negativos, enlaces/promociones y zonas de incertidumbre quedan explícitamente modelados y el QA computacional es satisfactorio. Ese cierre no equivale a autoridad diplomática o filológica humana.
 
 ## Arquitectura del repositorio
 
@@ -60,21 +59,28 @@ Una página puede alcanzar **cierre técnico** cuando sus fronteras, continuidad
 
 ## Reproducibilidad y QA
 
-El proyecto incluye validadores de JSONL, control de identificadores lexicográficos, reconstrucción del inventario canónico de candidatos y un flujo de QA en GitHub Actions. El workflow valida además la sintaxis del resumen de fase II, lo regenera desde las fuentes canónicas y falla si el archivo versionado queda desincronizado. Una corrida verde verifica consistencia computacional; no certifica corrección filológica humana.
+El proyecto incluye validadores de JSONL, control de identificadores lexicográficos, reconstrucción del inventario canónico de candidatos y un flujo de QA en GitHub Actions. El workflow regenera además el resumen de trabajo lexicográfico y falla si el archivo versionado queda desincronizado de sus fuentes canónicas. Una corrida verde verifica consistencia computacional; no certifica corrección filológica humana.
 
 Consulte [`docs/QA_AUTOMATION.md`](docs/QA_AUTOMATION.md), [`docs/LEXICON_RECONCILIATION_PROTOCOL.md`](docs/LEXICON_RECONCILIATION_PROTOCOL.md) y [`docs/TRANSCRIPTION_CONVENTIONS.md`](docs/TRANSCRIPTION_CONVENTIONS.md).
 
 ## Incertidumbres y límites abiertos
 
-El repositorio conserva explícitamente problemas materiales y textuales en lugar de ocultarlos. Entre ellos se encuentran la discontinuidad material registrada entre las páginas digitales 157–158, lecturas de baja confianza en tipografía pequeña y artículos transpaginales cuya microestructura no puede resolverse con seguridad a partir de la evidencia disponible. El artículo `ALC1737-art-001045` (`Atormentar`) enlaza las pp.144–145 y permanece parcialmente `unresolved` en su forma cahíta.
+El cierre estructural del vocabulario no elimina incertidumbres de microestructura o lectura material que ya están codificadas dentro de artículos concretos. El repositorio conserva, entre otros problemas, la discontinuidad material `ALC1737-gap-0001` entre digitales 157–158, lecturas de baja confianza en tipografía pequeña, anáforas históricas como `Lo miſmo`, remisiones `Buſca` todavía no cerradas como grafo y artículos transpaginales cuya microestructura permanece parcialmente incierta. `ALC1737-art-001045` (`Atormentar`) continúa siendo un ejemplo explícito de incertidumbre localizada.
 
-La ausencia de una capa humana no autoriza a fortalecer estas lecturas. Cuando la evidencia de máquina no basta, la incertidumbre permanece codificada.
+La ausencia de una capa humana no autoriza a fortalecer esas lecturas. Cierre estructural, incertidumbre textual y autoridad editorial son dimensiones distintas.
 
 ## Próximo frente científico
 
-La reconciliación geométrica de candidatos del Vocabulario está completa en **pp.133–177 (45/45 páginas)**. El frente activo es la **fase II de p.145–177**: completar, página por página, el **censo exhaustivo de inicios visibles** y la **promoción/enlace** de fronteras todavía sustentadas sólo por geometría/OCR. El primer lote de p.145 demostró el criterio operativo: promover sólo cuando el propio testimonio `ALC1737` ofrece evidencia suficientemente convergente y mantener pendientes las lecturas materialmente divergentes.
+Con la reconciliación, el censo visible y la promoción/enlace cerrados para **pp.133–177**, el siguiente frente de la **Fase 3 — Corpus lexicográfico** es de consolidación e interoperabilidad, no de nuevas promociones masivas. Las prioridades inmediatas son:
 
-El corpus curatorial actual contiene **1,049 artículos estructurados** y quedan **1,047 candidatos `pending_promotion`** en el alcance p.145–177. Ese conteo debe leerse como trabajo estructural abierto, no como una equivalencia automática con “artículos faltantes”. No se calculan métricas de precisión/recall/F1 para páginas cuyo denominador visible siga sin ser exhaustivo.
+1. construir un inventario maestro final de artículos históricos, separado del inventario de candidatos;
+2. cerrar de forma explícita el grafo de remisiones `Buſca`;
+3. modelar las anáforas `Lo miſmo` sin resolverlas automáticamente cuando la evidencia no baste;
+4. detectar y estructurar atribuciones históricas explícitas `Hiaqui`, `Mayo` y `Thehueco` dentro del vocabulario;
+5. generar exportaciones canónicas JSONL/JSON/CSV sin duplicados y con procedencia preservada;
+6. preparar, sólo sobre una microestructura estabilizada, proyecciones TEI Lex-0 y otros derivados interoperables.
+
+En paralelo permanecen abiertos los frentes de transcripción diplomática integral, gramática/variación histórica y reproducibilidad avanzada definidos en [`ROADMAP.md`](ROADMAP.md).
 
 ## Cita
 
