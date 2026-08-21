@@ -62,9 +62,24 @@ La auditoría admite ahora el campo opcional `sourceRuleNumbers`, reservado para
 
 Su presencia no afirma que todo el objeto pertenezca exclusivamente a esas reglas. Afirma únicamente que el objeto contiene evidencia estructurada explícita de esos números y que esa relación fue documentada.
 
-## Consecuencia esperada para la cobertura
+## Resultado reproducible
 
-Antes de esta revisión, la auditoría registraba 177/373 reglas con reclamación estructurada y cinco objetos sin reclamación numerada. La incorporación documental de 190, 198 y 200 debe elevar la cobertura en tres reglas y reducir a tres los objetos sin reclamación numerada. Los conteos definitivos se toman únicamente de la salida del generador y de `CHD QA`, no de esta previsión manual.
+Antes de esta revisión, la auditoría registraba **177/373** reglas con reclamación estructurada y **5** objetos sin reclamación numerada. Después de incorporar documentalmente 190, 198 y 200, `CHD QA` produce:
+
+- **180/373** reglas con reclamación estructurada explícita;
+- **193** reglas sin reclamación;
+- **3** objetos sin reclamación numerada;
+- **9** rangos contiguos de hueco;
+- **0** reclamaciones fuera del universo 1–373.
+
+La regla **199 permanece sin reclamación**, confirmando que `sourceRuleNumbers: [198, 200]` no se interpreta como rango continuo.
+
+Hashes de la corrida reproducible:
+
+- cobertura CSV: `6e1ac4b2019c974ee75efd4305ace0b36409a854c00f8040e241253f586c7c3d`;
+- cobertura JSONL: `a3e33de2b9464c153b122b33d751bf5cf03d505fc7f3f8ef57675ddda3bc4829`;
+- rangos de hueco JSON: `e88ea7fc3c4857981216f3125403310ca4a4877f9e00405082ca7102956424ed`;
+- manifiesto: `0f98daf8c2c294f72b2fe406ebc71a8323c0faa64892976ee15fd6799ab66a24`.
 
 ## Autoridad
 
