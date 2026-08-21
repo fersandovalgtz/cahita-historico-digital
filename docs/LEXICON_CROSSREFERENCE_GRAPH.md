@@ -43,6 +43,19 @@ Cada remisión recibe uno de estos estados derivados:
 
 `matchedArticleIds` conserva todas las coincidencias exactas cuando hay más de una. Sólo `exact_unique` produce `exactUniqueTargetArticleId`.
 
+## Resultado reproducible vigente
+
+Sobre los 2,302 artículos canónicos, la corrida integrada a `CHD QA` del 21 de agosto de 2026 procesa **151 remisiones** y obtiene:
+
+- **60** `exact_unique` — aristas que pueden enlazarse por la regla estricta;
+- **90** `not_located` — destinos que requieren una capa posterior de revisión;
+- **1** `not_busca` — remisión excluida de la resolución `Buſca`;
+- **0** `exact_multiple`;
+- **0** `non_normalizable`;
+- **4** ciclos exactos en el subgrafo de 60 aristas.
+
+Estos conteos son resultados derivados, no datos curatoriales incorporados a los artículos. Si cambia la capa canónica, deben regenerarse.
+
 ## Ciclos
 
 El grafo se construye exclusivamente con aristas `exact_unique`. Sobre ese subgrafo se calculan componentes fuertemente conexos mediante un algoritmo determinista. Se distinguen:
@@ -67,4 +80,4 @@ Las remisiones `exact_multiple` y `not_located` forman una cola explícita para 
 
 ## Reproducibilidad
 
-El manifiesto registra conteos por estado, número de aristas exactas, ciclos, archivos canónicos utilizados y SHA-256/tamaño de cada salida. `CHD QA` debe ejecutar el exportador dos veces en directorios independientes y exigir salidas byte-a-byte idénticas.
+El manifiesto registra conteos por estado, número de aristas exactas, ciclos, archivos canónicos utilizados y SHA-256/tamaño de cada salida. `CHD QA` ejecuta el exportador dos veces en directorios independientes y exige salidas byte-a-byte idénticas. También verifica que el número de remisiones coincida con el inventario canónico derivado de `crossReferences`.
