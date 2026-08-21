@@ -1,0 +1,31 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 52,
+  "sourcePagePrinted": 38,
+  "section": "part_ii",
+  "anomalies": [
+    {
+      "type": "printed_number_omission",
+      "number": 127,
+      "evidence": "The printed sequence on digital p.52 proceeds from rule 126 directly to rule 128.",
+      "editorialAction": "No rule 127 object is created and no neighboring content is renumbered.",
+      "sourceRuleExistenceInferred": false
+    },
+    {
+      "type": "printed_number_repetition",
+      "number": 129,
+      "occurrenceCount": 2,
+      "evidence": "Two successive rule units on digital p.52 are both printed as 129; the second continues onto p.53.",
+      "editorialAction": "Both units retain ruleNumberRaw=129 and ruleNumberNumeric=129, with distinct object IDs ALC1737-gr-0129a and ALC1737-gr-0129b.",
+      "silentRenumberingPerformed": false
+    }
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false,
+  "provenance": {
+    "derivedFrom": "data/transcription/pages/ALC1737_p052.json;data/transcription/pages/ALC1737_p053.json",
+    "agent": "GPT-5.6 Sol",
+    "method": "Numbering anomaly recorded from diplomatic transcription previously collated against ALC1737 facsimile; no independent human verification",
+    "processedAt": null
+  }
+}
