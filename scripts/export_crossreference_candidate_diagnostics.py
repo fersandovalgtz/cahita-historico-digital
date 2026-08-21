@@ -39,6 +39,7 @@ CSV_FIELDS = [
     "crossReferenceIndex",
     "targetRaw",
     "targetNormalized",
+    "priorityTier",
     "candidateRank",
     "candidateArticleId",
     "candidatePageDigital",
@@ -57,6 +58,14 @@ def sha256_bytes(data: bytes) -> str:
 
 def compact_json(value: Any) -> str:
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+
+
+def priority_tier(strong_candidate_count: int) -> str:
+    if strong_candidate_count == 1:
+        return "A_unique_strong"
+    if strong_candidate_count > 1:
+        return "B_multiple_strong"
+    return "C_no_strong"
 
 
 def build_diagnostics(max_candidates: int) -> tuple[list[dict[str, Any]], dict[str, Any]]:
@@ -131,6 +140,7 @@ def build_diagnostics(max_candidates: int) -> tuple[list[dict[str, Any]], dict[s
                 for candidate in candidates
                 if candidate["diagnosticScore"] >= STRONG_THRESHOLD
             ]
+            tier = priority_tier(len(strong))
             unresolved.append(
                 {
                     "sourceArticleId": article["articleId"],
@@ -140,6 +150,7 @@ def build_diagnostics(max_candidates: int) -> tuple[list[dict[str, Any]], dict[s
                     "crossReferenceIndex": ref_index,
                     "targetRaw": target_raw,
                     "targetNormalized": target,
+                    "priorityTier": tier,
                     "candidateCountShown": len(candidates),
                     "strongCandidateCountShown": len(strong),
                     "candidates": candidates,
@@ -157,6 +168,7 @@ def build_diagnostics(max_candidates: int) -> tuple[list[dict[str, Any]], dict[s
     )
     score_bands = Counter()
     strong_cardinality = Counter()
+    priority_counts = Counter(row["priorityTier"] for row in unresolved)
     candidate_pair_count = 0
 
     for row in unresolved:
@@ -191,6 +203,7 @@ def build_diagnostics(max_candidates: int) -> tuple[list[dict[str, Any]], dict[s
         "candidatePairCount": candidate_pair_count,
         "maxCandidatesShownPerReference": max_candidates,
         "strongThreshold": STRONG_THRESHOLD,
+        "priorityTierCounts": dict(sorted(priority_counts.items())),
         "strongCandidateCardinality": dict(sorted(strong_cardinality.items())),
         "topCandidateClass": dict(sorted(top_classes.items())),
         "topScoreBand": dict(sorted(score_bands.items())),
@@ -233,6 +246,7 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> bytes:
                         "crossReferenceIndex": row["crossReferenceIndex"],
                         "targetRaw": row["targetRaw"],
                         "targetNormalized": row["targetNormalized"],
+                        "priorityTier": row["priorityTier"],
                         "candidateRank": candidate.get("rank") if candidate else "",
                         "candidateArticleId": candidate.get("articleId") if candidate else "",
                         "candidatePageDigital": candidate.get("sourcePageDigital") if candidate else "",
@@ -259,6 +273,11 @@ def main() -> None:
         default=ROOT / "build/crossreference-candidate-diagnostics",
     )
     parser.add_argument("--max-candidates", type=int, default=5)
+    parser.add_argument(
+        "--print-rows",
+        action="store_true",
+        help="Print diagnostic rows after writing deterministic files; useful for review tooling.",
+    )
     args = parser.parse_args()
 
     rows, manifest = build_diagnostics(args.max_candidates)
@@ -288,11 +307,15 @@ def main() -> None:
         "exported cross-reference candidate diagnostics: "
         f"{manifest['strictNotLocatedAudited']} strict-not-located references; "
         f"{manifest['candidatePairCount']} candidate pairs; "
-        f"strongCardinality={manifest['strongCandidateCardinality']}; "
+        f"priorityTiers={manifest['priorityTierCounts']}; "
         "canonical resolutions modified=0"
     )
     for name, metadata in manifest["formats"].items():
         print(f"  {name}: {metadata['bytes']} bytes; sha256 {metadata['sha256']}")
+
+    if args.print_rows:
+        for row in rows:
+            print("XREFDIAG " + compact_json(row))
 
 
 if __name__ == "__main__":
