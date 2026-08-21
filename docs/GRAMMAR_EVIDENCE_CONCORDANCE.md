@@ -18,6 +18,26 @@ Por omisión produce en `build/grammar-evidence-concordance/`:
 - `chd_grammar_evidence_concordance.csv`
 - `manifest.json`
 
+## Estado reproducible al 21 de agosto de 2026
+
+La primera ejecución integrada en `CHD QA` procesó **108 objetos gramaticales** distribuidos en **15 archivos canónicos** y produjo **471 filas de evidencia**. El corpus gramatical derivado conserva **0 objetos `humanVerified=true`**.
+
+Distribución por rol de evidencia:
+
+- `example`: 223;
+- `headword`: 60;
+- `formation_marker`: 55;
+- `paradigm_form`: 25;
+- `particle`: 24;
+- `numeral_form`: 24;
+- `form`: 21;
+- `lemma`: 18;
+- `item_form`: 18;
+- `historical_variety_example`: 2;
+- `alternative_form`: 1.
+
+Dos corridas independientes produjeron exactamente los mismos bytes. En esa ejecución, `chd_grammar_evidence_concordance.jsonl` tuvo SHA-256 `a183949ab7ce0ffcfbe3a79a348eb5bb466c43c8e787b55df1ce5d2fbe1b2208` y el CSV SHA-256 `f8435278c8311916c09205e68e83d4838f404a4edcc17f2fde012b519fd8e30d`. Los hashes se consideran resultados derivados de ese estado concreto del repositorio y deben regenerarse cuando cambien las entradas canónicas.
+
 ## Unidad de salida
 
 Cada fila corresponde a una cadena explícita localizada dentro de un objeto gramatical y conserva:
