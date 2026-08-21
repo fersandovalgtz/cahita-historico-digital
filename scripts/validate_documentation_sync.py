@@ -132,7 +132,12 @@ def validate_crossreference_review_docs() -> tuple[int, int, int, int, int, int]
         XREF_DOC_NAME,
     )
     require(text, f"**{view_edges} aristas efectivas**", XREF_DOC_NAME)
-    require(text, f"**{recollation} caso `editorial_requires_recollation`**", XREF_DOC_NAME)
+    recollation_noun = "caso" if recollation == 1 else "casos"
+    require(
+        text,
+        f"**{recollation} {recollation_noun} `editorial_requires_recollation`**",
+        XREF_DOC_NAME,
+    )
     require(text, f"**{unreviewed} casos `strict_not_located_unreviewed`**", XREF_DOC_NAME)
 
     return total, strict_edges, strict_not_located, reviews, editorial_unique, unreviewed
