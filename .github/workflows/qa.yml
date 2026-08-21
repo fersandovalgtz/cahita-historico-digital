@@ -149,11 +149,5 @@ jobs:
       - name: Validate source-based cross-reference reviews
         run: python scripts/validate_crossreference_source_reviews.py
 
-      - name: TEMP Print selected batch-02 diagnostics
-        shell: bash
-        run: |
-          set -euo pipefail
-          python scripts/export_crossreference_candidate_diagnostics.py --out-dir /tmp/xrefdiag --print-rows | grep -E '"sourceArticleId":"ALC1737-art-(000901|000903|001115|001126|001340|001470)"'
-
       - name: Validate deterministic grammar concordance
         run: python scripts/validate_grammar_exports.py
