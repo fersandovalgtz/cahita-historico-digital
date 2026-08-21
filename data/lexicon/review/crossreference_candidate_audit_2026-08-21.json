@@ -1,0 +1,99 @@
+{
+  "sourceId": "ALC1737",
+  "auditDate": "2026-08-21",
+  "scope": "Historical Buſca-class cross-references with strict normalized-equality status not_located in the canonical post-closure graph.",
+  "canonicalResolutionPolicy": "unchanged_strict_normalized_equality_only",
+  "diagnosticPolicy": "non_binding_candidate_prioritization_only",
+  "canonicalResolutionsModified": 0,
+  "inputState": {
+    "historicalCrossReferencesTotal": 151,
+    "buscaClassTotal": 150,
+    "strictExactUnique": 60,
+    "strictNotLocated": 90,
+    "notBusca": 1,
+    "exactCycles": 4
+  },
+  "diagnosticMethod": {
+    "script": "scripts/audit_crossreference_candidates.py",
+    "strongThreshold": 0.9,
+    "candidateSignals": [
+      "complete-token permutation match",
+      "contiguous complete-token sequence containment",
+      "token-set overlap",
+      "graphic similarity via SequenceMatcher"
+    ],
+    "importantLimitation": "A strong diagnostic score is not a lexical resolution. Generic whole tokens such as coſa, eſtar, agua, orilla, or a short target occurring inside multiple historical guides can yield formally strong but philologically non-decisive candidates.",
+    "rejectedPilotCriterion": "Arbitrary normalized substring containment was tested and rejected because it produced false positives such as ave within caverna, rio within frio, olor within color, dar within quedar, and cara within escarabajo. The retained audit restricts containment to complete contiguous tokens."
+  },
+  "result": {
+    "strictNotLocatedAudited": 90,
+    "strongCandidateCardinality": {
+      "uniqueShown": 44,
+      "multipleShown": 16,
+      "none": 30
+    },
+    "topCandidateClass": {
+      "tokenSequenceContainment": 55,
+      "tokenPermutationMatch": 1,
+      "highGraphicSimilarity": 7,
+      "moderateGraphicSimilarity": 18,
+      "partialTokenOverlap": 1,
+      "noCandidate": 8
+    },
+    "topScoreBand": {
+      ">=0.90": 60,
+      "0.84-0.899999": 3,
+      "0.72-0.839999": 18,
+      "<0.72_or_none": 9
+    }
+  },
+  "priorityExamples": [
+    {
+      "sourceArticleId": "ALC1737-art-000123",
+      "targetRaw": "aparejarſe",
+      "diagnosticCandidateArticleId": "ALC1737-art-000117",
+      "candidateGuideRaw": "Aparejarſe para hazer algo",
+      "status": "priority_for_source_collation_not_resolved"
+    },
+    {
+      "sourceArticleId": "ALC1737-art-000198",
+      "targetRaw": "agurear con barrena",
+      "diagnosticCandidateArticleId": "ALC1737-art-000865",
+      "candidateGuideRaw": "Agujerear con barrena",
+      "status": "priority_for_source_collation_not_resolved",
+      "note": "High graphic similarity suggests a possible historical/collation issue; no correction is asserted by this audit."
+    },
+    {
+      "sourceArticleId": "ALC1737-art-000610",
+      "targetRaw": "eſcupitina",
+      "diagnosticCandidateArticleId": "ALC1737-art-001463",
+      "candidateGuideRaw": "Eſcupitina ſaliva",
+      "status": "priority_for_source_collation_not_resolved"
+    },
+    {
+      "sourceArticleId": "ALC1737-art-000639",
+      "targetRaw": "ſed tener",
+      "diagnosticCandidateArticleId": "ALC1737-art-000639",
+      "candidateGuideRaw": "Tener ſed",
+      "status": "priority_for_source_collation_not_resolved",
+      "note": "Exact normalized token-set permutation; retained as diagnostic evidence only."
+    },
+    {
+      "sourceArticleId": "ALC1737-art-001607",
+      "targetRaw": "recoger",
+      "diagnosticCandidateArticleId": "ALC1737-art-002051",
+      "candidateGuideRaw": "Recoger lo eſparcido",
+      "status": "priority_for_source_collation_not_resolved"
+    },
+    {
+      "sourceArticleId": "ALC1737-art-002118",
+      "targetRaw": "roña",
+      "diagnosticCandidateArticleId": "ALC1737-art-002097",
+      "candidateGuideRaw": "Roña, ò ſarna",
+      "status": "priority_for_source_collation_not_resolved"
+    }
+  ],
+  "nextStep": "Review priority candidates against ALC1737 article text and relevant destination pages. Any accepted resolution must be recorded in a separate explicit review layer; the strict canonical graph must not be silently widened by heuristic matching.",
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
