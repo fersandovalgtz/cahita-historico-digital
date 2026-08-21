@@ -168,6 +168,40 @@ def validate_crossref_reviewed_view(manifest: dict) -> None:
         raise SystemExit("reviewed cross-reference view manifest does not declare deterministic=true")
 
 
+def validate_crossref_review_queue(manifest: dict) -> None:
+    if manifest["strictNotLocatedDiagnosticCount"] <= 0:
+        raise SystemExit("cross-reference source-review queue has no strict-not-located universe")
+    if manifest["sourceReviewRecordCount"] <= 0:
+        raise SystemExit("cross-reference source-review queue sees no completed reviews")
+    if manifest["awaitingSourceReviewCount"] < 0:
+        raise SystemExit("cross-reference source-review queue has an invalid awaiting count")
+    if (
+        manifest["sourceReviewRecordCount"] + manifest["awaitingSourceReviewCount"]
+        != manifest["strictNotLocatedDiagnosticCount"]
+    ):
+        raise SystemExit("source-review queue does not partition strict not_located references")
+
+    tier_counts = manifest.get("priorityTierCounts") or {}
+    expected_tiers = {"A_unique_strong", "B_multiple_strong", "C_no_strong"}
+    if set(tier_counts) != expected_tiers:
+        raise SystemExit("source-review queue priority tiers are incomplete or unexpected")
+    if sum(tier_counts.values()) != manifest["awaitingSourceReviewCount"]:
+        raise SystemExit("source-review queue priority-tier counts are inconsistent")
+
+    for key in (
+        "canonicalStrictGraphModified",
+        "canonicalArticlesModified",
+        "diagnosticCandidatesPromotedToEditorial",
+        "destinationResolutionPerformed",
+        "semanticEquivalenceInferred",
+        "humanVerificationPerformed",
+    ):
+        if manifest[key] is not False:
+            raise SystemExit(f"source-review queue guard must remain false: {key}")
+    if not manifest["deterministic"]:
+        raise SystemExit("source-review queue manifest does not declare deterministic=true")
+
+
 def validate_lo_mismo(manifest: dict) -> None:
     if manifest["candidateArticleCount"] <= 0:
         raise SystemExit("Lo miſmo candidate queue is empty")
@@ -247,6 +281,11 @@ def main() -> None:
             "export_lexicon_crossreference_reviewed_view.py",
             validate_crossref_reviewed_view,
         ),
+        "crossreference_review_queue": validate_pipeline(
+            "cross-reference source-review queue",
+            "export_crossreference_review_queue.py",
+            validate_crossref_review_queue,
+        ),
         "lo_mismo": validate_pipeline(
             "Lo miſmo queue", "export_lexicon_lo_mismo.py", validate_lo_mismo
         ),
@@ -278,6 +317,21 @@ def main() -> None:
         != results["crossreference_graph"]["exactUniqueEdgeCount"]
     ):
         raise SystemExit("reviewed cross-reference view strict-edge count disagrees with canonical graph")
+    if (
+        results["crossreference_review_queue"]["strictNotLocatedDiagnosticCount"]
+        != results["crossreference_diagnostics"]["strictNotLocatedAudited"]
+    ):
+        raise SystemExit("source-review queue strict universe disagrees with diagnostics")
+    if (
+        results["crossreference_review_queue"]["sourceReviewRecordCount"]
+        != results["crossreference_reviewed_view"]["sourceReviewRecordCount"]
+    ):
+        raise SystemExit("source-review queue completed-review count disagrees with reviewed view")
+    if (
+        results["crossreference_review_queue"]["awaitingSourceReviewCount"]
+        != results["crossreference_reviewed_view"]["reviewedViewStatusCounts"].get("strict_not_located_unreviewed", 0)
+    ):
+        raise SystemExit("source-review queue awaiting count disagrees with reviewed view")
 
     print(
         "post-closure export QA OK: "
@@ -290,6 +344,8 @@ def main() -> None:
         f"{results['crossreference_diagnostics']['candidatePairCount']} candidate pairs; "
         f"reviewedViewEdges={results['crossreference_reviewed_view']['reviewedViewEdgeCount']} "
         f"from {results['crossreference_reviewed_view']['sourceReviewRecordCount']} source-review records; "
+        f"sourceReviewQueue={results['crossreference_review_queue']['awaitingSourceReviewCount']} "
+        f"with tiers={results['crossreference_review_queue']['priorityTierCounts']}; "
         f"{results['lo_mismo']['candidateArticleCount']} Lo miſmo candidate articles; "
         f"{results['variety']['evidenceRecordCount']} variety-evidence records; "
         f"{results['physical_spans']['articleCountWithPhysicalMetadata']} articles with physical metadata, "
