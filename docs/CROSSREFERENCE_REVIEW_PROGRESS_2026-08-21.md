@@ -35,14 +35,15 @@ El nivel A significa que se muestra un solo candidato por encima del umbral diag
 
 ## Revisión de fuente completada hasta este corte
 
-Se han registrado **20 revisiones explícitas**, todas sobre casos `A_unique_strong` y todas con `humanVerified=false`.
+Se han registrado **28 revisiones explícitas**, todas sobre casos `A_unique_strong` y todas con `humanVerified=false`.
 
-De esas 20 revisiones:
+De esas 28 revisiones:
 
-- **16** tienen `decisionStatus=source_supports_unique_target` y un `selectedTargetArticleId` explícito;
-- **4** tienen `decisionStatus=source_or_destination_requires_recollation` y no reciben destino efectivo.
+- **21** tienen `decisionStatus=source_supports_unique_target` y un `selectedTargetArticleId` explícito;
+- **5** tienen `decisionStatus=source_or_destination_requires_recollation` y no reciben destino efectivo;
+- **2** tienen `decisionStatus=candidate_rejected`: el candidato diagnóstico mostrado fue inspeccionado y descartado como destino lexicográfico.
 
-Las 16 propuestas positivas actualmente registradas son:
+Las 21 propuestas positivas actualmente registradas son:
 
 | Fuente histórica | Destino editorialmente sustentado |
 | --- | --- |
@@ -62,15 +63,26 @@ Las 16 propuestas positivas actualmente registradas son:
 | `Juntar lo que eſtá eſparcido` — `Buſca recoger` | `Recoger lo eſparcido` |
 | `Moſtrar con el dedo` — `Buſca apuntar` | `Apuntar con el dedo à alguna parte` |
 | `Mudar poniendo vna coſa en lugar de otra` — `Buſca feriar` | `Feriar vna coſa por otra` |
+| `Ninguna coſa` — `Buſca nada` | `Nada ninguna coſa` |
+| `Premiar` — `Buſca pagar` | `Pagar deuda` |
+| `Sepultar` — `Buſca enterrar` | `Enterrar muerto` |
+| `Sobrar` — `Buſca quedar` | `Quedar ſobrar` |
+| `Tentar con las manos` — `Buſca palpar` | `Palpar con las manos` |
 
-Los **4 casos `editorial_requires_recollation`** son:
+Los **5 casos `editorial_requires_recollation`** son:
 
 - `Danzar` — `Buſca bailar`: el candidato `Bailar algún ſon` sigue siendo diagnóstico, pero no se recuperó con suficiente limpieza el contexto fuente;
 - `Apercibirſe para hazer algo` — `Buſca aparejarſe`: se localizó un OCR ruidoso del destino `Aparejarſe para hazer algo`, pero no una remisión fuente suficientemente limpia;
 - `Yr delante` — `Buſca guiar`: la fórmula fuente es visible, pero el token de destino aparece gravemente corrompido en OCR;
-- `Loco bolverſe` — `Buſca enloquecer`: el destino `Enloquecer, ò perder el juizio` es localizable, pero la remisión fuente está demasiado dañada en OCR para promoverla editorialmente sin cotejo de imagen.
+- `Loco bolverſe` — `Buſca enloquecer`: el destino `Enloquecer, ò perder el juizio` es localizable, pero la remisión fuente está demasiado dañada en OCR para promoverla editorialmente sin cotejo de imagen;
+- `Reglar con regla` — `Buſca rayar`: el OCR localiza la guía fuente como `Reglar con regla` pero no conserva una remisión `Buſca rayar` inequívoca; el contexto incluso puede reflejar una forma léxica adyacente, por lo que debe cotejarse directamente el facsímil y el límite de columna.
 
-Estos cuatro casos deben volver al facsímil. La retención es deliberada: una puntuación diagnóstica fuerte no sustituye una evidencia fuente suficientemente legible.
+Los **2 candidatos rechazados** son:
+
+- `Nombrar, poner nombre` — `Buſca llamar`: el diagnóstico propuso `O, adv. para llamar`, pero `llamar` aparece dentro de una descripción de uso y no constituye la guía de esa entrada; el candidato se rechaza y el destino histórico permanece pendiente de localización;
+- `Rueda` — `Buſca redonda coſa`: el diagnóstico propuso la entrada genérica `Coſa`, que sólo reproduce el token no discriminante `coſa` y omite `redonda`; no es suficiente para sostener identidad de destino.
+
+Los casos en recolación deben volver al facsímil. Los candidatos rechazados permanecen documentados como resultados negativos, no como resoluciones. Una puntuación diagnóstica fuerte no sustituye evidencia lexicográfica suficiente.
 
 ## Vista revisada derivada
 
@@ -80,20 +92,25 @@ El estado reproducible de esa vista es:
 
 - **151 remisiones** representadas;
 - **60 aristas estrictas** con `edgeAuthority=strict_exact_normalized_equality`;
-- **16 aristas editoriales** con `edgeAuthority=editorial_source_review`;
-- **76 aristas efectivas** en la vista revisada;
-- **4 casos `editorial_requires_recollation`**;
-- **70 casos `strict_not_located_unreviewed`**;
+- **21 aristas editoriales** con `edgeAuthority=editorial_source_review`;
+- **81 aristas efectivas** en la vista revisada;
+- **5 casos `editorial_requires_recollation`**;
+- **2 casos `editorial_candidate_rejected`**;
+- **62 casos `strict_not_located_unreviewed`**;
 - **0 aristas editoriales `humanVerified=true`**.
 
 La vista se exporta en JSONL, CSV y grafo JSON, y se valida mediante doble ejecución determinista byte-a-byte. Los hashes exactos de cada estado se conservan en el manifiesto generado por el exportador; no se fijan aquí porque cambian legítimamente cada vez que se incorpora un nuevo lote de revisión.
 
+## Cola reproducible de trabajo
+
+La cola permanente `scripts/export_crossreference_review_queue.py` resta las 28 revisiones explícitas al universo de 90 remisiones estrictamente `not_located`. El corte actual debe producir **62 casos pendientes**, distribuidos como **16 A**, **16 B** y **30 C**. La cola es estado de trabajo reproducible: no crea destinos ni modifica la autoridad de las remisiones.
+
 ## Siguiente frente
 
-Quedan **24 casos `A_unique_strong` todavía sin revisión explícita**. La prioridad sigue siendo agotar este nivel antes de pasar a los 16 casos `B_multiple_strong`.
+Quedan **16 casos `A_unique_strong` todavía sin revisión explícita**. La prioridad sigue siendo agotar este nivel antes de pasar a los 16 casos `B_multiple_strong`.
 
-El procedimiento se mantiene conservador: localizar la fórmula histórica y el destino candidato en el mismo testimonio, registrar la propuesta en la capa editorial sólo cuando el soporte textual sea suficiente y enviar a recolación cualquier caso en que el OCR no permita sostener la decisión. Los 30 casos `C_no_strong` constituirán el frente posterior de mayor dificultad textual.
+El procedimiento se mantiene conservador: localizar la fórmula histórica y el destino candidato en el mismo testimonio, registrar la propuesta en la capa editorial sólo cuando el soporte textual sea suficiente, rechazar candidatos que coincidan únicamente por material genérico y enviar a recolación cualquier caso en que el OCR no permita sostener la decisión. Los 30 casos `C_no_strong` constituirán el frente posterior de mayor dificultad textual.
 
 ## Guarda epistemológica
 
-**Una arista editorial sustentada no es una arista canónica estricta. Una coincidencia diagnóstica fuerte no es una resolución. Una corrida verde de QA no es validación filológica humana.**
+**Una arista editorial sustentada no es una arista canónica estricta. Una coincidencia diagnóstica fuerte no es una resolución. Un candidato rechazado no desaparece de la historia de revisión. Una corrida verde de QA no es validación filológica humana.**
