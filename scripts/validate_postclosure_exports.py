@@ -125,6 +125,49 @@ def validate_crossref_diagnostics(manifest: dict) -> None:
         raise SystemExit("cross-reference diagnostic manifest does not declare deterministic=true")
 
 
+def validate_crossref_reviewed_view(manifest: dict) -> None:
+    if manifest["canonicalCrossReferenceCount"] <= 0:
+        raise SystemExit("reviewed cross-reference view is empty")
+    if manifest["sourceReviewRecordCount"] <= 0:
+        raise SystemExit("reviewed cross-reference view contains no source-review records")
+    if manifest["strictGraphEdgeCount"] <= 0:
+        raise SystemExit("reviewed cross-reference view lost strict graph edges")
+    if manifest["reviewedViewEdgeCount"] < manifest["strictGraphEdgeCount"]:
+        raise SystemExit("reviewed cross-reference view has fewer edges than strict graph")
+
+    status_counts = manifest.get("reviewedViewStatusCounts") or {}
+    if sum(status_counts.values()) != manifest["canonicalCrossReferenceCount"]:
+        raise SystemExit("reviewed cross-reference status counts are inconsistent")
+    if status_counts.get("strict_exact_unique", 0) != manifest["strictGraphEdgeCount"]:
+        raise SystemExit("reviewed view strict-edge count disagrees with strict graph")
+
+    review_decisions = manifest.get("reviewDecisionCounts") or {}
+    if sum(review_decisions.values()) != manifest["sourceReviewRecordCount"]:
+        raise SystemExit("reviewed view decision counts disagree with source-review records")
+    editorial_unique = status_counts.get("editorial_source_supported_unique", 0)
+    if editorial_unique != review_decisions.get("source_supports_unique_target", 0):
+        raise SystemExit("reviewed view editorial unique-edge count disagrees with review decisions")
+
+    authority_counts = manifest.get("edgeAuthorityCounts") or {}
+    if authority_counts.get("strict_exact_normalized_equality", 0) != manifest["strictGraphEdgeCount"]:
+        raise SystemExit("reviewed view strict authority count drifted")
+    if authority_counts.get("editorial_source_review", 0) != editorial_unique:
+        raise SystemExit("reviewed view editorial authority count drifted")
+    if sum(authority_counts.values()) != manifest["reviewedViewEdgeCount"]:
+        raise SystemExit("reviewed view authority counts disagree with edge count")
+
+    for key in (
+        "canonicalArticlesModified",
+        "canonicalStrictGraphModified",
+        "editorialReviewsPromotedToCanonical",
+        "humanValidationInferred",
+    ):
+        if manifest[key] is not False:
+            raise SystemExit(f"reviewed cross-reference view guard must remain false: {key}")
+    if not manifest["deterministic"]:
+        raise SystemExit("reviewed cross-reference view manifest does not declare deterministic=true")
+
+
 def validate_lo_mismo(manifest: dict) -> None:
     if manifest["candidateArticleCount"] <= 0:
         raise SystemExit("Lo miſmo candidate queue is empty")
@@ -199,6 +242,11 @@ def main() -> None:
             "export_crossreference_candidate_diagnostics.py",
             validate_crossref_diagnostics,
         ),
+        "crossreference_reviewed_view": validate_pipeline(
+            "cross-reference reviewed view",
+            "export_lexicon_crossreference_reviewed_view.py",
+            validate_crossref_reviewed_view,
+        ),
         "lo_mismo": validate_pipeline(
             "Lo miſmo queue", "export_lexicon_lo_mismo.py", validate_lo_mismo
         ),
@@ -220,6 +268,17 @@ def main() -> None:
         != results["crossreference_graph"]["resolutionStatusCounts"].get("not_located", 0)
     ):
         raise SystemExit("cross-reference diagnostic queue count disagrees with strict graph not_located count")
+    if (
+        results["crossreference_reviewed_view"]["canonicalCrossReferenceCount"]
+        != results["crossreferences"]["crossReferenceCount"]
+    ):
+        raise SystemExit("reviewed cross-reference view count disagrees with canonical inventory")
+    if (
+        results["crossreference_reviewed_view"]["strictGraphEdgeCount"]
+        != results["crossreference_graph"]["exactUniqueEdgeCount"]
+    ):
+        raise SystemExit("reviewed cross-reference view strict-edge count disagrees with canonical graph")
+
     print(
         "post-closure export QA OK: "
         f"{results['lexicon']['articleCount']} articles; "
@@ -229,6 +288,8 @@ def main() -> None:
         f"{results['crossreference_diagnostics']['strictNotLocatedAudited']} cross-reference diagnostics "
         f"with tiers={results['crossreference_diagnostics']['priorityTierCounts']}, "
         f"{results['crossreference_diagnostics']['candidatePairCount']} candidate pairs; "
+        f"reviewedViewEdges={results['crossreference_reviewed_view']['reviewedViewEdgeCount']} "
+        f"from {results['crossreference_reviewed_view']['sourceReviewRecordCount']} source-review records; "
         f"{results['lo_mismo']['candidateArticleCount']} Lo miſmo candidate articles; "
         f"{results['variety']['evidenceRecordCount']} variety-evidence records; "
         f"{results['physical_spans']['articleCountWithPhysicalMetadata']} articles with physical metadata, "
