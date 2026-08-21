@@ -35,14 +35,14 @@ El nivel A significa que se muestra un solo candidato por encima del umbral diag
 
 ## Revisión de fuente completada hasta este corte
 
-Se han registrado **12 revisiones explícitas**, todas sobre casos `A_unique_strong` y todas con `humanVerified=false`.
+Se han registrado **20 revisiones explícitas**, todas sobre casos `A_unique_strong` y todas con `humanVerified=false`.
 
-De esas 12 revisiones:
+De esas 20 revisiones:
 
-- **11** tienen `decisionStatus=source_supports_unique_target` y un `selectedTargetArticleId` explícito;
-- **1** tiene `decisionStatus=source_or_destination_requires_recollation` y no recibe destino efectivo.
+- **16** tienen `decisionStatus=source_supports_unique_target` y un `selectedTargetArticleId` explícito;
+- **4** tienen `decisionStatus=source_or_destination_requires_recollation` y no reciben destino efectivo.
 
-Las 11 propuestas positivas actualmente registradas son:
+Las 16 propuestas positivas actualmente registradas son:
 
 | Fuente histórica | Destino editorialmente sustentado |
 | --- | --- |
@@ -57,8 +57,20 @@ Las 11 propuestas positivas actualmente registradas son:
 | `Boſadura tal` — `Buſca bomitar` | `Boſſar, ò bomitar` |
 | `Braza` — `Buſca aſqua` | `Aſqua, ò braſa` |
 | `Eſpeluzarſe` — `Buſca erizarſe` | `Erizarſe los pelos` |
+| `Embolver` — `Buſca doblar` | `Doblar algo` |
+| `Eſperar` — `Buſca confiar` | `Confiar en alguno` |
+| `Juntar lo que eſtá eſparcido` — `Buſca recoger` | `Recoger lo eſparcido` |
+| `Moſtrar con el dedo` — `Buſca apuntar` | `Apuntar con el dedo à alguna parte` |
+| `Mudar poniendo vna coſa en lugar de otra` — `Buſca feriar` | `Feriar vna coſa por otra` |
 
-El caso `Danzar` — `Buſca bailar` conserva como candidato diagnóstico `Bailar algún ſon`, pero se mantiene en **recolación necesaria** porque el control OCR del mismo testimonio no permitió recuperar el contexto fuente con limpieza suficiente para convertir la señal diagnóstica en propuesta positiva.
+Los **4 casos `editorial_requires_recollation`** son:
+
+- `Danzar` — `Buſca bailar`: el candidato `Bailar algún ſon` sigue siendo diagnóstico, pero no se recuperó con suficiente limpieza el contexto fuente;
+- `Apercibirſe para hazer algo` — `Buſca aparejarſe`: se localizó un OCR ruidoso del destino `Aparejarſe para hazer algo`, pero no una remisión fuente suficientemente limpia;
+- `Yr delante` — `Buſca guiar`: la fórmula fuente es visible, pero el token de destino aparece gravemente corrompido en OCR;
+- `Loco bolverſe` — `Buſca enloquecer`: el destino `Enloquecer, ò perder el juizio` es localizable, pero la remisión fuente está demasiado dañada en OCR para promoverla editorialmente sin cotejo de imagen.
+
+Estos cuatro casos deben volver al facsímil. La retención es deliberada: una puntuación diagnóstica fuerte no sustituye una evidencia fuente suficientemente legible.
 
 ## Vista revisada derivada
 
@@ -68,25 +80,19 @@ El estado reproducible de esa vista es:
 
 - **151 remisiones** representadas;
 - **60 aristas estrictas** con `edgeAuthority=strict_exact_normalized_equality`;
-- **11 aristas editoriales** con `edgeAuthority=editorial_source_review`;
-- **71 aristas efectivas** en la vista revisada;
-- **1 caso `editorial_requires_recollation`**;
-- **78 casos `strict_not_located_unreviewed`**;
+- **16 aristas editoriales** con `edgeAuthority=editorial_source_review`;
+- **76 aristas efectivas** en la vista revisada;
+- **4 casos `editorial_requires_recollation`**;
+- **70 casos `strict_not_located_unreviewed`**;
 - **0 aristas editoriales `humanVerified=true`**.
 
-La vista se exporta en JSONL, CSV y grafo JSON, y se valida mediante doble ejecución determinista byte-a-byte. En el corte actual, los hashes de las tres salidas son:
-
-- `chd_lexicon_crossreference_reviewed_graph.json`: `697d395aad8c7ce3c5b931709382a784622818315a6c757bce7a59883d108f3a`;
-- `chd_lexicon_crossreference_reviewed_view.csv`: `f66ef1f12edead8736b0f2a349e94c434fc41dedb039ffcf6319e7e792368e7f`;
-- `chd_lexicon_crossreference_reviewed_view.jsonl`: `e2923c53327b0c1f43f96ddd08366d8241053f573b6706d7061b622474314b27`.
-
-Los hashes son verificadores del estado actual de los datos, no identificadores permanentes: cambiarán legítimamente cuando se incorporen nuevas revisiones explícitas.
+La vista se exporta en JSONL, CSV y grafo JSON, y se valida mediante doble ejecución determinista byte-a-byte. Los hashes exactos de cada estado se conservan en el manifiesto generado por el exportador; no se fijan aquí porque cambian legítimamente cada vez que se incorpora un nuevo lote de revisión.
 
 ## Siguiente frente
 
-El siguiente bloque debe continuar con los **32 casos restantes de `A_unique_strong`** que aún no tienen revisión explícita. La prioridad es cotejar primero los casos donde la fórmula `Buſca` y el destino candidato puedan localizarse con suficiente claridad en el mismo testimonio. Los casos con OCR deficiente deben conservarse como pendientes de facsímil o recolación, no resolverse por fuerza de la puntuación diagnóstica.
+Quedan **24 casos `A_unique_strong` todavía sin revisión explícita**. La prioridad sigue siendo agotar este nivel antes de pasar a los 16 casos `B_multiple_strong`.
 
-Una vez agotado el nivel A, la revisión debe pasar a los 16 casos `B_multiple_strong`, donde la tarea principal será discriminar ambigüedades reales. Los 30 casos `C_no_strong` constituirán el frente final y probablemente exigirán mayor control textual, variantes gráficas históricas o consulta de testimonios de apoyo.
+El procedimiento se mantiene conservador: localizar la fórmula histórica y el destino candidato en el mismo testimonio, registrar la propuesta en la capa editorial sólo cuando el soporte textual sea suficiente y enviar a recolación cualquier caso en que el OCR no permita sostener la decisión. Los 30 casos `C_no_strong` constituirán el frente posterior de mayor dificultad textual.
 
 ## Guarda epistemológica
 
