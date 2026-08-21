@@ -97,6 +97,14 @@ def validate_crossref_diagnostics(manifest: dict) -> None:
         raise SystemExit("cross-reference diagnostic queue has no candidate pairs")
     if manifest["strongThreshold"] != 0.9:
         raise SystemExit("cross-reference diagnostic strong threshold drifted")
+    priority_counts = manifest.get("priorityTierCounts") or {}
+    expected_tiers = {"A_unique_strong", "B_multiple_strong", "C_no_strong"}
+    if set(priority_counts) != expected_tiers:
+        raise SystemExit("cross-reference diagnostic priority tiers are incomplete or unexpected")
+    if sum(priority_counts.values()) != manifest["strictNotLocatedAudited"]:
+        raise SystemExit("cross-reference diagnostic priority-tier counts are inconsistent")
+    if priority_counts["A_unique_strong"] <= 0:
+        raise SystemExit("cross-reference diagnostic queue has no tier-A cases")
     if manifest["diagnosticOnly"] is not True:
         raise SystemExit("cross-reference diagnostics must remain explicitly non-binding")
     for key in (
@@ -218,7 +226,8 @@ def main() -> None:
         f"{results['crossreferences']['crossReferenceCount']} cross-references; "
         f"{results['crossreference_graph']['exactUniqueEdgeCount']} strict exact cross-reference edges, "
         f"{results['crossreference_graph']['cycleCount']} exact cycle(s); "
-        f"{results['crossreference_diagnostics']['strictNotLocatedAudited']} cross-reference diagnostics, "
+        f"{results['crossreference_diagnostics']['strictNotLocatedAudited']} cross-reference diagnostics "
+        f"with tiers={results['crossreference_diagnostics']['priorityTierCounts']}, "
         f"{results['crossreference_diagnostics']['candidatePairCount']} candidate pairs; "
         f"{results['lo_mismo']['candidateArticleCount']} Lo miſmo candidate articles; "
         f"{results['variety']['evidenceRecordCount']} variety-evidence records; "
