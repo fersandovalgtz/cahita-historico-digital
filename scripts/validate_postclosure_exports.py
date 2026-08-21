@@ -68,6 +68,28 @@ def validate_crossrefs(manifest: dict) -> None:
         raise SystemExit("cross-reference inventory must not resolve destinations automatically")
 
 
+def validate_crossref_graph(manifest: dict) -> None:
+    if manifest["crossReferenceCount"] <= 0:
+        raise SystemExit("cross-reference resolution layer is empty")
+    if sum(manifest["resolutionStatusCounts"].values()) != manifest["crossReferenceCount"]:
+        raise SystemExit("cross-reference resolution status counts are inconsistent")
+    if manifest["exactUniqueEdgeCount"] <= 0:
+        raise SystemExit("cross-reference graph contains no strict exact-unique edges")
+    if manifest["destinationResolutionPerformed"] is not True:
+        raise SystemExit("cross-reference graph must declare destinationResolutionPerformed=true")
+    for key in (
+        "fuzzyMatchingUsed",
+        "linguisticSimilarityUsed",
+        "semanticEquivalenceInferred",
+        "probableResolutionInferred",
+        "canonicalArticlesModified",
+    ):
+        if manifest[key] is not False:
+            raise SystemExit(f"cross-reference graph guard must remain false: {key}")
+    if not manifest["deterministic"]:
+        raise SystemExit("cross-reference graph manifest does not declare deterministic=true")
+
+
 def validate_lo_mismo(manifest: dict) -> None:
     if manifest["candidateArticleCount"] <= 0:
         raise SystemExit("Lo miſmo candidate queue is empty")
@@ -132,6 +154,11 @@ def main() -> None:
             "export_lexicon_crossreferences.py",
             validate_crossrefs,
         ),
+        "crossreference_graph": validate_pipeline(
+            "cross-reference resolution graph",
+            "export_lexicon_crossreference_graph.py",
+            validate_crossref_graph,
+        ),
         "lo_mismo": validate_pipeline(
             "Lo miſmo queue", "export_lexicon_lo_mismo.py", validate_lo_mismo
         ),
@@ -146,10 +173,14 @@ def main() -> None:
             validate_physical_spans,
         ),
     }
+    if results["crossreference_graph"]["crossReferenceCount"] != results["crossreferences"]["crossReferenceCount"]:
+        raise SystemExit("cross-reference graph count disagrees with canonical cross-reference inventory")
     print(
         "post-closure export QA OK: "
         f"{results['lexicon']['articleCount']} articles; "
         f"{results['crossreferences']['crossReferenceCount']} cross-references; "
+        f"{results['crossreference_graph']['exactUniqueEdgeCount']} strict exact cross-reference edges, "
+        f"{results['crossreference_graph']['cycleCount']} exact cycle(s); "
         f"{results['lo_mismo']['candidateArticleCount']} Lo miſmo candidate articles; "
         f"{results['variety']['evidenceRecordCount']} variety-evidence records; "
         f"{results['physical_spans']['articleCountWithPhysicalMetadata']} articles with physical metadata, "
