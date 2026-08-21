@@ -20,6 +20,18 @@ La auditoría diagnóstica post-cierre clasifica los 90 casos `not_located` en t
 
 El umbral `0.90` es una regla de priorización computacional, no un umbral de verdad filológica.
 
+## Cola reproducible de trabajo
+
+`scripts/export_crossreference_review_queue.py` deriva la cola activa mediante una operación explícita: inventario diagnóstico de referencias estrictamente `not_located` menos registros de revisión de fuente ya existentes. La cola es, por tanto, estado de workflow reproducible; no es una nueva capa de resolución.
+
+El exportador genera JSONL, CSV y un manifiesto con hashes, y conserva en cada fila la prioridad A/B/C, la remisión histórica y los candidatos diagnósticos. Para inspeccionar el siguiente lote sin crear instrumentación temporal puede utilizarse, por ejemplo:
+
+```bash
+python scripts/export_crossreference_review_queue.py --print-next 8 --tier A_unique_strong
+```
+
+`--print-next` y `--tier` afectan únicamente la salida de inspección en consola; los archivos exportados siguen conteniendo la cola completa y determinista. La cola no promueve candidatos a destinos editoriales, no crea aristas y no modifica artículos canónicos.
+
 ## Evidencia admisible
 
 Una decisión editorial debe registrar al menos una evidencia explícita y localizable. Se distinguen cinco clases:
@@ -44,13 +56,14 @@ Los registros IA-asistidos permanecen `machine_corrected_unverified` o `unresolv
 
 ## Separación de capas
 
-La arquitectura debe conservar tres capas distintas:
+La arquitectura conserva cuatro objetos con autoridad distinta:
 
 - **grafo canónico estricto:** igualdad normalizada exacta; reproducible; sin fuzzy matching;
 - **diagnóstico computacional:** candidatos priorizados mediante señales transparentes; no vinculante;
-- **revisión de fuente:** decisiones editoriales explícitas con evidencia, procedencia y autoridad declaradas.
+- **revisión de fuente:** decisiones editoriales explícitas con evidencia, procedencia y autoridad declaradas;
+- **vista revisada derivada:** superposición reproducible de aristas estrictas y propuestas editoriales aceptadas, manteniendo `edgeAuthority` diferenciado.
 
-Una futura vista `reviewed` podrá incorporar decisiones aceptadas como derivado separado. No debe reemplazar el grafo estricto ni presentarse como resultado puramente computacional.
+La vista revisada no reemplaza el grafo estricto ni se presenta como resultado puramente computacional. La cola de trabajo tampoco constituye una quinta autoridad: sólo organiza los casos que todavía carecen de registro de revisión.
 
 ## Orden de trabajo
 
