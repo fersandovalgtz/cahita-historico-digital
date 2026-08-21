@@ -145,3 +145,6 @@ jobs:
 
       - name: Validate deterministic post-closure exports
         run: python scripts/validate_postclosure_exports.py
+
+      - name: Validate deterministic grammar concordance
+        run: python scripts/validate_grammar_exports.py
