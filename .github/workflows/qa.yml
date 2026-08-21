@@ -142,3 +142,14 @@ jobs:
 
       - name: Validate documentation synchronization
         run: python scripts/validate_documentation_sync.py
+
+      - name: Validate deterministic lexicon exports
+        shell: bash
+        run: |
+          set -euo pipefail
+          tmp="$(mktemp -d)"
+          python scripts/export_lexicon_corpus.py --out-dir "$tmp"
+          python -m json.tool "$tmp/manifest.json" >/dev/null
+          test -s "$tmp/chd_lexicon_articles.jsonl"
+          test -s "$tmp/chd_lexicon_articles.json"
+          test -s "$tmp/chd_lexicon_articles.csv"
