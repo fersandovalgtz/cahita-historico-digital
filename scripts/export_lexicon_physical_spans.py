@@ -172,7 +172,9 @@ def main() -> None:
     }
 
     flag_counts = Counter(flag for row in rows for flag in row["auditFlags"])
-    flagged_articles = sum(bool(row["auditFlags"]) for row in rows)
+    flagged_rows = [row for row in rows if row["auditFlags"]]
+    flagged_articles = len(flagged_rows)
+    flagged_article_ids = [row["articleId"] for row in flagged_rows]
     manifest = {
         "sourceId": "ALC1737",
         "dataset": "lexical_physical_spans_audit",
@@ -189,6 +191,7 @@ def main() -> None:
         "crossPageDerivedCount": sum(bool(row["crossPageDerived"]) for row in rows),
         "crossColumnDerivedCount": sum(bool(row["crossColumnDerived"]) for row in rows),
         "flaggedArticleCount": flagged_articles,
+        "flaggedArticleIds": flagged_article_ids,
         "auditFlagCounts": dict(sorted(flag_counts.items())),
         "automaticRepairPerformed": False,
         "philologicalCorrectionInferred": False,
@@ -213,7 +216,8 @@ def main() -> None:
     print(
         "exported physical-span audit: "
         f"{len(rows)} articles with physical metadata; "
-        f"{flagged_articles} flagged; flags={dict(sorted(flag_counts.items()))}; "
+        f"{flagged_articles} flagged {flagged_article_ids}; "
+        f"flags={dict(sorted(flag_counts.items()))}; "
         f"outputs in {args.out_dir}"
     )
     for name, metadata in manifest["formats"].items():
