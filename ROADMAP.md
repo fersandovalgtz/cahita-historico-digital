@@ -90,7 +90,7 @@ El cierre técnico no elimina incertidumbres internas de microlectura, remisione
 
 ## Fase 4 — Gramática, ejemplos y variación histórica
 
-**Estado:** activa y avanzada.
+**Estado:** activa y avanzada; concordancia reproducible de evidencia implantada.
 
 Capas ya estructuradas:
 
@@ -104,7 +104,10 @@ Capas ya estructuradas:
 - 11 grupos de adverbios, reglas 341–359;
 - 6 grupos de conjunciones/metacategorías, reglas 360–373 e interjecciones;
 - sistema numeral histórico, digitales 178–180;
-- 17+ observaciones de variación histórica identificadas.
+- 17+ observaciones de variación histórica identificadas;
+- **concordancia derivada reproducible de 108 objetos gramaticales en 15 archivos, con 471 filas de evidencia explícita** entre formas, ejemplos, reglas/rangos, objetos y páginas; 0 objetos `humanVerified=true`.
+
+La concordancia se genera mediante `scripts/export_grammar_evidence_concordance.py` y se valida en doble corrida byte-a-byte mediante `scripts/validate_grammar_exports.py`. No normaliza formas ni infiere identidad lingüística o localización token a token más precisa que la declarada por los objetos canónicos.
 
 Pendientes:
 
@@ -113,8 +116,7 @@ Pendientes:
 - integrar observaciones `Hiaqui` / `Hiaquis` / `Naciones` de los numerales;
 - segunda pasada de cantidades mayores y variantes numéricas;
 - extender sistemáticamente las reglas tempranas de Partes I–II a objetos gramaticales derivados;
-- construir concordancia **forma ↔ regla ↔ paradigma/construcción ↔ ejemplo ↔ página**;
-- producir exportaciones JSON/CSV reproducibles;
+- ampliar la concordancia hacia relaciones explícitas entre reglas y observaciones de variedad, sin inferir equivalencia lingüística;
 - formalizar el estudio de irregularidades editoriales y fronteras materiales.
 
 **Criterio de salida:** corpus gramatical histórico suficientemente exhaustivo para permitir búsquedas y análisis sin regresar continuamente a una segmentación ad hoc del impreso.
@@ -129,12 +131,14 @@ Estado alcanzado:
 - reconstrucción automática del inventario canónico de candidatos;
 - validación de IDs, estados de autoridad, JSON Schema, capas de reconciliación y metadatos centrales;
 - resumen reproducible de Phase II con conteo independiente de `articleId` curatoriales;
+- derivados lexicográficos post-cierre reproducibles, incluido grafo conservador de remisiones `Buſca`;
+- concordancia gramatical reproducible con validación de doble ejecución;
 - vocabulario p.133–177 estructuralmente cerrado, lo que permite diseñar derivados sin seguir moviendo fronteras de artículo.
 
 Prioridades:
 
 - impedir por CI la deriva entre la fuente canónica de métricas y la documentación central;
-- generar y validar exportaciones derivadas del corpus lexicográfico;
+- mantener y ampliar exportaciones derivadas del corpus lexicográfico y gramatical;
 - localizar e incorporar, con procedencia separada, testimonios independientes útiles para control textual si están disponibles;
 - cotejar lagunas y anomalías sin rellenar silenciosamente el testimonio `ALC1737`;
 - estabilizar esquemas JSON de producción;
@@ -199,9 +203,9 @@ Los productos se diseñarán después de estabilizar suficientemente los insumos
 Después del cierre de Phase II, CHD debe concentrarse en:
 
 1. **sincronización documental y QA de métricas**;
-2. **exportación canónica JSON/CSV de los 2,302 artículos**;
-3. **grafo de remisiones `Buſca` y registro de anáforas `Lo miſmo`**;
-4. **auditoría de etiquetas históricas de variedad y `sourceSpans`**;
-5. **consolidación de variación y concordancias gramaticales**;
+2. **mantenimiento de exportaciones canónicas y derivados lexicográficos reproducibles**;
+3. **revisión filológica de las 90 remisiones `Buſca` no localizadas por igualdad estricta y preservación de las anáforas `Lo miſmo`**;
+4. **consolidación de etiquetas históricas de variedad y control de metadatos físicos**;
+5. **ampliación de la concordancia gramatical y cobertura de reglas tempranas**;
 6. **perfil TEI / evaluación Lex-0 y CLDF como derivados**;
 7. **control textual, preservación y preparación gradual de release**, manteniendo `0.2.0-dev` hasta que los criterios de congelamiento estén realmente cumplidos.
