@@ -170,3 +170,21 @@ jobs:
           assert manifest['markerClassCounts'].get('busca', 0) > 0
           assert manifest['destinationResolutionPerformed'] is False
           PY
+
+      - name: Validate deterministic Lo miſmo candidate queue
+        shell: bash
+        run: |
+          set -euo pipefail
+          tmp="$(mktemp -d)"
+          python scripts/export_lexicon_lo_mismo.py --out-dir "$tmp"
+          python -m json.tool "$tmp/manifest.json" >/dev/null
+          test -s "$tmp/chd_lexicon_lo_mismo_candidates.jsonl"
+          test -s "$tmp/chd_lexicon_lo_mismo_candidates.csv"
+          python - "$tmp/manifest.json" <<'PY'
+          import json, sys
+          manifest = json.load(open(sys.argv[1], encoding='utf-8'))
+          assert manifest['candidateArticleCount'] > 0
+          assert manifest['surfaceOccurrenceCount'] >= manifest['candidateArticleCount']
+          assert manifest['anaphoraResolutionPerformed'] is False
+          assert manifest['semanticEquivalenceInferred'] is False
+          PY
