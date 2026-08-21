@@ -106,11 +106,12 @@ Capas ya estructuradas:
 - sistema numeral histórico, digitales 178–180;
 - 17+ observaciones de variación histórica identificadas;
 - **concordancia derivada reproducible de 108 objetos gramaticales en 15 archivos, con 471 filas de evidencia explícita** entre formas, ejemplos, reglas/rangos, objetos y páginas; 0 objetos `humanVerified=true`;
-- **auditoría reproducible de cobertura numerada: 177 / 373 reglas con reclamación estructurada explícita y 196 sin reclamación**, agrupadas en seis rangos: 1–45, 61–206, 235–236, 285, 292 y 294; además, 5 objetos existentes carecen de localizador de regla explícito.
+- **auditoría reproducible de cobertura numerada: 180 / 373 reglas con reclamación estructurada explícita y 193 sin reclamación**, agrupadas en nueve rangos: 1–45, 61–189, 191–197, 199, 201–206, 235–236, 285, 292 y 294;
+- revisión de los cinco objetos sin reclamación numerada inicial: `par-0002` anclado a 190; `par-0003` anclado de forma no contigua a 198 y 200; 199 permanece abierto; tres objetos continúan sin reclamación numerada, dos de ellos legítimamente fuera de la secuencia.
 
 La concordancia se genera mediante `scripts/export_grammar_evidence_concordance.py`. La cobertura se audita mediante `scripts/export_grammar_rule_coverage.py`. Ambas capas se validan en doble corrida byte-a-byte mediante `scripts/validate_grammar_exports.py`. Ninguna normaliza formas, infiere identidad lingüística, inventa contenido de reglas ni asigna localizadores por proximidad.
 
-El rango 61–206 no debe leerse como un vacío absoluto: existen objetos gramaticales ya estructurados —entre ellos paradigmas— que todavía no están anclados a una regla numerada. Antes de estructurar masivamente ese bloque, debe resolverse documentalmente qué objetos pueden recibir un localizador explícito y cuáles son legítimamente no numerados.
+`sourceRuleNumbers` permite representar sólo relaciones numéricas explícitamente demostradas que no formen un rango continuo; por ejemplo `[198, 200]` no crea cobertura para 199.
 
 Pendientes:
 
@@ -118,8 +119,9 @@ Pendientes:
 - regenerar la exportación combinada de variación e incorporar todas las entidades modulares;
 - integrar observaciones `Hiaqui` / `Hiaquis` / `Naciones` de los numerales;
 - segunda pasada de cantidades mayores y variantes numéricas;
-- cotejar los 5 objetos sin localizador de regla y anclar únicamente los casos demostrables;
-- estructurar progresivamente las reglas 1–45 y después el bloque 61–206 desde la transcripción y el facsímil;
+- revisar la procedencia mixta de `ALC1737-par-0001` sin asignarle 189 ni 191 por proximidad;
+- estructurar como siguiente lote continuo las reglas **189–206** desde las transcripciones completas de pp.69–76, conservando múltiples reclamaciones cuando ya existen paradigmas asociados;
+- estructurar progresivamente las reglas 1–45 y después el bloque 61–188 desde la transcripción y el facsímil;
 - resolver de forma puntual los huecos 235–236, 285, 292 y 294 contra el testimonio;
 - ampliar la concordancia hacia relaciones explícitas entre reglas y observaciones de variedad, sin inferir equivalencia lingüística;
 - formalizar el estudio de irregularidades editoriales y fronteras materiales.
@@ -211,6 +213,6 @@ Después del cierre de Phase II, CHD debe concentrarse en:
 2. **mantenimiento de exportaciones canónicas y derivados lexicográficos reproducibles**;
 3. **revisión filológica de las 90 remisiones `Buſca` no localizadas por igualdad estricta y preservación de las anáforas `Lo miſmo`**;
 4. **consolidación de etiquetas históricas de variedad y control de metadatos físicos**;
-5. **anclaje documental de objetos gramaticales no localizados y expansión medible de la cobertura numerada, empezando por 1–45**;
+5. **estructuración continua de las reglas 189–206 y expansión medible posterior de la cobertura numerada**;
 6. **perfil TEI / evaluación Lex-0 y CLDF como derivados**;
 7. **control textual, preservación y preparación gradual de release**, manteniendo `0.2.0-dev` hasta que los criterios de congelamiento estén realmente cumplidos.
