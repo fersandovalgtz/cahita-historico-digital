@@ -90,7 +90,7 @@ El cierre técnico no elimina incertidumbres internas de microlectura, remisione
 
 ## Fase 4 — Gramática, ejemplos y variación histórica
 
-**Estado:** activa y avanzada; concordancia reproducible de evidencia implantada.
+**Estado:** activa y avanzada; concordancia y auditoría reproducibles implantadas.
 
 Capas ya estructuradas:
 
@@ -105,9 +105,12 @@ Capas ya estructuradas:
 - 6 grupos de conjunciones/metacategorías, reglas 360–373 e interjecciones;
 - sistema numeral histórico, digitales 178–180;
 - 17+ observaciones de variación histórica identificadas;
-- **concordancia derivada reproducible de 108 objetos gramaticales en 15 archivos, con 471 filas de evidencia explícita** entre formas, ejemplos, reglas/rangos, objetos y páginas; 0 objetos `humanVerified=true`.
+- **concordancia derivada reproducible de 108 objetos gramaticales en 15 archivos, con 471 filas de evidencia explícita** entre formas, ejemplos, reglas/rangos, objetos y páginas; 0 objetos `humanVerified=true`;
+- **auditoría reproducible de cobertura numerada: 177 / 373 reglas con reclamación estructurada explícita y 196 sin reclamación**, agrupadas en seis rangos: 1–45, 61–206, 235–236, 285, 292 y 294; además, 5 objetos existentes carecen de localizador de regla explícito.
 
-La concordancia se genera mediante `scripts/export_grammar_evidence_concordance.py` y se valida en doble corrida byte-a-byte mediante `scripts/validate_grammar_exports.py`. No normaliza formas ni infiere identidad lingüística o localización token a token más precisa que la declarada por los objetos canónicos.
+La concordancia se genera mediante `scripts/export_grammar_evidence_concordance.py`. La cobertura se audita mediante `scripts/export_grammar_rule_coverage.py`. Ambas capas se validan en doble corrida byte-a-byte mediante `scripts/validate_grammar_exports.py`. Ninguna normaliza formas, infiere identidad lingüística, inventa contenido de reglas ni asigna localizadores por proximidad.
+
+El rango 61–206 no debe leerse como un vacío absoluto: existen objetos gramaticales ya estructurados —entre ellos paradigmas— que todavía no están anclados a una regla numerada. Antes de estructurar masivamente ese bloque, debe resolverse documentalmente qué objetos pueden recibir un localizador explícito y cuáles son legítimamente no numerados.
 
 Pendientes:
 
@@ -115,7 +118,9 @@ Pendientes:
 - regenerar la exportación combinada de variación e incorporar todas las entidades modulares;
 - integrar observaciones `Hiaqui` / `Hiaquis` / `Naciones` de los numerales;
 - segunda pasada de cantidades mayores y variantes numéricas;
-- extender sistemáticamente las reglas tempranas de Partes I–II a objetos gramaticales derivados;
+- cotejar los 5 objetos sin localizador de regla y anclar únicamente los casos demostrables;
+- estructurar progresivamente las reglas 1–45 y después el bloque 61–206 desde la transcripción y el facsímil;
+- resolver de forma puntual los huecos 235–236, 285, 292 y 294 contra el testimonio;
 - ampliar la concordancia hacia relaciones explícitas entre reglas y observaciones de variedad, sin inferir equivalencia lingüística;
 - formalizar el estudio de irregularidades editoriales y fronteras materiales.
 
@@ -132,7 +137,7 @@ Estado alcanzado:
 - validación de IDs, estados de autoridad, JSON Schema, capas de reconciliación y metadatos centrales;
 - resumen reproducible de Phase II con conteo independiente de `articleId` curatoriales;
 - derivados lexicográficos post-cierre reproducibles, incluido grafo conservador de remisiones `Buſca`;
-- concordancia gramatical reproducible con validación de doble ejecución;
+- concordancia gramatical reproducible y auditoría de cobertura de reglas con validación de doble ejecución;
 - vocabulario p.133–177 estructuralmente cerrado, lo que permite diseñar derivados sin seguir moviendo fronteras de artículo.
 
 Prioridades:
@@ -206,6 +211,6 @@ Después del cierre de Phase II, CHD debe concentrarse en:
 2. **mantenimiento de exportaciones canónicas y derivados lexicográficos reproducibles**;
 3. **revisión filológica de las 90 remisiones `Buſca` no localizadas por igualdad estricta y preservación de las anáforas `Lo miſmo`**;
 4. **consolidación de etiquetas históricas de variedad y control de metadatos físicos**;
-5. **ampliación de la concordancia gramatical y cobertura de reglas tempranas**;
+5. **anclaje documental de objetos gramaticales no localizados y expansión medible de la cobertura numerada, empezando por 1–45**;
 6. **perfil TEI / evaluación Lex-0 y CLDF como derivados**;
 7. **control textual, preservación y preparación gradual de release**, manteniendo `0.2.0-dev` hasta que los criterios de congelamiento estén realmente cumplidos.
