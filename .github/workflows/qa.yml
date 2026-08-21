@@ -153,3 +153,20 @@ jobs:
           test -s "$tmp/chd_lexicon_articles.jsonl"
           test -s "$tmp/chd_lexicon_articles.json"
           test -s "$tmp/chd_lexicon_articles.csv"
+
+      - name: Validate deterministic cross-reference inventory
+        shell: bash
+        run: |
+          set -euo pipefail
+          tmp="$(mktemp -d)"
+          python scripts/export_lexicon_crossreferences.py --out-dir "$tmp"
+          python -m json.tool "$tmp/manifest.json" >/dev/null
+          test -s "$tmp/chd_lexicon_crossreferences.jsonl"
+          test -s "$tmp/chd_lexicon_crossreferences.csv"
+          python - "$tmp/manifest.json" <<'PY'
+          import json, sys
+          manifest = json.load(open(sys.argv[1], encoding='utf-8'))
+          assert manifest['crossReferenceCount'] > 0
+          assert manifest['markerClassCounts'].get('busca', 0) > 0
+          assert manifest['destinationResolutionPerformed'] is False
+          PY
