@@ -146,5 +146,8 @@ jobs:
       - name: Validate deterministic post-closure exports
         run: python scripts/validate_postclosure_exports.py
 
+      - name: Validate source-based cross-reference reviews
+        run: python scripts/validate_crossreference_source_reviews.py
+
       - name: Validate deterministic grammar concordance
         run: python scripts/validate_grammar_exports.py
