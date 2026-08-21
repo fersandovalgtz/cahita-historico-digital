@@ -1,0 +1,24 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 175,
+  "closureType": "exhaustive_facsimile_phase2_closure",
+  "technicalClosure": true,
+  "humanVerified": false,
+  "reviewStatus": "machine_corrected_unverified",
+  "candidateInventoryTotal": 35,
+  "visibleStarts": 53,
+  "falseNegatives": 18,
+  "pendingPromotion": 0,
+  "newArticles": 38,
+  "newArticleIdRange": ["ALC1737-art-002182", "ALC1737-art-002219"],
+  "corpusBefore": 2181,
+  "corpusAfter": 2219,
+  "selectedCorrections": ["ALC1737-art-000633", "ALC1737-art-000635", "ALC1737-art-000642"],
+  "notes": [
+    "All 35 canonical p175 boundaries reconcile to article starts.",
+    "Eighteen additional visible starts are recorded separately; 15 required new articles and three were pre-existing selected articles.",
+    "`Tirar con piedra` continues physically from the left column into top-of-right-column `himma.`; that continuation is not a new lexical start.",
+    "Bottom `Tor-` is a catchword. p176 begins fresh `Tortuga. Mochic.`."
+  ],
+  "primaryWitness": {"localFile":"Cahíta.pdf","sha256":"69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37"}
+}
