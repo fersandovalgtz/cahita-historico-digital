@@ -1,0 +1,19 @@
+{
+  "sourceId":"ALC1737",
+  "sourcePageDigital":177,
+  "closureType":"exhaustive_facsimile_phase2_closure",
+  "technicalClosure":true,
+  "humanVerified":false,
+  "reviewStatus":"machine_corrected_unverified",
+  "candidateInventoryTotal":57,
+  "visibleStarts":60,
+  "falseNegatives":3,
+  "pendingPromotion":0,
+  "newArticles":45,
+  "newArticleIdRange":["ALC1737-art-002258","ALC1737-art-002302"],
+  "corpusBefore":2257,
+  "corpusAfter":2302,
+  "selectedCorrections":["ALC1737-art-000665","ALC1737-art-000667","ALC1737-art-000670"],
+  "notes":["All 57 canonical p177 candidate boundaries reconcile to lexical starts.","Three additional starts are detector misses: two internal left-column starts and one right-column-top start above the extractor threshold.","Direct facsimile resolves L-014 as `Velarſe. Emo anillo iuahuame.` and R-019 as `Vida. Hiepſa.`.","p177 does not terminate the Vocabulario: p178 begins with additional X/Z vocabulary entries before the numeral section."],
+  "primaryWitness":{"localFile":"Cahíta.pdf","sha256":"69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37"}
+}
