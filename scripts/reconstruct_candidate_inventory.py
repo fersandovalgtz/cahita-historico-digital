@@ -73,7 +73,8 @@ def main() -> None:
     jsonl_digest = sha256_bytes(jsonl)
     if jsonl_digest != manifest["jsonlSha256"]:
         raise SystemExit(
-            f"JSONL SHA-256 mismatch: {jsonl_digest} != {manifest['jsonlSha256']}"
+            f"JSONL SHA-256 mismatch: {jsonl_digest} != "
+            f"{manifest['jsonlSha256']}"
         )
 
     rows = [line for line in jsonl.splitlines() if line.strip()]
