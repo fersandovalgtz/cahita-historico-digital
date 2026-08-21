@@ -22,84 +22,38 @@ def sha256_bytes(data: bytes) -> str:
 
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument(
-        "--candidate-dir",
-        type=Path,
-        default=Path("data/lexicon/candidates"),
-        help="Directory containing manifest and ordered base64 shards.",
-    )
-    ap.add_argument(
-        "--out",
-        type=Path,
-        default=None,
-        help="Optional path for reconstructed JSONL. If omitted, verification only.",
-    )
+    ap.add_argument("--candidate-dir", type=Path, default=Path("data/lexicon/candidates"))
+    ap.add_argument("--out", type=Path, default=None)
     args = ap.parse_args()
-
-    manifest_path = args.candidate_dir / "candidate_inventory_manifest.json"
-    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-
-    encoded_parts: list[bytes] = []
+    manifest = json.loads((args.candidate_dir / "candidate_inventory_manifest.json").read_text(encoding="utf-8"))
+    encoded_parts=[]
     for part in manifest["parts"]:
-        path = args.candidate_dir / part["filename"]
-        raw = path.read_bytes()
-        if len(raw) != part["chars"]:
-            raise SystemExit(
-                f"size mismatch for {path}: {len(raw)} != {part['chars']}"
-            )
-        digest = sha256_bytes(raw)
-        if digest != part["sha256"]:
-            raise SystemExit(
-                f"SHA-256 mismatch for {path}: {digest} != {part['sha256']}"
-            )
+        path=args.candidate_dir/part["filename"]
+        raw=path.read_bytes()
+        if len(raw)!=part["chars"]: raise SystemExit(f"size mismatch for {path}: {len(raw)} != {part['chars']}")
+        digest=sha256_bytes(raw)
+        if digest!=part["sha256"]: raise SystemExit(f"SHA-256 mismatch for {path}: {digest} != {part['sha256']}")
         encoded_parts.append(raw)
-
-    encoded = b"".join(encoded_parts)
-    encoded_digest = sha256_bytes(encoded)
-    if encoded_digest != manifest["base64Sha256"]:
-        raise SystemExit(
-            f"base64 aggregate SHA-256 mismatch: {encoded_digest} != "
-            f"{manifest['base64Sha256']}"
-        )
-
-    compressed = base64.b64decode(encoded, validate=True)
-    gzip_digest = sha256_bytes(compressed)
-    if gzip_digest != manifest["gzipSha256"]:
-        raise SystemExit(
-            f"gzip SHA-256 mismatch: {gzip_digest} != {manifest['gzipSha256']}"
-        )
-
-    jsonl = gzip.decompress(compressed)
-    jsonl_digest = sha256_bytes(jsonl)
-    if jsonl_digest != manifest["jsonlSha256"]:
-        raise SystemExit(
-            f"JSONL SHA-256 mismatch: {jsonl_digest} != "
-            f"{manifest['jsonlSha256']}"
-        )
-
-    rows = [line for line in jsonl.splitlines() if line.strip()]
-    if len(rows) != manifest["candidateCount"]:
-        raise SystemExit(
-            f"row-count mismatch: {len(rows)} != {manifest['candidateCount']}"
-        )
-
-    # Parse every row so syntactically damaged JSONL cannot pass hash/count checks
-    # unnoticed after a manifest update.
-    for number, line in enumerate(rows, 1):
+    encoded=b"".join(encoded_parts)
+    if sha256_bytes(encoded)!=manifest["base64Sha256"]: raise SystemExit("base64 aggregate SHA-256 mismatch")
+    compressed=base64.b64decode(encoded,validate=True)
+    if sha256_bytes(compressed)!=manifest["gzipSha256"]: raise SystemExit("gzip SHA-256 mismatch")
+    jsonl=gzip.decompress(compressed)
+    jsonl_digest=sha256_bytes(jsonl)
+    if jsonl_digest!=manifest["jsonlSha256"]: raise SystemExit("JSONL SHA-256 mismatch")
+    rows=[line for line in jsonl.splitlines() if line.strip()]
+    if len(rows)!=manifest["candidateCount"]: raise SystemExit("row-count mismatch")
+    parsed=[]
+    for number,line in enumerate(rows,1):
         try:
-            json.loads(line)
-        except json.JSONDecodeError as exc:
-            raise SystemExit(f"invalid JSON on reconstructed row {number}: {exc}")
-
+            obj=json.loads(line); parsed.append(obj)
+        except json.JSONDecodeError as exc: raise SystemExit(f"invalid JSON on reconstructed row {number}: {exc}")
     if args.out is not None:
-        args.out.parent.mkdir(parents=True, exist_ok=True)
-        args.out.write_bytes(jsonl)
+        args.out.parent.mkdir(parents=True,exist_ok=True); args.out.write_bytes(jsonl)
+    print(f"verified canonical candidate inventory: {len(rows)} rows; JSONL SHA-256 {jsonl_digest}")
+    for obj in parsed:
+        if obj.get("sourcePageDigital")==175:
+            print("P175CAND "+json.dumps(obj,ensure_ascii=False,separators=(",",":")))
 
-    print(
-        "verified canonical candidate inventory: "
-        f"{len(rows)} rows; JSONL SHA-256 {jsonl_digest}"
-    )
-
-
-if __name__ == "__main__":
+if __name__=="__main__":
     main()
