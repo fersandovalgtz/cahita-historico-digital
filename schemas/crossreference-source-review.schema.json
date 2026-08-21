@@ -1,0 +1,135 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/crossreference-source-review.schema.json",
+  "title": "CHD source-based historical cross-reference review",
+  "description": "Explicit review overlay for a historical Buſca cross-reference whose canonical strict normalized-equality resolution is not_located. This layer records source review without silently widening the canonical graph.",
+  "type": "object",
+  "required": [
+    "reviewId",
+    "sourceId",
+    "sourceArticleId",
+    "crossReferenceIndex",
+    "targetRaw",
+    "canonicalStrictStatus",
+    "priorityTier",
+    "decisionStatus",
+    "diagnosticCandidates",
+    "evidence",
+    "reviewStatus",
+    "humanVerified",
+    "provenance"
+  ],
+  "properties": {
+    "reviewId": {
+      "type": "string",
+      "pattern": "^ALC1737-xref-review-[0-9]{4}$"
+    },
+    "sourceId": {"const": "ALC1737"},
+    "sourceArticleId": {
+      "type": "string",
+      "pattern": "^ALC1737-art-[0-9]{6}$"
+    },
+    "crossReferenceIndex": {"type": "integer", "minimum": 0},
+    "sourcePageDigital": {"type": ["integer", "null"], "minimum": 133, "maximum": 177},
+    "sourceColumn": {"type": ["string", "null"], "enum": ["left", "right", null]},
+    "sourceGuideRaw": {"type": ["string", "null"]},
+    "targetRaw": {"type": "string", "minLength": 1},
+    "targetNormalized": {"type": ["string", "null"]},
+    "canonicalStrictStatus": {"const": "not_located"},
+    "priorityTier": {
+      "type": "string",
+      "enum": ["A_unique_strong", "B_multiple_strong", "C_no_strong"]
+    },
+    "decisionStatus": {
+      "type": "string",
+      "enum": [
+        "pending_source_collation",
+        "source_supports_unique_target",
+        "source_supports_multiple_targets",
+        "candidate_rejected",
+        "target_not_located",
+        "source_or_destination_requires_recollation",
+        "unresolved"
+      ]
+    },
+    "diagnosticCandidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["candidateArticleId", "diagnosticClass", "diagnosticScore"],
+        "properties": {
+          "candidateArticleId": {
+            "type": "string",
+            "pattern": "^ALC1737-art-[0-9]{6}$"
+          },
+          "candidatePageDigital": {"type": ["integer", "null"], "minimum": 133, "maximum": 177},
+          "candidateColumn": {"type": ["string", "null"], "enum": ["left", "right", null]},
+          "candidateGuideRaw": {"type": ["string", "null"]},
+          "diagnosticClass": {"type": "string", "minLength": 1},
+          "diagnosticScore": {"type": "number", "minimum": 0, "maximum": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "selectedTargetArticleId": {
+      "type": ["string", "null"],
+      "pattern": "^ALC1737-art-[0-9]{6}$"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["evidenceKind", "locator", "supportsDecision"],
+        "properties": {
+          "evidenceKind": {
+            "type": "string",
+            "enum": [
+              "same_witness_facsimile",
+              "same_witness_ocr_control",
+              "canonical_article_structure",
+              "historical_control_witness",
+              "editorial_note"
+            ]
+          },
+          "locator": {"type": "string", "minLength": 1},
+          "excerptRaw": {"type": ["string", "null"]},
+          "note": {"type": ["string", "null"]},
+          "supportsDecision": {"type": "boolean"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "reviewNote": {"type": ["string", "null"]},
+    "reviewStatus": {
+      "type": "string",
+      "enum": ["machine_corrected_unverified", "editorial_proposal", "human_verified", "unresolved"]
+    },
+    "humanVerified": {"type": "boolean"},
+    "provenance": {
+      "type": "object",
+      "required": ["derivedFrom", "agent", "method"],
+      "properties": {
+        "derivedFrom": {"type": "string", "minLength": 1},
+        "agent": {"type": "string", "minLength": 1},
+        "method": {"type": "string", "minLength": 1},
+        "processedAt": {"type": ["string", "null"], "format": "date-time"}
+      },
+      "additionalProperties": false
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"decisionStatus": {"const": "source_supports_unique_target"}}},
+      "then": {"required": ["selectedTargetArticleId"], "properties": {"selectedTargetArticleId": {"type": "string"}}}
+    },
+    {
+      "if": {"properties": {"reviewStatus": {"const": "human_verified"}}},
+      "then": {"properties": {"humanVerified": {"const": true}}}
+    },
+    {
+      "if": {"properties": {"humanVerified": {"const": true}}},
+      "then": {"properties": {"reviewStatus": {"const": "human_verified"}}}
+    }
+  ],
+  "additionalProperties": false
+}
