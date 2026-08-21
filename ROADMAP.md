@@ -10,7 +10,7 @@ CHD no avanza por acumulación indiscriminada de archivos. Cada fase debe cerrar
 
 **Estado:** completada para la etapa de investigación activa; mantenimiento continuo.
 
-Se establecieron registro de fuente y procedencia, política de autoría, criterios editoriales, metadatos de citación, licencias, contratos de datos, documentación de riesgos, esquemas JSON y una arquitectura explícita de evidencia. El repositorio dispone de QA automatizado para reconstrucción del inventario canónico, validación de identificadores, esquemas, reconciliaciones y resumen canónico de Phase II.
+Se establecieron registro de fuente y procedencia, política de autoría, criterios editoriales, metadatos de citación, licencias, contratos de datos, documentación de riesgos, esquemas JSON y una arquitectura explícita de evidencia. El repositorio dispone de QA automatizado para reconstrucción del inventario canónico, validación de identificadores, esquemas, reconciliaciones, resumen canónico de Phase II, exportaciones post-cierre, concordancia gramatical y auditoría de cobertura numerada.
 
 **Criterio de salida alcanzado:** el repositorio es auditable y puede procesar `ALC1737` sin confundir fuente, OCR, transcripción, estructuración e inferencia.
 
@@ -78,10 +78,10 @@ El cierre técnico no elimina incertidumbres internas de microlectura, remisione
 
 ### Trabajo post-cierre
 
-1. generar exportaciones canónicas JSON/CSV de los 2,302 artículos con hashes y controles de unicidad;
-2. construir el grafo de remisiones `Buſca` y distinguir destinos resolubles, no resolubles y referencias circulares;
-3. inventariar las anáforas `Lo miſmo` y conservarlas sin resolución automática;
-4. detectar sistemáticamente atribuciones históricas explícitas Hiaqui/Mayo/Thehueco y otras etiquetas de variedad;
+1. mantener exportaciones canónicas JSON/CSV de los 2,302 artículos con hashes y controles de unicidad;
+2. revisar el grafo de remisiones `Buſca`: 151 referencias inventariadas, 60 resoluciones estrictas únicas y 90 no localizadas por igualdad estricta;
+3. revisar las 14 ocurrencias candidatas de `Lo miſmo` sin resolución automática;
+4. consolidar las 76 evidencias exportadas de etiquetas históricas de variedad;
 5. auditar `sourceSpans`, continuidades transcolumna/transpágina y anomalías materiales;
 6. separar con claridad artículo histórico, lexema normalizado futuro y cualquier análisis lingüístico moderno;
 7. preparar exportaciones interoperables sin hacer depender el dato canónico de un único formato externo.
@@ -90,43 +90,39 @@ El cierre técnico no elimina incertidumbres internas de microlectura, remisione
 
 ## Fase 4 — Gramática, ejemplos y variación histórica
 
-**Estado:** activa y avanzada; concordancia y auditoría reproducibles implantadas.
+**Estado:** **cierre técnico alcanzado para la cobertura de las unidades gramaticales numeradas; consolidación filológica y analítica activa.**
 
-Capas ya estructuradas:
+Hito alcanzado el 21 de agosto de 2026:
 
-- 3 paradigmas históricos;
-- 9 construcciones modales, reglas 207–234;
-- 5 construcciones no finitas, reglas 237–256;
-- 3 construcciones participiales, reglas 257–265;
-- 6 construcciones predicativas/modales, reglas 266–284;
-- 6 grupos de verbos irregulares, reglas 286–291;
-- 43 preposiciones/grupos, reglas 293–340;
-- 11 grupos de adverbios, reglas 341–359;
-- 6 grupos de conjunciones/metacategorías, reglas 360–373 e interjecciones;
-- sistema numeral histórico, digitales 178–180;
-- 17+ observaciones de variación histórica identificadas;
-- **concordancia derivada reproducible de 108 objetos gramaticales en 15 archivos, con 471 filas de evidencia explícita** entre formas, ejemplos, reglas/rangos, objetos y páginas; 0 objetos `humanVerified=true`;
-- **auditoría reproducible de cobertura numerada: 180 / 373 reglas con reclamación estructurada explícita y 193 sin reclamación**, agrupadas en nueve rangos: 1–45, 61–189, 191–197, 199, 201–206, 235–236, 285, 292 y 294;
-- revisión de los cinco objetos sin reclamación numerada inicial: `par-0002` anclado a 190; `par-0003` anclado de forma no contigua a 198 y 200; 199 permanece abierto; tres objetos continúan sin reclamación numerada, dos de ellos legítimamente fuera de la secuencia.
+- la secuencia nominal del Arte va de **1 a 373**;
+- **370 / 373 números nominales** tienen reclamación estructurada explícita;
+- los tres números restantes —**127, 178 y 294**— son **omisiones materiales documentadas del impreso**, no reglas pendientes;
+- el número **129 aparece dos veces** en el testimonio y CHD conserva dos unidades separadas;
+- por tanto, el impreso contiene **370 números distintos efectivamente impresos y 371 unidades numeradas reales**;
+- CHD representa **371 / 371 unidades numeradas efectivamente impresas**;
+- la concordancia derivada contiene **302 objetos gramaticales en 24 archivos**;
+- esos objetos generan **1,215 filas de evidencia explícita** entre formas, ejemplos, reglas/rangos, objetos y páginas;
+- **0 objetos `humanVerified=true`**;
+- concordancia y auditoría de cobertura se validan mediante doble corrida determinista byte-a-byte.
 
-La concordancia se genera mediante `scripts/export_grammar_evidence_concordance.py`. La cobertura se audita mediante `scripts/export_grammar_rule_coverage.py`. Ambas capas se validan en doble corrida byte-a-byte mediante `scripts/validate_grammar_exports.py`. Ninguna normaliza formas, infiere identidad lingüística, inventa contenido de reglas ni asigna localizadores por proximidad.
+Las anomalías de numeración se documentan en `data/grammar/metadata/`, y el hito completo en `docs/GRAMMAR_COMPLETION_2026-08-21.md`.
 
-`sourceRuleNumbers` permite representar sólo relaciones numéricas explícitamente demostradas que no formen un rango continuo; por ejemplo `[198, 200]` no crea cobertura para 199.
+Capas estructuradas incluyen reglas de formación verbal y nominal, sintaxis, nombres y pronombres, semipronombres, concordancias, modos, infinitivo, participios, construcciones predicativas y modales, verbos irregulares, preposiciones, adverbios, conjunciones, interjecciones y sistema numeral. Algunos objetos agrupan varios números de regla cuando el análisis histórico del impreso constituye una sola construcción; por ello **302 objetos no equivalen a 371 reglas**.
 
-Pendientes:
+La concordancia se genera mediante `scripts/export_grammar_evidence_concordance.py`. La cobertura se audita mediante `scripts/export_grammar_rule_coverage.py`. Ambas capas se validan mediante `scripts/validate_grammar_exports.py`. Ninguna normaliza formas, infiere identidad lingüística, inventa contenido de reglas ni asigna localizadores por proximidad.
 
+### Trabajo post-cierre
+
+- segunda colación de ejemplos y formas actualmente `unresolved`;
 - índice exhaustivo de denominaciones históricas en las 182 páginas;
-- regenerar la exportación combinada de variación e incorporar todas las entidades modulares;
-- integrar observaciones `Hiaqui` / `Hiaquis` / `Naciones` de los numerales;
+- regenerar y consolidar la exportación combinada de variación e incorporar todas las entidades modulares;
+- integrar observaciones `Hiaqui` / `Hiaquis` / `Mayo` / `Thehueco` / `Naciones` de gramática, vocabulario y numerales;
 - segunda pasada de cantidades mayores y variantes numéricas;
-- revisar la procedencia mixta de `ALC1737-par-0001` sin asignarle 189 ni 191 por proximidad;
-- estructurar como siguiente lote continuo las reglas **189–206** desde las transcripciones completas de pp.69–76, conservando múltiples reclamaciones cuando ya existen paradigmas asociados;
-- estructurar progresivamente las reglas 1–45 y después el bloque 61–188 desde la transcripción y el facsímil;
-- resolver de forma puntual los huecos 235–236, 285, 292 y 294 contra el testimonio;
 - ampliar la concordancia hacia relaciones explícitas entre reglas y observaciones de variedad, sin inferir equivalencia lingüística;
-- formalizar el estudio de irregularidades editoriales y fronteras materiales.
+- formalizar el estudio de irregularidades editoriales y fronteras materiales;
+- preparar una capa analítica moderna separada sólo cuando la evidencia y la revisión especializada lo permitan.
 
-**Criterio de salida:** corpus gramatical histórico suficientemente exhaustivo para permitir búsquedas y análisis sin regresar continuamente a una segmentación ad hoc del impreso.
+**Criterio de salida de la consolidación post-cierre:** corpus gramatical histórico exhaustivo en su cobertura estructural, con incertidumbres de lectura priorizadas, variación histórica enlazada y derivados reproducibles adecuados para consulta e investigación.
 
 ## Fase 5 — Control textual, interoperabilidad y reproducibilidad avanzada
 
@@ -140,11 +136,11 @@ Estado alcanzado:
 - resumen reproducible de Phase II con conteo independiente de `articleId` curatoriales;
 - derivados lexicográficos post-cierre reproducibles, incluido grafo conservador de remisiones `Buſca`;
 - concordancia gramatical reproducible y auditoría de cobertura de reglas con validación de doble ejecución;
-- vocabulario p.133–177 estructuralmente cerrado, lo que permite diseñar derivados sin seguir moviendo fronteras de artículo.
+- vocabulario p.133–177 y unidades gramaticales numeradas estructuralmente cerrados, lo que permite diseñar derivados sin seguir moviendo fronteras básicas de unidad.
 
 Prioridades:
 
-- impedir por CI la deriva entre la fuente canónica de métricas y la documentación central;
+- impedir por CI la deriva entre las fuentes canónicas de métricas y la documentación central;
 - mantener y ampliar exportaciones derivadas del corpus lexicográfico y gramatical;
 - localizar e incorporar, con procedencia separada, testimonios independientes útiles para control textual si están disponibles;
 - cotejar lagunas y anomalías sin rellenar silenciosamente el testimonio `ALC1737`;
@@ -170,12 +166,12 @@ Prioridades:
 
 ## Fase 7 — Release científica y preservación
 
-**Estado:** pendiente. El cierre de Phase II no equivale a una release estable.
+**Estado:** pendiente. Los cierres técnicos de léxico y gramática no equivalen a una release estable.
 
 Secuencia recomendada:
 
 1. `0.2.x-dev`: sincronización documental, consolidación post-cierre, QA y exportaciones;
-2. `0.5.0` o equivalente: snapshot científico con corpus lexicográfico estable y derivados reproducibles;
+2. `0.5.0` o equivalente: snapshot científico con corpus lexicográfico y gramatical estructuralmente estables y derivados reproducibles;
 3. `0.9.0`: candidata a release, con interoperabilidad, control textual y metadatos ampliados;
 4. `v1.0.0`: release científica cerrada del alcance declarado.
 
@@ -198,7 +194,7 @@ Los productos se diseñarán después de estabilizar suficientemente los insumos
 1. edición histórico-digital del *Arte* de 1737;
 2. dataset lexicográfico abierto;
 3. corpus gramatical y de ejemplos;
-4. dataset de variación histórica descrita como Hiaqui/Mayo/Thehueco;
+4. dataset de variación histórica descrita como Hiaqui/Mayo/Thehueco y otras etiquetas históricas;
 5. artículo de datos/metodología;
 6. estudios lingüísticos e historiográficos especializados;
 7. concordancias, visualizaciones y herramientas de consulta;
@@ -207,12 +203,12 @@ Los productos se diseñarán después de estabilizar suficientemente los insumos
 
 ## Prioridad inmediata
 
-Después del cierre de Phase II, CHD debe concentrarse en:
+Después de los cierres técnicos del vocabulario y de la cobertura gramatical numerada, CHD debe concentrarse en:
 
 1. **sincronización documental y QA de métricas**;
-2. **mantenimiento de exportaciones canónicas y derivados lexicográficos reproducibles**;
-3. **revisión filológica de las 90 remisiones `Buſca` no localizadas por igualdad estricta y preservación de las anáforas `Lo miſmo`**;
-4. **consolidación de etiquetas históricas de variedad y control de metadatos físicos**;
-5. **estructuración continua de las reglas 189–206 y expansión medible posterior de la cobertura numerada**;
+2. **revisión filológica de las 90 remisiones `Buſca` no localizadas por igualdad estricta**;
+3. **preservación y análisis explícito de las 14 ocurrencias candidatas de `Lo miſmo`**;
+4. **consolidación de las 76 evidencias históricas de variedad y enlace con reglas/ejemplos**;
+5. **segunda colación priorizada de microlecturas `unresolved` y control de metadatos físicos**;
 6. **perfil TEI / evaluación Lex-0 y CLDF como derivados**;
 7. **control textual, preservación y preparación gradual de release**, manteniendo `0.2.0-dev` hasta que los criterios de congelamiento estén realmente cumplidos.
