@@ -1,105 +1,15 @@
 {
-  "sourceId": "ALC1737",
-  "sourcePageDigital": 177,
-  "pageStatus": {
-    "candidateReconciliation": "complete",
-    "visibleStartCensus": "known_misses_only_not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
-    "humanVerificationPlanned": false
-  },
-  "candidateInventory": {
-    "total": 57,
-    "left": 29,
-    "right": 28,
-    "classification": {
-      "article": 57,
-      "continuation": 0,
-      "paratext": 0,
-      "false_positive": 0,
-      "unresolved": 0
-    },
-    "boundaryAssessment": {
-      "exact": 51,
-      "oversegmented": 0,
-      "undersegmented": 2,
-      "merged_articles": 2,
-      "ambiguous": 2,
-      "not_applicable": 0
-    }
-  },
-  "selectedLayer": {
-    "preExistingArticles": 15,
-    "articleIdRange": [
-      "ALC1737-art-000659",
-      "ALC1737-art-000673"
-    ],
-    "articleCandidateRecordsLinked": 15,
-    "structuredArticlesLinked": 15,
-    "continuationCandidateRecordsLinked": 0,
-    "selectedStartsInsideMergedCandidate": 0,
-    "selectedStartsOutsideCandidateInventory": 0,
-    "selectedArticlesUnlinked": 0,
-    "knownMissedSelectedArticleIds": []
-  },
-  "promotion": {
-    "articleCandidatesPendingPromotion": 42,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
-  },
-  "visibleStartEvidence": {
-    "exhaustive": false,
-    "knownVisibleStartsMinimum": 57,
-    "knownMissedStartRecords": 0,
-    "unresolvedCandidateRecords": 0,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "All 57 canonical candidates are structurally article starts and all 15 selected anchors align, but the selected layer is non-exhaustive and merged/undersegmented groups may contain additional unanchored starts."
-  },
-  "physicalContinuities": [
-    {
-      "from": "ALC1737-vcand-p176-R-023",
-      "to": "ALC1737-vcand-p177-L-001",
-      "type": "fresh_page_transition_after_catchword",
-      "note": "p176 ends with `Vn par` as a catchword; p177 L-001 contains the fresh complete selected/canonical `Vn par. Huipalai.` article."
-    },
-    {
-      "from": "ALC1737-vcand-p177-R-028",
-      "to": "digital-page-178",
-      "type": "section_boundary_no_lexical_continuation",
-      "note": "p177 terminates the Vocabulario. Digital pages 178–180 form the historical numeral-system section, and the canonical lexicon inventory contains 0 candidates on p178."
-    }
-  ],
-  "structuralNotes": [
-    "L-008 and L-029 are `merged_articles` with clear second OCR guide units; those unselected internal units are not promoted or added to the visible-start minimum.",
-    "L-014 and R-019 retain `ambiguous` boundary quality because OCR is too corrupt for a responsible guide reading; no lemma is invented.",
-    "R-008 and R-028 are `undersegmented` due adjacent/terminal residue; R-028 does not continue lexically into the numeral section.",
-    "No selected p177 start is missed by the canonical inventory, and no p177 candidate is classified as a physical continuation."
-  ],
-  "terminalSection": {
-    "vocabularioPages": [
-      133,
-      177
-    ],
-    "nextSection": "historical numeral system",
-    "nextSectionPages": [
-      178,
-      180
-    ],
-    "p178LexiconCandidateCount": 0,
-    "candidateReconciliationCoverageAfterPass": "133-177 complete"
-  },
-  "evidence": {
-    "canonicalCandidateInventoryVerified": true,
-    "canonicalCandidateInventoryCount": 2072,
-    "selectedP177LayerUsedAsAnchor": true,
-    "p176ReconciliationUsedForOpeningEdge": true,
-    "repositoryCoverageUsedForTerminalSectionBoundary": true,
-    "targetedTerminalRegionInspectionPerformed": true,
-    "directFacsimileAvailableThisPass": false,
-    "policy": "Selected direct collations support demonstrated starts. OCR-only internal units and unreadable guide regions are preserved structurally without invented lexical transcription or promotion; metrics remain withheld without an exhaustive visible-start census."
-  },
-  "reviewStatus": "machine_corrected_unverified",
-  "humanVerified": false
+  "sourceId":"ALC1737",
+  "sourcePageDigital":177,
+  "pageStatus":{"candidateReconciliation":"complete","visibleStartCensus":"exhaustive_direct_facsimile","promotionLinkage":"complete","technicalClosure":true,"humanVerificationPlanned":false},
+  "candidateInventory":{"total":57,"left":29,"right":28,"classification":{"article":57,"continuation":0,"paratext":0,"false_positive":0,"unresolved":0},"boundaryAssessment":{"exact":54,"oversegmented":0,"undersegmented":1,"merged_articles":2,"ambiguous":0,"not_applicable":0}},
+  "selectedLayer":{"preExistingArticles":15,"articleIdRange":["ALC1737-art-000659","ALC1737-art-000673"],"articleCandidateRecordsLinked":15,"structuredArticlesLinked":15,"continuationCandidateRecordsLinked":0,"selectedStartsInsideMergedCandidate":0,"selectedStartsOutsideCandidateInventory":0,"selectedArticlesUnlinked":0,"knownMissedSelectedArticleIds":[],"selectedCorrectionsThisPass":["ALC1737-art-000665","ALC1737-art-000667","ALC1737-art-000670"]},
+  "promotion":{"articleCandidatesPendingPromotion":0,"candidateBackedNewArticles":42,"newMissedStartArticles":3,"newPromotionsThisPass":45,"corpusTotalBeforePass":2257,"corpusTotalAfterPass":2302},
+  "visibleStartEvidence":{"exhaustive":true,"visibleStarts":60,"truePositiveCandidateStarts":57,"falsePositiveCandidateBoundaries":0,"falseNegatives":3,"knownMissedStartRecords":3,"unresolvedCandidateRecords":0,"precision":1.0,"recall":0.95,"f1":0.9743589743589743},
+  "physicalContinuities":[{"from":"ALC1737-vcand-p176-R-023","to":"ALC1737-vcand-p177-L-001","type":"catchword_to_fresh_next_page_article","note":"p176 bottom `Vn par` is a catchword; p177 opens the fresh complete `Vn par. Huipalai.` article."},{"from":"ALC1737-vcand-p177-R-028","to":"digital-page-178","type":"vocabulary_continues_to_mixed_terminal_page","note":"p177 ends after `Vomitar` with terminal `*Z` paratext; direct p178 facsimile shows vocabulary X/Z entries before the ornamental divider and `NOMBRES NUMERALES`."}],
+  "structuralNotes":["Direct census establishes 60 lexical starts: 57 canonical candidate starts plus three detector misses.","Detector misses are `Vana eſtar la fruta` inside L-008, `Venenoſo ſer` inside L-029, and right-column-top `Vnir. Iebinaque.` above the extractor threshold.","L-008 and L-029 are merged_articles; R-008 is undersegmented because it includes the following paratextual grouping heading `Vejucos, ò varas flexibles.`.","Direct facsimile resolves formerly ambiguous L-014 as `Velarſe. Emo anillo iuahuame.` and R-019 as `Vida. Hiepſa.`.","Direct facsimile corrects selected 000665 `Varón. Oui.`→`Varón. Ou.`, 000667 `Ver. Bicha.`→`Veer. Bicha.`, and 000670 `Vencer. Anibuc.`→`Vencer. Aiubuc.`; prior readings remain in notesRaw.","`Vejucos, ò varas flexibles.` is a grouping label and not a lexical start."],
+  "terminalSection":{"vocabularioPages":[133,178],"terminalPageMixed":true,"p178VocabularyTailArticleCount":18,"p178CanonicalCandidateCount":0,"candidateInventoryScope":"v0.2 ends at p177; p178 vocabulary tail is handled by explicit direct-collation extension","nextSection":"historical numeral system","nextSectionPages":[178,180],"nextSectionBegins":"mid-page 178 after ornamental divider and heading `NOMBRES NUMERALES`","candidateReconciliationCoverageAfterPass":"canonical v0.2 p133-177 complete; explicit p178 terminal vocabulary tail maintained separately"},
+  "evidence":{"canonicalCandidateInventoryVerified":true,"canonicalCandidateInventoryCount":2072,"directFacsimileAvailableThisPass":true,"primaryWitness":{"localFile":"Cahíta.pdf","sha256":"69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37","sameWitnessDirectInspection":true},"policy":"Direct same-witness facsimile controls readings and structural boundaries; OCR is auxiliary; BUE1890 is not used as ALC1737 transcription authority."},
+  "reviewStatus":"machine_corrected_unverified",
+  "humanVerified":false
 }
