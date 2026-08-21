@@ -1,0 +1,29 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 175,
+  "technicalClosure": true,
+  "directSameWitnessFacsimile": true,
+  "candidateInventoryTotal": 35,
+  "articleCandidates": 35,
+  "continuations": 0,
+  "visibleStarts": 53,
+  "truePositiveCandidateStarts": 35,
+  "falsePositiveCandidateBoundaries": 0,
+  "falseNegatives": 18,
+  "candidatePromotions": 23,
+  "newMissedStartArticles": 15,
+  "newArticlesTotal": 38,
+  "newArticleIdRange": ["ALC1737-art-002182", "ALC1737-art-002219"],
+  "corpusBefore": 2181,
+  "corpusAfter": 2219,
+  "metrics": {"precision": 1.0, "recall": 0.660377358490566, "f1": 0.7954545454545454},
+  "selectedCorrections": [
+    {"articleId": "ALC1737-art-000635", "previous": "Buiahua-ntec", "corrected": "Buiahuantec"},
+    {"articleId": "ALC1737-art-000642", "previous": "Buta", "corrected": "Bua"}
+  ],
+  "structuralFindings": [
+    "L-020 contains Tierra, Tinaja de barro, Tinta para eſcrebir and Tirar con piedra; the last Cahita form continues as `himma.` at the top of the right column.",
+    "R-015 contains five lexical starts; terminal `Tor-` is a catchword anticipating p176 and is not lexical data.",
+    "All outputs remain machine_corrected_unverified; no human philological verification is asserted."
+  ]
+}
