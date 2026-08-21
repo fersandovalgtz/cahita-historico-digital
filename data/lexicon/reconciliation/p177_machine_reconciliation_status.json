@@ -3,90 +3,69 @@
   "sourcePageDigital": 177,
   "pageStatus": {
     "candidateReconciliation": "complete",
-    "visibleStartCensus": "known_misses_only_not_exhaustive",
-    "promotionLinkage": "partial",
-    "technicalClosure": false,
+    "visibleStartCensus": "exhaustive",
+    "promotionLinkage": "complete",
+    "technicalClosure": true,
     "humanVerificationPlanned": false
   },
   "candidateInventory": {
     "total": 57,
     "left": 29,
     "right": 28,
-    "classification": {
-      "article": 57,
-      "continuation": 0,
-      "paratext": 0,
-      "false_positive": 0,
-      "unresolved": 0
-    },
-    "boundaryAssessment": {
-      "exact": 51,
-      "oversegmented": 0,
-      "undersegmented": 2,
-      "merged_articles": 2,
-      "ambiguous": 2,
-      "not_applicable": 0
-    }
+    "classification": {"article": 57, "continuation": 0, "paratext": 0, "false_positive": 0, "unresolved": 0},
+    "boundaryAssessment": {"exact": 55, "oversegmented": 0, "undersegmented": 0, "merged_articles": 2, "ambiguous": 0, "not_applicable": 0}
   },
   "selectedLayer": {
     "preExistingArticles": 15,
-    "articleIdRange": [
-      "ALC1737-art-000659",
-      "ALC1737-art-000673"
-    ],
+    "articleIdRange": ["ALC1737-art-000659", "ALC1737-art-000673"],
     "articleCandidateRecordsLinked": 15,
     "structuredArticlesLinked": 15,
     "continuationCandidateRecordsLinked": 0,
     "selectedStartsInsideMergedCandidate": 0,
     "selectedStartsOutsideCandidateInventory": 0,
     "selectedArticlesUnlinked": 0,
-    "knownMissedSelectedArticleIds": []
+    "knownMissedSelectedArticleIds": [],
+    "directFacsimileCorrections": [
+      {"articleId": "ALC1737-art-000667", "previous": "Ver. Bicha.", "corrected": "Veer. Bicha."},
+      {"articleId": "ALC1737-art-000670", "previous": "Vencer. Anibuc.", "corrected": "Vencer. Aiubuc."}
+    ]
   },
   "promotion": {
-    "articleCandidatesPendingPromotion": 42,
-    "newPromotionsThisPass": 0,
-    "corpusTotalAfterPass": 1045
+    "articleCandidatesPendingPromotion": 0,
+    "newPromotionsThisPass": 45,
+    "candidatePromotions": 42,
+    "newMissedStartArticles": 3,
+    "newArticleIdRange": ["ALC1737-art-002258", "ALC1737-art-002302"],
+    "corpusTotalBeforePass": 2257,
+    "corpusTotalAfterPass": 2302
   },
   "visibleStartEvidence": {
-    "exhaustive": false,
-    "knownVisibleStartsMinimum": 57,
-    "knownMissedStartRecords": 0,
+    "exhaustive": true,
+    "knownVisibleStartsMinimum": 60,
+    "knownMissedStartRecords": 3,
     "unresolvedCandidateRecords": 0,
-    "precision": null,
-    "recall": null,
-    "f1": null,
-    "reasonMetricsWithheld": "All 57 canonical candidates are structurally article starts and all 15 selected anchors align, but the selected layer is non-exhaustive and merged/undersegmented groups may contain additional unanchored starts."
+    "truePositiveCandidateStarts": 57,
+    "falseNegativeVisibleStarts": 3,
+    "falsePositiveCandidateBoundaries": 0,
+    "precision": 1.0,
+    "recall": 0.95,
+    "f1": 0.9743589743589743
   },
   "physicalContinuities": [
-    {
-      "from": "ALC1737-vcand-p176-R-023",
-      "to": "ALC1737-vcand-p177-L-001",
-      "type": "fresh_page_transition_after_catchword",
-      "note": "p176 ends with `Vn par` as a catchword; p177 L-001 contains the fresh complete selected/canonical `Vn par. Huipalai.` article."
-    },
-    {
-      "from": "ALC1737-vcand-p177-R-028",
-      "to": "digital-page-178",
-      "type": "section_boundary_no_lexical_continuation",
-      "note": "p177 terminates the Vocabulario. Digital pages 178–180 form the historical numeral-system section, and the canonical lexicon inventory contains 0 candidates on p178."
-    }
+    {"from": "ALC1737-vcand-p176-R-023", "to": "ALC1737-vcand-p177-L-001", "type": "fresh_page_transition_after_catchword", "note": "p176 catchword `Vn par` anticipates the fresh p177 article `Vn par. Huipalai.`"},
+    {"from": "ALC1737-vcand-p177-R-028", "to": "digital-page-178", "type": "section_boundary_no_lexical_continuation", "note": "p177 closes the Vocabulario with `Vomitar. Biſata.`; pp178-180 contain the historical numeral section and p178 has zero lexicon candidates."}
   ],
   "structuralNotes": [
-    "L-008 and L-029 are `merged_articles` with clear second OCR guide units; those unselected internal units are not promoted or added to the visible-start minimum.",
-    "L-014 and R-019 retain `ambiguous` boundary quality because OCR is too corrupt for a responsible guide reading; no lemma is invented.",
-    "R-008 and R-028 are `undersegmented` due adjacent/terminal residue; R-028 does not continue lexically into the numeral section.",
-    "No selected p177 start is missed by the canonical inventory, and no p177 candidate is classified as a physical continuation."
+    "L-008 contains Valor plus detector-missed Vana eſtar la fruta; L-029 contains Veneno plus detector-missed Venenoſo ſer.",
+    "Veſtir is a detector miss between R-007 and R-008; R-008 itself is exact Veſtido, ò veſtidura.",
+    "L-014 and R-019, previously ambiguous, are resolved directly as Velarſe and Vida.",
+    "`Vejucos, ò varas flexibles.` is an internal historical grouping heading, not a lexical article.",
+    "No lexical continuation exists beyond p177 into the numeral section."
   ],
   "terminalSection": {
-    "vocabularioPages": [
-      133,
-      177
-    ],
+    "vocabularioPages": [133, 177],
     "nextSection": "historical numeral system",
-    "nextSectionPages": [
-      178,
-      180
-    ],
+    "nextSectionPages": [178, 180],
     "p178LexiconCandidateCount": 0,
     "candidateReconciliationCoverageAfterPass": "133-177 complete"
   },
@@ -97,8 +76,8 @@
     "p176ReconciliationUsedForOpeningEdge": true,
     "repositoryCoverageUsedForTerminalSectionBoundary": true,
     "targetedTerminalRegionInspectionPerformed": true,
-    "directFacsimileAvailableThisPass": false,
-    "policy": "Selected direct collations support demonstrated starts. OCR-only internal units and unreadable guide regions are preserved structurally without invented lexical transcription or promotion; metrics remain withheld without an exhaustive visible-start census."
+    "directFacsimileAvailableThisPass": true,
+    "policy": "Direct same-witness ALC1737 facsimile governs transcription and boundary decisions; machine-corrected records remain explicitly non-human-verified."
   },
   "reviewStatus": "machine_corrected_unverified",
   "humanVerified": false

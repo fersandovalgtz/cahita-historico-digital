@@ -1,0 +1,47 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 177,
+  "witness": "Cahíta.pdf",
+  "witnessSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+  "technicalClosure": true,
+  "candidateInventoryTotal": 57,
+  "articleCandidates": 57,
+  "continuations": 0,
+  "visibleStarts": 60,
+  "truePositiveCandidateStarts": 57,
+  "falsePositiveCandidateBoundaries": 0,
+  "falseNegatives": 3,
+  "precision": 1.0,
+  "recall": 0.95,
+  "f1": 0.9743589743589743,
+  "candidatePromotions": 42,
+  "newMissedStartArticles": 3,
+  "newArticlesTotal": 45,
+  "newArticleIdRange": ["ALC1737-art-002258", "ALC1737-art-002302"],
+  "corpusBefore": 2257,
+  "corpusAfter": 2302,
+  "selectedCorrections": [
+    {"articleId": "ALC1737-art-000667", "previous": "Ver. Bicha.", "corrected": "Veer. Bicha."},
+    {"articleId": "ALC1737-art-000670", "previous": "Vencer. Anibuc.", "corrected": "Vencer. Aiubuc."}
+  ],
+  "detectorMisses": ["ALC1737-art-002260", "ALC1737-art-002275", "ALC1737-art-002283"],
+  "paratextResolved": [
+    {"raw": "Vejucos, ò varas flexibles.", "type": "section_heading", "lexicalStart": false}
+  ],
+  "terminalSection": {
+    "vocabularioEndsOnDigitalPage": 177,
+    "lastLexicalArticle": "Vomitar. Biſata.",
+    "nextSection": "historical numeral system",
+    "nextSectionPages": [178, 180],
+    "p178LexiconCandidateCount": 0
+  },
+  "notes": [
+    "Direct same-witness ALC1737 facsimile is the transcription authority.",
+    "L-008 and L-029 each contain two lexical starts and remain merged_articles at candidate-boundary level.",
+    "R-008 is exact; Veſtir is a separate detector miss between R-007 and R-008.",
+    "Former L-014 and R-019 ambiguities are resolved directly from the facsimile.",
+    "No independent human verification is claimed."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
