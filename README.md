@@ -4,7 +4,7 @@
 
 Cahíta Histórico Digital (CHD) es una infraestructura de investigación orientada a conservar, describir, transcribir y estructurar de forma reproducible una fuente fundamental para la historia de las lenguas cahítas y de la lingüística misionera novohispana. El proyecto separa explícitamente el testimonio histórico, el OCR, la transcripción, la segmentación computacional y las decisiones curatoriales IA-asistidas.
 
-> **Estado:** `0.2.0-dev` — desarrollo activo. La fase de promoción/enlace y censo exhaustivo del vocabulario quedó técnicamente cerrada el **21 de agosto de 2026**. No existe todavía una release científica estable ni un DOI del proyecto.
+> **Estado:** `0.2.0-dev` — desarrollo activo. La fase de promoción/enlace y censo exhaustivo del vocabulario y la cobertura estructural de las unidades gramaticales numeradas quedaron técnicamente cerradas el **21 de agosto de 2026**. No existe todavía una release científica estable ni un DOI del proyecto.
 
 ## Fuente histórica principal
 
@@ -28,12 +28,15 @@ Estado computacional vigente al **21 de agosto de 2026**:
 - las **45/45 páginas del Vocabulario (133–177)** tienen reconciliación candidate-level completa y cierre técnico IA-asistido dentro del alcance declarado;
 - las páginas **145–177** completaron la Phase II de promoción/enlace y censo exhaustivo: **33/33 páginas** con censo visible exhaustivo y **33/33** con cierre técnico;
 - en ese alcance quedan **0 candidatos `pending_promotion`**, **0 candidatos estructuralmente `unresolved`** y **0 fronteras `ambiguous`**;
-- las incertidumbres semánticas, anafóricas o de microlectura que permanecen dentro de artículos ya estructurados se conservan explícitamente y no contradicen el cierre estructural;
+- la auditoría gramatical registra **370/373 números nominales** con reclamación estructurada; los tres restantes —**127, 178 y 294**— son omisiones materiales documentadas del impreso;
+- al conservar además las **dos reglas impresas como 129**, CHD representa **371/371 unidades gramaticales numeradas efectivamente impresas**;
+- la concordancia gramatical derivada contiene **302 objetos** y **1,215 filas de evidencia explícita**;
+- las incertidumbres semánticas, anafóricas o de microlectura que permanecen dentro de objetos ya estructurados se conservan explícitamente y no contradicen el cierre estructural;
 - no existen objetos `human_verified`; la autoridad de las capas IA-asistidas permanece explícitamente separada de cualquier revisión humana independiente.
 
 Los totales de Phase II no se mantienen manualmente como una segunda fuente de verdad. Se regeneran desde los estados de página y los `articleId` curatoriales mediante [`scripts/summarize_open_lexicon_work.py`](scripts/summarize_open_lexicon_work.py), cuyo resultado versionado es [`data/lexicon/reconciliation/phase2_open_work_summary.json`](data/lexicon/reconciliation/phase2_open_work_summary.json). Los snapshots históricos almacenados en estados de página conservan valor de procedencia, pero no sustituyen el conteo actual.
 
-El cierre de Phase II y sus guardas epistemológicas se documentan en [`docs/PHASE2_COMPLETION_2026-08-21.md`](docs/PHASE2_COMPLETION_2026-08-21.md). El detalle página por página y la cobertura científica se mantienen en [`docs/LEXICON_PROGRESS.md`](docs/LEXICON_PROGRESS.md), [`COVERAGE.md`](COVERAGE.md) y [`ROADMAP.md`](ROADMAP.md).
+El cierre de Phase II y sus guardas epistemológicas se documentan en [`docs/PHASE2_COMPLETION_2026-08-21.md`](docs/PHASE2_COMPLETION_2026-08-21.md). El cierre técnico de la numeración gramatical se documenta en [`docs/GRAMMAR_COMPLETION_2026-08-21.md`](docs/GRAMMAR_COMPLETION_2026-08-21.md). El detalle página por página y la cobertura científica se mantienen en [`docs/LEXICON_PROGRESS.md`](docs/LEXICON_PROGRESS.md), [`COVERAGE.md`](COVERAGE.md) y [`ROADMAP.md`](ROADMAP.md).
 
 ## Modelo epistemológico
 
@@ -41,7 +44,7 @@ CHD no equipara OCR con transcripción ni reconciliación computacional con edic
 
 Los estados `machine_corrected_unverified` y `unresolved` identifican explícitamente el carácter IA-asistido del trabajo. Bajo la política vigente, `humanVerified` permanece en `false`; `human_verified` se conserva únicamente como estado reservado del esquema, no como una etapa futura obligatoria.
 
-Una página puede alcanzar **cierre técnico** cuando sus fronteras, continuidades, enlaces/promociones y zonas irresueltas quedan completamente modeladas y el QA computacional es satisfactorio. Ese cierre no debe confundirse con autoridad diplomática o filológica humana.
+Una página o capa puede alcanzar **cierre técnico** cuando sus fronteras, continuidades, enlaces, reclamaciones estructurales y zonas irresueltas quedan completamente modeladas dentro del alcance declarado y el QA computacional es satisfactorio. Ese cierre no debe confundirse con autoridad diplomática o filológica humana.
 
 ## Arquitectura del repositorio
 
@@ -58,27 +61,27 @@ Una página puede alcanzar **cierre técnico** cuando sus fronteras, continuidad
 
 ## Reproducibilidad y QA
 
-El proyecto incluye validadores de JSONL, control de identificadores lexicográficos, reconstrucción del inventario canónico de candidatos y un flujo de QA en GitHub Actions. El workflow valida además la sintaxis del resumen de Phase II, lo regenera desde las fuentes canónicas y falla si el archivo versionado queda desincronizado. Una corrida verde verifica consistencia computacional; no certifica corrección filológica humana.
+El proyecto incluye validadores de JSONL, control de identificadores lexicográficos, reconstrucción del inventario canónico de candidatos y un flujo de QA en GitHub Actions. El workflow valida además la sintaxis del resumen de Phase II, lo regenera desde las fuentes canónicas y falla si el archivo versionado queda desincronizado. Para gramática genera y comprueba en doble corrida una concordancia de evidencia y una auditoría de cobertura numerada. Una corrida verde verifica consistencia computacional; no certifica corrección filológica humana.
 
-El cierre de p.177 y de Phase II quedó registrado en el commit `105bebed7ccc0561eea3fa0fc192a7057cc5dbec`, después de una corrida integral de QA satisfactoria.
+El cierre de p.177 y de Phase II quedó registrado el 21 de agosto de 2026; el cierre de la cobertura gramatical numerada se confirmó posteriormente ese mismo día con **370/373 números nominales**, siendo los tres huecos restantes omisiones impresas documentadas.
 
-Consulte [`docs/QA_AUTOMATION.md`](docs/QA_AUTOMATION.md), [`docs/LEXICON_RECONCILIATION_PROTOCOL.md`](docs/LEXICON_RECONCILIATION_PROTOCOL.md) y [`docs/TRANSCRIPTION_CONVENTIONS.md`](docs/TRANSCRIPTION_CONVENTIONS.md).
+Consulte [`docs/QA_AUTOMATION.md`](docs/QA_AUTOMATION.md), [`docs/LEXICON_RECONCILIATION_PROTOCOL.md`](docs/LEXICON_RECONCILIATION_PROTOCOL.md), [`docs/TRANSCRIPTION_CONVENTIONS.md`](docs/TRANSCRIPTION_CONVENTIONS.md) y [`docs/GRAMMAR_COMPLETION_2026-08-21.md`](docs/GRAMMAR_COMPLETION_2026-08-21.md).
 
 ## Incertidumbres y límites abiertos
 
-El repositorio conserva explícitamente problemas materiales y textuales en lugar de ocultarlos. Entre ellos se encuentran la discontinuidad material registrada entre las páginas digitales 157–158, lecturas de baja confianza en tipografía pequeña y artículos transpaginales cuya microestructura no puede resolverse con seguridad a partir de la evidencia disponible. El artículo `ALC1737-art-001045` (`Atormentar`) enlaza las pp.144–145 y conserva incertidumbre en su lectura fina.
+El repositorio conserva explícitamente problemas materiales y textuales en lugar de ocultarlos. Entre ellos se encuentran la discontinuidad material registrada entre las páginas digitales 157–158, lecturas de baja confianza en tipografía pequeña y artículos o reglas transpaginales cuya microestructura no puede resolverse con seguridad a partir de la evidencia disponible.
 
-El hecho de que el vocabulario tenga cierre técnico no convierte las lecturas IA-asistidas en una edición diplomática humana. Cuando la evidencia no basta para fortalecer una lectura, la incertidumbre permanece codificada.
+El hecho de que el vocabulario y la numeración gramatical tengan cierre técnico no convierte las lecturas IA-asistidas en una edición diplomática humana ni resuelve automáticamente todas las remisiones, anáforas o microlecturas.
 
 ## Próximo frente científico
 
-Con la Phase II lexicográfica cerrada, el frente activo cambia de **detección/promoción de entradas** a **consolidación post-cierre e interoperabilidad**. Las prioridades inmediatas son:
+Con el vocabulario y la cobertura gramatical numerada técnicamente cerrados, el frente activo cambia de **detección de unidades faltantes** a **consolidación post-cierre, control textual e interoperabilidad**. Las prioridades inmediatas son:
 
-1. sincronizar documentación, métricas y metadatos con la fuente canónica de estado;
-2. producir exportaciones canónicas JSON/CSV del inventario de **2,302 artículos**, con controles de unicidad y reproducibilidad;
-3. cerrar de manera explícita el grafo de remisiones `Buſca` y documentar las anáforas `Lo miſmo` sin resolverlas automáticamente;
-4. auditar etiquetas históricas explícitas Hiaqui/Mayo/Thehueco y otras marcas de variedad;
-5. revisar `sourceSpans`, continuidades transcolumna/transpágina y anomalías materiales que sigan abiertas a nivel de microestructura;
+1. mantener sincronizados documentación, métricas y metadatos con las fuentes canónicas de estado;
+2. cerrar de manera explícita el grafo de remisiones `Buſca`: actualmente existen **151 referencias**, de las cuales **60** tienen resolución estricta única y **90** no se localizan por igualdad estricta; conservar sin forzar los **4 ciclos exactos** detectados;
+3. revisar las **14** ocurrencias candidatas de `Lo miſmo` sin resolver anáforas automáticamente;
+4. consolidar las **76** evidencias exportadas de etiquetas históricas de variedad y ampliar su enlace con la gramática;
+5. revisar microlecturas `unresolved`, `sourceSpans`, continuidades transcolumna/transpágina y anomalías materiales;
 6. preparar perfiles de interoperabilidad —especialmente TEI y, sólo cuando la microestructura lo permita, TEI Lex-0/CLDF— sin confundir exportación con validación lingüística;
 7. avanzar en control textual, preservación y preparación de una futura release científica sin adelantar una versión estable ni un DOI inexistente.
 
