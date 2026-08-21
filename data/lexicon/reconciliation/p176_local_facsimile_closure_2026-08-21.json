@@ -1,0 +1,57 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 176,
+  "witness": "Cahíta.pdf",
+  "witnessSha256": "69ccbe5da1d0834d78ea3957dcc79e64bd4fe165a1a7133ae408e5a656160e37",
+  "technicalClosure": true,
+  "candidateInventoryTotal": 49,
+  "articleCandidates": 49,
+  "continuations": 0,
+  "visibleStarts": 53,
+  "truePositiveCandidateStarts": 49,
+  "falsePositiveCandidateBoundaries": 0,
+  "falseNegatives": 4,
+  "precision": 1.0,
+  "recall": 0.9245283018867925,
+  "f1": 0.9607843137254902,
+  "candidatePromotions": 35,
+  "newMissedStartArticles": 3,
+  "newArticlesTotal": 38,
+  "newArticleIdRange": ["ALC1737-art-002220", "ALC1737-art-002257"],
+  "corpusBefore": 2219,
+  "corpusAfter": 2257,
+  "selectedCorrections": [
+    {
+      "articleId": "ALC1737-art-000647",
+      "previous": "Tos. Tafiria.",
+      "corrected": "Tos. Taſiria."
+    }
+  ],
+  "detectorMisses": [
+    "ALC1737-art-000653",
+    "ALC1737-art-002241",
+    "ALC1737-art-002242",
+    "ALC1737-art-002256"
+  ],
+  "paratextResolved": [
+    {
+      "raw": "Tuna generalmente.",
+      "type": "section_heading",
+      "lexicalStart": false
+    },
+    {
+      "raw": "Vn par",
+      "type": "catchword_to_p177",
+      "lexicalStart": false
+    }
+  ],
+  "notes": [
+    "Direct same-witness ALC1737 facsimile is the transcription authority.",
+    "R-004 is exact; the indented italic `Tuna generalmente.` is paratext rather than a merged lexical entry.",
+    "R-009 contains three distinct Tuna starts; two are detector misses.",
+    "R-023 captures the p177 catchword `Vn par` after the p176 article `Vntar`.",
+    "No independent human verification is claimed."
+  ],
+  "reviewStatus": "machine_corrected_unverified",
+  "humanVerified": false
+}
