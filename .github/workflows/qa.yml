@@ -146,5 +146,11 @@ jobs:
       - name: Validate deterministic post-closure exports
         run: python scripts/validate_postclosure_exports.py
 
+      - name: TEMP Print tier-A cross-reference diagnostics
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/export_crossreference_candidate_diagnostics.py --out-dir /tmp/xrefdiag --print-rows | grep '"priorityTier":"A_unique_strong"'
+
       - name: Validate deterministic grammar concordance
         run: python scripts/validate_grammar_exports.py
