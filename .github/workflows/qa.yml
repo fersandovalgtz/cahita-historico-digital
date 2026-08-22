@@ -149,5 +149,8 @@ jobs:
       - name: Validate source-based cross-reference reviews
         run: python scripts/validate_crossreference_source_reviews.py
 
+      - name: Validate Lo miſmo formula reviews
+        run: python scripts/validate_lo_mismo_reviews.py
+
       - name: Validate deterministic grammar concordance
         run: python scripts/validate_grammar_exports.py
