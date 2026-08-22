@@ -33,18 +33,18 @@ La auditoría reproducible clasifica los 90 casos en:
 
 El nivel A significa que se muestra un solo candidato por encima del umbral diagnóstico fuerte. No significa que el destino esté resuelto filológicamente.
 
-## Revisión de fuente completada hasta este corte
+## Cierre de la revisión inicial Tier A
 
-Se han registrado **36 revisiones explícitas**, todas sobre casos `A_unique_strong` y todas con `humanVerified=false`.
+Se han registrado **44 revisiones explícitas**, correspondientes a la totalidad de los **44 casos `A_unique_strong`**. Todas mantienen `humanVerified=false`.
 
-De esas 36 revisiones:
+De esas 44 revisiones:
 
-- **25** tienen `decisionStatus=source_supports_unique_target` y un `selectedTargetArticleId` explícito;
-- **6** tienen `decisionStatus=source_or_destination_requires_recollation` y no reciben destino efectivo;
-- **4** tienen `decisionStatus=candidate_rejected`: el candidato diagnóstico mostrado fue inspeccionado y descartado como destino lexicográfico;
-- **1** tiene `decisionStatus=target_not_located`: la remisión histórica es legible, pero no se localizó una entrada destino independiente.
+- **29** tienen `decisionStatus=source_supports_unique_target` y un `selectedTargetArticleId` explícito;
+- **8** tienen `decisionStatus=source_or_destination_requires_recollation` y no reciben destino efectivo;
+- **5** tienen `decisionStatus=candidate_rejected`: el candidato diagnóstico mostrado fue inspeccionado y descartado como destino lexicográfico;
+- **2** tienen `decisionStatus=target_not_located`: la remisión histórica es legible, pero no se localizó una entrada destino independiente.
 
-Las 25 propuestas positivas actualmente registradas son:
+Las 29 propuestas positivas actualmente registradas son:
 
 | Fuente histórica | Destino editorialmente sustentado |
 | --- | --- |
@@ -73,24 +73,34 @@ Las 25 propuestas positivas actualmente registradas son:
 | `Traſponer plantas` — `Buſca plantar` | `Plantar arboles` |
 | `Ninguno` — `Buſca nadie` | `Nadie por ninguno` |
 | `Obligar` — `Buſca pagar` | `Pagar deuda` |
+| `Peine` — `Buſca eſcobeta` | `Eſcobeta para peinarſe` |
+| `Peſadumbre aſſi` — `Buſca pena` | `Pena generalmente` |
+| `Remudar` — `Buſca feriar` | `Feriar vna coſa por otra` |
+| `Tizné` — `Buſca tinta` | `Tinta para eſcrebir` |
 
-Los **6 casos `editorial_requires_recollation`** son:
+Los **8 casos `editorial_requires_recollation`** son:
 
 - `Danzar` — `Buſca bailar`: el candidato `Bailar algún ſon` sigue siendo diagnóstico, pero no se recuperó con suficiente limpieza el contexto fuente;
 - `Apercibirſe para hazer algo` — `Buſca aparejarſe`: se localizó un OCR ruidoso del destino `Aparejarſe para hazer algo`, pero no una remisión fuente suficientemente limpia;
 - `Yr delante` — `Buſca guiar`: la fórmula fuente es visible, pero el token de destino aparece gravemente corrompido en OCR;
 - `Loco bolverſe` — `Buſca enloquecer`: el destino `Enloquecer, ò perder el juizio` es localizable, pero la remisión fuente está demasiado dañada en OCR para promoverla editorialmente sin cotejo de imagen;
 - `Reglar con regla` — `Buſca rayar`: el OCR localiza la guía fuente como `Reglar con regla` pero no conserva una remisión `Buſca rayar` inequívoca; debe cotejarse directamente el facsímil y el límite de columna;
-- `Obligacion` — `Buſca paga`: el OCR conserva sólo `pag**`, insuficiente para distinguir con seguridad `paga` de `pagar`, y la entrada candidata `Paga tal` no fue recuperada limpiamente en OCR.
+- `Obligacion` — `Buſca paga`: el OCR conserva sólo `pag**`, insuficiente para distinguir con seguridad `paga` de `pagar`, y la entrada candidata `Paga tal` no fue recuperada limpiamente en OCR;
+- `Poco antes`: la capa estructurada conserva `targetRaw=mo hia mucho`, mientras el OCR del testimonio muestra `Buſca no ha mucho`; la discrepancia debe resolverse mediante cotejo directo del facsímil antes de corregir procedencia o proponer destino;
+- `Topo animal` — `Buſca eſcarabajo`: el candidato `Eſcaravajo` presenta una diferencia `b/v` que puede ser histórica o producto del OCR; no se normaliza ni se enlaza sin cotejo de imagen.
 
-Los **4 candidatos rechazados** son:
+Los **5 candidatos rechazados** son:
 
 - `Nombrar, poner nombre` — `Buſca llamar`: el diagnóstico propuso `O, adv. para llamar`, pero `llamar` aparece dentro de una descripción de uso y no constituye la guía de esa entrada;
 - `Rueda` — `Buſca redonda coſa`: el diagnóstico propuso la entrada genérica `Coſa`, que omite el modificador discriminante `redonda`;
 - `Oprimido eſtar` — `Buſca apretado`: el candidato `Aflojar lo que eſtá apretado` contiene `apretado` sólo dentro del objeto de una entrada encabezada por `Aflojar`;
-- `Palillo oloroſo` — `Buſca olor`: el candidato `Oler, echar de ſi olor` es una entrada verbal y `olor` aparece únicamente dentro de su explicación.
+- `Palillo oloroſo` — `Buſca olor`: el candidato `Oler, echar de ſi olor` es una entrada verbal y `olor` aparece únicamente dentro de su explicación;
+- `Sazonarſe la fruta` — `Buſca madura eſtar`: el candidato `Eſtar` reproduce sólo el componente verbal genérico y no la frase remitida completa.
 
-El caso **`editorial_target_not_located`** es `Vadear el Rio` — `Buſca paſſar el Rio por vado`. La remisión completa es legible en el OCR del mismo testimonio, pero no se localizó una entrada independiente con esa guía. El candidato automático `Rio` se descarta por reproducir sólo un token genérico interno de la frase remitida.
+Los **2 casos `editorial_target_not_located`** son:
+
+- `Vadear el Rio` — `Buſca paſſar el Rio por vado`: la remisión completa es legible, pero no se localizó una entrada independiente con esa guía; el candidato automático `Rio` reproduce sólo un token genérico interno;
+- `Vihuela, ó guitarra` — `Buſca guitarra`: la remisión es visible, pero el diagnóstico devuelve la propia entrada fuente porque `guitarra` aparece dentro de su guía; no se localizó una entrada independiente `Guitarra` en esta revisión.
 
 Los casos en recolación deben volver al facsímil. Los candidatos rechazados y los destinos no localizados permanecen documentados como resultados negativos, no como resoluciones. Una puntuación diagnóstica fuerte no sustituye evidencia lexicográfica suficiente.
 
@@ -102,26 +112,28 @@ El estado reproducible esperado de esa vista es:
 
 - **151 remisiones** representadas;
 - **60 aristas estrictas** con `edgeAuthority=strict_exact_normalized_equality`;
-- **25 aristas editoriales** con `edgeAuthority=editorial_source_review`;
-- **85 aristas efectivas** en la vista revisada;
-- **6 casos `editorial_requires_recollation`**;
-- **4 casos `editorial_candidate_rejected`**;
-- **1 caso `editorial_target_not_located`**;
-- **54 casos `strict_not_located_unreviewed`**;
+- **29 aristas editoriales** con `edgeAuthority=editorial_source_review`;
+- **89 aristas efectivas** en la vista revisada;
+- **8 casos `editorial_requires_recollation`**;
+- **5 casos `editorial_candidate_rejected`**;
+- **2 casos `editorial_target_not_located`**;
+- **46 casos `strict_not_located_unreviewed`**;
 - **0 aristas editoriales `humanVerified=true`**.
 
 La vista se exporta en JSONL, CSV y grafo JSON, y se valida mediante doble ejecución determinista byte-a-byte. Los hashes exactos de cada estado se conservan en el manifiesto generado por el exportador.
 
 ## Cola reproducible de trabajo
 
-La cola permanente `scripts/export_crossreference_review_queue.py` resta las 36 revisiones explícitas al universo de 90 remisiones estrictamente `not_located`. El corte actual debe producir **54 casos pendientes**, distribuidos como **8 A**, **16 B** y **30 C**. La cola es estado de trabajo reproducible: no crea destinos ni modifica la autoridad de las remisiones.
+La cola permanente `scripts/export_crossreference_review_queue.py` resta las 44 revisiones explícitas al universo de 90 remisiones estrictamente `not_located`. El corte esperado debe producir **46 casos pendientes**, distribuidos como **0 A**, **16 B** y **30 C**. La cola es estado de trabajo reproducible: no crea destinos ni modifica la autoridad de las remisiones.
 
 ## Siguiente frente
 
-Quedan **8 casos `A_unique_strong` todavía sin revisión explícita**. El siguiente lote cerrará la revisión inicial completa del nivel A antes de pasar a los 16 casos `B_multiple_strong`.
+La **revisión inicial Tier A queda cerrada 44/44**. El siguiente nivel de trabajo es `B_multiple_strong`, con **16 casos** en los que el diagnóstico presenta más de un candidato fuerte. Esos casos requieren comparación explícita entre alternativas y, cuando el OCR no permita discriminar, cotejo directo del facsímil.
 
-El procedimiento se mantiene conservador: localizar la fórmula histórica y el destino candidato en el mismo testimonio, registrar la propuesta en la capa editorial sólo cuando el soporte textual sea suficiente, rechazar candidatos que coincidan únicamente por material genérico, registrar `target_not_located` cuando la remisión sea clara pero el destino no aparezca, y enviar a recolación cualquier caso en que el OCR no permita sostener la decisión.
+Después de B quedarán los **30 casos `C_no_strong`**, que constituyen el frente de mayor dificultad textual porque el diagnóstico no ofrece candidato fuerte alguno.
+
+El procedimiento se mantiene conservador: localizar la fórmula histórica y cada destino candidato en el mismo testimonio, registrar una propuesta sólo cuando la evidencia permita discriminar, documentar candidatos rechazados, usar `target_not_located` cuando la remisión sea clara pero no aparezca destino independiente, y enviar a recolación cualquier caso en que el OCR no permita sostener la decisión.
 
 ## Guarda epistemológica
 
-**Una arista editorial sustentada no es una arista canónica estricta. Una coincidencia diagnóstica fuerte no es una resolución. Un candidato rechazado no desaparece de la historia de revisión. Un destino no localizado no debe sustituirse por una coincidencia aproximada. Una corrida verde de QA no es validación filológica humana.**
+**Una arista editorial sustentada no es una arista canónica estricta. Una coincidencia diagnóstica fuerte no es una resolución. Un candidato rechazado no desaparece de la historia de revisión. Un destino no localizado no debe sustituirse por una coincidencia aproximada. Cerrar Tier A significa revisar explícitamente sus 44 casos; no significa que los 44 hayan producido resoluciones positivas ni que exista validación filológica humana. Una corrida verde de QA no es validación filológica humana.**
