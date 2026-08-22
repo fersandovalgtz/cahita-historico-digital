@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import filecmp
 import json
+import re
 import subprocess
 import sys
 import tempfile
@@ -33,6 +34,13 @@ REQUIRED_LINKS = {
     ("ALC1737-par-0002", "Thehueco"),
     ("ALC1737-par-0003", "Thehueco"),
     ("ALC1737-par-0003", "Naciones"),
+}
+LABEL_TOKEN_PATTERNS: dict[str, re.Pattern[str]] = {
+    "Hiaqui": re.compile(r"hiaquis?", re.IGNORECASE),
+    "Mayo": re.compile(r"(?:mayos?|mayes)", re.IGNORECASE),
+    "Thehueco": re.compile(r"(?:thehuecos?|tehuecos?|teuecos?)", re.IGNORECASE),
+    "Naciones": re.compile(r"naciones?", re.IGNORECASE),
+    "Cynaloa": re.compile(r"(?:cynaloas?|sinaloas?)", re.IGNORECASE),
 }
 
 
@@ -131,6 +139,21 @@ def validate_links(out_dir: Path, manifest: dict) -> None:
         ):
             if row.get(key) is not False:
                 raise SystemExit(f"forbidden transition {key}=true in {row.get('id')}")
+
+        label_class = row.get("labelClass")
+        pattern = LABEL_TOKEN_PATTERNS.get(str(label_class))
+        if pattern is None:
+            raise SystemExit(f"unsupported labelClass in {row.get('id')}: {label_class!r}")
+        raw_labels = row.get("labelsRaw") or []
+        if not raw_labels:
+            raise SystemExit(f"link has no raw documentary label: {row.get('id')}")
+        for token in raw_labels:
+            if not isinstance(token, str) or not pattern.fullmatch(token.strip()):
+                raise SystemExit(
+                    f"raw documentary label {token!r} does not belong to class {label_class!r} "
+                    f"in {row.get('id')}"
+                )
+
         upstream = row.get("historicalVariationEvidenceIds") or []
         if not upstream:
             raise SystemExit(f"link has no upstream historical-variation evidence: {row.get('id')}")
@@ -178,7 +201,7 @@ def main() -> None:
             f"links={manifest['linkRecordCount']}; objects={manifest['linkedGrammarObjectCount']}; "
             f"upstreamGrammarEvidence={manifest['historicalVariationGrammarEvidenceCount']}; "
             f"types={manifest['grammarObjectTypeCounts']}; labels={manifest['labelClassCounts']}; "
-            "unlinked=0; similarityUsed=false; humanVerified=0"
+            "unlinked=0; rawLabelsClassScoped=true; similarityUsed=false; humanVerified=0"
         )
 
 
