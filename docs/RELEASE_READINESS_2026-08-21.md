@@ -4,90 +4,74 @@ Fecha de corte: **21 de agosto de 2026**.
 
 ## Resumen ejecutivo
 
-Cahíta Histórico Digital ha superado la fase de construcción gruesa del corpus. El vocabulario y la cobertura estructural de la gramática tienen cierre técnico, las remisiones históricas `Buſca` cuentan con una revisión editorial inicial completa, la fórmula `Lo miſmo` dispone de una capa de revisión propia y los principales derivados se reconstruyen de manera determinista en CI.
+Cahíta Histórico Digital está en fase de cierre de release, no de construcción gruesa del corpus. El vocabulario y la gramática numerada tienen cierre técnico; las 90 remisiones `Buſca` inicialmente no localizadas tienen revisión editorial explícita; `Lo miſmo` está separado del grafo; los principales derivados son deterministas; existe un paquete científico reproducible; y la vista TEI pasa el schema oficial archivado de **TEI Lex-0 0.9.5** mediante Jing dentro del CI.
 
-Para una **v1.0 técnica, reproducible y científicamente publicable dentro del alcance declarado**, la preparación se estima actualmente en **87–90 %**. El intervalo es deliberado: los últimos gates no tienen el mismo coste ni dependen todos del repositorio. En particular, las 22 recolaciones requieren cotejo directo de fuente y la preservación/DOI depende del paquete final congelado.
+Para una **v1.0 técnica, reproducible y científicamente publicable dentro del alcance declarado**, la preparación se estima ahora en **91–93 %**. El intervalo refleja que los gates restantes tienen costes desiguales y algunos dependen del acceso al testimonio o de infraestructura externa de preservación.
 
-Esta estimación **no mide validación filológica humana**. Los estados `humanVerified=false` se conservan explícitamente y una futura edición revisada por especialistas constituye una meta distinta.
+Esta estimación no mide validación filológica humana. Los estados `humanVerified=false` se conservan y una edición revisada por especialistas sigue siendo una meta distinta.
 
-## Evidencia de cierre ya alcanzada
+## Evidencia cerrada
 
-### Corpus lexicográfico
+### Corpus
 
 - 2,072/2,072 candidatos canónicos reconstruibles.
-- 2,302 artículos históricos curatoriales en 211 archivos JSONL.
-- 45/45 páginas del vocabulario p.133–177 con reconciliación candidate-level completa.
-- Phase II p.145–177: 33/33 páginas con cierre técnico.
-- `pendingPromotionTotal=0`, `unresolvedCandidateTotal=0`, `ambiguousBoundaryTotal=0`.
+- 2,302 artículos históricos en 211 archivos JSONL.
+- 45/45 páginas p.133–177 reconciliadas; Phase II 33/33 técnicamente cerrada.
+- 371/371 unidades gramaticales numeradas realmente impresas representadas.
+- 302 objetos gramaticales y 1,215 filas de evidencia.
 
-### Remisiones históricas `Buſca`
+### Remisiones y microestructura
 
-- 150 referencias canónicas, todas de clase `Buſca`.
-- 60 resoluciones estrictas `exact_unique`.
-- 90 `not_located` bajo igualdad normalizada estricta.
-- 90/90 casos `not_located` con revisión editorial explícita.
-- Decisiones: 40 `source_supports_unique_target`, 22 `source_or_destination_requires_recollation`, 5 `candidate_rejected`, 23 `target_not_located`.
-- Vista revisada: 100 aristas efectivas = 60 estrictas + 40 editoriales.
-- Cola inicial de revisión: 0 A / 0 B / 0 C.
-- Ninguna propuesta editorial ha sido promovida silenciosamente al grafo estricto.
+- 150 referencias canónicas, todas `Buſca`.
+- 60 `exact_unique`, 90 `not_located`, 4 ciclos estrictos.
+- 90/90 `not_located` con revisión editorial: 40 destinos sustentados, 22 recolaciones, 5 candidatos rechazados y 23 destinos no localizados.
+- vista revisada: 100 aristas = 60 estrictas + 40 editoriales.
+- cola inicial A/B/C agotada.
+- cola de recolación directa: 22 casos = 8 A / 4 B / 10 C, determinista y auditable.
+- 14/14 fórmulas `Lo miſmo` auditadas, 0 convertidas en remisión canónica.
 
-### Fórmula histórica `Lo miſmo`
+### Interoperabilidad TEI
 
-- 14/14 ocurrencias superficiales inventariadas.
-- 14/14 con revisión explícita.
-- 0 `Lo miſmo` codificados como remisiones canónicas.
-- La función exacta permanece `function_unresolved`; no se infieren automáticamente forma cahíta, préstamo, alcance referencial ni equivalencia semántica.
+La vista vigente contiene 2,302 entradas, 2,221 citas de traducción, 150 remisiones y 60 targets estrictos. Conserva las formas históricas de lengua meta como `xml:lang="und"` y no infiere identidad lingüística moderna.
 
-### Gramática
+El CI valida el XML contra `https://lex-0.org/releases/v0.9.5/schema/lex-0.rng`, cuyo SHA-256 está fijado en `35e73fef48526634714bdf3d16b924f958fca078a903d0bdc2dd4d7d116d1aaa`. La corrida verde produjo XML de 1,391,422 bytes, SHA-256 `bad06dad39f216b8dde661b4219845c4c19db945bdfbc4478ff5e0846b72e828`.
 
-- 302 objetos estructurados en 24 archivos.
-- 1,215 filas de evidencia en la concordancia derivada.
-- 370/373 números nominales con reclamación estructurada; 127, 178 y 294 son omisiones documentadas del impreso.
-- 371/371 unidades numeradas realmente impresas representadas.
-- Concordancia y auditoría de cobertura deterministas byte-a-byte.
+### Release candidate reproducible
 
-### Reproducibilidad y QA
+`scripts/build_release_candidate.py` y `scripts/validate_release_candidate.py` construyen el paquete dos veces y exigen igualdad byte-a-byte. Tras cerrar el gate Lex-0, la corrida vigente produjo:
 
-- CI activo sobre `main` y pull requests.
-- Validación de IDs, JSON Schema, reconciliaciones, estados de autoridad y documentación sincronizada.
-- Exportadores lexicográficos, grafo de remisiones, diagnósticos, vista revisada, cola de revisión, `Lo miſmo`, variedad histórica, spans físicos y gramática sometidos a doble corrida determinista.
-- Hashes SHA-256 verificados en cada ejecución de los derivados principales.
+- 60 archivos en el paquete;
+- 9,173,536 bytes de artefactos inventariados;
+- ZIP de 600,630 bytes;
+- SHA-256 `0ee719535b2014f88e05c12cce620192ce15173fc21c1d364b643901c65a9217`;
+- `openGates=5`;
+- `releaseReady=false`;
+- `humanVerified=0`.
 
-## Remanente técnico para v1.0
+## Cinco gates restantes
 
-### Gate A — control textual prioritario
+### A — 22 recolaciones
 
-Quedan **22 casos `source_or_destination_requires_recollation`**. No constituyen 22 errores confirmados: son puntos donde la lectura o el destino no debe cerrarse sin volver a la imagen/testimonio. Para v1.0 hay dos salidas científicamente válidas: resolver los que puedan cotejarse antes del congelamiento o congelarlos como incertidumbres explícitas, documentadas y reproducibles. Lo que no es válido es resolverlos por similitud aproximada.
+Cada caso debe cotejarse contra imagen del mismo testimonio cuando sea posible o congelarse como incertidumbre editorial explícita. El OCR no sustituye el facsímil y la similitud diagnóstica no produce enlaces canónicos.
 
-### Gate B — interoperabilidad
+### B — decisión CLDF
 
-Falta definir el perfil TEI final y comprobar una exportación conforme al alcance real del proyecto. Debe evaluarse CLDF/Lex-0 como vista derivada sin transformar retrospectivamente el vocabulario histórico en un diccionario moderno ni en un corpus paralelo.
+Debe decidirse si una vista CLDF aporta suficiente valor como producto v1.0 o si, por la naturaleza histórico-diccionarística de CHD, TEI Lex-0 constituye el formato interoperable principal y CLDF queda para una futura proyección analítica normalizada.
 
-### Gate C — paquete de release
+### C — congelamiento de contratos y metadatos
 
-Falta un comando/pipeline de release que parta de un checkout limpio, regenere los derivados incluidos, produzca un paquete final, registre su manifiesto y sus hashes y permita verificar que la release puede reconstruirse sin estado local oculto.
+Falta declarar qué schemas/formatos son estables en v1.0, fijar sus versiones, congelar cobertura y limitaciones, y sincronizar `CITATION.cff`, `codemeta.json` y changelog.
 
-### Gate D — congelamiento y metadatos
+### D — tag/release final
 
-Antes del tag deben congelarse los contratos/esquemas de producción que formen parte de v1.0, fijarse cobertura y limitaciones, sincronizarse `CITATION.cff`, `codemeta.json` y changelog, y registrarse el commit/tag de release.
+El paquete reproducible existe, pero falta construirlo desde el commit definitivo, registrar el hash final y crear el tag estable sólo después de cerrar los gates científicos seleccionados.
 
-### Gate E — preservación
+### E — preservación
 
-Faltan GitHub Release, depósito archivístico y DOI de versión. Estos pasos deben ejecutarse sólo después de que el paquete y sus metadatos estén congelados.
+Faltan GitHub Release, depósito archivístico y DOI de versión/Concept DOI cuando corresponda.
 
-## Qué significa “terminar”
+## Qué significa terminar
 
-**Terminar v1.0** significa publicar una versión estable cuyo alcance, datos canónicos, incertidumbres, derivados, checksums, metadatos y procedimientos de reconstrucción estén explícitos y congelados. No exige fingir que las 22 recolaciones están resueltas ni que el corpus fue revisado humanamente.
+Una v1.0 válida no requiere ocultar incertidumbres ni atribuir revisión humana inexistente. Requiere un alcance estable, incertidumbres explícitas, derivados interoperables, checksums, metadatos, un procedimiento de reconstrucción y preservación duradera.
 
-**Terminar una edición filológica humana** implicaría otra escala de trabajo: colación especializada sistemática, validación lingüística y editorial, resolución o comentario humano de lecturas dudosas y cambio controlado de estados de autoridad. Ese objetivo debe medirse aparte y no reduce la legitimidad de una v1.0 histórico-digital transparente.
-
-## Orden recomendado de cierre
-
-1. cerrar política y, cuando sea posible, cotejo de las 22 recolaciones;
-2. estabilizar perfil TEI y decisión CLDF/Lex-0;
-3. construir el pipeline/paquete de release reproducible;
-4. congelar esquemas, cobertura, metadatos y changelog;
-5. ejecutar release candidate y auditoría desde checkout limpio;
-6. tag v1.0.0, GitHub Release, depósito y DOI.
-
-Mientras estos gates no estén completos, la versión debe permanecer `0.2.0-dev` o avanzar a una candidata intermedia sin etiquetarse prematuramente como v1.0.0.
+El siguiente orden de cierre es: **decisión CLDF → congelamiento de schemas/metadatos → política/cotejo de recolaciones → candidata final y changelog → preservación/DOI**, manteniendo las recolaciones abiertas cuando no exista acceso verificable a imagen y sin convertir OCR en evidencia facsimilar.
