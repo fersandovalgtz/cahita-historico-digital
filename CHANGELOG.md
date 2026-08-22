@@ -1,6 +1,23 @@
 # Changelog
 
 Todos los cambios relevantes de Cahíta Histórico Digital se documentan en este archivo.
+## [1.0.0] - 2026-08-21
+
+### Release científica estable
+
+- 2,302 artículos lexicográficos históricos en 211 JSONL y 2,072/2,072 candidatos canónicos reconstruibles.
+- vocabulario p.133–177 reconciliado 45/45; Phase II p.145–177 cerrada técnicamente 33/33.
+- 150 remisiones históricas `Buſca`: 60 `exact_unique`, 90 `not_located`, 4 ciclos estrictos; 90/90 no localizadas con revisión explícita.
+- 22 casos de recolación preservados en v1.0 como `frozen_open_uncertainty` (8 A / 4 B / 10 C), con 0 destinos seleccionados, 0 cambios canónicos y `humanVerified=false`.
+- 14/14 ocurrencias de `Lo miſmo` auditadas fuera del grafo de remisiones, sin inferir función exacta.
+- 302 objetos gramaticales, 1,215 filas de evidencia y 371/371 unidades numeradas realmente impresas representadas.
+- proyección TEI Lex-0 0.9.5 con 2,302 entradas, 2,221 citas de traducción, 150 remisiones y 60 `@target` estrictos, validada externamente con Jing.
+- TEI Lex-0 definido como perfil interoperable primario; CLDF diferido como derivado analítico post-v1.
+- 26 contratos v1.0 congelados por SHA-256 y freeze byte-exacto de artículos, candidatos, revisiones y gramática.
+- paquete científico v1.0 determinista con datos canónicos congelados, derivados reproducibles, manifiestos y checksums.
+- esta versión no declara validación filológica humana integral; las incertidumbres siguen explícitas y el facsímil histórico no se relicencia.
+- DOI de versión y Concept DOI quedan pendientes hasta el depósito archivístico; no se infieren ni se inventan.
+
 
 ## [0.2.0-dev] - 2026-08-16
 
