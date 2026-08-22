@@ -31,7 +31,7 @@ Hay 128 páginas `full_page`, preliminares y Partes I–IV representadas y estad
 - 2,072/2,072 candidatos canónicos reconstruibles.
 - 2,302 artículos históricos en 211 JSONL.
 - 45/45 páginas p.133–177 reconciliadas.
-- Phase II p.145–177: 33/33 cerrada técnicamente.
+- Phase II p.145–177: **33 / 33 páginas** cerradas técnicamente.
 - `pendingPromotionTotal = 0`, `unresolvedCandidateTotal = 0`, `ambiguousBoundaryTotal = 0`.
 - 0 artículos `human_verified`.
 
