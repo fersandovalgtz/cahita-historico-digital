@@ -1,97 +1,244 @@
 # Cahíta Histórico Digital
 
-**Edición histórico-digital, corpus abierto e infraestructura reproducible del _Arte de la lengua cahita_ impreso en México en 1737.**
+<p align="center">
+  <strong>Edición histórico-digital, corpus abierto e infraestructura reproducible del <em>Arte de la lengua cahita</em> impreso en México en 1737.</strong><br>
+  <sub>Fuente histórica · procedencia · lexicografía · gramática · TEI Lex-0 · QA · preservación de incertidumbre</sub>
+</p>
 
-Cahíta Histórico Digital (CHD) es una infraestructura de investigación orientada a conservar, describir, transcribir y estructurar de forma reproducible una fuente fundamental para la historia de las lenguas cahítas y de la lingüística misionera novohispana. El proyecto separa explícitamente el testimonio histórico, el OCR, la transcripción, la segmentación computacional y las decisiones curatoriales IA-asistidas.
+<p align="center">
+  <a href="https://github.com/fersandovalgtz/cahita-historico-digital/releases/tag/v1.0.0"><img src="https://img.shields.io/github/v/release/fersandovalgtz/cahita-historico-digital?style=flat-square&label=release" alt="Release"></a>
+  <a href="https://github.com/fersandovalgtz/cahita-historico-digital/actions/workflows/qa.yml"><img src="https://img.shields.io/github/actions/workflow/status/fersandovalgtz/cahita-historico-digital/qa.yml?branch=main&style=flat-square&label=CI%20QA" alt="CI QA"></a>
+  <img src="https://img.shields.io/badge/art%C3%ADculos-2%2C302-172033?style=flat-square" alt="2,302 artículos">
+  <img src="https://img.shields.io/badge/candidatos-2%2C072-455B55?style=flat-square" alt="2,072 candidatos">
+  <img src="https://img.shields.io/badge/gram%C3%A1tica-302%20objetos%20%C2%B7%201%2C215%20evidencias-455B55?style=flat-square" alt="Gramática">
+  <a href="docs/DATA_PRODUCTS.md"><img src="https://img.shields.io/badge/datos-JSON%20%C2%B7%20JSONL%20%C2%B7%20CSV%20%C2%B7%20TEI-5b4b8a?style=flat-square" alt="Formatos"></a>
+</p>
 
-> **Estado:** `1.0.0` — primera release científica estable del alcance técnico declarado. El vocabulario, la cobertura gramatical numerada, la interoperabilidad TEI Lex-0, los contratos, el freeze de datos y las incertidumbres de recolación están versionados y validados reproduciblemente. La preservación archivística y el DOI de versión permanecen pendientes hasta su depósito efectivo.
+<p align="center">
+  <a href="docs/TEI_LEXICON_PROFILE_V0_1.md"><img src="https://img.shields.io/badge/TEI-Lex--0%200.9.5%20validado-8A1538?style=flat-square" alt="TEI Lex-0"></a>
+  <a href="SCHEMA.md"><img src="https://img.shields.io/badge/JSON%20Schema-22%20contratos-3b5b92?style=flat-square" alt="22 JSON Schema"></a>
+  <a href="FAIR_ASSESSMENT.md"><img src="https://img.shields.io/badge/FAIR-pre--assessment-2d6a4f?style=flat-square" alt="FAIR pre-assessment"></a>
+  <a href="CITATION.cff"><img src="https://img.shields.io/badge/citaci%C3%B3n-CFF%201.2-4b5563?style=flat-square" alt="CFF 1.2"></a>
+  <a href="codemeta.json"><img src="https://img.shields.io/badge/metadatos-CodeMeta-3b5b92?style=flat-square" alt="CodeMeta"></a>
+  <a href="project-metadata.json"><img src="https://img.shields.io/badge/metadatos-project%20JSON-455B55?style=flat-square" alt="Project metadata"></a>
+  <a href="metadata/fair-dataset.jsonld"><img src="https://img.shields.io/badge/metadatos-JSON--LD-455B55?style=flat-square" alt="JSON-LD"></a>
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/c%C3%B3digo-MIT-172033?style=flat-square" alt="Código MIT"></a>
+  <a href="DATA_LICENSE.md"><img src="https://img.shields.io/badge/datos-CC%20BY%204.0-7a263a?style=flat-square" alt="Datos CC BY 4.0"></a>
+  <a href="GOVERNANCE.md"><img src="https://img.shields.io/badge/gobernanza-FAIR%20%2B%20CARE-2d6a4f?style=flat-square" alt="Gobernanza"></a>
+  <a href="QUALITY_REPORT.md"><img src="https://img.shields.io/badge/humanVerified-0-b7791f?style=flat-square" alt="humanVerified 0"></a>
+  <a href="https://github.com/fersandovalgtz/cahita-historico-digital/issues/169"><img src="https://img.shields.io/badge/DOI-pendiente-b7791f?style=flat-square" alt="DOI pendiente"></a>
+  <a href="https://orcid.org/0000-0002-3168-6725"><img src="https://img.shields.io/badge/ORCID-0000--0002--3168--6725-A6CE39?style=flat-square&logo=orcid&logoColor=white" alt="ORCID"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/fersandovalgtz/cahita-historico-digital/commits/main"><img src="https://img.shields.io/github/last-commit/fersandovalgtz/cahita-historico-digital?style=flat-square&label=%C3%BAltimo%20commit" alt="Último commit"></a>
+  <a href="https://github.com/fersandovalgtz/cahita-historico-digital/stargazers"><img src="https://img.shields.io/github/stars/fersandovalgtz/cahita-historico-digital?style=flat-square&logo=github" alt="Stars"></a>
+  <a href="https://github.com/fersandovalgtz/cahita-historico-digital/forks"><img src="https://img.shields.io/github/forks/fersandovalgtz/cahita-historico-digital?style=flat-square&logo=github" alt="Forks"></a>
+  <a href="https://github.com/fersandovalgtz/cahita-historico-digital/issues"><img src="https://img.shields.io/github/issues/fersandovalgtz/cahita-historico-digital?style=flat-square" alt="Issues"></a>
+</p>
+
+<p align="center">
+  <a href="#pru%C3%A9balo-en-30-segundos"><strong>Pruébalo</strong></a> ·
+  <a href="docs/DATA_PRODUCTS.md">Datos y formatos</a> ·
+  <a href="SCHEMA.md">Modelo de datos</a> ·
+  <a href="SOURCES.md">Fuentes</a> ·
+  <a href="PROVENANCE.md">Procedencia</a> ·
+  <a href="QUALITY_REPORT.md">Calidad</a> ·
+  <a href="FAIR_ASSESSMENT.md">FAIR</a> ·
+  <a href="GOVERNANCE.md">Gobernanza</a> ·
+  <a href="CITATION.cff">Citar</a> ·
+  <a href="README.en.md">English</a>
+</p>
+
+| Versión | Artículos | Candidatos | Gramática | Recolaciones abiertas | Estado humano | Preservación |
+|---|---:|---:|---:|---:|---|---|
+| 1.0.0 | 2,302 | 2,072 | 302 objetos / 1,215 evidencias | 22 | `humanVerified=0` | DOI pendiente |
+
+## Qué es Cahíta Histórico Digital
+
+**Cahíta Histórico Digital (CHD)** es una infraestructura de investigación para conservar, describir, transcribir, estructurar y publicar de forma reproducible el testimonio `ALC1737`, el _Arte de la lengua cahita_ de 1737. El repositorio mantiene separadas la fuente histórica, el OCR, la transcripción IA-asistida, la segmentación computacional, las decisiones curatoriales, los productos derivados y la validación humana.
+
+La release `v1.0.0` es una **release científica técnica y reproducible dentro de su alcance declarado**. No es una edición diplomática o crítica íntegramente cotejada por especialistas. Esa distinción forma parte del modelo de datos: cuando no existe revisión humana identificable, `humanVerified` permanece en `false`.
+
+> [!IMPORTANT]
+> El rótulo histórico `Cahita` y las etiquetas `Hiaqui`, `Mayo` y `Thehueco` se conservan como evidencia documental. CHD no asigna al conjunto un código ISO 639-3 moderno único ni mapea automáticamente sus formas a yaqui, mayo u otras identidades contemporáneas.
+
+## Pruébalo en 30 segundos
+
+Consulte el corpus canónico localmente, sin normalización lingüística silenciosa:
+
+```bash
+git clone https://github.com/fersandovalgtz/cahita-historico-digital.git
+cd cahita-historico-digital
+python scripts/query_lexicon.py --stats
+python scripts/query_lexicon.py "Danzar" --field spanish --limit 5
+```
+
+O mediante `make`:
+
+```bash
+make stats
+make query Q="Danzar"
+```
+
+Descargue la release estable:
+
+```bash
+gh release download v1.0.0 \
+  -R fersandovalgtz/cahita-historico-digital \
+  -p 'cahita-historico-digital-v1.0.0.zip'
+```
+
+El catálogo de formatos y usos está en [`docs/DATA_PRODUCTS.md`](docs/DATA_PRODUCTS.md).
 
 ## Fuente histórica principal
 
 - **ID:** `ALC1737`
 - **Título:** _Arte de la lengua cahita conforme à las reglas de muchos peritos en ella_
 - **Impresión:** México, 1737, D. Francisco Xavier Sánchez
-- **Autoría de portada:** un padre de la Compañía de Jesús, misionero de más de treinta años en la provincia de Sinaloa; las atribuciones nominales posteriores se tratan como historia catalográfica, no como sustitución de la evidencia de portada.
+- **Autoría de portada:** un padre de la Compañía de Jesús, misionero de más de treinta años en la provincia de Sinaloa; las atribuciones nominales posteriores se documentan como historia catalográfica, no como sustitución de la portada
 - **Ejemplar digital de trabajo:** John Carter Brown Library / Internet Archive, identificador `artedelalenguaca00gonz`
-- **Extensión procesada:** 182 páginas digitales; 118 páginas impresas numeradas en el cuerpo gramatical.
+- **Extensión digital:** 182 páginas
 
-Véanse [`docs/SOURCE_ALC1737.md`](docs/SOURCE_ALC1737.md), [`docs/AUTHORSHIP.md`](docs/AUTHORSHIP.md) y [`PROVENANCE.md`](PROVENANCE.md).
+Véanse [`docs/SOURCE_ALC1737.md`](docs/SOURCE_ALC1737.md), [`docs/AUTHORSHIP.md`](docs/AUTHORSHIP.md), [`SOURCES.md`](SOURCES.md), [`PROVENANCE.md`](PROVENANCE.md) y [`references.bib`](references.bib).
 
-## Estado del corpus
+## Estado científico v1.0.0
 
-La fuente está representada de forma continua desde los preliminares y el cuerpo gramatical hasta el vocabulario y el sistema numeral. El vocabulario castellano–cahíta ocupa las páginas digitales **133–177** y el sistema numeral las páginas **178–180**.
+### Léxico
 
-Estado computacional vigente al **21 de agosto de 2026**:
+- **2,072/2,072 candidatos canónicos** reconstruibles;
+- **2,302 artículos lexicográficos históricos** en **211 JSONL** canónicos;
+- vocabulario p.133–177: **45/45 páginas** reconciliadas técnicamente;
+- Phase II p.145–177: **33/33 páginas** técnicamente cerradas;
+- `pendingPromotionTotal=0`;
+- `unresolvedCandidateTotal=0` para fronteras estructurales;
+- `ambiguousBoundaryTotal=0`.
 
-- **2,072 candidatos lexicográficos** `hybrid_margin_mode_v0.2` están persistidos canónicamente;
-- **2,302 artículos históricos estructurados** integran la capa curatorial actual;
-- las **45/45 páginas del Vocabulario (133–177)** tienen reconciliación candidate-level completa y cierre técnico IA-asistido dentro del alcance declarado;
-- las páginas **145–177** completaron la Phase II de promoción/enlace y censo exhaustivo: **33/33 páginas** con censo visible exhaustivo y **33/33** con cierre técnico;
-- en ese alcance quedan **0 candidatos `pending_promotion`**, **0 candidatos estructuralmente `unresolved`** y **0 fronteras `ambiguous`**;
-- la auditoría gramatical registra **370/373 números nominales** con reclamación estructurada; los tres restantes —**127, 178 y 294**— son omisiones materiales documentadas del impreso;
-- al conservar además las **dos reglas impresas como 129**, CHD representa **371/371 unidades gramaticales numeradas efectivamente impresas**;
-- la concordancia gramatical derivada contiene **302 objetos** y **1,215 filas de evidencia explícita**;
-- las incertidumbres semánticas, anafóricas o de microlectura que permanecen dentro de objetos ya estructurados se conservan explícitamente y no contradicen el cierre estructural;
-- no existen objetos `human_verified`; la autoridad de las capas IA-asistidas permanece explícitamente separada de cualquier revisión humana independiente.
+### Remisiones y anáforas
 
-Los totales de Phase II no se mantienen manualmente como una segunda fuente de verdad. Se regeneran desde los estados de página y los `articleId` curatoriales mediante [`scripts/summarize_open_lexicon_work.py`](scripts/summarize_open_lexicon_work.py), cuyo resultado versionado es [`data/lexicon/reconciliation/phase2_open_work_summary.json`](data/lexicon/reconciliation/phase2_open_work_summary.json). Los snapshots históricos almacenados en estados de página conservan valor de procedencia, pero no sustituyen el conteo actual.
+- **150** remisiones canónicas `Buſca`;
+- **60** `exact_unique` bajo igualdad normalizada estricta;
+- **90/90** `not_located` con revisión explícita;
+- **22** recolaciones conservadas como `frozen_open_uncertainty`: 8 A / 4 B / 10 C;
+- **14/14** ocurrencias `Lo miſmo` auditadas fuera del grafo `Buſca`;
+- la capa v1 no fuerza destinos ni resuelve incertidumbres por similitud u OCR.
 
-El cierre de Phase II y sus guardas epistemológicas se documentan en [`docs/PHASE2_COMPLETION_2026-08-21.md`](docs/PHASE2_COMPLETION_2026-08-21.md). El cierre técnico de la numeración gramatical se documenta en [`docs/GRAMMAR_COMPLETION_2026-08-21.md`](docs/GRAMMAR_COMPLETION_2026-08-21.md). El detalle página por página y la cobertura científica se mantienen en [`docs/LEXICON_PROGRESS.md`](docs/LEXICON_PROGRESS.md), [`COVERAGE.md`](COVERAGE.md) y [`ROADMAP.md`](ROADMAP.md).
+### Gramática
+
+- secuencia nominal 1–373;
+- **370/373 números** con reclamación estructurada;
+- 127, 178 y 294 documentados como omisiones materiales del impreso;
+- dos unidades impresas como 129, ambas preservadas;
+- **371/371 unidades numeradas efectivamente impresas** representadas;
+- **302 objetos** en 24 archivos;
+- **1,215 filas de evidencia**.
+
+Consulte [`QUALITY_REPORT.md`](QUALITY_REPORT.md), [`COVERAGE.md`](COVERAGE.md) y [`DATASHEET.md`](DATASHEET.md).
 
 ## Modelo epistemológico
 
-CHD no equipara OCR con transcripción ni reconciliación computacional con edición crítica. La autoridad primaria permanece en `ALC1737`. Las capas derivadas registran su método, procedencia y estado de revisión. `BUE1890`, cuando se utiliza, funciona sólo como reimpresión histórica de control; nunca sustituye silenciosamente una lectura del ejemplar de 1737.
+CHD no equipara OCR con transcripción ni reconciliación computacional con edición crítica. La autoridad primaria permanece en `ALC1737`. `BUE1890`, cuando se usa, funciona como testimonio histórico de control y nunca reemplaza silenciosamente una lectura del ejemplar de 1737.
 
-Los estados `machine_corrected_unverified` y `unresolved` identifican explícitamente el carácter IA-asistido del trabajo. Bajo la política vigente, `humanVerified` permanece en `false`; `human_verified` se conserva únicamente como estado reservado del esquema, no como una etapa futura obligatoria.
+Una capa puede alcanzar **cierre técnico** cuando sus fronteras, continuidades, enlaces, reclamaciones y zonas irresueltas están completamente modeladas dentro del alcance declarado y el QA es satisfactorio. Ese cierre no equivale a autoridad diplomática o filológica humana.
 
-Una página o capa puede alcanzar **cierre técnico** cuando sus fronteras, continuidades, enlaces, reclamaciones estructurales y zonas irresueltas quedan completamente modeladas dentro del alcance declarado y el QA computacional es satisfactorio. Ese cierre no debe confundirse con autoridad diplomática o filológica humana.
+En v1.0.0: **`humanVerified=0`**.
+
+## Modelo de datos
+
+El flujo principal es:
+
+```text
+fuente / metadata
+    ↓
+OCR y transcripción
+    ↓
+candidatos y reconciliación
+    ↓
+artículos y objetos gramaticales canónicos
+    ↓
+revisión / procedencia
+    ↓
+derivados reproducibles
+```
+
+El repositorio congela **22 JSON Schema Draft 2020-12 + 4 metadatos fuente = 26 contratos v1.0.0**. Consulte [`SCHEMA.md`](SCHEMA.md) y [`release/v1_contract_manifest.json`](release/v1_contract_manifest.json).
+
+## Interoperabilidad
+
+La proyección lexicográfica principal de v1.0.0 es **TEI Lex-0 0.9.5**, validada externamente con Jing contra el schema archivado y fijado por SHA-256. La salida contiene 2,302 entradas, 2,221 citas de traducción, 150 remisiones y 60 `@target` estrictos.
+
+CLDF fue evaluado y **deliberadamente diferido** como derivado analítico post-v1. No se considera una carencia: forzarlo como representación primaria podría aplanar la microestructura español→cahíta e introducir decisiones modernas de identidad lingüística que la fuente no demuestra.
+
+## Reproducibilidad y release
+
+La QA de GitHub Actions valida inventarios, IDs, JSON Schema, reconciliación, documentación, derivados, remisiones, recolaciones, `Lo miſmo`, TEI/Lex-0, gramática, freezes y paquetes de release.
+
+La v1.0.0 fija:
+
+- **26 contratos** congelados;
+- **267 archivos científicos / 2,698,997 bytes** congelados byte a byte;
+- tag inmutable `v1.0.0` → `dbcdecf0003ac5a10ae963caf6babdcf5c22128d`;
+- ZIP final publicado: **1,076,296 bytes**;
+- SHA-256 final: **`583183eabb90080dccd1ea63a069e248b28cd3ce41e99ba754ac71ce26586158`**;
+- atestación post-release en [`release/github_release_attestation_v1.0.0.json`](release/github_release_attestation_v1.0.0.json), que reconstruye el paquete desde el tag y compara sus bytes con los assets publicados.
+
+`make qa-surface` añade una guardia específica para que la documentación pública y la metadata machine-readable no deriven de estos hechos canónicos.
 
 ## Arquitectura del repositorio
 
-- `data/source/` — metadatos, manifiestos, paginación y discontinuidades del testimonio;
-- `data/transcription/` — capa de transcripción y control de avance;
-- `data/grammar/` — reglas, paradigmas y construcciones gramaticales estructuradas;
-- `data/lexicon/candidates/` — inventario canónico de fronteras candidatas;
-- `data/lexicon/reconciliation/` — decisiones de frontera, censos visibles y estados de cierre;
-- `data/lexicon/articles/` — artículos históricos estructurados y promociones;
-- `data/lexicon/provenance/` — correcciones versionadas y evidencia de procedencia;
-- `schemas/` — esquemas JSON para validación;
-- `scripts/` — ingestión, extracción, reconstrucción y validación reproducibles;
-- `docs/` — metodología, protocolos, cobertura, decisiones editoriales y documentación científica.
+- `data/source/` — fuente, paginación, segmentación y metadatos;
+- `data/transcription/` — transcripción y estados;
+- `data/grammar/` — reglas, paradigmas y construcciones estructuradas;
+- `data/lexicon/candidates/` — candidatos de fronteras;
+- `data/lexicon/reconciliation/` — decisiones y evidencia de reconciliación;
+- `data/lexicon/articles/` — artículos curatoriales canónicos;
+- `data/lexicon/provenance/` — correcciones y procedencia;
+- `schemas/` — contratos JSON Schema;
+- `scripts/` — extracción, consulta, exportación y validación;
+- `release/` — freezes, intención de publicación y atestaciones;
+- `metadata/` — metadata machine-readable adicional;
+- `docs/` — protocolos, decisiones y documentación científica.
 
-## Reproducibilidad y QA
+## Metadatos, FAIR y calidad
 
-El proyecto incluye validadores de JSONL, control de identificadores lexicográficos, reconstrucción del inventario canónico de candidatos y un flujo de QA en GitHub Actions. El workflow valida además la sintaxis del resumen de Phase II, lo regenera desde las fuentes canónicas y falla si el archivo versionado queda desincronizado. Para gramática genera y comprueba en doble corrida una concordancia de evidencia y una auditoría de cobertura numerada. Una corrida verde verifica consistencia computacional; no certifica corrección filológica humana.
+CHD publica varias capas complementarias:
 
-El cierre de p.177 y de Phase II quedó registrado el 21 de agosto de 2026; el cierre de la cobertura gramatical numerada se confirmó posteriormente ese mismo día con **370/373 números nominales**, siendo los tres huecos restantes omisiones impresas documentadas.
+- [`CITATION.cff`](CITATION.cff) — citación;
+- [`codemeta.json`](codemeta.json) — software;
+- [`project-metadata.json`](project-metadata.json) — perfil integral machine-readable;
+- [`metadata/fair-dataset.jsonld`](metadata/fair-dataset.jsonld) — JSON-LD FAIR complementario;
+- [`FAIR_ASSESSMENT.md`](FAIR_ASSESSMENT.md) — preauditoría FAIR, no certificación;
+- [`QUALITY_REPORT.md`](QUALITY_REPORT.md) — calidad demostrable y límites;
+- [`SCIENTIFIC_REPOSITORY_STANDARD.md`](SCIENTIFIC_REPOSITORY_STANDARD.md) — estándar interno de calidad.
 
-Consulte [`docs/QA_AUTOMATION.md`](docs/QA_AUTOMATION.md), [`docs/LEXICON_RECONCILIATION_PROTOCOL.md`](docs/LEXICON_RECONCILIATION_PROTOCOL.md), [`docs/TRANSCRIPTION_CONVENTIONS.md`](docs/TRANSCRIPTION_CONVENTIONS.md) y [`docs/GRAMMAR_COMPLETION_2026-08-21.md`](docs/GRAMMAR_COMPLETION_2026-08-21.md).
+## Gobernanza y reutilización responsable
 
-## Incertidumbres y límites abiertos
+La publicación histórica no otorga autoridad normativa sobre lenguas o comunidades contemporáneas. Cualquier relación con yaqui, mayo u otras variedades modernas debe incorporarse como una capa analítica separada y sustentada.
 
-El repositorio conserva explícitamente problemas materiales y textuales en lugar de ocultarlos. Entre ellos se encuentran la discontinuidad material registrada entre las páginas digitales 157–158, lecturas de baja confianza en tipografía pequeña y artículos o reglas transpaginales cuya microestructura no puede resolverse con seguridad a partir de la evidencia disponible.
+Véanse [`GOVERNANCE.md`](GOVERNANCE.md), [`EDITORIAL_POLICY.md`](EDITORIAL_POLICY.md), [`CONTRIBUTING.md`](CONTRIBUTING.md) y [`CONTRIBUTORS.md`](CONTRIBUTORS.md).
 
-El hecho de que el vocabulario y la numeración gramatical tengan cierre técnico no convierte las lecturas IA-asistidas en una edición diplomática humana ni resuelve automáticamente todas las remisiones, anáforas o microlecturas.
+## Ecosistema
 
-## Próximo frente científico
+[Rarámuri Digital](https://github.com/fersandovalgtz/raramuri-digital) es el referente metodológico más cercano: comparte trazabilidad, interoperabilidad, QA, metadatos y ciencia abierta, pero su objeto contemporáneo exige una gobernanza lingüística distinta. La comparación se explica en [`docs/ECOSYSTEM.md`](docs/ECOSYSTEM.md).
 
-Con v1.0.0, el frente inmediato deja de ser el cierre estructural del corpus y pasa a **preservación, revisión filológica post-release y explotación científica de los datos**. Las prioridades son:
+## Cita y preservación
 
-1. depositar la release archivada y registrar DOI de versión/Concept DOI cuando sean efectivamente asignados;
-2. reabrir las 22 recolaciones sólo cuando exista cotejo directo del mismo testimonio o revisión filológica humana trazable;
-3. consolidar las 76 evidencias de etiquetas históricas de variedad y ampliar su relación explícita con la gramática;
-4. continuar estudios lingüísticos e historiográficos derivados sin retroproyectar automáticamente categorías modernas sobre `ALC1737`;
-5. evaluar CLDF como derivado analítico post-v1 únicamente cuando la segmentación y la identidad lingüística requeridas estén sustentadas.
+Responsable: **Fernando Sandoval Gutierrez**, Universidad Autónoma de Ciudad Juárez, ORCID [`0000-0002-3168-6725`](https://orcid.org/0000-0002-3168-6725).
 
-## Cita
+La forma canónica de citación se encuentra en [`CITATION.cff`](CITATION.cff). Para reproducibilidad, conserve `v1.0.0` y el commit correspondiente.
 
-Autor del proyecto: **Fernando Sandoval Gutierrez**, Universidad Autónoma de Ciudad Juárez, ORCID `0000-0002-3168-6725`.
+El **DOI permanece pendiente** hasta un depósito archivístico real. El gate externo se rastrea en [issue #169](https://github.com/fersandovalgtz/cahita-historico-digital/issues/169). Ningún DOI se inventa o infiere antes de su asignación.
 
-La forma canónica de citación de v1.0.0 se encuentra en [`CITATION.cff`](CITATION.cff). Para reproducibilidad se recomienda conservar el tag `v1.0.0` y, cuando sea pertinente, el commit exacto utilizado. El DOI se añadirá únicamente después de su asignación archivística efectiva.
+## Licencias
 
-## Licencia
+- software original: **MIT**;
+- datos, metadatos y capas editoriales originales: **CC BY 4.0**;
+- facsímiles, digitalizaciones y materiales de terceros: **no relicenciados** por CHD.
 
-El repositorio declara **CC BY 4.0** para el dataset y la documentación correspondiente. Consulte [`LICENSE`](LICENSE) y [`DATA_LICENSE.md`](DATA_LICENSE.md) para el alcance y las condiciones aplicables.
+Consulte [`LICENSE`](LICENSE) y [`DATA_LICENSE.md`](DATA_LICENSE.md).
 
 ## Principio editorial
 
