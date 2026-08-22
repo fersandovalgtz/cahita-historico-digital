@@ -10,7 +10,7 @@ CHD avanza por capas de evidencia con procedencia, autoridad y criterios de sali
 
 **Estado:** completada para la etapa de investigación activa; mantenimiento continuo.
 
-El repositorio dispone de procedencia, política editorial, licencias, citación, esquemas JSON, estados de autoridad, QA automatizado, exportadores deterministas, control documental y paquete científico reproducible.
+El repositorio dispone de procedencia, política editorial, licencias, citación, esquemas JSON, estados de autoridad, QA automatizado, exportadores deterministas, control documental y paquetes científicos reproducibles.
 
 ## Fase 1 — Ingestión de `ALC1737`
 
@@ -20,13 +20,13 @@ Quedaron fijados el manifiesto de 182 páginas, mapeo de paginación, segmentaci
 
 ## Fase 2 — Transcripción histórico-digital
 
-**Estado:** activa; la cobertura gramatical superficial es continua, pero la edición textual completa no está congelada.
+**Estado:** cobertura técnica suficiente para v1.0; consolidación diplomática integral post-v1.
 
-Hay 128 páginas `full_page`, preliminares y Partes I–IV representadas y estados de autoridad diferenciados. Se mantienen **0 páginas `human_verified`**. La consolidación diplomática integral permanece como trabajo filológico posterior y no bloquea una v1.0 histórico-digital de alcance declarado.
+Hay 128 páginas `full_page`, preliminares y Partes I–IV representadas y estados de autoridad diferenciados. Se mantienen **0 páginas `human_verified`**. La consolidación diplomática integral permanece como trabajo filológico posterior y no bloquea la v1.0 de alcance declarado.
 
 ## Fase 3 — Corpus lexicográfico
 
-**Estado:** **cierre técnico alcanzado; control filológico post-cierre activo.**
+**Estado:** **cierre técnico alcanzado; control filológico post-v1 activo.**
 
 - 2,072/2,072 candidatos canónicos reconstruibles.
 - 2,302 artículos históricos en 211 JSONL.
@@ -39,7 +39,7 @@ Hay 128 páginas `full_page`, preliminares y Partes I–IV representadas y estad
 
 150 remisiones canónicas: 60 `exact_unique`, 90 `not_located`, 4 ciclos estrictos. Las 90 no localizadas tienen revisión explícita: 40 destinos sustentados, 22 recolaciones, 5 candidatos rechazados y 23 destinos no localizados. La vista revisada contiene 100 aristas = 60 estrictas + 40 editoriales.
 
-Las 22 recolaciones están en una cola reproducible: **8 Tier A, 4 Tier B, 10 Tier C**. Para v1.0 quedaron congeladas 22/22 como `frozen_open_uncertainty`: no se seleccionó destino, no se modificó el grafo canónico y `humanVerified=false`. El gate de release está cerrado; la resolución filológica permanece abierta y pasa al backlog post-v1.
+Las 22 recolaciones se conservan en v1.0 como `frozen_open_uncertainty`: 8 A, 4 B y 10 C. No se selecciona destino por esta capa, no se modifica el grafo canónico y `humanVerified=false`. La resolución filológica continúa post-v1.
 
 ### `Lo miſmo`
 
@@ -47,7 +47,7 @@ Las 22 recolaciones están en una cola reproducible: **8 Tier A, 4 Tier B, 10 Ti
 
 ## Fase 4 — Gramática, ejemplos y variación histórica
 
-**Estado:** **cierre técnico alcanzado para la cobertura numerada; consolidación filológica activa.**
+**Estado:** **cierre técnico alcanzado para la cobertura numerada; consolidación filológica post-v1.**
 
 - secuencia nominal 1–373;
 - 370/373 números con reclamación estructurada;
@@ -60,24 +60,22 @@ Las 22 recolaciones están en una cola reproducible: **8 Tier A, 4 Tier B, 10 Ti
 
 ## Fase 5 — Interoperabilidad, contratos y reproducibilidad
 
-**Estado:** **cerrada técnicamente para el alcance de v1.0.**
+**Estado:** **cerrada para v1.0.**
 
 Hitos:
 
 - CI sobre `main` y pull requests;
 - derivados lexicográficos y gramaticales reproducibles;
-- paquete científico reconstruido dos veces byte-a-byte;
 - TEI: 2,302 entradas, 2,221 citas de traducción, 150 remisiones y 60 `@target` estrictos;
 - validación externa con Jing contra TEI Lex-0 0.9.5 archivado;
 - schema Lex-0 fijado por SHA-256 `35e73fef48526634714bdf3d16b924f958fca078a903d0bdc2dd4d7d116d1aaa`;
 - TEI Lex-0 como perfil interoperable primario de v1.0;
 - CLDF diferido como derivado analítico posterior;
-- **22 JSON Schema + 4 metadatos fuente congelados como 26 contratos v1.0**;
+- 22 JSON Schema + 4 metadatos fuente congelados como 26 contratos v1.0;
 - manifiesto de contratos SHA-256 `c0b897b9dbad2107b40db6169d4207bca752c2b84161e0c9c980409d94b86e56`;
-- CI bloquea deriva silenciosa de esos contratos;
+- freeze byte-exacto adicional de artículos, candidatos, revisiones y gramática;
+- CI bloquea deriva silenciosa de contratos y datos científicos congelados;
 - disposición v1.0 de recolaciones validada 22/22, con cero cambios canónicos.
-
-Los metadatos de identidad de release (`CITATION.cff`, `codemeta.json`, versión/tag y DOI) se finalizan desde el commit definitivo porque deben reflejar la identidad de la release.
 
 ## Fase 6 — Investigación comparativa
 
@@ -87,12 +85,17 @@ Las comparaciones con recursos modernos de yaqui/mayo deberán modelarse como ca
 
 ## Fase 7 — Release científica y preservación
 
-**Estado:** **candidata final avanzada; dos gates restantes.**
+**Estado:** **payload v1.0.0 preparado para publicación; preservación archivística pendiente.**
 
-1. **Tag/release:** congelar bytes finales de datos desde el commit definitivo, sincronizar `CITATION.cff`/`codemeta.json`, preparar changelog, reconstruir el ZIP definitivo y registrar su hash antes del tag.
-2. **Preservación:** GitHub Release, depósito archivístico y DOI de versión/Concept DOI cuando corresponda.
+La identidad `1.0.0` está fijada en `CITATION.cff`, `codemeta.json`, `CHANGELOG.md` y notas de release. El paquete estable `cahita-historico-digital-v1.0.0.zip` se construye determinísticamente e incorpora datos canónicos congelados, derivados, manifiestos y checksums.
 
-La infraestructura, interoperabilidad, contratos y disposición de recolaciones ya no son gates abiertos.
+`publish-v1.yml` vuelve a validar el commit definitivo de `main` antes de crear el tag inmutable `v1.0.0` y la GitHub Release estable. El workflow rehúsa mover un tag existente a otro commit.
+
+Después de la publicación GitHub queda un único gate externo:
+
+1. **Preservación:** depósito archivístico, DOI de versión y Concept DOI cuando sean efectivamente asignados.
+
+Hasta entonces `versionDoi=null`, `conceptDoi=null` y `doiInferred=false`.
 
 ## Productos científicos previstos
 
@@ -108,8 +111,9 @@ La infraestructura, interoperabilidad, contratos y disposición de recolaciones 
 
 ## Prioridad inmediata
 
-1. **preparar la candidata final, changelog y metadatos de identidad desde el commit definitivo**;
-2. **crear tag/GitHub Release y ejecutar preservación/DOI**;
-3. **retomar post-v1 el cotejo filológico de las 22 incertidumbres cuando exista imagen verificable**.
+1. **publicar el commit definitivo como `v1.0.0` sólo después de QA completa**;
+2. **depositar la release en un repositorio de preservación y registrar DOI reales**;
+3. **retomar post-v1 el cotejo filológico de las 22 incertidumbres cuando exista evidencia admisible**;
+4. **desarrollar productos académicos y analíticos derivados sin alterar retrospectivamente la evidencia de v1.0**.
 
-Hasta completar los dos gates de release, el proyecto debe permanecer en candidata y no presentarse como edición filológica humana.
+La v1.0.0 se presenta como release científica técnica y reproducible dentro de su alcance documentado, no como edición filológica humana integral.
