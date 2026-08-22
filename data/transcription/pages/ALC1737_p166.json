@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 166,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\n[continuación de p.165] Paga tal. Bebetu.\nPaja generalmente. Baſo.\nPalabra. Noqui.\nPalma arbol conocido. Taco.\nPalma otra. Ilitaco.\nPalma de la mano. Mambetari.\nPalo. Cuta.\nPalo para eſcarbar tierra. Buſca coa.\nPaletilla del brazo. Hapari.\nPalillo oloroſo. Buſca olor.\nPaloma torcaz. Huocou.\nPaloma parda. Meretau.\nPaloma. Batui.\nPaloma. Omocoli.\nPaloma. Cucu.\nPalomilla. Baceſela.\nPalpar con las manos. Lauti aetmama.\nPan generalmente. Buabuame.\nPanza. Tona.\nPandearſe. Buebuec.\nPaño por texido. Paium.\nPaño tener en la cara. Eboa.\nPantanos aver. Huorote.\nPantorrilla. Huotima.\nPara qué? Huabechibo?\nPararſe ponerſe en pie. Quictec.\nPararſe el que corre. Quictec.\nPardo color. Cueco.\nParecer lo perdido. Teibuac.\n\n[columna derecha]\nParecerſe à otro. Alebenai.\nPareja coſa. Nanauchi.\nPares de la que pare. [forma incierta].\nParida. Aſoari.\nParir. Aſoac.\nPariente. Ahuahuatce.\nParlar. Nauetcho.\nPartear, ayudar à parir. Aſo-amtania.\nPartir en partes. Harecatana achutia.\nParlero. Eetebo.\nPaſqua florida. Thaſa--Paſco.\nPaſqua de Navidad. Navilam Paſco.\nPaſſar la flecha el blanco ſaliendo toda. Naburuti.\nPaſſar la flecha el blanco quedando atraveſada en el cuerpo. Aethuec.\nPaſſar à los otros que caminan. [forma incierta].\nPaſſar el Rio à nado. Bahume.\nPaſſar el Rio ſin nadar. Baſu, l, bahuate.\nPaſſar adelante. Huaſutihueie.\nPaſſar fruta. Sopichi, l, bechecori.\nPaſſearſe, divertirſe. Quial-huerama, l, paſialoa.\nPaſſion trabajoſa. Authiocotane.\nPenar. Surocame.\nPaſſo [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuation and final catchword explicit; uncertain forms are not silently reconstructed.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "A small number of P-entry forms remain typographically ambiguous and require second visual collation."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Light-to-moderate show-through is present; page structure and headword inventory remain clear.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-166", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
