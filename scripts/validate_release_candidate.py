@@ -6,13 +6,18 @@ import tempfile
 import zipfile
 from pathlib import Path
 
-from build_release_candidate import BUNDLE_DIRNAME, MANIFEST_NAME, ZIP_NAME, build
+from build_release_candidate import (
+    BUNDLE_DIRNAME,
+    EXPECTED_CONTRACT_FREEZE_SHA256,
+    MANIFEST_NAME,
+    ZIP_NAME,
+    build,
+)
 
 EXPECTED_SCHEMA_URL = "https://lex-0.org/releases/v0.9.5/schema/lex-0.rng"
 EXPECTED_SCHEMA_SHA256 = "35e73fef48526634714bdf3d16b924f958fca078a903d0bdc2dd4d7d116d1aaa"
 EXPECTED_OPEN_GATES = {
     "direct_facsimile_recollation_of_22_crossreference_cases",
-    "final_schema_and_metadata_freeze",
     "final_release_tag_and_changelog",
     "archival_deposit_and_version_doi",
 }
@@ -22,6 +27,17 @@ EXPECTED_INTEROPERABILITY = {
     "cldfStatus": "deferred_post_v1_analytic_derivative",
     "decisionDocument": "docs/CLDF_SCOPE_DECISION_V1_0.md",
     "canonicalDataReplacedByInteroperabilityFormats": False,
+}
+EXPECTED_CONTRACT_FREEZE = {
+    "freezeId": "CHD-v1-contracts-2026-08-21",
+    "manifestPath": "release/v1_contract_manifest.json",
+    "manifestSha256": EXPECTED_CONTRACT_FREEZE_SHA256,
+    "schemaContractCount": 22,
+    "sourceScopeMetadataCount": 4,
+    "contractCount": 26,
+    "exactBytesFrozenForV1": True,
+    "silentContractChangesAllowed": False,
+    "releaseIdentityMetadataDeferredToTagGate": True,
 }
 
 
@@ -41,9 +57,11 @@ def validate_manifest(manifest: dict) -> None:
     if set(manifest["openGates"]) != EXPECTED_OPEN_GATES:
         raise SystemExit(f"release-candidate open gates drifted: {manifest['openGates']}")
     if manifest.get("interoperabilityDecision") != EXPECTED_INTEROPERABILITY:
+        raise SystemExit("release-candidate interoperability decision drifted")
+    if manifest.get("contractFreeze") != EXPECTED_CONTRACT_FREEZE:
         raise SystemExit(
-            "release-candidate interoperability decision drifted: "
-            f"{manifest.get('interoperabilityDecision')} != {EXPECTED_INTEROPERABILITY}"
+            "release-candidate v1 contract freeze drifted: "
+            f"{manifest.get('contractFreeze')} != {EXPECTED_CONTRACT_FREEZE}"
         )
 
     summary = manifest["summary"]
@@ -67,10 +85,8 @@ def validate_manifest(manifest: dict) -> None:
     }
     if summary != expected:
         raise SystemExit(f"release-candidate scientific summary drifted: {summary} != {expected}")
-    if manifest["artifactFileCount"] <= 20:
-        raise SystemExit("release candidate unexpectedly contains too few artifacts")
-    if manifest["artifactBytes"] <= 0:
-        raise SystemExit("release candidate artifact byte count is invalid")
+    if manifest["artifactFileCount"] <= 20 or manifest["artifactBytes"] <= 0:
+        raise SystemExit("release candidate artifact inventory is invalid")
 
 
 def validate_zip(result: dict) -> None:
@@ -82,12 +98,14 @@ def validate_zip(result: dict) -> None:
             raise SystemExit("release-candidate ZIP members are not sorted deterministically")
         if len(names) != manifest["artifactFileCount"] + 1:
             raise SystemExit("ZIP member count disagrees with package manifest")
-        expected_manifest_name = f"{BUNDLE_DIRNAME}/{MANIFEST_NAME}"
-        if expected_manifest_name not in names:
-            raise SystemExit("release-candidate ZIP is missing top-level manifest")
-        decision_name = f"{BUNDLE_DIRNAME}/project/docs/CLDF_SCOPE_DECISION_V1_0.md"
-        if decision_name not in names:
-            raise SystemExit("release-candidate ZIP is missing the CLDF scope decision")
+        required = {
+            f"{BUNDLE_DIRNAME}/{MANIFEST_NAME}",
+            f"{BUNDLE_DIRNAME}/project/docs/CLDF_SCOPE_DECISION_V1_0.md",
+            f"{BUNDLE_DIRNAME}/project/release/v1_contract_manifest.json",
+        }
+        missing = sorted(required - set(names))
+        if missing:
+            raise SystemExit(f"release-candidate ZIP missing required release records: {missing}")
         for info in archive.infolist():
             if info.date_time != (1980, 1, 1, 0, 0, 0):
                 raise SystemExit(f"non-deterministic ZIP timestamp for {info.filename}")
@@ -121,7 +139,7 @@ def main() -> None:
             f"artifactBytes={first['manifest']['artifactBytes']}; "
             f"openGates={len(first['manifest']['openGates'])}; "
             "Lex0ConformanceClaimed=true; CLDFRequiredForV1=false; "
-            "releaseReady=false; humanVerified=0"
+            "contractsFrozen=26; releaseReady=false; humanVerified=0"
         )
 
 
