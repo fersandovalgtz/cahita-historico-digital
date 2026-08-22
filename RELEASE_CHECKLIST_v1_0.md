@@ -2,7 +2,7 @@
 
 Estado de preparación para una primera versión científica estable. Actualización: **21 de agosto de 2026**.
 
-Este checklist distingue entre criterios ya demostrados por el estado canónico/CI y gates que sólo pueden cerrarse al congelar una release. Una corrida verde no equivale a validación filológica humana.
+Este checklist distingue criterios demostrados por datos/CI de gates que sólo se cierran al congelar la release. Una corrida verde no equivale a validación filológica humana.
 
 ## Identidad del recurso
 
@@ -13,44 +13,44 @@ Este checklist distingue entre criterios ya demostrados por el estado canónico/
 
 ## Núcleo de datos
 
-- [x] Vocabulario p.133–177 con cierre técnico: 45/45 páginas reconciliadas; Phase II 33/33; 2,302 artículos curatoriales
-- [x] Inventario canónico de candidatos reconstruible: 2,072/2,072
-- [x] Gramática numerada estructuralmente cubierta: 371/371 unidades realmente impresas representadas
-- [x] Remisiones `Buſca` inventariadas y revisión inicial cerrada: 150 referencias; 90/90 `not_located` revisadas
-- [x] Fórmula histórica `Lo miſmo` separada del grafo de remisiones y auditada: 14/14 ocurrencias
-- [ ] Completar o congelar explícitamente la política de los 22 casos `source_or_destination_requires_recollation`
-- [ ] Congelar versión canónica de datos para release candidate
-- [ ] Documentar cobertura y limitaciones definitivas del alcance v1.0
+- [x] Vocabulario p.133–177 con cierre técnico: 45/45 páginas; 2,302 artículos curatoriales
+- [x] Inventario canónico reconstruible: 2,072/2,072 candidatos
+- [x] Gramática numerada: 371/371 unidades realmente impresas representadas
+- [x] Remisiones `Buſca`: 150 referencias; 90/90 `not_located` con revisión inicial explícita
+- [x] Fórmula `Lo miſmo`: 14/14 ocurrencias auditadas fuera del grafo de remisiones
+- [x] Cola de recolación explícita y reproducible: 22 casos = 8 A / 4 B / 10 C
+- [ ] Resolver por facsímil o congelar explícitamente como incertidumbres documentadas los 22 casos de recolación
+- [ ] Congelar versión canónica final de datos y límites del alcance v1.0
 
 ## Interoperabilidad
 
-- [x] Exportaciones derivadas JSON/JSONL/CSV validadas y deterministas
-- [x] JSON Schema y validadores activos sobre datos curatoriales/revisiones
-- [ ] Estabilizar/versionar formalmente los esquemas JSON de producción para v1.0
-- [ ] Definir y validar perfil TEI final
-- [ ] Evaluar y, si procede, producir vista CLDF / Lex-0 derivada
+- [x] Exportaciones JSON/JSONL/CSV deterministas
+- [x] JSON Schema y validadores activos
+- [x] Perfil TEI Lex-0 0.9.5 definido
+- [x] Exportación TEI de 2,302 entradas validada externamente con Jing contra schema archivado y fijado por SHA-256
+- [ ] Decidir formalmente si CLDF forma parte de v1.0 o queda como vista analítica futura
+- [ ] Congelar/versionar formalmente esquemas JSON de producción para v1.0
 
 ## Reproducibilidad
 
-- [x] CI/QA completo sobre `main` y pull requests
-- [x] Doble corrida byte-a-byte de los principales exportadores lexicográficos y gramaticales
-- [x] Hashes SHA-256 generados y comprobados para derivados actuales
-- [ ] Ejecutar y documentar un pipeline de release desde checkout limpio hasta paquete final
-- [ ] Generar paquete reproducible final de release
-- [ ] Registrar hashes del paquete congelado de release
-- [ ] Registrar commit/tag de release
+- [x] CI/QA sobre `main` y pull requests
+- [x] Doble corrida byte-a-byte de los principales exportadores
+- [x] Hashes SHA-256 comprobados
+- [x] Pipeline de release candidate desde checkout limpio
+- [x] Paquete reproducible de release candidate con manifiesto y hashes
+- [ ] Registrar commit/tag y changelog final de release
 
 ## Preservación
 
-- [ ] Crear release GitHub
-- [ ] Depositar versión archivada en Zenodo u otro repositorio de preservación acordado
+- [ ] Crear GitHub Release estable
+- [ ] Depositar versión archivada en Zenodo u otro repositorio acordado
 - [ ] Obtener DOI de versión y registrar Concept DOI cuando corresponda
-- [ ] Sincronizar `CITATION.cff`, `codemeta.json`, changelog y metadatos de versión con el tag final
+- [ ] Sincronizar `CITATION.cff`, `codemeta.json`, changelog y metadatos con el tag final
 
 ## Estado de preparación
 
-El núcleo científico-computacional está cerrado en sus unidades básicas y sus derivados principales son reproducibles. Los gates pendientes se concentran en control textual de los 22 casos de recolación, interoperabilidad final, empaquetado reproducible y preservación.
+El núcleo de datos, las exportaciones principales, el perfil TEI Lex-0 y la infraestructura de empaquetado reproducible están técnicamente cerrados. Los gates reales se concentran ahora en la política/cotejo de 22 recolaciones, decisión CLDF, congelamiento final de contratos y metadatos, y preservación.
 
-**Estimación operativa actual para v1.0 técnica/publicable: 87–90 % completado.** Esta cifra no representa porcentaje de validación filológica humana: el corpus mantiene `humanVerified=0` donde corresponde y esa validación constituye una fase científica separada.
+**Estimación operativa actual para v1.0 técnica/publicable: 91–93 % completado.** El intervalo no representa validación filológica humana: `humanVerified=0` se mantiene donde corresponde y esa validación pertenece a otra fase científica.
 
-La versión continúa siendo desarrollo (`0.2.0-dev`) hasta completar los gates de release candidate y preservación.
+La versión continúa siendo desarrollo (`0.2.0-dev`) hasta cerrar los gates restantes y congelar una candidata final.
