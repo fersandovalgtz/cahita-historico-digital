@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 173,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.172] Rubio, ó rubia coſa. Ciquilim chonec.\nRucula. Buſca redonda coſa.\n\nS.\nSaber generalmente. Hunac ea.\nSabio, ó ſabidor. Hunac eeme.\nSabiduria. Hita--taiame.\nSaber el manjar. Quiabua.\nSacar del corral de la caſa. Corapo--ſebuahima.\nSacar vino. vino--tahua.\nSacar de la agua. Bapo ichua-hima.\nSacar pollos el Ave. [forma incierta].\nSacudir. Auioioa.\nSaeta. Huihua.\nSahumar. Toporo--[forma incierta] utia.\nSahumerio. Toporo.\nSalitral. Ompare.\nSal. Ona.\nSalar. Aontua.\nSalario. Tenita coba.\nSalir de la caſa. Icuſica.\nSalir á nado. Ieviepſac.\nSaliva. Buſca eſcupitina.\nSaltar. Buſca brincar.\nSaludar. Tchote.\nSalvar. Buſca redimir.\n\n[columna derecha]\nSanar á otro. Buſca curar.\nSangrar. Aobo ieibiuota.\nSanguijuela. Natochi.\nSanja aver. Chahut.\nSanja abrir. Achahutia.\nSapo. Buboqui.\nSarna. Buſca roña.\nSalir del agua. Beſaieuſica.\nSauze arbol. Huate.\nSazonarſe la fruta. Buſca madura eſtar.\nSecar. Abuaciba.\nSeca coſa. Huaquec.\nSecarſe la llaga. Beſaſihuaquec.\nSed. Baemuque.\nSeguir. Anebaſe.\nSemana. Senu Domingo.\nSembrar. Echía.\nSemilla. Echimu.\nSemilla del hombre. Hiabarim.\nSentarſe. Iatee.\nSentir por el tacto. Inca.\nSentirſe apeſadumbrarſe. Buei ſuroca.\nSeñal. Caelauſi.\nSeñalar. Caelauſimachi.\nSepultar. Buſca enterrar.\nSequedad. Ania huaquia.\nSer. Buſca al fin.\nServir. Tecoc.\nServicio tal. Tecocame.\nSeſos. Oream.\nSebo ſin derretir. Auxiaque chorina--buame.\nSi [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; continuation from p.172 and final catchword explicit; doubtful forms remain unresolved.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple S-entry forms", "note": "Several vocabulary forms on p.173 remain typographically ambiguous and require second visual collation; no form is supplied by analogy."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Show-through and local ink degradation affect isolated forms without obscuring the page structure.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-173", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR/text layer used only as localization scaffold; no independent human verification", "processedAt": null}
+}
