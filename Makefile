@@ -1,18 +1,20 @@
-.PHONY: help stats query exports cldf cldf-qa variation variation-qa qa-surface qa qa-full release-check
+.PHONY: help stats query exports cldf cldf-qa variation variation-qa irregularities irregularities-qa qa-surface qa qa-full release-check
 
 help:
 	@echo "Cahíta Histórico Digital — comandos de trabajo"
-	@echo "  make stats         Estadísticas del corpus canónico"
-	@echo "  make query Q=...   Consulta conservadora del léxico"
-	@echo "  make exports       Genera exportaciones léxicas consolidadas"
-	@echo "  make cldf          Genera la proyección CLDF Dictionary post-v1"
-	@echo "  make cldf-qa       Genera y valida CLDF con pycldf + invariantes CHD"
-	@echo "  make variation     Genera el índice histórico de variación post-v1"
-	@echo "  make variation-qa  Valida determinismo, schema, cobertura y autoridad"
-	@echo "  make qa-surface    Valida metadatos/documentación pública"
-	@echo "  make qa            Ejecuta validadores principales locales"
-	@echo "  make qa-full       QA local + Lex-0 externo + v1 publicada (requiere jing)"
-	@echo "  make release-check Reconstruye/valida v1.0.0 desde el tag inmutable"
+	@echo "  make stats              Estadísticas del corpus canónico"
+	@echo "  make query Q=...        Consulta conservadora del léxico"
+	@echo "  make exports            Genera exportaciones léxicas consolidadas"
+	@echo "  make cldf               Genera la proyección CLDF Dictionary post-v1"
+	@echo "  make cldf-qa            Genera y valida CLDF con pycldf + invariantes CHD"
+	@echo "  make variation          Genera el índice histórico de variación post-v1"
+	@echo "  make variation-qa       Valida determinismo, schema, cobertura y autoridad"
+	@echo "  make irregularities     Genera el derivado post-v1 de irregularidades editoriales"
+	@echo "  make irregularities-qa  Valida determinismo, schema e invariantes editoriales"
+	@echo "  make qa-surface         Valida metadatos/documentación pública"
+	@echo "  make qa                 Ejecuta validadores principales locales"
+	@echo "  make qa-full            QA local + Lex-0 externo + v1 publicada (requiere jing)"
+	@echo "  make release-check      Reconstruye/valida v1.0.0 desde el tag inmutable"
 
 stats:
 	python scripts/query_lexicon.py --stats
@@ -37,6 +39,12 @@ variation:
 variation-qa:
 	python scripts/validate_historical_variation_index.py
 
+irregularities:
+	python scripts/export_editorial_irregularities.py --out-dir build/editorial-irregularities
+
+irregularities-qa:
+	python scripts/validate_editorial_irregularities.py
+
 qa-surface:
 	python scripts/validate_repository_surface.py
 	python scripts/validate_documentation_links.py
@@ -52,6 +60,7 @@ qa: qa-surface
 	python scripts/validate_lo_mismo_reviews.py
 	python scripts/validate_tei_export.py
 	python scripts/validate_grammar_exports.py
+	python scripts/validate_editorial_irregularities.py
 	python scripts/validate_v1_contract_freeze.py
 	python scripts/validate_v1_data_freeze.py
 
