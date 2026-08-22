@@ -1,58 +1,51 @@
-# CHD — perfil TEI lexicográfico experimental v0.1
+# CHD — perfil TEI Lex-0 0.9.5
 
-Fecha: 21 de agosto de 2026.
+Fecha de corte: 21 de agosto de 2026.
 
-## Objetivo
+## Estado
 
-Este perfil introduce una vista TEI P5 determinista del vocabulario histórico de `ALC1737`. La proyección busca compatibilidad conceptual con las prácticas actuales de diccionarios TEI y con **TEI Lex-0 0.9.5**, pero **no declara todavía conformidad Lex-0**: falta incorporar una validación externa contra el schema oficial de Lex-0 como gate independiente.
+CHD dispone de una vista TEI P5 determinista del vocabulario histórico de `ALC1737` que **valida contra el Relax NG oficial archivado de TEI Lex-0 0.9.5**. El JSONL curatorial continúa siendo la representación canónica; TEI es un derivado interoperable reconstruible.
 
-Referencias de diseño:
+La validación externa usa exclusivamente:
 
-- TEI P5 Dictionaries: https://tei-c.org/release/doc/tei-p5-doc/en/html/DI.html
-- TEI Lex-0 0.9.5: https://lex0.org/
+- versión: **TEI Lex-0 0.9.5**;
+- schema: `https://lex-0.org/releases/v0.9.5/schema/lex-0.rng`;
+- tamaño observado: **381,270 bytes**;
+- SHA-256 fijado: `35e73fef48526634714bdf3d16b924f958fca078a903d0bdc2dd4d7d116d1aaa`;
+- validador: **Jing**.
 
-## Principios
+La URL móvil `https://lex-0.org/schema/lex-0.rng` produjo bytes distintos durante el sondeo y por ello no se usa como referencia reproducible. El CI descarga la copia archivada, comprueba el SHA-256 antes de validarla y falla si el schema cambia o si el XML deja de cumplirlo.
 
-1. El JSONL curatorial sigue siendo la representación canónica de CHD; TEI es un derivado reproducible.
-2. Cada artículo histórico se proyecta como `<entry type="mainEntry" xml:lang="es">` con `xml:id` igual al `articleId` persistente.
-3. La guía castellana se proyecta como `<form type="lemma"><orth>…</orth></form>`.
-4. Las formas históricas etiquetadas por la fuente como cahítas se representan como `<cit type="translation"><quote xml:lang="und">…</quote></cit>`.
-5. `xml:lang="und"` es deliberado: el exportador no identifica automáticamente el rótulo histórico `Cahita` con una lengua moderna ni asigna por analogía un código ISO contemporáneo.
-6. Las remisiones `Buſca` se conservan con `<xr type="related"><lbl>Buſca</lbl><ref type="entry">…</ref></xr>`.
-7. Sólo las **60 resoluciones estrictas `exact_unique`** reciben `ref/@target`. Las 90 remisiones `not_located` permanecen como referencias sin puntero.
-8. Las **40 aristas editoriales** de la vista revisada no se incorporan a esta proyección canónica inicial; su autoridad sigue diferenciada de la igualdad estricta.
-9. Las fórmulas `Lo miſmo` no se transforman en remisiones ni en formas cahítas; permanecen en la transcripción histórica y su capa de revisión propia.
-10. Cada entrada incluye localización, transcripción histórica y estado CHD como notas derivadas para preservar trazabilidad.
+## Proyección vigente
 
-## Cabecera TEI
+La exportación validada contiene:
 
-La cabecera se deriva de `data/source/alc1737/metadata.json` y registra:
+- **2,302** `<entry type="mainEntry">` con `xml:id` persistente;
+- **2,221** citas de traducción;
+- **150** remisiones históricas `Buſca`;
+- **60** `ref/@target` correspondientes únicamente a resoluciones estrictas `exact_unique`;
+- XML de **1,391,422 bytes**;
+- SHA-256 del XML validado: `bad06dad39f216b8dde661b4219845c4c19db945bdfbc4478ff5e0846b72e828`.
 
-- título del recurso derivado;
-- responsabilidad CHD;
-- licencia de datos/capas originales CC BY 4.0, sin relicenciar reproducciones históricas de terceros;
-- descripción bibliográfica de `ALC1737`;
-- declaración editorial de no inferencia;
-- español como working language;
-- `und` como etiqueta técnica de la lengua meta histórica no normalizada.
+El elemento raíz declara `type="lex-0"`. La descripción bibliográfica del testimonio sigue la estructura exigida por el perfil, y la licencia de las capas originales CHD se registra en `availability/licence` sin relicenciar el facsímil histórico.
 
-La autoría histórica disputada no se resuelve en la exportación: la política de CHD continúa preservando el anonimato de portada y separando las atribuciones secundarias.
+## Principios de autoridad
 
-## QA inicial
+1. El JSONL curatorial sigue siendo canónico; TEI no sustituye los objetos CHD.
+2. La guía castellana se proyecta como lema histórico.
+3. Las formas de lengua meta conservan `xml:lang="und"`: el rótulo histórico `Cahita` no se equipara automáticamente con una identidad lingüística moderna ni recibe un código ISO contemporáneo por analogía.
+4. Las 40 aristas editoriales de la vista revisada no se convierten en `@target` canónicos.
+5. No se incorporan destinos fuzzy, equivalencia semántica, cognación ni préstamo inferidos.
+6. Las 14 fórmulas `Lo miſmo` permanecen fuera del grafo de remisiones.
+7. Localización, transcripción histórica y estado CHD se preservan como trazabilidad derivada.
+8. `humanVerified=0` continúa siendo independiente de la conformidad XML: un documento válido Lex-0 no equivale a colación filológica humana.
 
-`scripts/validate_tei_export.py` exige:
+## QA
 
-- doble exportación byte-a-byte idéntica;
-- XML bien formado en namespace TEI;
-- 2,302 `<entry>` con `xml:id` únicos;
-- una lemma `<orth>` por artículo;
-- todas las formas de lengua meta con `xml:lang="und"`;
-- 150 remisiones canónicas;
-- exactamente 60 `@target` estrictos y todos resolubles a un `xml:id` exportado;
-- ninguna arista editorial o fuzzy;
-- ninguna inferencia de identidad lingüística moderna, préstamo o equivalencia semántica;
-- `teiLex0ConformanceClaimed=false` hasta incorporar validación externa.
+`scripts/validate_tei_export.py` ejecuta dos exportaciones y exige igualdad byte-a-byte, IDs únicos, conteos canónicos, 60 targets estrictos resolubles y todas las guardas de no inferencia.
 
-## Siguiente gate TEI
+`scripts/validate_tei_lex0_external.sh` constituye el gate externo: descarga el schema archivado 0.9.5, verifica el hash fijado y ejecuta Jing sobre un XML recién generado. `CHD QA` instala Jing y ejecuta ambos validadores en pull requests y `main`.
 
-Antes de marcar TEI como cerrado para v1.0 debe ejecutarse validación contra el **schema estable de TEI Lex-0 0.9.5** y corregirse cualquier incompatibilidad del perfil. Sólo después debe cambiarse la bandera de conformidad. Si alguna restricción Lex-0 entra en conflicto con la fidelidad histórica de CHD, debe documentarse una personalización o una desviación explícita; no debe alterarse silenciosamente la fuente para satisfacer el schema.
+## Alcance de la conformidad
+
+La bandera `teiLex0ConformanceClaimed=true` significa que **los bytes producidos por el exportador pasan el schema oficial archivado 0.9.5 dentro del CI reproducible de CHD**. No significa validación lingüística moderna, identificación taxonómica de la lengua histórica ni certificación filológica humana.
