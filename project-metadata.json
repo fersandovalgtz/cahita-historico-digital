@@ -28,17 +28,10 @@
   "language_object": {
     "label": "Cahita / cahíta histórico, denominación de la fuente",
     "iso_639_3": null,
-    "historical_labels_in_source": [
-      "Hiaqui",
-      "Mayo",
-      "Thehueco"
-    ],
+    "historical_labels_in_source": ["Hiaqui", "Mayo", "Thehueco"],
     "scope_note": "CHD preserves historical labels as documentary evidence and does not infer a single modern ISO 639-3 code or automatic one-to-one mapping to contemporary linguistic identities."
   },
-  "guide_language": {
-    "code": "es",
-    "label": "español"
-  },
+  "guide_language": {"code": "es", "label": "español"},
   "metrics": {
     "canonical_candidates": 2072,
     "historical_lexical_articles": 2302,
@@ -82,7 +75,8 @@
   "licenses": {
     "software": "MIT",
     "original_data_metadata_editorial_layers": "CC-BY-4.0",
-    "third_party_materials": "not relicensed by CHD"
+    "third_party_materials": "not relicensed by CHD",
+    "licensing_matrix": "LICENSING.md"
   },
   "persistent_identifiers": {
     "doi": null,
@@ -101,18 +95,20 @@
     "fair_assessment": "FAIR_ASSESSMENT.md",
     "repository_standard": "SCIENTIFIC_REPOSITORY_STANDARD.md",
     "data_products": "docs/DATA_PRODUCTS.md",
-    "ecosystem": "docs/ECOSYSTEM.md"
+    "reproducibility": "docs/REPRODUCIBILITY.md",
+    "ecosystem": "docs/ECOSYSTEM.md",
+    "licensing": "LICENSING.md",
+    "security": "SECURITY.md",
+    "bibliography": "references.bib"
   },
   "academic_identity": {
     "maintainer": "Fernando Sandoval Gutierrez",
     "orcid": "https://orcid.org/0000-0002-3168-6725",
     "affiliation": "Universidad Autónoma de Ciudad Juárez"
   },
-  "related_repositories": [
-    {
-      "name": "Rarámuri Digital",
-      "url": "https://github.com/fersandovalgtz/raramuri-digital",
-      "relation": "methodological and digital-linguistic sibling; contemporary lexicographic infrastructure with different governance and language-identity requirements"
-    }
-  ]
+  "related_repositories": [{
+    "name": "Rarámuri Digital",
+    "url": "https://github.com/fersandovalgtz/raramuri-digital",
+    "relation": "methodological and digital-linguistic sibling; contemporary lexicographic infrastructure with different governance and language-identity requirements"
+  }]
 }
