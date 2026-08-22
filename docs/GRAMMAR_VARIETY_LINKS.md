@@ -24,6 +24,21 @@ Por diseño:
 - `dialectTaxonomyInferred=false`;
 - `humanVerified=false`.
 
+Las grafías de `labelsRaw` se filtran además por su propia `labelClass`: un enlace Hiaqui sólo puede conservar `Hiaqui/Hiaquis`, uno Mayo `Mayo/Mayos/Mayes`, uno Thehueco las grafías históricas correspondientes, etc. El QA rechaza contaminación cruzada de etiquetas entre enlaces.
+
+## Censo terminal actual
+
+Sobre el índice histórico vigente, la capa produce de forma determinista:
+
+- **33 enlaces objeto × etiqueta documental**;
+- **19 objetos gramaticales únicos**;
+- **52/52 evidencias gramaticales explícitas upstream enlazadas**;
+- **0 evidencias gramaticales explícitas sin enlace**;
+- clases de enlace: **Hiaqui 10, Thehueco 9, Mayo 7, Naciones 6 y Cynaloa 1**;
+- tipos de registro de enlace: **21 de regla, 5 de paradigma, 2 del sistema numeral y 5 de otros objetos gramaticales**.
+
+Estos conteos expresan enlaces documentales, no cantidades de lenguas, dialectos o fenómenos modernos.
+
 ## Objetos y ejemplos de cobertura
 
 La capa incluye tanto reglas numeradas como paradigmas cuando contienen atribución histórica explícita. Entre los casos que el QA exige conservar se encuentran:
@@ -81,6 +96,7 @@ construye la capa dos veces y exige igualdad byte a byte de JSONL, CSV y manifie
 - valida todos los registros contra `schemas/post-v1/grammar-variety-link.schema.json`;
 - exige cobertura completa de la evidencia gramatical upstream;
 - comprueba vínculos documentales conocidos en reglas y paradigmas;
+- exige que cada `labelsRaw` pertenezca exclusivamente a su `labelClass`;
 - impide enlaces por proximidad de página o similitud lingüística;
 - bloquea inferencia de identidad moderna o taxonomía dialectal;
 - bloquea cualquier elevación de `humanVerified`.
