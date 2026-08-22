@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 162,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\n[continuación de p.161] Lucero. Tobuapo, l, aioa.\nMedia coſa la mitad. Naſucu.\nMedio dia, adv. Lutulacatec.\nMedicina, ò medicamento. Hitoa.\nMedida qualquiera. Hunateria.\nMedir generalmente. Hunate.\nMelon. Manari.\nMellar el cuchillo. Buaumu-chitec.\nMemoria. Aubuate.\nMenear algo. Hita naucitia.\nMenear los parpados. [forma incierta].\nMenear los labios. Huicucutiane.\nMenear la cabeza. Acobaioa.\nMeneſter ſer. Ahuatia -- oobec.\nMencionar. Harequianoca.\nMenospreciar. Caitapo -- abicha.\nMentar à alguno. Buſca mencionar.\nMentir. Aranoquichi.\nMentira. Aranoquichibuame.\nMentiroſo. Aranoquichi.\nMercar. Ahinu.\nMercaduria. Hinuapo.\nMercador. Hinuime.\nMercado aver. Hinuri.\nMercenario correo. [forma incierta].\nMerecer. Hitamabare.\nMermar la coſa. Sumuc, l, alequi.\n\n[columna derecha]\nMes. Mecha, l, [forma incierta].\nMeſſar la barba. Himſimet -- huiſu.\nMeſſar los cabellos. Chonime huiſu.\nMeſtruo baxarle à la muger. Oobo.\nMetal. Sali.\nMeter en el apoſento, ò en el corral. Aquibacha.\nMeter como en la caxa. Caſapo aquibacha.\nMeter en la bolſa. Boſapo aquibacha.\nMeter como el hilo en la aguja. Aſoa.\nMextila de la cara. [forma incierta].\nMeſquino. Hitacoarima.\nMiedo. Mahabui.\nMiedoſo. Mahabueme.\nMiedo tener. Mahabuene.\nMiel de Avejas. Mumuſitoru.\nMiel hazer las Abejas. Sitariboa.\nMiembro del hombre. [forma incierta].\nMierda. Buita.\nMirar. Abicha.\nMina. Lo miſmo.\nMitad de alguna coſa. Buſca media.\nMirar ſaliendo de lo obſcuro. [forma incierta].\nMoco de narizes. Choomi.\nMozo [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; continuation from p.161 and final catchword explicit; uncertain forms are not silently normalized.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several M-entry forms remain typographically ambiguous and are explicitly reserved for second visual collation."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Moderate reverse-side show-through affects individual letters while leaving the page structure and headword inventory recoverable.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-162", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
