@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 163,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.162] Mozo de edad. Buſca mancebo.\nMofar, eſcarnecer. Buſca menoſpreciar.\nMoho como de pan. Copoſibuec.\nMoho como de hierro. Copoſibuec.\nMojarſe. Comonac.\nMojarſe cayendo en el agua. Bapo buechecacomona.\nMoler. Tuſe.\nMoledor de maiz. Mata.\nMano ſuya. Tutua.\nMolendero el que muele. Tuſeme.\nMondar algo, como habas, papas, &c. Hitabuſa.\nMonte. Pochoi.\nMontear. Buſca cazar.\nMorar. Home.\nMorciegalo Ave nocturna. Soche.\nMorado color. Cutco.\nMorder. Quique.\nMordedura. Quiri.\nMorir. Buſca acabarſe la vida.\nMorirſe de frio. Buſca frio tener.\nMoſca. Secbori.\nMoſca. Tecaſebora.\nMoſquito, que llaman gegen. Curu.\nMoſquito otro, que haze ruido. Hua.\n\n[columna derecha]\nMoſquito otro, que ſe mete en los ojos. Huotepoli.\nMoſquito otro. Sebehuoo.\nMoſtrar algo. Hita biuria.\nMoſtrar con el dedo. Buſca apuntar.\nMoverſe, menearſe. Huan-buante.\nMuchas vezes. Buruſibua.\nMuchacho. uſi.\nMucho. Buru.\nMudar los dientes. Tambue-che.\nMudar poniendo una coſa en lugar de otra. Buſca feriar.\nMuy mucho. [forma incierta].\nMuy tierna. Taluſe.\nMudo. Canoqui.\nMuela. Tampaa.\nMuerte. Muquiari.\nMuerto por enfermedad. Mucue.\nMuerto, porque ſe mató, ò lo mataron. Mucuc.\nMuger. Hamut.\nMundo. Ania.\nMuñeca de la mano. Mam-calalai.\nMurmuyo. Sotia, l, [forma incierta].\n\nN.\n\nNacer. Iolec.\nNacer la planta. Sibue.\nNaci- [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; alphabetic transition M→N and final catchword explicit; uncertain forms remain marked.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "A small number of M-entry spellings remain letter-ambiguous; they are explicitly reserved for second visual collation."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Moderate show-through is present but the page's headword sequence and two-column structure are recoverable.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-163", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
