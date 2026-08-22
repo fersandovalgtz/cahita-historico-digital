@@ -1,0 +1,166 @@
+name: Publish v1.0.0
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - release/v1_publish_intent.json
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish-cahita-historico-digital-v1
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Validate, tag and publish v1.0.0
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout definitive main commit
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Install validation dependencies
+        run: python -m pip install -r requirements-dev.txt
+
+      - name: Validate publication intent
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          intent = json.loads(Path('release/v1_publish_intent.json').read_text(encoding='utf-8'))
+          assert intent['version'] == '1.0.0'
+          assert intent['tag'] == 'v1.0.0'
+          assert intent['targetBranch'] == 'main'
+          assert intent['publishFromMergedMainCommit'] is True
+          assert intent['requireFullReleaseValidationBeforeTag'] is True
+          assert intent['allowTagOverwrite'] is False
+          assert intent['githubRelease']['createStableRelease'] is True
+          assert intent['githubRelease']['prerelease'] is False
+          assert intent['githubRelease']['draft'] is False
+          assert intent['archivalDeposit']['status'] == 'pending'
+          assert intent['archivalDeposit']['versionDoi'] is None
+          assert intent['archivalDeposit']['conceptDoi'] is None
+          assert intent['archivalDeposit']['doiInferred'] is False
+          assert intent['humanVerifiedCount'] == 0
+          print('publication intent OK: v1.0.0; DOI pending; tag overwrite forbidden')
+          PY
+
+      - name: Validate canonical candidate inventory
+        run: python scripts/reconstruct_candidate_inventory.py
+
+      - name: Validate lexical IDs and authority
+        run: python scripts/validate_lexicon_ids.py
+
+      - name: Validate every canonical lexical article against schema
+        shell: bash
+        run: |
+          set -euo pipefail
+          for file in data/lexicon/articles/*.jsonl; do
+            python scripts/validate_jsonl.py --schema schemas/lexical-article.schema.json --jsonl "$file" >/dev/null
+          done
+          echo "all canonical lexical article files validate"
+
+      - name: Validate documentation and post-closure derivatives
+        run: |
+          python scripts/validate_documentation_sync.py
+          python scripts/validate_postclosure_exports.py
+
+      - name: Validate historical review layers
+        run: |
+          python scripts/validate_crossreference_source_reviews.py
+          python scripts/validate_crossreference_recollation_queue.py
+          python scripts/validate_v1_recollation_disposition.py
+          python scripts/validate_lo_mismo_reviews.py
+
+      - name: Validate TEI projection
+        run: python scripts/validate_tei_export.py
+
+      - name: Install Jing
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq jing
+
+      - name: Validate TEI against archived Lex-0 0.9.5
+        run: bash scripts/validate_tei_lex0_external.sh
+
+      - name: Validate grammar and freezes
+        run: |
+          python scripts/validate_grammar_exports.py
+          python scripts/validate_v1_contract_freeze.py
+          python scripts/validate_v1_data_freeze.py
+
+      - name: Validate deterministic v1.0.0 package twice
+        run: python scripts/validate_v1_release.py
+
+      - name: Build definitive v1.0.0 payload
+        run: python scripts/build_v1_release.py --output-dir build/v1-release
+
+      - name: Write release checksums
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd build/v1-release
+          sha256sum cahita-historico-digital-v1.0.0.zip > SHA256SUMS.txt
+          sha256sum cahita-historico-digital-v1.0.0/RELEASE_MANIFEST.json >> SHA256SUMS.txt
+          cat SHA256SUMS.txt
+
+      - name: Create immutable v1.0.0 tag if absent
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG=v1.0.0
+          git fetch --tags --force
+          if git show-ref --tags --verify --quiet "refs/tags/$TAG"; then
+            EXISTING="$(git rev-list -n 1 "$TAG")"
+            if [[ "$EXISTING" != "$GITHUB_SHA" ]]; then
+              echo "Refusing to move existing $TAG: $EXISTING != $GITHUB_SHA" >&2
+              exit 1
+            fi
+            echo "$TAG already points to definitive commit $GITHUB_SHA"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git tag -a "$TAG" "$GITHUB_SHA" -m "Cahíta Histórico Digital v1.0.0"
+            git push origin "refs/tags/$TAG"
+            echo "created immutable tag $TAG at $GITHUB_SHA"
+          fi
+
+      - name: Create or reconcile stable GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          TAG=v1.0.0
+          ZIP="build/v1-release/cahita-historico-digital-v1.0.0.zip"
+          MANIFEST="build/v1-release/cahita-historico-digital-v1.0.0/RELEASE_MANIFEST.json"
+          SUMS="build/v1-release/SHA256SUMS.txt"
+          NOTES="release/RELEASE_NOTES_v1.0.0.md"
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            gh release edit "$TAG" --title "Cahíta Histórico Digital v1.0.0" --notes-file "$NOTES" --latest
+            gh release upload "$TAG" "$ZIP" "$MANIFEST" "$SUMS" --clobber
+          else
+            gh release create "$TAG" "$ZIP" "$MANIFEST" "$SUMS" \
+              --verify-tag \
+              --title "Cahíta Histórico Digital v1.0.0" \
+              --notes-file "$NOTES" \
+              --latest
+          fi
+          gh release view "$TAG" --json tagName,isDraft,isPrerelease,url
+
+      - name: Report preservation status
+        run: echo "GitHub v1.0.0 publication complete; archival deposit and DOI remain pending and are not inferred."
