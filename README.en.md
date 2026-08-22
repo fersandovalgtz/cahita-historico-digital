@@ -9,9 +9,9 @@
 ![TEI](https://img.shields.io/badge/TEI-Lex--0%200.9.5-8A1538?style=flat-square)
 [![CLDF](https://img.shields.io/badge/CLDF-Dictionary%20post--v1-5b4b8a?style=flat-square)](CLDF.md)
 ![Human verified](https://img.shields.io/badge/humanVerified-0-b7791f?style=flat-square)
-![DOI](https://img.shields.io/badge/DOI-pending-b7791f?style=flat-square)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22061986.svg)](https://doi.org/10.5281/zenodo.22061986)
 
-[Español](README.md) · [v1.0.0 release](https://github.com/fersandovalgtz/cahita-historico-digital/releases/tag/v1.0.0) · [Data products](docs/DATA_PRODUCTS.md) · [CLDF](CLDF.md) · [Data model](SCHEMA.md) · [Provenance](PROVENANCE.md) · [FAIR pre-assessment](FAIR_ASSESSMENT.md) · [Governance](GOVERNANCE.md) · [How to cite](CITATION.cff)
+[Español](README.md) · [v1.0.0 release](https://github.com/fersandovalgtz/cahita-historico-digital/releases/tag/v1.0.0) · [Zenodo](https://zenodo.org/records/22061986) · [Data products](docs/DATA_PRODUCTS.md) · [CLDF](CLDF.md) · [Data model](SCHEMA.md) · [Provenance](PROVENANCE.md) · [Preservation](docs/PRESERVATION.md) · [FAIR pre-assessment](FAIR_ASSESSMENT.md) · [Governance](GOVERNANCE.md) · [How to cite](CITATION.cff)
 
 ## What this repository is
 
@@ -93,9 +93,17 @@ See [Governance](GOVERNANCE.md), [Editorial policy](EDITORIAL_POLICY.md), [Contr
 
 ## Citation and preservation
 
-The canonical citation metadata are in [`CITATION.cff`](CITATION.cff) and [`codemeta.json`](codemeta.json). The immutable release tag is `v1.0.0`, pointing to commit `dbcdecf0003ac5a10ae963caf6babdcf5c22128d`.
+The scientific `1.0.0` release is archived in Zenodo.
 
-Archival deposit and DOI assignment remain pending. No DOI is inferred or invented before an actual preservation repository assigns it. The external preservation gate is tracked in issue #169.
+**Version DOI:** [10.5281/zenodo.22061986](https://doi.org/10.5281/zenodo.22061986)  
+**Concept DOI:** [10.5281/zenodo.22061985](https://doi.org/10.5281/zenodo.22061985)  
+**Zenodo record:** <https://zenodo.org/records/22061986>
+
+Zenodo citation:
+
+> Sandoval Gutiérrez, F. (2026). *Cahíta Histórico Digital* (Version 1.0.0) [Computer software]. Zenodo. https://doi.org/10.5281/zenodo.22061986
+
+The canonical citation metadata are in [`CITATION.cff`](CITATION.cff) and [`codemeta.json`](codemeta.json). The immutable release tag remains `v1.0.0`, pointing to commit `dbcdecf0003ac5a10ae963caf6babdcf5c22128d`. See [`docs/PRESERVATION.md`](docs/PRESERVATION.md) for the archival attestation and persistence policy.
 
 ## Maintainer
 
