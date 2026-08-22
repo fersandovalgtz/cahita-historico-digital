@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 EXPORTER = ROOT / "scripts" / "export_editorial_irregularities.py"
 SCHEMA_VALIDATOR = ROOT / "scripts" / "validate_jsonl.py"
-SCHEMA = ROOT / "schemas" / "editorial-irregularity.schema.json"
+SCHEMA = ROOT / "schemas" / "post-v1" / "editorial-irregularity.schema.json"
 EXPECTED_FILES = {
     "chd_editorial_irregularities.jsonl",
     "chd_editorial_irregularities.csv",
