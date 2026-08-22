@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 147,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.146] Bebida de chia, y maiz toſtado. Aſſabipocori.\nBebida otra de maiz. Tuſi hipocori.\nBeſtia. Cabai.\nBibora. Aiacame.\nBibora otra que llaman coralillo. Siccucha alaa.\nBien eſta, adv. Beſa alamachi.\nBiuda. Hocoſturi.\nBibir. Hiepſa.\nBlanco de color. Toſali.\nBlanco hazer blanquear. Hitari -- toſalitua.\nBlanda coſa. Hitari buaico.\nBledo. Hue.\nBledos negros. Huechuculi.\nBledos amarillos. Hueſabuali.\nBledos blancos. Huetoſali.\nBledos otros tardios. Tahue.\nBledos colorados. Siquili-bue.\nBodas de muger. Buatoba.\nBodas de hombre. Sabinenca.\nBoca. Temi.\nBocarriba. Atalai.\nBocabajo. Movela.\nBoſe. Sarechia.\nBofetadas dar. Mamame achuſu.\nBola. Lobola.\nBolar. Neie.\nBolver de donde fue. Noctec.\nBolver lo de dentro à fuera. [continúa columna derecha].\n\n[columna derecha]\n[continuación] Aropetta.\nBordón. Buſca baſton.\nBorracho. Buſca beodo.\nBorrachera. Nahuahe.\nBorrar. Anuſta.\nBoſſar, ò bomitar. Biſata.\nBoſadura tal. Buſca bomitar.\nBoſtezar. Tembabua.\nBoton de la flor. Caetomte.\nBorraja. Tebofe hopem.\nBorrego. Hobeſo.\nBorrico. Burui.\nBoſque. Pochoi.\nBoz. Hia.\nBraza una midiendo. Mampo -- teechomehui.\nBrazear menear los brazos. Comim hima.\nBrazo. Comi.\nBraza. Buſca aſqua.\nBraſil. Huſbaco.\nBramar los Toros. Toron anſe.\nBramar los Ciervos. Maſo-buana.\nBravo. Alchuamchiacbi.\nBrincar de alto abajo. Hicatana conchepte.\nBrincar por el ſuelo. Chechepte.\nBrotar los Arboles. Baſibue.\nBrotar las flores. Sebua tebue.\nBruja. Auhuneria, l, auſocote, l, aumute.\nBruñir. Hiruque.\nBruñi- [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuations and final catchwords explicit; uncertain forms marked without reconstruction.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several lexical forms remain unresolved and require second collation; visible headword order, two-column structure, continuations, and catchwords are represented."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Historical scan shows bleed-through, edge wear, and local ink loss; uncertain readings are not silently supplied.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-147", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
