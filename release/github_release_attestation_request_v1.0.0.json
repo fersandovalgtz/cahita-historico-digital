@@ -1,5 +1,6 @@
 {
   "attestationType": "github_release_integrity",
+  "attestationRequestRevision": 2,
   "version": "1.0.0",
   "tag": "v1.0.0",
   "expectedTagCommit": "dbcdecf0003ac5a10ae963caf6babdcf5c22128d",
