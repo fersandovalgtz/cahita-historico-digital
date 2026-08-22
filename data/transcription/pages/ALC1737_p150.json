@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 150,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\n[continuación de p.149] Carcel. Tequiloacari.\nCardar. Patia.\nCarga llevar. Puatec.\nCargar. Puati.\nCaridad. Iore hiocoleme.\nCardenal paxaro. Huichalaca.\nCarne. Huacas.\nCardo. Tachino.\nCardo ſanto. Boboro.\nCarnero. Bualacapom.\nCaro venderſe. Buſca cara coſa.\nCarrillo de la cara. Hope.\nCarrera de caballo. Cabai im himcola.\nCarrera de apie, tirando con él un palo. Huohima.\nCarrizo. Buſca caña hueca.\nCarrizal. Buruu--bacata aiucapo.\nCarta. Hioſeri.\nCaſa. Cari. de adobes, Sami. de palo, Cuta. de ſacates, Baſo. de varas, y lodo, Techoamari.\nCaſar á otro. Ahuptua.\nCaſamiento de hombre. Hubeme, la muger. Cuname.\nCaſcabel. Coioli. de Bibora, Aia. del monte. Tenebori.\nCaſtigar. Hiocoactua.\nCaſtigo. Hiocotea.\nCaſta, ò linage. Ambuahuaec.\nCaſtrar colmena. Mumuhafe.\nCauſa, ò el porqué de la co- [continúa columna derecha].\n\n[columna derecha]\n[continuación] ſa. Hitabechibo.\nClamar. Hubuana.\nClamor. Hubuaname.\nClara coſa, no turbia. Calaco.\nClaro eſtar. Mamachi.\nClavar. Clauoſim ampopona.\nCaſcajo. Ilitetam paaria.\nCaberna, ò cueva. Teſo.\nCaſco de la cabeza. Cuba ota.\nCoa de palo. Cuta queberi, l, huica.\nCoa de hierro. Queberi.\nCobrar lo que ſe debe. Lo miſmo.\nCobre metal. Lo miſmo.\nCodo del brazo. Techo.\nCodorniz. Subau.\nCoger, agarrar. Abuife.\nCoger como maiz de coſecha. Hipeſuma.--bachita.\nCoger algo del ſuelo. [forma incierta].\nCojear. Liuliuti huerama.\nCojo. Loi.\nCola de animal. Buaſia.\nColar. Hipecha.\nColgar algo. Hitaric chaſia.\nColmar. Bui apuna.\nComenzar. Anate.\nComegen animal. Curu, comer, hibua.\nComezon dar algo. Eleſiqui.\nComida. Buabuame.\nComo? Hachim?\nComo. Hibuame.\nCom- [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuations and final catchword explicit; uncertain forms marked without silent reconstruction.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "Coger algo del ſuelo", "note": "The associated Cahita form is affected by bleed-through and is not promoted without a second collation."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Strong reverse-side show-through affects several lexical forms; readable Spanish headwords and structural order are preserved.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-150", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
