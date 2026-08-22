@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 168,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\n[continuación de p.167] Penacho. [forma incierta].\nPenca de miſcal. Cuntoaicoa.\nPenſar. Ea.\nPenſamiento. Ehuaſae.\nPeñaſco. Teſo.\nPepita generalmente. [forma incierta].\nPequeño. Ilichi.\nPerder, generalmente. [forma incierta].\nPerderſe en el camino. [forma incierta].\nPerdon. [forma incierta].\nPerdonar la injuria. Ahiocore.\nPerdonar lo que ſe deve. Buſca perdonar la injuria.\nPerdurablemente. Canudacama.\nPereza. [forma incierta].\nPerezoso ſer. [forma incierta].\nPermanecer la coſa. Calutute.\nPermitir algo. Buſca conſentir.\nPermiſſion. Buſca conſentimiento.\nPerro, ò perra. Chumchum-hamu.\nPerſona. Ioreme.\nPertenecer. [forma incierta].\nPervertir à otro. Ahiepſicuatia.\nPeſada coſa. Beete.\nPeſar tener de alguna coſa. Buſca penar.\nPeſadumbre aſſi. Buſca pena.\nPeſar en balanza. [forma incierta].\n\n[columna derecha]\nPeſcado. [forma incierta].\nPeſcar con red. [forma incierta].\nPeſcado robalo. Sateni.\nPeſcado pargo. Iocoto.\nPeſcado curbina. [forma incierta].\nPeſcado parmpano. [forma incierta].\nPeſcado caſan. Tameoame.\nPeſcado raya. Habataco.\nPeſcado nuevo. Iabarau.\nPeſcado moxarra. Rebera.\nPeſcado liſa. Huhubuae.\nPeſcado. Toberi.\nPeſcado. Habare.\nPeſcado. Huaſo.\nPeſcado. Tenchiberi.\nPeſcar con anzuelo. Buſca anzuelo.\nPeſqueſo, ò cerviz. Cutanabua.\nPeſtaña. Puſite.\nPeſtañear. Buſca menear los parpados.\nPeſte. Cocoa.\nPeſte aver. Uteſi cocoa.\nPicada. Soari.\nPicar. Aſoia.\nPicar como alacran. Ahubac.\nPicada aſſi. Ahibac.\nPicar carne. Iabuala -- achuchutia.\nPico de ave. Huiſuitam.\nPie de animal. Huoqui.\nPiedra. Teta.\nPiedra para moler maiz. Matia.\nPie- [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; fish-name series and final catchword explicit; uncertain forms marked without normalization.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several P-entry and fish-name forms remain letter-ambiguous and are explicitly reserved for second visual collation."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Moderate show-through affects isolated forms; the page structure and headword inventory remain recoverable.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-168", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
