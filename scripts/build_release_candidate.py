@@ -3,8 +3,8 @@
 
 This is deliberately a *release candidate*, not v1.0.0. It packages the
 canonical/derived artifacts that already have deterministic QA while preserving
-remaining open gates (facsimile recollation, final interoperability scope,
-metadata/tag, archival deposit and DOI) as explicit manifest state.
+remaining open gates (facsimile recollation, metadata/tag, archival deposit and
+DOI) as explicit manifest state.
 """
 from __future__ import annotations
 
@@ -52,6 +52,7 @@ DOCUMENT_FILES = [
     "docs/CROSSREFERENCE_REVIEW_PROGRESS_2026-08-21.md",
     "docs/CROSSREFERENCE_RECOLLATION_QUEUE.md",
     "docs/TEI_LEXICON_PROFILE_V0_1.md",
+    "docs/CLDF_SCOPE_DECISION_V1_0.md",
     "docs/RELEASE_CANDIDATE_PACKAGE.md",
     "data/source/alc1737/metadata.json",
     "data/source/alc1737/ingest_manifest.json",
@@ -61,7 +62,6 @@ DOCUMENT_FILES = [
 
 OPEN_GATES = [
     "direct_facsimile_recollation_of_22_crossreference_cases",
-    "final_cldf_lex0_scope_decision",
     "final_schema_and_metadata_freeze",
     "final_release_tag_and_changelog",
     "archival_deposit_and_version_doi",
@@ -154,6 +154,13 @@ def build_manifest(bundle: Path) -> dict[str, Any]:
         "humanVerifiedCount": 0,
         "releaseReady": False,
         "openGates": OPEN_GATES,
+        "interoperabilityDecision": {
+            "primaryLexicalReleaseProfile": "TEI Lex-0 0.9.5",
+            "cldfRequiredForV1": False,
+            "cldfStatus": "deferred_post_v1_analytic_derivative",
+            "decisionDocument": "docs/CLDF_SCOPE_DECISION_V1_0.md",
+            "canonicalDataReplacedByInteroperabilityFormats": False,
+        },
         "summary": {
             "lexiconArticleCount": int(lexicon["articleCount"]),
             "canonicalCrossReferenceCount": int(strict["crossReferenceCount"]),
@@ -204,6 +211,16 @@ def build_manifest(bundle: Path) -> dict[str, Any]:
         raise SystemExit("release candidate Lex-0 schema URL drifted")
     if expected["externalLex0SchemaSha256"] != "35e73fef48526634714bdf3d16b924f958fca078a903d0bdc2dd4d7d116d1aaa":
         raise SystemExit("release candidate Lex-0 schema hash drifted")
+
+    interoperability = manifest["interoperabilityDecision"]
+    if interoperability["primaryLexicalReleaseProfile"] != "TEI Lex-0 0.9.5":
+        raise SystemExit("release candidate primary interoperability profile drifted")
+    if interoperability["cldfRequiredForV1"] is not False:
+        raise SystemExit("release candidate must not make CLDF a v1 gate")
+    if interoperability["cldfStatus"] != "deferred_post_v1_analytic_derivative":
+        raise SystemExit("release candidate CLDF scope decision drifted")
+    if interoperability["canonicalDataReplacedByInteroperabilityFormats"] is not False:
+        raise SystemExit("interoperability derivatives must not replace canonical data")
     return manifest
 
 
