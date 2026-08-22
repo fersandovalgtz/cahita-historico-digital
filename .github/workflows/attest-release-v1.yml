@@ -1,0 +1,111 @@
+name: Attest GitHub Release v1.0.0
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - release/github_release_attestation_request_v1.0.0.json
+
+permissions:
+  contents: write
+
+concurrency:
+  group: attest-cahita-historico-digital-v1
+  cancel-in-progress: false
+
+jobs:
+  attest:
+    name: Verify tag, release assets and checksums
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout post-release main
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 0
+
+      - name: Validate attestation request
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          request = json.loads(Path('release/github_release_attestation_request_v1.0.0.json').read_text(encoding='utf-8'))
+          assert request['version'] == '1.0.0'
+          assert request['tag'] == 'v1.0.0'
+          assert request['expectedTagCommit'] == 'dbcdecf0003ac5a10ae963caf6babdcf5c22128d'
+          assert request['moveOrOverwriteTagAllowed'] is False
+          assert request['doiInferred'] is False
+          assert request['humanVerifiedCount'] == 0
+          print('release attestation request OK')
+          PY
+
+      - name: Resolve stable GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/release-attestation/assets
+          ok=0
+          for attempt in $(seq 1 12); do
+            if gh release view v1.0.0 \
+              --json tagName,name,isDraft,isPrerelease,publishedAt,url,assets \
+              > build/release-attestation/release.json 2>/dev/null; then
+              ok=1
+              break
+            fi
+            sleep 10
+          done
+          if [[ "$ok" != "1" ]]; then
+            echo 'Stable GitHub Release v1.0.0 could not be resolved after retries.' >&2
+            exit 1
+          fi
+          cat build/release-attestation/release.json
+
+      - name: Download release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release download v1.0.0 --dir build/release-attestation/assets
+          find build/release-attestation/assets -maxdepth 1 -type f -printf '%f\n' | sort
+
+      - name: Resolve immutable tag target
+        shell: bash
+        run: |
+          set -euo pipefail
+          git fetch --tags --force
+          commit="$(git rev-list -n 1 v1.0.0)"
+          echo "TAG_COMMIT=$commit" >> "$GITHUB_ENV"
+          test "$commit" = 'dbcdecf0003ac5a10ae963caf6babdcf5c22128d'
+          echo "v1.0.0 -> $commit"
+
+      - name: Validate release and write attestation
+        shell: bash
+        run: |
+          python scripts/attest_github_release_v1.py \
+            --release-json build/release-attestation/release.json \
+            --asset-dir build/release-attestation/assets \
+            --tag-commit "$TAG_COMMIT" \
+            --output release/github_release_attestation_v1.0.0.json
+          cat release/github_release_attestation_v1.0.0.json
+
+      - name: Commit durable attestation to main
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add release/github_release_attestation_v1.0.0.json
+          if git diff --cached --quiet; then
+            echo 'Attestation already matches; no commit required.'
+          else
+            git commit -m 'chore: registrar atestación de GitHub Release v1.0.0'
+            git push origin HEAD:main
+          fi
+
+      - name: Report remaining external gate
+        run: echo 'GitHub Release v1.0.0 attested; Zenodo archival deposit and DOI remain pending.'
