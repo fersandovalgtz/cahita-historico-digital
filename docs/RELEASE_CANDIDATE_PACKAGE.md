@@ -26,18 +26,25 @@ SHA-256 del manifiesto: `c0b897b9dbad2107b40db6169d4207bca752c2b84161e0c9c980409
 
 Los metadatos de identidad de release (`CITATION.cff`, `codemeta.json`, versión/tag y DOI) quedan deliberadamente fuera de este freeze: se finalizan en el gate de tag/release y no se consideran una excepción al contrato.
 
+## Disposición de las 22 recolaciones
+
+El paquete incorpora `docs/V1_RECOLLATION_DISPOSITION.md` y un derivado reproducible generado por `scripts/export_v1_recollation_disposition.py`.
+
+Los 22 casos se publican en v1.0 como `frozen_open_uncertainty`, con identidad 22/22 respecto de la cola canónica, distribución 8 A / 4 B / 10 C, `canonicalAction=none`, cero destinos seleccionados, cero cambios canónicos y `humanVerified=false`.
+
+Esta capa **cierra el gate de release** asociado al tratamiento de las recolaciones, pero conserva `philologicalResolutionStatus=open`, `facsimileResolutionClaimed=false` y `ocrAcceptedAsFacsimileSubstitute=false`. El cotejo filológico continúa post-v1 cuando exista evidencia admisible.
+
 El facsímil histórico no se incluye, no se relicencian reproducciones de terceros y `humanVerifiedCount=0` se mantiene donde corresponde.
 
 ## Gates abiertos para v1.0.0
 
-Tras cerrar interoperabilidad y contratos quedan **tres** gates:
+Quedan **dos** gates:
 
-1. tratamiento final de las 22 recolaciones directas contra facsímil;
-2. tag, changelog y metadatos finales de identidad de release;
-3. depósito archivístico y DOI de versión/Concept DOI cuando corresponda.
+1. tag, changelog, congelamiento de bytes finales y metadatos de identidad de release;
+2. GitHub Release, depósito archivístico y DOI de versión/Concept DOI cuando corresponda.
 
 ## Determinismo
 
-El ZIP usa orden fijo de miembros, timestamps normalizados, permisos normalizados y manifiesto con tamaño/SHA-256 de cada artefacto y commit de origen. `scripts/validate_release_candidate.py` lo construye dos veces y exige igualdad byte-a-byte; también exige la presencia y hash del freeze de contratos.
+El ZIP usa orden fijo de miembros, timestamps normalizados, permisos normalizados y manifiesto con tamaño/SHA-256 de cada artefacto y commit de origen. `scripts/validate_release_candidate.py` lo construye dos veces y exige igualdad byte-a-byte; también exige la presencia y hash del freeze de contratos y la disposición 22/22 de recolaciones.
 
-El paquete sigue siendo una **release candidate**, no una release estable, mientras estos tres gates permanezcan abiertos.
+El paquete sigue siendo una **release candidate**, no una release estable, mientras estos dos gates permanezcan abiertos.
