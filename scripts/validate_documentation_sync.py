@@ -73,7 +73,9 @@ def validate_phase2() -> tuple[int, int, int, int, int, int]:
         forbid(text, "1,047 candidatos `pending_promotion`", name)
         forbid(text, "1,049 artículos históricos estructurados", name)
 
-    require(texts["README.md"], "0 candidatos `pending_promotion`", "README.md")
+    # The public README now exposes the canonical machine field directly,
+    # which is less ambiguous than the older prose-only wording.
+    require(texts["README.md"], "`pendingPromotionTotal=0`", "README.md")
     require(texts["README.md"], "33/33 páginas", "README.md")
     require(texts["ROADMAP.md"], "`pendingPromotionTotal = 0`", "ROADMAP.md")
     require(texts["ROADMAP.md"], "33 / 33 páginas", "ROADMAP.md")
