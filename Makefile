@@ -1,4 +1,4 @@
-.PHONY: help stats query exports cldf cldf-qa qa-surface qa qa-full release-check
+.PHONY: help stats query exports cldf cldf-qa variation variation-qa qa-surface qa qa-full release-check
 
 help:
 	@echo "Cahíta Histórico Digital — comandos de trabajo"
@@ -7,6 +7,8 @@ help:
 	@echo "  make exports       Genera exportaciones léxicas consolidadas"
 	@echo "  make cldf          Genera la proyección CLDF Dictionary post-v1"
 	@echo "  make cldf-qa       Genera y valida CLDF con pycldf + invariantes CHD"
+	@echo "  make variation     Genera el índice histórico de variación post-v1"
+	@echo "  make variation-qa  Valida determinismo, schema, cobertura y autoridad"
 	@echo "  make qa-surface    Valida metadatos/documentación pública"
 	@echo "  make qa            Ejecuta validadores principales locales"
 	@echo "  make qa-full       QA local + Lex-0 externo + v1 publicada (requiere jing)"
@@ -28,6 +30,12 @@ cldf:
 cldf-qa: cldf
 	cldf validate build/cldf/Dictionary-metadata.json
 	python scripts/validate_cldf_dictionary.py --cldf-dir build/cldf
+
+variation:
+	python scripts/export_historical_variation_index.py --out-dir build/historical-variation-index
+
+variation-qa:
+	python scripts/validate_historical_variation_index.py
 
 qa-surface:
 	python scripts/validate_repository_surface.py
