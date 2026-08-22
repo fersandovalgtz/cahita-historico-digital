@@ -1,4 +1,4 @@
-.PHONY: help stats query exports cldf cldf-qa variation variation-qa irregularities irregularities-qa qa-surface qa qa-full release-check
+.PHONY: help stats query exports cldf cldf-qa variation variation-qa irregularities irregularities-qa grammar-variety grammar-variety-qa qa-surface qa qa-full release-check
 
 help:
 	@echo "Cahíta Histórico Digital — comandos de trabajo"
@@ -11,6 +11,8 @@ help:
 	@echo "  make variation-qa       Valida determinismo, schema, cobertura y autoridad"
 	@echo "  make irregularities     Genera el derivado post-v1 de irregularidades editoriales"
 	@echo "  make irregularities-qa  Valida determinismo, schema e invariantes editoriales"
+	@echo "  make grammar-variety    Genera enlaces explícitos gramática ↔ variedad histórica"
+	@echo "  make grammar-variety-qa Valida cobertura, determinismo y autoridad de los enlaces"
 	@echo "  make qa-surface         Valida metadatos/documentación pública"
 	@echo "  make qa                 Ejecuta validadores principales locales"
 	@echo "  make qa-full            QA local + Lex-0 externo + v1 publicada (requiere jing)"
@@ -45,6 +47,12 @@ irregularities:
 irregularities-qa:
 	python scripts/validate_editorial_irregularities.py
 
+grammar-variety:
+	python scripts/export_grammar_variety_links.py --out-dir build/grammar-variety-links
+
+grammar-variety-qa:
+	python scripts/validate_grammar_variety_links.py
+
 qa-surface:
 	python scripts/validate_repository_surface.py
 	python scripts/validate_documentation_links.py
@@ -61,6 +69,7 @@ qa: qa-surface
 	python scripts/validate_tei_export.py
 	python scripts/validate_grammar_exports.py
 	python scripts/validate_editorial_irregularities.py
+	python scripts/validate_grammar_variety_links.py
 	python scripts/validate_v1_contract_freeze.py
 	python scripts/validate_v1_data_freeze.py
 

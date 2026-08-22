@@ -1,0 +1,66 @@
+name: CHD Grammar Variety Links
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/grammar-variety-links.yml"
+      - "scripts/export_grammar_variety_links.py"
+      - "scripts/validate_grammar_variety_links.py"
+      - "scripts/export_historical_variation_index.py"
+      - "scripts/export_historical_variation_index_core.py"
+      - "schemas/post-v1/grammar-variety-link.schema.json"
+      - "docs/GRAMMAR_VARIETY_LINKS.md"
+      - "data/grammar/**"
+      - "Makefile"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/grammar-variety-links.yml"
+      - "scripts/export_grammar_variety_links.py"
+      - "scripts/validate_grammar_variety_links.py"
+      - "scripts/export_historical_variation_index.py"
+      - "scripts/export_historical_variation_index_core.py"
+      - "schemas/post-v1/grammar-variety-link.schema.json"
+      - "docs/GRAMMAR_VARIETY_LINKS.md"
+      - "data/grammar/**"
+      - "Makefile"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-validate:
+    name: Build and validate explicit grammar-variety links
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Install validation dependencies
+        run: python -m pip install -r requirements-dev.txt
+
+      - name: Compile grammar-variety tools
+        run: python -m py_compile scripts/export_grammar_variety_links.py scripts/validate_grammar_variety_links.py
+
+      - name: Run deterministic grammar-variety QA
+        run: python scripts/validate_grammar_variety_links.py
+
+      - name: Build reviewable artifact
+        run: python scripts/export_grammar_variety_links.py --out-dir "${RUNNER_TEMP}/grammar-variety-links"
+
+      - name: Upload validated derivative
+        uses: actions/upload-artifact@v4
+        with:
+          name: cahita-grammar-variety-links-${{ github.sha }}
+          path: ${{ runner.temp }}/grammar-variety-links/
+          if-no-files-found: error
+          retention-days: 14

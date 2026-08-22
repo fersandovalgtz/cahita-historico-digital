@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/post-v1/grammar-variety-link.schema.json",
+  "title": "CHD explicit grammar-variety link",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "sourceId",
+    "grammarObjectId",
+    "grammarObjectType",
+    "grammarSourcePath",
+    "ruleNumbers",
+    "sourcePagesDigital",
+    "sourcePagesPrinted",
+    "section",
+    "labelClass",
+    "labelsRaw",
+    "relationType",
+    "historicalVariationEvidenceIds",
+    "evidenceTexts",
+    "sourceAttributionExplicit",
+    "pageProximityUsed",
+    "linguisticSimilarityUsed",
+    "modernIdentityInferred",
+    "dialectTaxonomyInferred",
+    "reviewStatus",
+    "humanVerified"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^ALC1737-gvl-[a-z0-9-]+$"},
+    "sourceId": {"const": "ALC1737"},
+    "grammarObjectId": {"type": "string", "minLength": 1},
+    "grammarObjectType": {
+      "enum": ["rule", "paradigm", "construction", "numeral_system", "grammar_object"]
+    },
+    "grammarSourcePath": {"type": "string", "pattern": "^data/grammar/"},
+    "ruleNumbers": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "integer", "minimum": 1, "maximum": 373}
+    },
+    "sourcePagesDigital": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "integer", "minimum": 1, "maximum": 182}
+    },
+    "sourcePagesPrinted": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "integer", "minimum": 1, "maximum": 118}
+    },
+    "section": {"type": ["string", "null"]},
+    "labelClass": {
+      "enum": ["Hiaqui", "Mayo", "Thehueco", "Naciones", "Cynaloa"]
+    },
+    "labelsRaw": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "relationType": {"const": "explicit_source_attribution_in_same_grammar_object"},
+    "historicalVariationEvidenceIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^CHD-var-evidence-[0-9]{5}$"}
+    },
+    "evidenceTexts": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "sourceAttributionExplicit": {"const": true},
+    "pageProximityUsed": {"const": false},
+    "linguisticSimilarityUsed": {"const": false},
+    "modernIdentityInferred": {"const": false},
+    "dialectTaxonomyInferred": {"const": false},
+    "reviewStatus": {"type": ["string", "null"]},
+    "humanVerified": {"const": false}
+  }
+}
