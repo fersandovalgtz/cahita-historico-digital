@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 156,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\n[continuación de p.155] Enſartar cuentas. Coſcamſoa.\nEnſeñar. Amaſtia.\nEnſeñanza. Amaſtianaque.\nEnſuciar alguna coſa. Haſtia aiac.\nEntender. Anoc hicaba.\nEntendimiento. Suabuac.\nEnterrar muerto. Muquiatama.\nEntierro. Himaa.\nEntonces. Huriaco.\nEntrambos. Nanaut.\nEntrar. Quibaaquec.\nEntrefacar. Aepepechecu ia-buotia.\nEntumido eſtar. Hubuaſuc.\nEnturbiar. Aorocotua.\nEn vano. Tepaquiali.\nEnvejeſcerſe. Ioturi.\nEncino arbol. Tobi.\nEredad. Huaſa.\nErizarſe los pelos. Sebehantec.\nErrar, no acertar. Hiobec.\nErvaje. Tebut.\nEſcama. Cuchucupe.\nEſcaravajo. Hubamatare.\nEſcarmenar. Hiſaina.\nEſcarbar tierra. Hibuebe.\nEſclarecer. Machuui.\nEſclavo. Buqui.\nEſcoba para barrer. Hichiquia.\nEſcobeta para peinarſe. Coba hichiquia, l, cuti hichiquia.\nEſcoger. Buſca entrefacar.\n\n[columna derecha]\nEſconderſe. Auſiriac.\nEſcorpion. Sacau.\nEſcribano. Hioteme.\nEſcrivir. Hiote.\nEſcuchar. Nacamamana.\nEſcurecerſe. Tucabec.\nEſcupir. Chichuatec.\nEſcupitina ſaliva. Chichi.\nEſforzar à otro. Autetua.\nEſlabon. Itabo.\nEſpalda. Ama.\nEſpantar à otro. Ahuonta.\nEſpanto aſſi. Huontec.\nEſpejo. Emoamabichuame.\nEſpeluzarſe. Buſca erizarſe.\nEſperar. Buſca confiar.\nEſpeſar lo raro. Atebhiatua.\nEſperezarſe. Buſca deſperezarſe.\nEſpiga. Moa.\nEſpigar el maíz. Moa biritec.\nEſpina. Huicha.\nEſpina de nopale. Nabohuicha.\nEſpinarſe. Soſoc.\nEſpinilla de la pierna. Huoſota.\nEſpinazo. Hortituri.\nEſpolear al caballo. Pente.\nEſprimir. Achinta.\nEſpulgar la cabeza. [forma incierta].\nEſpulgar la ropa. Aſupemete-me.\nEſpuma. Somchia.\nEſquina. Chimucu.\nEſte [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuations and final catchword explicit; uncertain forms are not silently reconstructed.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "Eſpulgar la cabeza", "note": "The Cahita form is not sufficiently secure in the facsimile and remains unresolved pending second collation."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Moderate show-through affects isolated forms; page structure and lexical order remain clear.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-156", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}

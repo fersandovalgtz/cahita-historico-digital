@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 157,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.156] Eſe, ò eſa. unuca.\nEſtaca. Cutabuahuiteri.\nEſtacar. Naequim amube.\nEſtar. Catee.\nEſte, ò eſta, ò eſto. Ibii.\nEſtender, ò tender. Buſca deſembolver.\nEſtera. Taco, de palma. Hipeta, de carrizo. Baca, de tule. Tobare.\nEſteril ſer la muger. Teſila.\nEſtirar. Ahuiaque.\nEſtomago. Gochopo.\nEſtornudar. Hachitiabuame.\nEſtornudo. Hachite.\nEſtrecha coſa. Naulae.\nEſtrella. Choqui.\nEſtrella lucero. Bueruchoqui.\nEſtrella las tres Marias. Himuim.\nEſtrellas. Choquim.\nEſtremecerſe. Sebeſibotec.\nEſtrujar. Amota.\nEſtudiar. Aumaſtia.\nEſtudio aſſi. Emomaſteapo.\nExhalacion que ſe vee de noche. Suabuaca.\n\nF.\n\nFabricar caſa. Cateme.\nFacil coſa. Catua obiachi.\nFaiſan de eſpecie grande. [continúa columna derecha].\n\n[columna derecha]\n[continuación] Buerutatu.\nFaiſan de eſpecie pequeña. Ilitaruc.\nFajarſe. Huicoote.\nFaltar el que avia de eſtar ay? Cababo.\nFaltar à lo propueſto. Canoiqui chupa.\nFalſedad por mentira. Buſca mentir.\nFama tener. utibua.\nFavorecer. Buſca ayudar.\nFavor aſſi. Buſca ayuda.\nFebrero. [forma incierta].\nFea coſa. Caaubiori.\nFee, ò creencia. Buſca creer.\nFeriar una coſa por otra. Naculia.\nFecunda ſer la muger. Araſoame.\nFiar alguna coſa. Nebuiquiſiatua.\nFiel que cree. Tuabaptori.\nFieſta aver. Pacoa.\nFixa eſtar la coſa. Namacaſibuec.\nFila de hombres. Lutulababue.\nFilo de cuchillo. Cuchixibabua.\nFinalizar la coſa. Chupuc.\nFlaca coſa. Huaquita.\nFlaco ſer. Tuabuaquila.\nFlecha. Huibua.\nFle- [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page and inter-column continuations explicit; unresolved forms are marked without silent emendation.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "Febrero lexical form", "note": "The Cahita form following 'Febrero' is partially obscured and remains unresolved pending second visual collation."}],
+  "materialNotes": [{"type": "gutter_clipping_and_bleed_through", "note": "The extreme left edge clips initial letters on several lines; readings are reconstructed only where the visible continuation and lexical sequence are secure, otherwise left unresolved.", "transcription": null}, {"type": "signature_mark", "note": "A small printed '* 4' appears near the lower margin and is treated as a signature/material mark rather than source pagination.", "transcription": "* 4"}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-157", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}

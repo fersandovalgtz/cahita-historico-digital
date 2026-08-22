@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 155,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.154] Dar de comer à otro. Senuc. bibuatua.\nDar de beber à otro. Abitua.\nDar de veſtir à otro. Aſupe-tua.\n\nE.\n\nEchar, ò vaciar. Amabuotia, l, aborotia.\nEcharſe la beſtia. Cabai botec.\nEl, ò ella. Huna.\nElada, ò yelo. Hiſibue.\nEſtar. Sapabueche.\nEl que. Hunaba.\nEmbaynar. Hitapo aſuta.\nEmbeſtir. Auchepte.\nEmbiar algo. Amana toba.\nEmbolver. Buſca doblar.\nEmbriagar à otro. Anamuctua.\nEmbriagarſe. Namucucame.\nEmmendarſe. Hiepſicoaſtec.\nEmpacharſe. Buſca hartarſe.\nEmpero. Tepave.\nEmpeine enfermedad. Macoac.\nEmpeine del pie. Huoc moveri.\nEmpinarſe. Lutulaquiſte.\nEmplumar el Ave. Maſatuc.\nEmpreñar. Himue.\nEmpreſtar. Archite.\nEnano. Comela.\n\n[columna derecha]\nEncarnecer el hueſſo. Tebuatua.\nEncender candela, ò tea. Abetia.\nEncender lumbre hazerla. Naiate.\nEncerrar à alguno. Aeta.\nEncontrar à caſo à alguno. Ananquec.\nEncuentro tal. Aetatec.\nEncorvar algo. Acobotia.\nEncubrir algo. Inhiepſipoahipure.\nEncumbrar llegar à lo alto. Cahuita hicapacu iuma.\nEnderezar. Abuaba.\nEnemiſtad tener con otro. Emobchere, l, naucalacame.\nEnfermar de algun mal. Cocoriame.\nEnfermo. Cocore.\nEnflaquecerſe. Huaqueme.\nEnfrente de alguno. Ebeuchi.\nEnfriar. Acipa.\nEngañar. Abaritabuac.\nEngordar uno. Abuec.\nEnloquecer, ò perder el juizio. Namuqueme.\nEnmogecerſe el hierro. Copoſibuec.\nEnojar à otro. Omptituac.\nEnojarſe. Omtec.\nEnojo. Ompti.\nEnredar alguna coſa. Acubitia.\nEnroſcarſe la bibora. Natie-tec.\nEnſar- [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuations and final catchword explicit; doubtful forms remain unresolved.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several historical forms require a second visual collation; no modern normalization or lexical inference has been introduced."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Show-through and minor type degradation are present; the printed headword sequence remains recoverable.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-155", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}

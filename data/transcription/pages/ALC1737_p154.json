@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 154,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\n[continuación de p.153] Desbaſtar madera. Atopetia.\nDeſcanſar. Inumiore.\nDeſcanſo. Iumiori bua.\nDeſcargar. Apuatiboaria.\nDeſcobijar. Ahinepo.\nDeſcoſer. Hiquiabutia.\nDeſcubrir lo ſecreto. Ieumachiria.\nDeſear. Auculec.\nDeſembolver. Arubutia.\nDeſenclavar. Clauoſim ampona.\nDeſenojarſe. Omtiiate.\nDeſgranar maiz. Hechibue.\nDeſgranar frijol, &c. Munihibeba.\nDeſhoneſto. Huenacnoca, l, aiibua.\nDeſleir. Abate.\nDeſmayarſe. Bualquimuame.\nDeſmayo. Bualquimu.\nDeſnudarſe. Supeiecba.\nDeſnudez. Caſupe.\nDeſmemoriado. Caitabuate.\nDeſnarigado. Caiecacame.\nDeſollar. Apeutia.\nDeſparramar. Naequim ahuotia.\nDeſpavilar candela con la mano. Aoba chupta.\nDeſpavilar con tixeras. Chaptiame.\nDeſpedazar. Naequimahuoc-tia, l, achuptia.\nDeſpegar. Naequim buate.\n\n[columna derecha]\nDeſpeñarſe. Tetapo-autata-bec, l, buate.\nDeſpercar. Buſac.\nDeſperezarſe. Bualſuna.\nDeſplumar. Amajapopona.\nDeſpues. Abetuc, l, abehubua.\nDeſvanecerſe. Cupitonte.\nDeſvelarſe. Caara cochec.\nDeſvirgar. Bemela taca naſentu.\nDetrás de alguno. Amapo.\nDe valde. Quiati.\nDeudor. Huiquilia.\nDexar algo. Abeac.\nDecir. Noca.\nDia. Taehuari.\nDia de fieſta. Paco-taehuari.\nDiablo. Buſca demonio.\nDiente. Tami.\nDiferir, ò dilatar. Mecataehuanpo.\nDificil. Obiachi.\nDilatar. Buſca diferir.\nDiſſoluto. Buſca deſhoneſto.\nDiſtillarſe el agua. Hiquia.\nDoblar algo. Atota.\nDoler la llaga. Sabuatahuibua.\nDoncella. Bemela, l, caobue-taia.\nDormir. Coche.\nDulce coſa. Hitaricaca.\nDura coſa. Namaca.\nDurar mucho tiempo. Tuabinatu.\nDar [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuations and final catchword explicit; unresolved forms are not normalized.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Character-level readings in several forms remain candidates for second collation; no silent emendation has been made."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Bleed-through and local ink loss affect isolated letters without preventing recovery of the printed lexical sequence.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-154", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
