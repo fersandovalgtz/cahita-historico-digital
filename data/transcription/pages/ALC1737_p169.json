@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 169,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.168] Piedra de que ſe ſacan navajas. Buſca pedernal prieto.\nPiel. Buſca pellejo.\nPino. Huocoi.\nPinal. Huocoburii.\nPintar. [forma incierta].\nPintor. [forma incierta].\nPinto. Ioſco.\nPintura. Opri.\nPiña fruta conocida. Noa.\nPiojo de la cabeza. Ete.\nPiojo de la ropa. Ete.\nPiſar generalmente. Buiat huoſi.\nPiſar alguna coſa. Hitaricut huoſte.\nPiſiete que maſcan. Bibacoa.\nPiſiete maſcar. Bibacoame.\nPito real. Semalulucu.\nPitahalla. Aqui.\nPitahalla otra. Sina.\nPitahalla cardon. Echo.\nPitahalla organo. Sabuio.\nPitahalla otra cardon. Habueſo.\nPitahalla pequeña. Muſio.\nPitar. Cuſi.\nPlanta del pie. Huoc betari.\nPlantar arboles. Echa.\nPlaticar con otro. Buſca parlar.\nPlatica tal. Etcho.\nPlata. Teoquita.\nPlato. Lo miſmo.\nPlacer regocijo. Buſca gozo.\n\n[columna derecha]\nPlazo poner. Buſca ſeñalar dia.\nPleyto aver. Buſca pelear.\nPluma. Maſa.\nPlumero. Buſca penacho.\nPluvia. [forma incierta].\nPobre eſtar. Auhiocoteria.\nPoco, nombre adjetivo. [forma incierta].\nPoco antes. Buſca no ha mucho.\nPocas vezes. Caharequicia.\nPoco à poco. Lauti lauti.\nPoco mas, ò menos. Quial-hiſaboa.\nPodar qualquiera coſa. Acom chuſtia.\nPoder, verbo. Arabuame.\nPoderoſo. Arabitaboa.\nPodre. Buſca materia.\nPodrirſe la coſa. Bicaeſe.\nPolilla. Buaruchim.\nPolvos. Bibaliſim.\nPolvo. Torocoa.\nPollo hijo de gallina. Totoli aſiala.\nPoner. Mecha.\nPoner la gallina. [forma incierta].\nPonerſe el capote. Buſca taparſe.\nPoniente. Tatamnan, huecheu.\nPor, prep. para dar cauſa. Bechibo.\nPor ventura. Hanamucata.\n[continúa p.170].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuation explicit; uncertain forms are not silently reconstructed.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several historical P-entry spellings remain typographically ambiguous and require second visual collation."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Show-through is visible across the page; lexical ordering remains clear.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-169", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
