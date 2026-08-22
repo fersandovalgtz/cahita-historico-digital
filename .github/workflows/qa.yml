@@ -152,6 +152,9 @@ jobs:
       - name: Validate deterministic cross-reference recollation queue
         run: python scripts/validate_crossreference_recollation_queue.py
 
+      - name: Validate v1 recollation release disposition
+        run: python scripts/validate_v1_recollation_disposition.py
+
       - name: Validate Lo miſmo formula reviews
         run: python scripts/validate_lo_mismo_reviews.py
 
