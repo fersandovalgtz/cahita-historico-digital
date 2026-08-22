@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 160,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\n[continuación de p.159] Yr derecho à alguna parte. Lutula bueye.\nYr rodeando. Coorte.\nYr delante. Buſca guiar.\nYr por leña. Quebuye.\nYr por agua. Buſca agua traer.\nYvierno. [forma incierta].\nYzquierda mano. Micoi.\n\nJ.\n\nJubilo. Buſca gozo.\nJuego de apueſta. [forma incierta].\nJuegos de niños. [forma incierta].\nJuez. Iaut.\nJugar apoſtando. Huate.\nJugar los niños. [forma incierta].\nJunco. [forma incierta].\nJuntar una coſa con otra. Nauatoba.\nJuntar lo que eſta eſparcido. Buſca recoger.\nJurar, no jurar. [forma incierta].\nJuſto ſer. Turiſianeme.\n\nL.\n\nLabio. Teribuopare.\nLabor de tierra. Huaſa.\n\n[columna derecha]\nLabrar camiſa, &c. [forma incierta].\nLadera. [forma incierta].\nLadino. Iorinoca.\nLadrar los perros. Chumcham.\nLadrido tal. Hia.\nLadrona. Eet buame.\nLagaña. Somaparia.\nLagarto animal. Huicom, l, bebori.\nLagartija otra. [forma incierta].\nLagartija. Huaſtopichina.\nLagrima. Ogoa.\nLamer. Aberoa.\nLamer. Atchua.\nLana. Cabarabua.\nLanudo. Tuaboac.\nLance hazer à otro. [forma incierta].\nLangoſta de la tierra. Hucochim.\nLangoſta otra que buela. Hubaſim.\nLangoſta otra. [forma incierta].\nLangoſta otra. Babim.\nLangoſta otra. Temuſim.\nLangoſta otra. Huajicom.\nLangoſta otra. Moſaame.\nLaguna. Bacoa.\nLargo luengo. Tetebe.\nLaſtima tener. Buſca compadecerſe.\nLaſtimar à otro. Senuc cocoſiac.\nLatir la vena, ò el corazon. [continúa p.161].",
+  "lineBreakPolicy": "Two-column reading order preserved; alphabetic section changes and cross-page continuation explicit; unresolved forms remain marked.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several entries in the J/L transition and locust-name series remain letter-ambiguous and require second visual collation."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Reverse-side show-through affects the central gutter and individual lexical forms; no normalization is inferred.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-160", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
