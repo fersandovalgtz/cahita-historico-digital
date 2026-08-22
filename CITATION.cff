@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Si utiliza Cahíta Histórico Digital, cite la versión 1.0.0 y la fuente histórica de 1737 correspondiente. Para resultados reproducibles, conserve además el tag o commit utilizado."
+message: "Si utiliza Cahíta Histórico Digital, cite la versión 1.0.0 mediante su DOI de Zenodo y la fuente histórica de 1737 correspondiente. Para resultados reproducibles, conserve además el tag o commit utilizado."
 title: "Cahíta Histórico Digital — Arte de la lengua cahita (1737)"
 type: dataset
 authors:
@@ -8,9 +8,10 @@ authors:
     orcid: "https://orcid.org/0000-0002-3168-6725"
     affiliation: "Universidad Autónoma de Ciudad Juárez"
 version: "1.0.0"
-date-released: "2026-08-21"
+date-released: "2026-08-22"
+doi: "10.5281/zenodo.22061986"
 repository-code: "https://github.com/fersandovalgtz/cahita-historico-digital"
-url: "https://github.com/fersandovalgtz/cahita-historico-digital"
+url: "https://zenodo.org/records/22061986"
 license: "CC-BY-4.0"
 keywords:
   - cahíta
