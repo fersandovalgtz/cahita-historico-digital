@@ -1,0 +1,1378 @@
+{
+  "allowedSuffixes": [
+    ".csv",
+    ".json",
+    ".jsonl"
+  ],
+  "bytesByRoot": {
+    "data/grammar": 365280,
+    "data/lexicon/articles": 1962134,
+    "data/lexicon/candidates": 157816,
+    "data/lexicon/review": 213767
+  },
+  "dataRoots": [
+    "data/lexicon/articles",
+    "data/lexicon/candidates",
+    "data/lexicon/review",
+    "data/grammar"
+  ],
+  "derivedArtifactsIncluded": false,
+  "evolutionPolicy": {
+    "derivedOutputsRemainRebuildableFromVersionedInputs": true,
+    "postV1ScientificDataChangesRequireNewVersionOrExplicitFreeze": true,
+    "silentChangesAllowedUnderSameFreezeId": false
+  },
+  "facsimileIncluded": false,
+  "fileCount": 267,
+  "fileCountByRoot": {
+    "data/grammar": 28,
+    "data/lexicon/articles": 211,
+    "data/lexicon/candidates": 10,
+    "data/lexicon/review": 18
+  },
+  "files": [
+    {
+      "bytes": 7798,
+      "path": "data/grammar/adverbs_part_iv_p122_p126.jsonl",
+      "sha256": "3907bb481da201af614f928bad39fe6fc06d8725bf2bbcb788f07b0d37aaff92"
+    },
+    {
+      "bytes": 4394,
+      "path": "data/grammar/adverbs_part_iv_p127_p129.jsonl",
+      "sha256": "73df1e6c672d07e86bc73b3a6807ab9dc1a26e4a0a54da5960b0685d32f41063"
+    },
+    {
+      "bytes": 7002,
+      "path": "data/grammar/conjunctions_part_iv_p129_p132.jsonl",
+      "sha256": "e0762ff89a9a2b69a58c64719c64775e84669d26ff05fdaf750364e0005941ef"
+    },
+    {
+      "bytes": 6947,
+      "path": "data/grammar/irregular_verbs_part_iii_p103_p105.jsonl",
+      "sha256": "50778b1edb02da33d50ec003d7995ff3773f3eb499fa90d23f42e9af2d18fe9e"
+    },
+    {
+      "bytes": 1284,
+      "path": "data/grammar/metadata/rule_numbering_anomalies_p052.json",
+      "sha256": "8cc18a09c096dd9b7f9ea750913f77cfb1db387691cd7ad5d53c89daed124b86"
+    },
+    {
+      "bytes": 953,
+      "path": "data/grammar/metadata/rule_numbering_anomalies_p066.json",
+      "sha256": "1e3cdbb58b4089bafd4e4f57f2591e6303c18c561a792e014798370e665af76b"
+    },
+    {
+      "bytes": 1046,
+      "path": "data/grammar/metadata/rule_numbering_anomalies_p107.json",
+      "sha256": "a6a6bc3be71ef21b322861bbc2f934372cb18355d7d9e9a08d174e8eac839093"
+    },
+    {
+      "bytes": 1294,
+      "path": "data/grammar/metadata/rule_numbering_closure.json",
+      "sha256": "0e681d98ae059116ef845c6b74d792d4c5f45a7c5658e7daf4e95012f00a75a7"
+    },
+    {
+      "bytes": 12233,
+      "path": "data/grammar/modal_constructions_part_iii_p077_p086.jsonl",
+      "sha256": "69469cc39c0a61f40c3f47c46845aa5ecc2112b0b94bec6e20d22c068e51410a"
+    },
+    {
+      "bytes": 8545,
+      "path": "data/grammar/nonfinite_constructions_part_iii_p087_p093.jsonl",
+      "sha256": "45ef67682b980d8cb7887bb4cdd8e7909c5b57013d11e930d6698db3ca36ae4a"
+    },
+    {
+      "bytes": 3456,
+      "path": "data/grammar/numerals_p178_p180.json",
+      "sha256": "5d4147cfbbc7fc2f5b5f71e5e7cd605b25e64f786164e118bb4c8e49292a2559"
+    },
+    {
+      "bytes": 6574,
+      "path": "data/grammar/paradigms_part_iii_p070_p071.jsonl",
+      "sha256": "fd6106d9e133db5917cbcc0c3b6826eeb2f453828730aabd4377cbec90a3acfe"
+    },
+    {
+      "bytes": 2853,
+      "path": "data/grammar/paradigms_part_iii_p073_p074.jsonl",
+      "sha256": "e6b6876d7e452447e9d12483ae33ff828e57e1dc42d373ca08c178083741cd6e"
+    },
+    {
+      "bytes": 5696,
+      "path": "data/grammar/participles_part_iii_p094_p097.jsonl",
+      "sha256": "804708fcc0bd9460db5642099ef5261edd4919fd8c826d867c2f2a8f0ab7abb1"
+    },
+    {
+      "bytes": 8425,
+      "path": "data/grammar/predicative_modal_part_iii_p097_p103.jsonl",
+      "sha256": "f1522aa2ef1115c5b0814df8e2b2b9a6d3339044b17a8f04569ab7ddb5ffc8d8"
+    },
+    {
+      "bytes": 16526,
+      "path": "data/grammar/prepositions_part_iv_p105_p111.jsonl",
+      "sha256": "60c5d374be56e5b65092d4febecee006ca611d90b702c0026a02901da35bc1ef"
+    },
+    {
+      "bytes": 16246,
+      "path": "data/grammar/prepositions_part_iv_p112_p116.jsonl",
+      "sha256": "7dc81589d0e82a48f782611244412291120dea67aad83ba38a91aed6b9486276"
+    },
+    {
+      "bytes": 15709,
+      "path": "data/grammar/prepositions_part_iv_p117_p121.jsonl",
+      "sha256": "76397e468d3dbd0d855df248317adcae2803e58f72f5d65d8da3d838e67d4eba"
+    },
+    {
+      "bytes": 50537,
+      "path": "data/grammar/rules_part_i_001_045.jsonl",
+      "sha256": "627e4fa3a5d0186b7085bf9f21129f09298749d8e9cb4faa8079629452a16166"
+    },
+    {
+      "bytes": 17523,
+      "path": "data/grammar/rules_part_i_046_060.jsonl",
+      "sha256": "714c49554453ee2311b0d61f153fe6ba3ab25d5e9c927d465d30209d34f9d346"
+    },
+    {
+      "bytes": 24974,
+      "path": "data/grammar/rules_part_i_061_080.jsonl",
+      "sha256": "68f0598702ab4267f6c28a782f8b5510d61985700548038cea5d79ca3baa86c9"
+    },
+    {
+      "bytes": 22062,
+      "path": "data/grammar/rules_part_i_081_100.jsonl",
+      "sha256": "6087ebd2274497a65910bf0000b495b42c6167964c2950441ef840fb26459d4c"
+    },
+    {
+      "bytes": 24143,
+      "path": "data/grammar/rules_part_i_101_120.jsonl",
+      "sha256": "25fab9fba010c228c9a597a1aeebd6835ae29b3c0aab738136a1b032c2d104b1"
+    },
+    {
+      "bytes": 21890,
+      "path": "data/grammar/rules_part_ii_141_160.jsonl",
+      "sha256": "9e82580d77771340b50fc8c8c4f0babb6ff102f6ced6b2c5b48f46bd8cd22d6c"
+    },
+    {
+      "bytes": 28482,
+      "path": "data/grammar/rules_part_ii_161_188.jsonl",
+      "sha256": "9104a6e0b2ac678dee0cb68e85f3aa1b597fb6791cfefeafcd919442ad1c1969"
+    },
+    {
+      "bytes": 21322,
+      "path": "data/grammar/rules_part_iii_189_206.jsonl",
+      "sha256": "a5ee3e90fa6cb070cd826d3c946ddc82afef74349987d3214f87a97f6924be9e"
+    },
+    {
+      "bytes": 22183,
+      "path": "data/grammar/rules_parts_i_ii_121_140.jsonl",
+      "sha256": "35e67f241328437dc7b4a263876ee65471301048a325f4abf1d01470cfe139f4"
+    },
+    {
+      "bytes": 5183,
+      "path": "data/grammar/rules_residual_235_236_285_292.jsonl",
+      "sha256": "e2e6d8ed4a253def78a5b30facafeea28e104607d7c08324e77b30c54697a063"
+    },
+    {
+      "bytes": 1445,
+      "path": "data/lexicon/articles/p133_opening_article.jsonl",
+      "sha256": "3e421596ac9900c8b0f6ebaf81d5140e0d076f6f6010e86672010f699f914237"
+    },
+    {
+      "bytes": 1122,
+      "path": "data/lexicon/articles/p133_p134_cross_page_article.jsonl",
+      "sha256": "a54aeb60cbca7c320ec3af2d5601a613d5d8b30472193c6ba0460ff2c31718ae"
+    },
+    {
+      "bytes": 7611,
+      "path": "data/lexicon/articles/p133_p134_missed_start_promotions_batch01.jsonl",
+      "sha256": "a42b738920e41c489da2fb9b362a4c25003cb89625f66d2c97bdf89a4e12cc4e"
+    },
+    {
+      "bytes": 11550,
+      "path": "data/lexicon/articles/p133_pending_promotions_batch01.jsonl",
+      "sha256": "1893f1485fec5fe77216df112e23a8fb784bf3c60231aa1d97367d3b9f6eba4b"
+    },
+    {
+      "bytes": 12834,
+      "path": "data/lexicon/articles/p133_selected_articles.jsonl",
+      "sha256": "a30f9f3a9541fa2a3ba595e5255ad7e49df4666b22c594889052c0cbb47a8e73"
+    },
+    {
+      "bytes": 24541,
+      "path": "data/lexicon/articles/p134_pending_promotions_batch01.jsonl",
+      "sha256": "00733092dd5fecd4cf79b5f82ba06221483ff5c2754c113f2b81a5fcc0117901"
+    },
+    {
+      "bytes": 11924,
+      "path": "data/lexicon/articles/p134_pilot_articles.jsonl",
+      "sha256": "e5a638b7fdcbf2bc23b19460541a0c95f1912f132676c6efea77dca64ea38103"
+    },
+    {
+      "bytes": 16446,
+      "path": "data/lexicon/articles/p135_candidate_promotions_left.jsonl",
+      "sha256": "2f1e39e158f4f7a8e89d500d17a977a6e54de0086d20274850efb93ad9d83f5d"
+    },
+    {
+      "bytes": 7975,
+      "path": "data/lexicon/articles/p135_candidate_promotions_right.jsonl",
+      "sha256": "b4bda193eecda17991c062e4be3d893c1b9df7859cb0552d7e3a1a0cf6139622"
+    },
+    {
+      "bytes": 6265,
+      "path": "data/lexicon/articles/p135_missed_start_promotions_batch01.jsonl",
+      "sha256": "b088a764bd44f925f255750299c2d3b00c5d5ee6b6ef62c31c30a00b6f884eda"
+    },
+    {
+      "bytes": 12924,
+      "path": "data/lexicon/articles/p135_selected_articles.jsonl",
+      "sha256": "b2556f90a15ea38bafaeda8952637686afd54d920a1ef01c03f17d16176a894e"
+    },
+    {
+      "bytes": 11558,
+      "path": "data/lexicon/articles/p136_candidate_promotions_left.jsonl",
+      "sha256": "b32d8d50adc9959b2f346b0b2cd155711a6b72292e03607c8065c108827d1b4e"
+    },
+    {
+      "bytes": 12779,
+      "path": "data/lexicon/articles/p136_candidate_promotions_right_a.jsonl",
+      "sha256": "fb9f8c50582ba5a7298b0454fbf5ac12ece9a7e7419d073298b12d0a891e50bb"
+    },
+    {
+      "bytes": 11689,
+      "path": "data/lexicon/articles/p136_candidate_promotions_right_b.jsonl",
+      "sha256": "5e108c0f5ce3c64f2edebbff0af53618e2fd34870c7f7872712cfce7fa6ea90b"
+    },
+    {
+      "bytes": 12343,
+      "path": "data/lexicon/articles/p136_selected_articles.jsonl",
+      "sha256": "aa0eed8e32f926567ccd6e24da6808763aab95bdf4150b7ab882843713396f59"
+    },
+    {
+      "bytes": 11950,
+      "path": "data/lexicon/articles/p137_promotions_left.jsonl",
+      "sha256": "b0719849f3b6949b93dc32d3e2fe549ded99e0dfb2303dfe45577dffd9bba961"
+    },
+    {
+      "bytes": 15165,
+      "path": "data/lexicon/articles/p137_promotions_right.jsonl",
+      "sha256": "3fb38d2d6e0799cb11e703b411aa29087d4cfd8760398efd635e5dda115528b7"
+    },
+    {
+      "bytes": 13236,
+      "path": "data/lexicon/articles/p137_selected_articles.jsonl",
+      "sha256": "c4c77079543b49d76672a3517f001cb9115d6611440d5ee7df67fdd12cefe37d"
+    },
+    {
+      "bytes": 7477,
+      "path": "data/lexicon/articles/p138_promotions_left.jsonl",
+      "sha256": "e08d47481f947ddecb861f1938b385003de62ab1817d6cd9a0bf270af447a7c3"
+    },
+    {
+      "bytes": 8057,
+      "path": "data/lexicon/articles/p138_promotions_right.jsonl",
+      "sha256": "df1253b1fb7cc53468f8c194d08b76efe17df44bc4b98e916de1feced4de24de"
+    },
+    {
+      "bytes": 31715,
+      "path": "data/lexicon/articles/p138_selected_articles.jsonl",
+      "sha256": "e8d4cea08d3eb1b067ae8ebde1671eba1fa153f9673c7c70c10b18f5f01ba7b2"
+    },
+    {
+      "bytes": 12131,
+      "path": "data/lexicon/articles/p139_promotions.jsonl",
+      "sha256": "b0e48aa0c2ed62c9c4dfb02de7969dbd241969f4bca7a7ac604d37f496a05dcc"
+    },
+    {
+      "bytes": 38580,
+      "path": "data/lexicon/articles/p139_selected_articles.jsonl",
+      "sha256": "81cde30cdccb0512fd36883634175a7b1ad9d4c3a7683014991bffc7211e6b05"
+    },
+    {
+      "bytes": 11445,
+      "path": "data/lexicon/articles/p140_promotions.jsonl",
+      "sha256": "119348c1dfee7162cdd66caf8e08ea1acc35fedd1a07fc722c52434ef8be1d41"
+    },
+    {
+      "bytes": 35934,
+      "path": "data/lexicon/articles/p140_selected_articles.jsonl",
+      "sha256": "ea3fb54aa94f583fe658e970564cc4ec022637942ae15ee13838df060d38db40"
+    },
+    {
+      "bytes": 1369,
+      "path": "data/lexicon/articles/p141_p142_cross_page_article.jsonl",
+      "sha256": "8fabdef75d3307cd6b7854bf26bc8ae47d65fd616b940674bccf76035c51bb6f"
+    },
+    {
+      "bytes": 11829,
+      "path": "data/lexicon/articles/p141_promotions_batch01.jsonl",
+      "sha256": "21c1409da89d93f017589dbfab436ee1dc132b18ccec784a0f93d7d627f14c5f"
+    },
+    {
+      "bytes": 8866,
+      "path": "data/lexicon/articles/p141_promotions_batch02.jsonl",
+      "sha256": "138a73728963b4ca7632dd2ef0a5deedeec4012d7b8071731c163877b9a96f34"
+    },
+    {
+      "bytes": 6386,
+      "path": "data/lexicon/articles/p141_selected_articles.jsonl",
+      "sha256": "08d4899e6394bf7f6b4dbc2ff43d3869182c42e3acb80b16a4957a1d7b4fa534"
+    },
+    {
+      "bytes": 8960,
+      "path": "data/lexicon/articles/p142_botanical_pilot.jsonl",
+      "sha256": "72f09c9aec8702317a889ae649f744ea55a5701dde93a6dd159fc95780dbadcc"
+    },
+    {
+      "bytes": 8226,
+      "path": "data/lexicon/articles/p142_promotions_a.jsonl",
+      "sha256": "6fe83d2eba6e65c33f37d3b756190fe49654fcd18d5f0e92fc6f4c588fb56d20"
+    },
+    {
+      "bytes": 8162,
+      "path": "data/lexicon/articles/p142_promotions_b.jsonl",
+      "sha256": "8dec1dd3191b9009e22d42e7b11ab7f173cc34e7019565fc5299e1e4a9fe9295"
+    },
+    {
+      "bytes": 8417,
+      "path": "data/lexicon/articles/p142_promotions_c.jsonl",
+      "sha256": "8682642fd9bbc2bc462d589b45cc1c7a5a9725f7d38adff45cf2a6bc900e2539"
+    },
+    {
+      "bytes": 7988,
+      "path": "data/lexicon/articles/p142_promotions_d.jsonl",
+      "sha256": "07a45d7be777a9c5ba30f4c5ccd76ee1d894386be334e7fd85da2a19747a256b"
+    },
+    {
+      "bytes": 7059,
+      "path": "data/lexicon/articles/p143_promotions_a.jsonl",
+      "sha256": "cad0875660aef47f267bbe76b718fa04f9fd7329c482644a77f53c3dc7d7cb31"
+    },
+    {
+      "bytes": 7252,
+      "path": "data/lexicon/articles/p143_promotions_b.jsonl",
+      "sha256": "39fe24f95c770065d707fcd4a875eebd8b5d9afd19fd4185d86fa17c1e20f8dd"
+    },
+    {
+      "bytes": 6666,
+      "path": "data/lexicon/articles/p143_promotions_c.jsonl",
+      "sha256": "f8ea2b25ee8e0f305e32544ebe4912c87e7af7e5cd7aa9b387cdf11e785af4c8"
+    },
+    {
+      "bytes": 7084,
+      "path": "data/lexicon/articles/p143_promotions_d.jsonl",
+      "sha256": "fb76a2bbdc5bfdd4523ab06cdf56298a4629ebc70b1e0c316be02b95562a0c57"
+    },
+    {
+      "bytes": 9398,
+      "path": "data/lexicon/articles/p143_selected_articles.jsonl",
+      "sha256": "13f3bce8998f0d9ba556b92bea6081cd1702f2acfddbff0ad0f01ac2f3ec71d7"
+    },
+    {
+      "bytes": 6624,
+      "path": "data/lexicon/articles/p144_promotions_a.jsonl",
+      "sha256": "e791044246d64bf7b79c6c45ad9d01b354e93ae0f5d31ff756f7759075e72e3b"
+    },
+    {
+      "bytes": 7174,
+      "path": "data/lexicon/articles/p144_promotions_b.jsonl",
+      "sha256": "14bd5959a4e9a87841177ca31590b5c771825ffa2f3bbb443044b013ebef9fff"
+    },
+    {
+      "bytes": 7010,
+      "path": "data/lexicon/articles/p144_promotions_c.jsonl",
+      "sha256": "b112951abeee1272f14b55958e427a83979b378adee90ead31934568e4b30f55"
+    },
+    {
+      "bytes": 6923,
+      "path": "data/lexicon/articles/p144_promotions_d.jsonl",
+      "sha256": "bf3e2d4d0915f1df7c40647dcef1dbe9ca001621313ea3ea98f3921f0f8aad5e"
+    },
+    {
+      "bytes": 11107,
+      "path": "data/lexicon/articles/p144_selected_articles.jsonl",
+      "sha256": "615ff14fc18c77f89b6351f98755e7d5a5cc6b47e9c2746b3dbd8a3ea9878a7c"
+    },
+    {
+      "bytes": 4378,
+      "path": "data/lexicon/articles/p145_promotions_phase2_a.jsonl",
+      "sha256": "d118358e6b30cad1786e11d1358cf11f969436f4e2cd2fa86ea3417c248ce99c"
+    },
+    {
+      "bytes": 25915,
+      "path": "data/lexicon/articles/p145_promotions_phase2_b.jsonl",
+      "sha256": "6c20cfe5f6915fdec173671f83e303f219d4984c330e0b697dc3fe45d7b0b3f5"
+    },
+    {
+      "bytes": 14171,
+      "path": "data/lexicon/articles/p145_selected_articles.jsonl",
+      "sha256": "319e91b910d094f19b78f444e3139adf457a93644575f1961038895b40021726"
+    },
+    {
+      "bytes": 23080,
+      "path": "data/lexicon/articles/p146_promotions_phase2_a.jsonl",
+      "sha256": "8b27b44ca6bb5b1d8f42a0a042503f1a9ec888e4458fb62be5e935c851e6eb1e"
+    },
+    {
+      "bytes": 21585,
+      "path": "data/lexicon/articles/p146_selected_articles.jsonl",
+      "sha256": "9ef679e32f111432493c0e2b8a4563151dd4d04b0940d906779d872a2d9c75d2"
+    },
+    {
+      "bytes": 7542,
+      "path": "data/lexicon/articles/p147_promotions_phase2_a.jsonl",
+      "sha256": "90fe4115811bc38c4623aeed240d06a242c538c260bbf1861695278cb4abd01d"
+    },
+    {
+      "bytes": 7519,
+      "path": "data/lexicon/articles/p147_promotions_phase2_b.jsonl",
+      "sha256": "1efe485b4a3b201de565d466ebb5a69b1d56a1daa107636ed33e93cdce3ecaad"
+    },
+    {
+      "bytes": 7194,
+      "path": "data/lexicon/articles/p147_promotions_phase2_c.jsonl",
+      "sha256": "99a4f72fd2cd0a2d17ae16f2def767d032ec48446cf2aa350584d8d0cb5fe3dd"
+    },
+    {
+      "bytes": 7923,
+      "path": "data/lexicon/articles/p147_promotions_phase2_d.jsonl",
+      "sha256": "f9fec1e3eeaed231d7007271c91d74383c23d9a29ec9fe07ec4546f3a3d7cfda"
+    },
+    {
+      "bytes": 12166,
+      "path": "data/lexicon/articles/p147_selected_articles.jsonl",
+      "sha256": "e2b807626255dccf5f7a0ed849fdd36471e9030d3a5b728bef7a8713882b95fb"
+    },
+    {
+      "bytes": 7902,
+      "path": "data/lexicon/articles/p148_promotions_phase2_a.jsonl",
+      "sha256": "9f96124408d0bd127bdecb050b685fc02d8ed60050d5e605dba3ce2c6ee044a8"
+    },
+    {
+      "bytes": 7812,
+      "path": "data/lexicon/articles/p148_promotions_phase2_b.jsonl",
+      "sha256": "ff9175ca107346678ea690fb186cd95d7d4a7eec773f17fbbd044231b78d0937"
+    },
+    {
+      "bytes": 7026,
+      "path": "data/lexicon/articles/p148_promotions_phase2_c.jsonl",
+      "sha256": "9f00386e78450cccce7512c30632df2dc0aeffc00283edd74b3eb30b85d39200"
+    },
+    {
+      "bytes": 13724,
+      "path": "data/lexicon/articles/p148_selected_articles.jsonl",
+      "sha256": "1639150c95a7ff624d7c9ae12cdea131451f8eb599777afe1a28e4c306104fd4"
+    },
+    {
+      "bytes": 8082,
+      "path": "data/lexicon/articles/p149_promotions_phase2_a.jsonl",
+      "sha256": "a6729a55926956736b74b16e02014865de78eac14d09806eabb71497aa26d32e"
+    },
+    {
+      "bytes": 8404,
+      "path": "data/lexicon/articles/p149_promotions_phase2_b.jsonl",
+      "sha256": "881ec59b7a6621c7ed0bbd0599d29c6d26f5ebad42232638ad0e5da69630f610"
+    },
+    {
+      "bytes": 7052,
+      "path": "data/lexicon/articles/p149_promotions_phase2_c.jsonl",
+      "sha256": "e328318c882a2e5ee5fd2fc978781d0d97636970681ed163c57a294e8bda1220"
+    },
+    {
+      "bytes": 7111,
+      "path": "data/lexicon/articles/p149_promotions_phase2_d.jsonl",
+      "sha256": "cb7bf7e2253200ad6ffb0008f27eaddb1f520e9d5c4878bc7e4a0350a7be42a7"
+    },
+    {
+      "bytes": 12566,
+      "path": "data/lexicon/articles/p149_selected_articles.jsonl",
+      "sha256": "d0cc78d1678a1c8e29b942577afe4fdb04767b7cdc0bf0d9502d2bdb3db0ba7a"
+    },
+    {
+      "bytes": 15545,
+      "path": "data/lexicon/articles/p150_promotions_phase2_a.jsonl",
+      "sha256": "fd4733c90ad7f596b361275efeb2772b348d5571f94ced6824b1ed0275b8caeb"
+    },
+    {
+      "bytes": 16397,
+      "path": "data/lexicon/articles/p150_promotions_phase2_b.jsonl",
+      "sha256": "c1bf4aa121a0fb41272647d2a6c088b7a29f0df81288d9a3ec36dac95dabd575"
+    },
+    {
+      "bytes": 14313,
+      "path": "data/lexicon/articles/p150_selected_articles.jsonl",
+      "sha256": "02bffe9e2dc55c5aa507f29c231687c9b3c158b9d0493ce5e78fcaae90262f14"
+    },
+    {
+      "bytes": 14750,
+      "path": "data/lexicon/articles/p151_promotions_phase2_a.jsonl",
+      "sha256": "306069a6bf33270e078c0d5d1084b6eabdd44f717ba25e0fa4a24578d574dfef"
+    },
+    {
+      "bytes": 14272,
+      "path": "data/lexicon/articles/p151_promotions_phase2_b.jsonl",
+      "sha256": "4668aa927934aa9e4d0532d17e12d58effc0d6c1a50dc8910a298b3338c33741"
+    },
+    {
+      "bytes": 14033,
+      "path": "data/lexicon/articles/p151_selected_articles.jsonl",
+      "sha256": "622861d551556b5e0da8e2f685b7c303c6a05fc2dbc80fe01e88f8515559cf81"
+    },
+    {
+      "bytes": 13987,
+      "path": "data/lexicon/articles/p152_promotions_phase2_a.jsonl",
+      "sha256": "c20fed51a1d1372fbff10a42e9e67e7df707f662c64473aedb947fdfce3864a4"
+    },
+    {
+      "bytes": 14361,
+      "path": "data/lexicon/articles/p152_promotions_phase2_b.jsonl",
+      "sha256": "40c2732ad01146cf022f1a192d75ffa6b74f373d43287e5dd137466248f4c8e0"
+    },
+    {
+      "bytes": 14004,
+      "path": "data/lexicon/articles/p152_selected_articles.jsonl",
+      "sha256": "29b7cb38c0921ec782742f046332414d1ff804d12e040ef31aa02e7c248dba6a"
+    },
+    {
+      "bytes": 14571,
+      "path": "data/lexicon/articles/p153_promotions_phase2_a.jsonl",
+      "sha256": "a0d467715fbe71e4d12040af82ff3a124f1f474f7b49017182d9c79c85d823bc"
+    },
+    {
+      "bytes": 15711,
+      "path": "data/lexicon/articles/p153_promotions_phase2_b.jsonl",
+      "sha256": "e0b71780f6f8e7c5a7afae632d46a5961130bb7ae008f77a46c43170379bf55c"
+    },
+    {
+      "bytes": 13247,
+      "path": "data/lexicon/articles/p153_selected_articles.jsonl",
+      "sha256": "329cd707a0877995710312bfb376c24e5333529649fe34960249edd6c3f128f8"
+    },
+    {
+      "bytes": 11077,
+      "path": "data/lexicon/articles/p154_promotions_phase2_a.jsonl",
+      "sha256": "faa027e9f250019d1d7a6939fc76a239253dc96c86102757599bd491e7b1d277"
+    },
+    {
+      "bytes": 20692,
+      "path": "data/lexicon/articles/p154_promotions_phase2_b.jsonl",
+      "sha256": "e10e365a479cbd03d1441eccd9d76ebb6a71ad014849c80ce99f5d07bbb6b031"
+    },
+    {
+      "bytes": 13255,
+      "path": "data/lexicon/articles/p154_selected_articles.jsonl",
+      "sha256": "cf399b48bb54af8aa4e46b759f02c07a2feee057043a8e1cd6c792f4b4839c3b"
+    },
+    {
+      "bytes": 14122,
+      "path": "data/lexicon/articles/p155_promotions_phase2_a.jsonl",
+      "sha256": "c8aa221656e573a6aef132dc346b347d78e15b6a27b365f2cd2cca203a451954"
+    },
+    {
+      "bytes": 13383,
+      "path": "data/lexicon/articles/p155_promotions_phase2_b.jsonl",
+      "sha256": "8dadf07709f6bbea7115848879793676aff5db48a81064a5c25370f48e3501a8"
+    },
+    {
+      "bytes": 13436,
+      "path": "data/lexicon/articles/p155_selected_articles.jsonl",
+      "sha256": "29beb28c057163e7272fc3b32bd4a5cbbe994304c9fcb9b79d2b4a776d293780"
+    },
+    {
+      "bytes": 9766,
+      "path": "data/lexicon/articles/p156_promotions_phase2_a.jsonl",
+      "sha256": "eb3cdeb4227a4b8513f86981184e78aa5cf2d761391a61a13785fef038e74505"
+    },
+    {
+      "bytes": 5305,
+      "path": "data/lexicon/articles/p156_promotions_phase2_b1.jsonl",
+      "sha256": "cb9a99ec2b35a7113141c2755d1f1cc208c5983494914ab2fc53e7b2e50f232e"
+    },
+    {
+      "bytes": 4661,
+      "path": "data/lexicon/articles/p156_promotions_phase2_b2.jsonl",
+      "sha256": "9f30548273a2094797df25482e05676bcfbbcca3f92384e44f1e68c58ea2521f"
+    },
+    {
+      "bytes": 9320,
+      "path": "data/lexicon/articles/p156_promotions_phase2_c.jsonl",
+      "sha256": "a74500cbc527cd72552c72d8678bb7ab5b262e0c61186267e5574ddd08478015"
+    },
+    {
+      "bytes": 8326,
+      "path": "data/lexicon/articles/p156_promotions_phase2_d.jsonl",
+      "sha256": "60f9614046d8dffeee5a729fe0a019b2db5027b876153f415819a9d3aea8d5f7"
+    },
+    {
+      "bytes": 13218,
+      "path": "data/lexicon/articles/p156_selected_articles.jsonl",
+      "sha256": "892d9d9484609506f23c676d1f531e6cbbfe3cb538d80119036a017f16d955af"
+    },
+    {
+      "bytes": 7445,
+      "path": "data/lexicon/articles/p157_promotions_phase2_a.jsonl",
+      "sha256": "2c14d7063c816d5ebd987200574ae03322b5f387b193e7db33123ee4b05b7b3e"
+    },
+    {
+      "bytes": 6684,
+      "path": "data/lexicon/articles/p157_promotions_phase2_b.jsonl",
+      "sha256": "b2a7d8a463698821d94d3305b55fe974b0b9330c0fad9400cc53af8f5c67dd56"
+    },
+    {
+      "bytes": 6941,
+      "path": "data/lexicon/articles/p157_promotions_phase2_c.jsonl",
+      "sha256": "6f7f6315e396f7a7f0fe4bc8e9f79807e59aea0fc51bacf03f03ecd2e16e46fc"
+    },
+    {
+      "bytes": 6592,
+      "path": "data/lexicon/articles/p157_promotions_phase2_d.jsonl",
+      "sha256": "fcffbee25e0cf93db141ae95ca1ae6a1d961df066e28bb2838357fad6dd8626c"
+    },
+    {
+      "bytes": 13599,
+      "path": "data/lexicon/articles/p157_selected_articles.jsonl",
+      "sha256": "8f03d33f0f71070802817e83d47f4dd58cdc8dcb3a1ce7ae19dd803720db7095"
+    },
+    {
+      "bytes": 8760,
+      "path": "data/lexicon/articles/p158_promotions_phase2_a.jsonl",
+      "sha256": "e355140250243ec42ce7ee2bd62ecaf9208a517d70967cfa080fccf802618a25"
+    },
+    {
+      "bytes": 9473,
+      "path": "data/lexicon/articles/p158_promotions_phase2_b.jsonl",
+      "sha256": "a40018648f81222aed5ddc41e0f1e710636c645111cbdc0deff499c7224af160"
+    },
+    {
+      "bytes": 7961,
+      "path": "data/lexicon/articles/p158_promotions_phase2_c.jsonl",
+      "sha256": "970ea83345053dfee37ec949e80901daf6adea32fe044ec3321f59389849d519"
+    },
+    {
+      "bytes": 8126,
+      "path": "data/lexicon/articles/p158_promotions_phase2_d.jsonl",
+      "sha256": "a79cd9214570e9454ff750ce8ee40d99a7a156a77fed878bbba70637bc8b8105"
+    },
+    {
+      "bytes": 13706,
+      "path": "data/lexicon/articles/p158_selected_articles.jsonl",
+      "sha256": "b59b1dd8b27fb6f3c56e4ef8eb0834d6118f7ed1f7ef84b922e134ca3d880242"
+    },
+    {
+      "bytes": 7746,
+      "path": "data/lexicon/articles/p159_promotions_phase2_a.jsonl",
+      "sha256": "8c2b0bd2a8d08824c548ffd628a4eb2a8293ac1e0638354acaf992802c064def"
+    },
+    {
+      "bytes": 7930,
+      "path": "data/lexicon/articles/p159_promotions_phase2_b.jsonl",
+      "sha256": "3d47a1445b79675b9a7c7caad11c7e1f8a2dcbb6e94e258234a3123ce6f12977"
+    },
+    {
+      "bytes": 7811,
+      "path": "data/lexicon/articles/p159_promotions_phase2_c.jsonl",
+      "sha256": "3532a36ec0e8e2e29dc8cc44bad026d0c82956db0bc47566af0a4096699e4bda"
+    },
+    {
+      "bytes": 8863,
+      "path": "data/lexicon/articles/p159_promotions_phase2_d.jsonl",
+      "sha256": "a7b4027a0b49fc43d4c19f46a5765a7df64e5cf8799b877066080e4c7295b971"
+    },
+    {
+      "bytes": 12492,
+      "path": "data/lexicon/articles/p159_selected_articles.jsonl",
+      "sha256": "c6e48d98dfdb23a2b18b5dcc0a9b037769088cc82e6606ccb9572c6bec3a5409"
+    },
+    {
+      "bytes": 7467,
+      "path": "data/lexicon/articles/p160_promotions_phase2_a.jsonl",
+      "sha256": "bb30fa89fed9610fcf1f8b4095620fffd51acbb3d1cdadf6b43f6c2c31d82302"
+    },
+    {
+      "bytes": 6735,
+      "path": "data/lexicon/articles/p160_promotions_phase2_b.jsonl",
+      "sha256": "2cad313b9f17e3e8cf93af9beb1a978346f929ca3edb79d327774b27718628e8"
+    },
+    {
+      "bytes": 6741,
+      "path": "data/lexicon/articles/p160_promotions_phase2_c.jsonl",
+      "sha256": "4f2978679879ec85a87d3fa2a58aa61b36dbf00791df532d8402b4448e15f92b"
+    },
+    {
+      "bytes": 6716,
+      "path": "data/lexicon/articles/p160_promotions_phase2_d.jsonl",
+      "sha256": "55a7ced25e683140ab51eb0529e7bd358448353582f19fedc98d9a757a4fcdf1"
+    },
+    {
+      "bytes": 2176,
+      "path": "data/lexicon/articles/p160_promotions_phase2_e.jsonl",
+      "sha256": "6d90b1251c338197c21f345f371205eb72bb24b6df8819ab695ae954c8cddb45"
+    },
+    {
+      "bytes": 12793,
+      "path": "data/lexicon/articles/p160_selected_articles.jsonl",
+      "sha256": "95abcbdea064392a15cb83ab15abff2f25b4c37ce0bd3b368133206a436e66da"
+    },
+    {
+      "bytes": 6755,
+      "path": "data/lexicon/articles/p161_promotions_phase2_a.jsonl",
+      "sha256": "2c709af0a6f568694ec673c875ad8d37dc168eac4cd5e9c5ae7792069d9c4a9e"
+    },
+    {
+      "bytes": 6517,
+      "path": "data/lexicon/articles/p161_promotions_phase2_b.jsonl",
+      "sha256": "40b75f29d74929629b57847d6684cf12852aa48e599ad520096182e7239244ee"
+    },
+    {
+      "bytes": 6238,
+      "path": "data/lexicon/articles/p161_promotions_phase2_c.jsonl",
+      "sha256": "b162ae972aad5cd19ac4e1259379b958d76ce5c03e7edd8c6aba25c18f3bc6c5"
+    },
+    {
+      "bytes": 6596,
+      "path": "data/lexicon/articles/p161_promotions_phase2_d.jsonl",
+      "sha256": "74e1a52752ca622e2f4b2d3ee3dd20f7fcb912698afe9934337bf59470faaff9"
+    },
+    {
+      "bytes": 6748,
+      "path": "data/lexicon/articles/p161_promotions_phase2_e.jsonl",
+      "sha256": "7fa95ea0c829c373d791b61174e612a92cf5f9920315515d30c95b5884e95684"
+    },
+    {
+      "bytes": 1377,
+      "path": "data/lexicon/articles/p161_promotions_phase2_f.jsonl",
+      "sha256": "3057f8b4709242460b79e1f2c9cefa214ec00e18b9edea9d43c0be3e07ed654e"
+    },
+    {
+      "bytes": 12816,
+      "path": "data/lexicon/articles/p161_selected_articles.jsonl",
+      "sha256": "d154ee869f53800a965e2061e667f64d73d47d02b4a53fceeab78e8adc8ed2a7"
+    },
+    {
+      "bytes": 5982,
+      "path": "data/lexicon/articles/p162_promotions_phase2_a.jsonl",
+      "sha256": "817e0cbf28c169f97b0bc1f58af8b627ac2fe1a7070c88f2a2897a0ab0fc34ee"
+    },
+    {
+      "bytes": 5793,
+      "path": "data/lexicon/articles/p162_promotions_phase2_b.jsonl",
+      "sha256": "71408764b66d5226b0d58a5442b653d60920243d69b78d9d2bf851fc718aef2b"
+    },
+    {
+      "bytes": 5947,
+      "path": "data/lexicon/articles/p162_promotions_phase2_c.jsonl",
+      "sha256": "2da82c8cc7b1a57e0fd81efb3995be7f7942a059baa2fe0518e121414a6383bc"
+    },
+    {
+      "bytes": 5608,
+      "path": "data/lexicon/articles/p162_promotions_phase2_d.jsonl",
+      "sha256": "21a9bc784bfe953c9bf076b9715a3fc663e560067b310e9e01d0e4f234e6bbf8"
+    },
+    {
+      "bytes": 5185,
+      "path": "data/lexicon/articles/p162_promotions_phase2_e.jsonl",
+      "sha256": "80f926cd9baf9c244b8cb312e11b09c92fcc4f330133c309f9cfcd0fecacbb76"
+    },
+    {
+      "bytes": 13269,
+      "path": "data/lexicon/articles/p162_selected_articles.jsonl",
+      "sha256": "5031ef82d34ad1ce480ebe1e03f85edf2c55a0b1451e75160db39663eca72c07"
+    },
+    {
+      "bytes": 6011,
+      "path": "data/lexicon/articles/p163_promotions_phase2_a.jsonl",
+      "sha256": "5dda2d3be25848fff3f42be6bbac92902887207154c395ba00f7c953405e454b"
+    },
+    {
+      "bytes": 6016,
+      "path": "data/lexicon/articles/p163_promotions_phase2_b.jsonl",
+      "sha256": "27f3d1c9e591ea5dca308cfcf084f73212a81b5a78a0bea3a8cc1c7968e2c2ef"
+    },
+    {
+      "bytes": 5835,
+      "path": "data/lexicon/articles/p163_promotions_phase2_c.jsonl",
+      "sha256": "e55305460e6fffddc369c6f998905977b2f95f3930f0439a24798a711ced242c"
+    },
+    {
+      "bytes": 4772,
+      "path": "data/lexicon/articles/p163_promotions_phase2_d.jsonl",
+      "sha256": "9887095cc8549d7acc91d737e20783532165e8552df522e242709d03c7603522"
+    },
+    {
+      "bytes": 4531,
+      "path": "data/lexicon/articles/p163_promotions_phase2_e.jsonl",
+      "sha256": "27ce2d05d1cd5c93cb0b8d2a791dc2aa48828ddc3a81d822bc4ea2ce7c7d31da"
+    },
+    {
+      "bytes": 12624,
+      "path": "data/lexicon/articles/p163_selected_articles.jsonl",
+      "sha256": "570bc3a51945601eb9f9ee7793a94b50d63ab3bb21b2ef9368fddc1e23a5645b"
+    },
+    {
+      "bytes": 5917,
+      "path": "data/lexicon/articles/p164_promotions_phase2_a.jsonl",
+      "sha256": "dad31b21ee4893e61a8619409ca9c369e6ae07bafa9ce1ad7753a2ad9ed3b07e"
+    },
+    {
+      "bytes": 5604,
+      "path": "data/lexicon/articles/p164_promotions_phase2_b.jsonl",
+      "sha256": "ebd5cfe3b72bd63add1d9821b6211be5e889ee8b2bda48aaf344f2f2659765c8"
+    },
+    {
+      "bytes": 5948,
+      "path": "data/lexicon/articles/p164_promotions_phase2_c.jsonl",
+      "sha256": "08a00a2ec3b68d2a686375fd2b693bc8aaa5e3d34563b2a851cb004cc96a7695"
+    },
+    {
+      "bytes": 5759,
+      "path": "data/lexicon/articles/p164_promotions_phase2_d.jsonl",
+      "sha256": "2cfa178ae1bb9e1f9c1ebcdde35c7fc70c08c5a03b65f2a8dfc6cd8e0d87eb55"
+    },
+    {
+      "bytes": 5976,
+      "path": "data/lexicon/articles/p164_promotions_phase2_e.jsonl",
+      "sha256": "ed49e17ff63d90789bda0ca80892591dab62540650c7842161ba68a3a23cdc45"
+    },
+    {
+      "bytes": 5271,
+      "path": "data/lexicon/articles/p164_promotions_phase2_f.jsonl",
+      "sha256": "22e0832c73f4264c64c6c16d25a4a0a8fde1619f933de0d5f883a3202f0fccd3"
+    },
+    {
+      "bytes": 12652,
+      "path": "data/lexicon/articles/p164_selected_articles.jsonl",
+      "sha256": "e1aa96314f370eeb972047947c1c4a7d6556ce28d514ad8834328a1e1df2ffb9"
+    },
+    {
+      "bytes": 8869,
+      "path": "data/lexicon/articles/p165_promotions_phase2_a.jsonl",
+      "sha256": "4cb4f0da1b440244ab7dd520438f059a1feda3c8bb13d3abbbb8fe873639d96f"
+    },
+    {
+      "bytes": 8304,
+      "path": "data/lexicon/articles/p165_promotions_phase2_b.jsonl",
+      "sha256": "e68fb6dfe1fca72e21fe752b16da480d583044105bb0822189cbcb988ff47189"
+    },
+    {
+      "bytes": 8071,
+      "path": "data/lexicon/articles/p165_promotions_phase2_c.jsonl",
+      "sha256": "7bf09095092a8cd5ed020d78c41053b7d94614f332c73d7b0d67372920421e43"
+    },
+    {
+      "bytes": 8104,
+      "path": "data/lexicon/articles/p165_promotions_phase2_d.jsonl",
+      "sha256": "760a981f8d7ed5bde4f1b63e37f689ceda9495e884a5dcc85a7b3bbcbdfd4605"
+    },
+    {
+      "bytes": 13403,
+      "path": "data/lexicon/articles/p165_selected_articles.jsonl",
+      "sha256": "e44bc9e9e187dca7cd5472ac66a08a75994e79d0589b97afaf51f4e4a5e11360"
+    },
+    {
+      "bytes": 7489,
+      "path": "data/lexicon/articles/p166_promotions_phase2_a.jsonl",
+      "sha256": "1852f705adeac852cdee0ba475812d2ebcfd06a8a81ebd06fe206c9e0ca7d784"
+    },
+    {
+      "bytes": 7388,
+      "path": "data/lexicon/articles/p166_promotions_phase2_b.jsonl",
+      "sha256": "211c8bedf22e372c331eba8e2eb943fba067f47674e556c65720608ac386c82d"
+    },
+    {
+      "bytes": 7744,
+      "path": "data/lexicon/articles/p166_promotions_phase2_c.jsonl",
+      "sha256": "1380daf0dcef4f448af0f1147d463c5b7bbed83a079256be40749ccada7048c9"
+    },
+    {
+      "bytes": 8422,
+      "path": "data/lexicon/articles/p166_promotions_phase2_d.jsonl",
+      "sha256": "a7cc3c5960cbe2256185e5de85e1097a2a771885c6dc5fe401f2b01ecc7678df"
+    },
+    {
+      "bytes": 13507,
+      "path": "data/lexicon/articles/p166_selected_articles.jsonl",
+      "sha256": "921ee5dc1b5c7ce2455fa3092a467771fb7bdd8bf0239c62f0910e903b3feac3"
+    },
+    {
+      "bytes": 7736,
+      "path": "data/lexicon/articles/p167_promotions_phase2_a.jsonl",
+      "sha256": "64582cf04229e1893c748af411c616b52c4447f4d4c9af96f9d12abf66fc4923"
+    },
+    {
+      "bytes": 5832,
+      "path": "data/lexicon/articles/p167_promotions_phase2_b.jsonl",
+      "sha256": "dcf0253dddfbeadc083dcc7f9ae94d8e03974f09e4bbd4b974faffef70fa769e"
+    },
+    {
+      "bytes": 6645,
+      "path": "data/lexicon/articles/p167_promotions_phase2_c.jsonl",
+      "sha256": "7121adf23426573b99a0501c09aa6d749e34b152e793ce9f8bda0858af424523"
+    },
+    {
+      "bytes": 7572,
+      "path": "data/lexicon/articles/p167_promotions_phase2_d.jsonl",
+      "sha256": "d0e68abaabcf86f5b6e5c9ad733aaec00334ea99b17d185edabf5ee41c2cb40f"
+    },
+    {
+      "bytes": 6358,
+      "path": "data/lexicon/articles/p167_promotions_phase2_e.jsonl",
+      "sha256": "4ef63a536a524068f68ff37668c7d95ac7b4e11103651e7ddd5a3ffe80be5a3e"
+    },
+    {
+      "bytes": 13315,
+      "path": "data/lexicon/articles/p167_selected_articles.jsonl",
+      "sha256": "ca7089ccf39295e349ac8228a2caec8c72c63b88b143f8f88157e059db424d8f"
+    },
+    {
+      "bytes": 8108,
+      "path": "data/lexicon/articles/p168_promotions_phase2_a.jsonl",
+      "sha256": "7cea4ef2d0dbf06beb68fc7d06efb98428d6da8d899ec5555b4dea20e5fcadac"
+    },
+    {
+      "bytes": 7294,
+      "path": "data/lexicon/articles/p168_promotions_phase2_b.jsonl",
+      "sha256": "55187e9877329b1577f005d344a219a3dc5a2cba63226584ed1d268489bc7db8"
+    },
+    {
+      "bytes": 7469,
+      "path": "data/lexicon/articles/p168_promotions_phase2_c.jsonl",
+      "sha256": "ab8b8fd7e346c428fb9511d5c7632e46e9c85dfa9fc5013f7f5f92dd26ec7683"
+    },
+    {
+      "bytes": 7399,
+      "path": "data/lexicon/articles/p168_promotions_phase2_d.jsonl",
+      "sha256": "41e5637ded465baff0dbb73d60a8541a95918afdbebf9fd72b2a8bbc0e7c4d0e"
+    },
+    {
+      "bytes": 4439,
+      "path": "data/lexicon/articles/p168_promotions_phase2_e.jsonl",
+      "sha256": "34a23cfa406d319ddf5a4ba76a24af141e4d491d6574d08356b9656c1b9bbb1c"
+    },
+    {
+      "bytes": 14645,
+      "path": "data/lexicon/articles/p168_selected_articles.jsonl",
+      "sha256": "41df30d9e876e50a087b40e825cb2828e461ee9cc6a54e0afec93f4816eeb520"
+    },
+    {
+      "bytes": 7602,
+      "path": "data/lexicon/articles/p169_promotions_phase2_a.jsonl",
+      "sha256": "757030e6db05d7aef7618b187977c4053d449d7fadbd71a7958a0432fefe772f"
+    },
+    {
+      "bytes": 7340,
+      "path": "data/lexicon/articles/p169_promotions_phase2_b.jsonl",
+      "sha256": "ad8b1425ad27d7b9d598746bf6c72b531ede4f761833f69edd155acb182e1edd"
+    },
+    {
+      "bytes": 7897,
+      "path": "data/lexicon/articles/p169_promotions_phase2_c.jsonl",
+      "sha256": "21d6e7597a7e2b4c39f4c5364642e9a19376169b9c302967438a2b591d8109d3"
+    },
+    {
+      "bytes": 7399,
+      "path": "data/lexicon/articles/p169_promotions_phase2_d.jsonl",
+      "sha256": "e708a35b6d8f7a17d4698e9010bb8f8d7bca174a147bbb31687832ceeacdb1a3"
+    },
+    {
+      "bytes": 4536,
+      "path": "data/lexicon/articles/p169_promotions_phase2_e.jsonl",
+      "sha256": "4faa141619d7553a6026526e6e36d21bce024ad11340f86bde2139eaea91d8d9"
+    },
+    {
+      "bytes": 12898,
+      "path": "data/lexicon/articles/p169_selected_articles.jsonl",
+      "sha256": "544ea1282e41f6585fe0110d23b704d6ec67fb33028d92507e085a6ee84a12bf"
+    },
+    {
+      "bytes": 6738,
+      "path": "data/lexicon/articles/p170_promotions_phase2_a.jsonl",
+      "sha256": "f8d53b34f48160f883aaeeaa78e8e9ddf02a21e7277baf1b6e05a217b4f32dfb"
+    },
+    {
+      "bytes": 7064,
+      "path": "data/lexicon/articles/p170_promotions_phase2_b.jsonl",
+      "sha256": "ea84548ab8d80565a9e42b0f45352e758b28292a7cc62420b9db3ff1b6a6a240"
+    },
+    {
+      "bytes": 7385,
+      "path": "data/lexicon/articles/p170_promotions_phase2_c.jsonl",
+      "sha256": "314e9ff4881cad231afb7cc5a1cf797d9b50c4b94e431acbbb3c73a86e36df24"
+    },
+    {
+      "bytes": 6959,
+      "path": "data/lexicon/articles/p170_promotions_phase2_d.jsonl",
+      "sha256": "7b9424289c9040799ebace7163e5cc1580f37f794e5c0b248120dc0a8263d041"
+    },
+    {
+      "bytes": 4690,
+      "path": "data/lexicon/articles/p170_promotions_phase2_e.jsonl",
+      "sha256": "2089e5299258ebb7ac1f36cd12789a68d163807deba824d96fe9ca64d3014c54"
+    },
+    {
+      "bytes": 8227,
+      "path": "data/lexicon/articles/p170_selected_articles.jsonl",
+      "sha256": "d3e047520897c8c08a08218887f0a7eec65d5915427faac0623451bd8790c0e7"
+    },
+    {
+      "bytes": 6791,
+      "path": "data/lexicon/articles/p171_promotions_phase2_a.jsonl",
+      "sha256": "80dbe6bee4c5c4c8632ae51787ca0a325b008c9f5fee954ccc262a82203563b7"
+    },
+    {
+      "bytes": 6559,
+      "path": "data/lexicon/articles/p171_promotions_phase2_b.jsonl",
+      "sha256": "0906a044700134dbf69d71b2f8a6892a4ca4d3e6619b7b7f3238c341a0e03f46"
+    },
+    {
+      "bytes": 5902,
+      "path": "data/lexicon/articles/p171_promotions_phase2_c.jsonl",
+      "sha256": "59ba46a65d25d2a17ad8916a224f7a5df5c3296aa2bb61fce60c1c89266aabbc"
+    },
+    {
+      "bytes": 6283,
+      "path": "data/lexicon/articles/p171_promotions_phase2_d.jsonl",
+      "sha256": "8d203b9794e0c1e22fd9916c4bc1193df85b9ae001fd5418994030397936890d"
+    },
+    {
+      "bytes": 6653,
+      "path": "data/lexicon/articles/p171_promotions_phase2_e.jsonl",
+      "sha256": "2604b4c939f7a00129b67fb89a6fbbd5a659498da5fb073ab8d100357274bcea"
+    },
+    {
+      "bytes": 8516,
+      "path": "data/lexicon/articles/p171_selected_articles.jsonl",
+      "sha256": "660447c8063ac28d9f212baa3cf6133f8516743d85d8c1742ebeda8436a2decc"
+    },
+    {
+      "bytes": 9976,
+      "path": "data/lexicon/articles/p172_promotions_phase2_a.jsonl",
+      "sha256": "81b08272c41620a87eb9efbf6447d5e9b7806879b099b9677a0f86a1f983ffc3"
+    },
+    {
+      "bytes": 9910,
+      "path": "data/lexicon/articles/p172_promotions_phase2_b.jsonl",
+      "sha256": "a0dd9ee9b05039ed7dafb32b2c69caecc243c6c43f38c01a29d216fc064d2c34"
+    },
+    {
+      "bytes": 9631,
+      "path": "data/lexicon/articles/p172_promotions_phase2_c.jsonl",
+      "sha256": "f9b22d3020ce21574f7d1de98104a75849c271483485bd409f0d5c8b1d568002"
+    },
+    {
+      "bytes": 9805,
+      "path": "data/lexicon/articles/p172_promotions_phase2_d.jsonl",
+      "sha256": "b95fb8acab5a9a784b1a16c6ff389247cdb71c1a19120a4c0ae3d10a8aeab520"
+    },
+    {
+      "bytes": 13032,
+      "path": "data/lexicon/articles/p172_selected_articles.jsonl",
+      "sha256": "98a554f96f9e6b2bee2279b2cf830a7e53d51d8b9e33c04f8ddde624042ebae2"
+    },
+    {
+      "bytes": 6705,
+      "path": "data/lexicon/articles/p173_promotions_phase2_a.jsonl",
+      "sha256": "bf516f60a56e7148738e475d9819f16911086e6d9bb287dc93719c87cdf83fa8"
+    },
+    {
+      "bytes": 6540,
+      "path": "data/lexicon/articles/p173_promotions_phase2_b.jsonl",
+      "sha256": "e20e9789027b9660836e93e5f4904fab09160d7611867d84d2e48c23d6828720"
+    },
+    {
+      "bytes": 6631,
+      "path": "data/lexicon/articles/p173_promotions_phase2_c.jsonl",
+      "sha256": "62f5b1a6d55f37b1ce7d99726c85aabac06dd50a5cc0ca085db0d2fad3c01e0a"
+    },
+    {
+      "bytes": 6448,
+      "path": "data/lexicon/articles/p173_promotions_phase2_d.jsonl",
+      "sha256": "f21dd310da80884e30643679f1878bdfc814a71a7eb3aae5da52c91f818694f9"
+    },
+    {
+      "bytes": 6507,
+      "path": "data/lexicon/articles/p173_promotions_phase2_e.jsonl",
+      "sha256": "dbded76e9491cae0611e76e5f54315100c8123b2077450ec740f19aea4b2dda1"
+    },
+    {
+      "bytes": 13235,
+      "path": "data/lexicon/articles/p173_selected_articles.jsonl",
+      "sha256": "a2f68f1991e9f469818a76f8cc96cb2ab7bdfe74a21f2151c200dd6fcaf170d5"
+    },
+    {
+      "bytes": 6418,
+      "path": "data/lexicon/articles/p174_promotions_phase2_a.jsonl",
+      "sha256": "276978d7cd305b11113b92a94465246fa76e4f7b09f256b80185504e865aba1a"
+    },
+    {
+      "bytes": 6116,
+      "path": "data/lexicon/articles/p174_promotions_phase2_b.jsonl",
+      "sha256": "b9a53576de67845a42ea5fea2f151d5a51ba4f80a2d5bb7010fb19e8f2b803ef"
+    },
+    {
+      "bytes": 3092,
+      "path": "data/lexicon/articles/p174_promotions_phase2_c.jsonl",
+      "sha256": "92c9e3f39786bcc4d3a3955074da664145b22c0ee2679696c1aec4cc49412870"
+    },
+    {
+      "bytes": 3828,
+      "path": "data/lexicon/articles/p174_promotions_phase2_d.jsonl",
+      "sha256": "40be458df5d5ef99a466e6c0a36ff5c7c688bfaeaecb3872d3203051de15c065"
+    },
+    {
+      "bytes": 3886,
+      "path": "data/lexicon/articles/p174_promotions_phase2_e.jsonl",
+      "sha256": "616462ce836b0ebf19ca71d3714b4fff2bcdce41b2c4a43c939afe778d393064"
+    },
+    {
+      "bytes": 3696,
+      "path": "data/lexicon/articles/p174_promotions_phase2_f.jsonl",
+      "sha256": "75b4f911deb32002b197b0c7fa03dc9bba61cd9f567c304d653f80b3899bb053"
+    },
+    {
+      "bytes": 3689,
+      "path": "data/lexicon/articles/p174_promotions_phase2_g.jsonl",
+      "sha256": "0fa8112ecf46e8341549c63d946c1f8388884d6acf76d0291b0f0e7224e973a3"
+    },
+    {
+      "bytes": 12606,
+      "path": "data/lexicon/articles/p174_selected_articles.jsonl",
+      "sha256": "4b4f3c17d50c8e5bd3d4eb691cfe0ef500dd510c87d605d27446d4abdd0211cf"
+    },
+    {
+      "bytes": 6301,
+      "path": "data/lexicon/articles/p175_promotions_phase2_a.jsonl",
+      "sha256": "06544fa42c4548539dd660204086529e72c73c443fc3d35a896c2e2f7f098680"
+    },
+    {
+      "bytes": 6449,
+      "path": "data/lexicon/articles/p175_promotions_phase2_b.jsonl",
+      "sha256": "52dadf88693a9237dc246f7712fe27b4bca31218e2069ce602634128c3173a2d"
+    },
+    {
+      "bytes": 6522,
+      "path": "data/lexicon/articles/p175_promotions_phase2_c.jsonl",
+      "sha256": "3a0ac3f6f384d06122d1e52a9a0b8a427e8a0143e22c0720c74c797798da805d"
+    },
+    {
+      "bytes": 6525,
+      "path": "data/lexicon/articles/p175_promotions_phase2_d.jsonl",
+      "sha256": "b94d4dd09dd2edb36bbe3539b6fb0d4e2fb8ef004056d9796f8167f886bf22b5"
+    },
+    {
+      "bytes": 4668,
+      "path": "data/lexicon/articles/p175_promotions_phase2_e.jsonl",
+      "sha256": "bc8d33c254c2ef42018ed053d7d1da579ef8928066e07752d1f8d1724bf7bec8"
+    },
+    {
+      "bytes": 12863,
+      "path": "data/lexicon/articles/p175_selected_articles.jsonl",
+      "sha256": "9e4857c3958327673ad1713173fc91766a9f6ebcd2484fa26fb2390ff65b3681"
+    },
+    {
+      "bytes": 6135,
+      "path": "data/lexicon/articles/p176_promotions_phase2_a.jsonl",
+      "sha256": "ee88f6905b8689926ddbc607389b6b867d83c61bc25985cd2ad57f4c248f81d5"
+    },
+    {
+      "bytes": 6109,
+      "path": "data/lexicon/articles/p176_promotions_phase2_b.jsonl",
+      "sha256": "819f050436bd4e182a2d126f954b28d012f448d8d57e85162b9aea85b13e78f0"
+    },
+    {
+      "bytes": 6121,
+      "path": "data/lexicon/articles/p176_promotions_phase2_c.jsonl",
+      "sha256": "2558ed845481467dd9a3044d56370225ec9c5b03989d91a6d7889e0946740e2f"
+    },
+    {
+      "bytes": 5154,
+      "path": "data/lexicon/articles/p176_promotions_phase2_d.jsonl",
+      "sha256": "bc1c07b69b4527528ee3d08b247f97d5b5446667206945022283b37f2cff14ca"
+    },
+    {
+      "bytes": 5350,
+      "path": "data/lexicon/articles/p176_promotions_phase2_e.jsonl",
+      "sha256": "176a1a792a064beb62a102e7401cf39094b30e88f4ed128c4a2b69957f880d40"
+    },
+    {
+      "bytes": 12865,
+      "path": "data/lexicon/articles/p176_selected_articles.jsonl",
+      "sha256": "6b35e2e49a2ec1939804b923bfe5ce717a8842e0616d75ca16e8f71470a1d367"
+    },
+    {
+      "bytes": 6953,
+      "path": "data/lexicon/articles/p177_promotions_phase2_a.jsonl",
+      "sha256": "7edc7ccadecf5ba459ea2518a7f550d7239cf6a73824ecb71aabda340de778be"
+    },
+    {
+      "bytes": 6771,
+      "path": "data/lexicon/articles/p177_promotions_phase2_b.jsonl",
+      "sha256": "6e50654721f4af304e67506a1c5022804051138295034afe6a559d7ed388506c"
+    },
+    {
+      "bytes": 6911,
+      "path": "data/lexicon/articles/p177_promotions_phase2_c.jsonl",
+      "sha256": "ed89afa15f0aaa0567d2620e34f30f8b122f6d5b1499ecc237885e3326422b12"
+    },
+    {
+      "bytes": 7009,
+      "path": "data/lexicon/articles/p177_promotions_phase2_d.jsonl",
+      "sha256": "58c5f32acdf950da79238fcf2478685a8f147e9b0465b033344ac229496d343a"
+    },
+    {
+      "bytes": 6826,
+      "path": "data/lexicon/articles/p177_promotions_phase2_e.jsonl",
+      "sha256": "815df4eb9b2d76b51972899a79de3022a49e380c3d95c85da98d6b42259c6b49"
+    },
+    {
+      "bytes": 12695,
+      "path": "data/lexicon/articles/p177_selected_articles.jsonl",
+      "sha256": "0021b73d924e1e5aa0426e9c54fc058e440b595e55eea7c3bde127f15359bb70"
+    },
+    {
+      "bytes": 654,
+      "path": "data/lexicon/candidates/candidate_counts_by_page.csv",
+      "sha256": "83c5250b77cd8f450f212ce6ec90c7a2dd01715f244c116b4c58b8d3f69c394d"
+    },
+    {
+      "bytes": 3320,
+      "path": "data/lexicon/candidates/candidate_inventory_manifest.json",
+      "sha256": "0b2916af573cc6081176bdca0180906ec6c96281418b371e2534946048eb9fe2"
+    },
+    {
+      "bytes": 2599,
+      "path": "data/lexicon/candidates/inventory_status.json",
+      "sha256": "72e52bb60168a2bed5046bbf83e7b902f775aeaf2a16cd6af6f8256ae1651be4"
+    },
+    {
+      "bytes": 16357,
+      "path": "data/lexicon/candidates/p134_candidates.jsonl",
+      "sha256": "8df242f1862cf5610473416907bdd3815246a7e4e4ba25b5ea5751278e185d1d"
+    },
+    {
+      "bytes": 18730,
+      "path": "data/lexicon/candidates/p145_candidates.jsonl",
+      "sha256": "786e97fd5db89a408d0fb1fdc92505fd82164d6bf378934ebd2a9738955a49a3"
+    },
+    {
+      "bytes": 28816,
+      "path": "data/lexicon/candidates/p149_candidates.jsonl",
+      "sha256": "b8a70360e7f6cdefc71a25d92b9ee7b7205a29797b2625e338ea9cdb3cba2ad9"
+    },
+    {
+      "bytes": 26860,
+      "path": "data/lexicon/candidates/p150_candidates.jsonl",
+      "sha256": "a475d6fb7ab4fb6278d2f0c3a872b667281ab6966da423e2f9a2549fe8460628"
+    },
+    {
+      "bytes": 24140,
+      "path": "data/lexicon/candidates/p153_candidates.jsonl",
+      "sha256": "64ef771aab20a01db3075041ca0af6922bf6689be7b9349cc06f660a83950040"
+    },
+    {
+      "bytes": 20754,
+      "path": "data/lexicon/candidates/p157_candidates.jsonl",
+      "sha256": "03f99710fc9888d6f0bb09eb038a329465fbea67e833ee01b72c2287b66ec58c"
+    },
+    {
+      "bytes": 15586,
+      "path": "data/lexicon/candidates/p161_candidates.jsonl",
+      "sha256": "51c982fb797f46dcb9d1012e76c609a8c7125b9fc423edcaff10159a50f434bf"
+    },
+    {
+      "bytes": 2295,
+      "path": "data/lexicon/review/boundary_algorithm_comparison.json",
+      "sha256": "4411fc043f576efb7bf88d2498c96adf561f737578449336d8107320c1469728"
+    },
+    {
+      "bytes": 4190,
+      "path": "data/lexicon/review/crossreference_candidate_audit_2026-08-21.json",
+      "sha256": "e113ba019a3511eb76b83133c21a1d1979bcbc1397df931540bfbdce8614f041"
+    },
+    {
+      "bytes": 11018,
+      "path": "data/lexicon/review/crossreference_source_review_batch01_2026-08-21.jsonl",
+      "sha256": "32aa1c6258084ac99e19082ad33b310c1811df967282a4d05fc3a0c8dde6606b"
+    },
+    {
+      "bytes": 11093,
+      "path": "data/lexicon/review/crossreference_source_review_batch02_2026-08-21.jsonl",
+      "sha256": "9cbe331646e79935080480a289d9bc6f122b3cebe0c603890a977ef0aacac5e3"
+    },
+    {
+      "bytes": 14867,
+      "path": "data/lexicon/review/crossreference_source_review_batch03_2026-08-21.jsonl",
+      "sha256": "0d153202b0caba95dd6de0f02d012ec2f8e3ac6a9393cd7b6923804cc2354b2a"
+    },
+    {
+      "bytes": 15120,
+      "path": "data/lexicon/review/crossreference_source_review_batch04_2026-08-21.jsonl",
+      "sha256": "fd3a3a7a7076ad0e0facdd641b27a9ee075397e7b7b9cd3ae419725fa19a9bf7"
+    },
+    {
+      "bytes": 14752,
+      "path": "data/lexicon/review/crossreference_source_review_batch05_2026-08-21.jsonl",
+      "sha256": "af1aa63abbe6eafdd21eeaf98f0b79cef5743a6d816350c3668fd020f8a8d95c"
+    },
+    {
+      "bytes": 15029,
+      "path": "data/lexicon/review/crossreference_source_review_batch06_2026-08-21.jsonl",
+      "sha256": "e7d55c808d4a8005a3fee36c6b40e1869f497ae370266bc59f33fb463ccad739"
+    },
+    {
+      "bytes": 18306,
+      "path": "data/lexicon/review/crossreference_source_review_batch07_2026-08-21.jsonl",
+      "sha256": "656168932063aec79f0931c53275d4ca0c523339c50c8dc90fbd1bac5b543987"
+    },
+    {
+      "bytes": 20137,
+      "path": "data/lexicon/review/crossreference_source_review_batch08_2026-08-21.jsonl",
+      "sha256": "61ec59cd7232b639da46d76831d2dfbea646b97e84779b577a9f94033476e941"
+    },
+    {
+      "bytes": 16235,
+      "path": "data/lexicon/review/crossreference_source_review_batch09_2026-08-21.jsonl",
+      "sha256": "526ee9c65a8560dd409772535f83c7f65bccaba077eb0b3ae0dff1729f9d7e12"
+    },
+    {
+      "bytes": 16960,
+      "path": "data/lexicon/review/crossreference_source_review_batch10_2026-08-21.jsonl",
+      "sha256": "0e212b8da3ce5d71648dc6d05a8ee8821890927ce81c6f93fbcd16659de9ea34"
+    },
+    {
+      "bytes": 15002,
+      "path": "data/lexicon/review/crossreference_source_review_batch11_2026-08-21.jsonl",
+      "sha256": "744b51691870dbb7e12c5fbd2d11fd5923a486cde3d63f8b52ed0e882c591971"
+    },
+    {
+      "bytes": 11759,
+      "path": "data/lexicon/review/crossreference_source_review_batch12_2026-08-21.jsonl",
+      "sha256": "77056a4d6ff20d1e5a25237bc65f79b2bb1eaa184bb4265ca699b4d02021833e"
+    },
+    {
+      "bytes": 17668,
+      "path": "data/lexicon/review/lo_mismo_source_review_2026-08-21.jsonl",
+      "sha256": "e1224f9fca5d7e6a20308de0b255b9209bcd699e134ff8f31ac4ea80113c2515"
+    },
+    {
+      "bytes": 3001,
+      "path": "data/lexicon/review/p134_boundary_batch_v02.json",
+      "sha256": "9a6b11e5b071b96346f62e67f730cb67a7fca17e19e9cde3440023bddcf88e03"
+    },
+    {
+      "bytes": 3769,
+      "path": "data/lexicon/review/p134_boundary_evaluation.json",
+      "sha256": "ebafe3def5cf7da7cd3c3ee20d49b1bd95b2d8323884ee9d80d5d45768bae3bf"
+    },
+    {
+      "bytes": 2566,
+      "path": "data/lexicon/review/stratified_boundary_evaluation.json",
+      "sha256": "36a1898eb078cc5c93e4c8cc5411261cd44047714724ebd80badb4a8f3fca8e6"
+    }
+  ],
+  "freezeId": "CHD-v1-data-2026-08-21",
+  "humanVerificationInferred": false,
+  "project": "Cahíta Histórico Digital",
+  "scope": "byte-exact canonical and editorial scientific data selected for v1.0",
+  "sourceId": "ALC1737",
+  "thirdPartyReproductionsRelicensed": false,
+  "totalBytes": 2698997,
+  "version": "1.0.0"
+}
