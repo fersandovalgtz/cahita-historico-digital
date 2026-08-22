@@ -3,8 +3,6 @@
   "@type": "SoftwareSourceCode",
   "name": "Cahíta Histórico Digital",
   "description": "Infraestructura reproducible para la edición histórico-digital, transcripción y estructuración lexicográfica y gramatical del Arte de la lengua cahita (México, 1737), con contratos JSON Schema, TEI Lex-0, procedencia y releases científicas atestadas.",
-  "identifier": "https://doi.org/10.5281/zenodo.22061986",
-  "url": "https://zenodo.org/records/22061986",
   "codeRepository": "https://github.com/fersandovalgtz/cahita-historico-digital",
   "issueTracker": "https://github.com/fersandovalgtz/cahita-historico-digital/issues",
   "dateCreated": "2026-08-15",
@@ -54,13 +52,14 @@
   "readme": "https://github.com/fersandovalgtz/cahita-historico-digital/blob/main/README.md",
   "referencePublication": "https://github.com/fersandovalgtz/cahita-historico-digital/blob/main/CITATION.cff",
   "relatedLink": [
-    "https://doi.org/10.5281/zenodo.22061985",
     "https://github.com/fersandovalgtz/raramuri-digital",
-    "https://archive.org/details/artedelalenguaca00gonz"
+    "https://archive.org/details/artedelalenguaca00gonz",
+    "https://zenodo.org/records/22061986"
   ],
   "softwareRequirements": [
     "Python 3.11+ recommended",
     "jsonschema >=4.18,<5 for schema validation",
     "Jing for the external TEI Lex-0 validation gate"
-  ]
+  ],
+  "identifier": "https://doi.org/10.5281/zenodo.22061986"
 }
