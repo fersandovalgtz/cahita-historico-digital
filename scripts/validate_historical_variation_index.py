@@ -21,6 +21,8 @@ EXPECTED_FILES = {
     "manifest.json",
 }
 REQUIRED_LABELS = {"Hiaqui", "Mayo", "Thehueco", "Naciones", "Cynaloa"}
+EXPECTED_MATERIAL_PAGES = [1, 2, 4, 14, 181, 182]
+EXPECTED_TEXTUAL_PAGE_COUNT = 176
 
 
 def run_export(path: Path) -> None:
@@ -75,13 +77,32 @@ def validate_manifest(path: Path) -> dict:
     if claim.get("exhaustiveAcrossCurrentCanonicalMachineReadableLayers") is not True:
         raise SystemExit("manifest must declare exhaustive scan of current canonical machine-readable layers")
     if claim.get("exhaustiveDiplomaticTranscriptionOfAll182Pages") is not False:
-        raise SystemExit("manifest must not claim exhaustive diplomatic transcription of 182 pages")
+        raise SystemExit(
+            "manifest must keep exhaustiveDiplomaticTranscriptionOfAll182Pages=false because six digital pages are non-textual material"
+        )
+
     pending = coverage.get("pendingOrUnreviewedPages") or []
-    if not pending:
-        raise SystemExit("coverage unexpectedly claims no pending/unreviewed pages")
-    for expected_page in (176, 177, 178, 179, 180):
-        if expected_page not in pending:
-            raise SystemExit(f"known pending/unreviewed page {expected_page} missing from coverage manifest")
+    if pending:
+        raise SystemExit(f"terminal diplomatic coverage still has pending/unreviewed pages: {pending}")
+    if coverage.get("pendingOrUnreviewedPageCount") != 0:
+        raise SystemExit("terminal diplomatic coverage must report pendingOrUnreviewedPageCount=0")
+    if coverage.get("transcriptionFilePageCount") != EXPECTED_TEXTUAL_PAGE_COUNT:
+        raise SystemExit(
+            f"terminal diplomatic coverage must have {EXPECTED_TEXTUAL_PAGE_COUNT} transcription files"
+        )
+    if coverage.get("notApplicableMaterialPageCount") != len(EXPECTED_MATERIAL_PAGES):
+        raise SystemExit("terminal diplomatic coverage must preserve six non-textual material pages")
+    if coverage.get("notApplicableMaterialPages") != EXPECTED_MATERIAL_PAGES:
+        raise SystemExit(
+            f"non-textual material page set drift: {coverage.get('notApplicableMaterialPages')!r}"
+        )
+    coverage_counts = coverage.get("coverageCounts") or {}
+    if coverage_counts.get("full_page") != EXPECTED_TEXTUAL_PAGE_COUNT:
+        raise SystemExit("terminal diplomatic coverage must report full_page=176")
+    if coverage_counts.get("not_applicable_material") != len(EXPECTED_MATERIAL_PAGES):
+        raise SystemExit("terminal diplomatic coverage must report not_applicable_material=6")
+    if set(coverage.get("transcriptionFilePages") or []) & set(EXPECTED_MATERIAL_PAGES):
+        raise SystemExit("non-textual material pages must not acquire diplomatic transcription files")
 
     labels = set((manifest.get("labelClassCounts") or {}).keys())
     missing = REQUIRED_LABELS - labels
@@ -173,6 +194,7 @@ def main() -> None:
             f"evidence={manifest['evidenceRecordCount']}; "
             f"observations={manifest['schemaObservationCount']}; "
             f"labels={manifest['labelClassCounts']}; "
+            "textualCoverage=176/176; pending=0; "
             "deterministic=true; modernIdentityInferred=false; humanVerified=0"
         )
 
