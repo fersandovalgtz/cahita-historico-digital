@@ -7,8 +7,8 @@ help:
 	@echo "  make exports       Genera exportaciones léxicas consolidadas"
 	@echo "  make qa-surface    Valida metadatos/documentación pública"
 	@echo "  make qa            Ejecuta validadores principales locales"
-	@echo "  make qa-full       QA local + Lex-0 externo + paquetes (requiere jing)"
-	@echo "  make release-check Valida el paquete estable v1.0.0"
+	@echo "  make qa-full       QA local + Lex-0 externo + v1 publicada (requiere jing)"
+	@echo "  make release-check Reconstruye/valida v1.0.0 desde el tag inmutable"
 
 stats:
 	python scripts/query_lexicon.py --stats
@@ -22,6 +22,7 @@ exports:
 
 qa-surface:
 	python scripts/validate_repository_surface.py
+	python scripts/validate_documentation_links.py
 
 qa: qa-surface
 	python scripts/reconstruct_candidate_inventory.py
@@ -40,8 +41,7 @@ qa: qa-surface
 qa-full: qa
 	@command -v jing >/dev/null 2>&1 || (echo "jing is required for make qa-full" >&2; exit 2)
 	bash scripts/validate_tei_lex0_external.sh
-	python scripts/validate_release_candidate.py
-	python scripts/validate_v1_release.py
+	python scripts/validate_published_v1.py
 
 release-check:
-	python scripts/validate_v1_release.py
+	python scripts/validate_published_v1.py
