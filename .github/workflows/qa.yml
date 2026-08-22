@@ -160,3 +160,6 @@ jobs:
 
       - name: Validate deterministic grammar concordance
         run: python scripts/validate_grammar_exports.py
+
+      - name: Validate deterministic scientific release candidate
+        run: python scripts/validate_release_candidate.py
