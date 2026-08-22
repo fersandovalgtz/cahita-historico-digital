@@ -5,6 +5,9 @@ The review layer is deliberately separate from the canonical strict graph. This
 validator checks that every reviewed source reference is still `not_located`
 under strict normalized equality, that its priority tier matches the current
 deterministic diagnostic export, and that proposed targets/evidence are explicit.
+Tier-C source recoveries may select a canonical article that was not present in
+the weak diagnostic shortlist, but only under explicit same-witness and canonical
+article-structure evidence. Such recoveries remain editorial, never canonical.
 """
 from __future__ import annotations
 
@@ -81,6 +84,7 @@ def main() -> None:
     decision_counts: Counter[str] = Counter()
     tier_counts: Counter[str] = Counter()
     selected_target_count = 0
+    selected_outside_diagnostics_count = 0
 
     for row in reviews:
         value = public_row(row)
@@ -159,17 +163,34 @@ def main() -> None:
                     )
 
         selected = row.get("selectedTargetArticleId")
+        positive_evidence = [item for item in row["evidence"] if item["supportsDecision"]]
         if selected is not None:
             selected_target_count += 1
             if selected not in article_ids:
                 fail(row, f"selected target article does not exist: {selected}")
             if selected not in declared_candidate_ids:
-                fail(row, "selectedTargetArticleId must be declared in diagnosticCandidates")
+                same_witness = any(
+                    item["evidenceKind"] in {"same_witness_facsimile", "same_witness_ocr_control"}
+                    for item in positive_evidence
+                )
+                canonical_structure = any(
+                    item["evidenceKind"] == "canonical_article_structure"
+                    for item in positive_evidence
+                )
+                if row["priorityTier"] != "C_no_strong":
+                    fail(row, "selectedTargetArticleId outside diagnosticCandidates is permitted only for Tier C")
+                if row["decisionStatus"] != "source_supports_unique_target":
+                    fail(row, "Tier-C target outside diagnosticCandidates requires source_supports_unique_target")
+                if not (same_witness and canonical_structure):
+                    fail(
+                        row,
+                        "Tier-C target outside diagnosticCandidates requires positive same-witness and canonical-structure evidence",
+                    )
+                selected_outside_diagnostics_count += 1
 
         if row["decisionStatus"] == "source_supports_unique_target":
             if not selected:
                 fail(row, "source_supports_unique_target requires selectedTargetArticleId")
-            positive_evidence = [item for item in row["evidence"] if item["supportsDecision"]]
             if not positive_evidence:
                 fail(row, "source_supports_unique_target requires positive evidence")
             if not any(
@@ -192,6 +213,7 @@ def main() -> None:
         f"tiers={dict(sorted(tier_counts.items()))}; "
         f"decisions={dict(sorted(decision_counts.items()))}; "
         f"selectedTargets={selected_target_count}; "
+        f"selectedOutsideDiagnostics={selected_outside_diagnostics_count}; "
         "canonical strict graph modified=0; humanVerified=0"
     )
 
