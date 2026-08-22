@@ -1,0 +1,2 @@
+# CLDF export/validation dependency. Pinned for reproducible post-v1 builds.
+pycldf==2.1.1
