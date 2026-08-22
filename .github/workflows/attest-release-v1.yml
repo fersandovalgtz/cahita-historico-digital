@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   attest:
-    name: Verify tag, release assets and checksums
+    name: Rebuild tag and verify published release
     runs-on: ubuntu-latest
 
     steps:
@@ -25,6 +25,16 @@ jobs:
           ref: ${{ github.sha }}
           fetch-depth: 0
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Install validation dependencies
+        run: python -m pip install -r requirements-dev.txt
+
       - name: Validate attestation request
         shell: bash
         run: |
@@ -32,13 +42,15 @@ jobs:
           import json
           from pathlib import Path
           request = json.loads(Path('release/github_release_attestation_request_v1.0.0.json').read_text(encoding='utf-8'))
+          assert request['attestationRequestRevision'] >= 3
           assert request['version'] == '1.0.0'
           assert request['tag'] == 'v1.0.0'
           assert request['expectedTagCommit'] == 'dbcdecf0003ac5a10ae963caf6babdcf5c22128d'
+          assert request['verificationMode'] == 'deterministic_rebuild_from_immutable_tag'
           assert request['moveOrOverwriteTagAllowed'] is False
           assert request['doiInferred'] is False
           assert request['humanVerifiedCount'] == 0
-          print('release attestation request OK')
+          print('release attestation request OK: deterministic rebuild from immutable tag')
           PY
 
       - name: Resolve stable GitHub Release
@@ -83,13 +95,27 @@ jobs:
           test "$commit" = 'dbcdecf0003ac5a10ae963caf6babdcf5c22128d'
           echo "v1.0.0 -> $commit"
 
-      - name: Validate release and write attestation
+      - name: Rebuild v1.0.0 from immutable tag
+        shell: bash
+        run: |
+          set -euo pipefail
+          rm -rf /tmp/chd-v1-release-source
+          git worktree add --detach /tmp/chd-v1-release-source v1.0.0
+          python /tmp/chd-v1-release-source/scripts/build_v1_release.py \
+            --output-dir "$GITHUB_WORKSPACE/build/release-attestation/rebuilt"
+          test -f build/release-attestation/rebuilt/cahita-historico-digital-v1.0.0.zip
+          test -f build/release-attestation/rebuilt/cahita-historico-digital-v1.0.0/RELEASE_MANIFEST.json
+          sha256sum build/release-attestation/rebuilt/cahita-historico-digital-v1.0.0.zip
+
+      - name: Validate published release against rebuild
         shell: bash
         run: |
           python scripts/attest_github_release_v1.py \
             --release-json build/release-attestation/release.json \
             --asset-dir build/release-attestation/assets \
             --tag-commit "$TAG_COMMIT" \
+            --rebuilt-zip build/release-attestation/rebuilt/cahita-historico-digital-v1.0.0.zip \
+            --rebuilt-manifest build/release-attestation/rebuilt/cahita-historico-digital-v1.0.0/RELEASE_MANIFEST.json \
             --output release/github_release_attestation_v1.0.0.json
           cat release/github_release_attestation_v1.0.0.json
 
@@ -108,4 +134,4 @@ jobs:
           fi
 
       - name: Report remaining external gate
-        run: echo 'GitHub Release v1.0.0 attested; Zenodo archival deposit and DOI remain pending.'
+        run: echo 'GitHub Release v1.0.0 attested by deterministic tag rebuild; Zenodo archival deposit and DOI remain pending.'
