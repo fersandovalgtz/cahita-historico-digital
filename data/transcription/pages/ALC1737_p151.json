@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 151,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.150] Compadecerſe. Bueme ahio-cole.\nCompañon, ò cojon. Bichoro.\nCompaſſar, ò medir con compás. Atama chia.\nCompaſſion. Buſca compadecerſe.\nComponer. Atute.\nComprar algo. Ahinu.\nComprador. Hinuime.\nComulgar. Buſca comunion.\nComunion Miſſa Santiſſimo Sacram. Amabet barecari.\nCon prep. Hitania.\nCon alguno. Naut, l, ſenune-maque.\nConcha. Coio.\nConchavar. Norahuame.\nConejo. Tabu.\nConfeſſar. Peſcete.\nConfeſſion. Peſeſtinaque.\nConfeſſor. Abaore apeceſi-tuaio.\nConfiar en alguno. Cancha-chim ca.\nConfianza tal. Et nea.\nConocer muger. Hamuche netaiac. por pecado.\nConocer. Ataia.\nCondenarſe. Bem emo hioco-terianaque huaſutihua.\nConſolar á otro. Alaetuana-que.\nConſuelo. Alaeac.\nContra alguno. Aſchere.\n\n[columna derecha]\nConvertirſe. Hiepſicoatec.\nCorazon. Hiepſi.\nCorcobado eſtar. Calutulai.\nCorcobo de beſtia. Cabai chepte.\nCorcobado. Cotoni.\nCordel. Huiteri.\nCorregir. Caturiſi anemta uhuatua.\nCorrer. Buibuite.\nCorta coſa, no larga. Hipani, l, catebe.\nCortar con hacha. Himaco.\nCortar con cuchillo como quien acierra. Hihuife.\nCortar eſtriando. Peutec.\nCortar con los dientes. Tamime achuſta.\nCortar con tixeras. Chamtia-me--achuſtia.\nCorteza de arbol. Cupe.\nCoſa. hita.\nCoſecha. Hipeſuma.\nCoſer. Huca.\nCoſquillas hazer. Quilipana.\nCoſquillas tener. Huitile.\nCoſtal. Sikuri.\nCoſtilla. Sanari.\nCozer maiz. Poſoli.\nCozer la comida. Buabuam-ta buiaſec.\nCozerſe la comida. Beſabua-ſec.\nCoyuntura. Tonoa.\nCoronilla lo alto de la cabe- [continúa p.152].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuations explicit; uncertain forms retained conservatively without normalization.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several Cahita spellings remain candidates for second visual collation; the printed headword sequence and page continuation are preserved."}],
+  "materialNotes": [{"type": "bleed_through_and_signature_mark", "note": "Reverse-side show-through is visible. The small printed '22.' near the lower margin is treated as a material/signature mark rather than sourcePagePrinted pagination.", "transcription": "22."}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-151", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
