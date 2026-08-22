@@ -155,8 +155,16 @@ jobs:
       - name: Validate Lo miſmo formula reviews
         run: python scripts/validate_lo_mismo_reviews.py
 
-      - name: Validate experimental TEI lexical projection
+      - name: Validate deterministic TEI lexical projection
         run: python scripts/validate_tei_export.py
+
+      - name: Install Jing for external Lex-0 gate
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq jing
+
+      - name: Validate against archived TEI Lex-0 0.9.5 Relax NG
+        run: bash scripts/validate_tei_lex0_external.sh
 
       - name: Validate deterministic grammar concordance
         run: python scripts/validate_grammar_exports.py
