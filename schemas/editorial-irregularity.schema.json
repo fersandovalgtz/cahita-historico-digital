@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raramuri.ceees.mx/schemas/editorial-irregularity.schema.json",
+  "$id": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/editorial-irregularity.schema.json",
   "title": "CHD editorial irregularity record",
   "type": "object",
   "additionalProperties": false,
