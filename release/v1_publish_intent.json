@@ -1,0 +1,24 @@
+{
+  "project": "Cahíta Histórico Digital",
+  "version": "1.0.0",
+  "tag": "v1.0.0",
+  "targetBranch": "main",
+  "publishFromMergedMainCommit": true,
+  "requireFullReleaseValidationBeforeTag": true,
+  "allowTagOverwrite": false,
+  "githubRelease": {
+    "createStableRelease": true,
+    "prerelease": false,
+    "draft": false,
+    "attachDeterministicZip": true,
+    "attachReleaseManifest": true,
+    "attachSha256Sums": true
+  },
+  "archivalDeposit": {
+    "status": "pending",
+    "versionDoi": null,
+    "conceptDoi": null,
+    "doiInferred": false
+  },
+  "humanVerifiedCount": 0
+}

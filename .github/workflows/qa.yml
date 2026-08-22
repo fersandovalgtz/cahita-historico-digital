@@ -80,6 +80,7 @@ jobs:
         run: |
           set -euo pipefail
           python -m json.tool codemeta.json >/dev/null
+          python -m json.tool release/v1_data_manifest.json >/dev/null
           python -m json.tool data/lexicon/candidates/inventory_status.json >/dev/null
           python -m json.tool data/lexicon/candidates/candidate_inventory_manifest.json >/dev/null
           python -m json.tool data/lexicon/reconciliation/p133_p134_visible_start_census.json >/dev/null
@@ -175,5 +176,11 @@ jobs:
       - name: Validate frozen v1 production contracts
         run: python scripts/validate_v1_contract_freeze.py
 
+      - name: Validate frozen v1 scientific data
+        run: python scripts/validate_v1_data_freeze.py
+
       - name: Validate deterministic scientific release candidate
         run: python scripts/validate_release_candidate.py
+
+      - name: Validate deterministic v1.0.0 release package
+        run: python scripts/validate_v1_release.py

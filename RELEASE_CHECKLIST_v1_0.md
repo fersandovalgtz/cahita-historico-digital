@@ -1,63 +1,59 @@
 # Cahíta Histórico Digital — Checklist de release v1.0.0
 
-Estado de preparación para una primera versión científica estable. Actualización: **21 de agosto de 2026**.
+Estado de preparación para la primera versión científica estable. Actualización: **21 de agosto de 2026**.
 
-Este checklist distingue criterios demostrados por datos/CI de gates de cierre. Una corrida verde no equivale a validación filológica humana.
+Este checklist distingue criterios demostrados por datos/CI de acciones externas de publicación y preservación. Una corrida verde no equivale a validación filológica humana.
 
 ## Identidad del recurso
 
 - [x] Repositorio identificado
-- [x] `CITATION.cff` disponible
-- [x] Licencia documentada
-- [x] Procedencia histórica documentada
+- [x] `CITATION.cff` fijado en versión `1.0.0`
+- [x] `codemeta.json` fijado en versión `1.0.0`
+- [x] `CHANGELOG.md` con entrada `1.0.0`
+- [x] Licencias y procedencia documentadas
+- [x] Notas de release `release/RELEASE_NOTES_v1.0.0.md`
 
 ## Núcleo de datos
 
 - [x] Vocabulario p.133–177 con cierre técnico: 45/45 páginas; 2,302 artículos curatoriales
 - [x] Inventario canónico reconstruible: 2,072/2,072 candidatos
 - [x] Gramática numerada: 371/371 unidades realmente impresas representadas
-- [x] Remisiones `Buſca`: 150 referencias; 90/90 `not_located` con revisión inicial explícita
+- [x] Remisiones `Buſca`: 150 referencias; 90/90 `not_located` con revisión explícita
 - [x] Fórmula `Lo miſmo`: 14/14 ocurrencias auditadas fuera del grafo de remisiones
-- [x] Cola de recolación explícita y reproducible: 22 casos = 8 A / 4 B / 10 C
-- [x] Disposición v1.0 de las 22 recolaciones: 22/22 congeladas como `frozen_open_uncertainty`, sin destino seleccionado, sin cambio canónico y con `humanVerified=false`
-- [ ] Congelar los bytes finales de los datos canónicos en el commit/tag definitivo
+- [x] Cola de recolación reproducible: 22 casos = 8 A / 4 B / 10 C
+- [x] Disposición v1.0: 22/22 como `frozen_open_uncertainty`, 0 destinos seleccionados, 0 cambios canónicos, `humanVerified=false`
+- [x] Freeze byte-exacto de artículos, candidatos, capas de revisión y gramática en `release/v1_data_manifest.json`
 
 ## Interoperabilidad y contratos
 
 - [x] Exportaciones JSON/JSONL/CSV deterministas
 - [x] JSON Schema y validadores activos
-- [x] Perfil TEI Lex-0 0.9.5 definido y validado externamente con Jing
-- [x] Decisión CLDF/v1.0 formalizada: TEI Lex-0 primario; CLDF diferido como derivado analítico posterior
-- [x] **22 JSON Schema de producción congelados para v1.0 por SHA-256**
-- [x] **4 metadatos fuente de alcance `ALC1737` congelados por SHA-256**
-- [x] Manifiesto `release/v1_contract_manifest.json`: 26 contratos, SHA-256 `c0b897b9dbad2107b40db6169d4207bca752c2b84161e0c9c980409d94b86e56`
-- [x] CI regenera el manifiesto y falla ante adiciones, eliminaciones o cambios de bytes no declarados
-- [x] Política de evolución: cambios post-v1 requieren nuevo manifiesto; cambios silenciosos bajo el mismo freeze están prohibidos
-- [ ] Finalizar metadatos de identidad de release (`CITATION.cff`, `codemeta.json`, versión/tag y DOI) en el gate de tag/release
+- [x] TEI Lex-0 0.9.5 validado externamente con Jing
+- [x] TEI Lex-0 como perfil primario; CLDF diferido como derivado analítico post-v1
+- [x] 22 JSON Schema + 4 metadatos fuente congelados como 26 contratos v1.0
+- [x] Manifiesto de contratos SHA-256 `c0b897b9dbad2107b40db6169d4207bca752c2b84161e0c9c980409d94b86e56`
+- [x] CI bloquea deriva silenciosa de contratos y datos científicos congelados
 
-## Reproducibilidad
+## Empaquetado y publicación GitHub
 
-- [x] CI/QA sobre `main` y pull requests
-- [x] Doble corrida byte-a-byte de los principales exportadores
-- [x] Hashes SHA-256 comprobados
-- [x] Pipeline de release candidate desde checkout limpio
-- [x] Paquete reproducible de release candidate con manifiesto y hashes
-- [x] Disposición de recolaciones reproducible y validada 22/22 en CI
-- [ ] Registrar commit/tag y changelog final de release
+- [x] Constructor determinista del paquete estable `cahita-historico-digital-v1.0.0.zip`
+- [x] Paquete estable incluye datos canónicos congelados, derivados, manifiestos, citación y changelog
+- [x] Validador construye el paquete dos veces y exige identidad byte-a-byte
+- [x] Intención de publicación versionada; sobrescritura/movimiento del tag prohibidos
+- [x] Workflow post-merge vuelve a validar el commit definitivo antes de publicar
+- [ ] Crear tag inmutable `v1.0.0` sobre el commit definitivo de `main`
+- [ ] Crear GitHub Release estable y adjuntar ZIP, `RELEASE_MANIFEST.json` y `SHA256SUMS.txt`
 
-## Preservación
+## Preservación archivística
 
-- [ ] Crear GitHub Release estable
-- [ ] Depositar versión archivada en Zenodo u otro repositorio acordado
+- [ ] Depositar la versión en Zenodo u otro repositorio de preservación acordado
 - [ ] Obtener DOI de versión y registrar Concept DOI cuando corresponda
-- [ ] Sincronizar `CITATION.cff`, `codemeta.json`, changelog y metadatos con el tag final
+- [ ] Incorporar los DOI reales a los metadatos posteriores sin alterar ni inventar la identidad histórica del tag
 
-## Estado de preparación
+## Estado
 
-El núcleo científico-computacional, TEI Lex-0, el alcance CLDF, el empaquetado reproducible, los contratos de datos y la disposición v1.0 de las 22 recolaciones están técnicamente cerrados para el alcance declarado. Los 22 casos **no están resueltos filológicamente**: permanecen como incertidumbres abiertas explícitas y pasan al backlog filológico post-v1.
+El corpus, interoperabilidad, contratos, incertidumbres, freeze de datos, citación, changelog y paquete estable están preparados para el tag `v1.0.0`. La publicación de GitHub se ejecuta únicamente desde el commit definitivo de `main` después de validación post-merge.
 
-Los gates del release candidate quedan reducidos a **dos**: **tag/changelog/metadatos finales** y **preservación/DOI**.
+El único gate científico externo posterior a GitHub es la **preservación archivística/DOI**. Las 22 recolaciones siguen abiertas filológicamente y pertenecen al backlog post-v1; no bloquean el alcance técnico declarado.
 
-**Estimación operativa actual para v1.0 técnica/publicable: 97–98 % completado.** Esta cifra no representa validación filológica humana; `humanVerified=0` se mantiene donde corresponde.
-
-Los metadatos de identidad de release no forman parte del freeze de contratos porque necesariamente deben incorporar el tag y DOI definitivos. Se cierran en el gate posterior, no mediante una excepción silenciosa al manifiesto.
+`humanVerified=0` se conserva donde corresponde. Ningún DOI se declara hasta que sea efectivamente asignado.

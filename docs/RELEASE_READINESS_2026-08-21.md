@@ -1,71 +1,46 @@
-# Cahíta Histórico Digital — estado de preparación para v1.0
+# Cahíta Histórico Digital — estado de preparación para v1.0.0
 
 Fecha de corte: **21 de agosto de 2026**.
 
 ## Resumen ejecutivo
 
-Cahíta Histórico Digital está en fase de cierre de release. El vocabulario y la gramática numerada tienen cierre técnico; las remisiones `Buſca` y `Lo miſmo` tienen capas explícitas de revisión; los derivados principales son deterministas; existe un paquete científico reproducible; la vista TEI valida contra **TEI Lex-0 0.9.5**; la decisión CLDF está cerrada; los contratos de datos de v1.0 están congelados por contenido exacto; y las 22 recolaciones quedan formalmente dispuestas para v1.0 como incertidumbres filológicas abiertas explícitas.
+Cahíta Histórico Digital alcanzó el estado de **payload científico v1.0.0 listo para publicación en GitHub**, sujeto a la validación del commit definitivo de `main`. El vocabulario y la gramática numerada tienen cierre técnico; las remisiones `Buſca` y `Lo miſmo` poseen capas explícitas de revisión; TEI valida contra Lex-0 0.9.5; CLDF está diferido de forma explícita; los contratos y los datos científicos seleccionados están congelados por contenido; y las 22 recolaciones se publican como incertidumbres filológicas abiertas, no como lecturas resueltas.
 
-Para una **v1.0 técnica, reproducible y científicamente publicable dentro del alcance declarado**, la preparación se estima ahora en **97–98 %**. Esta estimación no mide validación filológica humana: `humanVerified=false` se conserva y una edición revisada por especialistas sigue siendo otra fase.
+La identidad de release está fijada en `1.0.0` en `CITATION.cff`, `codemeta.json`, `CHANGELOG.md` y las notas de release. El constructor estable genera un paquete autocontenido con datos canónicos congelados, derivados reproducibles y manifiestos de integridad.
 
-## Evidencia cerrada
-
-### Corpus
+## Estado científico fijado
 
 - 2,072/2,072 candidatos canónicos reconstruibles.
-- 2,302 artículos históricos en 211 archivos JSONL.
-- 45/45 páginas p.133–177 reconciliadas; Phase II 33/33 cerrada técnicamente.
-- 371/371 unidades gramaticales numeradas realmente impresas representadas.
-- 302 objetos gramaticales y 1,215 filas de evidencia.
+- 2,302 artículos lexicográficos históricos en 211 JSONL.
+- 45/45 páginas p.133–177 reconciliadas; Phase II p.145–177 cerrada 33/33 técnicamente.
+- 150 remisiones `Buſca`: 60 `exact_unique`, 90 `not_located`, 4 ciclos estrictos.
+- 90/90 `not_located` con revisión explícita: 40 destinos sustentados, 22 recolaciones, 5 candidatos rechazados y 23 destinos no localizados.
+- 22 recolaciones = 8 A / 4 B / 10 C; 22/22 `frozen_open_uncertainty`, 0 destinos seleccionados por la capa v1, 0 cambios canónicos, `humanVerified=false`.
+- 14/14 ocurrencias `Lo miſmo` auditadas fuera del grafo canónico.
+- 302 objetos gramaticales, 1,215 filas de evidencia; 370/373 números con reclamación estructurada y 371/371 unidades numeradas realmente impresas representadas.
+- TEI Lex-0 0.9.5: 2,302 entradas, 2,221 citas de traducción, 150 remisiones y 60 `@target` estrictos; validación externa con Jing.
+- 26 contratos v1.0 congelados: 22 JSON Schema + 4 metadatos fuente.
+- freeze byte-exacto adicional de artículos, candidatos, revisiones y gramática en `release/v1_data_manifest.json`.
 
-### Remisiones y microestructura
+## Publicación v1.0.0
 
-- 150 remisiones canónicas `Buſca`.
-- 60 `exact_unique`, 90 `not_located`, 4 ciclos estrictos.
-- 90/90 `not_located` revisadas: 40 destinos sustentados, 22 recolaciones, 5 candidatos rechazados y 23 destinos no localizados.
-- vista revisada: 100 aristas = 60 estrictas + 40 editoriales.
-- cola de recolación: 22 casos = 8 A / 4 B / 10 C.
-- 14/14 fórmulas `Lo miſmo` auditadas; 0 convertidas en remisión canónica.
+La publicación está protegida por `release/v1_publish_intent.json` y `.github/workflows/publish-v1.yml`.
 
-### Disposición v1.0 de las 22 recolaciones
+El workflow sólo corre cuando el archivo de intención llega a `main`. Antes del tag vuelve a validar inventario, artículos, documentación, derivados post-cierre, remisiones, recolaciones, `Lo miſmo`, TEI/Lex-0, gramática, freeze de contratos, freeze de datos y paquete estable.
 
-Los 22 casos se conservan en v1.0 como `frozen_open_uncertainty`. La capa de disposición exige identidad 22/22 con la cola fuente, tiers 8/4/10, `canonicalAction=none`, cero destinos seleccionados, cero cambios canónicos y `humanVerified=false`.
+El tag `v1.0.0` es inmutable por política de publicación: si ya existe en otro commit, el workflow falla y no lo mueve. La GitHub Release se crea como estable y adjunta el ZIP determinista, `RELEASE_MANIFEST.json` y `SHA256SUMS.txt`.
 
-Esto **cierra el gate de release**, pero no la investigación filológica. `philologicalResolutionStatus=open`, `facsimileResolutionClaimed=false` y `ocrAcceptedAsFacsimileSubstitute=false`. Los casos deben reabrirse post-v1 cuando exista cotejo directo del mismo testimonio o revisión filológica humana trazable.
+## Preservación y DOI
 
-### Interoperabilidad
+El depósito archivístico es el único gate posterior a la publicación de GitHub. En el payload v1.0.0:
 
-La vista TEI contiene 2,302 entradas, 2,221 citas de traducción, 150 remisiones y 60 targets estrictos. El CI valida el XML contra el Relax NG archivado de TEI Lex-0 0.9.5, SHA-256 `35e73fef48526634714bdf3d16b924f958fca078a903d0bdc2dd4d7d116d1aaa`. El XML validado conserva SHA-256 `bad06dad39f216b8dde661b4219845c4c19db945bdfbc4478ff5e0846b72e828` mientras no cambie su contenido.
+- `archivalDepositStatus=pending`;
+- `versionDoi=null`;
+- `conceptDoi=null`;
+- `doiInferred=false`.
 
-TEI Lex-0 0.9.5 es el perfil lexicográfico interoperable primario de v1.0; CLDF queda diferido como derivado analítico posterior.
+Estos campos sólo deben modificarse cuando un repositorio de preservación asigne identificadores reales. La ausencia temporal de DOI no debe suplirse con un identificador inventado.
 
-### Freeze de contratos v1.0
+## Distinción epistemológica
 
-`release/v1_contract_manifest.json` congela **26 contratos**:
-
-- 22 JSON Schema de producción;
-- 4 metadatos fuente que fijan el alcance de `ALC1737`.
-
-El manifiesto tiene SHA-256 `c0b897b9dbad2107b40db6169d4207bca752c2b84161e0c9c980409d94b86e56`. El CI lo regenera y compara contra los bytes actuales. Una adición, eliminación o alteración provoca fallo; los cambios post-v1 requieren un nuevo freeze explícito.
-
-`CITATION.cff`, `codemeta.json`, versión/tag y DOI no forman parte de este freeze porque son metadatos de identidad de la release y se finalizan en el gate posterior de tag/release.
-
-### Release candidate reproducible
-
-El paquete se construye dos veces y debe coincidir byte-a-byte. Su manifiesto registra interoperabilidad, freeze de contratos y disposición v1.0 de las recolaciones. Conserva `releaseReady=false` y `humanVerifiedCount=0`. El hash final del ZIP sólo se congelará en el commit candidato definitivo.
-
-## Dos gates restantes
-
-### A — tag, changelog y metadatos finales
-
-Congelar los bytes finales de datos desde el commit definitivo, sincronizar `CITATION.cff` y `codemeta.json`, preparar el changelog, reconstruir el paquete final y registrar su hash antes del tag.
-
-### B — preservación
-
-Crear GitHub Release, depositar la versión archivada y registrar DOI de versión/Concept DOI cuando corresponda.
-
-## Orden de cierre
-
-**candidata final/tag/changelog/metadatos → preservación/DOI**.
-
-Una v1.0 válida no requiere ocultar incertidumbres ni atribuir revisión humana inexistente. Requiere alcance estable, incertidumbres explícitas, contratos congelados, derivados interoperables, checksums, reconstrucción reproducible y preservación duradera.
+La release v1.0.0 es técnica, reproducible y científicamente publicable dentro del alcance declarado. No es una edición filológica íntegramente validada por especialistas. `humanVerified=0` se conserva donde corresponde y las 22 recolaciones permanecen abiertas para revisión post-v1 con evidencia admisible.
