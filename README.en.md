@@ -7,10 +7,11 @@
 ![Lexical articles](https://img.shields.io/badge/lexical%20articles-2%2C302-172033?style=flat-square)
 ![Grammar evidence](https://img.shields.io/badge/grammar%20evidence-1%2C215-455B55?style=flat-square)
 ![TEI](https://img.shields.io/badge/TEI-Lex--0%200.9.5-8A1538?style=flat-square)
+[![CLDF](https://img.shields.io/badge/CLDF-Dictionary%20post--v1-5b4b8a?style=flat-square)](CLDF.md)
 ![Human verified](https://img.shields.io/badge/humanVerified-0-b7791f?style=flat-square)
 ![DOI](https://img.shields.io/badge/DOI-pending-b7791f?style=flat-square)
 
-[Español](README.md) · [v1.0.0 release](https://github.com/fersandovalgtz/cahita-historico-digital/releases/tag/v1.0.0) · [Data products](docs/DATA_PRODUCTS.md) · [Data model](SCHEMA.md) · [Provenance](PROVENANCE.md) · [FAIR pre-assessment](FAIR_ASSESSMENT.md) · [Governance](GOVERNANCE.md) · [How to cite](CITATION.cff)
+[Español](README.md) · [v1.0.0 release](https://github.com/fersandovalgtz/cahita-historico-digital/releases/tag/v1.0.0) · [Data products](docs/DATA_PRODUCTS.md) · [CLDF](CLDF.md) · [Data model](SCHEMA.md) · [Provenance](PROVENANCE.md) · [FAIR pre-assessment](FAIR_ASSESSMENT.md) · [Governance](GOVERNANCE.md) · [How to cite](CITATION.cff)
 
 ## What this repository is
 
@@ -45,7 +46,7 @@ CHD does **not** infer a single modern ISO 639-3 code for the historical umbrell
 | `Lo miſmo` occurrences reviewed | 14 / 14 |
 | Human-verified objects | 0 |
 
-TEI Lex-0 0.9.5 is the primary lexical interoperability format for v1.0.0 and is validated against the archived Lex-0 Relax NG schema with Jing. CLDF was evaluated and deliberately deferred as a future analytical derivative because forcing the historical Spanish→Cahita article structure into a modern dictionary model would introduce interpretive commitments not warranted by the witness.
+TEI Lex-0 0.9.5 remains the primary lexical interoperability format of the immutable `v1.0.0` release and is validated against the archived Lex-0 Relax NG schema with Jing. As a **post-v1 derivative**, CHD now also provides a reproducible CLDF `Dictionary` projection: **2,221 `EntryTable` rows**, **2,221 `SenseTable` rows**, one documentary `LanguageTable` row and one bibliographic source record. Historical forms are preserved verbatim, `humanVerified` is carried through without promotion, and no ISO 639-3 or Glottocode is inferred for the historical label “Cahita”. The projection is rebuilt from the canonical JSONL, validated with `pycldf`, and checked row by row against CHD authority invariants. See [CLDF.md](CLDF.md).
 
 ## Try it in 30 seconds
 
@@ -70,13 +71,14 @@ The release contains canonical frozen data, reproducible derived views, manifest
 
 ## Reproducibility
 
-The repository uses JSON Schema contracts, deterministic exporters, content freezes and GitHub Actions. The v1.0.0 scientific freeze covers 267 files; the contract freeze covers 22 JSON Schemas plus four source-scope metadata files. The published release has a durable post-release attestation that rebuilds the payload from the immutable tag and compares the rebuilt bytes with the published assets.
+The repository uses JSON Schema contracts, deterministic exporters, content freezes and GitHub Actions. The v1.0.0 scientific freeze covers 267 files; the contract freeze covers 22 JSON Schemas plus four source-scope metadata files. The published release has a durable post-release attestation that rebuilds the payload from the immutable tag and compares the rebuilt bytes with the published assets. A separate post-v1 workflow reconstructs and validates the CLDF Dictionary projection without adding it to the scientific freeze.
 
 Useful entry points:
 
 ```bash
 make qa-surface
 make stats
+make cldf-qa
 python scripts/export_lexicon_corpus.py
 python scripts/validate_v1_release.py
 ```
