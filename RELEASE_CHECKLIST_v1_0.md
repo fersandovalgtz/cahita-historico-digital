@@ -2,7 +2,7 @@
 
 Estado de preparación para una primera versión científica estable. Actualización: **21 de agosto de 2026**.
 
-Este checklist distingue criterios demostrados por datos/CI de gates que sólo se cierran al congelar la release. Una corrida verde no equivale a validación filológica humana.
+Este checklist distingue criterios demostrados por datos/CI de gates de cierre. Una corrida verde no equivale a validación filológica humana.
 
 ## Identidad del recurso
 
@@ -20,17 +20,20 @@ Este checklist distingue criterios demostrados por datos/CI de gates que sólo s
 - [x] Fórmula `Lo miſmo`: 14/14 ocurrencias auditadas fuera del grafo de remisiones
 - [x] Cola de recolación explícita y reproducible: 22 casos = 8 A / 4 B / 10 C
 - [ ] Resolver por facsímil o congelar explícitamente como incertidumbres documentadas los 22 casos de recolación
-- [ ] Congelar versión canónica final de datos y límites del alcance v1.0
+- [ ] Congelar los bytes finales de los datos canónicos después de la decisión sobre recolaciones
 
-## Interoperabilidad
+## Interoperabilidad y contratos
 
 - [x] Exportaciones JSON/JSONL/CSV deterministas
 - [x] JSON Schema y validadores activos
-- [x] Perfil TEI Lex-0 0.9.5 definido
-- [x] Exportación TEI de 2,302 entradas validada externamente con Jing contra schema archivado y fijado por SHA-256
-- [x] Decisión CLDF/v1.0 formalizada: **TEI Lex-0 es el perfil interoperable lexicográfico primario; CLDF se difiere como derivado analítico posterior a v1.0**
-- [x] Decisión registrada en `docs/CLDF_SCOPE_DECISION_V1_0.md` y protegida por invariantes del release candidate
-- [ ] Congelar/versionar formalmente esquemas JSON de producción para v1.0
+- [x] Perfil TEI Lex-0 0.9.5 definido y validado externamente con Jing
+- [x] Decisión CLDF/v1.0 formalizada: TEI Lex-0 primario; CLDF diferido como derivado analítico posterior
+- [x] **22 JSON Schema de producción congelados para v1.0 por SHA-256**
+- [x] **4 metadatos fuente de alcance `ALC1737` congelados por SHA-256**
+- [x] Manifiesto `release/v1_contract_manifest.json`: 26 contratos, SHA-256 `c0b897b9dbad2107b40db6169d4207bca752c2b84161e0c9c980409d94b86e56`
+- [x] CI regenera el manifiesto y falla ante adiciones, eliminaciones o cambios de bytes no declarados
+- [x] Política de evolución: cambios post-v1 requieren nuevo manifiesto; cambios silenciosos bajo el mismo freeze están prohibidos
+- [ ] Finalizar metadatos de identidad de release (`CITATION.cff`, `codemeta.json`, versión/tag y DOI) en el gate de tag/release
 
 ## Reproducibilidad
 
@@ -50,8 +53,8 @@ Este checklist distingue criterios demostrados por datos/CI de gates que sólo s
 
 ## Estado de preparación
 
-El núcleo de datos, las exportaciones principales, TEI Lex-0, la decisión de alcance CLDF y la infraestructura de empaquetado reproducible están técnicamente cerrados. Los gates reales se concentran ahora en la política/cotejo de 22 recolaciones, congelamiento final de contratos/metadatos, tag/changelog y preservación.
+El núcleo científico-computacional, TEI Lex-0, el alcance CLDF, el empaquetado reproducible y los contratos de datos v1.0 están técnicamente cerrados. Los gates del release candidate quedan reducidos a **tres**: tratamiento final de las 22 recolaciones, tag/changelog final y preservación/DOI.
 
-**Estimación operativa actual para v1.0 técnica/publicable: 93–95 % completado.** El intervalo no representa validación filológica humana: `humanVerified=0` se mantiene donde corresponde y esa validación pertenece a otra fase científica.
+**Estimación operativa actual para v1.0 técnica/publicable: 95–97 % completado.** Esta cifra no representa validación filológica humana; `humanVerified=0` se mantiene donde corresponde.
 
-La versión continúa siendo desarrollo/candidata hasta cerrar los cuatro gates restantes y congelar una release final.
+Los metadatos de identidad de release no forman parte del freeze de contratos porque necesariamente deben incorporar el tag y DOI definitivos. Se cierran en el gate posterior, no mediante una excepción silenciosa al manifiesto.
