@@ -30,7 +30,7 @@ EXPORTERS = [
     ("crossreference_reviewed_view", "export_lexicon_crossreference_reviewed_view.py", "--out-dir"),
     ("crossreference_review_queue", "export_crossreference_review_queue.py", "--out-dir"),
     ("crossreference_recollation_queue", "export_crossreference_recollation_queue.py", "--output-dir"),
-    ("v1_recollation_disposition", "export_v1_recollation_disposition.py", "--output-dir"),
+    ("v1_recollation_disposition", "export_v1_recollation_disposition.py", "--out-dir"),
     ("lo_mismo", "export_lexicon_lo_mismo.py", "--out-dir"),
     ("historical_variety", "export_lexicon_variety_evidence.py", "--out-dir"),
     ("physical_spans", "export_lexicon_physical_spans.py", "--out-dir"),
