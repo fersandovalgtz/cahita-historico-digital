@@ -5,8 +5,9 @@
   "description": "Infraestructura reproducible para la edición histórico-digital, transcripción y estructuración lexicográfica y gramatical del Arte de la lengua cahita (México, 1737).",
   "codeRepository": "https://github.com/fersandovalgtz/cahita-historico-digital",
   "dateCreated": "2026-08-15",
-  "dateModified": "2026-08-16",
-  "version": "0.2.0-dev",
+  "dateModified": "2026-08-21",
+  "datePublished": "2026-08-21",
+  "version": "1.0.0",
   "license": "https://spdx.org/licenses/MIT.html",
   "author": {
     "@type": "Person",
@@ -29,5 +30,6 @@
     "reproducible corpus"
   ],
   "programmingLanguage": ["Python"],
-  "developmentStatus": "active"
+  "developmentStatus": "active",
+  "releaseNotes": "https://github.com/fersandovalgtz/cahita-historico-digital/blob/v1.0.0/CHANGELOG.md"
 }
