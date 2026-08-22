@@ -30,9 +30,12 @@ REQUIRED_FILES = [
     "SECURITY.md",
     "SOURCES.md",
     "PROVENANCE.md",
+    "LICENSE",
     "DATA_LICENSE.md",
+    "LICENSING.md",
     "references.bib",
     "docs/DATA_PRODUCTS.md",
+    "docs/REPRODUCIBILITY.md",
     "docs/ECOSYSTEM.md",
     "docs/RELEASE_PUBLICATION_2026-08-22.md",
     ".github/PULL_REQUEST_TEMPLATE.md",
@@ -145,24 +148,17 @@ def main() -> None:
             EXPECTED["zip_sha256"],
         ],
     )
-    require_text(
-        "README.en.md",
-        ["v1.0.0", "2,302", "humanVerified=0", "DOI"],
-    )
-    require_text(
-        "DATASHEET.md",
-        ["2,302", "267 archivos científicos", EXPECTED["zip_sha256"], "DOI"],
-    )
-    require_text(
-        "QUALITY_REPORT.md",
-        ["371/371", "TEI Lex-0 0.9.5", EXPECTED["zip_sha256"], "humanVerified=0"],
-    )
+    require_text("README.en.md", ["v1.0.0", "2,302", "humanVerified=0", "DOI"])
+    require_text("DATASHEET.md", ["2,302", "267 archivos científicos", EXPECTED["zip_sha256"], "DOI"])
+    require_text("QUALITY_REPORT.md", ["371/371", "TEI Lex-0 0.9.5", EXPECTED["zip_sha256"], "humanVerified=0"])
     require_text("GOVERNANCE.md", ["No equivalencia automática", "CARE"])
     require_text("CONTRIBUTORS.md", ["CRediT", "Fernando Sandoval Gutierrez"])
     require_text("FAIR_ASSESSMENT.md", ["No constituye certificación FAIR", "DOI"])
     require_text("SCHEMA.md", ["26 contratos", "TEI Lex-0 0.9.5"])
     require_text("SECURITY.md", ["integridad científica", "v1.0.0"])
+    require_text("LICENSING.md", ["MIT", "CC BY 4.0", "No relicenciados"])
     require_text("docs/DATA_PRODUCTS.md", [EXPECTED["zip_sha256"], "query_lexicon.py"])
+    require_text("docs/REPRODUCIBILITY.md", [EXPECTED["release_commit"], EXPECTED["zip_sha256"], "make qa-full"])
 
     print(
         "repository surface QA OK: "
