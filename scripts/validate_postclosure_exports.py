@@ -207,10 +207,17 @@ def validate_lo_mismo(manifest: dict) -> None:
         raise SystemExit("Lo miſmo candidate queue is empty")
     if manifest["surfaceOccurrenceCount"] < manifest["candidateArticleCount"]:
         raise SystemExit("Lo miſmo occurrence count is internally inconsistent")
-    if manifest["anaphoraResolutionPerformed"] is not False:
-        raise SystemExit("Lo miſmo queue must not resolve anaphora automatically")
-    if manifest["semanticEquivalenceInferred"] is not False:
-        raise SystemExit("Lo miſmo queue must not infer semantic equivalence")
+    for key in (
+        "formulaFunctionInferred",
+        "referentialScopeInferred",
+        "targetLanguageFormInferred",
+        "borrowingInferred",
+        "semanticEquivalenceInferred",
+    ):
+        if manifest[key] is not False:
+            raise SystemExit(f"Lo miſmo surface queue guard must remain false: {key}")
+    if not manifest["deterministic"]:
+        raise SystemExit("Lo miſmo queue manifest does not declare deterministic=true")
 
 
 def validate_variety(manifest: dict) -> None:
@@ -219,9 +226,9 @@ def validate_variety(manifest: dict) -> None:
     if manifest["articleCountWithEvidence"] <= 0:
         raise SystemExit("historical-variety evidence has no source articles")
     if manifest["varietyAttributionInferred"] is not False:
-        raise SystemExit("variety evidence must not infer attribution")
+        raise SystemExit("historical-variety evidence must not infer attribution")
     if manifest["linguisticSimilarityUsed"] is not False:
-        raise SystemExit("variety evidence must not use linguistic similarity")
+        raise SystemExit("historical-variety evidence must not use linguistic similarity")
 
 
 def validate_physical_spans(manifest: dict) -> None:
@@ -295,9 +302,7 @@ def main() -> None:
             validate_variety,
         ),
         "physical_spans": validate_pipeline(
-            "physical-span audit",
-            "export_lexicon_physical_spans.py",
-            validate_physical_spans,
+            "physical-span audit", "export_lexicon_physical_spans.py", validate_physical_spans
         ),
     }
     if results["crossreference_graph"]["crossReferenceCount"] != results["crossreferences"]["crossReferenceCount"]:
@@ -346,7 +351,7 @@ def main() -> None:
         f"from {results['crossreference_reviewed_view']['sourceReviewRecordCount']} source-review records; "
         f"sourceReviewQueue={results['crossreference_review_queue']['awaitingSourceReviewCount']} "
         f"with tiers={results['crossreference_review_queue']['priorityTierCounts']}; "
-        f"{results['lo_mismo']['candidateArticleCount']} Lo miſmo candidate articles; "
+        f"{results['lo_mismo']['candidateArticleCount']} Lo miſmo formula-candidate articles; "
         f"{results['variety']['evidenceRecordCount']} variety-evidence records; "
         f"{results['physical_spans']['articleCountWithPhysicalMetadata']} articles with physical metadata, "
         f"{results['physical_spans']['flaggedArticleCount']} flagged for structural review"
