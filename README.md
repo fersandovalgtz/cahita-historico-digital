@@ -4,7 +4,7 @@
 
 Cahíta Histórico Digital (CHD) es una infraestructura de investigación orientada a conservar, describir, transcribir y estructurar de forma reproducible una fuente fundamental para la historia de las lenguas cahítas y de la lingüística misionera novohispana. El proyecto separa explícitamente el testimonio histórico, el OCR, la transcripción, la segmentación computacional y las decisiones curatoriales IA-asistidas.
 
-> **Estado:** `0.2.0-dev` — desarrollo activo. La fase de promoción/enlace y censo exhaustivo del vocabulario y la cobertura estructural de las unidades gramaticales numeradas quedaron técnicamente cerradas el **21 de agosto de 2026**. No existe todavía una release científica estable ni un DOI del proyecto.
+> **Estado:** `1.0.0` — primera release científica estable del alcance técnico declarado. El vocabulario, la cobertura gramatical numerada, la interoperabilidad TEI Lex-0, los contratos, el freeze de datos y las incertidumbres de recolación están versionados y validados reproduciblemente. La preservación archivística y el DOI de versión permanecen pendientes hasta su depósito efectivo.
 
 ## Fuente histórica principal
 
@@ -75,21 +75,19 @@ El hecho de que el vocabulario y la numeración gramatical tengan cierre técnic
 
 ## Próximo frente científico
 
-Con el vocabulario y la cobertura gramatical numerada técnicamente cerrados, el frente activo cambia de **detección de unidades faltantes** a **consolidación post-cierre, control textual e interoperabilidad**. Las prioridades inmediatas son:
+Con v1.0.0, el frente inmediato deja de ser el cierre estructural del corpus y pasa a **preservación, revisión filológica post-release y explotación científica de los datos**. Las prioridades son:
 
-1. mantener sincronizados documentación, métricas y metadatos con las fuentes canónicas de estado;
-2. cerrar de manera explícita el grafo de remisiones `Buſca`: actualmente existen **151 referencias**, de las cuales **60** tienen resolución estricta única y **90** no se localizan por igualdad estricta; conservar sin forzar los **4 ciclos exactos** detectados;
-3. revisar las **14** ocurrencias candidatas de `Lo miſmo` sin resolver anáforas automáticamente;
-4. consolidar las **76** evidencias exportadas de etiquetas históricas de variedad y ampliar su enlace con la gramática;
-5. revisar microlecturas `unresolved`, `sourceSpans`, continuidades transcolumna/transpágina y anomalías materiales;
-6. preparar perfiles de interoperabilidad —especialmente TEI y, sólo cuando la microestructura lo permita, TEI Lex-0/CLDF— sin confundir exportación con validación lingüística;
-7. avanzar en control textual, preservación y preparación de una futura release científica sin adelantar una versión estable ni un DOI inexistente.
+1. depositar la release archivada y registrar DOI de versión/Concept DOI cuando sean efectivamente asignados;
+2. reabrir las 22 recolaciones sólo cuando exista cotejo directo del mismo testimonio o revisión filológica humana trazable;
+3. consolidar las 76 evidencias de etiquetas históricas de variedad y ampliar su relación explícita con la gramática;
+4. continuar estudios lingüísticos e historiográficos derivados sin retroproyectar automáticamente categorías modernas sobre `ALC1737`;
+5. evaluar CLDF como derivado analítico post-v1 únicamente cuando la segmentación y la identidad lingüística requeridas estén sustentadas.
 
 ## Cita
 
 Autor del proyecto: **Fernando Sandoval Gutierrez**, Universidad Autónoma de Ciudad Juárez, ORCID `0000-0002-3168-6725`.
 
-La forma canónica de citación se encuentra en [`CITATION.cff`](CITATION.cff). Mientras el proyecto permanezca en `0.2.0-dev`, se recomienda citar también el commit exacto utilizado para garantizar reproducibilidad.
+La forma canónica de citación de v1.0.0 se encuentra en [`CITATION.cff`](CITATION.cff). Para reproducibilidad se recomienda conservar el tag `v1.0.0` y, cuando sea pertinente, el commit exacto utilizado. El DOI se añadirá únicamente después de su asignación archivística efectiva.
 
 ## Licencia
 
