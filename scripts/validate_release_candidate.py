@@ -1,0 +1,111 @@
+#!/usr/bin/env python3
+"""Validate the deterministic CHD scientific release-candidate bundle."""
+from __future__ import annotations
+
+import json
+import tempfile
+import zipfile
+from pathlib import Path
+
+from build_release_candidate import BUNDLE_DIRNAME, MANIFEST_NAME, ZIP_NAME, build
+
+EXPECTED_OPEN_GATES = {
+    "direct_facsimile_recollation_of_22_crossreference_cases",
+    "external_tei_lex0_schema_validation",
+    "final_cldf_lex0_scope_decision",
+    "final_schema_and_metadata_freeze",
+    "final_release_tag_and_changelog",
+    "archival_deposit_and_version_doi",
+}
+
+
+def validate_manifest(manifest: dict) -> None:
+    if manifest["packageType"] != "scientific_release_candidate":
+        raise SystemExit("unexpected release-candidate package type")
+    if manifest["packageStatus"] != "development_not_v1_0_0":
+        raise SystemExit("release candidate must remain explicitly pre-v1.0")
+    if manifest["releaseReady"] is not False:
+        raise SystemExit("release candidate must not declare releaseReady=true")
+    if manifest["facsimileIncluded"] is not False:
+        raise SystemExit("release candidate unexpectedly includes/reports facsimile")
+    if manifest["thirdPartyReproductionsRelicensed"] is not False:
+        raise SystemExit("release candidate must not relicense third-party reproductions")
+    if manifest["humanVerifiedCount"] != 0:
+        raise SystemExit("release candidate must preserve humanVerifiedCount=0")
+    if set(manifest["openGates"]) != EXPECTED_OPEN_GATES:
+        raise SystemExit(f"release-candidate open gates drifted: {manifest['openGates']}")
+
+    summary = manifest["summary"]
+    expected = {
+        "lexiconArticleCount": 2302,
+        "canonicalCrossReferenceCount": 150,
+        "strictCrossReferenceEdgeCount": 60,
+        "strictCrossReferenceCycleCount": 4,
+        "sourceReviewRecordCount": 90,
+        "reviewedViewEdgeCount": 100,
+        "facsimileRecollationQueueCount": 22,
+        "grammarObjectCount": 302,
+        "grammarEvidenceRowCount": 1215,
+        "grammarRulesWithStructuredClaim": 370,
+        "grammarRuleComparisonUniverse": 373,
+        "teiEntryCount": 2302,
+        "teiLex0ConformanceClaimed": False,
+        "externalLex0SchemaValidationPerformed": False,
+    }
+    if summary != expected:
+        raise SystemExit(f"release-candidate scientific summary drifted: {summary} != {expected}")
+    if manifest["artifactFileCount"] <= 20:
+        raise SystemExit("release candidate unexpectedly contains too few artifacts")
+    if manifest["artifactBytes"] <= 0:
+        raise SystemExit("release candidate artifact byte count is invalid")
+
+
+def validate_zip(result: dict) -> None:
+    zip_path = result["zipPath"]
+    manifest = result["manifest"]
+    with zipfile.ZipFile(zip_path) as archive:
+        names = archive.namelist()
+        if names != sorted(names):
+            raise SystemExit("release-candidate ZIP members are not sorted deterministically")
+        if len(names) != manifest["artifactFileCount"] + 1:
+            raise SystemExit("ZIP member count disagrees with package manifest")
+        expected_manifest_name = f"{BUNDLE_DIRNAME}/{MANIFEST_NAME}"
+        if expected_manifest_name not in names:
+            raise SystemExit("release-candidate ZIP is missing top-level manifest")
+        for info in archive.infolist():
+            if info.date_time != (1980, 1, 1, 0, 0, 0):
+                raise SystemExit(f"non-deterministic ZIP timestamp for {info.filename}")
+
+
+def main() -> None:
+    with tempfile.TemporaryDirectory() as tmp:
+        base = Path(tmp)
+        first = build(base / "run1")
+        second = build(base / "run2")
+
+        validate_manifest(first["manifest"])
+        validate_manifest(second["manifest"])
+        validate_zip(first)
+        validate_zip(second)
+
+        if first["manifest"] != second["manifest"]:
+            raise SystemExit("release-candidate manifests differ across two builds")
+        if first["zipSha256"] != second["zipSha256"]:
+            raise SystemExit(
+                "release-candidate ZIP hash differs across two builds: "
+                f"{first['zipSha256']} != {second['zipSha256']}"
+            )
+        if first["zipPath"].read_bytes() != second["zipPath"].read_bytes():
+            raise SystemExit("release-candidate ZIP bytes differ across two builds")
+
+        print(
+            "release-candidate QA OK: "
+            f"zip={ZIP_NAME}; sha256={first['zipSha256']}; "
+            f"files={first['manifest']['artifactFileCount'] + 1}; "
+            f"artifactBytes={first['manifest']['artifactBytes']}; "
+            f"openGates={len(first['manifest']['openGates'])}; releaseReady=false; humanVerified=0"
+        )
+
+
+if __name__ == "__main__":
+    main()
