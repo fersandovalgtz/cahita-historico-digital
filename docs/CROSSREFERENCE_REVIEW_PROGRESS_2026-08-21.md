@@ -75,7 +75,7 @@ Tras el lote 10, la vista revisada debe contener:
 - 60 aristas estrictas con `edgeAuthority=strict_exact_normalized_equality`;
 - 40 aristas editoriales con `edgeAuthority=editorial_source_review`;
 - **100 aristas efectivas**;
-- 16 casos `editorial_requires_recollation`;
+- **16 casos `editorial_requires_recollation`**;
 - 5 casos `editorial_candidate_rejected`;
 - 15 casos `editorial_target_not_located`;
 - **14 casos `strict_not_located_unreviewed`**;
