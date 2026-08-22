@@ -19,3 +19,30 @@ jobs:
           python-version: "3.13"
       - name: Print next eight Tier-C cases from permanent queue
         run: python scripts/export_crossreference_review_queue.py --out-dir /tmp/xrefqueue --print-next 8 --tier C_no_strong
+      - name: Inspect canonical guides for Tier-C batch11 targets
+        run: |
+          python - <<'PY'
+          from scripts.export_lexicon_crossreference_graph import load_articles, normalize_guide
+          articles, _ = load_articles()
+          searches = {
+              'afliccion': ['afliccion', 'aflic'],
+              'desenvolver': ['desenvol', 'desembol'],
+              'alzarse': ['alzar', 'alzir'],
+              'forcejar': ['forcej', 'forzej', 'luchar'],
+              'frio_tener': ['frio', 'tener frio'],
+              'otra_vez': ['otra vez', 'otras vezes', 'nuevamente'],
+              'consentir': ['consent', 'conſent', 'confent'],
+              'consentimiento': ['consentim', 'conſentim', 'confentim'],
+          }
+          for label, needles in searches.items():
+              print('TARGETSCAN', label)
+              rows=[]
+              for article in articles:
+                  raw=article.get('spanishGuideRaw')
+                  if not raw: continue
+                  norm=normalize_guide(raw)
+                  if any(n in norm for n in needles):
+                      rows.append((article['articleId'], article.get('sourcePageDigital'), article.get('column'), raw, norm))
+              for row in rows[:50]: print('TARGETROW', row)
+              print('TARGETCOUNT', len(rows))
+          PY
