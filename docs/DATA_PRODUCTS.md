@@ -45,6 +45,22 @@ La proyección TEI está diseñada para intercambio lexicográfico. v1.0.0 valid
 
 Es el formato preferido cuando el objetivo es interoperabilidad lexicográfica preservando mejor la naturaleza de diccionario histórico.
 
+## CLDF Dictionary post-v1
+
+CLDF no forma parte del freeze ni de los assets de la Release `v1.0.0`, pero ya existe como **derivado reproducible post-v1** mediante el módulo `Dictionary`. Se construye directamente desde `data/lexicon/articles/*.jsonl` con `scripts/generate_cldf_dictionary.py` y se valida tanto con `pycldf` como con `scripts/validate_cldf_dictionary.py`.
+
+La construcción actualmente verificada produce:
+
+- **2,221** filas `EntryTable`;
+- **2,221** filas `SenseTable`;
+- **1** fila documental `LanguageTable`;
+- **1** referencia bibliográfica a `ALC1737`;
+- `humanVerifiedEntryCount=0`.
+
+Cada objeto `cahitaFormsRaw` se proyecta como una entrada conservando literalmente `formRaw`. La guía española se preserva como descripción del sentido y el estado de revisión se arrastra desde el artículo canónico. El `Language_ID` representa únicamente el rótulo documental histórico `Cahita`; no se infieren `ISO639P3code` ni `Glottocode`, y las etiquetas `Hiaqui`, `Mayo` y `Thehueco` permanecen como evidencia histórica separada.
+
+La salida se genera en `build/cldf/` —espacio regenerable fuera del freeze— o como artifact temporal del workflow `CHD CLDF`. Véase [`CLDF.md`](../CLDF.md).
+
 ## Gramática
 
 `data/grammar/` contiene objetos estructurados del _Arte_. Los exportadores producen concordancias y auditorías de cobertura sin reemplazar los objetos fuente.
@@ -82,6 +98,13 @@ python scripts/query_lexicon.py "Danzar" --field all --json
 
 La herramienta consulta las capas canónicas y no normaliza automáticamente `ſ`, ortografía histórica ni identidades modernas.
 
+Para reconstruir y validar CLDF:
+
+```bash
+python -m pip install -r requirements-cldf.txt
+make cldf-qa
+```
+
 ## Descarga con GitHub CLI
 
 ```bash
@@ -97,11 +120,12 @@ gh release download v1.0.0 \
 | Auditoría filológica/editorial | JSONL canónico por artículo |
 | Análisis estadístico/tabular | CSV consolidado |
 | Procesamiento programático completo | JSON/JSONL consolidado |
-| Intercambio lexicográfico | TEI Lex-0 |
+| Intercambio lexicográfico con máxima preservación de microestructura v1 | TEI Lex-0 |
+| Interoperabilidad CLDF / herramientas CLDF | CLDF Dictionary post-v1 |
 | Investigación gramatical | `data/grammar/` + concordancia |
 | Citar/reproducir una versión | GitHub Release + tag + manifest/checksums |
 | Verificar límites y autoridad | `QUALITY_REPORT.md`, `DATASHEET.md`, `GOVERNANCE.md` |
 
-## CLDF
+## Relación entre TEI Lex-0 y CLDF
 
-CLDF no se incluye como requisito v1.0.0. La decisión está documentada: puede ser útil como derivado analítico futuro, pero no debe forzarse si ello aplana la microestructura histórica o introduce un mapeo lingüístico moderno no demostrado.
+TEI Lex-0 continúa siendo la representación lexicográfica principal de la Release `v1.0.0`. CLDF se mantiene deliberadamente como una vista analítica posterior, porque su utilidad interoperable no justifica reescribir la microestructura histórica ni introducir decisiones lingüísticas modernas. Ambas capas se derivan del corpus canónico y deben citar la procedencia correspondiente; ninguna sustituye los JSONL curatoriales como autoridad de edición.
