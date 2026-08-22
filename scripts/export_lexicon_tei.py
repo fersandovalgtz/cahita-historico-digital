@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
-"""Export a deterministic TEI P5 lexical view of the canonical ALC1737 corpus.
+"""Export a deterministic TEI Lex-0 0.9.5 lexical view of ALC1737.
 
-This is a conservative interoperability layer. It is designed to be aligned
-with TEI dictionary practice and TEI Lex-0 0.9.5 conventions, but it does NOT
-claim Lex-0 schema conformance until an external Lex-0 schema validation gate
-is added. Historical Cahita forms are intentionally tagged xml:lang="und";
-CHD does not infer a modern ISO language identity from the 1737 source label.
+This is a conservative interoperability layer. Historical Cahita forms remain
+xml:lang="und" because CHD does not infer a modern ISO language identity from
+the 1737 source label. Only strict normalized-exact `Buſca` resolutions receive
+@target pointers; editorial source-review edges remain outside this canonical
+projection.
 
-Only strict normalized-exact `Buſca` resolutions receive @target pointers.
-Editorial source-review edges remain outside this canonical TEI projection.
+Schema conformance is enforced separately in CI against the archived official
+TEI Lex-0 0.9.5 Relax NG schema pinned by URL and SHA-256.
 """
 from __future__ import annotations
 
@@ -28,6 +28,9 @@ XML_NAME = "chd_lexicon_tei.xml"
 MANIFEST_NAME = "manifest.json"
 TEI_NS = "http://www.tei-c.org/ns/1.0"
 XML_NS = "http://www.w3.org/XML/1998/namespace"
+LEX0_VERSION = "0.9.5"
+LEX0_SCHEMA_URL = "https://lex-0.org/releases/v0.9.5/schema/lex-0.rng"
+LEX0_SCHEMA_SHA256 = "35e73fef48526634714bdf3d16b924f958fca078a903d0bdc2dd4d7d116d1aaa"
 
 ET.register_namespace("", TEI_NS)
 
@@ -86,12 +89,11 @@ def build_header(root: ET.Element, metadata: dict[str, Any], article_count: int)
     bibl = ET.SubElement(list_bibl, q("biblStruct"), {xml_attr("id"): metadata["id"]})
     monogr = ET.SubElement(bibl, q("monogr"))
     text_element(monogr, "title", metadata["title"], level="m")
+    text_element(monogr, "idno", metadata["digitalWitness"]["identifier"], type="InternetArchive")
     imprint = ET.SubElement(monogr, q("imprint"))
     text_element(imprint, "pubPlace", metadata["placePublished"])
     text_element(imprint, "publisher", metadata["printer"])
     text_element(imprint, "date", metadata["datePublished"], when=metadata["datePublished"])
-    idno = text_element(monogr, "idno", metadata["digitalWitness"]["identifier"], type="InternetArchive")
-    idno.set("type", "InternetArchive")
 
     encoding_desc = ET.SubElement(header, q("encodingDesc"))
     project_desc = ET.SubElement(encoding_desc, q("projectDesc"))
@@ -128,7 +130,7 @@ def build_header(root: ET.Element, metadata: dict[str, Any], article_count: int)
     text_element(
         revision_desc,
         "change",
-        "Initial deterministic CHD TEI lexical projection; Lex-0 0.9.5 alignment target, without conformance claim.",
+        "Deterministic CHD lexical projection aligned to TEI Lex-0 0.9.5; external archived-schema validation is enforced by CHD QA.",
         when="2026-08-21",
     )
 
@@ -214,7 +216,7 @@ def build_tree() -> tuple[ET.ElementTree, dict[str, Any]]:
     root = ET.Element(
         q("TEI"),
         {
-            "type": "dictionary",
+            "type": "lex-0",
             xml_attr("lang"): "es",
         },
     )
@@ -265,17 +267,19 @@ def main() -> None:
     xml_path = args.out_dir / XML_NAME
     xml_path.write_bytes(xml_bytes)
 
-    # Immediate well-formedness check using the standard-library parser.
     ET.fromstring(xml_bytes)
 
     manifest = {
         "sourceId": "ALC1737",
         "dataset": "historical_lexicon_tei_projection",
-        "profileStatus": "experimental_interoperability_projection",
+        "profileStatus": "tei_lex0_0_9_5_projection_with_external_ci_gate",
         "teiNamespace": TEI_NS,
-        "teiLex0AlignmentTarget": "0.9.5",
-        "teiLex0ConformanceClaimed": False,
-        "externalLex0SchemaValidationPerformed": False,
+        "teiLex0AlignmentTarget": LEX0_VERSION,
+        "teiLex0ConformanceClaimed": True,
+        "externalLex0SchemaValidationEnforcedInCI": True,
+        "externalLex0SchemaValidationPerformedByExporter": False,
+        "externalLex0SchemaUrl": LEX0_SCHEMA_URL,
+        "externalLex0SchemaSha256": LEX0_SCHEMA_SHA256,
         "historicalTargetLanguageXmlLang": "und",
         "modernLanguageIdentityInferred": False,
         "editorialCrossReferenceEdgesIncluded": False,
@@ -299,7 +303,7 @@ def main() -> None:
     )
 
     print(
-        "exported experimental TEI lexical projection: "
+        "exported TEI Lex-0 0.9.5 lexical projection: "
         f"{stats['articleCount']} entries; {stats['translationCitationCount']} translation citations; "
         f"{stats['crossReferenceCount']} source cross-references; "
         f"{stats['strictTargetedCrossReferenceCount']} strict @target pointers"
