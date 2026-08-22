@@ -17,7 +17,6 @@ from build_release_candidate import (
 EXPECTED_SCHEMA_URL = "https://lex-0.org/releases/v0.9.5/schema/lex-0.rng"
 EXPECTED_SCHEMA_SHA256 = "35e73fef48526634714bdf3d16b924f958fca078a903d0bdc2dd4d7d116d1aaa"
 EXPECTED_OPEN_GATES = {
-    "direct_facsimile_recollation_of_22_crossreference_cases",
     "final_release_tag_and_changelog",
     "archival_deposit_and_version_doi",
 }
@@ -38,6 +37,19 @@ EXPECTED_CONTRACT_FREEZE = {
     "exactBytesFrozenForV1": True,
     "silentContractChangesAllowed": False,
     "releaseIdentityMetadataDeferredToTagGate": True,
+}
+EXPECTED_V1_RECOLLATION_DISPOSITION = {
+    "document": "docs/V1_RECOLLATION_DISPOSITION.md",
+    "sourceQueueCount": 22,
+    "openUncertaintyCount": 22,
+    "resolvedByThisLayerCount": 0,
+    "selectedTargetCount": 0,
+    "canonicalChangesByThisLayerCount": 0,
+    "humanVerifiedCount": 0,
+    "releaseGateDisposition": "closed_for_v1_scope_as_explicit_open_uncertainties",
+    "philologicalResolutionStatus": "open",
+    "facsimileResolutionClaimed": False,
+    "ocrAcceptedAsFacsimileSubstitute": False,
 }
 
 
@@ -63,6 +75,11 @@ def validate_manifest(manifest: dict) -> None:
             "release-candidate v1 contract freeze drifted: "
             f"{manifest.get('contractFreeze')} != {EXPECTED_CONTRACT_FREEZE}"
         )
+    if manifest.get("v1RecollationDisposition") != EXPECTED_V1_RECOLLATION_DISPOSITION:
+        raise SystemExit(
+            "release-candidate v1 recollation disposition drifted: "
+            f"{manifest.get('v1RecollationDisposition')} != {EXPECTED_V1_RECOLLATION_DISPOSITION}"
+        )
 
     summary = manifest["summary"]
     expected = {
@@ -73,6 +90,7 @@ def validate_manifest(manifest: dict) -> None:
         "sourceReviewRecordCount": 90,
         "reviewedViewEdgeCount": 100,
         "facsimileRecollationQueueCount": 22,
+        "v1OpenRecollationUncertaintyCount": 22,
         "grammarObjectCount": 302,
         "grammarEvidenceRowCount": 1215,
         "grammarRulesWithStructuredClaim": 370,
@@ -101,7 +119,9 @@ def validate_zip(result: dict) -> None:
         required = {
             f"{BUNDLE_DIRNAME}/{MANIFEST_NAME}",
             f"{BUNDLE_DIRNAME}/project/docs/CLDF_SCOPE_DECISION_V1_0.md",
+            f"{BUNDLE_DIRNAME}/project/docs/V1_RECOLLATION_DISPOSITION.md",
             f"{BUNDLE_DIRNAME}/project/release/v1_contract_manifest.json",
+            f"{BUNDLE_DIRNAME}/derived/v1_recollation_disposition/manifest.json",
         }
         missing = sorted(required - set(names))
         if missing:
@@ -138,7 +158,7 @@ def main() -> None:
             f"files={first['manifest']['artifactFileCount'] + 1}; "
             f"artifactBytes={first['manifest']['artifactBytes']}; "
             f"openGates={len(first['manifest']['openGates'])}; "
-            "Lex0ConformanceClaimed=true; CLDFRequiredForV1=false; "
+            "v1OpenRecollations=22; Lex0ConformanceClaimed=true; CLDFRequiredForV1=false; "
             "contractsFrozen=26; releaseReady=false; humanVerified=0"
         )
 

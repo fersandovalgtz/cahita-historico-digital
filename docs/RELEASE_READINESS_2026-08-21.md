@@ -4,9 +4,9 @@ Fecha de corte: **21 de agosto de 2026**.
 
 ## Resumen ejecutivo
 
-Cahíta Histórico Digital está en fase de cierre de release. El vocabulario y la gramática numerada tienen cierre técnico; las remisiones `Buſca` y `Lo miſmo` tienen capas explícitas de revisión; los derivados principales son deterministas; existe un paquete científico reproducible; la vista TEI valida contra **TEI Lex-0 0.9.5**; la decisión CLDF está cerrada; y los contratos de datos de v1.0 quedan congelados por contenido exacto.
+Cahíta Histórico Digital está en fase de cierre de release. El vocabulario y la gramática numerada tienen cierre técnico; las remisiones `Buſca` y `Lo miſmo` tienen capas explícitas de revisión; los derivados principales son deterministas; existe un paquete científico reproducible; la vista TEI valida contra **TEI Lex-0 0.9.5**; la decisión CLDF está cerrada; los contratos de datos de v1.0 están congelados por contenido exacto; y las 22 recolaciones quedan formalmente dispuestas para v1.0 como incertidumbres filológicas abiertas explícitas.
 
-Para una **v1.0 técnica, reproducible y científicamente publicable dentro del alcance declarado**, la preparación se estima ahora en **95–97 %**. Esta estimación no mide validación filológica humana: `humanVerified=false` se conserva y una edición revisada por especialistas sigue siendo otra fase.
+Para una **v1.0 técnica, reproducible y científicamente publicable dentro del alcance declarado**, la preparación se estima ahora en **97–98 %**. Esta estimación no mide validación filológica humana: `humanVerified=false` se conserva y una edición revisada por especialistas sigue siendo otra fase.
 
 ## Evidencia cerrada
 
@@ -27,6 +27,12 @@ Para una **v1.0 técnica, reproducible y científicamente publicable dentro del 
 - cola de recolación: 22 casos = 8 A / 4 B / 10 C.
 - 14/14 fórmulas `Lo miſmo` auditadas; 0 convertidas en remisión canónica.
 
+### Disposición v1.0 de las 22 recolaciones
+
+Los 22 casos se conservan en v1.0 como `frozen_open_uncertainty`. La capa de disposición exige identidad 22/22 con la cola fuente, tiers 8/4/10, `canonicalAction=none`, cero destinos seleccionados, cero cambios canónicos y `humanVerified=false`.
+
+Esto **cierra el gate de release**, pero no la investigación filológica. `philologicalResolutionStatus=open`, `facsimileResolutionClaimed=false` y `ocrAcceptedAsFacsimileSubstitute=false`. Los casos deben reabrirse post-v1 cuando exista cotejo directo del mismo testimonio o revisión filológica humana trazable.
+
 ### Interoperabilidad
 
 La vista TEI contiene 2,302 entradas, 2,221 citas de traducción, 150 remisiones y 60 targets estrictos. El CI valida el XML contra el Relax NG archivado de TEI Lex-0 0.9.5, SHA-256 `35e73fef48526634714bdf3d16b924f958fca078a903d0bdc2dd4d7d116d1aaa`. El XML validado conserva SHA-256 `bad06dad39f216b8dde661b4219845c4c19db945bdfbc4478ff5e0846b72e828` mientras no cambie su contenido.
@@ -46,24 +52,20 @@ El manifiesto tiene SHA-256 `c0b897b9dbad2107b40db6169d4207bca752c2b84161e0c9c98
 
 ### Release candidate reproducible
 
-El paquete se construye dos veces y debe coincidir byte-a-byte. Su manifiesto registra tanto la decisión de interoperabilidad como el freeze de contratos y conserva `releaseReady=false` y `humanVerifiedCount=0`. El hash final del ZIP sólo se congelará en el commit candidato definitivo.
+El paquete se construye dos veces y debe coincidir byte-a-byte. Su manifiesto registra interoperabilidad, freeze de contratos y disposición v1.0 de las recolaciones. Conserva `releaseReady=false` y `humanVerifiedCount=0`. El hash final del ZIP sólo se congelará en el commit candidato definitivo.
 
-## Tres gates restantes
+## Dos gates restantes
 
-### A — 22 recolaciones
+### A — tag, changelog y metadatos finales
 
-Cada caso debe cotejarse contra imagen del mismo testimonio cuando sea posible o congelarse como incertidumbre explícita. OCR y similitud diagnóstica no sustituyen el facsímil.
+Congelar los bytes finales de datos desde el commit definitivo, sincronizar `CITATION.cff` y `codemeta.json`, preparar el changelog, reconstruir el paquete final y registrar su hash antes del tag.
 
-### B — tag, changelog y metadatos finales
+### B — preservación
 
-Después de la decisión sobre recolaciones se congelan los bytes finales de datos, se sincronizan `CITATION.cff` y `codemeta.json`, se prepara el changelog y se reconstruye el paquete desde el commit definitivo antes del tag.
-
-### C — preservación
-
-Faltan GitHub Release, depósito archivístico y DOI de versión/Concept DOI cuando corresponda.
+Crear GitHub Release, depositar la versión archivada y registrar DOI de versión/Concept DOI cuando corresponda.
 
 ## Orden de cierre
 
-**recolaciones → candidata final/tag/changelog/metadatos → preservación/DOI**.
+**candidata final/tag/changelog/metadatos → preservación/DOI**.
 
 Una v1.0 válida no requiere ocultar incertidumbres ni atribuir revisión humana inexistente. Requiere alcance estable, incertidumbres explícitas, contratos congelados, derivados interoperables, checksums, reconstrucción reproducible y preservación duradera.

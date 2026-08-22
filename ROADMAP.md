@@ -39,7 +39,7 @@ Hay 128 páginas `full_page`, preliminares y Partes I–IV representadas y estad
 
 150 remisiones canónicas: 60 `exact_unique`, 90 `not_located`, 4 ciclos estrictos. Las 90 no localizadas tienen revisión explícita: 40 destinos sustentados, 22 recolaciones, 5 candidatos rechazados y 23 destinos no localizados. La vista revisada contiene 100 aristas = 60 estrictas + 40 editoriales.
 
-Las 22 recolaciones están en una cola reproducible: **8 Tier A, 4 Tier B, 10 Tier C**. No son errores confirmados y no se resuelven por similitud aproximada.
+Las 22 recolaciones están en una cola reproducible: **8 Tier A, 4 Tier B, 10 Tier C**. Para v1.0 quedaron congeladas 22/22 como `frozen_open_uncertainty`: no se seleccionó destino, no se modificó el grafo canónico y `humanVerified=false`. El gate de release está cerrado; la resolución filológica permanece abierta y pasa al backlog post-v1.
 
 ### `Lo miſmo`
 
@@ -74,9 +74,10 @@ Hitos:
 - CLDF diferido como derivado analítico posterior;
 - **22 JSON Schema + 4 metadatos fuente congelados como 26 contratos v1.0**;
 - manifiesto de contratos SHA-256 `c0b897b9dbad2107b40db6169d4207bca752c2b84161e0c9c980409d94b86e56`;
-- CI bloquea deriva silenciosa de esos contratos.
+- CI bloquea deriva silenciosa de esos contratos;
+- disposición v1.0 de recolaciones validada 22/22, con cero cambios canónicos.
 
-Los metadatos de identidad de release (`CITATION.cff`, `codemeta.json`, versión/tag y DOI) se finalizan después de resolver o congelar las recolaciones, porque deben reflejar el commit/tag definitivo.
+Los metadatos de identidad de release (`CITATION.cff`, `codemeta.json`, versión/tag y DOI) se finalizan desde el commit definitivo porque deben reflejar la identidad de la release.
 
 ## Fase 6 — Investigación comparativa
 
@@ -86,13 +87,12 @@ Las comparaciones con recursos modernos de yaqui/mayo deberán modelarse como ca
 
 ## Fase 7 — Release científica y preservación
 
-**Estado:** **candidata avanzada; tres gates restantes.**
+**Estado:** **candidata final avanzada; dos gates restantes.**
 
-1. **Recolaciones:** cotejar contra imagen verificable los 22 casos cuando sea posible o congelarlos transparentemente como incertidumbres explícitas.
-2. **Tag/release:** congelar bytes finales de datos, sincronizar `CITATION.cff`/`codemeta.json`, preparar changelog, reconstruir el ZIP definitivo y registrar su hash antes del tag.
-3. **Preservación:** GitHub Release, depósito archivístico y DOI de versión/Concept DOI cuando corresponda.
+1. **Tag/release:** congelar bytes finales de datos desde el commit definitivo, sincronizar `CITATION.cff`/`codemeta.json`, preparar changelog, reconstruir el ZIP definitivo y registrar su hash antes del tag.
+2. **Preservación:** GitHub Release, depósito archivístico y DOI de versión/Concept DOI cuando corresponda.
 
-La infraestructura, interoperabilidad y contratos ya no son gates abiertos.
+La infraestructura, interoperabilidad, contratos y disposición de recolaciones ya no son gates abiertos.
 
 ## Productos científicos previstos
 
@@ -108,8 +108,8 @@ La infraestructura, interoperabilidad y contratos ya no son gates abiertos.
 
 ## Prioridad inmediata
 
-1. **cerrar la política y, cuando exista imagen verificable, el cotejo de las 22 recolaciones**;
-2. **preparar la candidata final, changelog y metadatos de identidad desde el commit definitivo**;
-3. **crear tag/GitHub Release y ejecutar preservación/DOI**.
+1. **preparar la candidata final, changelog y metadatos de identidad desde el commit definitivo**;
+2. **crear tag/GitHub Release y ejecutar preservación/DOI**;
+3. **retomar post-v1 el cotejo filológico de las 22 incertidumbres cuando exista imagen verificable**.
 
-Hasta completar esos tres gates, el proyecto debe permanecer en candidata de release y no presentarse como edición filológica humana.
+Hasta completar los dos gates de release, el proyecto debe permanecer en candidata y no presentarse como edición filológica humana.

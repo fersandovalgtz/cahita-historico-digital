@@ -19,8 +19,8 @@ Este checklist distingue criterios demostrados por datos/CI de gates de cierre. 
 - [x] Remisiones `Buſca`: 150 referencias; 90/90 `not_located` con revisión inicial explícita
 - [x] Fórmula `Lo miſmo`: 14/14 ocurrencias auditadas fuera del grafo de remisiones
 - [x] Cola de recolación explícita y reproducible: 22 casos = 8 A / 4 B / 10 C
-- [ ] Resolver por facsímil o congelar explícitamente como incertidumbres documentadas los 22 casos de recolación
-- [ ] Congelar los bytes finales de los datos canónicos después de la decisión sobre recolaciones
+- [x] Disposición v1.0 de las 22 recolaciones: 22/22 congeladas como `frozen_open_uncertainty`, sin destino seleccionado, sin cambio canónico y con `humanVerified=false`
+- [ ] Congelar los bytes finales de los datos canónicos en el commit/tag definitivo
 
 ## Interoperabilidad y contratos
 
@@ -42,6 +42,7 @@ Este checklist distingue criterios demostrados por datos/CI de gates de cierre. 
 - [x] Hashes SHA-256 comprobados
 - [x] Pipeline de release candidate desde checkout limpio
 - [x] Paquete reproducible de release candidate con manifiesto y hashes
+- [x] Disposición de recolaciones reproducible y validada 22/22 en CI
 - [ ] Registrar commit/tag y changelog final de release
 
 ## Preservación
@@ -53,8 +54,10 @@ Este checklist distingue criterios demostrados por datos/CI de gates de cierre. 
 
 ## Estado de preparación
 
-El núcleo científico-computacional, TEI Lex-0, el alcance CLDF, el empaquetado reproducible y los contratos de datos v1.0 están técnicamente cerrados. Los gates del release candidate quedan reducidos a **tres**: tratamiento final de las 22 recolaciones, tag/changelog final y preservación/DOI.
+El núcleo científico-computacional, TEI Lex-0, el alcance CLDF, el empaquetado reproducible, los contratos de datos y la disposición v1.0 de las 22 recolaciones están técnicamente cerrados para el alcance declarado. Los 22 casos **no están resueltos filológicamente**: permanecen como incertidumbres abiertas explícitas y pasan al backlog filológico post-v1.
 
-**Estimación operativa actual para v1.0 técnica/publicable: 95–97 % completado.** Esta cifra no representa validación filológica humana; `humanVerified=0` se mantiene donde corresponde.
+Los gates del release candidate quedan reducidos a **dos**: **tag/changelog/metadatos finales** y **preservación/DOI**.
+
+**Estimación operativa actual para v1.0 técnica/publicable: 97–98 % completado.** Esta cifra no representa validación filológica humana; `humanVerified=0` se mantiene donde corresponde.
 
 Los metadatos de identidad de release no forman parte del freeze de contratos porque necesariamente deben incorporar el tag y DOI definitivos. Se cierran en el gate posterior, no mediante una excepción silenciosa al manifiesto.
