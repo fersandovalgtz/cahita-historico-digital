@@ -1,0 +1,20 @@
+{
+  "attestationType": "github_release_integrity",
+  "version": "1.0.0",
+  "tag": "v1.0.0",
+  "expectedTagCommit": "dbcdecf0003ac5a10ae963caf6babdcf5c22128d",
+  "expectedAssetNames": [
+    "cahita-historico-digital-v1.0.0.zip",
+    "RELEASE_MANIFEST.json",
+    "SHA256SUMS.txt"
+  ],
+  "expectedZipBytes": 1076296,
+  "expectedZipSha256": "45ed1f5e4f6ce101c574dec8a91ffa3c4694050cd4366d70f20c644c40043903",
+  "writeAttestationTo": "release/github_release_attestation_v1.0.0.json",
+  "moveOrOverwriteTagAllowed": false,
+  "archivalDepositStatus": "pending",
+  "versionDoi": null,
+  "conceptDoi": null,
+  "doiInferred": false,
+  "humanVerifiedCount": 0
+}
