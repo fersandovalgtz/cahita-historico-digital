@@ -1,12 +1,13 @@
-.PHONY: help stats query exports qa-surface qa release-check
+.PHONY: help stats query exports qa-surface qa qa-full release-check
 
 help:
 	@echo "Cahíta Histórico Digital — comandos de trabajo"
-	@echo "  make stats       Estadísticas del corpus canónico"
-	@echo "  make query Q=... Consulta conservadora del léxico"
-	@echo "  make exports     Genera exportaciones léxicas consolidadas"
-	@echo "  make qa-surface  Valida metadatos/documentación pública"
-	@echo "  make qa           Ejecuta validadores principales locales"
+	@echo "  make stats         Estadísticas del corpus canónico"
+	@echo "  make query Q=...   Consulta conservadora del léxico"
+	@echo "  make exports       Genera exportaciones léxicas consolidadas"
+	@echo "  make qa-surface    Valida metadatos/documentación pública"
+	@echo "  make qa            Ejecuta validadores principales locales"
+	@echo "  make qa-full       QA local + Lex-0 externo + paquetes (requiere jing)"
 	@echo "  make release-check Valida el paquete estable v1.0.0"
 
 stats:
@@ -35,6 +36,12 @@ qa: qa-surface
 	python scripts/validate_grammar_exports.py
 	python scripts/validate_v1_contract_freeze.py
 	python scripts/validate_v1_data_freeze.py
+
+qa-full: qa
+	@command -v jing >/dev/null 2>&1 || (echo "jing is required for make qa-full" >&2; exit 2)
+	bash scripts/validate_tei_lex0_external.sh
+	python scripts/validate_release_candidate.py
+	python scripts/validate_v1_release.py
 
 release-check:
 	python scripts/validate_v1_release.py
