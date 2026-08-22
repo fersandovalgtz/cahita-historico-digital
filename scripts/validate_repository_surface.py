@@ -38,7 +38,9 @@ REQUIRED_FILES = [
     "docs/DATA_PRODUCTS.md",
     "docs/REPRODUCIBILITY.md",
     "docs/ECOSYSTEM.md",
+    "docs/PRESERVATION.md",
     "docs/RELEASE_PUBLICATION_2026-08-22.md",
+    "release/archival_deposit_v1.0.0.json",
     ".github/PULL_REQUEST_TEMPLATE.md",
     ".github/CODEOWNERS",
     ".github/ISSUE_TEMPLATE/textual-correction.md",
@@ -48,6 +50,7 @@ REQUIRED_FILES = [
     "scripts/validate_repository_surface.py",
     "scripts/validate_documentation_links.py",
     "scripts/validate_published_v1.py",
+    "scripts/validate_persistent_identifiers.py",
     "Makefile",
 ]
 
@@ -63,6 +66,12 @@ EXPECTED = {
     "busca": 150,
     "open_recollations": 22,
     "human_verified": 0,
+    "persistent_status": "archived with DOI",
+    "version_doi": "10.5281/zenodo.22061986",
+    "concept_doi": "10.5281/zenodo.22061985",
+    "record_url": "https://zenodo.org/records/22061986",
+    "provider": "Zenodo",
+    "deposited_at": "2026-08-22",
 }
 
 
@@ -122,14 +131,30 @@ def main() -> None:
 
     if metadata["language_object"].get("iso_639_3") is not None:
         raise SystemExit("historical Cahita must not be assigned a single ISO 639-3 code by this metadata layer")
-    if metadata["persistent_identifiers"].get("doi") is not None:
-        raise SystemExit("DOI must remain null until archival deposit is actually assigned")
+
+    persistent = metadata.get("persistent_identifiers", {})
+    persistent_expected = {
+        "status": EXPECTED["persistent_status"],
+        "doi": EXPECTED["version_doi"],
+        "concept_doi": EXPECTED["concept_doi"],
+        "provider": EXPECTED["provider"],
+        "record_url": EXPECTED["record_url"],
+        "deposited_at": EXPECTED["deposited_at"],
+    }
+    for key, expected in persistent_expected.items():
+        if persistent.get(key) != expected:
+            raise SystemExit(
+                f"project-metadata persistent identifier drift: {key}={persistent.get(key)!r}, expected {expected!r}"
+            )
 
     fair = load_json("metadata/fair-dataset.jsonld")
     if fair.get("version") != EXPECTED["version"]:
         raise SystemExit("FAIR JSON-LD version drift")
     if fair.get("license") != "https://creativecommons.org/licenses/by/4.0/":
         raise SystemExit("FAIR JSON-LD data license drift")
+    expected_doi_url = f"https://doi.org/{EXPECTED['version_doi']}"
+    if fair.get("@id") != expected_doi_url or fair.get("identifier") != expected_doi_url:
+        raise SystemExit("FAIR JSON-LD persistent identifier drift")
 
     attestation = load_json("release/github_release_attestation_v1.0.0.json")
     if attestation.get("tagCommit") != EXPECTED["release_commit"]:
@@ -138,6 +163,29 @@ def main() -> None:
         raise SystemExit("durable release attestation ZIP digest drift")
     if attestation.get("verificationMode") != "deterministic_rebuild_from_immutable_tag":
         raise SystemExit("durable release attestation verification mode drift")
+
+    archival = load_json("release/archival_deposit_v1.0.0.json")
+    archived_release = archival.get("publishedRelease", {})
+    if archived_release.get("tag") != EXPECTED["tag"]:
+        raise SystemExit("archival attestation tag drift")
+    if archived_release.get("tagCommit") != EXPECTED["release_commit"]:
+        raise SystemExit("archival attestation commit drift")
+    if archived_release.get("zipSha256") != EXPECTED["zip_sha256"]:
+        raise SystemExit("archival attestation ZIP digest drift")
+    deposit = archival.get("archivalDeposit", {})
+    archival_expected = {
+        "provider": EXPECTED["provider"],
+        "recordUrl": EXPECTED["record_url"],
+        "versionDoi": EXPECTED["version_doi"],
+        "conceptDoi": EXPECTED["concept_doi"],
+        "depositedAt": EXPECTED["deposited_at"],
+    }
+    for key, expected in archival_expected.items():
+        if deposit.get(key) != expected:
+            raise SystemExit(f"archival attestation drift: {key}={deposit.get(key)!r}, expected {expected!r}")
+    policy = archival.get("policy", {})
+    if policy.get("doiInferred") is not False or policy.get("tagModified") is not False:
+        raise SystemExit("archival attestation must preserve doiInferred=false and tagModified=false")
 
     contract_manifest = load_json("release/v1_contract_manifest.json")
     if contract_manifest.get("schemaContractCount") != 22 or contract_manifest.get("contractCount") != 26:
@@ -152,14 +200,27 @@ def main() -> None:
 
     require_text(
         "README.md",
-        ["v1.0.0", "2,302", "TEI Lex-0 0.9.5", "humanVerified=0", EXPECTED["zip_sha256"]],
+        [
+            "v1.0.0",
+            "2,302",
+            "TEI Lex-0 0.9.5",
+            "humanVerified=0",
+            EXPECTED["zip_sha256"],
+            EXPECTED["version_doi"],
+            EXPECTED["concept_doi"],
+        ],
     )
-    require_text("README.en.md", ["v1.0.0", "2,302", "humanVerified=0", "DOI"])
+    require_text(
+        "README.en.md",
+        ["v1.0.0", "2,302", "humanVerified=0", EXPECTED["version_doi"], EXPECTED["concept_doi"]],
+    )
     require_text("DATASHEET.md", ["2,302", "267 archivos científicos", EXPECTED["zip_sha256"], "DOI"])
     require_text("QUALITY_REPORT.md", ["371/371", "TEI Lex-0 0.9.5", EXPECTED["zip_sha256"], "humanVerified=0"])
     require_text("GOVERNANCE.md", ["No equivalencia automática", "CARE"])
     require_text("CONTRIBUTORS.md", ["CRediT", "Fernando Sandoval Gutierrez"])
-    require_text("FAIR_ASSESSMENT.md", ["No constituye certificación FAIR", "DOI"])
+    require_text("FAIR_ASSESSMENT.md", ["No constituye certificación FAIR", EXPECTED["version_doi"]])
+    require_text("docs/PRESERVATION.md", [EXPECTED["version_doi"], EXPECTED["concept_doi"], EXPECTED["record_url"]])
+    require_text("CITATION.cff", [f'doi: "{EXPECTED["version_doi"]}"'])
     require_text("SCHEMA.md", ["26 contratos", "TEI Lex-0 0.9.5"])
     require_text("SECURITY.md", ["integridad científica", "v1.0.0"])
     require_text("LICENSING.md", ["MIT", "CC BY 4.0", "No relicenciados"])
@@ -173,8 +234,14 @@ def main() -> None:
     print(
         "repository surface QA OK: "
         "requiredFiles=%d; articles=%d; articleFiles=%d; humanVerified=0; "
-        "version=1.0.0; DOI=pending; historicalISO6393=null; publishedV1=immutable_tag_rebuild"
-        % (len(REQUIRED_FILES), article_count, article_files)
+        "version=1.0.0; DOI=%s; conceptDOI=%s; historicalISO6393=null; publishedV1=immutable_tag_rebuild"
+        % (
+            len(REQUIRED_FILES),
+            article_count,
+            article_files,
+            EXPECTED["version_doi"],
+            EXPECTED["concept_doi"],
+        )
     )
 
 

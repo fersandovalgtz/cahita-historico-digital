@@ -79,10 +79,13 @@
     "licensing_matrix": "LICENSING.md"
   },
   "persistent_identifiers": {
-    "doi": null,
-    "concept_doi": null,
-    "status": "pending archival deposit",
-    "tracking_issue": "https://github.com/fersandovalgtz/cahita-historico-digital/issues/169"
+    "doi": "10.5281/zenodo.22061986",
+    "concept_doi": "10.5281/zenodo.22061985",
+    "status": "archived with DOI",
+    "tracking_issue": "https://github.com/fersandovalgtz/cahita-historico-digital/issues/169",
+    "provider": "Zenodo",
+    "record_url": "https://zenodo.org/records/22061986",
+    "deposited_at": "2026-08-22"
   },
   "documentation": {
     "datasheet": "DATASHEET.md",

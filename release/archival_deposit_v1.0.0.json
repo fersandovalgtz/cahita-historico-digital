@@ -1,0 +1,26 @@
+{
+  "attestationType": "CHD archival deposit and persistent identifier record",
+  "project": "Cahíta Histórico Digital",
+  "publishedRelease": {
+    "version": "1.0.0",
+    "tag": "v1.0.0",
+    "tagCommit": "dbcdecf0003ac5a10ae963caf6babdcf5c22128d",
+    "releaseUrl": "https://github.com/fersandovalgtz/cahita-historico-digital/releases/tag/v1.0.0",
+    "zipName": "cahita-historico-digital-v1.0.0.zip",
+    "zipSha256": "583183eabb90080dccd1ea63a069e248b28cd3ce41e99ba754ac71ce26586158"
+  },
+  "archivalDeposit": {
+    "provider": "Zenodo",
+    "recordUrl": "https://zenodo.org/records/22061986",
+    "versionDoi": "10.5281/zenodo.22061986",
+    "conceptDoi": "10.5281/zenodo.22061985",
+    "depositedAt": "2026-08-22"
+  },
+  "policy": {
+    "doiInferred": false,
+    "doiMustBeAssignedExternally": true,
+    "tagModified": false,
+    "publishedReleaseRewritten": false,
+    "postReleaseMetadataSynchronization": true
+  }
+}

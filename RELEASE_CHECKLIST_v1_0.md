@@ -52,14 +52,19 @@ Este checklist distingue criterios demostrados por datos/CI de acciones externas
 
 ## Preservación archivística
 
-- [ ] Depositar la versión en Zenodo u otro repositorio de preservación acordado
-- [ ] Obtener DOI de versión y registrar Concept DOI cuando corresponda
-- [ ] Incorporar los DOI reales a metadatos post-release sin alterar el tag
+- [x] Depositar la versión en Zenodo: <https://zenodo.org/records/22061986>
+- [x] Obtener DOI de versión: `10.5281/zenodo.22061986`
+- [x] Registrar DOI conceptual: `10.5281/zenodo.22061985`
+- [x] Incorporar los DOI reales a metadatos post-release sin alterar el tag
+- [x] Registrar la atestación archivística en `release/archival_deposit_v1.0.0.json`
+- [x] Documentar la política de preservación en `docs/PRESERVATION.md`
 
 ## Estado
 
-La **publicación GitHub v1.0.0 está cerrada y atestada**. Su identidad binaria final y el procedimiento de comprobación se documentan en `docs/RELEASE_PUBLICATION_2026-08-22.md`.
+La **publicación GitHub v1.0.0 y el gate archivístico Zenodo están cerrados**. La identidad binaria final y el procedimiento de comprobación se documentan en `docs/RELEASE_PUBLICATION_2026-08-22.md`; los identificadores persistentes y la atestación archivística se documentan en `docs/PRESERVATION.md` y `release/archival_deposit_v1.0.0.json`.
 
-El único gate externo restante es la **preservación archivística/DOI**, rastreada en el issue #169. Las 22 recolaciones siguen abiertas filológicamente y pertenecen al backlog post-v1; no bloquean el alcance técnico publicado.
+La versión `1.0.0` debe citarse mediante el DOI `10.5281/zenodo.22061986`. El DOI conceptual de la serie es `10.5281/zenodo.22061985`.
 
-`humanVerified=0` se conserva donde corresponde. Ningún DOI se declara hasta que sea efectivamente asignado.
+Las 22 recolaciones siguen abiertas filológicamente y pertenecen al backlog post-v1; no bloquean el alcance técnico publicado ni el cierre archivístico.
+
+`humanVerified=0` se conserva donde corresponde. La asignación de DOI no modifica el tag `v1.0.0` ni la identidad científica congelada.

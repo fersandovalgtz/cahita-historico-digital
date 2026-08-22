@@ -5,7 +5,7 @@
     "prov": "http://www.w3.org/ns/prov#"
   },
   "@type": "Dataset",
-  "@id": "https://github.com/fersandovalgtz/cahita-historico-digital/releases/tag/v1.0.0",
+  "@id": "https://doi.org/10.5281/zenodo.22061986",
   "name": "Cahíta Histórico Digital — Arte de la lengua cahita (1737)",
   "alternateName": "Cahíta Histórico Digital v1.0.0",
   "version": "1.0.0",
@@ -97,7 +97,23 @@
     {
       "@type": "PropertyValue",
       "name": "doiStatus",
-      "value": "pending archival deposit"
+      "value": "assigned"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "versionDoi",
+      "value": "10.5281/zenodo.22061986"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "conceptDoi",
+      "value": "10.5281/zenodo.22061985"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "archivalRecord",
+      "value": "https://zenodo.org/records/22061986"
     }
-  ]
+  ],
+  "identifier": "https://doi.org/10.5281/zenodo.22061986"
 }

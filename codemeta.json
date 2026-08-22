@@ -53,11 +53,13 @@
   "referencePublication": "https://github.com/fersandovalgtz/cahita-historico-digital/blob/main/CITATION.cff",
   "relatedLink": [
     "https://github.com/fersandovalgtz/raramuri-digital",
-    "https://archive.org/details/artedelalenguaca00gonz"
+    "https://archive.org/details/artedelalenguaca00gonz",
+    "https://zenodo.org/records/22061986"
   ],
   "softwareRequirements": [
     "Python 3.11+ recommended",
     "jsonschema >=4.18,<5 for schema validation",
     "Jing for the external TEI Lex-0 validation gate"
-  ]
+  ],
+  "identifier": "https://doi.org/10.5281/zenodo.22061986"
 }

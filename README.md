@@ -30,7 +30,7 @@
   <a href="DATA_LICENSE.md"><img src="https://img.shields.io/badge/datos-CC%20BY%204.0-7a263a?style=flat-square" alt="Datos CC BY 4.0"></a>
   <a href="GOVERNANCE.md"><img src="https://img.shields.io/badge/gobernanza-FAIR%20%2B%20CARE-2d6a4f?style=flat-square" alt="Gobernanza"></a>
   <a href="QUALITY_REPORT.md"><img src="https://img.shields.io/badge/humanVerified-0-b7791f?style=flat-square" alt="humanVerified 0"></a>
-  <a href="https://github.com/fersandovalgtz/cahita-historico-digital/issues/169"><img src="https://img.shields.io/badge/DOI-pendiente-b7791f?style=flat-square" alt="DOI pendiente"></a>
+  <a href="https://doi.org/10.5281/zenodo.22061986"><img src="https://zenodo.org/badge/DOI/10.5281/zenodo.22061986.svg" alt="DOI 10.5281/zenodo.22061986"></a>
   <a href="https://orcid.org/0000-0002-3168-6725"><img src="https://img.shields.io/badge/ORCID-0000--0002--3168--6725-A6CE39?style=flat-square&logo=orcid&logoColor=white" alt="ORCID"></a>
 </p>
 
@@ -51,13 +51,14 @@
   <a href="QUALITY_REPORT.md">Calidad</a> ·
   <a href="FAIR_ASSESSMENT.md">FAIR</a> ·
   <a href="GOVERNANCE.md">Gobernanza</a> ·
+  <a href="docs/PRESERVATION.md">Preservación</a> ·
   <a href="CITATION.cff">Citar</a> ·
   <a href="README.en.md">English</a>
 </p>
 
 | Versión | Artículos | Candidatos | Gramática | Recolaciones abiertas | Estado humano | Preservación |
 |---|---:|---:|---:|---:|---|---|
-| 1.0.0 | 2,302 | 2,072 | 302 objetos / 1,215 evidencias | 22 | `humanVerified=0` | DOI pendiente |
+| 1.0.0 | 2,302 | 2,072 | 302 objetos / 1,215 evidencias | 22 | `humanVerified=0` | Zenodo DOI [`10.5281/zenodo.22061986`](https://doi.org/10.5281/zenodo.22061986) |
 
 ## Qué es Cahíta Histórico Digital
 
@@ -214,7 +215,8 @@ CHD publica varias capas complementarias:
 - [`metadata/fair-dataset.jsonld`](metadata/fair-dataset.jsonld) — JSON-LD FAIR complementario;
 - [`FAIR_ASSESSMENT.md`](FAIR_ASSESSMENT.md) — preauditoría FAIR, no certificación;
 - [`QUALITY_REPORT.md`](QUALITY_REPORT.md) — calidad demostrable y límites;
-- [`SCIENTIFIC_REPOSITORY_STANDARD.md`](SCIENTIFIC_REPOSITORY_STANDARD.md) — estándar interno de calidad.
+- [`SCIENTIFIC_REPOSITORY_STANDARD.md`](SCIENTIFIC_REPOSITORY_STANDARD.md) — estándar interno de calidad;
+- [`docs/PRESERVATION.md`](docs/PRESERVATION.md) — DOI, depósito Zenodo y reglas de persistencia.
 
 ## Gobernanza y reutilización responsable
 
@@ -230,9 +232,16 @@ Véanse [`GOVERNANCE.md`](GOVERNANCE.md), [`EDITORIAL_POLICY.md`](EDITORIAL_POLI
 
 Responsable: **Fernando Sandoval Gutierrez**, Universidad Autónoma de Ciudad Juárez, ORCID [`0000-0002-3168-6725`](https://orcid.org/0000-0002-3168-6725).
 
-La forma canónica de citación se encuentra en [`CITATION.cff`](CITATION.cff). Para reproducibilidad, conserve `v1.0.0` y el commit correspondiente.
+La versión científica `1.0.0` está archivada en Zenodo y debe citarse mediante su DOI de versión:
 
-El **DOI permanece pendiente** hasta un depósito archivístico real. El gate externo se rastrea en [issue #169](https://github.com/fersandovalgtz/cahita-historico-digital/issues/169). Ningún DOI se inventa o infiere antes de su asignación.
+> Sandoval Gutiérrez, F. (2026). *Cahíta Histórico Digital* (Version 1.0.0) [Computer software]. Zenodo. <https://doi.org/10.5281/zenodo.22061986>
+
+- **DOI de versión:** [`10.5281/zenodo.22061986`](https://doi.org/10.5281/zenodo.22061986)
+- **DOI conceptual:** [`10.5281/zenodo.22061985`](https://doi.org/10.5281/zenodo.22061985)
+- **Registro Zenodo:** <https://zenodo.org/records/22061986>
+- **Tag inmutable:** `v1.0.0`
+
+Para reproducibilidad, conserve además el tag o commit correspondiente. La política y las atestaciones de preservación se documentan en [`docs/PRESERVATION.md`](docs/PRESERVATION.md).
 
 ## Licencias
 
