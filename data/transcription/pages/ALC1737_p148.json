@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 148,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\n[continuación de p.147] Bruñidor. Hiruquiria.\nBronce. Lo miſmo.\nBronco ſer el Caballo, ò Toro, &c. Mahabueme.\nBuche de las Aves. Huiquiac-toma. Del peſcado. Cuchucola.\nBueyes. Boes.\nBuhio, ò coſa pajiſa. Sahualiſia.\nBùho, ò tecolote. Muu.\nBurlar hazer burla. Ahunaeria.\nBullirſe algo. Huanbuante.\nBuſcar algo. Hitari barihua.\nBuſcar por raſtro. Ahuotua.\n\nC.\n\nCabildo. Naubueche.\nCabo, ò cabos. Tet -- cocopela.\nCabar. Hibuebe.\nCabello. Choni.\nCabellera. Sobarec.\nCaber. Amaquia.\nCabeza. Coba.\nCabezear el que tiene ſueño. Muſumuſut.\nCabeſtro. Huiteri.\nCabra, ò cabron. Cabala, l, chibato.\nCaſtrado. Maſo.-capon.\nCazar ſalir a caza. Amu.\n\n[columna derecha]\nCazar con ratonera. Chicarilim amu.\nCacarear la gallina. Caba buana.\nCada inſtante. Hubua huneri.\nCada uno ſer dos. Huebue-pula icaria.\nCadera. Hueperi.\nCaer fieſta. Paſco buechec.\nCaerſe las ojas del arbol. Sabuabuatec.\nCaer generalmente. Huechec.\nCaerſe de arriba. Hicatana bueche.\nCaer de canſado. Lotecca -- bueche.\nCaer juntamente. Naut buatec.\nCaer de improviſo. Culopti buechec.\nCaer arremetiendo. Auchepteca bueche.\nCaerſe reſbalando. Chitoteca buechec.\nCaer en hoyo. Huobocubuechec.\nCaerſe muerto. Sechuctimucuc.\nCaer tropezando. Teiteca -- buechec.\nCagar. Buita.\nCaman. Camaa.\nCal. Teneti.\nCalabaza generalmente. Camam.\nCala- [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuations and final catchword explicit; uncertain forms marked without silent reconstruction.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several historical lexical forms remain unresolved and require second visual collation; all visible headwords and page structure are represented conservatively."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Bleed-through and local ink degradation affect isolated letters; no modern normalization is inferred.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-148", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}

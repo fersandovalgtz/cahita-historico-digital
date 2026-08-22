@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 152,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\n[continuación de p.151] za. Hicabari.\nCrecer el hombre. Iotuc.\nCreer. Aneſuale.\nCreencia. Soalecari.\nCreſpo ſer de pelo. Mooco.\nCreſta de gallo. Chaparia.\nCriador Dios. Itom tehuaca-ma.\nCrucificar. Cruſpo poponabua.\nCruda coſa. Cacbuaſe.\nCrugir los dientes. Cuchichite.\nCuajar. Ietec.\nCuajo. Huaſo.\nQuando? Hachihueo?\nQuando? Hachuri?\nQuantas vezes? Harequiſia?\nCubrir. Aubintua.\nCuchara de barro. Babubui-ſai.\nCudiciar. Caatecuculnaque.\nCudicia. Aucule.\nCuello. Cytana.\nCuenta el acto de contar. Hinaiquiari.\nCuenta de vidrio. Coſom.\nCuero de Res. Huacaſabua.\nCuero. Huacabehua.\nCuero curtido. Hiocari.\nCuero de venado. Maſobe-hua.\nCuero de tigre. Iocobehua.\nCuero de carnero. Cabara behua.\nCuero de culebra. Bacot be-hua.\n\n[columna derecha]\nCuerpo. Tacahua.\nCuyo? Abcatea.\nCuervo. Coni.\nCueva. Buſca caverna.\nCuidado. Emoſua.\nCuidar. Aſua.\nCulpa, ò pecado. Tatacolim.\nCumbre de cerro. Cahuita buhabui.\nCulebra de agua. Bapo bacot.\nCulebra general. Bacochim.\nCulebra colorada. Siquibut.\nCulebra chiquita mui ponzoñoſa. Cucumpuri.\nCulebra larga, y delgada. Huirobacot.\nCulebra gorda, y grande. Curuas.\nCulebra mui pintada, y grande. Alamai.\nCulebra prieta, y gorda. Babatucu.\nCulebra mediana. Hecaſua-mai.\nCulebra pequeña. Taſiraba-cot.\nCumplir lo que ſe manda. Anoqui chupac.\nCuna. Toobuo.\nCulpar á otro. Buſca acuſar.\nCuñada. Malachiſia.\nCuñada de hombre. Mala-neſa.\nCuñado de muger. Aſſamari.\nCuñada de muger. Hacalae.\nCurar [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; initial cross-page continuation and final catchword explicit; doubtful historical spellings left for second collation rather than normalized.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "A small set of lexical forms remains provisional because of historical type, bleed-through, and letter ambiguity; no modern forms are inferred."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Visible bleed-through and local edge wear do not obscure the page's headword inventory; uncertain character-level readings remain unresolved.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-152", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}

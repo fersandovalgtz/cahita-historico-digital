@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 149,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.148] Calabaza pequeña tierna. Cama lobo.\nCalabaza redonda. Cama lobola.\nCalabaza. Aiabui.\nCalabaza que ſirve de vaſo. Bueba.\nCalabaza que ſirve de cantaro. Arocoſi.\nCalabaza tal antes que ſirva. Biſare.\nCalambre tener. uteme.\nCalar el agua quando llueve. Bahue.\nCalcañar. Huoſtate.\nCalzado que uſan. Ioreme bocha.\nCalentar. Aſucaria.\nCalentarſe. Sucabue.\nCalentura. Tahibueche.\nCalentura tener. Bueitabi-bueche.\nCaliente. Suca.\nCallarſe. Noc iate.\nCallos tener en las manos, ò pies. Mambarate, l, huoquimet.\nCalor. Tatare.\nCalor aver. Bueitata.\nCalor tener. Tatareme.\nCalvo eſtar. Cacobabuae.\nCalzones. Sarabuera.\nCalandria Ave. Mavis.\nCamaleon. Mochocol.\nCama. Tapeti.\nCamaron. [forma incierta], grande del Rio. Bacauri.\n\n[columna derecha]\nCamino vereda. Boo, l, iliboo.\nCambiar. Naaculia.\nCampanilla de la garganta. Nim--tepſia.\nCampo tierra llana. Paari.\nCangilon, ò cuerno. Abua.\nCanas tener. Toſalim chonec.\nCanaſta. Huari. de palma. Taco-buari.\nCangrejo. Achacari.\nCanſarſe. Emolota.\nCanſancio. Loſtibuame.\nCantar. Buicame.\nCanto. Buica.\nCantor. Arabuica.\nCantaro. Babu--arocoſi.\nCantar el gallo. Totoli buica.\nCaña hueca. Baca.\nCaña maziza. Bacao.\nCaña de maiz. Sum--otapia.\nCaña de Caſtilla. Ioriſana.\nCaña veral. Ioriſantaburu cuni.\nCañuto. Bacatonoa.\nCapar. Capomte.\nCapador. Iore capomteme.\nCapear el golpe. Huobana.\nCara. Pucha.\nCara coſa. Buibebere.\nCaracol chico. Ilicobue.\nCaracol grande. Buerucobue.\nCarambano. Sapa.\nCarcoma de madera. Cuta-cumelam.\nCarbon. Matta.\nCar- [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuations and final catchword explicit; uncertain forms marked without silent reconstruction.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "Camaron lexical form", "note": "The Cahita form before the continuation 'grande del Rio. Bacauri' is not sufficiently secure in the facsimile and is left explicitly unresolved."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Bleed-through is visible throughout the page; conservative transcription used where letter identity is uncertain.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-149", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
