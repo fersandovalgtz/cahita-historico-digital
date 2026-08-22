@@ -85,7 +85,7 @@ make irregularities-qa
 
 realiza dos construcciones independientes y exige igualdad byte a byte de JSONL, CSV y manifiesto. Además:
 
-- valida cada registro contra `schemas/editorial-irregularity.schema.json`;
+- valida cada registro contra `schemas/post-v1/editorial-irregularity.schema.json`;
 - exige exactamente las nueve irregularidades actualmente documentadas;
 - comprueba las omisiones 127/178/294 y la repetición 129;
 - comprueba las fronteras 69/105;
