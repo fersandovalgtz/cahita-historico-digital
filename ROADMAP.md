@@ -32,7 +32,7 @@ Hay 128 páginas `full_page`, preliminares y Partes I–IV representadas y estad
 - 2,302 artículos históricos en 211 JSONL.
 - 45/45 páginas p.133–177 reconciliadas.
 - Phase II p.145–177: 33/33 cerrada técnicamente.
-- `pendingPromotionTotal=0`, `unresolvedCandidateTotal=0`, `ambiguousBoundaryTotal=0`.
+- `pendingPromotionTotal = 0`, `unresolvedCandidateTotal = 0`, `ambiguousBoundaryTotal = 0`.
 - 0 artículos `human_verified`.
 
 ### Remisiones `Buſca`
