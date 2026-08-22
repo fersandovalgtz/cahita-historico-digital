@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Build the deterministic Cahíta Histórico Digital v1.0.0 release payload."""
+"""Build the deterministic Cahíta Histórico Digital v1.0.0 release payload.
+
+This builder is permanently pinned to the commit published as ``v1.0.0``. It
+must not be used from post-release ``main`` to manufacture a different payload
+under the same version label. To validate the published release from current
+``main``, use ``scripts/validate_published_v1.py``.
+"""
 from __future__ import annotations
 
 import argparse
@@ -15,6 +21,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = "1.0.0"
 TAG = "v1.0.0"
+RELEASE_COMMIT = "dbcdecf0003ac5a10ae963caf6babdcf5c22128d"
 BUNDLE_DIRNAME = f"cahita-historico-digital-{TAG}"
 ZIP_NAME = f"{BUNDLE_DIRNAME}.zip"
 MANIFEST_NAME = "RELEASE_MANIFEST.json"
@@ -70,6 +77,17 @@ def git_commit() -> str:
         ["git", "rev-parse", "HEAD"], cwd=ROOT, check=True, text=True, stdout=subprocess.PIPE
     )
     return result.stdout.strip()
+
+
+def ensure_release_commit() -> None:
+    current = git_commit()
+    if current != RELEASE_COMMIT:
+        raise SystemExit(
+            "build_v1_release.py is pinned to the immutable published v1.0.0 commit. "
+            f"Current HEAD={current}; expected {RELEASE_COMMIT}. "
+            "Checkout tag v1.0.0 to rebuild the historical payload, or run "
+            "scripts/validate_published_v1.py from post-release main."
+        )
 
 
 def run_exporters(bundle: Path) -> None:
@@ -257,6 +275,7 @@ def write_deterministic_zip(bundle: Path, destination: Path) -> None:
 
 
 def build(output_dir: Path) -> dict[str, Any]:
+    ensure_release_commit()
     output_dir.mkdir(parents=True, exist_ok=True)
     bundle = output_dir / BUNDLE_DIRNAME
     if bundle.exists():

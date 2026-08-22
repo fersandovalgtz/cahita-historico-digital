@@ -1,8 +1,8 @@
 # Cahíta Histórico Digital — Checklist de release v1.0.0
 
-Estado de preparación para la primera versión científica estable. Actualización: **21 de agosto de 2026**.
+Estado de la primera versión científica estable. Actualización: **22 de agosto de 2026**.
 
-Este checklist distingue criterios demostrados por datos/CI de acciones externas de publicación y preservación. Una corrida verde no equivale a validación filológica humana.
+Este checklist distingue criterios demostrados por datos/CI de acciones externas de preservación. Una corrida verde no equivale a validación filológica humana.
 
 ## Identidad del recurso
 
@@ -40,20 +40,26 @@ Este checklist distingue criterios demostrados por datos/CI de acciones externas
 - [x] Paquete estable incluye datos canónicos congelados, derivados, manifiestos, citación y changelog
 - [x] Validador construye el paquete dos veces y exige identidad byte-a-byte
 - [x] Intención de publicación versionada; sobrescritura/movimiento del tag prohibidos
-- [x] Workflow post-merge vuelve a validar el commit definitivo antes de publicar
-- [ ] Crear tag inmutable `v1.0.0` sobre el commit definitivo de `main`
-- [ ] Crear GitHub Release estable y adjuntar ZIP, `RELEASE_MANIFEST.json` y `SHA256SUMS.txt`
+- [x] Workflow post-merge volvió a validar el commit definitivo antes de publicar
+- [x] Tag inmutable `v1.0.0` creado sobre `dbcdecf0003ac5a10ae963caf6babdcf5c22128d`
+- [x] GitHub Release estable publicada y atestada reproduciblemente
+- [x] Tres assets exactos: ZIP, `RELEASE_MANIFEST.json` y `SHA256SUMS.txt`
+- [x] ZIP publicado: 1,076,296 bytes; SHA-256 `583183eabb90080dccd1ea63a069e248b28cd3ce41e99ba754ac71ce26586158`
+- [x] `RELEASE_MANIFEST.json`: 67,757 bytes; SHA-256 `05970080840ed0cde9c4ca67b40432b492ba2f0afadade5efe2b9d0f60b8cb79`
+- [x] `SHA256SUMS.txt` consistente con los bytes descargados
+- [x] ZIP y manifiesto publicados idénticos a reconstrucción determinística desde el tag
+- [x] Atestación durable en `release/github_release_attestation_v1.0.0.json`
 
 ## Preservación archivística
 
 - [ ] Depositar la versión en Zenodo u otro repositorio de preservación acordado
 - [ ] Obtener DOI de versión y registrar Concept DOI cuando corresponda
-- [ ] Incorporar los DOI reales a los metadatos posteriores sin alterar ni inventar la identidad histórica del tag
+- [ ] Incorporar los DOI reales a metadatos post-release sin alterar el tag
 
 ## Estado
 
-El corpus, interoperabilidad, contratos, incertidumbres, freeze de datos, citación, changelog y paquete estable están preparados para el tag `v1.0.0`. La publicación de GitHub se ejecuta únicamente desde el commit definitivo de `main` después de validación post-merge.
+La **publicación GitHub v1.0.0 está cerrada y atestada**. Su identidad binaria final y el procedimiento de comprobación se documentan en `docs/RELEASE_PUBLICATION_2026-08-22.md`.
 
-El único gate científico externo posterior a GitHub es la **preservación archivística/DOI**. Las 22 recolaciones siguen abiertas filológicamente y pertenecen al backlog post-v1; no bloquean el alcance técnico declarado.
+El único gate externo restante es la **preservación archivística/DOI**, rastreada en el issue #169. Las 22 recolaciones siguen abiertas filológicamente y pertenecen al backlog post-v1; no bloquean el alcance técnico publicado.
 
 `humanVerified=0` se conserva donde corresponde. Ningún DOI se declara hasta que sea efectivamente asignado.

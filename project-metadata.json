@@ -1,0 +1,114 @@
+{
+  "project": "Cahíta Histórico Digital",
+  "dataset_version": "1.0.0",
+  "release_status": "stable GitHub release published and attested",
+  "release_date": "2026-08-22",
+  "repository": "https://github.com/fersandovalgtz/cahita-historico-digital",
+  "release": {
+    "tag": "v1.0.0",
+    "commit": "dbcdecf0003ac5a10ae963caf6babdcf5c22128d",
+    "url": "https://github.com/fersandovalgtz/cahita-historico-digital/releases/tag/v1.0.0",
+    "published_at": "2026-08-22T05:34:07Z",
+    "zip_name": "cahita-historico-digital-v1.0.0.zip",
+    "zip_bytes": 1076296,
+    "zip_sha256": "583183eabb90080dccd1ea63a069e248b28cd3ce41e99ba754ac71ce26586158",
+    "attestation": "release/github_release_attestation_v1.0.0.json"
+  },
+  "source": {
+    "source_id": "ALC1737",
+    "title": "Arte de la lengua cahita conforme à las reglas de muchos peritos en ella",
+    "place": "México",
+    "year": 1737,
+    "printer": "D. Francisco Xavier Sánchez",
+    "title_page_authorship": "anonymous Jesuit missionary",
+    "working_digital_witness": "John Carter Brown Library / Internet Archive",
+    "internet_archive_identifier": "artedelalenguaca00gonz",
+    "digital_pages": 182
+  },
+  "language_object": {
+    "label": "Cahita / cahíta histórico, denominación de la fuente",
+    "iso_639_3": null,
+    "historical_labels_in_source": ["Hiaqui", "Mayo", "Thehueco"],
+    "scope_note": "CHD preserves historical labels as documentary evidence and does not infer a single modern ISO 639-3 code or automatic one-to-one mapping to contemporary linguistic identities."
+  },
+  "guide_language": {"code": "es", "label": "español"},
+  "metrics": {
+    "canonical_candidates": 2072,
+    "historical_lexical_articles": 2302,
+    "canonical_lexical_jsonl_files": 211,
+    "vocabulary_pages_technical_closure": "45/45",
+    "grammar_objects": 302,
+    "grammar_evidence_rows": 1215,
+    "printed_numbered_grammar_units_represented": "371/371",
+    "busca_crossreferences": 150,
+    "strict_exact_unique_crossreferences": 60,
+    "strict_not_located_crossreferences": 90,
+    "strict_not_located_reviewed": 90,
+    "open_recollation_uncertainties": 22,
+    "lo_mismo_occurrences_reviewed": 14,
+    "human_verified_count": 0
+  },
+  "interoperability": {
+    "primary_lexical_profile": "TEI Lex-0 0.9.5",
+    "external_schema_validation": "Jing against archived Lex-0 Relax NG",
+    "cldf": "deferred as a post-v1 analytical derivative; not required for v1.0.0"
+  },
+  "contracts": {
+    "json_schema_count": 22,
+    "source_scope_metadata_count": 4,
+    "total_frozen_contracts": 26,
+    "manifest": "release/v1_contract_manifest.json",
+    "manifest_sha256": "c0b897b9dbad2107b40db6169d4207bca752c2b84161e0c9c980409d94b86e56"
+  },
+  "scientific_freeze": {
+    "file_count": 267,
+    "bytes": 2698997,
+    "manifest": "release/v1_data_manifest.json",
+    "manifest_sha256": "8bb2274e13a82d3425a1ee985ce3077789d07c0d0479b63de7dda2767c6a495b"
+  },
+  "validation": {
+    "technical_status": "closed for the declared v1.0.0 scope",
+    "human_verified_count": 0,
+    "philological_status": "not a fully human-verified diplomatic or critical edition",
+    "open_uncertainty_policy": "22 recollation cases are published as frozen_open_uncertainty with no forced canonical target"
+  },
+  "licenses": {
+    "software": "MIT",
+    "original_data_metadata_editorial_layers": "CC-BY-4.0",
+    "third_party_materials": "not relicensed by CHD",
+    "licensing_matrix": "LICENSING.md"
+  },
+  "persistent_identifiers": {
+    "doi": null,
+    "concept_doi": null,
+    "status": "pending archival deposit",
+    "tracking_issue": "https://github.com/fersandovalgtz/cahita-historico-digital/issues/169"
+  },
+  "documentation": {
+    "datasheet": "DATASHEET.md",
+    "quality_report": "QUALITY_REPORT.md",
+    "schema": "SCHEMA.md",
+    "sources": "SOURCES.md",
+    "provenance": "PROVENANCE.md",
+    "editorial_policy": "EDITORIAL_POLICY.md",
+    "governance": "GOVERNANCE.md",
+    "fair_assessment": "FAIR_ASSESSMENT.md",
+    "repository_standard": "SCIENTIFIC_REPOSITORY_STANDARD.md",
+    "data_products": "docs/DATA_PRODUCTS.md",
+    "reproducibility": "docs/REPRODUCIBILITY.md",
+    "ecosystem": "docs/ECOSYSTEM.md",
+    "licensing": "LICENSING.md",
+    "security": "SECURITY.md",
+    "bibliography": "references.bib"
+  },
+  "academic_identity": {
+    "maintainer": "Fernando Sandoval Gutierrez",
+    "orcid": "https://orcid.org/0000-0002-3168-6725",
+    "affiliation": "Universidad Autónoma de Ciudad Juárez"
+  },
+  "related_repositories": [{
+    "name": "Rarámuri Digital",
+    "url": "https://github.com/fersandovalgtz/raramuri-digital",
+    "relation": "methodological and digital-linguistic sibling; contemporary lexicographic infrastructure with different governance and language-identity requirements"
+  }]
+}

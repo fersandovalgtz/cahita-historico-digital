@@ -1,6 +1,6 @@
 # Hoja de ruta
 
-Estado de planificación de Cahíta Histórico Digital (`ALC1737`) — actualización **21 de agosto de 2026**.
+Estado de planificación de Cahíta Histórico Digital (`ALC1737`) — actualización **22 de agosto de 2026**.
 
 ## Principio rector
 
@@ -22,7 +22,7 @@ Quedaron fijados el manifiesto de 182 páginas, mapeo de paginación, segmentaci
 
 **Estado:** cobertura técnica suficiente para v1.0; consolidación diplomática integral post-v1.
 
-Hay 128 páginas `full_page`, preliminares y Partes I–IV representadas y estados de autoridad diferenciados. Se mantienen **0 páginas `human_verified`**. La consolidación diplomática integral permanece como trabajo filológico posterior y no bloquea la v1.0 de alcance declarado.
+Hay 128 páginas `full_page`, preliminares y Partes I–IV representadas y estados de autoridad diferenciados. Se mantienen **0 páginas `human_verified`**. La consolidación diplomática integral permanece como trabajo filológico posterior y no bloqueó la v1.0 de alcance declarado.
 
 ## Fase 3 — Corpus lexicográfico
 
@@ -73,7 +73,7 @@ Hitos:
 - CLDF diferido como derivado analítico posterior;
 - 22 JSON Schema + 4 metadatos fuente congelados como 26 contratos v1.0;
 - manifiesto de contratos SHA-256 `c0b897b9dbad2107b40db6169d4207bca752c2b84161e0c9c980409d94b86e56`;
-- freeze byte-exacto adicional de artículos, candidatos, revisiones y gramática;
+- freeze byte-exacto de 267 archivos científicos / 2,698,997 bytes;
 - CI bloquea deriva silenciosa de contratos y datos científicos congelados;
 - disposición v1.0 de recolaciones validada 22/22, con cero cambios canónicos.
 
@@ -85,17 +85,24 @@ Las comparaciones con recursos modernos de yaqui/mayo deberán modelarse como ca
 
 ## Fase 7 — Release científica y preservación
 
-**Estado:** **payload v1.0.0 preparado para publicación; preservación archivística pendiente.**
+**Estado:** **publicación GitHub v1.0.0 cerrada y atestada; preservación archivística pendiente.**
 
-La identidad `1.0.0` está fijada en `CITATION.cff`, `codemeta.json`, `CHANGELOG.md` y notas de release. El paquete estable `cahita-historico-digital-v1.0.0.zip` se construye determinísticamente e incorpora datos canónicos congelados, derivados, manifiestos y checksums.
+La identidad `1.0.0` quedó fijada y publicada:
 
-`publish-v1.yml` vuelve a validar el commit definitivo de `main` antes de crear el tag inmutable `v1.0.0` y la GitHub Release estable. El workflow rehúsa mover un tag existente a otro commit.
+- tag inmutable `v1.0.0` → `dbcdecf0003ac5a10ae963caf6babdcf5c22128d`;
+- GitHub Release estable: `https://github.com/fersandovalgtz/cahita-historico-digital/releases/tag/v1.0.0`;
+- ZIP final: 1,076,296 bytes; SHA-256 `583183eabb90080dccd1ea63a069e248b28cd3ce41e99ba754ac71ce26586158`;
+- `RELEASE_MANIFEST.json`: 67,757 bytes; SHA-256 `05970080840ed0cde9c4ca67b40432b492ba2f0afadade5efe2b9d0f60b8cb79`;
+- `SHA256SUMS.txt` verificado;
+- atestación durable en `release/github_release_attestation_v1.0.0.json`.
+
+La atestación reconstruye v1.0.0 desde el tag inmutable y exige que ZIP y manifiesto sean byte-idénticos a los assets publicados. La metodología se documenta en `docs/RELEASE_PUBLICATION_2026-08-22.md`.
 
 Después de la publicación GitHub queda un único gate externo:
 
 1. **Preservación:** depósito archivístico, DOI de versión y Concept DOI cuando sean efectivamente asignados.
 
-Hasta entonces `versionDoi=null`, `conceptDoi=null` y `doiInferred=false`.
+Hasta entonces `versionDoi=null`, `conceptDoi=null` y `doiInferred=false`. El gate se rastrea en el issue #169.
 
 ## Productos científicos previstos
 
@@ -111,8 +118,8 @@ Hasta entonces `versionDoi=null`, `conceptDoi=null` y `doiInferred=false`.
 
 ## Prioridad inmediata
 
-1. **publicar el commit definitivo como `v1.0.0` sólo después de QA completa**;
-2. **depositar la release en un repositorio de preservación y registrar DOI reales**;
+1. **depositar v1.0.0 en Zenodo u otro repositorio de preservación y registrar DOI reales**;
+2. **sincronizar los DOI a metadatos post-release sin mover ni reescribir el tag**;
 3. **retomar post-v1 el cotejo filológico de las 22 incertidumbres cuando exista evidencia admisible**;
 4. **desarrollar productos académicos y analíticos derivados sin alterar retrospectivamente la evidencia de v1.0**.
 

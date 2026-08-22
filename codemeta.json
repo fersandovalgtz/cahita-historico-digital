@@ -2,11 +2,12 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "name": "Cahíta Histórico Digital",
-  "description": "Infraestructura reproducible para la edición histórico-digital, transcripción y estructuración lexicográfica y gramatical del Arte de la lengua cahita (México, 1737).",
+  "description": "Infraestructura reproducible para la edición histórico-digital, transcripción y estructuración lexicográfica y gramatical del Arte de la lengua cahita (México, 1737), con contratos JSON Schema, TEI Lex-0, procedencia y releases científicas atestadas.",
   "codeRepository": "https://github.com/fersandovalgtz/cahita-historico-digital",
+  "issueTracker": "https://github.com/fersandovalgtz/cahita-historico-digital/issues",
   "dateCreated": "2026-08-15",
-  "dateModified": "2026-08-21",
-  "datePublished": "2026-08-21",
+  "dateModified": "2026-08-22",
+  "datePublished": "2026-08-22",
   "version": "1.0.0",
   "license": "https://spdx.org/licenses/MIT.html",
   "author": {
@@ -19,17 +20,44 @@
       "name": "Universidad Autónoma de Ciudad Juárez"
     }
   },
+  "maintainer": {
+    "@type": "Person",
+    "givenName": "Fernando",
+    "familyName": "Sandoval Gutierrez",
+    "id": "https://orcid.org/0000-0002-3168-6725"
+  },
   "keywords": [
     "cahíta",
+    "Cahita",
+    "Arte de la lengua cahita",
     "digital scholarly edition",
     "historical linguistics",
     "historical lexicography",
     "missionary linguistics",
     "digital humanities",
     "research software",
-    "reproducible corpus"
+    "reproducible corpus",
+    "TEI Lex-0",
+    "JSON Schema",
+    "Indigenous languages of Mexico"
   ],
-  "programmingLanguage": ["Python"],
+  "programmingLanguage": [
+    "Python"
+  ],
+  "runtimePlatform": "Python 3",
+  "applicationCategory": "Digital humanities research software",
   "developmentStatus": "active",
-  "releaseNotes": "https://github.com/fersandovalgtz/cahita-historico-digital/blob/v1.0.0/CHANGELOG.md"
+  "releaseNotes": "https://github.com/fersandovalgtz/cahita-historico-digital/releases/tag/v1.0.0",
+  "downloadUrl": "https://github.com/fersandovalgtz/cahita-historico-digital/releases/tag/v1.0.0",
+  "readme": "https://github.com/fersandovalgtz/cahita-historico-digital/blob/main/README.md",
+  "referencePublication": "https://github.com/fersandovalgtz/cahita-historico-digital/blob/main/CITATION.cff",
+  "relatedLink": [
+    "https://github.com/fersandovalgtz/raramuri-digital",
+    "https://archive.org/details/artedelalenguaca00gonz"
+  ],
+  "softwareRequirements": [
+    "Python 3.11+ recommended",
+    "jsonschema >=4.18,<5 for schema validation",
+    "Jing for the external TEI Lex-0 validation gate"
+  ]
 }

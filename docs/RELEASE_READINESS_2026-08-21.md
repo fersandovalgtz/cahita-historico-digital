@@ -1,12 +1,12 @@
-# Cahíta Histórico Digital — estado de preparación para v1.0.0
+# Cahíta Histórico Digital — estado de v1.0.0
 
-Fecha de corte: **21 de agosto de 2026**.
+Fecha de corte actualizada: **22 de agosto de 2026**.
 
 ## Resumen ejecutivo
 
-Cahíta Histórico Digital alcanzó el estado de **payload científico v1.0.0 listo para publicación en GitHub**, sujeto a la validación del commit definitivo de `main`. El vocabulario y la gramática numerada tienen cierre técnico; las remisiones `Buſca` y `Lo miſmo` poseen capas explícitas de revisión; TEI valida contra Lex-0 0.9.5; CLDF está diferido de forma explícita; los contratos y los datos científicos seleccionados están congelados por contenido; y las 22 recolaciones se publican como incertidumbres filológicas abiertas, no como lecturas resueltas.
+Cahíta Histórico Digital alcanzó y publicó **v1.0.0 como GitHub Release científica estable dentro del alcance técnico declarado**. El vocabulario y la gramática numerada tienen cierre técnico; las remisiones `Buſca` y `Lo miſmo` poseen capas explícitas de revisión; TEI valida contra Lex-0 0.9.5; CLDF está diferido de forma explícita; los contratos y los datos científicos seleccionados están congelados por contenido; y las 22 recolaciones se publican como incertidumbres filológicas abiertas, no como lecturas resueltas.
 
-La identidad de release está fijada en `1.0.0` en `CITATION.cff`, `codemeta.json`, `CHANGELOG.md` y las notas de release. El constructor estable genera un paquete autocontenido con datos canónicos congelados, derivados reproducibles y manifiestos de integridad.
+La Release, el tag y sus tres assets fueron comprobados mediante una atestación reproducible que reconstruye el paquete desde el tag inmutable y exige identidad con los bytes publicados. La publicación GitHub está cerrada. El único gate externo restante es la preservación archivística y la asignación de DOI real.
 
 ## Estado científico fijado
 
@@ -20,26 +20,31 @@ La identidad de release está fijada en `1.0.0` en `CITATION.cff`, `codemeta.jso
 - 302 objetos gramaticales, 1,215 filas de evidencia; 370/373 números con reclamación estructurada y 371/371 unidades numeradas realmente impresas representadas.
 - TEI Lex-0 0.9.5: 2,302 entradas, 2,221 citas de traducción, 150 remisiones y 60 `@target` estrictos; validación externa con Jing.
 - 26 contratos v1.0 congelados: 22 JSON Schema + 4 metadatos fuente.
-- freeze byte-exacto adicional de artículos, candidatos, revisiones y gramática en `release/v1_data_manifest.json`.
+- freeze byte-exacto de 267 archivos científicos / 2,698,997 bytes en `release/v1_data_manifest.json`.
 
-## Publicación v1.0.0
+## Identidad de publicación v1.0.0
 
-La publicación está protegida por `release/v1_publish_intent.json` y `.github/workflows/publish-v1.yml`.
+- tag: `v1.0.0`;
+- commit del tag: `dbcdecf0003ac5a10ae963caf6babdcf5c22128d`;
+- Release: `https://github.com/fersandovalgtz/cahita-historico-digital/releases/tag/v1.0.0`;
+- publicada: `2026-08-22T05:34:07Z`;
+- estable: `isDraft=false`, `isPrerelease=false`;
+- ZIP: 1,076,296 bytes; SHA-256 `583183eabb90080dccd1ea63a069e248b28cd3ce41e99ba754ac71ce26586158`;
+- `RELEASE_MANIFEST.json`: 67,757 bytes; SHA-256 `05970080840ed0cde9c4ca67b40432b492ba2f0afadade5efe2b9d0f60b8cb79`;
+- `SHA256SUMS.txt`: 222 bytes; SHA-256 `8ffc5addb8389f8181152e98097aba8a3c4ae7486342bdbfaea046d9e59ba3e2`.
 
-El workflow sólo corre cuando el archivo de intención llega a `main`. Antes del tag vuelve a validar inventario, artículos, documentación, derivados post-cierre, remisiones, recolaciones, `Lo miſmo`, TEI/Lex-0, gramática, freeze de contratos, freeze de datos y paquete estable.
-
-El tag `v1.0.0` es inmutable por política de publicación: si ya existe en otro commit, el workflow falla y no lo mueve. La GitHub Release se crea como estable y adjunta el ZIP determinista, `RELEASE_MANIFEST.json` y `SHA256SUMS.txt`.
+La atestación durable está en `release/github_release_attestation_v1.0.0.json`; su metodología se resume en `docs/RELEASE_PUBLICATION_2026-08-22.md`. El ZIP y el manifiesto publicados son byte-idénticos a una reconstrucción determinística desde el tag inmutable.
 
 ## Preservación y DOI
 
-El depósito archivístico es el único gate posterior a la publicación de GitHub. En el payload v1.0.0:
+El depósito archivístico es ahora el único gate externo:
 
 - `archivalDepositStatus=pending`;
 - `versionDoi=null`;
 - `conceptDoi=null`;
 - `doiInferred=false`.
 
-Estos campos sólo deben modificarse cuando un repositorio de preservación asigne identificadores reales. La ausencia temporal de DOI no debe suplirse con un identificador inventado.
+Estos campos sólo deben modificarse cuando un repositorio de preservación asigne identificadores reales. La ausencia temporal de DOI no debe suplirse con un identificador inventado. El procedimiento se rastrea en el issue #169.
 
 ## Distinción epistemológica
 

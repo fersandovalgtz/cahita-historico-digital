@@ -1,46 +1,74 @@
-# Ecosistema científico
+# Ecosistema de investigación
 
-Cahíta Histórico Digital se desarrolla como un proyecto autónomo, pero comparte principios de documentación, trazabilidad, versionado y ciencia abierta con otros repositorios mantenidos por Fernando Sandoval Gutierrez.
+Cahíta Histórico Digital (CHD) forma parte de una línea de trabajo sobre infraestructuras reproducibles para documentación lingüística, patrimonio documental y humanidades digitales. Su arquitectura comparte principios con otros proyectos, pero su objeto histórico exige reglas propias de autoridad y de identidad lingüística.
 
-## Proyectos relacionados
+## CHD y Rarámuri Digital
+
+[Rarámuri Digital](https://github.com/fersandovalgtz/raramuri-digital) es el referente metodológico más cercano en la cartera del proyecto. Ambos repositorios comparten:
+
+- IDs y procedencia explícita;
+- exports reproducibles;
+- contratos de datos y QA automatizado;
+- CFF/CodeMeta y documentación científica;
+- interoperabilidad lexicográfica;
+- separación entre disponibilidad técnica y validación lingüística;
+- preocupación por FAIR, preservación y reutilización responsable.
+
+La diferencia central es epistemológica. Rarámuri Digital trabaja como infraestructura lexicográfica orientada a una lengua indígena contemporánea y a reutilización educativa/aplicada. CHD trabaja sobre un **testimonio histórico de 1737**. Por ello, CHD prioriza microestructura histórica, fidelidad documental, capas de incertidumbre, autoría/transmisión y no mapeo automático a identidades lingüísticas modernas.
+
+## Otros proyectos relacionados
 
 ### Rarámuri Histórico Digital
 
-https://github.com/fersandovalgtz/raramuri-historico
+<https://github.com/fersandovalgtz/raramuri-historico>
 
-Proyecto hermano de edición histórico-digital y procesamiento reproducible de fuentes lingüísticas históricas. CHD reutiliza principios metodológicos —separación de capas, procedencia, incertidumbre tipada, metadatos FAIR y preservación por versiones— sin mezclar corpora ni asumir equivalencias entre lenguas.
-
-### Rarámuri Digital
-
-https://github.com/fersandovalgtz/raramuri-digital
-
-Infraestructura lexicográfica y digital vinculada a recursos rarámuri. Cualquier comparación futura con CHD deberá mantenerse como capa analítica separada y justificarse lingüísticamente.
+Proyecto hermano de edición histórico-digital. CHD comparte separación de capas, procedencia e incertidumbre tipada sin mezclar corpus ni asumir equivalencias lingüísticas.
 
 ### Libro de Texto Mexicano Digital
 
-https://github.com/fersandovalgtz/libro-texto-mexicano-digital
+<https://github.com/fersandovalgtz/libro-texto-mexicano-digital>
 
-Proyecto hermano de patrimonio documental, datos abiertos e investigación histórica. Comparte con CHD la lógica de transformar fuentes digitalizadas en corpus investigables y productos académicos reproducibles.
+Proyecto hermano de patrimonio documental, datos abiertos e investigación histórica. Comparte la lógica de convertir fuentes digitalizadas en corpus investigables y productos reproducibles.
 
-## Principio de interoperabilidad sin fusión
+## Complementariedad, no fusión
 
-El ecosistema busca que los repositorios puedan compartir:
+CHD no es una “versión antigua” de Rarámuri Digital. Los proyectos pueden compartir herramientas y estándares, pero no comparten automáticamente:
 
-- convenciones de metadatos;
-- esquemas de procedencia;
-- estrategias de citación;
-- control de versiones;
-- políticas editoriales;
-- automatización reproducible;
-- preservación en Zenodo;
-- integración con perfiles académicos.
+- código ISO de lengua;
+- ortografía;
+- categorías gramaticales;
+- autoridad lingüística;
+- políticas de validación comunitaria;
+- semántica de entrada lexicográfica.
 
-No comparte automáticamente datos lingüísticos ni decisiones editoriales. Cada repositorio conserva su propia fuente, corpus, gobernanza y nivel de evidencia.
+La interoperabilidad debe ocurrir en la capa técnica, no mediante homogeneización de la evidencia.
 
-## Estrategia de publicación
+## Interoperabilidad externa
 
-Cuando CHD alcance una versión científica suficientemente estable deberá integrarse al mismo circuito de visibilidad:
+### TEI Lex-0
 
-`GitHub → release versionada → Zenodo/DOI → ORCID → Google Scholar cuando sea indexable → sitio/proyecto institucional → productos académicos derivados`.
+Es el perfil lexical primario de CHD v1.0.0 porque permite representar una estructura de diccionario histórico con mayor fidelidad que una tabla analítica plana. La salida se valida contra Lex-0 0.9.5.
 
-El objetivo no es acumular identificadores aislados, sino convertir cada repositorio en un nodo verificable dentro de programas de investigación reconocibles y conectados.
+### CLDF
+
+Se mantiene como opción post-v1 para una vista analítica derivada. Cualquier adapter futuro deberá conservar IDs CHD, procedencia, fuente y estados de autoridad, y declarar explícitamente cómo trata formas históricas, variedades y sentidos.
+
+### Preservación
+
+Zenodo u otro repositorio archivístico constituye el siguiente paso para DOI y persistencia independiente de GitHub. La release v1.0.0 ya está congelada, publicada y atestada; el depósito debe preservar esa identidad, no crear una variante silenciosa.
+
+## Productos académicos derivados
+
+CHD puede sustentar:
+
+- artículos de datos y metodología;
+- estudios de lexicografía histórica;
+- historia de la lingüística misionera;
+- análisis de variación histórica;
+- concordancias gramaticales;
+- estudios comparativos diacrónicos con capas modernas separadas;
+- herramientas de consulta y docencia sobre patrimonio documental.
+
+## Principio para expansión futura
+
+La infraestructura puede reutilizarse para otras fuentes cahítas o de lenguas indígenas históricas sólo después de modelar su fuente y autoridad por separado. Compartir software no significa homogenizar corpus. Cada nuevo testimonio debe tener identificador, procedencia, contratos y política de relación lingüística propios.

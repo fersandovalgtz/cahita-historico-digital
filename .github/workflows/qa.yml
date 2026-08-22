@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -80,6 +82,8 @@ jobs:
         run: |
           set -euo pipefail
           python -m json.tool codemeta.json >/dev/null
+          python -m json.tool project-metadata.json >/dev/null
+          python -m json.tool metadata/fair-dataset.jsonld >/dev/null
           python -m json.tool release/v1_data_manifest.json >/dev/null
           python -m json.tool data/lexicon/candidates/inventory_status.json >/dev/null
           python -m json.tool data/lexicon/candidates/candidate_inventory_manifest.json >/dev/null
@@ -144,6 +148,12 @@ jobs:
       - name: Validate documentation synchronization
         run: python scripts/validate_documentation_sync.py
 
+      - name: Validate public scientific repository surface
+        run: |
+          python scripts/validate_repository_surface.py
+          python scripts/validate_documentation_links.py
+          python scripts/query_lexicon.py --stats --json >/dev/null
+
       - name: Validate deterministic post-closure exports
         run: python scripts/validate_postclosure_exports.py
 
@@ -179,8 +189,5 @@ jobs:
       - name: Validate frozen v1 scientific data
         run: python scripts/validate_v1_data_freeze.py
 
-      - name: Validate deterministic scientific release candidate
-        run: python scripts/validate_release_candidate.py
-
-      - name: Validate deterministic v1.0.0 release package
-        run: python scripts/validate_v1_release.py
+      - name: Validate immutable published v1.0.0 identity
+        run: python scripts/validate_published_v1.py

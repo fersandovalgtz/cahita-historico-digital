@@ -1,23 +1,21 @@
-# Licencia del repositorio
-
-Este repositorio utiliza un esquema de licenciamiento por componentes.
-
-## Código y software original
+MIT License
 
 Copyright (c) 2026 Fernando Sandoval Gutierrez
 
-Se concede permiso, de forma gratuita, a cualquier persona que obtenga una copia de este software y de los archivos de documentación asociados (el «Software»), para utilizar el Software sin restricciones, incluyendo, sin limitación, los derechos a usar, copiar, modificar, fusionar, publicar, distribuir, sublicenciar y/o vender copias del Software, y a permitir a las personas a quienes se proporcione el Software hacerlo, sujeto a la siguiente condición:
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-El aviso de copyright anterior y este aviso de permiso deberán incluirse en todas las copias o partes sustanciales del Software.
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-EL SOFTWARE SE PROPORCIONA «TAL CUAL», SIN GARANTÍA DE NINGÚN TIPO, EXPRESA O IMPLÍCITA, INCLUYENDO, ENTRE OTRAS, LAS GARANTÍAS DE COMERCIABILIDAD, IDONEIDAD PARA UN FIN PARTICULAR Y NO INFRACCIÓN. EN NINGÚN CASO LOS AUTORES O TITULARES DEL COPYRIGHT SERÁN RESPONSABLES DE NINGUNA RECLAMACIÓN, DAÑO U OTRA RESPONSABILIDAD, YA SEA EN UNA ACCIÓN CONTRACTUAL, EXTRACONTRACTUAL O DE OTRO TIPO, DERIVADA DE, FUERA DE O EN CONEXIÓN CON EL SOFTWARE O EL USO U OTROS TRATOS EN EL SOFTWARE.
-
-SPDX: `MIT`
-
-## Datos, metadatos y capas editoriales originales
-
-Los datos estructurados, metadatos, anotaciones y capas editoriales originales de Cahíta Histórico Digital se publican bajo **Creative Commons Attribution 4.0 International (CC BY 4.0)**, salvo indicación expresa en contrario. Véase [`DATA_LICENSE.md`](DATA_LICENSE.md).
-
-## Fuentes históricas y materiales de terceros
-
-La licencia de este repositorio **no relicencia** facsímiles, digitalizaciones, reproducciones, ediciones o archivos de terceros. El impreso histórico de 1737 y las reproducciones digitales consultadas deben citarse y reutilizarse conforme a su procedencia y a las condiciones del proveedor correspondiente.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

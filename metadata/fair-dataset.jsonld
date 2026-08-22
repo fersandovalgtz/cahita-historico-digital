@@ -1,0 +1,103 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "prov": "http://www.w3.org/ns/prov#"
+  },
+  "@type": "Dataset",
+  "@id": "https://github.com/fersandovalgtz/cahita-historico-digital/releases/tag/v1.0.0",
+  "name": "Cahíta Histórico Digital — Arte de la lengua cahita (1737)",
+  "alternateName": "Cahíta Histórico Digital v1.0.0",
+  "version": "1.0.0",
+  "datePublished": "2026-08-22",
+  "description": "Corpus histórico-digital reproducible derivado del Arte de la lengua cahita impreso en México en 1737. Incluye estructuración lexicográfica y gramatical, procedencia, contratos JSON Schema, derivados reproducibles y TEI Lex-0. No constituye una edición filológica íntegramente validada por revisión humana independiente.",
+  "url": "https://github.com/fersandovalgtz/cahita-historico-digital",
+  "mainEntityOfPage": "https://github.com/fersandovalgtz/cahita-historico-digital",
+  "creator": {
+    "@type": "Person",
+    "name": "Fernando Sandoval Gutierrez",
+    "sameAs": "https://orcid.org/0000-0002-3168-6725",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Universidad Autónoma de Ciudad Juárez"
+    }
+  },
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "isBasedOn": {
+    "@type": "CreativeWork",
+    "name": "Arte de la lengua cahita conforme à las reglas de muchos peritos en ella",
+    "datePublished": "1737",
+    "identifier": "ALC1737",
+    "url": "https://archive.org/details/artedelalenguaca00gonz"
+  },
+  "inLanguage": [
+    "es",
+    "Cahita (historical source label)"
+  ],
+  "keywords": [
+    "cahíta",
+    "Cahita",
+    "Hiaqui",
+    "Mayo",
+    "Thehueco",
+    "historical lexicography",
+    "missionary linguistics",
+    "historical linguistics",
+    "digital humanities",
+    "digital scholarly edition",
+    "TEI Lex-0",
+    "Indigenous languages of Mexico"
+  ],
+  "distribution": [
+    {
+      "@type": "DataDownload",
+      "name": "Cahíta Histórico Digital v1.0.0 release payload",
+      "contentUrl": "https://github.com/fersandovalgtz/cahita-historico-digital/releases/tag/v1.0.0",
+      "encodingFormat": "application/zip"
+    },
+    {
+      "@type": "DataDownload",
+      "name": "Canonical repository and open formats",
+      "contentUrl": "https://github.com/fersandovalgtz/cahita-historico-digital",
+      "encodingFormat": [
+        "application/json",
+        "application/x-ndjson",
+        "text/csv",
+        "application/xml"
+      ]
+    }
+  ],
+  "conformsTo": [
+    "https://json-schema.org/draft/2020-12/schema",
+    "https://lex-0.org/releases/v0.9.5/"
+  ],
+  "dcterms:provenance": "ALC1737 is the primary documentary authority. OCR, transcription, curatorial objects and derived analytical products remain distinct layers with explicit provenance.",
+  "prov:wasDerivedFrom": "https://archive.org/details/artedelalenguaca00gonz",
+  "additionalProperty": [
+    {
+      "@type": "PropertyValue",
+      "name": "historicalLexicalArticleCount",
+      "value": 2302
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "grammarEvidenceRows",
+      "value": 1215
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "humanVerifiedCount",
+      "value": 0
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "openRecollationUncertainties",
+      "value": 22
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "doiStatus",
+      "value": "pending archival deposit"
+    }
+  ]
+}

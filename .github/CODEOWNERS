@@ -1,0 +1,10 @@
+# Cahíta Histórico Digital — default scientific/technical owner
+* @fersandovalgtz
+
+# Contracts, canonical data and release identity require explicit owner review
+/schemas/ @fersandovalgtz
+/data/ @fersandovalgtz
+/release/ @fersandovalgtz
+/.github/workflows/ @fersandovalgtz
+/CITATION.cff @fersandovalgtz
+/codemeta.json @fersandovalgtz
