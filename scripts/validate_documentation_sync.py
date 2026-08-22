@@ -102,7 +102,10 @@ def validate_crossreference_review_docs() -> tuple[int, int, int, int, int, int]
     recollation = int(statuses.get("editorial_requires_recollation", 0))
     unreviewed = int(statuses.get("strict_not_located_unreviewed", 0))
 
-    if strict_edges + strict_not_located + 1 != total:
+    # `Lo miſmo` is no longer encoded as the historical one-off non-Buſca
+    # cross-reference. The strict universe now consists entirely of Buſca:
+    # exact_unique + not_located = total.
+    if strict_edges + strict_not_located != total:
         raise SystemExit(
             "cross-reference documentation guard found unexpected strict-state arithmetic: "
             f"strictEdges={strict_edges}, notLocated={strict_not_located}, total={total}"
@@ -119,7 +122,7 @@ def validate_crossreference_review_docs() -> tuple[int, int, int, int, int, int]
         raise SystemExit("reviewed-view edge count does not equal strict + editorial unique edges")
 
     text = XREF_DOC.read_text(encoding="utf-8")
-    require(text, f"**{total} remisiones históricas**", XREF_DOC_NAME)
+    require(text, f"**{total} remisiones históricas `Buſca`**", XREF_DOC_NAME)
     require(text, f"**{strict_edges} aristas `exact_unique`**", XREF_DOC_NAME)
     require(text, f"**{strict_not_located} remisiones `not_located`**", XREF_DOC_NAME)
     require(text, f"**{int(tiers['A_unique_strong'])} `A_unique_strong`**", XREF_DOC_NAME)
