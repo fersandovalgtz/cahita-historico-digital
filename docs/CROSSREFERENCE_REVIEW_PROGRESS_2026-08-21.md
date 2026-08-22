@@ -1,79 +1,73 @@
-# Revisión de remisiones históricas `Buſca`: estado de avance
+# Revisión de remisiones históricas `Buſca`: cierre de revisión inicial
 
 Actualización: 21 de agosto de 2026.
 
 ## Alcance
 
-Este documento registra la revisión post-cierre de las remisiones históricas del vocabulario `ALC1737`. El grafo canónico estricto, la capa diagnóstica y la capa de revisión editorial permanecen separados.
+Este documento registra el cierre de la revisión post-cierre de las remisiones históricas del vocabulario `ALC1737`. El **grafo canónico estricto**, la **capa diagnóstica** y la **capa de revisión editorial de fuente** permanecen separados. Cerrar la revisión inicial significa que cada remisión estrictamente `not_located` recibió una decisión explícita; no significa que todas tengan destino resuelto ni que exista validación filológica humana.
 
 ## Estado canónico estricto
 
-El inventario contiene **151 remisiones históricas**. El grafo estricto conserva **60 aristas `exact_unique`**, **90 remisiones `not_located`**, 1 remisión `not_busca` y 4 ciclos exactos. La revisión editorial no modifica estos conteos.
+El inventario contiene **151 remisiones históricas**. El grafo estricto conserva **60 aristas `exact_unique`**, **90 remisiones `not_located`**, 1 remisión `not_busca` y 4 ciclos exactos. Ninguna decisión editorial de los lotes de revisión altera esos conteos.
 
 ## Diagnóstico reproducible
 
-Las 90 remisiones estrictamente no localizadas conservan su clasificación diagnóstica original: **44 `A_unique_strong`**, **16 `B_multiple_strong`** y **30 `C_no_strong`**. La clase expresa prioridad, no resolución.
+Las 90 remisiones estrictamente no localizadas conservan su clasificación diagnóstica original: **44 `A_unique_strong`**, **16 `B_multiple_strong`** y **30 `C_no_strong`**. La clasificación expresa prioridad computacional de revisión y no autoridad de resolución.
 
-## Revisión explícita acumulada
+## Revisión explícita acumulada: 90/90
 
-Se han registrado **84 revisiones explícitas**: 44 Tier A, 16 Tier B y 24 Tier C. Todas mantienen `humanVerified=false`.
+Se han registrado **90 revisiones explícitas**: 44 Tier A, 16 Tier B y 30 Tier C. Todas mantienen `humanVerified=false`.
 
-- **40** tienen `decisionStatus=source_supports_unique_target`;
-- 20 tienen `decisionStatus=source_or_destination_requires_recollation`;
+- **40** tienen `decisionStatus=source_supports_unique_target` y un destino editorial explícito;
+- 22 tienen `decisionStatus=source_or_destination_requires_recollation`;
 - 5 tienen `decisionStatus=candidate_rejected`;
-- 19 tienen `decisionStatus=target_not_located`.
+- 23 tienen `decisionStatus=target_not_located`.
 
-La aritmética es 40 + 20 + 5 + 19 = 84. Ninguna propuesta editorial se convierte retroactivamente en coincidencia estricta.
+La aritmética es 40 + 22 + 5 + 23 = 90. Las 40 propuestas editoriales no se promueven al grafo canónico estricto y ninguna equivale a validación humana.
 
-## Tier A y Tier B
+## Cierre por niveles
 
-`A_unique_strong` está cerrado **44/44**: 29 propuestas, 8 recolaciones, 5 rechazos y 2 destinos no localizados. `B_multiple_strong` está cerrado **16/16**: 8 propuestas, 4 recolaciones y 4 destinos no localizados.
+`A_unique_strong` quedó cerrado **44/44**: 29 propuestas editoriales, 8 recolaciones, 5 candidatos rechazados y 2 destinos no localizados.
 
-## Tier C: 24/30
+`B_multiple_strong` quedó cerrado **16/16**: 8 propuestas editoriales, 4 recolaciones y 4 destinos no localizados.
 
-Tier C sólo admite recuperaciones fuera del shortlist cuando existe evidencia positiva del mismo testimonio y evidencia de estructura canónica. Las similitudes débiles no son autoridad de enlace.
+`C_no_strong` queda cerrado **30/30**: 3 propuestas editoriales, 10 recolaciones y 17 destinos no localizados. Las tres recuperaciones positivas Tier C son `Baſta, coſa ſin pulir → Aſpera coſa`, `Cueva → Caberna, ò cueva` y `Montear → Cazar ſalir a caza`. Todas se sustentan en evidencia explícita del mismo testimonio y estructura canónica; ninguna procede de elevar automáticamente un candidato débil.
 
-### Lote 09
-
-Aportó 2 propuestas editoriales, 3 recolaciones y 3 destinos no localizados. Las dos recuperaciones positivas fueron `Baſta, coſa ſin pulir → Aſpera coſa` y `Cueva → Caberna, ò cueva`.
-
-### Lote 10
-
-Aportó 1 propuesta editorial (`Montear → Cazar ſalir a caza`), 1 recolación (`Orejear`) y 6 destinos no localizados (`mancebo`, `meados`, `mear`, `atrevido`, `gozo`, `pelear`).
-
-### Lote 11
+## Lote 12: seis casos finales
 
 | Fuente histórica | Resultado editorial |
 | --- | --- |
-| `Anguſtia` — `Buſca afliccion` | `target_not_located`; la remisión es legible, pero no existe una guía independiente `Afliccion`. |
-| `Eſtender, ò tender` — `Buſca deſenvolver` | `source_or_destination_requires_recollation`; el OCR del target parece acercarse a `Deſembolver`, por lo que puede existir una discrepancia de lectura del propio `targetRaw`. |
-| `Levantarſe amotinarſe` — `Buſca alzarſe` | `source_or_destination_requires_recollation`; el OCR mezcla columnas y no conserva la remisión con precisión suficiente. |
-| `Luchar` — `Buſca forcejar` | `source_or_destination_requires_recollation`; el target aparece degradado y no existe guía independiente `Forcejar`. |
-| `Morirſe de frío` — `Buſca frío tener` | `source_or_destination_requires_recollation`; el OCR conserva sólo parcialmente la frase remitida. |
-| `Nuevamente` — `Buſca otra vez` | `target_not_located`; `Otras vezes` no se colapsa automáticamente con `otra vez`. |
-| `Permitir algo` — `Buſca conſentir` | `target_not_located`; la remisión se corrobora localmente, pero no se localiza guía independiente `Conſentir`. |
-| `Permiſſion` — `Buſca conſentimiento` | `target_not_located`; no se localiza guía independiente `Conſentimiento`. |
+| `Podre` — `Buſca materia` | `target_not_located`; el OCR conserva `materia`, pero no existe una guía independiente `Materia`. |
+| `Ponerſe el capote` — `Buſca taparſe` | `target_not_located`; existe `Tapar`, pero no se colapsa el target reflexivo `taparſe` con la guía no reflexiva. |
+| `Rebolver una coſa con otra` — `Buſca mezclar` | `source_or_destination_requires_recollation`; el OCR del entorno está fuertemente entremezclado y no permite confirmar de forma independiente el target estructurado `mezclar`; tampoco existe guía `Mezclar/Mesclar`. |
+| `Retar, ò deſafiar` — `Buſca pelear` | `target_not_located`; el OCR conserva `pelear`, pero la única guía próxima es `Pelearſe`, que no se colapsa con el target no reflexivo. |
+| `Ser` — `Buſca al ſin` | `source_or_destination_requires_recollation`; el OCR muestra una fórmula semejante a `Buſca ai fin`, mientras el target estructurado es `al ſin`. La discrepancia de glifos requiere cotejo directo de imagen. |
+| `Sonarſe las narizes` — `Buſca limpiarſe los mocos` | `target_not_located`; la remisión se conserva en OCR, pero las guías próximas `Limpiar`, `Limpiar las narizes` y `Moco de narizes` no reproducen la frase reflexiva remitida. |
 
-El lote 11 no crea nuevas aristas: aporta 4 recolaciones y 4 destinos no localizados. Esto es deliberado; una posible corrección de lectura de fuente no se convierte en resolución editorial sin cotejo suficiente.
+El lote 12 no crea nuevas aristas: aporta 2 recolaciones y 4 destinos no localizados.
 
 ## Vista revisada derivada
 
-Tras el lote 11, la vista revisada debe contener:
+Tras el cierre 90/90, la vista revisada debe contener:
 
 - 151 remisiones representadas;
-- 60 aristas estrictas;
-- 40 aristas editoriales;
+- 60 aristas estrictas con `edgeAuthority=strict_exact_normalized_equality`;
+- 40 aristas editoriales con `edgeAuthority=editorial_source_review`;
 - **100 aristas efectivas**;
-- **20 casos `editorial_requires_recollation`**;
+- **22 casos `editorial_requires_recollation`**;
 - 5 casos `editorial_candidate_rejected`;
-- 19 casos `editorial_target_not_located`;
-- **6 casos `strict_not_located_unreviewed`**;
+- 23 casos `editorial_target_not_located`;
+- **0 casos `strict_not_located_unreviewed`**;
 - 0 aristas editoriales `humanVerified=true`.
+
+Los exportadores JSONL, CSV y grafo JSON se validan mediante doble ejecución determinista byte a byte. La vista revisada es una derivación editorial explícita y nunca sustituye el grafo canónico estricto.
 
 ## Cola reproducible de trabajo
 
-La cola resta las **84 revisiones explícitas** al universo de 90 remisiones estrictamente `not_located`. Debe producir **6 pendientes**: 0 A, 0 B y 6 C. Tier C queda en **24/30**; el siguiente lote es el cierre de los seis casos finales.
+La cola permanente resta las **90 revisiones explícitas** al universo de 90 remisiones estrictamente `not_located`. Su estado final esperado es **0 casos pendientes**: 0 `A_unique_strong`, 0 `B_multiple_strong` y 0 `C_no_strong`.
+
+La cola de revisión inicial queda, por tanto, agotada. El trabajo filológico pendiente se concentra ahora en los **22 casos de recolación directa**, además de cualquier validación humana posterior que se decida realizar. Los 23 `target_not_located` permanecen documentados como ausencia de destino localizado bajo la evidencia disponible, no como errores ni como resoluciones aproximadas.
 
 ## Guarda epistemológica
 
-**Una arista editorial sustentada no es una arista canónica estricta. Una coincidencia diagnóstica no es una resolución. Un destino no localizado no debe sustituirse por una coincidencia aproximada. Cerrar un nivel significa revisar todos sus casos, no producir una resolución positiva para todos. Una corrida verde de QA no es validación filológica humana.**
+**Una arista editorial sustentada no es una arista canónica estricta. Una coincidencia diagnóstica no es una resolución. Un candidato rechazado no desaparece de la historia de revisión. Un destino no localizado no debe sustituirse por una coincidencia aproximada. Una recolación pendiente no es una resolución. Cerrar la revisión inicial significa que los 90 casos recibieron una decisión explícita; no significa que los 90 hayan sido resueltos positivamente ni que exista validación filológica humana. Una corrida verde de QA no es validación filológica humana.**
