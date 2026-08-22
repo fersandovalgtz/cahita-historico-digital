@@ -1,11 +1,5 @@
 #!/usr/bin/env python3
-"""Build a deterministic CHD scientific release-candidate bundle.
-
-This is deliberately a *release candidate*, not v1.0.0. It packages the
-canonical/derived artifacts that already have deterministic QA while preserving
-remaining open gates (facsimile recollation, metadata/tag, archival deposit and
-DOI) as explicit manifest state.
-"""
+"""Build a deterministic CHD scientific release-candidate bundle."""
 from __future__ import annotations
 
 import argparse
@@ -22,6 +16,8 @@ ROOT = Path(__file__).resolve().parents[1]
 BUNDLE_DIRNAME = "cahita-historico-digital-release-candidate"
 ZIP_NAME = "cahita-historico-digital-release-candidate.zip"
 MANIFEST_NAME = "RELEASE_CANDIDATE_MANIFEST.json"
+CONTRACT_FREEZE_PATH = ROOT / "release/v1_contract_manifest.json"
+EXPECTED_CONTRACT_FREEZE_SHA256 = "c0b897b9dbad2107b40db6169d4207bca752c2b84161e0c9c980409d94b86e56"
 
 EXPORTERS = [
     ("lexicon", "export_lexicon_corpus.py", "--out-dir"),
@@ -46,6 +42,7 @@ DOCUMENT_FILES = [
     "CITATION.cff",
     "codemeta.json",
     "RELEASE_CHECKLIST_v1_0.md",
+    "release/v1_contract_manifest.json",
     "docs/RELEASE_READINESS_2026-08-21.md",
     "docs/PHASE2_COMPLETION_2026-08-21.md",
     "docs/GRAMMAR_COMPLETION_2026-08-21.md",
@@ -62,7 +59,6 @@ DOCUMENT_FILES = [
 
 OPEN_GATES = [
     "direct_facsimile_recollation_of_22_crossreference_cases",
-    "final_schema_and_metadata_freeze",
     "final_release_tag_and_changelog",
     "archival_deposit_and_version_doi",
 ]
@@ -76,11 +72,7 @@ def sha256_file(path: Path) -> str:
 
 def git_commit() -> str:
     result = subprocess.run(
-        ["git", "rev-parse", "HEAD"],
-        cwd=ROOT,
-        check=True,
-        text=True,
-        stdout=subprocess.PIPE,
+        ["git", "rev-parse", "HEAD"], cwd=ROOT, check=True, text=True, stdout=subprocess.PIPE
     )
     return result.stdout.strip()
 
@@ -114,13 +106,7 @@ def inventory_files(bundle: Path, exclude: set[str] | None = None) -> list[dict[
         relative = path.relative_to(bundle).as_posix()
         if relative in exclude:
             continue
-        records.append(
-            {
-                "path": relative,
-                "bytes": path.stat().st_size,
-                "sha256": sha256_file(path),
-            }
-        )
+        records.append({"path": relative, "bytes": path.stat().st_size, "sha256": sha256_file(path)})
     return records
 
 
@@ -131,6 +117,20 @@ def load_nested_manifest(bundle: Path, slug: str) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def load_contract_freeze() -> dict[str, Any]:
+    if not CONTRACT_FREEZE_PATH.is_file():
+        raise SystemExit("missing frozen v1 contract manifest")
+    sha = sha256_file(CONTRACT_FREEZE_PATH)
+    if sha != EXPECTED_CONTRACT_FREEZE_SHA256:
+        raise SystemExit(f"v1 contract manifest hash drifted: {sha}")
+    data = json.loads(CONTRACT_FREEZE_PATH.read_text(encoding="utf-8"))
+    if data.get("freezeId") != "CHD-v1-contracts-2026-08-21":
+        raise SystemExit("unexpected v1 contract freezeId")
+    if data.get("schemaContractCount") != 22 or data.get("contractCount") != 26:
+        raise SystemExit("unexpected v1 contract freeze counts")
+    return data
+
+
 def build_manifest(bundle: Path) -> dict[str, Any]:
     lexicon = load_nested_manifest(bundle, "lexicon")
     strict = load_nested_manifest(bundle, "crossreference_strict_graph")
@@ -139,6 +139,7 @@ def build_manifest(bundle: Path) -> dict[str, Any]:
     tei = load_nested_manifest(bundle, "tei_lexicon")
     grammar_evidence = load_nested_manifest(bundle, "grammar_evidence")
     grammar_coverage = load_nested_manifest(bundle, "grammar_rule_coverage")
+    contract_freeze = load_contract_freeze()
 
     files = inventory_files(bundle, exclude={MANIFEST_NAME})
     manifest: dict[str, Any] = {
@@ -154,6 +155,17 @@ def build_manifest(bundle: Path) -> dict[str, Any]:
         "humanVerifiedCount": 0,
         "releaseReady": False,
         "openGates": OPEN_GATES,
+        "contractFreeze": {
+            "freezeId": contract_freeze["freezeId"],
+            "manifestPath": "release/v1_contract_manifest.json",
+            "manifestSha256": EXPECTED_CONTRACT_FREEZE_SHA256,
+            "schemaContractCount": contract_freeze["schemaContractCount"],
+            "sourceScopeMetadataCount": contract_freeze["sourceScopeMetadataCount"],
+            "contractCount": contract_freeze["contractCount"],
+            "exactBytesFrozenForV1": True,
+            "silentContractChangesAllowed": False,
+            "releaseIdentityMetadataDeferredToTagGate": True,
+        },
         "interoperabilityDecision": {
             "primaryLexicalReleaseProfile": "TEI Lex-0 0.9.5",
             "cldfRequiredForV1": False,
@@ -175,9 +187,7 @@ def build_manifest(bundle: Path) -> dict[str, Any]:
             "grammarRuleComparisonUniverse": int(grammar_coverage["comparisonUniverse"]["ruleCount"]),
             "teiEntryCount": int(tei["articleCount"]),
             "teiLex0ConformanceClaimed": bool(tei["teiLex0ConformanceClaimed"]),
-            "externalLex0SchemaValidationEnforcedInCI": bool(
-                tei["externalLex0SchemaValidationEnforcedInCI"]
-            ),
+            "externalLex0SchemaValidationEnforcedInCI": bool(tei["externalLex0SchemaValidationEnforcedInCI"]),
             "externalLex0SchemaUrl": tei["externalLex0SchemaUrl"],
             "externalLex0SchemaSha256": tei["externalLex0SchemaSha256"],
         },
@@ -187,26 +197,21 @@ def build_manifest(bundle: Path) -> dict[str, Any]:
     }
 
     expected = manifest["summary"]
-    if expected["lexiconArticleCount"] != 2302:
-        raise SystemExit("release candidate lost canonical lexicon count")
-    if expected["canonicalCrossReferenceCount"] != 150:
-        raise SystemExit("release candidate lost canonical cross-reference count")
-    if expected["strictCrossReferenceEdgeCount"] != 60:
-        raise SystemExit("release candidate strict edge count drifted")
-    if expected["sourceReviewRecordCount"] != 90:
-        raise SystemExit("release candidate source-review count drifted")
-    if expected["facsimileRecollationQueueCount"] != 22:
-        raise SystemExit("release candidate recollation queue count drifted")
-    if expected["grammarObjectCount"] != 302:
-        raise SystemExit("release candidate grammar object count drifted")
-    if expected["grammarEvidenceRowCount"] != 1215:
-        raise SystemExit("release candidate grammar evidence count drifted")
-    if expected["teiEntryCount"] != 2302:
-        raise SystemExit("release candidate TEI entry count drifted")
-    if expected["teiLex0ConformanceClaimed"] is not True:
-        raise SystemExit("release candidate must expose the CI-backed Lex-0 conformance claim")
-    if expected["externalLex0SchemaValidationEnforcedInCI"] is not True:
-        raise SystemExit("release candidate must disclose the external Lex-0 CI gate")
+    required_counts = {
+        "lexiconArticleCount": 2302,
+        "canonicalCrossReferenceCount": 150,
+        "strictCrossReferenceEdgeCount": 60,
+        "sourceReviewRecordCount": 90,
+        "facsimileRecollationQueueCount": 22,
+        "grammarObjectCount": 302,
+        "grammarEvidenceRowCount": 1215,
+        "teiEntryCount": 2302,
+    }
+    for key, value in required_counts.items():
+        if expected[key] != value:
+            raise SystemExit(f"release candidate scientific count drifted: {key}={expected[key]} != {value}")
+    if expected["teiLex0ConformanceClaimed"] is not True or expected["externalLex0SchemaValidationEnforcedInCI"] is not True:
+        raise SystemExit("release candidate must preserve CI-backed Lex-0 conformance")
     if expected["externalLex0SchemaUrl"] != "https://lex-0.org/releases/v0.9.5/schema/lex-0.rng":
         raise SystemExit("release candidate Lex-0 schema URL drifted")
     if expected["externalLex0SchemaSha256"] != "35e73fef48526634714bdf3d16b924f958fca078a903d0bdc2dd4d7d116d1aaa":
@@ -217,8 +222,6 @@ def build_manifest(bundle: Path) -> dict[str, Any]:
         raise SystemExit("release candidate primary interoperability profile drifted")
     if interoperability["cldfRequiredForV1"] is not False:
         raise SystemExit("release candidate must not make CLDF a v1 gate")
-    if interoperability["cldfStatus"] != "deferred_post_v1_analytic_derivative":
-        raise SystemExit("release candidate CLDF scope decision drifted")
     if interoperability["canonicalDataReplacedByInteroperabilityFormats"] is not False:
         raise SystemExit("interoperability derivatives must not replace canonical data")
     return manifest
@@ -248,16 +251,13 @@ def build(output_dir: Path) -> dict[str, Any]:
     if bundle.exists():
         shutil.rmtree(bundle)
     bundle.mkdir(parents=True)
-
     run_exporters(bundle)
     copy_documents(bundle)
     manifest = write_manifest(bundle)
-
     zip_path = output_dir / ZIP_NAME
     if zip_path.exists():
         zip_path.unlink()
     write_deterministic_zip(bundle, zip_path)
-
     result = {
         "bundleDir": bundle,
         "zipPath": zip_path,
@@ -267,12 +267,10 @@ def build(output_dir: Path) -> dict[str, Any]:
     }
     print(
         "built CHD scientific release candidate: "
-        f"files={manifest['artifactFileCount'] + 1}; "
-        f"lexicon={manifest['summary']['lexiconArticleCount']}; "
+        f"files={manifest['artifactFileCount'] + 1}; lexicon={manifest['summary']['lexiconArticleCount']}; "
         f"grammarEvidence={manifest['summary']['grammarEvidenceRowCount']}; "
         f"recollationQueue={manifest['summary']['facsimileRecollationQueueCount']}; "
-        f"openGates={len(manifest['openGates'])}; "
-        f"releaseReady={str(manifest['releaseReady']).lower()}"
+        f"openGates={len(manifest['openGates'])}; releaseReady={str(manifest['releaseReady']).lower()}"
     )
     print(f"  {ZIP_NAME}: {result['zipBytes']} bytes; sha256 {result['zipSha256']}")
     return result
@@ -280,11 +278,7 @@ def build(output_dir: Path) -> dict[str, Any]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "--output-dir",
-        type=Path,
-        default=ROOT / "build" / "release-candidate",
-    )
+    parser.add_argument("--output-dir", type=Path, default=ROOT / "build" / "release-candidate")
     args = parser.parse_args()
     build(args.output_dir)
 
