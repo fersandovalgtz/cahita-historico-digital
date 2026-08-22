@@ -18,80 +18,69 @@ La auditoría de las 90 remisiones estrictamente no localizadas conserva la clas
 
 ## Revisión explícita acumulada
 
-Se han registrado **60 revisiones explícitas**: los 44 casos Tier A y los 16 casos Tier B. Todas mantienen `humanVerified=false`.
+Se han registrado **68 revisiones explícitas**: los 44 casos Tier A, los 16 casos Tier B y los primeros 8 casos Tier C. Todas mantienen `humanVerified=false`.
 
 Del conjunto acumulado:
 
-- **37** tienen `decisionStatus=source_supports_unique_target` y un `selectedTargetArticleId` explícito;
-- 12 tienen `decisionStatus=source_or_destination_requires_recollation`;
+- **39** tienen `decisionStatus=source_supports_unique_target` y un `selectedTargetArticleId` explícito;
+- 15 tienen `decisionStatus=source_or_destination_requires_recollation`;
 - 5 tienen `decisionStatus=candidate_rejected`;
-- 6 tienen `decisionStatus=target_not_located`.
+- 9 tienen `decisionStatus=target_not_located`.
 
-La aritmética es 37 + 12 + 5 + 6 = 60. Las propuestas editoriales no se promueven al grafo canónico estricto y ninguna equivale a validación humana.
+La aritmética es 39 + 15 + 5 + 9 = 68. Las propuestas editoriales no se promueven al grafo canónico estricto y ninguna equivale a validación humana.
 
 ## Tier A: cierre de revisión inicial
 
 La revisión inicial `A_unique_strong` permanece cerrada **44/44**. Su distribución final es 29 propuestas editoriales, 8 recolaciones, 5 candidatos rechazados y 2 destinos no localizados.
 
-Los ocho casos Tier A que requieren recolación directa de imagen son `Danzar`, `Apercibirſe para hazer algo`, `Yr delante`, `Loco bolverſe`, `Reglar con regla`, `Obligacion`, `Poco antes` y `Topo animal`. Los cinco candidatos Tier A rechazados son los asociados a `Nombrar, poner nombre`, `Rueda`, `Oprimido eſtar`, `Palillo oloroſo` y `Sazonarſe la fruta`. Los dos destinos no localizados son `Vadear el Rio → paſſar el Rio por vado` y `Vihuela, ó guitarra → guitarra`.
+## Tier B: cierre de revisión inicial
 
-## Tier B: cierre de revisión inicial, 16/16
+La revisión inicial `B_multiple_strong` permanece cerrada **16/16**. Su distribución final es 8 propuestas editoriales, 4 recolaciones y 4 destinos no localizados. En este nivel nunca se eligió un candidato sólo por ocupar el primer rango diagnóstico.
 
-La revisión inicial `B_multiple_strong` queda cerrada **16/16**. En este nivel nunca se eligió un candidato sólo por ocupar el primer rango diagnóstico: cada propuesta positiva exige un discriminante observable en la guía histórica, la secuencia remitida o la función lexicográfica.
+## Tier C: primera tanda, 8/30
 
-### Lote 07
-
-| Fuente histórica | Resultado editorial |
-| --- | --- |
-| `Yr por agua` — `Buſca agua traer` | `source_or_destination_requires_recollation`: compiten dos destinos extendidos y el OCR fuente es ruidoso. |
-| `Palo para eſcarbar tierra` — `Buſca coa` | `source_supports_unique_target` → `Coa de palo`; el descriptor `palo` excluye `Coa de hierro`. |
-| `Piedra de que ſe ſacan navajas` — `Buſca pedernal prieto` | `source_supports_unique_target` → `Pedernal prieto para flechas`; preserva la secuencia remitida completa. |
-| `Plazo poner` — `Buſca ſeñalar dia` | `source_or_destination_requires_recollation`: el OCR de la remisión está degradado y `Dia` / `Señalar` son sólo parciales. |
-| `Prieto` — `Buſca negro` | `source_supports_unique_target` → `Negro color`; `Negro hazer` cambia la función de la guía. |
-| `Saltar` — `Buſca brincar` | `target_not_located`: sólo se localizan guías especializadas `Brincar...`. |
-| `Socorrer` — `Buſca ayudar` | `source_supports_unique_target` → `Ayudar à otro`; los demás candidatos son nominales o especializados. |
-| `Tener ſed` — `Buſca ſed tener` | `target_not_located`: el mejor diagnóstico es un auto-candidato y `Sed` sólo conserva un componente. |
-
-### Lote 08
+El lote 09 inicia `C_no_strong`. En este nivel las similitudes débiles se usan sólo como pistas de búsqueda; las decisiones se apoyan en control textual directo, variantes gráficas, estructura de guía y evidencia del mismo testimonio.
 
 | Fuente histórica | Resultado editorial |
 | --- | --- |
-| `Favorecer` — `Buſca ayudar` | `source_supports_unique_target` → `Ayudar à otro`; `Ayuda` es nominal y las otras entradas de `Ayudar` son especializadas. |
-| `Horadar` — `Buſca agujerear` | `target_not_located`: las cuatro guías `Agujerear...` localizadas son especializadas por instrumento u objeto; no se fuerza una como destino genérico. |
-| `Mitad de alguna coſa` — `Buſca media` | `source_supports_unique_target` → `Media coſa la mitad`; la alternativa `A media noche` es temporal/adverbial. |
-| `Oprimir` — `Buſca apretar` | `target_not_located`: sólo se localizan cinco guías `Apretar...` especializadas; ninguna está autorizada por la guía genérica `Oprimir`. |
-| `Ribera de qualquiera agua` — `Buſca orilla` | `source_supports_unique_target` → `Orilla del agua`; conserva función nominal y el descriptor `agua`, a diferencia de `Abordar à la orilla`. |
-| `Sanar á otro` — `Buſca curar` | `source_supports_unique_target` → `Curar enfermedad`; el otro candidato contiene `curar` sólo dentro de una descripción de `Arbol`. |
-| `Simiente` — `Buſca orilla` | `source_or_destination_requires_recollation`: el OCR parece conservar la remisión, pero la relación fuente-destino es anómala y debe cotejarse con la imagen antes de crear arista. |
-| segundo `Sueño tal` — `Buſca ſueño` | `source_or_destination_requires_recollation`: el OCR muestra dos `Sueño tal` consecutivos, uno con contenido y otro remisivo; no se colapsan ni se enlazan sin cotejo directo de los límites impresos. |
+| `Baſta, coſa ſin pulir` — `Buſca aſpero` | `source_supports_unique_target` → `Aſpera coſa`; la fuente remite al adjetivo y el destino conserva la flexión femenina exigida por `coſa`. |
+| `Cueva` — `Buſca caverna` | `source_supports_unique_target` → `Caberna, ò cueva`; recuperación por variante histórica `b/v` en el mismo testimonio. |
+| `Culpar à otro` — `Buſca acuſar` | `target_not_located`; la remisión es legible, pero no se localizó una entrada independiente `Acuſar`. |
+| `Empacharſe` — `Buſca hartarſe` | `source_or_destination_requires_recollation`; el OCR destruye parcialmente el target y no debe sustituirse por el débil candidato `Ahitarſe`. |
+| `Henchimiento` — `Buſca llenar` | `source_or_destination_requires_recollation`; la remisión está gravemente dañada en OCR y no se localizó una guía independiente `Llenar`. |
+| `Holgarſe` — `Buſca gozarſe` | `source_or_destination_requires_recollation`; la fórmula está dañada en OCR. La gramática atestigua `gozarſe`, pero eso no constituye un destino lexicográfico. |
+| `Jubilo` — `Buſca gozo` | `target_not_located`; `gozo` está atestiguado en la gramática, pero no aparece una guía lexicográfica independiente localizada. |
+| `Legumbres` — `Buſca frixol, habas, &c.` | `target_not_located`; la remisión listada es legible, pero las ocurrencias localizadas de `frixol` o `habas` pertenecen a guías especializadas distintas. |
 
-La distribución final de Tier B es 8 propuestas editoriales, 4 recolaciones y 4 destinos no localizados. No añadió candidatos rechazados.
+El lote aporta 2 propuestas editoriales, 3 recolaciones y 3 destinos no localizados. No añade candidatos rechazados.
+
+Dos resultados son metodológicamente relevantes. `Cueva → Caberna, ò cueva` demuestra que un caso Tier C puede resolverse editorialmente mediante una variante histórica `b/v` que el diagnóstico de similitud no elevó a candidato fuerte. `Baſta, coſa ſin pulir → Aſpera coſa` muestra que una flexión de género explícitamente motivada por la guía puede recuperar el destino sin convertir fuzzy matching en política de resolución.
 
 ## Vista revisada derivada
 
-`scripts/export_lexicon_crossreference_reviewed_view.py` genera una vista independiente que incorpora las decisiones editoriales sin alterar el grafo estricto. Tras el cierre de Tier B, el estado esperado es:
+`scripts/export_lexicon_crossreference_reviewed_view.py` genera una vista independiente que incorpora las decisiones editoriales sin alterar el grafo estricto. Tras el lote 09, el estado esperado es:
 
 - 151 remisiones representadas;
 - 60 aristas estrictas con `edgeAuthority=strict_exact_normalized_equality`;
-- 37 aristas editoriales con `edgeAuthority=editorial_source_review`;
-- **97 aristas efectivas** en la vista revisada;
-- **12 casos `editorial_requires_recollation`**;
+- 39 aristas editoriales con `edgeAuthority=editorial_source_review`;
+- **99 aristas efectivas** en la vista revisada;
+- **15 casos `editorial_requires_recollation`**;
 - 5 casos `editorial_candidate_rejected`;
-- 6 casos `editorial_target_not_located`;
-- **30 casos `strict_not_located_unreviewed`**;
+- 9 casos `editorial_target_not_located`;
+- **22 casos `strict_not_located_unreviewed`**;
 - 0 aristas editoriales `humanVerified=true`.
 
 La vista se exporta en JSONL, CSV y grafo JSON y se valida mediante doble ejecución determinista byte a byte. Los hashes exactos pertenecen al manifiesto generado en cada estado.
 
 ## Cola reproducible de trabajo
 
-La cola permanente `scripts/export_crossreference_review_queue.py` resta las 60 revisiones explícitas al universo de 90 remisiones estrictamente `not_located`. El nuevo corte debe producir **30 casos pendientes**: 0 `A_unique_strong`, 0 `B_multiple_strong` y 30 `C_no_strong`.
+La cola permanente `scripts/export_crossreference_review_queue.py` resta las 68 revisiones explícitas al universo de 90 remisiones estrictamente `not_located`. El nuevo corte debe producir **22 casos pendientes**: 0 `A_unique_strong`, 0 `B_multiple_strong` y 22 `C_no_strong`.
 
-Los niveles A y B están agotados como colas de revisión inicial. El siguiente frente es `C_no_strong`, donde el diagnóstico no ofrece candidato fuerte alguno y la búsqueda debe apoyarse más en control textual, variantes gráficas, estructura local y eventual cotejo de facsímil.
+Tier C queda en **8/30**. Los siguientes casos deben seguir tratándose mediante búsqueda textual dirigida y control de variantes antes de considerar cualquier candidato débil.
 
 ## Criterio para Tier C
 
-Tier C no autoriza ampliar automáticamente el umbral ni convertir similitud débil en resolución. Se debe distinguir entre: remisión legible con destino ausente; remisión OCR dañada; posible variante gráfica; error de segmentación o procedencia; y ausencia real de candidato en el corpus estructurado. Cualquier recuperación de destino debe registrarse como revisión editorial explícita y no como mutación retroactiva del grafo estricto.
+Tier C no autoriza ampliar automáticamente el umbral ni convertir similitud débil en resolución. Se distingue entre remisión legible con destino ausente, remisión OCR dañada, variante gráfica recuperable, flexión morfológica explícita, error de segmentación o procedencia y ausencia real de candidato en el corpus estructurado. Cualquier recuperación de destino se registra como revisión editorial explícita y no como mutación retroactiva del grafo estricto.
 
 ## Guarda epistemológica
 
