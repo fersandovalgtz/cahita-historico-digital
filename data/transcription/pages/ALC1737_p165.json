@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 165,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.164] Obra aſſi, hechura. Chupari.\nOveja. Sopoo.\nOcaſion dar à otro. Huena-ſiaetua.\nOcultar. Hitaeſo.\nOdio, ò enemiſtad. Emo omtía.\nOdio tener. Aomta.\nOfender. Buſca pecar.\nOfenſa. Buſca pecado.\nOfenſor. Buſca pecador.\nOfrenda. Hoiſi, mica.\nOficio proprio del hombre. Atequia.\nOy, adv. de tiempo. ientapo.\nOydo, ſentido para oir. Hica.\nOydor el que oye. Hicabame.\nOyr. Hicaba.\nOjo. Puſi.\nOlas hazer el agua. Roateme.\nOler, echar de ſi olor. Hum-huba.\nOler con el olfato. [forma incierta].\nOler mal. Huena huba.\nOlla. Sotori.\nOlvido. Coptec.\nOloroſa coſa. Huin huba.\nOlvidar. Ahua--coptec.\nOmbligo. Sicu.\nOmbro. Heno.\nOprimir. Buſca apretar.\nOprimido eſtar. Buſca apretado.\nOrar à Dios. Ahiepſipo aunoca.\n\n[columna derecha]\nOracion. Dios noqui.\nOrador tal. Ara Dios noqui-noca.\nOrdeñar. Hipique.\nOregano de la tierra. Orebana.\nOreja. Naca.\nOrejear. Buſca menear las orejas.\nOnza animal. Topol.\nOrilla del agua. [forma incierta].\nOrina. Buſca meados.\nOrinar. Buſca mear.\nOrtiga. Natare.\nOſado ſer. Buſca atrevido.\nOſo animal. Hoſo.\nOtoño. Baſibue, l, ſebeiate.\nOtorgar la peticion. Hebe-huac.\nOtras vezes. Intoco.\nOtro. Senu.\n\nP.\n\nPacer. Ahibuatua.\nPaciencia tener. [forma incierta].\nPaciente. Iantiela.\nPaciencia. Iantielame.\nPadecer. Hiocoitame.\nPadraſtro. Huaim-apchin.\nPadre. Nachiai.\nPadrino. Batoachai.\nPagar deuda. Aubebectua.\nPaga [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; alphabetic transition O→P and final catchword explicit; doubtful forms remain unresolved.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several O/P forms remain letter-ambiguous and are explicitly reserved for second visual collation."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Moderate show-through affects isolated letters; the printed lexical sequence remains recoverable.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-165", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
