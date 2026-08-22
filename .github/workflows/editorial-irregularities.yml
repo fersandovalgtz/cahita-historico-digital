@@ -1,0 +1,78 @@
+name: CHD Editorial Irregularities
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/editorial-irregularities.yml"
+      - "scripts/export_editorial_irregularities.py"
+      - "scripts/validate_editorial_irregularities.py"
+      - "schemas/editorial-irregularity.schema.json"
+      - "docs/EDITORIAL_IRREGULARITIES.md"
+      - "data/grammar/metadata/rule_numbering_closure.json"
+      - "data/grammar/metadata/rule_numbering_anomalies_p052.json"
+      - "data/grammar/metadata/rule_numbering_anomalies_p066.json"
+      - "data/grammar/metadata/rule_numbering_anomalies_p107.json"
+      - "data/source/alc1737/sections.json"
+      - "data/transcription/pages/ALC1737_p011.json"
+      - "data/transcription/pages/ALC1737_p015.json"
+      - "data/transcription/pages/ALC1737_p089.json"
+      - "data/transcription/pages/ALC1737_p102.json"
+      - "Makefile"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/editorial-irregularities.yml"
+      - "scripts/export_editorial_irregularities.py"
+      - "scripts/validate_editorial_irregularities.py"
+      - "schemas/editorial-irregularity.schema.json"
+      - "docs/EDITORIAL_IRREGULARITIES.md"
+      - "data/grammar/metadata/rule_numbering_closure.json"
+      - "data/grammar/metadata/rule_numbering_anomalies_p052.json"
+      - "data/grammar/metadata/rule_numbering_anomalies_p066.json"
+      - "data/grammar/metadata/rule_numbering_anomalies_p107.json"
+      - "data/source/alc1737/sections.json"
+      - "data/transcription/pages/ALC1737_p011.json"
+      - "data/transcription/pages/ALC1737_p015.json"
+      - "data/transcription/pages/ALC1737_p089.json"
+      - "data/transcription/pages/ALC1737_p102.json"
+      - "Makefile"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-validate:
+    name: Build and validate editorial irregularities
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+
+      - name: Install validation dependencies
+        run: python -m pip install -r requirements-dev.txt
+
+      - name: Compile editorial-irregularity tools
+        run: python -m py_compile scripts/export_editorial_irregularities.py scripts/validate_editorial_irregularities.py
+
+      - name: Run deterministic editorial-irregularity QA
+        run: python scripts/validate_editorial_irregularities.py
+
+      - name: Build reviewable artifact
+        run: python scripts/export_editorial_irregularities.py --out-dir "${RUNNER_TEMP}/editorial-irregularities"
+
+      - name: Upload validated derivative
+        uses: actions/upload-artifact@v4
+        with:
+          name: cahita-editorial-irregularities-${{ github.sha }}
+          path: ${{ runner.temp }}/editorial-irregularities/
+          if-no-files-found: error
+          retention-days: 14
