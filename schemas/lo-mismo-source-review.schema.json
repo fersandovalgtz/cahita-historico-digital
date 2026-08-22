@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/lo-mismo-source-review.schema.json",
+  "title": "CHD historical Lo miſmo formula review",
+  "description": "Editorial review overlay for historical `Lo miſmo` formula occurrences. The layer confirms source occurrences while keeping exact formula function, referential scope, target-language form, borrowing, and semantic equivalence separate from the canonical article unless independently supported.",
+  "type": "object",
+  "required": [
+    "reviewId",
+    "sourceId",
+    "sourceArticleId",
+    "sourcePageDigital",
+    "sourceColumn",
+    "sourceGuideRaw",
+    "formulaRaw",
+    "decisionStatus",
+    "interpretationStatus",
+    "evidence",
+    "reviewStatus",
+    "humanVerified",
+    "provenance"
+  ],
+  "properties": {
+    "reviewId": {"type":"string","pattern":"^ALC1737-lo-mismo-review-[0-9]{4}$"},
+    "sourceId": {"const":"ALC1737"},
+    "sourceArticleId": {"type":"string","pattern":"^ALC1737-art-[0-9]{6}$"},
+    "sourcePageDigital": {"type":"integer","minimum":133,"maximum":177},
+    "sourceColumn": {"type":"string","enum":["left","right"]},
+    "sourceGuideRaw": {"type":"string","minLength":1},
+    "formulaRaw": {"type":"string","minLength":1},
+    "decisionStatus": {
+      "type":"string",
+      "enum":[
+        "source_confirms_formula_occurrence",
+        "source_or_formula_requires_recollation",
+        "formula_candidate_rejected"
+      ]
+    },
+    "interpretationStatus": {
+      "type":"string",
+      "enum":[
+        "function_unresolved",
+        "same_form_hypothesis",
+        "anaphoric_hypothesis",
+        "other_hypothesis"
+      ]
+    },
+    "previousEntryAnaphoraSupported": {"type":"boolean"},
+    "referentialScopeInferred": {"type":"boolean"},
+    "targetLanguageFormInferred": {"type":"boolean"},
+    "borrowingInferred": {"type":"boolean"},
+    "semanticEquivalenceInferred": {"type":"boolean"},
+    "evidence": {
+      "type":"array",
+      "minItems":1,
+      "items": {
+        "type":"object",
+        "required":["evidenceKind","locator","supportsDecision"],
+        "properties": {
+          "evidenceKind": {
+            "type":"string",
+            "enum":["same_witness_facsimile","same_witness_ocr_control","canonical_article_structure","editorial_note"]
+          },
+          "locator":{"type":"string","minLength":1},
+          "excerptRaw":{"type":["string","null"]},
+          "note":{"type":["string","null"]},
+          "supportsDecision":{"type":"boolean"}
+        },
+        "additionalProperties":false
+      }
+    },
+    "reviewNote":{"type":["string","null"]},
+    "reviewStatus":{"type":"string","enum":["machine_corrected_unverified","editorial_proposal","human_verified","unresolved"]},
+    "humanVerified":{"type":"boolean"},
+    "provenance": {
+      "type":"object",
+      "required":["derivedFrom","agent","method"],
+      "properties": {
+        "derivedFrom":{"type":"string","minLength":1},
+        "agent":{"type":"string","minLength":1},
+        "method":{"type":"string","minLength":1},
+        "processedAt":{"type":["string","null"],"format":"date-time"}
+      },
+      "additionalProperties":false
+    }
+  },
+  "allOf": [
+    {
+      "if":{"properties":{"reviewStatus":{"const":"human_verified"}}},
+      "then":{"properties":{"humanVerified":{"const":true}}}
+    },
+    {
+      "if":{"properties":{"humanVerified":{"const":true}}},
+      "then":{"properties":{"reviewStatus":{"const":"human_verified"}}}
+    }
+  ],
+  "additionalProperties":false
+}

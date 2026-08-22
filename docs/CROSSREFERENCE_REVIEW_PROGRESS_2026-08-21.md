@@ -4,11 +4,13 @@ Actualización: 21 de agosto de 2026.
 
 ## Alcance
 
-Este documento registra el cierre de la revisión post-cierre de las remisiones históricas del vocabulario `ALC1737`. El **grafo canónico estricto**, la **capa diagnóstica** y la **capa de revisión editorial de fuente** permanecen separados. Cerrar la revisión inicial significa que cada remisión estrictamente `not_located` recibió una decisión explícita; no significa que todas tengan destino resuelto ni que exista validación filológica humana.
+Este documento registra el cierre de la revisión post-cierre de las remisiones históricas `Buſca` del vocabulario `ALC1737`. El **grafo canónico estricto**, la **capa diagnóstica** y la **capa de revisión editorial de fuente** permanecen separados. Cerrar la revisión inicial significa que cada remisión estrictamente `not_located` recibió una decisión explícita; no significa que todas tengan destino resuelto ni que exista validación filológica humana.
+
+La fórmula histórica `Lo miſmo` se administra ahora en una capa independiente. La única ocurrencia que había sido codificada excepcionalmente como remisión (`Azero. Lo miſmo.`) fue retirada del grafo porque la revisión corpus-wide no sustenta tratar la fórmula como una remisión anafórica automática. Esta corrección no modifica ninguna de las 150 remisiones `Buſca` ni sus 90 revisiones editoriales.
 
 ## Estado canónico estricto
 
-El inventario contiene **151 remisiones históricas**. El grafo estricto conserva **60 aristas `exact_unique`**, **90 remisiones `not_located`**, 1 remisión `not_busca` y 4 ciclos exactos. Ninguna decisión editorial de los lotes de revisión altera esos conteos.
+El inventario contiene **150 remisiones históricas `Buſca`**. El grafo estricto conserva **60 aristas `exact_unique`**, **90 remisiones `not_located`** y 4 ciclos exactos. Ninguna decisión editorial de los lotes de revisión altera esos conteos.
 
 ## Diagnóstico reproducible
 
@@ -50,7 +52,7 @@ El lote 12 no crea nuevas aristas: aporta 2 recolaciones y 4 destinos no localiz
 
 Tras el cierre 90/90, la vista revisada debe contener:
 
-- 151 remisiones representadas;
+- 150 remisiones `Buſca` representadas;
 - 60 aristas estrictas con `edgeAuthority=strict_exact_normalized_equality`;
 - 40 aristas editoriales con `edgeAuthority=editorial_source_review`;
 - **100 aristas efectivas**;
@@ -70,4 +72,4 @@ La cola de revisión inicial queda, por tanto, agotada. El trabajo filológico p
 
 ## Guarda epistemológica
 
-**Una arista editorial sustentada no es una arista canónica estricta. Una coincidencia diagnóstica no es una resolución. Un candidato rechazado no desaparece de la historia de revisión. Un destino no localizado no debe sustituirse por una coincidencia aproximada. Una recolación pendiente no es una resolución. Cerrar la revisión inicial significa que los 90 casos recibieron una decisión explícita; no significa que los 90 hayan sido resueltos positivamente ni que exista validación filológica humana. Una corrida verde de QA no es validación filológica humana.**
+**Una arista editorial sustentada no es una arista canónica estricta. Una coincidencia diagnóstica no es una resolución. Un candidato rechazado no desaparece de la historia de revisión. Un destino no localizado no debe sustituirse por una coincidencia aproximada. Una recolación pendiente no es una resolución. `Lo miſmo` no se convierte automáticamente en una remisión ni en una forma cahíta. Cerrar la revisión inicial significa que los 90 casos `Buſca` no localizados recibieron una decisión explícita; no significa que los 90 hayan sido resueltos positivamente ni que exista validación filológica humana. Una corrida verde de QA no es validación filológica humana.**
