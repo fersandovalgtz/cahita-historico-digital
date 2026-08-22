@@ -1,0 +1,7 @@
+# Regenerable local build products
+build/
+
+# Python local artifacts
+__pycache__/
+*.py[cod]
+.venv/
