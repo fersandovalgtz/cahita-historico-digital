@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 145,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.144] chuntiecte.\nAtracar puerta deſde el ſuelo. Puertata -- beaſi -- cutata -- quecha.\nAtraveſar la flecha al blanco. Hitari -- mubetec -- anaburutunaque.\nAtraveſar, y paſſar toda la flecha. Tua -- Naburutia-net -- ſica.\nAtropellar. Atara -- tiac.\nAtole bebida de Indias. Banari.\nAvaro. Chitia -- bita -- ucule, l, buatia.\nAves grandes.\nAve. Choiabua.\nAve. Huchai.\nAve. Qris.\nAve. Tenbuie.\nAve. Saperac.\nAve. Tucabuiro.\nAve. Baecuberi.\nAvecindarſe. Itou -- boatec.\nAventajar. Chitia -- bita buianto turi.\nAventar como trigo. Huite.\nAullar el adive. Buſca adive.\nA uno. Cae.\nAunque. Elapo.\nAvenir, ò ſalir de madre el Rio. Bueie.\nAventar hazer ayre. Abibaria.\nAventador aſſi. [forma incierta].\n\n[columna derecha]\nAventarſe el vientre. Tompo -- potec.\nAvergonzar à otro. Tituac.\nAver hambre. Tua tebuari bua.\nAxi, ò pimiento. Buerruicocori.\nAxi de los cerros. Huia cocori, l, ilicocori.\nAzedarſe algo. Bicala.\nAzedo tener el eſtomago. Tompo -- vicac.\nAzero. Lo miſmo.\nAzul color. Tebueli.\nAmbre. Teba.\nAmbre tener. Tebaunene.\nArdilla por ſu eſpecie pequeña. Ile teca.\nArdilla por ſu eſpecie grande. Bueru tecu.\nArdilla, que ſuele bajar al Rio. Bamaoatecu.\nAlomo. Tubua chichitiame.\nB.\nBaba. Chichi.\nBabear. Chichera.\nBaſſo para coſer las tortillas. Huacori.\nBazo parte interior. Cochopo.\nBagre. Muſu.\nBahear. Habua.\nBaho [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuations and final catchwords explicit; uncertain forms marked without reconstruction.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several lexical forms remain unresolved and require second collation; visible headword order, two-column structure, continuations, and catchwords are represented."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Historical scan shows bleed-through, edge wear, and local ink loss; uncertain readings are not silently supplied.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-145", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
