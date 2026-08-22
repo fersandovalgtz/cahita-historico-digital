@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 164,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\n[continuación de p.163] Nacido, ò encordio. Chimu.\nNacimiento. Ioleria.\nNacion. [forma incierta].\nNada ninguna coſa. Caita.\nNadar. Bapume.\nNadie por ninguno. Cahabe.\nNalga. Caii.\nNariz. Ieca.\nNata hazer la leche, &c. Be-choria.\nNatura de macho. Hui.\nNatura de hembra. Coi.\nNeceſſidad tener de alguna coſa. Buſca meneſter ſer.\nNegociar. Hinenca.\nNegociacion. Hinenguiapo.\nNegro color. Chuculi.\nNegro hazer. Sobiri.\nNervio. Tate.\nNevar, caer nieve. Buſca elar.\nNidar el Ave, hazer nido. Toſate.\nNido. Toſa.\nNiebla aver. Babebua.\nNieto, ò nieta de la muger. Namo.\nNieto, ò nieta del varon. Napala.\nNinguna coſa. Buſca nada.\nNieve. Sapa.\nNinguno. Buſca nadie.\nNiña de ojo. Puaſoa.\nNo en el hombre. E.\nNo en la muger. Ee.\nNo ha mucho. Hibuuali.\n\n[columna derecha]\nNoche. Tucabe.\nNoez, y nogal. Lo miſmo.\nNombrar, poner nombre. Buſca llamar.\nNombre. Tehua.\nNones aver. [forma incierta].\nNoſotros. Itepo.\nNoticiar. Abicaitua.\nNoticia. Ane chica.\nNotorio ſer. [forma incierta].\nNorte. Sebeheca, l, huichabo.\nNuca de la cabeza. Hotori.\nNuera reſpecto del hombre. Naborac.\nNuera reſpecto de la muger. Nacalae.\nNueva coſa. Bemela.\nNuevamente. Buſca otra vez.\nNoez. Buſca nogal.\nNunca. Caachihuo.\nNube del ojo. Namubuane.\nNudo. Tecarai.\n\nO.\n\nO, adv. para llamar. Oe a.\nObedecer. Aioiore.\nObediente. Aioioreme.\nObediencia. Aiore.\nObligar. Buſca pagar.\nObligacion. Buſca paga.\nObrar algo. Buſca hazer.\nObra [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; alphabetic transition N→O and final catchword explicit; unresolved forms remain marked.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several N-entry spellings are affected by type ambiguity and remain explicit second-collation targets."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Show-through is visible but does not obscure the headword inventory; no modern normalization is inferred.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-164", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
