@@ -30,6 +30,14 @@ CANONICAL_VERSION = "1.0.0"
 CANONICAL_TAG = "v1.0.0"
 CANONICAL_TAG_COMMIT = "dbcdecf0003ac5a10ae963caf6babdcf5c22128d"
 
+LABEL_TOKEN_PATTERNS: dict[str, re.Pattern[str]] = {
+    "Hiaqui": re.compile(r"hiaquis?", re.IGNORECASE),
+    "Mayo": re.compile(r"(?:mayos?|mayes)", re.IGNORECASE),
+    "Thehueco": re.compile(r"(?:thehuecos?|tehuecos?|teuecos?)", re.IGNORECASE),
+    "Naciones": re.compile(r"naciones?", re.IGNORECASE),
+    "Cynaloa": re.compile(r"(?:cynaloas?|sinaloas?)", re.IGNORECASE),
+}
+
 
 def compact(value: Any) -> str:
     return json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
@@ -129,6 +137,23 @@ def slug(text: str) -> str:
     return value or "label"
 
 
+def raw_labels_for_class(members: list[dict[str, Any]], label_class: str) -> list[str]:
+    pattern = LABEL_TOKEN_PATTERNS.get(label_class)
+    if pattern is None:
+        raise SystemExit(f"unsupported grammar historical label class: {label_class}")
+    tokens = {
+        token.strip()
+        for row in members
+        for token in (row.get("labelsRaw") or [])
+        if isinstance(token, str) and pattern.fullmatch(token.strip())
+    }
+    if not tokens:
+        raise SystemExit(
+            f"grammar-variety link {label_class} has no class-specific raw source label after filtering"
+        )
+    return sorted(tokens)
+
+
 def run_variation(out_dir: Path) -> None:
     subprocess.run(
         [sys.executable, str(VARIATION_EXPORTER), "--out-dir", str(out_dir)],
@@ -179,7 +204,7 @@ def build_links(evidence_rows: list[dict[str, Any]]) -> tuple[list[dict[str, Any
     links: list[dict[str, Any]] = []
     for (source_path, object_id, label_class), members in sorted(grouped.items()):
         obj = objects[(source_path, object_id)]
-        raw_labels = sorted({token for row in members for token in (row.get("labelsRaw") or [])})
+        raw_labels = raw_labels_for_class(members, label_class)
         texts = sorted({text for row in members if isinstance((text := row.get("sourceText")), str) and text})
         evidence_ids = sorted(str(row["evidenceId"]) for row in members)
         digital = pages(obj, "sourcePagesDigital", "sourcePageDigital")
