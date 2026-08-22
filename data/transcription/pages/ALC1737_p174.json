@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 174,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\n[continuación de p.173] Si, adv. para afirmar. Hebui.\nSi, conj. Soc.\nSiempre. Achihue--buneri.\nSierra para cortar. Lo miſmo Cieram.\nSierra monte. Buſca monte.\nSieſo. Sina.\nSignarſe, y perſignarſe. Curate.\nSilla para aſſentarſe. Aet--hohote ame.\nSimiente. Buſca orilla.\nSobaco. Seca.\nSobrar. Buſca quedar.\nSobre. Aebepa.\nSobrepujar. Aebuanabo.\nSobrina, y ſobrino. Aſoboalac.\nSocorrer. Buſca ayudar.\nSol. Taa.\nSoldarſe el hueſſo. Nat chuac-tec.\nSoltar lo que ſe tenia. Abuta.\nSoltero. Cahubecame.\nSombra. Hecabua.\nSombra hazer. Bueihecabua.\nSombrero. Mooberi.\nSombrerete lugar. Lo miſmo.\nSonar. Cuſi.\nSonarſe las narizes. Buſca limpiarſe los mocos.\nSoñar. Teencu.\nSoplar. Apuſta.\nSoplo, ò ſoplido. Apuptau.\n[entrada incierta]. Nacapi.\n\n[columna derecha]\nSorber. Hurute.\nSueño tal. Cocochire.\nSueño tener. Buei cocochire.\nSueño tal. Buſca ſueño.\nSuave coſa al tacto. Bual-mlemelete.\nSubir. Hamu.\nSubir algo. Ahamutua.\nSudar. Tatabute.\nSudor. Tatabuteria.\nSudadero para la ſilla. Suitero.\nSuegro. Naſebua.\nSuegra. Malaaſu.\nSuelo. Tebachi.\nSufrir. Buſca paciencia tener.\nSumirſe en el agua. Cuntec.\nSumirſe en la tierra. Buuapo cuntec.\nSucia coſa. Haiti machi.\nSuciedad. Chichamachi.\n\nT.\nTaba del pie. Teroqui.\nTalar monte. Maute.\nTalon del pie. Tenperi.\nTambien, adv. Hunabuneri.\nTanto. Ieberequi.\nTañer inſtrumento muſico. Hipona.\nTapar. Abintua.\nTapon. Hicchiai.\nTar- [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; alphabetic transition S→T and final catchword explicit; doubtful forms remain unresolved.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "isolated S/T forms", "note": "One headword and several historical forms are locally degraded by ink/show-through and require second visual collation."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Bleed-through is visible across both columns; no uncertain reading is silently normalized.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-174", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR/text layer used only as localization scaffold; no independent human verification", "processedAt": null}
+}
