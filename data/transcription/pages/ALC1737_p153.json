@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 153,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.152] Cuñado de hombre. Mocari.\nCurar enfermedad. Abitoa.\nCurios tener. Babuſta.\nCurtir. Hiocahuame.\nZambullir á otro. Aroptitua.\nZarcillo. Erepa.\nZancadilla. Ahuoccubitia.\nZancos de palo. Cutabuaque.\nCiego. Lili.\nCielo. Tecca.\nCintura. [forma incierta].\nCinco pies. Maſibue.\nCiertamente. Tuane humbia.\nCimenterio. Cementeria.\nCigarra. [forma incierta].\nCirculo. Chicola.\nCirhuela. Iotoroſim.\nCirhuela amarilla. Sabuali iotoriſim.\nCirhuela colorada chica. Siquilim iotoroſim.\nCirhuela colorada grande. Siquili, iotoroſim buere.\nCirhuela paſſada. Sopicbim.\nCinta. Huitauua.\nChica coſa. [forma incierta].\nChopilote. Tecoe.\nChopilote de cabeza colorada. Huiiru.\n\nD.\n\nPadivoſo. Caitanaque.\nDanzar. Buſca bailar.\n\n[columna derecha]\nDar. Amaca.\nDar coſas largas como palo. Tebec. amaca.\nDar coſas redondas, y mazizas. Lobola amaca.\nDar coſas eſtendidas como libro. Buecac amaca.\nDar coſas hondas como olla. Hoboroi amaca.\nDardo. Tebecuta.\nDe alli. Abio.\nDebajo. Aecucu.\nDeber. Huiquilia.\nDebito. Huiquilia buame.\nDe dia, adv. Tae.\nDedo. Mampuſia.\nDefender. Ahineu.\nDefenſion. Ania.\nDefunto. Muquiari.\nDegollar. Cutananchutia.\nDelgada coſa. Tapeſiolai.\nDemonio. Buſca diablo.\nDentro. Huabuia.\nDe quando en quando. Seſetuli.\nDerecho, no tuerto. Lutulai.\nDerramar. Abuotia.\nDerretir. Acabotia.\nDerribar. Atatabe.\nDerribar á otro deſde lo alto. [forma incierta].\nDerribar arboles con hacha. Himaco.\nDelatar. Abuouti.\nDesbaratar. Ambuatia.\nDesba- [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuations and final catchword explicit; unresolved forms are marked rather than silently regularized.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several forms are affected by type wear and bleed-through and remain explicitly unresolved pending second visual collation."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Reverse-side show-through is visible across both columns; page order and headword inventory remain recoverable.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-153", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
