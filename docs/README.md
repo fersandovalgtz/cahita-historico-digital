@@ -37,6 +37,7 @@ Este índice organiza la documentación por pregunta de investigación o manteni
 - [`SOURCE_ALC1737.md`](SOURCE_ALC1737.md) — descripción de la fuente principal.
 - [`AUTHORSHIP.md`](AUTHORSHIP.md) — autoría histórica y atribuciones posteriores.
 - [`../SOURCES.md`](../SOURCES.md) — inventario de fuentes y testimonios de control.
+- [`CONTROL_WITNESSES.md`](CONTROL_WITNESSES.md) — testigos de control y límites de uso.
 - [`../PROVENANCE.md`](../PROVENANCE.md) — procedencia y capas.
 - [`../references.bib`](../references.bib) — bibliografía machine-readable inicial.
 
@@ -46,7 +47,9 @@ Este índice organiza la documentación por pregunta de investigación o manteni
 - [`TRANSCRIPTION_CONVENTIONS.md`](TRANSCRIPTION_CONVENTIONS.md) — convenciones de transcripción.
 - [`LEXICON_RECONCILIATION_PROTOCOL.md`](LEXICON_RECONCILIATION_PROTOCOL.md) — reconciliación lexicográfica.
 - [`CROSSREFERENCE_RECOLLATION_QUEUE.md`](CROSSREFERENCE_RECOLLATION_QUEUE.md) — cola de 22 recolaciones.
-- [`LO_MISMO_REVIEW.md`](LO_MISMO_REVIEW.md) — revisión de la fórmula `Lo miſmo` cuando corresponda.
+- [`LO_MISMO_FORMULA_REVIEW.md`](LO_MISMO_FORMULA_REVIEW.md) — revisión formal de `Lo miſmo`.
+- [`LEXICON_LO_MISMO.md`](LEXICON_LO_MISMO.md) — vista lexicográfica derivada de `Lo miſmo`.
+- [`V1_RECOLLATION_DISPOSITION.md`](V1_RECOLLATION_DISPOSITION.md) — disposición v1 de incertidumbres abiertas.
 
 ## Quiero reutilizar, contribuir o reportar un problema
 
