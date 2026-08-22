@@ -48,3 +48,28 @@ jobs:
               for x in rows[max(0,pos-4):pos+5]:
                   print('NEIGHBOR', x['articleId'], x.get('spanishGuideRaw'), '||', x.get('transcriptionRaw'))
           PY
+      - name: Print canonical source files for Lo mismo candidates
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          ids = {
+            'ALC1737-art-000174','ALC1737-art-000225','ALC1737-art-000266','ALC1737-art-000267',
+            'ALC1737-art-000400','ALC1737-art-000430','ALC1737-art-000431','ALC1737-art-000477',
+            'ALC1737-art-000548','ALC1737-art-001595','ALC1737-art-001650','ALC1737-art-001705',
+            'ALC1737-art-001997','ALC1737-art-002150'
+          }
+          found = {}
+          for path in sorted(Path('data/lexicon/articles').glob('*.jsonl')):
+              for lineno, line in enumerate(path.read_text(encoding='utf-8').splitlines(), 1):
+                  if not line.strip():
+                      continue
+                  obj = json.loads(line)
+                  aid = obj.get('articleId')
+                  if aid in ids:
+                      found[aid] = (str(path), lineno)
+          for aid in sorted(ids):
+              print('ARTICLEFILE', aid, found.get(aid))
+          if set(found) != ids:
+              raise SystemExit(f'missing article ids: {sorted(ids-set(found))}')
+          PY
