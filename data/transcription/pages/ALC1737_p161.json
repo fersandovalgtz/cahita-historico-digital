@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 161,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.160] [forma incierta].\nLavar. Hipacia, l, baſoma.\nLazar. Hicboila.\nLeche. Caübua.\nLechuza Ave nocturna. Babuis.\nLeer. Hioſiata noca.\nLector. [forma incierta].\nLenguaje. Noqui.\nLegumbres. Buſca frijol, habas, &c.\nLengua. Nini.\nLeña. Quebuim.\nLeñar hazer leña. Quebuac.\nLeon. [forma incierta].\nLevantar algo del ſuelo. Atoboſtia.\nLengua de buey. Buabuairo.\nLevantar maiz, &c. de la coſecha. Hipeſuma buame.\nLevantarſe pararse. Quite.\nLevantarſe amotinarſe. [forma incierta].\nLexos. Meca.\nLiar. Aliatua.\nLibrar de peligro à otro. Abineu.\nLibro. Lo miſmo.\nLiebre. Suabue.\nLiendre. Nachica.\nLimon. Lo miſmo.\nLimpiar. Nubina.\nLimpiar las narizes. Chonebuare.\nLiſa coſa. Chitaco.\n\n[columna derecha]\nLiviana coſa. [forma incierta].\nLobanillo. Homo.\nLobo. Lo miſmo.\nLoco. [forma incierta].\nLoco bolverſe. Buſca enloquecer.\nLodo. Techoa.\nLodo hazer. Techobana.\nLodo aver. Beſatechoa.\nLoma. Buſca ladera.\nLombrizes echar. [forma incierta].\nLomo. Huo.\nLoro grande. Baro.\nLoro otro de cabeza amarilla. Hari.\nLoro pequeño por ſu eſpecie. Tabelo.\nLoro mas pequeño. Ilicabelo.\nLoro huacamaya. [forma incierta].\nLuchar. Buſca forcejar.\nLucir. Turiſimachi.\nLugar aver. Quet amaquia.\nLuego, adv. Abebubua.\nLumbre. Tabi.\nLuida eſtar la coſa. [forma incierta].\nLuna. Mecha.\nLuna nueva. Mecha bemela.\nLuna quarto creciente. Hamaba.\nLuna llena. Mechabili.\nLuna menguante. Muquiſec.\nLuna en conjuncion. [forma incierta].\nLucero. Machiboqui.\nLucero [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; continuation from p.160 and final catchword explicit; uncertain forms are marked without reconstruction.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Bleed-through and several letter-shape ambiguities affect isolated L-entries; these remain explicit second-collation targets."}],
+  "materialNotes": [{"type": "bleed_through_and_edge_wear", "note": "The page is structurally clear but contains widespread reverse-side show-through; uncertain lexical forms are not silently supplied.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-161", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
