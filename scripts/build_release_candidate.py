@@ -3,8 +3,8 @@
 
 This is deliberately a *release candidate*, not v1.0.0. It packages the
 canonical/derived artifacts that already have deterministic QA while preserving
-open gates (facsimile recollation, external Lex-0 validation, final metadata/tag,
-archival deposit and DOI) as explicit manifest state.
+remaining open gates (facsimile recollation, final interoperability scope,
+metadata/tag, archival deposit and DOI) as explicit manifest state.
 """
 from __future__ import annotations
 
@@ -36,7 +36,7 @@ EXPORTERS = [
     ("physical_spans", "export_lexicon_physical_spans.py", "--out-dir"),
     ("grammar_evidence", "export_grammar_evidence_concordance.py", "--out-dir"),
     ("grammar_rule_coverage", "export_grammar_rule_coverage.py", "--out-dir"),
-    ("tei_lexicon_experimental", "export_lexicon_tei.py", "--out-dir"),
+    ("tei_lexicon", "export_lexicon_tei.py", "--out-dir"),
 ]
 
 DOCUMENT_FILES = [
@@ -52,6 +52,7 @@ DOCUMENT_FILES = [
     "docs/CROSSREFERENCE_REVIEW_PROGRESS_2026-08-21.md",
     "docs/CROSSREFERENCE_RECOLLATION_QUEUE.md",
     "docs/TEI_LEXICON_PROFILE_V0_1.md",
+    "docs/RELEASE_CANDIDATE_PACKAGE.md",
     "data/source/alc1737/metadata.json",
     "data/source/alc1737/ingest_manifest.json",
     "data/source/alc1737/page_manifest.csv",
@@ -60,7 +61,6 @@ DOCUMENT_FILES = [
 
 OPEN_GATES = [
     "direct_facsimile_recollation_of_22_crossreference_cases",
-    "external_tei_lex0_schema_validation",
     "final_cldf_lex0_scope_decision",
     "final_schema_and_metadata_freeze",
     "final_release_tag_and_changelog",
@@ -68,10 +68,6 @@ OPEN_GATES = [
 ]
 
 FIXED_ZIP_TIME = (1980, 1, 1, 0, 0, 0)
-
-
-def sha256_bytes(data: bytes) -> str:
-    return hashlib.sha256(data).hexdigest()
 
 
 def sha256_file(path: Path) -> str:
@@ -140,7 +136,7 @@ def build_manifest(bundle: Path) -> dict[str, Any]:
     strict = load_nested_manifest(bundle, "crossreference_strict_graph")
     reviewed = load_nested_manifest(bundle, "crossreference_reviewed_view")
     recollation = load_nested_manifest(bundle, "crossreference_recollation_queue")
-    tei = load_nested_manifest(bundle, "tei_lexicon_experimental")
+    tei = load_nested_manifest(bundle, "tei_lexicon")
     grammar_evidence = load_nested_manifest(bundle, "grammar_evidence")
     grammar_coverage = load_nested_manifest(bundle, "grammar_rule_coverage")
 
@@ -172,33 +168,42 @@ def build_manifest(bundle: Path) -> dict[str, Any]:
             "grammarRuleComparisonUniverse": int(grammar_coverage["comparisonUniverse"]["ruleCount"]),
             "teiEntryCount": int(tei["articleCount"]),
             "teiLex0ConformanceClaimed": bool(tei["teiLex0ConformanceClaimed"]),
-            "externalLex0SchemaValidationPerformed": bool(tei["externalLex0SchemaValidationPerformed"]),
+            "externalLex0SchemaValidationEnforcedInCI": bool(
+                tei["externalLex0SchemaValidationEnforcedInCI"]
+            ),
+            "externalLex0SchemaUrl": tei["externalLex0SchemaUrl"],
+            "externalLex0SchemaSha256": tei["externalLex0SchemaSha256"],
         },
         "artifactFileCount": len(files),
         "artifactBytes": sum(int(item["bytes"]) for item in files),
         "files": files,
     }
 
-    if manifest["summary"]["lexiconArticleCount"] != 2302:
+    expected = manifest["summary"]
+    if expected["lexiconArticleCount"] != 2302:
         raise SystemExit("release candidate lost canonical lexicon count")
-    if manifest["summary"]["canonicalCrossReferenceCount"] != 150:
+    if expected["canonicalCrossReferenceCount"] != 150:
         raise SystemExit("release candidate lost canonical cross-reference count")
-    if manifest["summary"]["strictCrossReferenceEdgeCount"] != 60:
+    if expected["strictCrossReferenceEdgeCount"] != 60:
         raise SystemExit("release candidate strict edge count drifted")
-    if manifest["summary"]["sourceReviewRecordCount"] != 90:
+    if expected["sourceReviewRecordCount"] != 90:
         raise SystemExit("release candidate source-review count drifted")
-    if manifest["summary"]["facsimileRecollationQueueCount"] != 22:
+    if expected["facsimileRecollationQueueCount"] != 22:
         raise SystemExit("release candidate recollation queue count drifted")
-    if manifest["summary"]["grammarObjectCount"] != 302:
+    if expected["grammarObjectCount"] != 302:
         raise SystemExit("release candidate grammar object count drifted")
-    if manifest["summary"]["grammarEvidenceRowCount"] != 1215:
+    if expected["grammarEvidenceRowCount"] != 1215:
         raise SystemExit("release candidate grammar evidence count drifted")
-    if manifest["summary"]["teiEntryCount"] != 2302:
+    if expected["teiEntryCount"] != 2302:
         raise SystemExit("release candidate TEI entry count drifted")
-    if manifest["summary"]["teiLex0ConformanceClaimed"] is not False:
-        raise SystemExit("release candidate must not claim Lex-0 conformance yet")
-    if manifest["summary"]["externalLex0SchemaValidationPerformed"] is not False:
-        raise SystemExit("release candidate must disclose missing external Lex-0 validation")
+    if expected["teiLex0ConformanceClaimed"] is not True:
+        raise SystemExit("release candidate must expose the CI-backed Lex-0 conformance claim")
+    if expected["externalLex0SchemaValidationEnforcedInCI"] is not True:
+        raise SystemExit("release candidate must disclose the external Lex-0 CI gate")
+    if expected["externalLex0SchemaUrl"] != "https://lex-0.org/releases/v0.9.5/schema/lex-0.rng":
+        raise SystemExit("release candidate Lex-0 schema URL drifted")
+    if expected["externalLex0SchemaSha256"] != "35e73fef48526634714bdf3d16b924f958fca078a903d0bdc2dd4d7d116d1aaa":
+        raise SystemExit("release candidate Lex-0 schema hash drifted")
     return manifest
 
 
@@ -249,6 +254,7 @@ def build(output_dir: Path) -> dict[str, Any]:
         f"lexicon={manifest['summary']['lexiconArticleCount']}; "
         f"grammarEvidence={manifest['summary']['grammarEvidenceRowCount']}; "
         f"recollationQueue={manifest['summary']['facsimileRecollationQueueCount']}; "
+        f"openGates={len(manifest['openGates'])}; "
         f"releaseReady={str(manifest['releaseReady']).lower()}"
     )
     print(f"  {ZIP_NAME}: {result['zipBytes']} bytes; sha256 {result['zipSha256']}")
