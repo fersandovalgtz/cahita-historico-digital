@@ -1,0 +1,218 @@
+{
+  "contractCount": 26,
+  "contracts": [
+    {
+      "bytes": 1516,
+      "kind": "source_scope_metadata",
+      "path": "data/source/alc1737/ingest_manifest.json",
+      "sha256": "d81925d74c6b79b423e8110f36fb428d76f1e6b614b984b5f3f558c7e73147a9"
+    },
+    {
+      "bytes": 1980,
+      "kind": "source_scope_metadata",
+      "path": "data/source/alc1737/metadata.json",
+      "sha256": "73d7b88df9a9ab64770206046fcfdc4a0801ed71d6bf281eaca63e10430c093d"
+    },
+    {
+      "bytes": 3223,
+      "kind": "source_scope_metadata",
+      "path": "data/source/alc1737/page_manifest.csv",
+      "sha256": "694b25d84dd931da4dbd4e44b97a2429af8895c46461c1120559b93659f4974e"
+    },
+    {
+      "bytes": 4627,
+      "kind": "source_scope_metadata",
+      "path": "data/source/alc1737/sections.json",
+      "sha256": "6e035fe61a4edad74e4f13f0baa28b08be41a073d0b4a3946bf3488c55baa14c"
+    },
+    {
+      "bytes": 2468,
+      "kind": "json_schema",
+      "path": "schemas/adverb-group.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/adverb-group.schema.json",
+      "sha256": "0b429f7066f9ad793d8f7ea6db66bc9dd12994a863e2f688477187fc108c3117"
+    },
+    {
+      "bytes": 2265,
+      "kind": "json_schema",
+      "path": "schemas/conjunction-group.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/conjunction-group.schema.json",
+      "sha256": "73593b6485e1b1697597222ce37d95375bfbf38c64e7b5eea52745190d5f5784"
+    },
+    {
+      "bytes": 4852,
+      "kind": "json_schema",
+      "path": "schemas/crossreference-source-review.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/crossreference-source-review.schema.json",
+      "sha256": "22923691fdb3d2f712c18e1c7c06de1a7a890c9a8ae961608b194ef0bd9d36f5"
+    },
+    {
+      "bytes": 2660,
+      "kind": "json_schema",
+      "path": "schemas/grammatical-paradigm.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/grammatical-paradigm.schema.json",
+      "sha256": "db4b26dd12a5ddc51ddec5ed164a41dea9eefade4826f1473194d03bf88571c1"
+    },
+    {
+      "bytes": 2623,
+      "kind": "json_schema",
+      "path": "schemas/grammatical-rule.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/grammatical-rule.schema.json",
+      "sha256": "fca564c98442ce7997a0edf9676f68a5bce60da1b7df2485040595247110177c"
+    },
+    {
+      "bytes": 2492,
+      "kind": "json_schema",
+      "path": "schemas/historical-variety-observation.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/historical-variety-observation.schema.json",
+      "sha256": "1d8c3b9c6e35622b943ca8e226937b6b9f9ae3230b65aa228c6de71151817c96"
+    },
+    {
+      "bytes": 2186,
+      "kind": "json_schema",
+      "path": "schemas/irregular-verb.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/irregular-verb.schema.json",
+      "sha256": "a94549f85814a6a60de72a8158ddce3fdea15b46e6bb5ac0a91b4594985686cc"
+    },
+    {
+      "bytes": 4697,
+      "kind": "json_schema",
+      "path": "schemas/lexical-article.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/lexical-article.schema.json",
+      "sha256": "63e49b181f634ee6dfb5db44bac4cad355a8fa59530a412573c80ea8a93cffa9"
+    },
+    {
+      "bytes": 2265,
+      "kind": "json_schema",
+      "path": "schemas/lexical-entry.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/lexical-entry.schema.json",
+      "sha256": "14ea094df916de3255d7ab2de9b60c79b9f1ba6ce8c680be79c9f1593c492552"
+    },
+    {
+      "bytes": 4407,
+      "kind": "json_schema",
+      "path": "schemas/lexicon-candidate-review.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/lexicon-candidate-review.schema.json",
+      "sha256": "3ea252de0c15ce4f4e6754d691bb1b756c9be4ee3d6d9fcc16f2e6937ea5d050"
+    },
+    {
+      "bytes": 2302,
+      "kind": "json_schema",
+      "path": "schemas/lexicon-missed-start.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/lexicon-missed-start.schema.json",
+      "sha256": "cccb7b7fec25ee3533a636e3182e635710731321fe5b9cd757d52c8dbdf852e8"
+    },
+    {
+      "bytes": 3576,
+      "kind": "json_schema",
+      "path": "schemas/lo-mismo-source-review.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/lo-mismo-source-review.schema.json",
+      "sha256": "a5535ea0bbc0836f663449c963de931be40b33d62cb3fd4357d27a4f40fa9da8"
+    },
+    {
+      "bytes": 2601,
+      "kind": "json_schema",
+      "path": "schemas/modal-construction.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/modal-construction.schema.json",
+      "sha256": "0f530cd6b285202b7a0c7bfbda1c21e2ab3cd908b8a6f3f40f915df24b762d14"
+    },
+    {
+      "bytes": 2376,
+      "kind": "json_schema",
+      "path": "schemas/nonfinite-construction.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/nonfinite-construction.schema.json",
+      "sha256": "4f38fe920d9f71a42e14d9e8fdc39ac7198e5944c3ad0125d5baa69f6dbdb34c"
+    },
+    {
+      "bytes": 1900,
+      "kind": "json_schema",
+      "path": "schemas/numeral-system.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/numeral-system.schema.json",
+      "sha256": "0f6b231bc6dbddf7283486ec83c7a4e684acd8f8d6e92a5b67a785e9763bcd4b"
+    },
+    {
+      "bytes": 3365,
+      "kind": "json_schema",
+      "path": "schemas/page-transcription.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/page-transcription.schema.json",
+      "sha256": "e0b398f938dbed9d3e062456b6b845da5318b7f443a6f18d46366f47972e2491"
+    },
+    {
+      "bytes": 2274,
+      "kind": "json_schema",
+      "path": "schemas/participle-construction.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/participle-construction.schema.json",
+      "sha256": "b5f1735c145b8e51a8ab66f4fbd3783be62c72435ca94a64046bd89627580e7a"
+    },
+    {
+      "bytes": 2213,
+      "kind": "json_schema",
+      "path": "schemas/predicative-modal-construction.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/predicative-modal-construction.schema.json",
+      "sha256": "8189aaffd96c6ee2721932f1eb9d86d96ef5070b0104f22d67b593750fc86c45"
+    },
+    {
+      "bytes": 2636,
+      "kind": "json_schema",
+      "path": "schemas/preposition-entry.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/preposition-entry.schema.json",
+      "sha256": "d191eda25dcc225b279a5ccae5ad3d6324c8c68c9957e5b205c91fa62dea5186"
+    },
+    {
+      "bytes": 2080,
+      "kind": "json_schema",
+      "path": "schemas/vocabulary-boundary-decision.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/vocabulary-boundary-decision.schema.json",
+      "sha256": "603bf07e34b1ed56af11627bc57e04a34476c906a83e7211ff81c8974a11e42a"
+    },
+    {
+      "bytes": 1869,
+      "kind": "json_schema",
+      "path": "schemas/vocabulary-candidate.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/vocabulary-candidate.schema.json",
+      "sha256": "ab8b8a7b2ad56baf287d3374347dd2061cc35931aee8d6a81820e92c71422179"
+    },
+    {
+      "bytes": 1550,
+      "kind": "json_schema",
+      "path": "schemas/vocabulary-layout-line.schema.json",
+      "schemaDialect": "https://json-schema.org/draft/2020-12/schema",
+      "schemaId": "https://github.com/fersandovalgtz/cahita-historico-digital/schemas/vocabulary-layout-line.schema.json",
+      "sha256": "58c9a7a8444699c5bc00fdd6d25bb8531feabc36a761d7a4baf805b446c17da6"
+    }
+  ],
+  "freezeId": "CHD-v1-contracts-2026-08-21",
+  "policy": {
+    "exactBytesFrozenForV1": true,
+    "postV1ChangesRequireNewFreezeManifest": true,
+    "releaseIdentityMetadataFrozenHere": false,
+    "releaseIdentityMetadataReason": "CITATION.cff, codemeta.json, version/tag and DOI are finalized at the later tag/release gate.",
+    "silentContractChangesAllowed": false
+  },
+  "schemaContractCount": 22,
+  "sourceId": "ALC1737",
+  "sourceScopeMetadataCount": 4,
+  "status": "release_candidate_contract_freeze",
+  "targetRelease": "v1.0.0"
+}
