@@ -10,7 +10,7 @@ La arquitectura vigente conserva tres niveles separados: el **grafo canónico es
 
 ## Estado canónico estricto
 
-El inventario contiene **151 remisiones históricas**. El grafo estricto conserva **60 aristas `exact_unique`**, **90 remisiones `not_located`**, 1 remisión `not_busca` y 4 ciclos exactos. Estos conteos no se alteran por la revisión editorial posterior. Una propuesta de destino sustentada por fuente no se convierte retroactivamente en coincidencia estricta.
+El inventario contiene **151 remisiones históricas**. El grafo estricto conserva **60 aristas `exact_unique`**, **90 remisiones `not_located`**, 1 remisión `not_busca` y 4 ciclos exactos. Estos conteos no se alteran por la revisión editorial posterior.
 
 ## Diagnóstico reproducible
 
@@ -18,68 +18,81 @@ La auditoría de las 90 remisiones estrictamente no localizadas conserva la clas
 
 ## Revisión explícita acumulada
 
-Se han registrado **52 revisiones explícitas**: los 44 casos Tier A y los primeros 8 casos Tier B. Todas mantienen `humanVerified=false`.
+Se han registrado **60 revisiones explícitas**: los 44 casos Tier A y los 16 casos Tier B. Todas mantienen `humanVerified=false`.
 
 Del conjunto acumulado:
 
-- **33** tienen `decisionStatus=source_supports_unique_target` y un `selectedTargetArticleId` explícito;
-- 10 tienen `decisionStatus=source_or_destination_requires_recollation`;
+- **37** tienen `decisionStatus=source_supports_unique_target` y un `selectedTargetArticleId` explícito;
+- 12 tienen `decisionStatus=source_or_destination_requires_recollation`;
 - 5 tienen `decisionStatus=candidate_rejected`;
-- 4 tienen `decisionStatus=target_not_located`.
+- 6 tienen `decisionStatus=target_not_located`.
 
-La aritmética es deliberadamente explícita: 33 + 10 + 5 + 4 = 52. Las 33 propuestas editoriales no se promueven al grafo canónico estricto y ninguna equivale a validación humana.
+La aritmética es 37 + 12 + 5 + 6 = 60. Las propuestas editoriales no se promueven al grafo canónico estricto y ninguna equivale a validación humana.
 
 ## Tier A: cierre de revisión inicial
 
-La revisión inicial `A_unique_strong` permanece cerrada **44/44**. Su distribución final es 29 propuestas editoriales, 8 recolaciones, 5 candidatos rechazados y 2 destinos no localizados. La evidencia detallada reside en los lotes `crossreference_source_review_batch01` a `batch06` y en la vista revisada reproducible.
+La revisión inicial `A_unique_strong` permanece cerrada **44/44**. Su distribución final es 29 propuestas editoriales, 8 recolaciones, 5 candidatos rechazados y 2 destinos no localizados.
 
-Los ocho casos Tier A que requieren recolación directa de imagen son `Danzar`, `Apercibirſe para hazer algo`, `Yr delante`, `Loco bolverſe`, `Reglar con regla`, `Obligacion`, `Poco antes` y `Topo animal`. Entre ellos, `Poco antes` conserva una discrepancia material entre `targetRaw=mo hia mucho` y el OCR del testimonio, que muestra una remisión equivalente a `no ha mucho`; `Topo animal` conserva la diferencia `eſcarabajo` / `Eſcaravajo` sin normalizarla.
+Los ocho casos Tier A que requieren recolación directa de imagen son `Danzar`, `Apercibirſe para hazer algo`, `Yr delante`, `Loco bolverſe`, `Reglar con regla`, `Obligacion`, `Poco antes` y `Topo animal`. Los cinco candidatos Tier A rechazados son los asociados a `Nombrar, poner nombre`, `Rueda`, `Oprimido eſtar`, `Palillo oloroſo` y `Sazonarſe la fruta`. Los dos destinos no localizados son `Vadear el Rio → paſſar el Rio por vado` y `Vihuela, ó guitarra → guitarra`.
 
-Los cinco candidatos Tier A rechazados son los asociados a `Nombrar, poner nombre`, `Rueda`, `Oprimido eſtar`, `Palillo oloroſo` y `Sazonarſe la fruta`. Los dos destinos no localizados son `Vadear el Rio → paſſar el Rio por vado` y `Vihuela, ó guitarra → guitarra`.
+## Tier B: cierre de revisión inicial, 16/16
 
-## Tier B: primera tanda, 8/16
+La revisión inicial `B_multiple_strong` queda cerrada **16/16**. En este nivel nunca se eligió un candidato sólo por ocupar el primer rango diagnóstico: cada propuesta positiva exige un discriminante observable en la guía histórica, la secuencia remitida o la función lexicográfica.
 
-El lote 07 inicia la revisión de `B_multiple_strong`, donde cada remisión presenta más de un candidato fuerte y, por tanto, el rango diagnóstico no basta para elegir destino.
+### Lote 07
 
 | Fuente histórica | Resultado editorial |
 | --- | --- |
-| `Yr por agua` — `Buſca agua traer` | `source_or_destination_requires_recollation`: el OCR fuente es ruidoso y compiten `Agua traer de la pila, ò del Rio` y `Agua traer para las manos`; `Agua` es demasiado genérico. |
+| `Yr por agua` — `Buſca agua traer` | `source_or_destination_requires_recollation`: compiten dos destinos extendidos y el OCR fuente es ruidoso. |
 | `Palo para eſcarbar tierra` — `Buſca coa` | `source_supports_unique_target` → `Coa de palo`; el descriptor `palo` excluye `Coa de hierro`. |
-| `Piedra de que ſe ſacan navajas` — `Buſca pedernal prieto` | `source_supports_unique_target` → `Pedernal prieto para flechas`; preserva la secuencia remitida completa, a diferencia de `Prieto`. |
-| `Plazo poner` — `Buſca ſeñalar dia` | `source_or_destination_requires_recollation`: el OCR de la remisión está degradado y los candidatos `Dia` y `Señalar` preservan sólo una parte del destino estructurado. |
-| `Prieto` — `Buſca negro` | `source_supports_unique_target` → `Negro color`; `Negro hazer` cambia la función de la guía a una entrada verbal. |
-| `Saltar` — `Buſca brincar` | `target_not_located`: sólo aparecen las guías especializadas `Brincar de alto abajo` y `Brincar por el ſuelo`; no se elige una sin evidencia de la distinción. |
-| `Socorrer` — `Buſca ayudar` | `source_supports_unique_target` → `Ayudar à otro`; los demás candidatos fuertes son nominales o introducen contextos especializados (`Miſſa`, parto). |
-| `Tener ſed` — `Buſca ſed tener` | `target_not_located`: el mejor candidato automático es la propia entrada por permutación de tokens y `Sed` sólo conserva una parte de la fórmula remitida. |
+| `Piedra de que ſe ſacan navajas` — `Buſca pedernal prieto` | `source_supports_unique_target` → `Pedernal prieto para flechas`; preserva la secuencia remitida completa. |
+| `Plazo poner` — `Buſca ſeñalar dia` | `source_or_destination_requires_recollation`: el OCR de la remisión está degradado y `Dia` / `Señalar` son sólo parciales. |
+| `Prieto` — `Buſca negro` | `source_supports_unique_target` → `Negro color`; `Negro hazer` cambia la función de la guía. |
+| `Saltar` — `Buſca brincar` | `target_not_located`: sólo se localizan guías especializadas `Brincar...`. |
+| `Socorrer` — `Buſca ayudar` | `source_supports_unique_target` → `Ayudar à otro`; los demás candidatos son nominales o especializados. |
+| `Tener ſed` — `Buſca ſed tener` | `target_not_located`: el mejor diagnóstico es un auto-candidato y `Sed` sólo conserva un componente. |
 
-Este lote aporta 4 propuestas editoriales, 2 recolaciones y 2 destinos no localizados. No produce candidatos rechazados adicionales.
+### Lote 08
+
+| Fuente histórica | Resultado editorial |
+| --- | --- |
+| `Favorecer` — `Buſca ayudar` | `source_supports_unique_target` → `Ayudar à otro`; `Ayuda` es nominal y las otras entradas de `Ayudar` son especializadas. |
+| `Horadar` — `Buſca agujerear` | `target_not_located`: las cuatro guías `Agujerear...` localizadas son especializadas por instrumento u objeto; no se fuerza una como destino genérico. |
+| `Mitad de alguna coſa` — `Buſca media` | `source_supports_unique_target` → `Media coſa la mitad`; la alternativa `A media noche` es temporal/adverbial. |
+| `Oprimir` — `Buſca apretar` | `target_not_located`: sólo se localizan cinco guías `Apretar...` especializadas; ninguna está autorizada por la guía genérica `Oprimir`. |
+| `Ribera de qualquiera agua` — `Buſca orilla` | `source_supports_unique_target` → `Orilla del agua`; conserva función nominal y el descriptor `agua`, a diferencia de `Abordar à la orilla`. |
+| `Sanar á otro` — `Buſca curar` | `source_supports_unique_target` → `Curar enfermedad`; el otro candidato contiene `curar` sólo dentro de una descripción de `Arbol`. |
+| `Simiente` — `Buſca orilla` | `source_or_destination_requires_recollation`: el OCR parece conservar la remisión, pero la relación fuente-destino es anómala y debe cotejarse con la imagen antes de crear arista. |
+| segundo `Sueño tal` — `Buſca ſueño` | `source_or_destination_requires_recollation`: el OCR muestra dos `Sueño tal` consecutivos, uno con contenido y otro remisivo; no se colapsan ni se enlazan sin cotejo directo de los límites impresos. |
+
+La distribución final de Tier B es 8 propuestas editoriales, 4 recolaciones y 4 destinos no localizados. No añadió candidatos rechazados.
 
 ## Vista revisada derivada
 
-`scripts/export_lexicon_crossreference_reviewed_view.py` genera una vista independiente que incorpora las decisiones editoriales sin alterar el grafo estricto. Con el lote 07, el estado esperado es:
+`scripts/export_lexicon_crossreference_reviewed_view.py` genera una vista independiente que incorpora las decisiones editoriales sin alterar el grafo estricto. Tras el cierre de Tier B, el estado esperado es:
 
 - 151 remisiones representadas;
 - 60 aristas estrictas con `edgeAuthority=strict_exact_normalized_equality`;
-- 33 aristas editoriales con `edgeAuthority=editorial_source_review`;
-- **93 aristas efectivas** en la vista revisada;
-- **10 casos `editorial_requires_recollation`**;
+- 37 aristas editoriales con `edgeAuthority=editorial_source_review`;
+- **97 aristas efectivas** en la vista revisada;
+- **12 casos `editorial_requires_recollation`**;
 - 5 casos `editorial_candidate_rejected`;
-- 4 casos `editorial_target_not_located`;
-- **38 casos `strict_not_located_unreviewed`**;
+- 6 casos `editorial_target_not_located`;
+- **30 casos `strict_not_located_unreviewed`**;
 - 0 aristas editoriales `humanVerified=true`.
 
 La vista se exporta en JSONL, CSV y grafo JSON y se valida mediante doble ejecución determinista byte a byte. Los hashes exactos pertenecen al manifiesto generado en cada estado.
 
 ## Cola reproducible de trabajo
 
-La cola permanente `scripts/export_crossreference_review_queue.py` resta las 52 revisiones explícitas al universo de 90 remisiones estrictamente `not_located`. Después de este lote debe producir **38 casos pendientes**: 0 `A_unique_strong`, 8 `B_multiple_strong` y 30 `C_no_strong`.
+La cola permanente `scripts/export_crossreference_review_queue.py` resta las 60 revisiones explícitas al universo de 90 remisiones estrictamente `not_located`. El nuevo corte debe producir **30 casos pendientes**: 0 `A_unique_strong`, 0 `B_multiple_strong` y 30 `C_no_strong`.
 
-El nivel A está, por tanto, agotado como cola de revisión inicial, y Tier B queda en 8/16. La siguiente tanda debe cubrir los ocho B restantes antes de pasar al nivel C.
+Los niveles A y B están agotados como colas de revisión inicial. El siguiente frente es `C_no_strong`, donde el diagnóstico no ofrece candidato fuerte alguno y la búsqueda debe apoyarse más en control textual, variantes gráficas, estructura local y eventual cotejo de facsímil.
 
-## Criterio para Tier B
+## Criterio para Tier C
 
-En Tier B no se acepta el primer candidato por rango. Una propuesta positiva requiere un discriminante observable en la fuente o en la estructura de las guías: preservación de la secuencia completa, descriptor explícito, función léxica compatible o exclusión clara de los candidatos alternativos. Si los candidatos sólo comparten material genérico, si el OCR fuente no permite leer la remisión con suficiente precisión o si elegir exige introducir una distinción no expresada, el caso permanece en recolación o como destino no localizado.
+Tier C no autoriza ampliar automáticamente el umbral ni convertir similitud débil en resolución. Se debe distinguir entre: remisión legible con destino ausente; remisión OCR dañada; posible variante gráfica; error de segmentación o procedencia; y ausencia real de candidato en el corpus estructurado. Cualquier recuperación de destino debe registrarse como revisión editorial explícita y no como mutación retroactiva del grafo estricto.
 
 ## Guarda epistemológica
 
-**Una arista editorial sustentada no es una arista canónica estricta. Una coincidencia diagnóstica fuerte no es una resolución. Un candidato rechazado no desaparece de la historia de revisión. Un destino no localizado no debe sustituirse por una coincidencia aproximada. Cerrar un nivel de revisión significa que todos sus casos recibieron una decisión explícita; no significa que todos produjeron resoluciones positivas ni que exista validación filológica humana. Una corrida verde de QA no es validación filológica humana.**
+**Una arista editorial sustentada no es una arista canónica estricta. Una coincidencia diagnóstica no es una resolución. Un candidato rechazado no desaparece de la historia de revisión. Un destino no localizado no debe sustituirse por una coincidencia aproximada. Cerrar un nivel de revisión significa que todos sus casos recibieron una decisión explícita; no significa que todos produjeron resoluciones positivas ni que exista validación filológica humana. Una corrida verde de QA no es validación filológica humana.**
