@@ -1,0 +1,55 @@
+{
+  "archivalDepositStatus": "pending",
+  "assets": [
+    {
+      "bytes": 67757,
+      "name": "RELEASE_MANIFEST.json",
+      "sha256": "05970080840ed0cde9c4ca67b40432b492ba2f0afadade5efe2b9d0f60b8cb79"
+    },
+    {
+      "bytes": 222,
+      "name": "SHA256SUMS.txt",
+      "sha256": "8ffc5addb8389f8181152e98097aba8a3c4ae7486342bdbfaea046d9e59ba3e2"
+    },
+    {
+      "bytes": 1076296,
+      "name": "cahita-historico-digital-v1.0.0.zip",
+      "sha256": "583183eabb90080dccd1ea63a069e248b28cd3ce41e99ba754ac71ce26586158"
+    }
+  ],
+  "attestationType": "github_release_integrity",
+  "attestationVersion": 2,
+  "checks": {
+    "apiAssetSizesMatchDownloadedBytes": true,
+    "doiNotInferred": true,
+    "exactAssetSet": true,
+    "publishedManifestMatchesDeterministicTagRebuild": true,
+    "publishedZipMatchesDeterministicTagRebuild": true,
+    "releaseManifestIdentityMatchesTag": true,
+    "releaseTagMatches": true,
+    "sha256SumsConsistent": true,
+    "stableRelease": true,
+    "tagPointsToExpectedCommit": true
+  },
+  "conceptDoi": null,
+  "humanVerifiedCount": 0,
+  "isDraft": false,
+  "isPrerelease": false,
+  "project": "Cahíta Histórico Digital",
+  "publishedAt": "2026-08-22T05:34:07Z",
+  "releaseManifest": {
+    "bytes": 67757,
+    "sha256": "05970080840ed0cde9c4ca67b40432b492ba2f0afadade5efe2b9d0f60b8cb79"
+  },
+  "releaseName": "Cahíta Histórico Digital v1.0.0",
+  "releaseUrl": "https://github.com/fersandovalgtz/cahita-historico-digital/releases/tag/v1.0.0",
+  "releaseZip": {
+    "bytes": 1076296,
+    "sha256": "583183eabb90080dccd1ea63a069e248b28cd3ce41e99ba754ac71ce26586158"
+  },
+  "tag": "v1.0.0",
+  "tagCommit": "dbcdecf0003ac5a10ae963caf6babdcf5c22128d",
+  "verificationMode": "deterministic_rebuild_from_immutable_tag",
+  "version": "1.0.0",
+  "versionDoi": null
+}
