@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 143,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.142] Arbol. Toro.\nArbol. Hiolbue.\nArbol. Hecco.\nArbol. Bibino.\nArbol. Bachomo.\nArbol. Sapo.\nArbol. Tabui.\nArbol. Tabuico.\nArbol. Chubuoqui.\nArbol. Ieteubuo.\nArbol. [forma incierta].\nArbol. Bataiaqui.\nArbol. Hobocoriobo.\nArbol. Huichucuri.\nArbol. Hebero.\nArbol. Chopo.\nArboles de mariſmas.\nArbol. Paſeo.\nArbol. Berachena.\nArbol. Mooco.\nArbol. Murro.\nArco para tirar flecha. Huicori.\nArco del Cielo. Curuaſ.\nArco. Arcum.\nArcos poner. Sebe cruz.\nArderſe algo. Hita betec.\nArder la candela. Candelam betec.\nArena. See.\nArenal. Sepai.\nArenoſa coſa. Sehebuei.\nArina. Tirico tuſi.\nArmarſe para la batalla. Emo [forma incierta] hechabuo.\n\n[columna derecha]\nArraigarſe algo, ò echar raizes. Nabuatuc.\nArrancar algo de raiz. Nahuacantapopona.\nArrancar lo que eſtá hincado. Namacari -- huecamta popona.\nArrancar pelos. Boata -- popona.\nArraſtrar algo. Hitaric -- huique.\nArraſtrar el caballo à alguno. Cabai ſeunc -- huicſuc.\nArraſtrar de los cabellos. Chonimet -- abunhuiſuc.\nArrebatar algo. Hita -- culoc-tinuca.\nArremangar à la muger. [forma incierta].\nArrendar dar algo à renta. Hitare urec, l, reureuri.\nArrepentirſe de lo hecho. Iatec.\nArreſgarſe à hazer algo. Aupapatua.\nArriba. Hicachi.\nArriba, no lexos. Catua -- hicaumeca.\nArriba, lexos, y alto como cerro. Hicaumeca.\nArriba por donde viene el Rio. Taebo batuetaebo betana.\nArriba como en la azotea. Catabepa.\nArri- [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuations and final catchwords explicit; uncertain forms marked without reconstruction.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several lexical forms remain unresolved and require second collation; visible headword order, two-column structure, continuations, and catchwords are represented."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Historical scan shows bleed-through, edge wear, and local ink loss; uncertain readings are not silently supplied.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-143", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}

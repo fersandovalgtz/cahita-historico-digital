@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 146,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\n[continuación de p.145] Baho, q ſale de la boca. Tempo-habua.\nBaho, que ſale de la tierra. Buia habua.\nBailar algun ſon. Ieie.\nBajar uno de lo alto. Hicatana conbuec.\nBajo de cuerpo. Catua-tebe, l, Ilepani, l, tepalai.\nBalſa para paſſar el Rio. Cuta -- carami.\nBañar à otro. Senuc -- ubatua.\nBaño el acto de bañarſe. ubabuapo.\nBañarſe. ubabuame.\nBarata darſe la coſa. Cabehere.\nBarbero. Iore -- [forma incierta].\nBarbo. Buſca Bagre.\nBarniz que poner à las bateas. Satatua.\nBarnizar aſſi. Sata.\nBarranca. Buaboi.\nBarranca aver. Ama -- buaboi.\nBarrenar. Buſca agujerear con barrena.\nBarrer. Hichique.\nBarriga. Toma.\nBarro. Babu.\nBarba parte de la cara. Charo.\nBarba, pelos que ſalen en la cara. Himſi.\nBaſta, coſa ſin pulir. Buſca [continúa columna derecha].\n\n[columna derecha]\n[continuación] aſpero.\nBaſta, mandar ceſſar de la obra. Iate.\nBaſtecer al que va de camino. Anutua.\nBaſtimento tal. Nuu.\nBaſton. [forma incierta].\nBatallar los Exercitos. Naſuabua.\nBata de la tierra. Cutabatea.\nBautizar. Abatoa.\nBautiſmo. Iore batoabuame.\nBautiſterio. Iore batoatoapo.\nBajo, adv. Commi.\nBeber. Heie.\nBeber llevando el agua à la boca. Hitari cucheie.\nBegiga. Siſia.\nBellota de encino. Tobi.\nBellota de roble. Chibu tobi.\nBeodo. Binoe -- namucu.\nBerdolagas. Buaron.\nBerraco. Ouſimachi.\nBerruga. Siſaquia.\nBeſar à otro. Nautente.\nBeſo tal. Autente.\nBeſar las manos, ò pies. Chuchune -- mamamet, l, huoquimet.\nBeber agua con la mano arrojandola à la boca. [forma incierta].\nBebida de maiz toſtado. [forma incierta].\nBebida [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuations and final catchwords explicit; uncertain forms marked without reconstruction.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several lexical forms remain unresolved and require second collation; visible headword order, two-column structure, continuations, and catchwords are represented."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Historical scan shows bleed-through, edge wear, and local ink loss; uncertain readings are not silently supplied.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-146", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
