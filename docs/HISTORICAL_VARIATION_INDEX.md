@@ -48,7 +48,9 @@ produce:
 
 El índice puede afirmar que la búsqueda es **exhaustiva sobre las capas canónicas machine-readable actuales**, porque el generador recorre todas las transcripciones, artículos lexicográficos y objetos gramaticales disponibles en el repositorio.
 
-No puede afirmar todavía que exista una **transcripción diplomática exhaustiva de las 182 páginas**. `data/transcription/status.csv` sigue registrando páginas textuales pendientes o no revisadas, entre ellas las páginas digitales 176–180. Las páginas 178–180 sí disponen de una primera estructuración de numerales, que se incorpora al índice desde `data/grammar/numerals_p178_p180.json`, pero eso no equivale a una transcripción diplomática completa de esas páginas.
+La reconciliación canónica de Fase 2 integrada mediante PR #181 establece la situación real: las 182 páginas digitales están contabilizadas, seis corresponden a material no textual/no aplicable y **133 de las 176 páginas textuales disponen ya de transcripción `full_page` canónica**. Por tanto, el hueco diplomático actual es un bloque continuo de **43 páginas, digitales 138–180**: cuarenta páginas de vocabulario (138–177) y tres de numerales (178–180).
+
+No puede afirmarse todavía que exista una **transcripción diplomática exhaustiva de las 182 páginas**. Las páginas 178–180 sí disponen de una primera estructuración de numerales, que se incorpora al índice desde `data/grammar/numerals_p178_p180.json`, pero eso no equivale a una transcripción diplomática completa de esas páginas.
 
 El manifiesto obliga a conservar simultáneamente estas dos afirmaciones:
 
@@ -91,7 +93,7 @@ ejecuta dos construcciones independientes y exige igualdad byte a byte de todos 
 
 - valida las observaciones contra `historical-variety-observation.schema.json`;
 - verifica que las 182 páginas estén contabilizadas en la tabla de cobertura;
-- exige que 176–180 permanezcan declaradas pendientes mientras `status.csv` así lo indique;
+- conserva de forma explícita la cola diplomática 138–180 mientras `status.csv` la mantenga pendiente;
 - comprueba la presencia de las clases documentales ya conocidas;
 - bloquea cualquier cambio silencioso a inferencia de identidades modernas;
 - bloquea cualquier elevación silenciosa de `humanVerified`.
@@ -100,4 +102,4 @@ El workflow `CHD Historical Variation` ejecuta esta misma prueba en GitHub Actio
 
 ## Relación con Fase 4
 
-Este índice resuelve la infraestructura de consolidación y localización de variación histórica solicitada por Fase 4. No cierra por sí solo la fase. Después de esta capa quedan principalmente tres trabajos filológicos: completar las páginas textuales todavía pendientes, realizar segunda colación de lecturas priorizadas y transformar, cuando la fuente lo sustente, las menciones documentales seleccionadas en relaciones más específicas entre reglas, paradigmas y observaciones de variedad.
+Este índice resuelve la infraestructura de consolidación y localización de variación histórica solicitada por Fase 4. No cierra por sí solo la fase. Después de esta capa quedan principalmente tres trabajos filológicos: completar las 43 páginas textuales todavía pendientes, realizar segunda colación de lecturas priorizadas y transformar, cuando la fuente lo sustente, las menciones documentales seleccionadas en relaciones más específicas entre reglas, paradigmas y observaciones de variedad.
