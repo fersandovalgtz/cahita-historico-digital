@@ -21,3 +21,30 @@ jobs:
         run: |
           python scripts/export_lexicon_lo_mismo.py --out-dir /tmp/lo-mismo
           cat /tmp/lo-mismo/chd_lexicon_lo_mismo_candidates.jsonl
+      - name: Print candidate records and same-column neighbors
+        run: |
+          python - <<'PY'
+          import json
+          from collections import defaultdict
+          from scripts.export_lexicon_crossreference_graph import load_articles
+          from scripts.export_lexicon_lo_mismo import load_candidates, article_number
+
+          articles, _ = load_articles()
+          candidates, _, _ = load_candidates()
+          by_id = {a['articleId']: a for a in articles}
+          groups = defaultdict(list)
+          for a in articles:
+              groups[(a.get('sourcePageDigital'), a.get('column'))].append(a)
+          for rows in groups.values():
+              rows.sort(key=lambda a: article_number(a['articleId']))
+
+          for c in candidates:
+              aid = c['articleId']
+              a = by_id[aid]
+              print('FULLCAND', json.dumps(a, ensure_ascii=False, sort_keys=True))
+              rows = groups[(a.get('sourcePageDigital'), a.get('column'))]
+              pos = next(i for i, x in enumerate(rows) if x['articleId'] == aid)
+              print('CONTEXT', aid, a.get('sourcePageDigital'), a.get('column'))
+              for x in rows[max(0,pos-4):pos+5]:
+                  print('NEIGHBOR', x['articleId'], x.get('spanishGuideRaw'), '||', x.get('transcriptionRaw'))
+          PY
