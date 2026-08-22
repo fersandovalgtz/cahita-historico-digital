@@ -12,10 +12,16 @@ EXPECTED_SCHEMA_URL = "https://lex-0.org/releases/v0.9.5/schema/lex-0.rng"
 EXPECTED_SCHEMA_SHA256 = "35e73fef48526634714bdf3d16b924f958fca078a903d0bdc2dd4d7d116d1aaa"
 EXPECTED_OPEN_GATES = {
     "direct_facsimile_recollation_of_22_crossreference_cases",
-    "final_cldf_lex0_scope_decision",
     "final_schema_and_metadata_freeze",
     "final_release_tag_and_changelog",
     "archival_deposit_and_version_doi",
+}
+EXPECTED_INTEROPERABILITY = {
+    "primaryLexicalReleaseProfile": "TEI Lex-0 0.9.5",
+    "cldfRequiredForV1": False,
+    "cldfStatus": "deferred_post_v1_analytic_derivative",
+    "decisionDocument": "docs/CLDF_SCOPE_DECISION_V1_0.md",
+    "canonicalDataReplacedByInteroperabilityFormats": False,
 }
 
 
@@ -34,6 +40,11 @@ def validate_manifest(manifest: dict) -> None:
         raise SystemExit("release candidate must preserve humanVerifiedCount=0")
     if set(manifest["openGates"]) != EXPECTED_OPEN_GATES:
         raise SystemExit(f"release-candidate open gates drifted: {manifest['openGates']}")
+    if manifest.get("interoperabilityDecision") != EXPECTED_INTEROPERABILITY:
+        raise SystemExit(
+            "release-candidate interoperability decision drifted: "
+            f"{manifest.get('interoperabilityDecision')} != {EXPECTED_INTEROPERABILITY}"
+        )
 
     summary = manifest["summary"]
     expected = {
@@ -74,6 +85,9 @@ def validate_zip(result: dict) -> None:
         expected_manifest_name = f"{BUNDLE_DIRNAME}/{MANIFEST_NAME}"
         if expected_manifest_name not in names:
             raise SystemExit("release-candidate ZIP is missing top-level manifest")
+        decision_name = f"{BUNDLE_DIRNAME}/project/docs/CLDF_SCOPE_DECISION_V1_0.md"
+        if decision_name not in names:
+            raise SystemExit("release-candidate ZIP is missing the CLDF scope decision")
         for info in archive.infolist():
             if info.date_time != (1980, 1, 1, 0, 0, 0):
                 raise SystemExit(f"non-deterministic ZIP timestamp for {info.filename}")
@@ -106,7 +120,8 @@ def main() -> None:
             f"files={first['manifest']['artifactFileCount'] + 1}; "
             f"artifactBytes={first['manifest']['artifactBytes']}; "
             f"openGates={len(first['manifest']['openGates'])}; "
-            "Lex0ConformanceClaimed=true; releaseReady=false; humanVerified=0"
+            "Lex0ConformanceClaimed=true; CLDFRequiredForV1=false; "
+            "releaseReady=false; humanVerified=0"
         )
 
 
