@@ -1,0 +1,60 @@
+name: Temporary update v1 README
+
+on:
+  push:
+    branches: [release/v1-final-identity]
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release/v1-final-identity
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Synchronize README v1 identity
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          path = Path('README.md')
+          text = path.read_text(encoding='utf-8')
+          old_status = '> **Estado:** `0.2.0-dev` — desarrollo activo. La fase de promoción/enlace y censo exhaustivo del vocabulario y la cobertura estructural de las unidades gramaticales numeradas quedaron técnicamente cerradas el **21 de agosto de 2026**. No existe todavía una release científica estable ni un DOI del proyecto.'
+          new_status = '> **Estado:** `1.0.0` — primera release científica estable del alcance técnico declarado. El vocabulario, la cobertura gramatical numerada, la interoperabilidad TEI Lex-0, los contratos, el freeze de datos y las incertidumbres de recolación están versionados y validados reproduciblemente. La preservación archivística y el DOI de versión permanecen pendientes hasta su depósito efectivo.'
+          if old_status in text:
+              text = text.replace(old_status, new_status, 1)
+          elif new_status not in text:
+              raise SystemExit('README status marker not found')
+
+          start = text.index('## Próximo frente científico')
+          end = text.index('## Cita', start)
+          new_front = '''## Próximo frente científico\n\nCon v1.0.0, el frente inmediato deja de ser el cierre estructural del corpus y pasa a **preservación, revisión filológica post-release y explotación científica de los datos**. Las prioridades son:\n\n1. depositar la release archivada y registrar DOI de versión/Concept DOI cuando sean efectivamente asignados;\n2. reabrir las 22 recolaciones sólo cuando exista cotejo directo del mismo testimonio o revisión filológica humana trazable;\n3. consolidar las 76 evidencias de etiquetas históricas de variedad y ampliar su relación explícita con la gramática;\n4. continuar estudios lingüísticos e historiográficos derivados sin retroproyectar automáticamente categorías modernas sobre `ALC1737`;\n5. evaluar CLDF como derivado analítico post-v1 únicamente cuando la segmentación y la identidad lingüística requeridas estén sustentadas.\n\n'''
+          text = text[:start] + new_front + text[end:]
+
+          old_cite = 'La forma canónica de citación se encuentra en [`CITATION.cff`](CITATION.cff). Mientras el proyecto permanezca en `0.2.0-dev`, se recomienda citar también el commit exacto utilizado para garantizar reproducibilidad.'
+          new_cite = 'La forma canónica de citación de v1.0.0 se encuentra en [`CITATION.cff`](CITATION.cff). Para reproducibilidad se recomienda conservar el tag `v1.0.0` y, cuando sea pertinente, el commit exacto utilizado. El DOI se añadirá únicamente después de su asignación archivística efectiva.'
+          if old_cite in text:
+              text = text.replace(old_cite, new_cite, 1)
+          elif new_cite not in text:
+              raise SystemExit('README citation marker not found')
+          path.write_text(text, encoding='utf-8')
+          PY
+      - name: Commit README if changed
+        shell: bash
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- README.md; then
+            echo "README already current"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "docs: actualizar identidad y próximos pasos para v1.0.0"
+          git push origin HEAD:release/v1-final-identity
