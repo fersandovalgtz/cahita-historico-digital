@@ -80,6 +80,8 @@ jobs:
         run: |
           set -euo pipefail
           python -m json.tool codemeta.json >/dev/null
+          python -m json.tool project-metadata.json >/dev/null
+          python -m json.tool metadata/fair-dataset.jsonld >/dev/null
           python -m json.tool release/v1_data_manifest.json >/dev/null
           python -m json.tool data/lexicon/candidates/inventory_status.json >/dev/null
           python -m json.tool data/lexicon/candidates/candidate_inventory_manifest.json >/dev/null
@@ -143,6 +145,11 @@ jobs:
 
       - name: Validate documentation synchronization
         run: python scripts/validate_documentation_sync.py
+
+      - name: Validate public scientific repository surface
+        run: |
+          python scripts/validate_repository_surface.py
+          python scripts/query_lexicon.py --stats --json >/dev/null
 
       - name: Validate deterministic post-closure exports
         run: python scripts/validate_postclosure_exports.py
