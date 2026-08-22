@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 171,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.170] Querella. Hateo.\nQuizá. Hane.\nQuien? Habe?\nQuien eres? Habeempo?\nQuien ſois. Empo habefai.\nQuien, l, qualquiera. [forma incierta].\nQuixada. Iata huaſari.\nQuitarſe la porqueria, ò lavarſe la cara. Bahurina.\n\nR.\n\nRabadilla. Chocofori.\nRabo de animal. Buaſiaota.\nRajar madera. [forma incierta].\nRala coſa. [forma incierta].\nRama de arbol. Iateme.\nRamera puta. Chobori.\nRamillete de arbol. [forma incierta].\nRapar el pelo. Buſca raer.\nRaſar. Ananaute.\nRaſarſe el Cielo. [forma incierta].\nRaſgar. Huoque.\n\n[columna derecha]\nRaſpar. [forma incierta].\nRaſtrear como el podenco. Ahaottua.\nRaſtro dexar. Huocmamaohi.\nRaſtro aver. [forma incierta].\nRaton otro. [forma incierta].\nRaton otro grande. [forma incierta].\nRaton otro. Hamu.\nRatona. Bijuetata.\nRayo. Tucuma.\nRebelde. [forma incierta].\nRebatar. Culotia.\nRebatiña. [forma incierta].\nRebentar. [forma incierta].\nRebentar la flor del boton. Sebuamobite.\nRebuſnar. Ibaa.\nRebolcarſe. [forma incierta].\nRecoger lo eſparcido. [forma incierta].\nReboſſar la puerta. [forma incierta].\nRechinar los dientes. [forma incierta].\nRecular. Amubue.\n[continúa p.172].",
+  "lineBreakPolicy": "Two-column reading order preserved; alphabetic transition Q→R and cross-page continuation explicit; uncertain forms remain marked.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "The R-entry portion contains several degraded Cahita spellings; ambiguous forms are explicitly reserved for second visual collation."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Heavy show-through in parts of the page affects isolated lexical forms but not the headword sequence.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-171", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
