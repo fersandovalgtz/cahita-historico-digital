@@ -6,19 +6,13 @@
   },
   "@type": "Dataset",
   "@id": "https://doi.org/10.5281/zenodo.22061986",
-  "identifier": "10.5281/zenodo.22061986",
   "name": "Cahíta Histórico Digital — Arte de la lengua cahita (1737)",
   "alternateName": "Cahíta Histórico Digital v1.0.0",
   "version": "1.0.0",
   "datePublished": "2026-08-22",
   "description": "Corpus histórico-digital reproducible derivado del Arte de la lengua cahita impreso en México en 1737. Incluye estructuración lexicográfica y gramatical, procedencia, contratos JSON Schema, derivados reproducibles y TEI Lex-0. No constituye una edición filológica íntegramente validada por revisión humana independiente.",
-  "url": "https://zenodo.org/records/22061986",
-  "mainEntityOfPage": "https://zenodo.org/records/22061986",
-  "sameAs": [
-    "https://github.com/fersandovalgtz/cahita-historico-digital",
-    "https://github.com/fersandovalgtz/cahita-historico-digital/releases/tag/v1.0.0",
-    "https://doi.org/10.5281/zenodo.22061985"
-  ],
+  "url": "https://github.com/fersandovalgtz/cahita-historico-digital",
+  "mainEntityOfPage": "https://github.com/fersandovalgtz/cahita-historico-digital",
   "creator": {
     "@type": "Person",
     "name": "Fernando Sandoval Gutierrez",
@@ -28,10 +22,7 @@
       "name": "Universidad Autónoma de Ciudad Juárez"
     }
   },
-  "license": [
-    "https://creativecommons.org/licenses/by/4.0/",
-    "https://spdx.org/licenses/MIT.html"
-  ],
+  "license": "https://creativecommons.org/licenses/by/4.0/",
   "isBasedOn": {
     "@type": "CreativeWork",
     "name": "Arte de la lengua cahita conforme à las reglas de muchos peritos en ella",
@@ -60,13 +51,7 @@
   "distribution": [
     {
       "@type": "DataDownload",
-      "name": "Zenodo archival deposit — Cahíta Histórico Digital v1.0.0",
-      "contentUrl": "https://zenodo.org/records/22061986/files/cahita-historico-digital-v1.0.0.zip",
-      "encodingFormat": "application/zip"
-    },
-    {
-      "@type": "DataDownload",
-      "name": "GitHub v1.0.0 release payload",
+      "name": "Cahíta Histórico Digital v1.0.0 release payload",
       "contentUrl": "https://github.com/fersandovalgtz/cahita-historico-digital/releases/tag/v1.0.0",
       "encodingFormat": "application/zip"
     },
@@ -111,18 +96,24 @@
     },
     {
       "@type": "PropertyValue",
-      "name": "versionDOI",
+      "name": "doiStatus",
+      "value": "assigned"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "versionDoi",
       "value": "10.5281/zenodo.22061986"
     },
     {
       "@type": "PropertyValue",
-      "name": "conceptDOI",
+      "name": "conceptDoi",
       "value": "10.5281/zenodo.22061985"
     },
     {
       "@type": "PropertyValue",
-      "name": "doiStatus",
-      "value": "published archival deposit"
+      "name": "archivalRecord",
+      "value": "https://zenodo.org/records/22061986"
     }
-  ]
+  ],
+  "identifier": "https://doi.org/10.5281/zenodo.22061986"
 }
