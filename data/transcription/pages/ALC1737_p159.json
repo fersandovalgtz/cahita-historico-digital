@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 159,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.158] Huevo. Totolicaba.\nHuerfano. Aebole.\nHuir de los contrarios. [forma incierta].\nHuirſe. Butte.\nHuidor aſſi. Buibuite.\nHumo. Michi.\nHumear. Buitennete.\nHurtar. Etbuac.\nHurto. Etbubuame.\nHuſo para hilar. Hicaria.\n\nY.\n\nY conjunc. Y.\nYa, adv. Beſa.\nYdolatrar. [forma incierta].\nYelo. Buſca hielo.\nYerno. Mote.\nYeſca. [forma incierta].\nYerva. Huia.\n\nYervas comeſtibles.\nYerva. Mochim.\nYerva. Bataum.\nYerva. Coniſaquiram.\nYerva. Sacoraim.\nYerva. Huiquichibuoquim.\nYerva mora. Mamiam.\nYerva buena. Lo miſmo.\nYerva para quelite. Eacoe.\nYerva. Coraim.\n\n[columna derecha]\nYervas que no ſe comen.\nYerva de la golondrina. Coaparim.\nYerva que ſe cria en los arboles. Chichiam.\nYerva. Hachitiria.\nYerva. Chuſiſi.\nYerva. Subu.\nYerva. Coapari.\nYerva. Taniram.\nYerva. Bacacoaparim.\nYerva. Bachureu.\nYerva. Bacam.\nYerva. Coiroche.\nYerva. Chabara enimim.\nYerva. Maſaſari.\nYerva. [forma incierta].\nYerva. Eieona.\nYerva. Huoi ſinia.\nYerva. Huoi bibam.\nYgleſia. Teepo.\nYgual coſa como ſuelo. Nanauchi.\nYguana. Huicuim.\nYlvanar. Nataiecba.\nYmpedir que no ſe haga alguna coſa. Cat -- aiebua.\nYnclinarſe. Aman -- bunaca.\nYnſierno. Lo miſmo.\nYo, pro N. Ne.\nYnnumerable gente. Bura-ioreme.\nYnquirir. Natemae.\nYſlabon. Buſca eſlabon.\nYr. Hueie, l, amaſinea.\nYr [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; thematic herb subheading and final catchword explicit; uncertain forms are not silently reconstructed.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "The page contains a dense herb-name list and several degraded Cahita spellings; uncertain readings are marked explicitly for second collation."}],
+  "materialNotes": [{"type": "bleed_through_and_edge_wear", "note": "Moderate bleed-through and edge wear affect isolated forms; the two-column headword sequence remains legible.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-159", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
