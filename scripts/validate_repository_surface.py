@@ -34,6 +34,7 @@ REQUIRED_FILES = [
     "DATA_LICENSE.md",
     "LICENSING.md",
     "references.bib",
+    "docs/README.md",
     "docs/DATA_PRODUCTS.md",
     "docs/REPRODUCIBILITY.md",
     "docs/ECOSYSTEM.md",
@@ -44,6 +45,9 @@ REQUIRED_FILES = [
     ".github/ISSUE_TEMPLATE/data-or-software-bug.md",
     ".github/ISSUE_TEMPLATE/research-or-interoperability.md",
     "scripts/query_lexicon.py",
+    "scripts/validate_repository_surface.py",
+    "scripts/validate_documentation_links.py",
+    "scripts/validate_published_v1.py",
     "Makefile",
 ]
 
@@ -127,6 +131,14 @@ def main() -> None:
     if fair.get("license") != "https://creativecommons.org/licenses/by/4.0/":
         raise SystemExit("FAIR JSON-LD data license drift")
 
+    attestation = load_json("release/github_release_attestation_v1.0.0.json")
+    if attestation.get("tagCommit") != EXPECTED["release_commit"]:
+        raise SystemExit("durable release attestation commit drift")
+    if (attestation.get("releaseZip") or {}).get("sha256") != EXPECTED["zip_sha256"]:
+        raise SystemExit("durable release attestation ZIP digest drift")
+    if attestation.get("verificationMode") != "deterministic_rebuild_from_immutable_tag":
+        raise SystemExit("durable release attestation verification mode drift")
+
     contract_manifest = load_json("release/v1_contract_manifest.json")
     if contract_manifest.get("schemaContractCount") != 22 or contract_manifest.get("contractCount") != 26:
         raise SystemExit("v1 contract count drift")
@@ -140,13 +152,7 @@ def main() -> None:
 
     require_text(
         "README.md",
-        [
-            "v1.0.0",
-            "2,302",
-            "TEI Lex-0 0.9.5",
-            "humanVerified=0",
-            EXPECTED["zip_sha256"],
-        ],
+        ["v1.0.0", "2,302", "TEI Lex-0 0.9.5", "humanVerified=0", EXPECTED["zip_sha256"]],
     )
     require_text("README.en.md", ["v1.0.0", "2,302", "humanVerified=0", "DOI"])
     require_text("DATASHEET.md", ["2,302", "267 archivos científicos", EXPECTED["zip_sha256"], "DOI"])
@@ -158,12 +164,16 @@ def main() -> None:
     require_text("SECURITY.md", ["integridad científica", "v1.0.0"])
     require_text("LICENSING.md", ["MIT", "CC BY 4.0", "No relicenciados"])
     require_text("docs/DATA_PRODUCTS.md", [EXPECTED["zip_sha256"], "query_lexicon.py"])
-    require_text("docs/REPRODUCIBILITY.md", [EXPECTED["release_commit"], EXPECTED["zip_sha256"], "make qa-full"])
+    require_text(
+        "docs/REPRODUCIBILITY.md",
+        [EXPECTED["release_commit"], EXPECTED["zip_sha256"], "make qa-full", "validate_published_v1.py"],
+    )
+    require_text("scripts/build_v1_release.py", [EXPECTED["release_commit"], "pinned to the immutable published v1.0.0"])
 
     print(
         "repository surface QA OK: "
         "requiredFiles=%d; articles=%d; articleFiles=%d; humanVerified=0; "
-        "version=1.0.0; DOI=pending; historicalISO6393=null"
+        "version=1.0.0; DOI=pending; historicalISO6393=null; publishedV1=immutable_tag_rebuild"
         % (len(REQUIRED_FILES), article_count, article_files)
     )
 
