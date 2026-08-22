@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 140,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\n[continuación de p.139] Anciano. Oola.\nAndar. Huerama.\nAndar apriſſa. Banſeca huerama.\nAndar ſobre uno de los pies. Huepula inbuoquecabuerama.\nAndar perdido en camino. Chituria.\nAndas. Andaſim.\nAndas de muertos. Cocoari-amatetehuau.\nAnegarſe algo. Banec.\nAngoſta coſa. Huntaali.\nAngoſto camino. Boo buitala.\nAnguilla. Bapu-ilbacot.\nAnguſtiarſe. Buſca afligirſe.\nAnguſtia. Buſca afliccion.\nAnguſtiar à otro. Buſca afligir.\nAnidar hazer nido. Toſate.\nAnimar, esforzar. Aoubutitua.\nAnimoſo. Aouticieria.\nAnoche. Tucabiec.\nAnochecer. Tucabiec.\nAntier. Battuca.\nAnte alguna perſona. Senu-hipicu.\nAnteceder, ò guiar. Nepatne.\nAntenado varon. Aecuna.\nAntenado de muger. Huaimae.\nAntes, ò primero. Quebe.\nAntiguamente. Hahæbubue.\nAnzuelo. Boaria.\n\n[columna derecha]\nAnzuelo hechar para peſcar. Boa.\nAñadir algo à lo que eſtá falto. Achichabua.\nAñublado eſtár en partes el Cielo. Teteconamuc.\nAñublado eſtár todo el Cielo. Uteſinamu.\nAñudar algo. Nata aſuma.\nAhogar. Bapomucuc.\nA otra. Tabuene.\nA otra puerta. Omot -- caquioni.\nA otra parte. Omochi.\nAcrecentar ganado. Huacaſim bururiac.\nApagar fuego. Betenta tucha.\nApagar la luz. Machiriata tucha.\nApalear. Cutaehabeba.\nAparejarſe para hazer algo. Auana.\nAparejar mulas. Iſalmate.\nAparejo aſſi. Salma.\nApartar algo. Hitaric -- naequimte.\nApartamiento aſſi. [forma incierta].\nApartar la gente para abrir camino. Ioreme -- naequimte.\nApartar ganado. Huacaſim naequimte.\nApartarſe dos caminos. Boom emo -- naequimtupo.\nApar- [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuations and final catchwords explicit; uncertain forms marked without reconstruction.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several lexical forms remain unresolved and require second collation; visible headword order, two-column structure, continuations, and catchwords are represented."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Historical scan shows bleed-through, edge wear, and local ink loss; uncertain readings are not silently supplied.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-140", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}

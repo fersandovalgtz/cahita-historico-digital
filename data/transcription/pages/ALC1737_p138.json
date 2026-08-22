@@ -1,0 +1,32 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 138,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\n[continuación de p.137] buohoi.\nAguja para coſer. Hiquia achihuame.\nAguja harriera. Buerubiquia.\nAgallas, Banſoa de peſcado. Cuchubanſoa.\nAchear, ó limpiar algo. Maote.\nAhitarle. Buahuame -- tompoietec.\nAhogar à otro. Senuc -- biebimea.\nAhogarſe con el bocado. Yaſteca aetatec.\nAhorcar. Amchacha.\nAhuventar. Atobuibuite, l, mababuecari.\nAhumar algo. Hitari buic. chovia.\nAí donde tu eſtas. Hunumi.\nAy quexandoſe. Etici, l, elele.\nAyer. Tuca.\nAyrar à otro. Abibaria.\nAyre. Heca.\nAyre hazer. Bueiheca.\nAyudar à otro. Senucania.\nAyuda. Ania.\nAyudarſe à ſí. Ioreaniame.\nAyudar à Miſſa. Miſſa ania.\nAyuda à ſí. Item aniabua.\nAyunar. Hiobuame -- bionaque.\nAyunador. Hibioreme.\nAyuno. Hiome.\nAgena coſa. Omot -- atea.\n\n[columna derecha]\nAjar. Amoſa.\nAla de Ave. Maſahuecori.\nAlacran. Machul.\nAlabar à otro. Senuc turiſi ahua.\nA mi mano derecha. Ibata-tana.\nA mi mano izquierda. Imicotana.\nAlambre. Siſibuoqui -- bui.\nA la poſtre. Chucula, l, became.\nAlargar algo. Hitaric -- [forma incierta].\nA la ſazon? Amalibuei.\nAlcanzar al que va adelante. Bat -- buenta -- babame.\nAlcanzar lo que eſta alto. Auiuma.\nAlzar algo como palo. Cuta [forma incierta].\nAlzar algo como piedra. Teeta atobotamcha.\nAlzar, y bajar continuamente la cabeza. Ilubua -- bune muſumuſut.\nAlear. Maſam paritia.\nAlegrarſe. Bale.\nAlegria. Balbuame.\nAlentar à otro. Senuc [forma incierta].\nAlgo. Hitaric.\nAlgodon. Chyim.\nAlguna coſa. Hita buneri.\nAlguna vez. Seſa buneri.\nAlgun [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuations and final catchwords explicit; uncertain forms marked without reconstruction.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [
+    {
+      "token": "multiple vocabulary forms",
+      "note": "Several lexical forms remain unresolved and require second collation; visible headword order, two-column structure, continuations, and catchwords are represented."
+    }
+  ],
+  "materialNotes": [
+    {
+      "type": "bleed_through_and_scan_wear",
+      "note": "Historical scan shows bleed-through, edge wear, and local ink loss; uncertain readings are not silently supplied.",
+      "transcription": null
+    }
+  ],
+  "provenance": {
+    "derivedFrom": "ALC1737:digital-page-138",
+    "agent": "GPT-5.6 Sol visual collation",
+    "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification",
+    "processedAt": null
+  }
+}

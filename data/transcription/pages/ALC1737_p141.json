@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 141,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.140] Aparté. Secana.\nApearſe del caballo. Concheptec.\nAperrear à otro. Amamaa.\nApercibirſe para hazer algo. Buſca aparejarſe.\nApetecer algo. Hita uculec.\nAplacar à alguno. Aiatitua.\nAporcar con tierra alguna coſa. Buiata [forma incierta] iecha.\nAporrear à alguno. Cocoſiaiac.\nApoſtar en el juego. Haate.\nAprenſar. Apitia.\nAprenſadura. Apitiari.\nApreſurarſe. Aubamitua naque.\nApreſuramiento. Taaubamitia.\nApretar algo con los brazos. Comimeachimea.\nApretar la reata por medio de la carga. Naſucu -- acuta.\nApretarla por detrás, ò delante de la mula. Amabui, l, bichabui abuique.\nApretar como el tercio. Namacaſi aſuma.\nApretar algo con la mano. Mama acuta.\nApretar los dientes. Tamquiri.\nAprieſſa. Banſe, l, alepana, l, bamittua.\n\n[columna derecha]\nApropriarſe alguna coſa. Hita ahuoria.\nAprobar alguna coſa por buena. Hitari biecea.\nApuñear à otro. Senuc -- chonſu.\nApuñalar algo. Hita -- beca-mubu.\nApuntar con el dedo à alguna parte. Mampuſiame -- hicubua.\nA qué hora? Hachueo?\nAquel. Huna.\nAquellos. Huname.\nAquello. Huaba.\nAqueſſo miſmo. Iniaia.\nA qué tiempo? Hachim hueo?\nAqui. Inimi.\nA quien? Habeta?\nArar con Bueyes. Moite.\nAraña. Hubare, ponzoñoſa, hubare iore hubame.\nArbol generalmente palo, ò madero. Buere cutam.\nArbol, cuya raiz tomada en la boca es muy eficaz para dolor de muelas. Machaba.\nArbol, cuya corteza ſirve para hinchazones de golpe, y para encarnar mataduras de caballo. Chino.\nArbol, cuya corteza ſirve para matar los piojos. Neco.\nArbol, cuya leche ſirve para vilma à las mugeres, que pade- [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuations and final catchwords explicit; uncertain forms marked without reconstruction.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several lexical forms remain unresolved and require second collation; visible headword order, two-column structure, continuations, and catchwords are represented."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Historical scan shows bleed-through, edge wear, and local ink loss; uncertain readings are not silently supplied.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-141", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}

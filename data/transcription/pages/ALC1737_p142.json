@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 142,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\n[continuación de p.141] padecen de las caderas. Bapſam.\nArbol, cuya leche es buena para curar empeines. Hobuo.\nArbol, cuya raiz es eficaz para matar animales, como Leones, Cayuanes, &c. Toribuiro.\nArbol, cuyas ojas, y caſcaras herbidas, y bebida el agua dicen ſer eficaz para el que tiene curſos. Paſſara.\nArbol, cuya corteza ſuele ſervir de jabon à los pobres. Huiabuonabua.\nArbol, cuya raiz es eficaz para ſoldar qualquier hueſſo quebrado. Maccehua.\nArboles, cuyo fruto es comeſtible.\nArbol. Caurara.\nArbol. Hito.\nArbol. Macochinim.\nArbol. Tupchim.\nArbol. Hubare.\nArbol. Huupa.\nArbol. Cabam.\nArbol. Hutuqui.\nArbol. Cumbo.\nArbol. Sitabaro.\nArbol. Sicropo.\nArbol. Heſeri.\nArbol. Hoſoinam.\n\n[columna derecha]\nArbol. Sapochim.\nArbol. Piſim.\nArbol. Babiro.\nArboles que ſirven para madera.\nArbol. Abaſo.\nArbol. Teſa.\nArbol. Hiſo.\nArbol. Hutuabuo.\nArbol. [forma incierta: Mapao/Mapuo].\nArbol. Pomabau.\nArbol. Bambio.\nArbol. Tanio.\nArbol. Pipera.\nArbol. Hupapo quequecame.\nArbol. Tacira.\nArbol. Teabuo.\nArbol. Huacaporo.\nArbol. Hupſi.\nArbol. Baubua.\nArbol. Baco.\nArbol. Hopo.\nArbol. Hocona.\nArboles chaparros.\nArbol. Toobuo.\nArbol. Hubabena.\nArbol. Baco.\nArbol. Huetobo.\nArbol. Samo.\nArbol. Huicouhno.\nArbol. Bacochitamim.\nArbol. Tampiſauhuo.\nArbol. Cuca.\nArbol. Courepa.\nArbol. Sania.\nArbol [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuations and final catchwords explicit; uncertain forms marked without reconstruction.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several lexical forms remain unresolved and require second collation; visible headword order, two-column structure, continuations, and catchwords are represented."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Historical scan shows bleed-through, edge wear, and local ink loss; uncertain readings are not silently supplied.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-142", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
