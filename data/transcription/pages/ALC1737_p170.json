@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 170,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\nPor donde? Bacumbichaca?\nPorqué? Hita bechibuo?\nPoſſeer. Ahiſuye.\nPozo. Batequi.\nPredicar hazer ſermon. Hinabaca.\nPredicador. Hinababacame.\nPredicacion. Hinabacame.\nPreguntar. Natema.\nPregunta. Atema.\nPremiar. Buſca pagar.\nPrender la planta. Baſibue, l, nabuatu e.\nPreñada eſtar. Tomaca.\nPreſtar como quiera. Arehuae.\nPreſto, adv. Bamſi.\nPrieto. Buſca negro.\nPrimero. Nepachi.\nPrima hermana. Huai.\nPrimo hermano. Satla.\nPrimo, y prima ſegunda. Habiia.\nPrimavera. Taſaria.\nPrincipio de qualquier coſa. Nate.\nPrometer. Hita natebo.\nProponer algo. Obihia.\nProbar algo. Ahieca.\nProvocar à otro. Aomtitua.\nProximo. Emotſebtuca, l, emobenaſta cahita.\nPublico ſer. Chitia -- hunacea.\nPueblo de gente. Ioreme boahua.\nPueblo por lo material. Tubi.\n\n[columna derecha]\nPuerco, ò puerca. Cobuu.\nPulga. Teput.\nPulpito. Lo miſmo.\nPunzar. Bon, bontiane.\nPunta de coſa delgada. Haicha -- ſibulai.\nPuntiſacar. [forma incierta].\nPuño de la mano. Maman-quitoſia.\nPura coſa. Auſuli.\nPurga. Buſca.\nPurgar la herida. [forma incierta].\nPujo de vientre. Siqui-buitai.\nPujo, ò pujar. Teme.\n\nQ.\n\nQue? Ha?\nQuebrar. Acutia.\nQuebrantar la ley. Buſca ofender.\nQuebrarſe el hueſſo. Otaco-tec.\nQuedarſe. Tahuac.\nQuedar ſobrar. Buſca ſobrar.\nQuemar alguna coſa. Ataiav, l, [forma incierta].\nQuemadura tal. Tahila.\nQuemarſe. Tahac.\nQuerer alguna coſa. Hitan-aque.\nQuerellarſe. Iore [forma incierta].\nQue- [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; alphabetic transition P→Q and final catchword explicit; uncertain forms marked without normalization.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several P/Q forms remain letter-ambiguous and require second visual collation."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Moderate reverse-side show-through affects isolated characters while the page structure remains recoverable.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-170", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}

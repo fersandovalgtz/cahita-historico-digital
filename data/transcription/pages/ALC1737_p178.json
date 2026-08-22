@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 178,
+  "sourcePagePrinted": null,
+  "section": "numerals",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\nX.\nXabón. Sabum.\nXaqui­ma. Saquima.\nXara. Ilibachomo.\nXerga. Serecam.\nXeme. Mata cam.\nXeringa. Seringa.\nXicama. Habui nabuo.\nXicama, ò raiz. Saram.\nXicama, ò raiz. Habui.\nXicama amargoſa. [forma incierta].\n\n[columna derecha]\nZ.\nZarco de ojos. Herocompuſe.\nZelar. Iere naitbuquieme.\nZelo. Naitbuque.\nZorra. Cahuſu.\nZorrillo. Hupa.\nZumbar. Paute.\nZumbar los oídos. Nacapo paute.\nZumbar la abeja. Cuſinepe.\n\nHOMBRES NUMERALES.\nTodos ſe declinan por la declinacion de los adjetivos, y la cuenta ſacada de papeles del Padre Otón, es como ſe ſigue: 1. ſenu, 2. uoi, 3. vabi, 4. naequi, 5. mammi, 6. buſani, 7. uobuſani, 8. uonaequi, vel uonaiequi, 9. batani, 10. uomamni, 11. uomamni aman ſenu, vel [forma compuesta incierta], & ſic de reliquis, haſta 20. que es ſenuitacaua. Y bolviendo á contar haſta otros 20. van haziendo ſus cuentas por veintes, v. g. 20. ſenuitacaua, 40. uoitacaua, 60. uabitacaua, 80. naequita­caua, 100. mammitacaua. 200. uomamnitacaua, 400. uomamni uoſatacaua, 500. uomamni uoſa aman mammitacaua, 600. [forma compuesta incierta], 700. [forma compuesta incierta], 800. uomamni naequiſitacaua, 900. uomamni naequiſi aman mammitacaua, 1000. uomamni mammiſitacaua. Deſde 1000. empieza la cuenta de nuevo contando deſde vno, ſegun el Padre Otón, que dice ſer quatro mil naequi uomamni mammiſitacaua.\nAlgu- [catchword/continúa].",
+  "lineBreakPolicy": "Mixed page structure preserved: final two-column X/Z vocabulary followed by full-width numeral prose; final catchword explicit.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "composite numeral spellings and one X-entry form", "note": "Simple cardinals were cross-checked against the existing structured numeral layer, but several long composite spellings remain visually uncertain and are not reconstructed."}],
+  "materialNotes": [{"type": "bleed_through_and_dense_type", "note": "Dense numeral prose and show-through reduce confidence in several long composite forms; page structure and simple numerals are clear.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-178", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page visual collation from the byte-verified ALC1737 facsimile; existing structured numerals used only as a cross-check for visible simple forms; no independent human verification", "processedAt": null}
+}

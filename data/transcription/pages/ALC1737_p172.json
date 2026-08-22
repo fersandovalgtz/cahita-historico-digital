@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 172,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\n[continuación de p.171] Relampago. Benſicame.\nRedaño. Tona-aurta.\nRedondo. Buſca bola.\nRedondear. Lobola ata.\nRegañar. Saetea.\nRegaño. Sachebuame.\nReglar con regla. [forma incierta].\nRegoldar. Eſiter.\nRegüeldo. Eſebuame.\nReñir. Ache.\nRemedar. Amatoi.\nRemolino de caballo. Baicuria.\nRemandar. Achahina.\nRemojar. Acoimma.\nRemudar. Buſca feriar.\nRemolino. Iecucu.\nRempujar. Aiua.\nRenovar. Abemelatc.\nReñir. Buſca regañar.\nRepartir algo. Naequimhinenca.\nRepicar campanas. Campa-nita pona.\nReprehender. Buſca reñir.\nReſbalar, ò deſlizarſe. Chitotec.\nReſina de arbol. Hubuaniaui.\nReſponder. Aiomia.\nReſpueſta. Aumtavie.\nReſucitar. Hiepbuitec.\nRetozar. Nahoa.\nReñir, ò deſafiar. Buſca pelear.\n\n[columna derecha]\nReverdecer. [forma incierta].\nRezar. Dios noca.\nRibera de qualquiera agua. Buſca orilla.\nRico ſer. Buruc tepec.\nRio. Batuhue.\nRio de qualquiera parte por donde paſſa. Haquia.\nRiſa. Ahuame.\nRincon. Cobicu.\nRiñones. Sicupuria.\nRincones. [forma incierta].\nRobar. Buſca hurtar.\nRoca. Buſca peñaſco.\nRocio de la noche. Bahchiteche.\nRodillo. Toroco.\nRociar por la boca. Abapuſta.\nRodar cueſta abajo. [forma incierta].\nRodela. Buſca adarga.\nRodilla. Tono.\nRogar. Hiocria.\nRomadizo. Coba huihuara.\nRomper. Buſca raſgar.\nRoncar. Toaque.\nRoncha hazer. Ochoteco.\nRopa vieja. Saneola.\nRoſtro. Buſca cara.\nRoña, ò ſarna. Queca.\nRoñoſo, ò ſarnoſo. Quecara.\nRueca. Cape.\nRuido hazer las tripas. Siabuana.\nRuido hazer el agua. Baba-auimcuſu.\nRubio [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; continuation from p.171 and final catchword explicit; doubtful forms remain unresolved.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several R-entry forms remain typographically ambiguous and require second visual collation."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Show-through and local character degradation affect isolated forms without obscuring page structure.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-172", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}

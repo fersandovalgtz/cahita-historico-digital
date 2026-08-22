@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 175,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.174] Tarde. Cute.\nTavano. Aopai.\nTea de pino. Huoc baoria.\nTechar caſa. Apata.\nTelaraña. Huiroſaa.\nTemblar. Auioa.\nTemblar la tierra. [forma incierta].\nTemblor tal. Huaantec.\nTemer á otro. Mahabue.\nTemor. Suumea.\nTemplar el inſtrumento. Acubita, l, Atute.\nTemprano, adv. Que ta cime.\nTender. Aberaſa.\nTender al Sol. Amnomoa.\nTener con las manos. Buſca agarrar.\nTener hambre. Buſca hambre.\nTener ſed. Buſca ſed tener.\nTener à la que quiere parir. [forma incierta].\nTentar con las manos. Buſca palpar.\nTeñir. Aioca.\nTerrible. Cachim horia.\nTeta. Pipi.\nTexer. Hiboa.\nTio, y tia. Neſa--tata.\nTiempo. Beſaumac.\nTierra. Buta.\nTinaja de barro. Babuſotori.\nTinta para eſcrebir. Achiotame.\nTirar con piedra. Tetame [continúa columna derecha].\n\n[columna derecha]\n[continuación] himma.\nTiro de piedra. Senu--himmari.\nTirar eſtirando. Buſca eſtirar.\nTirar, ò arrojar. Iahima, l, ahibeba.\nTitiritar de frio. Auioa ſebe-recari.\nTixeras. Captiam.\nTiznar. Auchucuritiua.\nTizne. Buſca tinta.\nTizon. Tabi--coperi.\nTocar. Buſca palpar.\nTodo. Chibtia.\nTomar. Ahuſec, l, annuca.\nTopar encontrando con otro. Ananquec.\nTopo animal. Buſca eſcarabajo.\nTorcer hilo, ò ſoga, &c. Acuria.\nTorcerſe el arbol. Cammuſuctec.\nTomar el vino al que lo bebe. Binota mabeeta.\nTortear. Taccare.\nTortilla pan de los Indios. Taccarim.\nTordo. Chana.\nTordo. Culuc.\nTordo. Chanabioe.\nTordo. Buabuaho.\nTortuga. Mahau.\nTortuga otra. Moſen.\nTor- [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; intra-page continuation for Tirar con piedra and final catchword explicit.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "two T-entry forms", "note": "Two locally degraded lexical forms are left unresolved rather than reconstructed."}],
+  "materialNotes": [{"type": "scan_wear_and_show_through", "note": "Local show-through and edge wear affect isolated forms; page order and headwords remain legible.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-175", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR/text layer used only as localization scaffold; no independent human verification", "processedAt": null}
+}

@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 176,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "VOCABVLARIO\n\n[columna izquierda]\n[continuación de p.175] Tortuga. Mochic.\nTortuga. Huaibii.\nToſſer. Tachuame.\nTos. Taſiria.\nToſtar. Atoa.\nToſtar maíz, &c. Saqué.\nTomates. Tomariſi.\nTrabajo. Tequipanoa.\nTrabajar. Tequipanoa--huame.\nTrabarſe con la ponzoña. Huhua ſuria.\nTraer coſas largas como palo. Tetebec.\nTraer coſas eſtendidas como torta. Beberai.\nTraer coſas redondas como piedras. Lobola.\nTraer coſas hondas como olla. Hoboroe.\nTragar. Ahmuta.\nTrapo. Saneola.\nTraſponer plátas. Buſca plantar.\nTraſquilar. Aſſca.\nTrillar. Tiribon temu.\nTripa. Sihua.\nTriſteza. Suroca.\nTriſte eſtar. Surocane.\nTronar el Cielo. Curu--rutibia.\nTronar. Cururute.\nTropezar. Teitec.\nTroxe. Bashicari.\nTronco. Cuta--moas.\n\n[columna derecha]\nTrucha. Pece huitado.\nTuerto, no derecho. Calutiu-tai.\nTuerto de vn ojo. Huepulairi puſe.\nTuetano. Orea.\nTuna generalmente.\nTuna, ò nopalera. Nabo.\nTuna grande. Buerunabo.\nTuna. Huicumé nabo.\nTuna. Meſico nabo.\nTuna. Toroco nabo.\nTuna. Huicha nabo.\nTuna que da calentura. Tuhi buechia nabo.\nTuna agria. Choco nabo.\nTuna chiquita. Iti nabo.\nTuna. Chori nabo.\nTuna. Toſali nabo.\nTuna tapona. Poma nabo.\nTuna el arbol. Oubuo.\nTuza animal. Tebos.\nTurma de animal. Bichoro.\nTurnio de ojos. Atapuſecame.\n\nV.\nVbre de animal. Pipi.\nVeſſo. Nautente.\nVayeſta. Coba hibebia.\nVnguento. Hitoata acita.\nVña. Sutu.\nVntar. Hita aet beruta.\nVn par [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; alphabetic transition T→V and final catchword explicit.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple T/V forms", "note": "Several historical forms, especially zoological and botanical labels, require second visual collation; visible order is preserved."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Bleed-through and local character degradation are present but do not obscure the page structure.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-176", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR/text layer used only as localization scaffold; no independent human verification", "processedAt": null}
+}
