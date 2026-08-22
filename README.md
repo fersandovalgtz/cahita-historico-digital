@@ -2,7 +2,7 @@
 
 <p align="center">
   <strong>Edición histórico-digital, corpus abierto e infraestructura reproducible del <em>Arte de la lengua cahita</em> impreso en México en 1737.</strong><br>
-  <sub>Fuente histórica · procedencia · lexicografía · gramática · TEI Lex-0 · QA · preservación de incertidumbre</sub>
+  <sub>Fuente histórica · procedencia · lexicografía · gramática · TEI Lex-0 · CLDF post-v1 · QA · preservación de incertidumbre</sub>
 </p>
 
 <p align="center">
@@ -11,11 +11,12 @@
   <img src="https://img.shields.io/badge/art%C3%ADculos-2%2C302-172033?style=flat-square" alt="2,302 artículos">
   <img src="https://img.shields.io/badge/candidatos-2%2C072-455B55?style=flat-square" alt="2,072 candidatos">
   <img src="https://img.shields.io/badge/gram%C3%A1tica-302%20objetos%20%C2%B7%201%2C215%20evidencias-455B55?style=flat-square" alt="Gramática">
-  <a href="docs/DATA_PRODUCTS.md"><img src="https://img.shields.io/badge/datos-JSON%20%C2%B7%20JSONL%20%C2%B7%20CSV%20%C2%B7%20TEI-5b4b8a?style=flat-square" alt="Formatos"></a>
+  <a href="docs/DATA_PRODUCTS.md"><img src="https://img.shields.io/badge/datos-JSON%20%C2%B7%20JSONL%20%C2%B7%20CSV%20%C2%B7%20TEI%20%C2%B7%20CLDF-5b4b8a?style=flat-square" alt="Formatos"></a>
 </p>
 
 <p align="center">
   <a href="docs/TEI_LEXICON_PROFILE_V0_1.md"><img src="https://img.shields.io/badge/TEI-Lex--0%200.9.5%20validado-8A1538?style=flat-square" alt="TEI Lex-0"></a>
+  <a href="CLDF.md"><img src="https://img.shields.io/badge/CLDF-Dictionary%20post--v1-5b4b8a?style=flat-square" alt="CLDF Dictionary post-v1"></a>
   <a href="SCHEMA.md"><img src="https://img.shields.io/badge/JSON%20Schema-22%20contratos-3b5b92?style=flat-square" alt="22 JSON Schema"></a>
   <a href="FAIR_ASSESSMENT.md"><img src="https://img.shields.io/badge/FAIR-pre--assessment-2d6a4f?style=flat-square" alt="FAIR pre-assessment"></a>
   <a href="CITATION.cff"><img src="https://img.shields.io/badge/citaci%C3%B3n-CFF%201.2-4b5563?style=flat-square" alt="CFF 1.2"></a>
@@ -43,6 +44,7 @@
 <p align="center">
   <a href="#pru%C3%A9balo-en-30-segundos"><strong>Pruébalo</strong></a> ·
   <a href="docs/DATA_PRODUCTS.md">Datos y formatos</a> ·
+  <a href="CLDF.md">CLDF</a> ·
   <a href="SCHEMA.md">Modelo de datos</a> ·
   <a href="SOURCES.md">Fuentes</a> ·
   <a href="PROVENANCE.md">Procedencia</a> ·
@@ -170,11 +172,11 @@ El repositorio congela **22 JSON Schema Draft 2020-12 + 4 metadatos fuente = 26 
 
 La proyección lexicográfica principal de v1.0.0 es **TEI Lex-0 0.9.5**, validada externamente con Jing contra el schema archivado y fijado por SHA-256. La salida contiene 2,302 entradas, 2,221 citas de traducción, 150 remisiones y 60 `@target` estrictos.
 
-CLDF fue evaluado y **deliberadamente diferido** como derivado analítico post-v1. No se considera una carencia: forzarlo como representación primaria podría aplanar la microestructura español→cahíta e introducir decisiones modernas de identidad lingüística que la fuente no demuestra.
+Como capa **post-v1**, CHD incorpora además una proyección reproducible al módulo **CLDF Dictionary**. La construcción validada produce **2,221 filas `EntryTable`**, **2,221 filas `SenseTable`**, una fila documental `LanguageTable` y una referencia bibliográfica a `ALC1737`. Conserva literalmente las formas históricas, arrastra el estado `humanVerified` sin elevarlo y no asigna ISO 639-3 ni Glottocode al rótulo histórico `Cahita`. La proyección se reconstruye desde los JSONL canónicos, se valida con `pycldf` y con invariantes CHD fila por fila; no modifica ni sustituye la Release `v1.0.0`. Véase [`CLDF.md`](CLDF.md).
 
 ## Reproducibilidad y release
 
-La QA de GitHub Actions valida inventarios, IDs, JSON Schema, reconciliación, documentación, derivados, remisiones, recolaciones, `Lo miſmo`, TEI/Lex-0, gramática, freezes y paquetes de release.
+La QA de GitHub Actions valida inventarios, IDs, JSON Schema, reconciliación, documentación, derivados, remisiones, recolaciones, `Lo miſmo`, TEI/Lex-0, gramática, freezes y paquetes de release. Un workflow post-v1 separado reconstruye y valida también la proyección CLDF Dictionary sin introducirla en el freeze científico.
 
 La v1.0.0 fija:
 
