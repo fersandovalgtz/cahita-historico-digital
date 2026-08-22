@@ -193,4 +193,7 @@ jobs:
         run: python scripts/validate_published_v1.py
 
       - name: Validate post-release preservation and persistent identifiers
-        run: python scripts/validate_persistent_identifiers.py
+        run: |
+          python -m py_compile scripts/validate_persistent_identifiers.py scripts/sync_persistent_identifiers.py
+          python scripts/sync_persistent_identifiers.py --help >/dev/null
+          python scripts/validate_persistent_identifiers.py
