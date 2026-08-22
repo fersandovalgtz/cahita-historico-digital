@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Validate CHD's deterministic experimental TEI lexical projection.
+"""Validate CHD's deterministic TEI Lex-0 lexical projection.
 
-This validator checks well-formed XML and CHD project invariants. It does not
-claim external TEI Lex-0 schema validation.
+This validator checks well-formed XML and CHD project invariants. The separate
+external gate validates the exact exported bytes against the archived official
+TEI Lex-0 0.9.5 Relax NG schema using Jing.
 """
 from __future__ import annotations
 
@@ -18,6 +19,8 @@ ROOT = Path(__file__).resolve().parents[1]
 TEI_NS = "http://www.tei-c.org/ns/1.0"
 XML_NS = "http://www.w3.org/XML/1998/namespace"
 NS = {"tei": TEI_NS}
+EXPECTED_SCHEMA_URL = "https://lex-0.org/releases/v0.9.5/schema/lex-0.rng"
+EXPECTED_SCHEMA_SHA256 = "35e73fef48526634714bdf3d16b924f958fca078a903d0bdc2dd4d7d116d1aaa"
 
 
 def sha256(path: Path) -> str:
@@ -55,8 +58,8 @@ def main() -> None:
 
         if root.tag != f"{{{TEI_NS}}}TEI":
             raise SystemExit("TEI export root is not TEI in the TEI namespace")
-        if root.get("type") != "dictionary":
-            raise SystemExit("TEI export must declare TEI/@type=dictionary")
+        if root.get("type") != "lex-0":
+            raise SystemExit("TEI Lex-0 export must declare TEI/@type=lex-0")
         if root.get(f"{{{XML_NS}}}lang") != "es":
             raise SystemExit("TEI export root must declare xml:lang=es")
 
@@ -107,9 +110,18 @@ def main() -> None:
             if not target or not target.startswith("#") or target[1:] not in valid_ids:
                 raise SystemExit(f"TEI @target does not resolve to an exported entry: {target}")
 
+        if manifest["teiLex0ConformanceClaimed"] is not True:
+            raise SystemExit("TEI manifest must claim Lex-0 conformance only with CI external gate")
+        if manifest["externalLex0SchemaValidationEnforcedInCI"] is not True:
+            raise SystemExit("TEI manifest must declare external Lex-0 validation enforced in CI")
+        if manifest["externalLex0SchemaValidationPerformedByExporter"] is not False:
+            raise SystemExit("the exporter itself must not pretend it executed the external validator")
+        if manifest["externalLex0SchemaUrl"] != EXPECTED_SCHEMA_URL:
+            raise SystemExit("TEI manifest points at an unexpected Lex-0 schema URL")
+        if manifest["externalLex0SchemaSha256"] != EXPECTED_SCHEMA_SHA256:
+            raise SystemExit("TEI manifest points at an unexpected Lex-0 schema hash")
+
         for key in (
-            "teiLex0ConformanceClaimed",
-            "externalLex0SchemaValidationPerformed",
             "modernLanguageIdentityInferred",
             "editorialCrossReferenceEdgesIncluded",
             "fuzzyCrossReferenceTargetsIncluded",
@@ -117,7 +129,7 @@ def main() -> None:
             "borrowingInferred",
         ):
             if manifest[key] is not False:
-                raise SystemExit(f"TEI non-inference/conformance guard must remain false: {key}")
+                raise SystemExit(f"TEI non-inference guard must remain false: {key}")
         if manifest["strictExactTargetsIncluded"] is not True:
             raise SystemExit("TEI strictExactTargetsIncluded must be true")
         if manifest["sourceTranscriptionPreserved"] is not True:
@@ -129,7 +141,8 @@ def main() -> None:
             "TEI lexical projection QA OK: "
             f"entries={len(entries)}; translations={len(citations)}; "
             f"crossRefs={len(refs)}; strictTargets={len(targeted)}; "
-            f"xmlSha256={sha256(xml_path)}; Lex0ConformanceClaimed=false"
+            f"xmlSha256={sha256(xml_path)}; Lex0ConformanceClaimed=true; "
+            f"schemaSha256={EXPECTED_SCHEMA_SHA256}"
         )
 
 
