@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 139,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.138] Algun tanto de tiempo. Ale quiſi.\nAlguno, ó alguna. Senubuneri.\nAliento, ó huelgo. Iebiteri.\nA limpiar algo. Anubina.\nAljaba. Huitoria.\nAllá. Amani.\nAllanar el ſuelo. Buiatapai-tua.\nAllende del Rio. Huaitana.\nAlli. Humuni.\nAlma. Hiepſi.\nAlmagre. Siquilibabu.\nAlmohada. Muteca.\nAlmorrana. bora.\nAlta coſa. Hicauchaca.\nAlto à ello. Hamte abobo.\nAlto como arbol. Tetebe.\nAlto de cuerpo. Erapani.\nAlumbrar con candela. Baoria.\nAlumbrar el Sol. Tata chitia.\nAlumbre. Alumbreſim.\nAlvergarſe para defenderſe de la lluvia. Auhintua cacomonvarecari.\nAlvergarſe para defenderſe del Sol. Hecapo ieſe.\nAma de leche. Teco-auhune.\nAmador. Yore eriame.\nAmargar. Chibue.\nAmancebarſe hurtando à la muger. Ebuahitbe.\nA man derecha. Bajatana-bichaca.\n\n[columna derecha]\n[continuación de la entrada anterior] bichaca.\nA man izquierda. Micotana bichaca.\nAmanecer, empezar à amanecer. Machitana.\nAmanecer, eſclarecer. Machuſuc.\nAmanſar animales. Manſote, l, Camabahueme.\nAmar à otro. Senuc -- cria.\nAmarga coſa. Chibu.\nAmarillo. Sabuali.\nAmarillo, eſtár. Sabualic.\nAmaſar. Quite.\nAmbos à dos. Nanauchi.\nA media noche. Tucaa-naſuc.\nA medio dia. Lutula-catec.\nAmo de Ciervo. Teocame, l, nuieme.\nAmohinar à otro. Senu-omtituamta.\nAmolar. Hibuabuite.\nAmoneſtar. Abicaitebo.\nAmoneſtacion. Amechaihua.\nAmontonar. Nataaiecha.\nAmortajar. Muquilata-[forma incierta].\nAmpararſe detrás de algo. Hitaribeaguiſte.\nAmpollas tener. Booio.\nAnca, ò quadril. Chobe, l, hueperi.\nAncha coſa. Bueca.\nAnciana. Hambiola.\nAncia- [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; cross-page continuations and final catchwords explicit; uncertain forms marked without reconstruction.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "multiple vocabulary forms", "note": "Several lexical forms remain unresolved and require second collation; visible headword order, two-column structure, continuations, and catchwords are represented."}],
+  "materialNotes": [{"type": "bleed_through_and_scan_wear", "note": "Historical scan shows bleed-through, edge wear, and local ink loss; uncertain readings are not silently supplied.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-139", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
