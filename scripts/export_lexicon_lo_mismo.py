@@ -2,8 +2,9 @@
 """Export deterministic article-level candidates containing historical `Lo miſmo`.
 
 Detection is deliberately surface-based and limited to canonical
-``transcriptionRaw``. The output is an editorial queue, not an automatic
-anaphora-resolution layer.
+``transcriptionRaw``. The output is an editorial queue of historical
+metalinguistic formula occurrences. It does not infer the formula's exact
+referential scope, a target-language form, borrowing, or semantic equivalence.
 """
 from __future__ import annotations
 
@@ -34,7 +35,7 @@ CSV_FIELDS = [
     "occurrenceCount",
     "reviewStatus",
     "humanVerified",
-    "anaphoraCandidateType",
+    "formulaCandidateType",
 ]
 
 LO_MISMO = re.compile(r"\blo\s+mismo\b")
@@ -53,8 +54,6 @@ def article_number(article_id: str) -> int:
 
 
 def normalized_surface(text: str) -> str:
-    # Compatibility normalization plus an explicit long-s replacement makes
-    # matching robust while leaving the exported source transcription untouched.
     value = unicodedata.normalize("NFKC", text).replace("ſ", "s").casefold()
     return " ".join(value.split())
 
@@ -91,7 +90,7 @@ def load_candidates() -> tuple[list[dict[str, Any]], int, list[str]]:
                     "occurrenceCount": len(occurrences),
                     "reviewStatus": article.get("reviewStatus"),
                     "humanVerified": bool(article.get("humanVerified")),
-                    "anaphoraCandidateType": "lo_mismo_surface_formula",
+                    "formulaCandidateType": "lo_mismo_metalinguistic_formula",
                 }
             )
 
@@ -119,7 +118,7 @@ def main() -> None:
         "--out-dir",
         type=Path,
         default=ROOT / "build/lexicon-lo-mismo",
-        help="Directory for the derived Lo miſmo candidate inventory.",
+        help="Directory for the derived Lo miſmo formula-candidate inventory.",
     )
     args = parser.parse_args()
 
@@ -139,7 +138,7 @@ def main() -> None:
 
     manifest = {
         "sourceId": "ALC1737",
-        "dataset": "lo_mismo_surface_formula_candidates",
+        "dataset": "lo_mismo_metalinguistic_formula_candidates",
         "derivation": "surface detection in canonical article transcriptionRaw after technical Unicode/long-s normalization",
         "canonicalInputPattern": "data/lexicon/articles/*.jsonl",
         "canonicalInputFileCount": len(source_files),
@@ -148,7 +147,10 @@ def main() -> None:
         "surfaceOccurrenceCount": total_occurrences,
         "articleTypeCounts": dict(sorted(article_type_counts.items())),
         "reviewStatusCounts": dict(sorted(review_status_counts.items())),
-        "anaphoraResolutionPerformed": False,
+        "formulaFunctionInferred": False,
+        "referentialScopeInferred": False,
+        "targetLanguageFormInferred": False,
+        "borrowingInferred": False,
         "semanticEquivalenceInferred": False,
         "sortOrder": "numeric articleId ascending",
         "deterministic": True,
@@ -170,7 +172,7 @@ def main() -> None:
             raise SystemExit(f"post-write integrity check failed for {name}")
 
     print(
-        "exported Lo miſmo surface-formula queue: "
+        "exported Lo miſmo metalinguistic-formula queue: "
         f"{len(rows)} articles, {total_occurrences} occurrence(s), "
         f"from {article_count} canonical articles; outputs in {args.out_dir}"
     )
