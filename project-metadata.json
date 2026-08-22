@@ -1,7 +1,7 @@
 {
   "project": "Cahíta Histórico Digital",
   "dataset_version": "1.0.0",
-  "release_status": "stable GitHub release published and attested",
+  "release_status": "stable GitHub release published, attested, and archived in Zenodo",
   "release_date": "2026-08-22",
   "repository": "https://github.com/fersandovalgtz/cahita-historico-digital",
   "release": {
@@ -13,6 +13,17 @@
     "zip_bytes": 1076296,
     "zip_sha256": "583183eabb90080dccd1ea63a069e248b28cd3ce41e99ba754ac71ce26586158",
     "attestation": "release/github_release_attestation_v1.0.0.json"
+  },
+  "archival_deposit": {
+    "service": "Zenodo",
+    "record_url": "https://zenodo.org/records/22061986",
+    "record_id": 22061986,
+    "version_doi": "10.5281/zenodo.22061986",
+    "concept_doi": "10.5281/zenodo.22061985",
+    "published_date": "2026-08-22",
+    "resource_type": "Software",
+    "licenses_declared": ["CC-BY-4.0", "MIT"],
+    "indexed_in": ["OpenAIRE"]
   },
   "source": {
     "source_id": "ALC1737",
@@ -79,9 +90,10 @@
     "licensing_matrix": "LICENSING.md"
   },
   "persistent_identifiers": {
-    "doi": null,
-    "concept_doi": null,
-    "status": "pending archival deposit",
+    "doi": "10.5281/zenodo.22061986",
+    "concept_doi": "10.5281/zenodo.22061985",
+    "record_url": "https://zenodo.org/records/22061986",
+    "status": "published archival deposit",
     "tracking_issue": "https://github.com/fersandovalgtz/cahita-historico-digital/issues/169"
   },
   "documentation": {
@@ -96,6 +108,7 @@
     "repository_standard": "SCIENTIFIC_REPOSITORY_STANDARD.md",
     "data_products": "docs/DATA_PRODUCTS.md",
     "reproducibility": "docs/REPRODUCIBILITY.md",
+    "preservation": "docs/PRESERVATION.md",
     "ecosystem": "docs/ECOSYSTEM.md",
     "licensing": "LICENSING.md",
     "security": "SECURITY.md",
