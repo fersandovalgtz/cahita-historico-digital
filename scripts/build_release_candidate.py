@@ -27,6 +27,7 @@ EXPORTERS = [
     ("crossreference_reviewed_view", "export_lexicon_crossreference_reviewed_view.py", "--out-dir"),
     ("crossreference_review_queue", "export_crossreference_review_queue.py", "--out-dir"),
     ("crossreference_recollation_queue", "export_crossreference_recollation_queue.py", "--output-dir"),
+    ("v1_recollation_disposition", "export_v1_recollation_disposition.py", "--out-dir"),
     ("lo_mismo", "export_lexicon_lo_mismo.py", "--out-dir"),
     ("historical_variety", "export_lexicon_variety_evidence.py", "--out-dir"),
     ("physical_spans", "export_lexicon_physical_spans.py", "--out-dir"),
@@ -48,6 +49,7 @@ DOCUMENT_FILES = [
     "docs/GRAMMAR_COMPLETION_2026-08-21.md",
     "docs/CROSSREFERENCE_REVIEW_PROGRESS_2026-08-21.md",
     "docs/CROSSREFERENCE_RECOLLATION_QUEUE.md",
+    "docs/V1_RECOLLATION_DISPOSITION.md",
     "docs/TEI_LEXICON_PROFILE_V0_1.md",
     "docs/CLDF_SCOPE_DECISION_V1_0.md",
     "docs/RELEASE_CANDIDATE_PACKAGE.md",
@@ -58,7 +60,6 @@ DOCUMENT_FILES = [
 ]
 
 OPEN_GATES = [
-    "direct_facsimile_recollation_of_22_crossreference_cases",
     "final_release_tag_and_changelog",
     "archival_deposit_and_version_doi",
 ]
@@ -136,6 +137,7 @@ def build_manifest(bundle: Path) -> dict[str, Any]:
     strict = load_nested_manifest(bundle, "crossreference_strict_graph")
     reviewed = load_nested_manifest(bundle, "crossreference_reviewed_view")
     recollation = load_nested_manifest(bundle, "crossreference_recollation_queue")
+    v1_recollation = load_nested_manifest(bundle, "v1_recollation_disposition")
     tei = load_nested_manifest(bundle, "tei_lexicon")
     grammar_evidence = load_nested_manifest(bundle, "grammar_evidence")
     grammar_coverage = load_nested_manifest(bundle, "grammar_rule_coverage")
@@ -155,6 +157,19 @@ def build_manifest(bundle: Path) -> dict[str, Any]:
         "humanVerifiedCount": 0,
         "releaseReady": False,
         "openGates": OPEN_GATES,
+        "v1RecollationDisposition": {
+            "document": "docs/V1_RECOLLATION_DISPOSITION.md",
+            "sourceQueueCount": int(v1_recollation["sourceQueueCount"]),
+            "openUncertaintyCount": int(v1_recollation["openUncertaintyCount"]),
+            "resolvedByThisLayerCount": int(v1_recollation["resolvedByThisLayerCount"]),
+            "selectedTargetCount": int(v1_recollation["selectedTargetCount"]),
+            "canonicalChangesByThisLayerCount": int(v1_recollation["canonicalChangesByThisLayerCount"]),
+            "humanVerifiedCount": int(v1_recollation["humanVerifiedCount"]),
+            "releaseGateDisposition": v1_recollation["releaseGateDisposition"],
+            "philologicalResolutionStatus": v1_recollation["philologicalResolutionStatus"],
+            "facsimileResolutionClaimed": bool(v1_recollation["facsimileResolutionClaimed"]),
+            "ocrAcceptedAsFacsimileSubstitute": bool(v1_recollation["ocrAcceptedAsFacsimileSubstitute"]),
+        },
         "contractFreeze": {
             "freezeId": contract_freeze["freezeId"],
             "manifestPath": "release/v1_contract_manifest.json",
@@ -181,6 +196,7 @@ def build_manifest(bundle: Path) -> dict[str, Any]:
             "sourceReviewRecordCount": int(reviewed["sourceReviewRecordCount"]),
             "reviewedViewEdgeCount": int(reviewed["reviewedViewEdgeCount"]),
             "facsimileRecollationQueueCount": int(recollation["queueCount"]),
+            "v1OpenRecollationUncertaintyCount": int(v1_recollation["openUncertaintyCount"]),
             "grammarObjectCount": int(grammar_evidence["canonicalObjectCount"]),
             "grammarEvidenceRowCount": int(grammar_evidence["evidenceRowCount"]),
             "grammarRulesWithStructuredClaim": int(grammar_coverage["rulesWithStructuredClaim"]),
@@ -203,6 +219,7 @@ def build_manifest(bundle: Path) -> dict[str, Any]:
         "strictCrossReferenceEdgeCount": 60,
         "sourceReviewRecordCount": 90,
         "facsimileRecollationQueueCount": 22,
+        "v1OpenRecollationUncertaintyCount": 22,
         "grammarObjectCount": 302,
         "grammarEvidenceRowCount": 1215,
         "teiEntryCount": 2302,
@@ -210,6 +227,21 @@ def build_manifest(bundle: Path) -> dict[str, Any]:
     for key, value in required_counts.items():
         if expected[key] != value:
             raise SystemExit(f"release candidate scientific count drifted: {key}={expected[key]} != {value}")
+    disposition = manifest["v1RecollationDisposition"]
+    if disposition != {
+        "document": "docs/V1_RECOLLATION_DISPOSITION.md",
+        "sourceQueueCount": 22,
+        "openUncertaintyCount": 22,
+        "resolvedByThisLayerCount": 0,
+        "selectedTargetCount": 0,
+        "canonicalChangesByThisLayerCount": 0,
+        "humanVerifiedCount": 0,
+        "releaseGateDisposition": "closed_for_v1_scope_as_explicit_open_uncertainties",
+        "philologicalResolutionStatus": "open",
+        "facsimileResolutionClaimed": False,
+        "ocrAcceptedAsFacsimileSubstitute": False,
+    }:
+        raise SystemExit("release candidate v1 recollation disposition drifted")
     if expected["teiLex0ConformanceClaimed"] is not True or expected["externalLex0SchemaValidationEnforcedInCI"] is not True:
         raise SystemExit("release candidate must preserve CI-backed Lex-0 conformance")
     if expected["externalLex0SchemaUrl"] != "https://lex-0.org/releases/v0.9.5/schema/lex-0.rng":
@@ -269,7 +301,7 @@ def build(output_dir: Path) -> dict[str, Any]:
         "built CHD scientific release candidate: "
         f"files={manifest['artifactFileCount'] + 1}; lexicon={manifest['summary']['lexiconArticleCount']}; "
         f"grammarEvidence={manifest['summary']['grammarEvidenceRowCount']}; "
-        f"recollationQueue={manifest['summary']['facsimileRecollationQueueCount']}; "
+        f"recollationOpen={manifest['summary']['v1OpenRecollationUncertaintyCount']}; "
         f"openGates={len(manifest['openGates'])}; releaseReady={str(manifest['releaseReady']).lower()}"
     )
     print(f"  {ZIP_NAME}: {result['zipBytes']} bytes; sha256 {result['zipSha256']}")
