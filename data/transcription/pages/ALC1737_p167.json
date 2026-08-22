@@ -1,0 +1,16 @@
+{
+  "sourceId": "ALC1737",
+  "sourcePageDigital": 167,
+  "sourcePagePrinted": null,
+  "section": "vocabulary",
+  "transcriptionType": "diplomatic",
+  "coverage": "full_page",
+  "scope": "printed_text",
+  "text": "DE LA LENGVA CAHITA.\n\n[columna izquierda]\n[continuación de p.166] Paſſo de las beſtias. Arabue-rama.\nParto aver. Tuabaſo.\nPaſmarſe la beſtia. Bahac.\nPaſſo del Rio. Babaſuapo.\nPato de tierra caliente colorado. Bachaim.\nPato anſar. Sibaro.\nPato chico. Iliba chau.\nPato. Totbio.\nPato. Bapo--moatela.\nPato. Tepciabiri.\n\nPaxaro generalmente.\nPaxaro. Moel.\nPaxaro. Baiubuacas.\nPaxaro. Tacampilis.\nPaxaro. Chilic.\nPaxaro. Baſomoel.\nPaxaro. Chumbiutela.\nPaxaro. Hopopol.\nPaxaro. Pirila.\nPaxaro. Torochapare.\nPaxaro. Buitaracas.\nPaxaro. Cocobuic.\nPaxaro. Poutela.\nPaxaro. Tuibit.\nPaxaro. Cholou, abuſo de Indios.\nPaxaro. Chichial.\nPaxaro. Tacochae.\nPaxaro. Puchilau.\nPecado. Buſca ofenſa.\nPecador. Buſca ofenſor.\nPecar. Buſca ofender.\nPez, ò peſcado generalmente. [forma incierta; continúa columna derecha].\n\n[columna derecha]\n[continuación] [forma incierta].\nPedazo. Lebela.\nPedernal prieto para flechas. Bicam.\nPedir. Netane.\nPedorro. Hubara.\nPedo. Huba.\nPeerſe. Hubahuame.\nPegar generalmente. Naſi achuatia.\nPegarſe los perros. Chumch-iuc.\nPeinar. Achiqui.\nPeine. Buſca eſcobeta.\nPelar quitar el pelo. Aſica.\nPelar Aves deſplumandolas. Buſca deſplumar.\nPelar la cementera, limpiarla. Aſapua.\nPelearſe. Naſua--emo omtacari.\nPellejo. Bebua.\nPellejo arrancado. Abeau.\nPelliſcar. Aſuſique.\nPelliſco. Ioreſuſibuame.\nPelo interior. Huiboa.\nPelon ſin pelo. Caita chona.\nPelota para jugar. ulin.\nPelota de madera. Ruruetiame.\nPelota con que juegan las mugeres. Catom.\nPelota de una aſqua. Tahibibebia.\nPena generalmente. Suroca.\nPena- [catchword/continúa].",
+  "lineBreakPolicy": "Two-column reading order preserved; thematic bird series, inter-column continuation and final catchword explicit; uncertain forms remain marked.",
+  "reviewStatus": "unresolved",
+  "humanVerified": false,
+  "uncertainties": [{"token": "Pez, ò peſcado generalmente", "note": "The Cahita form crosses the column boundary and is not sufficiently secure for promotion without a second visual collation."}],
+  "materialNotes": [{"type": "scan_wear_and_light_bleed_through", "note": "The page is comparatively clear; a few forms remain affected by historical type and column-boundary ambiguity.", "transcription": null}],
+  "provenance": {"derivedFrom": "ALC1737:digital-page-167", "agent": "GPT-5.6 Sol visual collation", "method": "Full-page two-column vocabulary transcription from the byte-verified ALC1737 working facsimile; OCR used only as localization scaffold; no independent human verification", "processedAt": null}
+}
