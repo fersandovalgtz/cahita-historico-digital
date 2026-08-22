@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
 """Attest the published GitHub Release for Cahíta Histórico Digital v1.0.0.
 
-This validator consumes release metadata and locally downloaded release assets. It
-never creates, edits, or moves the release/tag; it only verifies identity and writes
-an auditable JSON attestation when every invariant holds.
+The final release package embeds the immutable release commit in
+RELEASE_MANIFEST.json. Therefore a ZIP hash observed on a pull-request merge ref is
+not a valid final-release identity. This validator compares the downloaded GitHub
+Release assets against a fresh deterministic rebuild from the immutable v1.0.0 tag.
+It never creates, edits, or moves that tag or the release.
 """
 from __future__ import annotations
 
@@ -16,8 +18,6 @@ from typing import Any
 EXPECTED_TAG = "v1.0.0"
 EXPECTED_COMMIT = "dbcdecf0003ac5a10ae963caf6babdcf5c22128d"
 EXPECTED_ZIP = "cahita-historico-digital-v1.0.0.zip"
-EXPECTED_ZIP_BYTES = 1_076_296
-EXPECTED_ZIP_SHA256 = "45ed1f5e4f6ce101c574dec8a91ffa3c4694050cd4366d70f20c644c40043903"
 EXPECTED_ASSETS = {EXPECTED_ZIP, "RELEASE_MANIFEST.json", "SHA256SUMS.txt"}
 
 
@@ -40,9 +40,10 @@ def parse_sha256sums(path: Path) -> list[tuple[str, str]]:
             raise SystemExit(f"invalid SHA256SUMS line: {raw!r}")
         digest, name = parts
         name = name.lstrip("*")
-        if len(digest) != 64 or any(c not in "0123456789abcdef" for c in digest.lower()):
+        digest = digest.lower()
+        if len(digest) != 64 or any(c not in "0123456789abcdef" for c in digest):
             raise SystemExit(f"invalid SHA-256 digest in SHA256SUMS: {digest!r}")
-        rows.append((digest.lower(), name))
+        rows.append((digest, name))
     if len(rows) != 2:
         raise SystemExit(f"expected exactly 2 SHA256SUMS rows, found {len(rows)}")
     return rows
@@ -55,11 +56,24 @@ def find_sum(rows: list[tuple[str, str]], suffix: str) -> str:
     return matches[0]
 
 
+def assert_same_bytes(left: Path, right: Path, label: str) -> None:
+    if left.stat().st_size != right.stat().st_size:
+        raise SystemExit(
+            f"{label} byte-size mismatch: downloaded={left.stat().st_size}, rebuilt={right.stat().st_size}"
+        )
+    left_sha = sha256_file(left)
+    right_sha = sha256_file(right)
+    if left_sha != right_sha:
+        raise SystemExit(f"{label} SHA-256 mismatch: downloaded={left_sha}, rebuilt={right_sha}")
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--release-json", type=Path, required=True)
     parser.add_argument("--asset-dir", type=Path, required=True)
     parser.add_argument("--tag-commit", required=True)
+    parser.add_argument("--rebuilt-zip", type=Path, required=True)
+    parser.add_argument("--rebuilt-manifest", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
 
@@ -94,17 +108,23 @@ def main() -> None:
             raise SystemExit(f"asset-size mismatch for {name}: API={api_size}, local={local_size}")
 
     zip_path = asset_dir / EXPECTED_ZIP
-    if zip_path.stat().st_size != EXPECTED_ZIP_BYTES:
-        raise SystemExit(
-            f"v1 ZIP size mismatch: {zip_path.stat().st_size} != {EXPECTED_ZIP_BYTES}"
-        )
-    zip_sha = sha256_file(zip_path)
-    if zip_sha != EXPECTED_ZIP_SHA256:
-        raise SystemExit(f"v1 ZIP SHA-256 mismatch: {zip_sha} != {EXPECTED_ZIP_SHA256}")
-
     manifest_path = asset_dir / "RELEASE_MANIFEST.json"
-    manifest = load_json(manifest_path)
+    sums_path = asset_dir / "SHA256SUMS.txt"
+
+    if not args.rebuilt_zip.is_file() or not args.rebuilt_manifest.is_file():
+        raise SystemExit("deterministic rebuild outputs are missing")
+
+    # Strongest identity check: published payload must be byte-identical to a clean
+    # deterministic rebuild made from the immutable release tag.
+    assert_same_bytes(zip_path, args.rebuilt_zip, "v1 release ZIP")
+    assert_same_bytes(manifest_path, args.rebuilt_manifest, "v1 release manifest")
+
+    zip_sha = sha256_file(zip_path)
+    zip_bytes = zip_path.stat().st_size
     manifest_sha = sha256_file(manifest_path)
+    manifest_bytes = manifest_path.stat().st_size
+
+    manifest = load_json(manifest_path)
     if manifest.get("version") != "1.0.0" or manifest.get("tag") != EXPECTED_TAG:
         raise SystemExit("release manifest version/tag mismatch")
     if manifest.get("sourceCommit") != EXPECTED_COMMIT:
@@ -118,7 +138,6 @@ def main() -> None:
     if int(manifest.get("humanVerifiedCount", -1)) != 0:
         raise SystemExit("humanVerifiedCount drifted from 0")
 
-    sums_path = asset_dir / "SHA256SUMS.txt"
     sums = parse_sha256sums(sums_path)
     sums_zip = find_sum(sums, EXPECTED_ZIP)
     sums_manifest = find_sum(sums, "RELEASE_MANIFEST.json")
@@ -134,7 +153,8 @@ def main() -> None:
 
     attestation = {
         "attestationType": "github_release_integrity",
-        "attestationVersion": 1,
+        "attestationVersion": 2,
+        "verificationMode": "deterministic_rebuild_from_immutable_tag",
         "project": "Cahíta Histórico Digital",
         "version": "1.0.0",
         "tag": EXPECTED_TAG,
@@ -144,6 +164,8 @@ def main() -> None:
         "publishedAt": release.get("publishedAt"),
         "isDraft": False,
         "isPrerelease": False,
+        "releaseZip": {"bytes": zip_bytes, "sha256": zip_sha},
+        "releaseManifest": {"bytes": manifest_bytes, "sha256": manifest_sha},
         "assets": assets,
         "checks": {
             "tagPointsToExpectedCommit": True,
@@ -151,7 +173,8 @@ def main() -> None:
             "stableRelease": True,
             "exactAssetSet": True,
             "apiAssetSizesMatchDownloadedBytes": True,
-            "validatedV1ZipSha256Matches": True,
+            "publishedZipMatchesDeterministicTagRebuild": True,
+            "publishedManifestMatchesDeterministicTagRebuild": True,
             "sha256SumsConsistent": True,
             "releaseManifestIdentityMatchesTag": True,
             "doiNotInferred": True,
@@ -170,7 +193,8 @@ def main() -> None:
     print(
         "GitHub Release attestation OK: "
         f"tag={EXPECTED_TAG}; commit={EXPECTED_COMMIT}; assets=3; "
-        f"zipSha256={zip_sha}; archivalDepositStatus=pending; humanVerified=0"
+        f"zipBytes={zip_bytes}; zipSha256={zip_sha}; rebuildMatch=true; "
+        "archivalDepositStatus=pending; humanVerified=0"
     )
 
 
