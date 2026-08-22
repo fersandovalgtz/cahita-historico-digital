@@ -2,16 +2,16 @@
 """Validate the deterministic CHD scientific release-candidate bundle."""
 from __future__ import annotations
 
-import json
 import tempfile
 import zipfile
 from pathlib import Path
 
 from build_release_candidate import BUNDLE_DIRNAME, MANIFEST_NAME, ZIP_NAME, build
 
+EXPECTED_SCHEMA_URL = "https://lex-0.org/releases/v0.9.5/schema/lex-0.rng"
+EXPECTED_SCHEMA_SHA256 = "35e73fef48526634714bdf3d16b924f958fca078a903d0bdc2dd4d7d116d1aaa"
 EXPECTED_OPEN_GATES = {
     "direct_facsimile_recollation_of_22_crossreference_cases",
-    "external_tei_lex0_schema_validation",
     "final_cldf_lex0_scope_decision",
     "final_schema_and_metadata_freeze",
     "final_release_tag_and_changelog",
@@ -49,8 +49,10 @@ def validate_manifest(manifest: dict) -> None:
         "grammarRulesWithStructuredClaim": 370,
         "grammarRuleComparisonUniverse": 373,
         "teiEntryCount": 2302,
-        "teiLex0ConformanceClaimed": False,
-        "externalLex0SchemaValidationPerformed": False,
+        "teiLex0ConformanceClaimed": True,
+        "externalLex0SchemaValidationEnforcedInCI": True,
+        "externalLex0SchemaUrl": EXPECTED_SCHEMA_URL,
+        "externalLex0SchemaSha256": EXPECTED_SCHEMA_SHA256,
     }
     if summary != expected:
         raise SystemExit(f"release-candidate scientific summary drifted: {summary} != {expected}")
@@ -103,7 +105,8 @@ def main() -> None:
             f"zip={ZIP_NAME}; sha256={first['zipSha256']}; "
             f"files={first['manifest']['artifactFileCount'] + 1}; "
             f"artifactBytes={first['manifest']['artifactBytes']}; "
-            f"openGates={len(first['manifest']['openGates'])}; releaseReady=false; humanVerified=0"
+            f"openGates={len(first['manifest']['openGates'])}; "
+            "Lex0ConformanceClaimed=true; releaseReady=false; humanVerified=0"
         )
 
 
