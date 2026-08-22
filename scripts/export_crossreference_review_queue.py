@@ -23,6 +23,7 @@ ROOT = Path(__file__).resolve().parents[1]
 JSONL_NAME = "chd_crossreference_review_queue.jsonl"
 CSV_NAME = "chd_crossreference_review_queue.csv"
 MANIFEST_NAME = "manifest.json"
+PRIORITY_TIERS = ("A_unique_strong", "B_multiple_strong", "C_no_strong")
 
 CSV_FIELDS = [
     "sourceArticleId",
@@ -92,7 +93,10 @@ def build_queue(max_candidates: int = 5) -> tuple[list[dict[str, Any]], dict[str
         "strictNotLocatedDiagnosticCount": len(diagnostics),
         "sourceReviewRecordCount": len(reviews),
         "awaitingSourceReviewCount": len(queue),
-        "priorityTierCounts": dict(sorted(tier_counts.items())),
+        "priorityTierCounts": {
+            tier: int(tier_counts.get(tier, 0))
+            for tier in PRIORITY_TIERS
+        },
         "strongCandidateCountShownDistribution": dict(sorted(strong_counts.items())),
         "maxCandidatesShownPerReference": max_candidates,
         "canonicalResolutionPolicy": diagnostic_meta["canonicalResolutionPolicy"],
@@ -170,7 +174,7 @@ def main() -> None:
     )
     parser.add_argument(
         "--tier",
-        choices=["A_unique_strong", "B_multiple_strong", "C_no_strong"],
+        choices=PRIORITY_TIERS,
         default=None,
         help="When used with --print-next, restrict printed rows to one priority tier; files remain complete.",
     )
